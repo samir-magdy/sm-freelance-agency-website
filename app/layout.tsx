@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Cairo } from "next/font/google";
 import "./styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { LanguageProvider } from "./contexts/LanguageContext";
+import Footer from "./components/ui/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const cairo = Cairo({
+  variable: "--font-cairo",
+  subsets: ["arabic", "latin"],
 });
 
 export const metadata: Metadata = {
@@ -67,7 +69,6 @@ const personSchema = {
     ],
     url: "https://samirmagdy.com",
     sameAs: [
-      "https://github.com/samir-magdy",
       "https://www.linkedin.com/in/samirmagdy93",
     ],
     address: {
@@ -114,7 +115,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ar" dir="rtl">
       <head>
         <style
           dangerouslySetInnerHTML={{
@@ -152,7 +153,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${geistSans.variable} antialiased`}>
+      <body className={`${cairo.variable} font-cairo antialiased`}>
         <div id="page-loader" role="status" aria-label="Loading">
           <div className="spinner" />
         </div>
@@ -173,7 +174,7 @@ export default function RootLayout({
         />
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-md focus:outline-2 focus:outline-offset-2 focus:outline-blue-500"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-md focus:outline-2 focus:outline-offset-2 focus:outline-brand-accent"
         >
           Skip to main content
         </a>
@@ -181,8 +182,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
-        <main id="main-content">{children}</main>
-        <Analytics />
+        <LanguageProvider>
+          <main id="main-content">{children}</main>
+          <Footer />
+          <Analytics />
+        </LanguageProvider>
       </body>
     </html>
   );

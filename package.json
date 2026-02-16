@@ -11,12 +11,10 @@
     "@upstash/redis": "^1.35.6",
     "@vercel/analytics": "^1.4.1",
     "motion": "^12.23.24",
-    "next": "16.0.10",
-    "ogl": "^1.0.11",
+    "next": "^16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "resend": "^4.1.1",
-    "tailwindcss-animate": "^1.0.7"
+    "resend": "^4.1.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

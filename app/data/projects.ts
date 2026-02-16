@@ -1,19 +1,19 @@
-import wikiScnShot from "../../public/project-screenshots/wikispace.webp";
-import yallaScnShot from "../../public/project-screenshots/yallashop.webp";
-import spaceReflexScnShot from "../../public/project-screenshots/space-reflex.webp";
+import skywayScnshot from "../../public/project-screenshots/travel-agency.png";
+import weddingsScnshot from "../../public/project-screenshots/wedding-planner.png";
+import gymScnshot from "../../public/project-screenshots/gym.png";
+import kindergartenScnshot from "../../public/project-screenshots/kindergarden.png";
+import modelingScnshot from "../../public/project-screenshots/modeling-agency.png";
+import supplementsScnshot from "../../public/project-screenshots/supplements.png";
 
 export interface ProjectSchema {
   applicationCategory: string;
-  license: string;
 }
 
 export interface Project {
   id: string;
   title: string;
   description: string;
-  technologies: readonly string[];
   liveUrl: string;
-  repoUrl: string;
   screenshot: string;
   ctaText: string;
   schema: ProjectSchema;
@@ -21,48 +21,75 @@ export interface Project {
 
 export const projects: readonly Project[] = [
   {
-    id: "yallashop",
-    title: "YallaShop (E-commerce)",
+    id: "skyway",
+    title: "Sky Way Travel",
     description:
-      "A frontend e-commerce implementation featuring component-driven React architecture, advanced product filtering, context-based cart management, and responsive device-specific UI.",
-    technologies: ["Next.js", "TypeScript", "TailwindCSS"],
-    liveUrl: "https://yallashop-frontend.vercel.app/",
-    repoUrl: "https://github.com/samir-magdy/yallashop-frontend",
-    screenshot: yallaScnShot.src,
+      "Building this websi",
+    liveUrl: "https://www.skyway-travel.org",
+    screenshot: skywayScnshot.src,
+    ctaText: "Live Demo",
+    schema: {
+      applicationCategory: "Travel Agency Website",
+    },
+  },
+  {
+    id: "weddings",
+    title: "Weddings Landing Page",
+    description:
+      "If you are a wedding planner, photographer or makeup artist, this website is perfect for you. Showcase your work, build trust and convert customers now!",
+    liveUrl: "https://weddings.samirmagdy.com/",
+    screenshot: weddingsScnshot.src,
     ctaText: "Live Demo",
     schema: {
       applicationCategory: "E-commerce",
-      license: "https://opensource.org/licenses/MIT",
     },
   },
   {
-    id: "wikispace",
-    title: "WikiSpace Proxy (Desktop Web-App)",
+    id: "gym",
+    title: "Gym Landing Page",
     description:
-      "A proxy server that dynamically transforms Wikipedia's interface in real-time. It intercepts HTTP requests, performs server-side HTML/CSS manipulation, and delivers a minimalist, custom-built UI to the client.",
-    technologies: ["Express.js", "JavaScript", "Cheerio", "HTML5", "CSS3"],
-    liveUrl: "https://wikipedia-web-proxy.onrender.com/",
-    repoUrl: "https://github.com/samir-magdy/wikipedia-web-proxy",
-    screenshot: wikiScnShot.src,
+      "A landing page for a fitness center. Designed to present membership plans, highlight facilities, and drive sign-ups.",
+    liveUrl: "#",
+    screenshot: gymScnshot.src,
     ctaText: "Live Demo",
     schema: {
-      applicationCategory: "Proxy Server",
-      license: "https://opensource.org/licenses/MIT",
+      applicationCategory: "Fitness Website",
     },
   },
   {
-    id: "space-reflex",
-    title: "Space Reflex (Browser-Game)",
+    id: "kindergarten",
+    title: "Kindergarten Landing Page",
     description:
-      "A browser game focused on player reaction speed. It features a custom-built HTTP server using the Node.js http module, a dynamic SQLite-powered leaderboard, and a fully responsive interface.",
-    technologies: ["Node.js", "JavaScript", "SQLite", "HTML5", "CSS3"],
-    liveUrl: "https://space-reflex-game.onrender.com/",
-    repoUrl: "https://github.com/samir-magdy/space-reflex-game",
-    screenshot: spaceReflexScnShot.src,
+      "A landing page for a kindergarten. Designed to showcase programs, build parent trust, and drive enrollments.",
+    liveUrl: "#",
+    screenshot: kindergartenScnshot.src,
     ctaText: "Live Demo",
     schema: {
-      applicationCategory: "Game",
-      license: "https://opensource.org/licenses/MIT",
+      applicationCategory: "Education Website",
+    },
+  },
+  {
+    id: "modeling",
+    title: "Modeling Agency Landing Page",
+    description:
+      "A landing page for a modeling agency. Designed to showcase talent portfolios, attract clients, and drive bookings.",
+    liveUrl: "#",
+    screenshot: modelingScnshot.src,
+    ctaText: "Live Demo",
+    schema: {
+      applicationCategory: "Entertainment Website",
+    },
+  },
+  {
+    id: "supplements",
+    title: "Supplements Store",
+    description:
+      "A landing page for a supplements store. Designed to highlight products, build credibility, and drive sales.",
+    liveUrl: "#",
+    screenshot: supplementsScnshot.src,
+    ctaText: "Live Demo",
+    schema: {
+      applicationCategory: "E-commerce",
     },
   },
 ];
@@ -82,9 +109,6 @@ export const projectsStructuredData = {
       description: project.description,
       applicationCategory: project.schema.applicationCategory,
       url: project.liveUrl,
-      codeRepository: project.repoUrl,
-      programmingLanguage: project.technologies.join(", "),
-      license: project.schema.license,
       inLanguage: "en",
     },
   })),

@@ -2,59 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  @media (max-width: 400px) {
-    #skills {
-      padding-top: 20px;
-    }
+@layer base {
+  * {
+    font-family: var(--font-cairo), sans-serif;
   }
 }
 
-/* Elegant nav link with animated underline */
+/* Elegant nav link */
 .nav-link-elegant {
   position: relative;
-  padding-bottom: 8px;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-.nav-link-elegant::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    white 20%,
-    white 80%,
-    transparent 100%
-  );
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transform: translateX(-50%);
 }
 
-.nav-link-elegant:hover::after {
-  width: 110%;
-}
 .main-headers {
   font-variant: small-caps;
   letter-spacing: 1px;
 }
-.light-rays-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+
+[dir="rtl"] *{
+    letter-spacing: 0 !important;
 }
 
-.light-rays-container canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
+/* ══════════════════════════════════════
+   WhatsApp Float
+   ══════════════════════════════════════ */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 5000;
 }
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    border-radius: 50%;
+    width: 60px !important;
+    height: 60px !important;
+  }
+}
+
+/* ══════════════════════════════════════
+   Dot Grid + Radial Glow — Hero Background
+   ══════════════════════════════════════ */
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 30%, transparent 100%);
+}
+
+.hero-glow {
+  position: absolute;
+  z-index: 0;
+  width: 60%;
+  aspect-ratio: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(129, 139, 155, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Mobile: tighter grid, wider glow so it's clearly visible */
+@media (max-width: 768px) {
+  .hero-grid {
+    background-size: 22px 22px;
+    mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black 20%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black 20%, transparent 100%);
+  }
+
+  .hero-glow {
+    width: 100%;
+  }
+}
+
+

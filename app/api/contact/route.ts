@@ -13,12 +13,12 @@ const WINDOW_SECONDS = 180; // 3 minutes
 
 export async function POST(request: Request) {
   try {
-    const { name, email, message } = await request.json();
+    const { name, phone, message } = await request.json();
 
     // Basic validation
-    if (!name || !email || !message) {
+    if (!name || !phone || !message) {
       return NextResponse.json(
-        { error: "Name, email and message are required" },
+        { error: "Name, phone and message are required" },
         { status: 400 }
       );
     }
@@ -57,10 +57,9 @@ export async function POST(request: Request) {
       subject: `New Contact Form Submission from ${name}`,
       text: `
                 Name: ${name}
-                Email: ${email}
+                Phone: ${phone}
                 Message: ${message}
             `,
-      replyTo: email,
     });
 
     // Check if the email was actually sent

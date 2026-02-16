@@ -2,11 +2,16 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { useLanguage } from "@/app/contexts/LanguageContext";
+import translations from "@/app/data/translations";
 
 export default function ContactForm() {
+  const { lang } = useLanguage();
+  const t = translations;
+
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    phone: "",
     message: "",
   });
   const [status, setStatus] = useState<
@@ -35,7 +40,7 @@ export default function ContactForm() {
       }
 
       setStatus("success");
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", phone: "", message: "" });
 
       // Auto-hide success message after 5 seconds
       setTimeout(() => {
@@ -60,17 +65,17 @@ export default function ContactForm() {
     <form
       className="text-start pt-2 relative"
       onSubmit={handleSubmit}
-      aria-label="Contact form"
+      aria-label={t.a11y.contactForm[lang]}
     >
       <fieldset className="border-none p-0 m-0">
-        <legend className="sr-only">Contact information</legend>
+        <legend className="sr-only">{t.form.legend[lang]}</legend>
         <div>
           <label
             htmlFor="name"
-            className="block text-sm font-bold text-gray-300 mb-2 ms-1"
+            className="block text-caption font-bold text-content-muted mb-2 ms-1"
           >
-            Name{" "}
-            <span className="text-orange-600 opacity-90" aria-label="required">
+            {t.form.name[lang]}{" "}
+            <span className="text-warning opacity-90" aria-label="required">
               *
             </span>
           </label>
@@ -79,8 +84,8 @@ export default function ContactForm() {
             id="name"
             required
             aria-required="true"
-            placeholder="Your name"
-            className="mb-4 text-xl w-full h-14 px-4 rounded-lg border border-gray-700 bg-gray-900/95 text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+            placeholder={t.form.namePlaceholder[lang]}
+            className="mb-4 text-base w-full h-14 px-4 rounded-lg border border-border-subtle bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors"
             value={formData.name}
             onChange={(e) =>
               setFormData((prev) => ({ ...prev, name: e.target.value }))
@@ -90,24 +95,27 @@ export default function ContactForm() {
 
         <div>
           <label
-            htmlFor="email"
-            className="block text-sm font-bold text-gray-300 mb-2 ms-1"
+            htmlFor="phone"
+            className="block text-caption font-bold text-content-muted mb-2 ms-1"
           >
-            Email{" "}
-            <span className="text-orange-600 opacity-90" aria-label="required">
+            {t.form.phone[lang]}{" "}
+            <span className="text-warning opacity-90" aria-label="required">
               *
             </span>
           </label>
           <input
-            type="email"
-            id="email"
+            type="tel"
+            id="phone"
+            dir="ltr"
             required
             aria-required="true"
-            placeholder="Your email"
-            className="mb-4 text-xl w-full h-14 px-4 rounded-lg border border-gray-700 bg-gray-900/95 text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
-            value={formData.email}
+            placeholder={t.form.phonePlaceholder[lang]}
+            pattern="^01[0125]\d{8}$"
+            title="Egyptian mobile number: 11 digits starting with 010, 011, 012, or 015"
+            className={`mb-4 text-base w-full h-14 px-4 rounded-lg border border-border-subtle bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors ${lang === "ar" ? "text-right" : "text-left"}`}
+            value={formData.phone}
             onChange={(e) =>
-              setFormData((prev) => ({ ...prev, email: e.target.value }))
+              setFormData((prev) => ({ ...prev, phone: e.target.value }))
             }
           />
         </div>
@@ -115,10 +123,10 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="message"
-            className="block text-sm font-bold text-gray-300 mb-2 ms-1"
+            className="block text-caption font-bold text-content-muted mb-2 ms-1"
           >
-            Message{" "}
-            <span className="text-orange-600 opacity-90" aria-label="required">
+            {t.form.message[lang]}{" "}
+            <span className="text-warning opacity-90" aria-label="required">
               *
             </span>
           </label>
@@ -127,8 +135,8 @@ export default function ContactForm() {
             required
             aria-required="true"
             rows={4}
-            placeholder="Describe your project or inquiry..."
-            className="mb-4 text-xl w-full px-4 py-2 rounded-lg border border-gray-700 bg-gray-900/95 text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
+            placeholder={t.form.messagePlaceholder[lang]}
+            className="mb-4 text-base w-full px-4 py-2 rounded-lg border border-border-subtle bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors"
             value={formData.message}
             onChange={(e) =>
               setFormData((prev) => ({ ...prev, message: e.target.value }))
@@ -146,9 +154,9 @@ export default function ContactForm() {
         type="submit"
         disabled={status === "loading"}
         aria-busy={status === "loading"}
-        className="w-full mx-auto block bg-blue-800 font-bold text-lg py-4 hover:bg-blue-900/90 focus:outline-2 focus:outline-offset-2 focus:outline-blue-400 text-white rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full mx-auto block bg-brand-primary font-bold text-base py-4 hover:bg-brand-primary/80 focus:outline-2 focus:outline-offset-2 focus:outline-brand-accent text-background rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {status === "loading" ? "Sending..." : "Submit Form"}
+        {status === "loading" ? t.form.sending[lang] : t.form.submit[lang]}
       </button>
 
       <AnimatePresence>
@@ -160,9 +168,9 @@ export default function ContactForm() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
-            className="mt-5 md:absolute md:-bottom-20 md:left-0 md:right-0 md:mt-0 w-full text-lg mx-auto py-4 rounded-lg border border-green-500/30 bg-green-800/80 backdrop-blur-sm px-2 md:px-8"
+            className="mt-5 md:absolute md:-bottom-20 md:left-0 md:right-0 md:mt-0 w-full text-base mx-auto py-4 rounded-lg border border-success/30 bg-success/20 backdrop-blur-sm px-2 md:px-8"
           >
-            <p className="flex gap-1 justify-center text-green-200 text-center font-medium md:font-bold">
+            <p className="flex gap-1 justify-center text-success text-center font-medium md:font-bold">
               <svg
                 width="24"
                 height="24"
@@ -179,7 +187,7 @@ export default function ContactForm() {
                   strokeLinejoin="round"
                 />
               </svg>
-              Message sent successfully!
+              {t.form.success[lang]}
             </p>
           </motion.div>
         )}
@@ -193,9 +201,9 @@ export default function ContactForm() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
-          className="mt-5 md:absolute md:-bottom-20 md:left-0 md:right-0 md:mt-0 mx-auto py-4 rounded-lg border border-red-500/30 bg-red-800/60 backdrop-blur-sm w-full px-1"
+          className="mt-5 md:absolute md:-bottom-20 md:left-0 md:right-0 md:mt-0 mx-auto py-4 rounded-lg border border-danger/30 bg-danger/20 backdrop-blur-sm w-full px-1"
         >
-          <p className="text-red-200 text-center font-medium md:font-bold">
+          <p className="text-danger text-center font-medium md:font-bold">
             {errorMessage}
           </p>
         </motion.div>
