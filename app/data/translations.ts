@@ -4,72 +4,73 @@ const translations = {
   // Navigation
   nav: {
     home: { en: "Home", ar: "الرئيسية" },
-    howItWorks: { en: "Workflow", ar: "إطار العمل" },
-    projects: { en: "Portfolio", ar: "سابقة أعمالي" },
+    howItWorks: { en: "Our Proccess", ar: "آلية العمل" },
+    projects: { en: "Our Work", ar: "سابقة الأعمال" },
     faq: { en: "FAQ", ar: " أسئلة شائعه" },
-    contact: { en: "Contact", ar: "تواصل" },
+    contact: { en: "Contact Us", ar: "تواصل معنا" },
   },
 
   // Hero
   hero: {
     name: {
-      en: "Websites that Sell..",
-      ar: "مش مجرد موقع..",
-    },
-    subtitle: {
-      en: "Designing landing pages that convert visitors into clients.",
-      ar: "بصمملك صفحة هبوط هدفها البيع، مش بس منظر.",
+      en: "Your Partner In Success.",
+      ar: "شريكك في النجاح",
     },
     cta: {
       en: "Chat",
       ar: "تواصل",
     },
-    secondaryCta: {
-      en: "View Portfolio",
-      ar: "سابقة أعمالي",
+    primaryCta: {
+      en: "Free Consultation",
+      ar: "استشاره مجانيه",
+    },
+    seoLabel: {
+      en: "Web Design & Development in Cairo",
+      ar: "تصميم وتطوير مواقع في القاهرة",
     },
   },
 
   // Projects section
   projectsSection: {
-    heading: { en: "Portfolio", ar: "سابقة أعمالي" },
+    heading: { en: "Our Work", ar: "سابقة الأعمال" },
     subtitle: {
-      en: "A selection of projects I've built for clients.",
-      ar: "مجموعة من المشاريع اللي بنيتها لعملائي.",
+      en: "A selection of our latest projects.",
+      ar: "مجموعة من أحدث مشاريعنا.",
     },
   },
 
-  // Workflow section
+  // Our Procces section
   workflowSection: {
-    heading: { en: "Workflow", ar: "إطار العمل" },
+    heading: { en: "Our Proccess", ar: "آلية العمل" },
     subtitle: {
       en: "A structured process from start to finish.",
       ar: "عملية واضحة ومنظمة من البداية للنهاية.",
     },
     steps: {
+      // TO DO. STUDY AND PLAN BEFORE IMPLEMENTING! ==========================================================================================
       discovery: {
-        title: { en: "Communication", ar: "التنسيق" },
+        title: { en: "1. Communication", ar: "1. التنسيق" },
         description: {
-          en: "We communicate on a call or meeting to define your vision. The goal is to have a clear plan and timeline for your website.",
+          en: "he goal is to have a clear agreed upon plan that covers how I will handle your branding, what features to include, and price quote.",
           ar: "بنتواصل من خلال مكالمة أو اجتماع لتحديد أهدافك. هدفنا هو وضع خطة واضحة وجدول زمني محدد لموقعك.",
         },
       },
       design: {
-        title: { en: "Design", ar: "التصميم" },
+        title: { en: "2. Design", ar: "التصميم" },
         description: {
-          en: "I design a custom look tailored to your brand. Once you are satisfied and approve the design, a 50% deposit initializes the development phase.",
+          en: "however, from experience, we understand that some of our clients want to see the design themselves before the full implementaion. Therefore we do offer this step as an extra step for your convenience.",
           ar: "بصمم واجهة مخصصة تعبر عن علامتك التجارية. بمجرد رضاك واعتمادك للتصميم، بنبدأ مرحلة التنفيذ بدفعة مقدمة 50%.",
         },
       },
       development: {
-        title: { en: "Development", ar: "التنفيذ" },
+        title: { en: "3. Development", ar: "التنفيذ" },
         description: {
-          en: "I turn design into a fast, mobile-responsive, and SEO-ready website.",
+          en: "A 50% deposit of the full price initializes the development phase. Your vision is then brought to life.",
           ar: "بنحول التصميم لموقع حقيقي، سريع، متوافق مع الموبايل، ومجهز لمحركات البحث (SEO).",
         },
       },
       launch: {
-        title: { en: "Handover", ar: "التسليم" },
+        title: { en: "4. Handover", ar: "التسليم" },
         description: {
           en: "After final approval and settling the remaining 50%, your site goes live! I handover the product and provide ongoing support when needed.",
           ar: "بعد الموافقة النهائية وتسوية الـ 50% المتبقية، موقعك بينطلق! بسلمك المنتج النهائي وبوفرلك دعم مستمر عند الحاجة.",
@@ -80,19 +81,20 @@ const translations = {
 
   // FAQ section
   faqSection: {
-    heading: { en: "FAQ", ar: "أسئلة الشائعة" },
+    heading: { en: "FAQ", ar: "أسئلة شائعة" },
     subtitle: {
       en: "Answers to commonly asked questions.",
       ar: "إجابات على الأسئلة الأكثر شيوعًا.",
     },
+    // TO DO. STUDY AND PLAN BEFORE IMPLEMENTING! ==========================================================================================
     items: [
       {
         question: {
-          en: "How long does it take to build a website?",
+          en: "How much does a website cost?",
           ar: "كم يستغرق بناء الموقع؟",
         },
         answer: {
-          en: "Most landing pages are delivered within 1–2 weeks. Larger projects with multiple pages or custom features may take 3–4 weeks depending on complexity.",
+          en: "The short answer is, it depends. The full cost website can cost anywhere from 4000 EGP for a 4 section landing page to 30,000 EGP for a landing page with custom forms (lead collection), admin control panel and highly-optimized SEO.",
           ar: "معظم صفحات الهبوط بتتسلم خلال أسبوع لأسبوعين. المشاريع الأكبر اللي فيها صفحات متعددة أو مميزات مخصصة ممكن تاخد من 3 لـ 4 أسابيع حسب التعقيد.",
         },
       },
@@ -118,7 +120,7 @@ const translations = {
       },
       {
         question: {
-          en: "Will my website work on phones and tablets?",
+          en: "Do you handle hosting and domain setup",
           ar: "الموقع هيشتغل على الموبايل والتابلت؟",
         },
         answer: {
@@ -132,17 +134,17 @@ const translations = {
           ar: "بتتكفل بالاستضافة وإعداد الدومين؟",
         },
         answer: {
-          en: "Yes. I can help you choose the right hosting plan and set up your custom domain. I'll handle all the technical configuration so your site is live and accessible without you worrying about the details.",
+          en: "Yes. Infact, we don't even expect you to know what those terms mean. We take care of all the technical details for you and explain only what you need to know for your site to stay up and running at all times.",
           ar: "أيوه. أقدر أساعدك تختار خطة الاستضافة المناسبة وأجهزلك الدومين الخاص بيك. هتكفل بكل الإعدادات التقنية عشان موقعك يكون شغال ومتاح من غير ما تشيل هم التفاصيل.",
         },
       },
       {
         question: {
-          en: "Will my website be optimized for search engines (SEO)?",
+          en: "Will my website be optimized for search engines?",
           ar: "الموقع هيكون مجهز لمحركات البحث (SEO)؟",
         },
         answer: {
-          en: "Yes. Every site I build follows SEO best practices including fast load times, clean code structure, proper meta tags, and mobile-friendliness — all of which help your site rank higher on Google.",
+          en: "Yes. Every site I build follows SEO best practices, however if you want aggressive SEO optimization this is considered an addon to the standard package.",
           ar: "أيوه. كل موقع ببنيه بيتبع أفضل ممارسات الـ SEO زي سرعة التحميل وكود نظيف وعلامات meta صحيحة والتوافق مع الموبايل — وكل ده بيساعد موقعك يظهر أعلى في نتائج جوجل.",
         },
       },
@@ -153,10 +155,9 @@ const translations = {
   contactSection: {
     heading: { en: "Get In Touch", ar: "تواصل معنا" },
     subtitle: {
-      en: "To discuss a potential project, please submit your inquiry via the form below.",
-      ar: "لمناقشة مشروع محتمل، يرجى إرسال استفسارك عبر النموذج أدناه.",
+      en: "Request a free consultation by filling out the form below, and our team will get back to you shortly. You can also contact us instantly via WhatsApp.",
+      ar: "اطلب استشارة مجانية عبر تعبئة النموذج أدناه، وسيتواصل معك فريقنا في أقرب وقت. كما يمكنك التواصل معنا مباشرة عبر واتساب.",
     },
-    copyright: { en: "Samir Magdy", ar: "سمير مجدي" },
   },
 
   // Contact form
@@ -177,6 +178,13 @@ const translations = {
       en: "Message sent successfully!",
       ar: "تم إرسال الرسالة بنجاح!",
     },
+    industry: { en: "What's your business?", ar: "ما هو مجال عملك؟" },
+    industryPlaceholder: { en: "Select your industry", ar: "اختر مجالك" },
+    onlinePresence: { en: "Do you currently have a website?", ar: "هل لديك موقع إلكتروني حالياً؟" },
+    hasWebsite: { en: "Yes", ar: "نعم" },
+    noWebsite: { en: "No", ar: "لا" },
+    budget: { en: "What's your approximate budget?", ar: "ما هي ميزانيتك التقريبية؟" },
+    budgetPlaceholder: { en: "Select a range", ar: "اختر النطاق" },
   },
 
   // Accessibility
@@ -190,7 +198,6 @@ const translations = {
       ar: "لينكدإن (يفتح في تبويب جديد)",
     },
     skipToContent: { en: "Skip to main content", ar: "تخطى إلى المحتوى" },
-    loading: { en: "Loading", ar: "جاري التحميل" },
     contactForm: { en: "Contact form", ar: "نموذج التواصل" },
     screenshotOf: { en: "Screenshot of", ar: "لقطة شاشة لـ" },
   },
@@ -200,7 +207,7 @@ const translations = {
     skyway: {
       title: {
         en: "Sky Way Travel",
-        ar: "Sky Way Travel",
+        ar: "شركه سكاى واى ترافل",
       },
       description: {
         en: "A conversion-focused landing page for a travel agency. Designed to showcase tour packages, build trust, and drive direct bookings.",
@@ -227,39 +234,6 @@ const translations = {
       description: {
         en: "A landing page for a fitness center. Designed to present membership plans, highlight facilities, and drive sign-ups.",
         ar: "صفحة هبوط لمركز لياقة بدنية. مصممة لعرض خطط الاشتراكات وإبراز المرافق وزيادة التسجيلات.",
-      },
-      cta: { en: "Live Demo", ar: "عرض مباشر" },
-    },
-    kindergarten: {
-      title: {
-        en: "Kindergarten Landing Page",
-        ar: "صفحة هبوط لحضانة",
-      },
-      description: {
-        en: "A landing page for a kindergarten. Designed to showcase programs, build parent trust, and drive enrollments.",
-        ar: "صفحة هبوط لحضانة أطفال. مصممة لعرض البرامج التعليمية وبناء ثقة الأهالي وزيادة التسجيلات.",
-      },
-      cta: { en: "Live Demo", ar: "عرض مباشر" },
-    },
-    modeling: {
-      title: {
-        en: "Modeling Agency Landing Page",
-        ar: "صفحة هبوط لوكالة عارضين",
-      },
-      description: {
-        en: "A landing page for a modeling agency. Designed to showcase talent portfolios, attract clients, and drive bookings.",
-        ar: "صفحة هبوط لوكالة عارضين. مصممة لعرض ملفات المواهب وجذب العملاء وزيادة الحجوزات.",
-      },
-      cta: { en: "Live Demo", ar: "عرض مباشر" },
-    },
-    supplements: {
-      title: {
-        en: "Supplements Store",
-        ar: "متجر مكملات غذائية",
-      },
-      description: {
-        en: "A landing page for a supplements store. Designed to highlight products, build credibility, and drive sales.",
-        ar: "صفحة هبوط لمتجر مكملات غذائية. مصممة لإبراز المنتجات وبناء المصداقية وزيادة المبيعات.",
       },
       cta: { en: "Live Demo", ar: "عرض مباشر" },
     },

@@ -1,24 +1,22 @@
-"use client";
-
-import { useLanguage } from "@/app/contexts/LanguageContext";
 import translations from "@/app/data/translations";
+import type { Lang } from "@/app/data/translations";
 
-export default function FAQSection() {
-  const { lang } = useLanguage();
+export default function FAQSection({ lang }: { lang: Lang }) {
   const t = translations.faqSection;
   const dir = lang === "ar" ? "rtl" : "ltr";
   const isRtl = lang === "ar";
 
   return (
-    <section id="faq" className="py-20 md:py-32" dir={dir}>
+    <section id="faq" aria-labelledby="faq-heading" className="py-20 md:py-32" dir={dir}>
       <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
         <div className="mb-4">
           <h2
-            className="font-bold text-heading text-content-heading text-center mb-2"
+            id="faq-heading"
+            className="font-bold text-heading text-center mb-2"
           >
             {t.heading[lang]}
           </h2>
-          <p className="text-content-body text-center text-base md:text-heading mb-6">
+          <p className="text-content-body text-center text-base md:text-subheading mb-6">
             {t.subtitle[lang]}
           </p>
         </div>

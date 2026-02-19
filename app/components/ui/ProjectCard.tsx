@@ -1,15 +1,14 @@
-"use client";
-
-import { useLanguage } from "@/app/contexts/LanguageContext";
+import Image from "next/image";
 import translations from "@/app/data/translations";
+import type { Lang } from "@/app/data/translations";
 import type { Project } from "@/app/data/projects";
 
 interface ProjectCardProps {
   project: Project;
+  lang: Lang;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
-  const { lang } = useLanguage();
+export default function ProjectCard({ project, lang }: ProjectCardProps) {
   const pd = translations.projectData[project.id as keyof typeof translations.projectData];
   const t = translations;
 
@@ -18,10 +17,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const ctaText = pd?.cta[lang] ?? project.ctaText;
 
   return (
-    <article className="bg-surface-card w-full rounded-xl overflow-hidden border border-border-subtle shadow-lg flex flex-col">
+    <article className="bg-surface-card w-full rounded-xl overflow-hidden border border-border-strong shadow-lg flex flex-col">
       <figure className="flex flex-col h-full">
         <div className="overflow-hidden">
-          <img
+          <Image
             src={project.screenshot}
             alt={`${t.a11y.screenshotOf[lang]} ${title}`}
             className="w-full"
@@ -33,9 +32,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {title}
           </h3>
 
-          <figcaption className="text-content-body text-base tracking-wide mb-4">
+          <p className="text-content-body text-base tracking-wide mb-4">
             {description}
-          </figcaption>
+          </p>
 
           <div className="mt-auto">
             <a

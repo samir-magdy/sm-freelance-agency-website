@@ -2,21 +2,49 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { useLanguage } from "@/app/contexts/LanguageContext";
 import translations from "@/app/data/translations";
+import type { Lang } from "@/app/data/translations";
 
-export default function ContactForm() {
-  const { lang } = useLanguage();
+const INDUSTRY_OPTIONS = [
+  { value: "restaurant",  en: "Restaurant / Café",         ar: "مطعم / كافيه" },
+  { value: "retail",      en: "Retail / E-commerce",       ar: "تجارة / متجر إلكتروني" },
+  { value: "healthcare",  en: "Healthcare / Clinic",       ar: "صحة / عيادة" },
+  { value: "real-estate", en: "Real Estate",               ar: "عقارات" },
+  { value: "education",   en: "Education / Training",      ar: "تعليم / تدريب" },
+  { value: "travel",      en: "Travel / Tourism",          ar: "سياحة / سفر" },
+  { value: "fitness",     en: "Fitness / Gym",             ar: "لياقة بدنية / جيم" },
+  { value: "fashion",     en: "Fashion / Beauty",          ar: "أزياء / تجميل" },
+  { value: "services",    en: "Services / Consulting",     ar: "خدمات / استشارات" },
+  { value: "other",       en: "Other",                     ar: "أخرى" },
+];
+
+const BUDGET_OPTIONS = [
+  { value: "under-5k",  en: "Under 5,000 EGP",        ar: "أقل من 5,000 جنيه" },
+  { value: "5k-10k",    en: "5,000 – 10,000 EGP",     ar: "5,000 – 10,000 جنيه" },
+  { value: "10k-15k",   en: "10,000 – 15,000 EGP",    ar: "10,000 – 15,000 جنيه" },
+  { value: "15k-20k",   en: "15,000 – 20,000 EGP",    ar: "15,000 – 20,000 جنيه" },
+  { value: "Above 20k",   en: "Above 20,000 EGP",    ar: "20,000 – 25,000 جنيه" },
+  { value: "not-sure",  en: "Not sure yet",            ar: "لست متأكداً بعد" },
+];
+
+const ChevronDown = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M6 9l6 6 6-6" />
+  </svg>
+);
+
+export default function ContactForm({ lang }: { lang: Lang }) {
   const t = translations;
 
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
+    industry: "",
+    onlinePresence: "",
+    budget: "",
     message: "",
   });
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -27,9 +55,7 @@ export default function ContactForm() {
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
@@ -40,26 +66,20 @@ export default function ContactForm() {
       }
 
       setStatus("success");
-      setFormData({ name: "", phone: "", message: "" });
+      setFormData({ name: "", phone: "", industry: "", onlinePresence: "", budget: "", message: "" });
 
-      // Auto-hide success message after 5 seconds
-      setTimeout(() => {
-        setStatus("idle");
-      }, 5000);
+      setTimeout(() => { setStatus("idle"); }, 5000);
     } catch (error) {
-      const errorMsg =
-        error instanceof Error ? error.message : "Failed to send message";
-
+      const errorMsg = error instanceof Error ? error.message : "Failed to send message";
       setStatus("error");
       setErrorMessage(errorMsg);
-
-      // Auto-hide error message after 5 seconds
-      setTimeout(() => {
-        setStatus("idle");
-        setErrorMessage("");
-      }, 5000);
+      setTimeout(() => { setStatus("idle"); setErrorMessage(""); }, 5000);
     }
   };
+
+  const selectBaseClass = "text-base w-full h-14 px-4 rounded-lg border border-border-strong bg-surface-low focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors appearance-none cursor-pointer";
+  const selectClass = (value: string) => `${selectBaseClass} ${value ? "text-content-heading" : "text-content-muted"}`;
+  const labelClass = "block text-caption font-bold text-content-muted mb-2 ms-1";
 
   return (
     <form
@@ -69,92 +89,175 @@ export default function ContactForm() {
     >
       <fieldset className="border-none p-0 m-0">
         <legend className="sr-only">{t.form.legend[lang]}</legend>
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-caption font-bold text-content-muted mb-2 ms-1"
-          >
-            {t.form.name[lang]}{" "}
-            <span className="text-warning opacity-90" aria-label="required">
-              *
-            </span>
-          </label>
-          <input
-            type="text"
-            id="name"
-            required
-            aria-required="true"
-            placeholder={t.form.namePlaceholder[lang]}
-            className="mb-4 text-base w-full h-14 px-4 rounded-lg border border-border-subtle bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors"
-            value={formData.name}
-            onChange={(e) =>
-              setFormData((prev) => ({ ...prev, name: e.target.value }))
-            }
-          />
-        </div>
 
-        <div>
-          <label
-            htmlFor="phone"
-            className="block text-caption font-bold text-content-muted mb-2 ms-1"
-          >
-            {t.form.phone[lang]}{" "}
-            <span className="text-warning opacity-90" aria-label="required">
-              *
-            </span>
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            dir="ltr"
-            required
-            aria-required="true"
-            placeholder={t.form.phonePlaceholder[lang]}
-            pattern="^01[0125]\d{8}$"
-            title="Egyptian mobile number: 11 digits starting with 010, 011, 012, or 015"
-            className={`mb-4 text-base w-full h-14 px-4 rounded-lg border border-border-subtle bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors ${lang === "ar" ? "text-right" : "text-left"}`}
-            value={formData.phone}
-            onChange={(e) =>
-              setFormData((prev) => ({ ...prev, phone: e.target.value }))
-            }
-          />
-        </div>
+        <div className="grid md:grid-cols-2 gap-4 md:gap-x-3">
 
-        <div>
-          <label
-            htmlFor="message"
-            className="block text-caption font-bold text-content-muted mb-2 ms-1"
-          >
-            {t.form.message[lang]}{" "}
-            <span className="text-warning opacity-90" aria-label="required">
-              *
-            </span>
-          </label>
-          <textarea
-            id="message"
-            required
-            aria-required="true"
-            rows={4}
-            placeholder={t.form.messagePlaceholder[lang]}
-            className="mb-4 text-base w-full px-4 py-2 rounded-lg border border-border-subtle bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors"
-            value={formData.message}
-            onChange={(e) =>
-              setFormData((prev) => ({ ...prev, message: e.target.value }))
-            }
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) {
-                e.preventDefault();
-                e.currentTarget.form?.requestSubmit();
-              }
-            }}
-          />
+          {/* Name */}
+          <div>
+            <label htmlFor="name" className={labelClass}>
+              {t.form.name[lang]}{" "}
+              <span className="text-warning opacity-90" aria-label="required">*</span>
+            </label>
+            <input
+              type="text"
+              id="name"
+              required
+              aria-required="true"
+              placeholder={t.form.namePlaceholder[lang]}
+              className="text-base w-full h-14 px-4 rounded-lg border border-border-strong bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors"
+              value={formData.name}
+              onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
+            />
+          </div>
+
+          {/* Phone */}
+          <div>
+            <label htmlFor="phone" className={labelClass}>
+              {t.form.phone[lang]}{" "}
+              <span className="text-warning opacity-90" aria-label="required">*</span>
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              dir="ltr"
+              required
+              aria-required="true"
+              placeholder={t.form.phonePlaceholder[lang]}
+              pattern="^01[0125]\d{8}$"
+              title="Egyptian mobile number: 11 digits starting with 010, 011, 012, or 015"
+              className={`text-base w-full h-14 px-4 rounded-lg border border-border-strong bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors ${lang === "ar" ? "text-right" : "text-left"}`}
+              value={formData.phone}
+              onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
+            />
+          </div>
+
+          {/* Industry */}
+          <div>
+            <label htmlFor="industry" className={labelClass}>
+              {t.form.industry[lang]}{" "}
+              <span className="text-warning opacity-90" aria-label="required">*</span>
+            </label>
+            <div className="relative">
+              <select
+                id="industry"
+                required
+                aria-required="true"
+                className={selectClass(formData.industry)}
+                value={formData.industry}
+                onChange={(e) => setFormData((prev) => ({ ...prev, industry: e.target.value }))}
+              >
+                <option value="">{t.form.industryPlaceholder[lang]}</option>
+                {INDUSTRY_OPTIONS.map((opt) => (
+                  <option key={opt.value} value={opt.value}>{opt[lang]}</option>
+                ))}
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 end-4 flex items-center text-content-muted">
+                <ChevronDown />
+              </div>
+            </div>
+          </div>
+
+          {/* Budget */}
+          <div>
+            <label htmlFor="budget" className={labelClass}>
+              {t.form.budget[lang]}{" "}
+              <span className="text-warning opacity-90" aria-label="required">*</span>
+            </label>
+            <div className="relative">
+              <select
+                id="budget"
+                required
+                aria-required="true"
+                className={selectClass(formData.budget)}
+                value={formData.budget}
+                onChange={(e) => setFormData((prev) => ({ ...prev, budget: e.target.value }))}
+              >
+                <option value="">{t.form.budgetPlaceholder[lang]}</option>
+                {BUDGET_OPTIONS.map((opt) => (
+                  <option key={opt.value} value={opt.value}>{opt[lang]}</option>
+                ))}
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 end-4 flex items-center text-content-muted">
+                <ChevronDown />
+              </div>
+            </div>
+          </div>
+
+          {/* Online Presence — full width, radio options side-by-side on desktop */}
+          <div className="md:col-span-2">
+            <p id="online-presence-label" className={labelClass}>
+              {t.form.onlinePresence[lang]}{" "}
+              <span className="text-warning opacity-90" aria-label="required">*</span>
+            </p>
+            <div role="radiogroup" aria-labelledby="online-presence-label" className="flex flex-row gap-3">
+              {([
+                { value: "yes", label: t.form.hasWebsite[lang] },
+                { value: "no",  label: t.form.noWebsite[lang] },
+              ] as const).map(({ value, label }) => (
+                <label
+                  key={value}
+                  className={`flex-1 flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-colors text-base focus-within:ring-2 focus-within:ring-brand-accent focus-within:ring-offset-1 ${
+                    formData.onlinePresence === value
+                      ? "border-brand-accent bg-brand-accent/10 text-content-heading"
+                      : "border-border-strong bg-surface-low text-content-muted"
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name="onlinePresence"
+                    value={value}
+                    required
+                    aria-required="true"
+                    checked={formData.onlinePresence === value}
+                    onChange={() => setFormData((prev) => ({ ...prev, onlinePresence: value }))}
+                    className="sr-only"
+                  />
+                  <span className={`flex-shrink-0 w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors ${
+                    formData.onlinePresence === value ? "border-brand-accent" : "border-border-strong"
+                  }`}>
+                    {formData.onlinePresence === value && (
+                      <span className="w-2 h-2 rounded-full bg-brand-accent" />
+                    )}
+                  </span>
+                  {label}
+                </label>
+              ))}
+            </div>
+          </div>
+
+          {/* Message — full width */}
+          <div className="md:col-span-2">
+            <label htmlFor="message" className={labelClass}>
+              {t.form.message[lang]}{" "}
+              <span className="text-warning opacity-90" aria-label="required">*</span>
+            </label>
+            <textarea
+            style={{resize: "none"}}
+              id="message"
+              required
+              aria-required="true"
+              rows={3}
+              placeholder={t.form.messagePlaceholder[lang]}
+              className="text-base w-full px-4 py-2 rounded-lg border border-border-strong bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors"
+              value={formData.message}
+              onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  e.currentTarget.form?.requestSubmit();
+                }
+              }}
+            />
+          </div>
+
         </div>
       </fieldset>
+
       <button
         type="submit"
         disabled={status === "loading"}
         aria-busy={status === "loading"}
-        className="w-full mx-auto block bg-brand-primary font-bold text-base py-4 hover:bg-brand-primary/80 focus:outline-2 focus:outline-offset-2 focus:outline-brand-accent text-background rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="mt-4 w-full mx-auto block bg-brand-primary font-bold text-base py-4 hover:bg-brand-primary/80 focus:outline-2 focus:outline-offset-2 focus:outline-brand-accent text-background rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === "loading" ? t.form.sending[lang] : t.form.submit[lang]}
       </button>
@@ -171,21 +274,8 @@ export default function ContactForm() {
             className="mt-5 md:absolute md:-bottom-20 md:left-0 md:right-0 md:mt-0 w-full text-base mx-auto py-4 rounded-lg border border-success/30 bg-success/20 backdrop-blur-sm px-2 md:px-8"
           >
             <p className="flex gap-1 justify-center text-success text-center font-medium md:font-bold">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <path
-                  d="M5 13L9 17L19 7"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M5 13L9 17L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               {t.form.success[lang]}
             </p>

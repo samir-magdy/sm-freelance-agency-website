@@ -2,40 +2,105 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Light theme
+     Strategy: cool blue-gray page so pure-white surfaces pop cleanly.
+     Cards rely on shadow-lg for depth; inputs rely on border-strong.
+     Both surfaces = pure white — consistent, elegant, Stripe/Linear pattern. */
+  --background: 220 16% 95%;     /* ≈ #EEF0F5 — subtle cool blue-gray page */
+  --surface-low: 0 0% 100%;      /* pure white — inputs & form fields */
+  --surface-card: 0 0% 100%;     /* pure white — cards (shadow-lg provides depth) */
+  --surface-hover: 220 14% 91%;  /* ≈ #E5E8F0 — slightly deeper cool-gray */
+  --content-heading: 0 0% 7%;
+  --content-body: 0 0% 30%;
+  --content-muted: 0 0% 38%;     /* Darkened from 44% to hit 4.5:1 contrast */
+
+  --border-subtle: 220 12% 0% / 0.07;
+  --border-strong: 220 12% 0% / 0.16; /* stronger + cool-tinted — crisp edges on white */
+
+  --brand-primary: 220 20% 20%;
+  --brand-secondary: 215 16% 47%;
+  --brand-accent: 221 83% 53%;   /* #2563EB blue-600 — passes WCAG AA with white text */
+
+  /* Shifted utility colors for light mode accessibility */
+  --color-success: 160 84% 28%;  /* Darker emerald */
+  --color-danger: 348 83% 40%;   /* Darker red */
+  --color-warning: 38 92% 38%;   /* Darker amber/orange */
+}
+
+.dark {
+  /* Dark theme
+     Strategy: rich blue-black base (hue 222 coheres with brand-accent 221).
+     Large lightness jumps between layers so surfaces are unmistakably distinct.
+     bg(8%) → inputs(16%) = +8pt gap | bg(8%) → cards(21%) = +13pt gap */
+  --background: 222 18% 8%;      /* ≈ #0F1120 — deep blue-black */
+  --surface-low: 222 14% 16%;    /* ≈ #1F2336 — inputs: clearly elevated */
+  --surface-card: 222 13% 21%;   /* ≈ #292E42 — cards: another clear step up */
+  --surface-hover: 222 12% 27%;  /* ≈ #363D55 — hover: clearly above card */
+  --content-heading: 222 10% 90%; /* near-white, slight cool tint for harmony */
+  --content-body: 222 6% 74%;
+  --content-muted: 222 8% 58%;   /* Lightened from 46% to hit 4.5:1 contrast */
+
+  --border-subtle: 0 0% 100% / 0.07;  /* more visible than before (was 0.04) */
+  --border-strong: 0 0% 100% / 0.14;  /* clearly visible on dark surfaces (was 0.08) */
+
+  --brand-primary: 214 32% 91%;
+  --brand-secondary: 215 20% 65%;
+  --brand-accent: 217 91% 60%;   /* #3B82F6 — pops on dark backgrounds */
+
+  /* Shifted utility colors for dark mode visibility */
+  --color-success: 152 76% 40%;  /* #10B981 */
+  --color-danger: 0 84% 60%;     /* #EF4444 */
+  --color-warning: 43 96% 50%;   /* #F59E0B */
+}
+
 @layer base {
   * {
     font-family: var(--font-cairo), sans-serif;
   }
 }
 
-/* Elegant nav link */
-.nav-link-elegant {
-  position: relative;
-}
-
-.main-headers {
-  font-variant: small-caps;
-  letter-spacing: 1px;
-}
-
 [dir="rtl"] *{
     letter-spacing: 0 !important;
 }
+@media (max-width:578px){
 
+  [dir="rtl"] #hero-hook{
+    margin-bottom: 2rem;
+    font-size: 2.8rem;
+  }
+
+}
+@media (min-width: 1000px){
+
+  [dir="rtl"] #hero-hook{
+    margin-bottom: 6rem;
+    margin-top: 1.5rem;
+  }
+  [dir="rtl"] #hero-container{
+    margin-top: 7rem;
+}
+}
 /* ══════════════════════════════════════
    WhatsApp Float
    ══════════════════════════════════════ */
 
 .whatsapp-float {
   position: fixed;
-  bottom: 15px;
-  right: 15px;
+  bottom: 30px;
+  right: 30px;
   z-index: 5000;
 }
 
 @media (max-width: 768px) {
   .whatsapp-float {
     border-radius: 50%;
+    bottom: 20px;
+    right: 20px;
     width: 60px !important;
     height: 60px !important;
   }
@@ -49,7 +114,8 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  /* Dark: white dots; Light: dark dots — both at low opacity */
+  background-image: radial-gradient(circle, hsl(var(--content-heading) / 0.12) 1px, transparent 1px);
   background-size: 28px 28px;
   mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 30%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 30%, transparent 100%);
@@ -63,7 +129,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(129, 139, 155, 0.12) 0%, transparent 70%);
+  /* Dark: cool blue-grey glow; Light: warm grey glow */
+  background: radial-gradient(circle, hsl(var(--brand-secondary) / 0.1) 0%, transparent 75%);
   pointer-events: none;
 }
 
@@ -77,6 +144,7 @@
 
   .hero-glow {
     width: 100%;
+    background: radial-gradient(circle, hsl(var(--brand-secondary) / 0.1) 0%, transparent 70%);
   }
 }
 

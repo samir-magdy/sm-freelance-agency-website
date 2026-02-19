@@ -1,6 +1,10 @@
-export default function Footer() {
+import translations from "@/app/data/translations";
+import type { Lang } from "@/app/data/translations";
+
+export default function Footer({ lang }: { lang: Lang }) {
+
   return (
-    <footer className="pb-6 bg-background">
+    <footer id="contact-footer" className="pb-4 bg-background">
       <p dir="ltr" className="text-content-muted text-caption md:text-base text-center">
         <span className="inline-flex items-center gap-2 font-medium">
           <svg
@@ -18,7 +22,8 @@ export default function Footer() {
               strokeLinecap="round"
             />
           </svg>
-          Samir Magdy</span>
+          2026 | Samir Magdy | Web Design & Development
+        </span>
       </p>
     </footer>
   );

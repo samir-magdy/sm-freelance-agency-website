@@ -1,194 +1,13 @@
-"use client";
-
-import { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
-import { useLanguage } from "@/app/contexts/LanguageContext";
 import translations from "@/app/data/translations";
-import LanguageToggle from "../ui/LanguageToggle";
+import type { Lang } from "@/app/data/translations";
+import HeroNav from "../ui/HeroNav";
 
-export default function HeroSection() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { lang } = useLanguage();
+export default function HeroSection({ lang }: { lang: Lang }) {
   const t = translations;
-
-  const handleSmoothScroll = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    targetId: string,
-  ) => {
-    e.preventDefault();
-    setIsMenuOpen(false);
-
-    const isDesktop = window.innerWidth >= 768;
-
-    // Mobile: keep exact current behavior
-    if (!isDesktop) {
-      const element = document.querySelector(targetId);
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-      return;
-    }
-
-    // Desktop: account for fixed navbar height
-    const navbarOffset = -30;
-
-    const element = document.querySelector(targetId);
-    if (element) {
-      const elementPosition =
-        element.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({
-        top: elementPosition - navbarOffset,
-        behavior: "smooth",
-      });
-    }
-  };
 
   return (
     <div className="animate-fade-in">
-      <header>
-        {/* Fixed Top Navbar for Desktop */}
-        <nav className="hidden md:flex fixed top-0 left-0 right-0 z-50 items-center justify-between px-10 h-14 border-b border-border-strong backdrop-blur-3xl transition-all duration-300">
-          <div className="flex-1" />
-          <div className="flex gap-10 lg:gap-16 items-center">
-            <a
-              href="#"
-              onClick={(e) => handleSmoothScroll(e, "#home")}
-              className="nav-link-elegant text-md font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-300"
-            >
-              {t.nav.home[lang]}
-            </a>
-            <a
-              href="#portfolio"
-              onClick={(e) => handleSmoothScroll(e, "#portfolio")}
-              className="nav-link-elegant text-md font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-300"
-            >
-              {t.nav.projects[lang]}
-            </a>
-            <a
-              href="#how-it-works"
-              onClick={(e) => handleSmoothScroll(e, "#how-it-works")}
-              className="nav-link-elegant text-md font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-300"
-            >
-              {t.nav.howItWorks[lang]}
-            </a>
-            <a
-              href="#faq"
-              onClick={(e) => handleSmoothScroll(e, "#faq")}
-              className="nav-link-elegant text-md font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-300"
-            >
-              {t.nav.faq[lang]}
-            </a>
-            <a
-              href="#contact"
-              onClick={(e) => handleSmoothScroll(e, "#contact")}
-              className="nav-link-elegant text-md font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-300"
-            >
-              {t.nav.contact[lang]}
-            </a>
-          </div>
-          <div className="flex-1 flex justify-end">
-            <LanguageToggle />
-          </div>
-        </nav>
-
-        {/* Mobile Hamburger Menu */}
-        <nav
-          className={`
-          md:hidden
-          fixed top-0 left-0 right-0 z-50
-          transition-all duration-300 p-5
-          ${isMenuOpen ? "bg-transparent border-b border-transparent" : "border-b border-border-strong backdrop-blur-xl"}`}
-        >
-          <div className="flex justify-end items-center" dir="ltr">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="block"
-              aria-label={
-                isMenuOpen ? t.a11y.closeMenu[lang] : t.a11y.openMenu[lang]
-              }
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-menu"
-            >
-              <div className="w-7 flex flex-col gap-1.5">
-                <span
-                  className={`block h-0.5 bg-content-heading transition-transform duration-300 ${
-                    isMenuOpen ? "rotate-45 translate-y-[8px]" : ""
-                  }`}
-                />
-                <span
-                  className={`block h-0.5 bg-content-heading transition-all duration-300 ${
-                    isMenuOpen ? "opacity-0 scale-0" : ""
-                  }`}
-                />
-                <span
-                  className={`block h-0.5 bg-content-heading transition-transform duration-300 ${
-                    isMenuOpen ? "-rotate-45 -translate-y-[8px]" : ""
-                  }`}
-                />
-              </div>
-            </button>
-          </div>
-        </nav>
-
-        {/* Mobile Menu Overlay */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.nav
-              id="mobile-menu"
-              role="navigation"
-              aria-label={t.a11y.mobileNav[lang]}
-              onClick={() => setIsMenuOpen(false)}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.25 }}
-              className="md:hidden fixed inset-0 flex flex-col items-center justify-center gap-8 bg-background z-40"
-            >
-              <a
-                href="#home"
-                onClick={(e) => handleSmoothScroll(e, "#home")}
-                className="nav-link-elegant text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
-              >
-                {t.nav.home[lang]}
-              </a>
-              <a
-                href="#portfolio"
-                onClick={(e) => handleSmoothScroll(e, "#portfolio")}
-                className="nav-link-elegant text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
-              >
-                {t.nav.projects[lang]}
-              </a>
-              <a
-                href="#how-it-works"
-                onClick={(e) => handleSmoothScroll(e, "#how-it-works")}
-                className="nav-link-elegant text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
-              >
-                {t.nav.howItWorks[lang]}
-              </a>
-              <a
-                href="#faq"
-                onClick={(e) => handleSmoothScroll(e, "#faq")}
-                className="nav-link-elegant text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
-              >
-                {t.nav.faq[lang]}
-              </a>
-              <a
-                href="#contact"
-                onClick={(e) => handleSmoothScroll(e, "#contact")}
-                className="nav-link-elegant text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
-              >
-                {t.nav.contact[lang]}
-              </a>
-              <div onClick={(e) => e.stopPropagation()}>
-                <LanguageToggle />
-              </div>
-            </motion.nav>
-          )}
-        </AnimatePresence>
-      </header>
+      <HeroNav lang={lang} />
 
       <section
         id="home"
@@ -198,27 +17,27 @@ export default function HeroSection() {
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-glow" aria-hidden="true" />
 
-        <div className="relative z-10 flex flex-col items-center px-5">
-          <h1
-            className="font-bold text-center text-content-heading mb-3 md:mb-5"
-            style={{
-              fontSize: "clamp(2.25rem, 10vw, 6rem)",
-            }}
-          >
-            {t.hero.name[lang]}
+        <div id="hero-container" className="relative z-10 flex flex-col items-center">
+          <h1 className="font-bold text-center text-content-heading">
+            <span
+              className="block text-content-muted text-sm md:text-xl font-medium uppercase mb-2"
+            >
+              {t.hero.seoLabel[lang]}
+            </span>
+            <span
+              id="hero-hook"
+              className="block text-6xl md:text-9xl leading-tight mb-4 md:mb-12 px-6"
+            >
+              {t.hero.name[lang]}
+            </span>
           </h1>
-          <p
-            className="text-center text-content-body md:max-w-3xl mb-8 md:mb-10"
-            style={{ fontSize: "clamp(1.5rem, 4vw, 2.5rem)" }}
-          >
-            {t.hero.subtitle[lang]}
-          </p>
+    
           <div className="flex items-center gap-4 md:gap-5">
             <a
               href="https://wa.me/201211221277?text=Hello%20Samir%2C%20I%20would%20like%20to%20inquire%20about%20getting%20a%20professional%20website%20for%20my%20business."
               target="_blank"
               rel="noopener noreferrer"
-              className="whatsapp-float inline-flex items-center justify-center gap-2 md:px-6 md:py-3 bg-whatsapp hover:bg-whatsapp-hover text-content-heading hover:text-content-heading font-semibold text-base md:text-subheading rounded-full transition-colors duration-1000"
+              className="whatsapp-float inline-flex items-center justify-center gap-2 md:px-6 md:py-3 bg-[#25d366] hover:bg-[#25d365b1] text-[#FFFFFF] font-semibold text-base md:text-subheading rounded-full transition-colors duration-500"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -232,11 +51,11 @@ export default function HeroSection() {
             </a>
 
             <a
-              href="#portfolio"
-              onClick={(e) => handleSmoothScroll(e, "#portfolio")}
-              className="bg-white/95 hover:bg-white text-gray-900 font-semibold px-8 py-3 rounded-full transition-all duration-600 shadow-sm shadow-white/20 hover:shadow-md hover:shadow-white/30 text-xl md:text-2xl"
+              href="#contact"
+
+              className="bg-brand-accent hover:opacity-90 text-white font-semibold text-xl md:text-4xl px-6 py-3 md:px-12 md:py-6 rounded-full transition-all duration-300"
             >
-              {t.hero.secondaryCta[lang]}
+              {t.hero.primaryCta[lang]}
             </a>
           </div>
         </div>

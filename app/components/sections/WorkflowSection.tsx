@@ -1,11 +1,8 @@
-"use client";
-
-import { useLanguage } from "@/app/contexts/LanguageContext";
 import translations from "@/app/data/translations";
+import type { Lang } from "@/app/data/translations";
 import { Timeline } from "../ui/Timeline";
 
-export default function WorkflowSection() {
-  const { lang } = useLanguage();
+export default function WorkflowSection({ lang }: { lang: Lang }) {
   const t = translations.workflowSection;
 
   const data = [
@@ -44,14 +41,15 @@ export default function WorkflowSection() {
   ];
 
   return (
-    <section id="how-it-works" className="py-20 md:pt-28">
+    <section id="how-it-works" aria-labelledby="workflow-heading" className="py-20 md:pt-28">
       <div className="max-w-7xl mx-auto px-6 mb-4 md:mb-0">
         <h2
-          className="font-bold text-heading text-content-heading text-center mb-2"
+          id="workflow-heading"
+          className="font-bold text-heading text-center mb-2"
         >
           {t.heading[lang]}
         </h2>
-        <p className="text-content-body text-center text-base md:text-heading">
+        <p className="text-content-body text-center text-base md:text-subheading">
           {t.subtitle[lang]}
         </p>
       </div>

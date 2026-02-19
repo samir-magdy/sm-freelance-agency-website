@@ -13,12 +13,12 @@ const WINDOW_SECONDS = 180; // 3 minutes
 
 export async function POST(request: Request) {
   try {
-    const { name, phone, message } = await request.json();
+    const { name, phone, industry, onlinePresence, budget, message } = await request.json();
 
     // Basic validation
-    if (!name || !phone || !message) {
+    if (!name || !phone || !industry || !onlinePresence || !budget || !message) {
       return NextResponse.json(
-        { error: "Name, phone and message are required" },
+        { error: "All fields are required" },
         { status: 400 }
       );
     }
@@ -55,11 +55,14 @@ export async function POST(request: Request) {
       from: "Portfolio Contact Form <noreply@mail.samirmagdy.com>",
       to: process.env.CONTACT_EMAIL as string,
       subject: `New Contact Form Submission from ${name}`,
-      text: `
-                Name: ${name}
-                Phone: ${phone}
-                Message: ${message}
-            `,
+      text: [
+        `Customer Name: ${name}`,
+        `Cusomter Phone: ${phone}`,
+        industry       && `Customer Business: ${industry}`,
+        onlinePresence && `Has Website?: ${onlinePresence}`,
+        budget         && `Customer Budget: ${budget}`,
+        `Message: ${message}`,
+      ].filter(Boolean).join("\n"),
     });
 
     // Check if the email was actually sent

@@ -1,12 +1,9 @@
-"use client";
-
 import { projects, projectsStructuredData } from "@/app/data/projects";
-import ProjectCard from "../ui/ProjectCard";
-import { useLanguage } from "@/app/contexts/LanguageContext";
+import type { Lang } from "@/app/data/translations";
 import translations from "@/app/data/translations";
+import ProjectCard from "../ui/ProjectCard";
 
-export default function ProjectsSection() {
-  const { lang } = useLanguage();
+export default function ProjectsSection({ lang }: { lang: Lang }) {
   const t = translations;
 
   return (
@@ -24,19 +21,20 @@ export default function ProjectsSection() {
         <div className="mb-5 md:mb-0 px-4">
           <h2
             id="portfolio-heading"
-            className="font-bold text-heading text-content-heading text-center mb-2"
+            className="font-bold text-heading  text-center mb-2"
           >
             {t.projectsSection.heading[lang]}
           </h2>
-          <p className="text-content-body text-center text-base md:text-heading">
+          <p className="text-content-body text-center text-base md:text-subheading">
             {t.projectsSection.subtitle[lang]}
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto pt-4 md:pt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mx-auto pt-4 md:pt-20">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}
               project={project}
+              lang={lang}
             />
           ))}
         </div>
