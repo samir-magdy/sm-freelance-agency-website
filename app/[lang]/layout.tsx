@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import Footer from "../components/ui/Footer";
 import { ThemeProvider } from "../components/providers/ThemeProvider";
 import type { Lang } from "../data/translations";
+import translations from "../data/translations";
 
 const cairo = Cairo({
   variable: "--font-cairo",
@@ -20,22 +21,23 @@ const cairo = Cairo({
 
 const meta = {
   en: {
-    title: "Web Design Cairo | SM Web Studio — Websites Built For Growth",
+    title: "SM Web Studio | Web Design & Development in Cairo",
     description:
-      "Convert your visitors into clients with our premium websites. Landing page design, web development & UI/UX for small businesses in Cairo & MENA. Get a website built for growth.",
+      "Grow your business with Web Design in Cairo. Specialized in high-conversion Landing Pages and SEO for SMEs. Get a free quote today!",
     ogLocale: "en_US",
     altLocale: "ar_EG",
-    ogAlt: "SM Web Studio — Web Design & Development Cairo | Websites Built For Growth",
+    ogAlt:
+      "SM Web Studio — Web Design & Development Cairo | Your Partner in Success",
     siteName: "SM Web Studio",
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: "تصميم وتطوير مواقع في القاهرة | شريكك في النجاح",
+    title: "تصميم وتطوير مواقع في القاهرة | SM Web Studio",
     description:
-      "حوّل الزوار إلى عملاء. تصميم صفحات هبوط، تطوير مواقع، وتصميم واجهات احترافية لأصحاب الأعمال في القاهرة والشرق الأوسط.",
+      "أفضل شركة تصميم مواقع وصفحات هبوط في مصر. مواقعنا سريعة، متوافقة مع الموبايل، وبتظهر على جوجل. ابدأ مشروعك دلوقتي بأفضل سعر.",
     ogLocale: "ar_EG",
     altLocale: "en_US",
-    ogAlt: "SM Web Studio — تصميم مواقع في القاهرة | شريكك في النجاح",
+    ogAlt: "تصميم مواقع في القاهرة | SM Web Studio",
     siteName: "SM Web Studio",
     skipToContent: "تخطى إلى المحتوى",
   },
@@ -47,7 +49,7 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  const m = meta[lang as Lang] ?? meta.ar;
+  const m = meta[lang as Lang] ?? meta.en;
 
   return {
     metadataBase: new URL("https://samirmagdy.com"),
@@ -56,13 +58,13 @@ export async function generateMetadata({
     },
     title: m.title,
     description: m.description,
-    authors: { name: "Samir Magdy" },
+    authors: [{ name: "Samir Magdy", url: "https://samirmagdy.com" }],
     alternates: {
       canonical: `https://samirmagdy.com/${lang}`,
       languages: {
         en: "https://samirmagdy.com/en",
         ar: "https://samirmagdy.com/ar",
-        "x-default": "https://samirmagdy.com",
+        "x-default": "https://samirmagdy.com/en",
       },
     },
     openGraph: {
@@ -72,7 +74,7 @@ export async function generateMetadata({
       siteName: m.siteName,
       images: [
         {
-          url: "/open-graph.png",
+          url: "https://samirmagdy.com/open-graph.png",
           width: 1200,
           height: 630,
           alt: m.ogAlt,
@@ -86,7 +88,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: m.title,
       description: m.description,
-      images: ["/open-graph.png"],
+      images: ["https://samirmagdy.com/open-graph.png"],
     },
     robots: {
       index: true,
@@ -119,17 +121,29 @@ function buildSchemas(lang: Lang) {
     "@type": "ProfessionalService",
     "@id": "https://samirmagdy.com/#business",
     name: "SM Web Studio",
-    alternateName: "SM Web Studio",
+    alternateName: isAr ? "إس إم ويب ستوديو" : "SM Web Studio Egypt",
     description: isAr
-      ? "تصميم صفحات هبوط، تطوير مواقع، وتصميم واجهات احترافية لأصحاب الأعمال في القاهرة والشرق الأوسط."
-      : "Landing page design, web development, and UI/UX branding for small businesses in Cairo and the MENA region.",
+      ? "تصميم صفحات هبوط، تطوير مواقع، وتصميم واجهات احترافية لأصحاب الأعمال في القاهرة."
+      : "Landing page design, web development, and UI/UX branding for small businesses in Cairo.",
     url: "https://samirmagdy.com",
     telephone: "+201211221277",
     image: "https://samirmagdy.com/open-graph.png",
     logo: "https://samirmagdy.com/favicon.png",
     priceRange: "$$",
     currenciesAccepted: "EGP, USD",
-    paymentAccepted: "Bank Transfer, Online Payment",
+    paymentAccepted: "Bank Transfer, Online Payment, Cash",
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+      ],
+      opens: "09:00",
+      closes: "18:00",
+    },
     areaServed: [
       {
         "@type": "City",
@@ -160,7 +174,9 @@ function buildSchemas(lang: Lang) {
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: isAr ? "خدمات تصميم وتطوير المواقع" : "Web Design & Development Services",
+      name: isAr
+        ? "خدمات تصميم وتطوير المواقع"
+        : "Web Design & Development Services",
       itemListElement: [
         {
           "@type": "Offer",
@@ -177,22 +193,15 @@ function buildSchemas(lang: Lang) {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: isAr ? "تصميم وتطوير المواقع" : "Website Design & Development",
-            alternateName: isAr ? "Website Design & Development" : "تصميم وتطوير المواقع",
+            name: isAr
+              ? "تصميم وتطوير المواقع"
+              : "Website Design & Development",
+            alternateName: isAr
+              ? "Website Design & Development"
+              : "تصميم وتطوير المواقع",
             description: isAr
               ? "تصميم وتطوير مواقع متكاملة للشركات الصغيرة باستخدام أحدث التقنيات."
               : "Full website design and development for small businesses using modern technologies.",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: isAr ? "تصميم واجهات المستخدم والهوية البصرية" : "UI/UX Design & Branding",
-            alternateName: isAr ? "UI/UX Design & Branding" : "تصميم واجهات المستخدم والهوية البصرية",
-            description: isAr
-              ? "تصميم واجهات المستخدم وتحسين تجربة المستخدم والهوية البصرية."
-              : "User interface design, user experience optimization, and visual branding.",
           },
         },
       ],
@@ -214,7 +223,7 @@ function buildSchemas(lang: Lang) {
     "@type": "WebSite",
     "@id": "https://samirmagdy.com/#website",
     name: "SM Web Studio",
-    alternateName: "SM Web Studio",
+    alternateName: "SM Web Studio Egypt",
     url: "https://samirmagdy.com",
     inLanguage: ["en", "ar"],
     publisher: {
@@ -239,7 +248,22 @@ function buildSchemas(lang: Lang) {
     },
   };
 
-  return { businessSchema, websiteSchema, webPageSchema };
+  // 4. FAQPage schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `https://samirmagdy.com/${lang}#faqpage`,
+    mainEntity: translations.faqSection.items.map((item) => ({
+      "@type": "Question",
+      name: item.question[lang],
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer[lang],
+      },
+    })),
+  };
+
+  return { businessSchema, websiteSchema, webPageSchema, faqSchema };
 }
 
 export default async function LangLayout({
@@ -251,11 +275,16 @@ export default async function LangLayout({
 }) {
   const { lang: rawLang } = await params;
   const lang: Lang = rawLang === "en" || rawLang === "ar" ? rawLang : "ar";
-  const { businessSchema, websiteSchema, webPageSchema } = buildSchemas(lang);
+  const { businessSchema, websiteSchema, webPageSchema, faqSchema } =
+    buildSchemas(lang);
   const skipLabel = meta[lang].skipToContent;
 
   return (
-    <html lang={lang} dir={lang === "ar" ? "rtl" : "ltr"} suppressHydrationWarning>
+    <html
+      lang={lang}
+      dir={lang === "ar" ? "rtl" : "ltr"}
+      suppressHydrationWarning
+    >
       <head>
         {/* Prevent flash of wrong theme — runs before first paint */}
         <script
@@ -266,38 +295,44 @@ export default async function LangLayout({
       </head>
       <body className={`${cairo.variable} font-cairo antialiased`}>
         <ThemeProvider>
-        {/* ── Skip navigation ── */}
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-md focus:outline-2 focus:outline-offset-2 focus:outline-brand-accent"
-        >
-          {skipLabel}
-        </a>
+          {/* ── Skip navigation ── */}
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-md focus:outline-2 focus:outline-offset-2 focus:outline-brand-accent"
+          >
+            {skipLabel}
+          </a>
 
-        {/* ── Structured Data (JSON-LD) ── */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(businessSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(webPageSchema),
-          }}
-        />
+          {/* ── Structured Data (JSON-LD) ── */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(businessSchema),
+            }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(websiteSchema),
+            }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(webPageSchema),
+            }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(faqSchema),
+            }}
+          />
 
-        {/* ── App ── */}
-        <main id="main-content">{children}</main>
-        <Footer lang={lang} />
-        <Analytics />
+          {/* ── App ── */}
+          <main id="main-content">{children}</main>
+          <Footer lang={lang} />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

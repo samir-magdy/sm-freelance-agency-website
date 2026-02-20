@@ -15,9 +15,10 @@ export default function LanguageToggle({ lang }: { lang: Lang }) {
 
   return (
     <button
+      id="language-toggler"
       onClick={handleToggle}
       aria-label={`Switch to ${lang === "ar" ? "English" : "Arabic"}`}
-      className="min-w-[7rem] md:py-1 pt-1 pb-2 text-subheading md:text-base font-bold text-content-muted hover:text-content-heading transition-colors duration-300 text-center"
+      className="min-w-[4rem] text-subheading md:text-base font-bold text-content-muted hover:text-content-heading transition-colors duration-300 text-center"
     >
       {label}
     </button>

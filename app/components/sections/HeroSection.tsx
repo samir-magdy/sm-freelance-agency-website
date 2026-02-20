@@ -17,11 +17,12 @@ export default function HeroSection({ lang }: { lang: Lang }) {
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-glow" aria-hidden="true" />
 
-        <div id="hero-container" className="relative z-10 flex flex-col items-center">
+        <div
+          id="hero-container"
+          className="relative z-10 flex flex-col items-center"
+        >
           <h1 className="font-bold text-center text-content-heading">
-            <span
-              className="block text-content-muted text-sm md:text-xl font-medium uppercase mb-2"
-            >
+            <span className="block text-content-muted text-sm md:text-xl font-medium uppercase mb-2">
               {t.hero.seoLabel[lang]}
             </span>
             <span
@@ -31,12 +32,13 @@ export default function HeroSection({ lang }: { lang: Lang }) {
               {t.hero.name[lang]}
             </span>
           </h1>
-    
+
           <div className="flex items-center gap-4 md:gap-5">
             <a
               href="https://wa.me/201211221277?text=Hello%20Samir%2C%20I%20would%20like%20to%20inquire%20about%20getting%20a%20professional%20website%20for%20my%20business."
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={t.hero.cta[lang]}
               className="whatsapp-float inline-flex items-center justify-center gap-2 md:px-6 md:py-3 bg-[#25d366] hover:bg-[#25d365b1] text-[#FFFFFF] font-semibold text-base md:text-subheading rounded-full transition-colors duration-500"
             >
               <svg
@@ -52,8 +54,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
 
             <a
               href="#contact"
-
-              className="bg-brand-accent hover:opacity-90 text-white font-semibold text-xl md:text-4xl px-6 py-3 md:px-12 md:py-6 rounded-full transition-all duration-300"
+              className="bg-gradient-to-b from-blue-500 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200 font-semibold text-xl md:text-4xl px-7 py-3 md:px-12 md:py-6 rounded-full"
             >
               {t.hero.primaryCta[lang]}
             </a>

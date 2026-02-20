@@ -23,7 +23,7 @@ export const projects: readonly Project[] = [
     id: "skyway",
     title: "Sky Way Travel",
     description:
-      "Building this websi",
+      "A conversion-focused landing page for a travel agency. Designed to showcase tour packages, build trust, and drive direct bookings.",
     liveUrl: "https://www.skyway-travel.org",
     screenshot: skywayScnshot,
     ctaText: "Live Demo",

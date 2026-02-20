@@ -57,7 +57,7 @@ export async function POST(request: Request) {
       subject: `New Contact Form Submission from ${name}`,
       text: [
         `Customer Name: ${name}`,
-        `Cusomter Phone: ${phone}`,
+        `Customer Phone: ${phone}`,
         industry       && `Customer Business: ${industry}`,
         onlinePresence && `Has Website?: ${onlinePresence}`,
         budget         && `Customer Budget: ${budget}`,

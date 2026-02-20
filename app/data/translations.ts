@@ -4,16 +4,16 @@ const translations = {
   // Navigation
   nav: {
     home: { en: "Home", ar: "الرئيسية" },
-    howItWorks: { en: "Our Proccess", ar: "آلية العمل" },
+    howItWorks: { en: "Our Process", ar: "آلية العمل" },
     projects: { en: "Our Work", ar: "سابقة الأعمال" },
-    faq: { en: "FAQ", ar: " أسئلة شائعه" },
+    faq: { en: "FAQ", ar: "الأسئلة الشائعة" },
     contact: { en: "Contact Us", ar: "تواصل معنا" },
   },
 
   // Hero
   hero: {
     name: {
-      en: "Your Partner In Success.",
+      en: "Your Partner In Success",
       ar: "شريكك في النجاح",
     },
     cta: {
@@ -21,8 +21,8 @@ const translations = {
       ar: "تواصل",
     },
     primaryCta: {
-      en: "Free Consultation",
-      ar: "استشاره مجانيه",
+      en: "Get Free Consultation",
+      ar: "استشارة مجانية",
     },
     seoLabel: {
       en: "Web Design & Development in Cairo",
@@ -32,48 +32,51 @@ const translations = {
 
   // Projects section
   projectsSection: {
-    heading: { en: "Our Work", ar: "سابقة الأعمال" },
+    heading: {
+      en: "Our Work",
+      ar: "سابقة الأعمال",
+    },
     subtitle: {
-      en: "A selection of our latest projects.",
-      ar: "مجموعة من أحدث مشاريعنا.",
+      en: "A selection of our latest projects",
+      ar: "مجموعة من أحدث مشاريعنا",
     },
   },
 
-  // Our Procces section
+  // Our Process section
   workflowSection: {
-    heading: { en: "Our Proccess", ar: "آلية العمل" },
+    heading: { en: "Our Process", ar: "آلية العمل" },
     subtitle: {
-      en: "A structured process from start to finish.",
-      ar: "عملية واضحة ومنظمة من البداية للنهاية.",
+      en: "A structured process from start to finish",
+      ar: "عملية واضحة ومنظمة من البداية للنهاية",
     },
     steps: {
       // TO DO. STUDY AND PLAN BEFORE IMPLEMENTING! ==========================================================================================
       discovery: {
-        title: { en: "1. Communication", ar: "1. التنسيق" },
+        title: { en: "1. Discovery", ar: "1. التنسيق" },
         description: {
-          en: "he goal is to have a clear agreed upon plan that covers how I will handle your branding, what features to include, and price quote.",
-          ar: "بنتواصل من خلال مكالمة أو اجتماع لتحديد أهدافك. هدفنا هو وضع خطة واضحة وجدول زمني محدد لموقعك.",
+          en: "We connect to understand your business and goals. Then we define the plan, timeline, and pricing.",
+          ar: "نتواصل لفهم نشاطك وأهدافك، ثم نحدد الخطة، والجدول الزمني، والتكلفة.",
         },
       },
       design: {
-        title: { en: "2. Design", ar: "التصميم" },
+        title: { en: "2. Design", ar: "2. التصميم" },
         description: {
-          en: "however, from experience, we understand that some of our clients want to see the design themselves before the full implementaion. Therefore we do offer this step as an extra step for your convenience.",
-          ar: "بصمم واجهة مخصصة تعبر عن علامتك التجارية. بمجرد رضاك واعتمادك للتصميم، بنبدأ مرحلة التنفيذ بدفعة مقدمة 50%.",
+          en: "We create a visual direction and present it to you. Once approved, a 50% deposit begins development.",
+          ar: "نضع تصورًا بصريًا للموقع ونعرضه عليك. بعد الموافقة، يتم دفع 50٪ لبدء التطوير.",
         },
       },
       development: {
-        title: { en: "3. Development", ar: "التنفيذ" },
+        title: { en: "3. Development", ar: "3. التطوير" },
         description: {
-          en: "A 50% deposit of the full price initializes the development phase. Your vision is then brought to life.",
-          ar: "بنحول التصميم لموقع حقيقي، سريع، متوافق مع الموبايل، ومجهز لمحركات البحث (SEO).",
+          en: "We build a fast, clean, and user-friendly website optimized for search.",
+          ar: "نبني موقعًا سريعًا، أنيقًا، وسهل الاستخدام، ومهيأ لمحركات البحث.",
         },
       },
       launch: {
-        title: { en: "4. Handover", ar: "التسليم" },
+        title: { en: "4. Handover", ar: "4. التسليم" },
         description: {
-          en: "After final approval and settling the remaining 50%, your site goes live! I handover the product and provide ongoing support when needed.",
-          ar: "بعد الموافقة النهائية وتسوية الـ 50% المتبقية، موقعك بينطلق! بسلمك المنتج النهائي وبوفرلك دعم مستمر عند الحاجة.",
+          en: "After final approval and remaining payment, your website goes live.",
+          ar: "بعد الموافقة النهائية وسداد المبلغ المتبقي، يتم إطلاق موقعك.",
         },
       },
     },
@@ -81,71 +84,71 @@ const translations = {
 
   // FAQ section
   faqSection: {
-    heading: { en: "FAQ", ar: "أسئلة شائعة" },
+    heading: { en: "FAQ", ar: "الأسئلة الشائعة" },
     subtitle: {
-      en: "Answers to commonly asked questions.",
-      ar: "إجابات على الأسئلة الأكثر شيوعًا.",
+      en: "Answers to commonly asked questions",
+      ar: "إجابات على الأسئلة الأكثر شيوعًا",
     },
     // TO DO. STUDY AND PLAN BEFORE IMPLEMENTING! ==========================================================================================
     items: [
       {
         question: {
-          en: "How much does a website cost?",
-          ar: "كم يستغرق بناء الموقع؟",
+          en: "How much does it cost to make a website in Egypt now?",
+          ar: "بكام عمل موقع في مصر دلوقتي؟",
         },
         answer: {
-          en: "The short answer is, it depends. The full cost website can cost anywhere from 4000 EGP for a 4 section landing page to 30,000 EGP for a landing page with custom forms (lead collection), admin control panel and highly-optimized SEO.",
-          ar: "معظم صفحات الهبوط بتتسلم خلال أسبوع لأسبوعين. المشاريع الأكبر اللي فيها صفحات متعددة أو مميزات مخصصة ممكن تاخد من 3 لـ 4 أسابيع حسب التعقيد.",
+          en: "It depends on what you need. A landing page starts from around 4,000 EGP, while a full website with custom features, a contact form, and SEO optimization can go up to 30,000 EGP. We'll give you an exact quote after our first call — no hidden fees.",
+          ar: "بيعتمد على اللي محتاجه. صفحة الهبوط بتبدأ من حوالي 4,000 جنيه، والموقع الكامل بمميزات مخصصة وفورم تواصل وSEO ممكن يوصل لـ 30,000 جنيه. بنديك سعر محدد بعد أول مكالمة — من غير أي رسوم مخفية.",
         },
       },
       {
         question: {
-          en: "What do I need to provide to get started?",
-          ar: "إيه اللي محتاج أجهزه عشان نبدأ؟",
+          en: "What is the difference between a landing page and a full website for my company?",
+          ar: "إيه الفرق بين صفحة الهبوط والموقع الكامل لشركتي؟",
         },
         answer: {
-          en: "Just your brand details (logo, colors, content) and a clear idea of what you want to achieve. If you don't have these ready, I can help guide you through the process.",
-          ar: "بس تفاصيل البراند بتاعك (لوجو، ألوان، محتوى) وفكرة واضحة عن هدفك. لو مش جاهز بالحاجات دي، أقدر أساعدك خطوة بخطوة.",
+          en: "A landing page is a single page that introduces your business, shows what you offer, and gets customers to contact you — perfect if you're just starting out. A full website has multiple pages (like About, Services, Blog) and is better if your business has more to say or sell.",
+          ar: "صفحة الهبوط هي صفحة واحدة بتعرف بيزنسك، بتوضح خدماتك، وبتخلي العميل يتواصل معاك — مثالية لو بتبدأ. الموقع الكامل فيه صفحات متعددة زي (من أنا، الخدمات، المدونة) وبيكون أنسب لو بيزنسك عنده أكتر ما يقوله أو يبيعه.",
         },
       },
       {
         question: {
-          en: "Do you offer revisions?",
-          ar: "فيه تعديلات بعد التسليم؟",
+          en: "How long will the website take to appear on Google?",
+          ar: "الموقع هياخد وقت قد إيه عشان يظهر على جوجل؟",
         },
         answer: {
-          en: "Yes. During the design phase you get unlimited revisions until you are fully satisfied before development begins. After launch, I provide a support period for any necessary adjustments.",
-          ar: "أيوه. في مرحلة التصميم عندك تعديلات غير محدودة لحد ما تكون راضي تمامًا قبل ما نبدأ التنفيذ. وبعد الإطلاق، بوفرلك فترة دعم لأي تعديلات ضرورية.",
+          en: "Google usually discovers a new website within a few days to a few weeks. Showing up in search results for specific keywords takes longer — typically 1 to 3 months. We optimize your site from day one to make that happen as fast as possible.",
+          ar: "جوجل عادةً بيلاقي الموقع الجديد في خلال أيام لأسابيع. الظهور في نتائج البحث لكلمات معينة بياخد وقت أطول — من شهر لـ 3 شهور في الغالب. بنعمل تحسين الموقع من أول يوم عشان ده يحصل بأسرع ما يمكن.",
         },
       },
       {
         question: {
-          en: "Do you handle hosting and domain setup",
-          ar: "الموقع هيشتغل على الموبايل والتابلت؟",
+          en: "Will the site work well on Android mobiles?",
+          ar: "هل الموقع هيكون شغال كويس على الموبايلات الاندرويد؟",
         },
         answer: {
-          en: "Absolutely. Every website I build is fully responsive and tested across all screen sizes, ensuring a smooth experience on mobile, tablet, and desktop.",
-          ar: "طبعًا. كل موقع ببنيه بيكون متجاوب بالكامل ومختبر على جميع أحجام الشاشات، عشان يكون التجربة سلسة على الموبايل والتابلت والكمبيوتر.",
+          en: "Absolutely. Every website we build is tested across Android and iOS devices to make sure it looks great and loads fast on any screen size.",
+          ar: "أكيد. كل موقع بنبنيه بنجربه على أجهزة أندرويد وiOS عشان نتأكد إنه شايل كويس وبيفتح بسرعة على أي شاشة.",
         },
       },
       {
         question: {
-          en: "Do you handle hosting and domain setup?",
-          ar: "بتتكفل بالاستضافة وإعداد الدومين؟",
+          en: "Who will have the domain and files after the project is finished?",
+          ar: "مين اللي هيكون معاه الدومين والملفات بعد ما المشروع يخلص؟",
         },
         answer: {
-          en: "Yes. Infact, we don't even expect you to know what those terms mean. We take care of all the technical details for you and explain only what you need to know for your site to stay up and running at all times.",
-          ar: "أيوه. أقدر أساعدك تختار خطة الاستضافة المناسبة وأجهزلك الدومين الخاص بيك. هتكفل بكل الإعدادات التقنية عشان موقعك يكون شغال ومتاح من غير ما تشيل هم التفاصيل.",
+          en: "As you wish. You have full control over where your domain, hosting, and files are kept—whether you want us to manage them or prefer to hold them yourself.",
+          ar: "زي ما تحب. ليك حرية الاختيار الكاملة في مكان الدومين والاستضافة والملفات—سواء حابب إننا نديرهم أو تفضل إنهم يكونوا معاك.",
         },
       },
       {
         question: {
-          en: "Will my website be optimized for search engines?",
-          ar: "الموقع هيكون مجهز لمحركات البحث (SEO)؟",
+          en: "Is there technical support if a problem occurs on the site?",
+          ar: "هل فيه دعم فني لو حصلت مشكلة في الموقع؟",
         },
         answer: {
-          en: "Yes. Every site I build follows SEO best practices, however if you want aggressive SEO optimization this is considered an addon to the standard package.",
-          ar: "أيوه. كل موقع ببنيه بيتبع أفضل ممارسات الـ SEO زي سرعة التحميل وكود نظيف وعلامات meta صحيحة والتوافق مع الموبايل — وكل ده بيساعد موقعك يظهر أعلى في نتائج جوجل.",
+          en: "Yes. After handover we're still available if something comes up. For ongoing support and maintenance, we offer packages to keep your site running smoothly long-term.",
+          ar: "أيوه. بعد التسليم لو حصلت أي مشكلة بنكون موجودين. وعندنا باقات دعم وصيانة دورية لو حابب موقعك يفضل شغال بكفاءة على المدى البعيد.",
         },
       },
     ],
@@ -155,7 +158,7 @@ const translations = {
   contactSection: {
     heading: { en: "Get In Touch", ar: "تواصل معنا" },
     subtitle: {
-      en: "Request a free consultation by filling out the form below, and our team will get back to you shortly. You can also contact us instantly via WhatsApp.",
+      en: "Fill the form below for a free consultation, and our team will get back to you shortly. You can also contact us instantly via WhatsApp.",
       ar: "اطلب استشارة مجانية عبر تعبئة النموذج أدناه، وسيتواصل معك فريقنا في أقرب وقت. كما يمكنك التواصل معنا مباشرة عبر واتساب.",
     },
   },
@@ -180,10 +183,16 @@ const translations = {
     },
     industry: { en: "What's your business?", ar: "ما هو مجال عملك؟" },
     industryPlaceholder: { en: "Select your industry", ar: "اختر مجالك" },
-    onlinePresence: { en: "Do you currently have a website?", ar: "هل لديك موقع إلكتروني حالياً؟" },
+    onlinePresence: {
+      en: "Do you currently have a website?",
+      ar: "هل لديك موقع إلكتروني حالياً؟",
+    },
     hasWebsite: { en: "Yes", ar: "نعم" },
     noWebsite: { en: "No", ar: "لا" },
-    budget: { en: "What's your approximate budget?", ar: "ما هي ميزانيتك التقريبية؟" },
+    budget: {
+      en: "What's your approximate budget?",
+      ar: "ما هي ميزانيتك التقريبية؟",
+    },
     budgetPlaceholder: { en: "Select a range", ar: "اختر النطاق" },
   },
 
@@ -193,10 +202,6 @@ const translations = {
     closeMenu: { en: "Close menu", ar: "إغلاق القائمة" },
     mobileNav: { en: "Mobile navigation", ar: "قائمة الهاتف" },
     socialLinks: { en: "Social links", ar: "روابط التواصل" },
-    linkedIn: {
-      en: "LinkedIn (opens in new tab)",
-      ar: "لينكدإن (يفتح في تبويب جديد)",
-    },
     skipToContent: { en: "Skip to main content", ar: "تخطى إلى المحتوى" },
     contactForm: { en: "Contact form", ar: "نموذج التواصل" },
     screenshotOf: { en: "Screenshot of", ar: "لقطة شاشة لـ" },
@@ -241,7 +246,7 @@ const translations = {
 
   // Language toggle
   langToggle: {
-    en: "English",
+    en: "EN",
     ar: "عربي",
   },
 } as const;

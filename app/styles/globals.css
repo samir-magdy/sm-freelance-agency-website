@@ -63,7 +63,13 @@ html {
     font-family: var(--font-cairo), sans-serif;
   }
 }
-
+[dir="rtl"] #language-toggler{
+  letter-spacing: 0.25px !important;
+}
+/* arabic lang button padding */
+[dir="ltr"] #language-toggler{
+  padding-bottom: 0.5rem;
+}
 [dir="rtl"] *{
     letter-spacing: 0 !important;
 }

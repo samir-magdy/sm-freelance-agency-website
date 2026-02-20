@@ -34,7 +34,10 @@ export default function HeroNav({ lang }: { lang: Lang }) {
     if (element) {
       const elementPosition =
         element.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({ top: elementPosition - navbarOffset, behavior: "smooth" });
+      window.scrollTo({
+        top: elementPosition - navbarOffset,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -48,13 +51,28 @@ export default function HeroNav({ lang }: { lang: Lang }) {
           className="flex-1"
           aria-label="Samir Magdy - Home"
         >
-          <Image src="/logo-dark.svg"  alt="SM WEB STUDIO LOGO" width={200} height={0} priority className="hidden dark:block" />
-          <Image src="/logo-light.svg" alt="SM WEB STUDIO LOGO" width={200} height={0} priority className="block dark:hidden" />
+          <Image
+            src="/logo-dark.svg"
+            alt="SM WEB STUDIO LOGO"
+            width={200}
+            height={0}
+            priority
+            className="hidden dark:block"
+          />
+          <Image
+            src="/logo-light.svg"
+            alt="SM WEB STUDIO LOGO"
+            width={200}
+            height={0}
+            priority
+            className="block dark:hidden"
+          />
         </a>
         <ul className="flex gap-10 lg:gap-16 items-center">
           <li>
             <a
-              href="#"
+              href="#home"
+              onClick={(e) => handleSmoothScroll(e, "#home")}
               className="text-base font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-300"
             >
               {t.nav.home[lang]}
@@ -104,27 +122,45 @@ export default function HeroNav({ lang }: { lang: Lang }) {
         className={`
           md:hidden
           fixed top-0 left-0 right-0 z-50
-          transition-all duration-300 py-2 pl-0 pr-5
-          ${isMenuOpen ? "bg-transparent border-b border-transparent" : "border-b border-border-strong backdrop-blur-xl"}`}
+          transition-all duration-300 py-1.5 pl-1 pr-5
+          ${isMenuOpen ? "bg-transparent border-b border-transparent" : "border-b border-border-subtle backdrop-blur-xl"}`}
       >
         <div className="flex justify-between items-center" dir="ltr">
-          <a href="#home" onClick={(e) => handleSmoothScroll(e, "#home")} aria-label="Samir Magdy - Home">
-            <Image src="/logo-dark.svg"  alt="SM WEB STUDIO LOGO" width={150} height={0} priority className="hidden dark:block bg-transparent" />
-          <Image src="/logo-light.svg" alt="SM WEB STUDIO LOGO" width={150} height={0} priority className="block dark:hidden bg-transparent" />
+          <a
+            href="#home"
+            onClick={(e) => handleSmoothScroll(e, "#home")}
+            aria-label="Samir Magdy - Home"
+          >
+            <Image
+              src="/logo-dark.svg"
+              alt="SM WEB STUDIO LOGO"
+              width={130}
+              height={0}
+              priority
+              className="hidden dark:block bg-transparent"
+            />
+            <Image
+              src="/logo-light.svg"
+              alt="SM WEB STUDIO LOGO"
+              width={130}
+              height={0}
+              priority
+              className="block dark:hidden bg-transparent"
+            />
           </a>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="block px-4 py-2 -mr-4"
+            className="block px-4 py-2 -mr-5"
             aria-label={
               isMenuOpen ? t.a11y.closeMenu[lang] : t.a11y.openMenu[lang]
             }
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
           >
-            <div className="w-5 flex flex-col gap-1.5">
+            <div className="w-5 flex flex-col gap-1">
               <span
                 className={`block h-0.5 bg-content-heading transition-transform duration-300 ${
-                  isMenuOpen ? "rotate-45 translate-y-[8px]" : ""
+                  isMenuOpen ? "rotate-45 translate-y-[4px]" : ""
                 }`}
               />
               <span
@@ -155,11 +191,11 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             transition={{ duration: 0.25 }}
             className="md:hidden fixed inset-0 flex flex-col items-center justify-center gap-8 bg-background z-40"
           >
-            <ul className="flex flex-col items-center gap-8">
+            <ul className="flex flex-col items-center gap-6">
               <li>
                 <a
                   href="#home"
-                  className="text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
+                  className="font-semibold text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
                 >
                   {t.nav.home[lang]}
                 </a>
@@ -167,7 +203,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#portfolio"
-                  className="text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
+                  className="font-semibold text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
                 >
                   {t.nav.projects[lang]}
                 </a>
@@ -175,7 +211,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#how-it-works"
-                  className="text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
+                  className="font-semibold text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
                 >
                   {t.nav.howItWorks[lang]}
                 </a>
@@ -183,7 +219,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#faq"
-                  className="text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
+                  className="font-semibold text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
                 >
                   {t.nav.faq[lang]}
                 </a>
@@ -191,13 +227,16 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#contact"
-                  className="text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
+                  className="font-semibold text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
                 >
                   {t.nav.contact[lang]}
                 </a>
               </li>
             </ul>
-            <div onClick={(e) => e.stopPropagation()} className="flex flex-col items-center gap-4">
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-2"
+            >
               <LanguageToggle lang={lang} />
               <ThemeToggle />
             </div>

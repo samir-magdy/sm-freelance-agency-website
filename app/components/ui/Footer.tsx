@@ -4,7 +4,7 @@ import type { Lang } from "@/app/data/translations";
 export default function Footer({ lang }: { lang: Lang }) {
 
   return (
-    <footer id="contact-footer" className="pb-4 bg-background">
+    <footer id="contact-footer" className="bg-background">
       <p dir="ltr" className="text-content-muted text-caption md:text-base text-center">
         <span className="inline-flex items-center gap-2 font-medium">
           <svg
@@ -22,7 +22,7 @@ export default function Footer({ lang }: { lang: Lang }) {
               strokeLinecap="round"
             />
           </svg>
-          2026 | Samir Magdy | Web Design & Development
+          <small>2026 | Samir Magdy | Web Design & Development</small>
         </span>
       </p>
     </footer>
