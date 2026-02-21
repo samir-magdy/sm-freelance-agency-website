@@ -7,6 +7,7 @@ import translations from "@/app/data/translations";
 import type { Lang } from "@/app/data/translations";
 import LanguageToggle from "./LanguageToggle";
 import ThemeToggle from "./ThemeToggle";
+import SocialIcons from "./SocialIcons";
 
 export default function HeroNav({ lang }: { lang: Lang }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -111,7 +112,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             </a>
           </li>
         </ul>
-        <div className="flex-1 flex justify-end items-center">
+        <div className="flex-1 flex justify-end items-center gap-2">
           <ThemeToggle />
           <LanguageToggle lang={lang} />
         </div>
@@ -189,13 +190,22 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden fixed inset-0 flex flex-col items-center justify-center gap-8 bg-background z-40"
+            className="md:hidden fixed inset-0 flex flex-col items-center justify-center bg-background z-40"
           >
-            <ul className="flex flex-col items-center gap-6">
+
+              <div
+              onClick={(e) => e.stopPropagation()}
+              className="flex flex-col items-center absolute bottom-8 gap-2.5"
+            >
+              <LanguageToggle lang={lang} />
+              <ThemeToggle />
+            </div>
+            <ul className="flex flex-col items-center gap-6 mb-8">
+              
               <li>
                 <a
                   href="#home"
-                  className="font-semibold text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
+                  className="font-semibold text-content-body text-subheading tracking-wide"
                 >
                   {t.nav.home[lang]}
                 </a>
@@ -203,7 +213,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#portfolio"
-                  className="font-semibold text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
+                  className="font-semibold text-content-body text-subheading tracking-wide"
                 >
                   {t.nav.projects[lang]}
                 </a>
@@ -211,7 +221,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#how-it-works"
-                  className="font-semibold text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
+                  className="font-semibold text-content-body text-subheading tracking-wide"
                 >
                   {t.nav.howItWorks[lang]}
                 </a>
@@ -219,7 +229,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#faq"
-                  className="font-semibold text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
+                  className="font-semibold text-content-body text-subheading tracking-wide"
                 >
                   {t.nav.faq[lang]}
                 </a>
@@ -227,19 +237,14 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#contact"
-                  className="font-semibold text-content-body hover:text-content-heading text-subheading tracking-wide transition-colors duration-300 focus:outline-2 focus:outline-offset-4 focus:outline-brand-accent rounded-sm"
+                  className="font-semibold text-content-body text-subheading tracking-wide"
                 >
                   {t.nav.contact[lang]}
                 </a>
               </li>
             </ul>
-            <div
-              onClick={(e) => e.stopPropagation()}
-              className="flex items-center gap-2"
-            >
-              <LanguageToggle lang={lang} />
-              <ThemeToggle />
-            </div>
+          
+              <SocialIcons />
           </motion.nav>
         )}
       </AnimatePresence>

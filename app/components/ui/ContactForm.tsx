@@ -19,10 +19,10 @@ const INDUSTRY_OPTIONS = [
 ];
 
 const BUDGET_OPTIONS = [
-  { value: "under-5k",  en: "Under 5,000 EGP",        ar: "أقل من 5,000 جنيه" },
-  { value: "5k-10k",    en: "5,000 – 10,000 EGP",     ar: "5,000 – 10,000 جنيه" },
-  { value: "10k-15k",   en: "10,000 – 15,000 EGP",    ar: "10,000 – 15,000 جنيه" },
-  { value: "Above 15k",   en: "Above 15,000 EGP",    ar: "15,000 اكثر من" },
+  { value: "under-5k",  en: "Under 5,000 EGP",        ar: "أقل من 5,000 ج.م" },
+  { value: "5k-10k",    en: "5,000 – 10,000 EGP",     ar: "5,000 – 10,000 ج.م" },
+  { value: "10k-15k",   en: "10,000 – 15,000 EGP",    ar: "10,000 – 15,000 ج.م" },
+  { value: "above-15k", en: "Above 15,000 EGP",       ar: "أكثر من 15,000 ج.م" },
   { value: "not-sure",  en: "Not sure yet",            ar: "لست متأكداً بعد" },
 ];
 

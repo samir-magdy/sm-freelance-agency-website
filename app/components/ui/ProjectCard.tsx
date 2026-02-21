@@ -9,7 +9,10 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, lang }: ProjectCardProps) {
-  const pd = translations.projectData[project.id as keyof typeof translations.projectData];
+  const pd =
+    translations.projectData[
+      project.id as keyof typeof translations.projectData
+    ];
   const t = translations;
 
   const title = pd?.title[lang] ?? project.title;
@@ -19,23 +22,21 @@ export default function ProjectCard({ project, lang }: ProjectCardProps) {
   return (
     <article className="bg-surface-card w-full rounded-xl overflow-hidden border border-border-strong shadow-lg flex flex-col">
       <figure className="flex flex-col h-full">
-        <div className="overflow-hidden">
-          <Image
-            src={project.screenshot}
-            alt={`${t.a11y.screenshotOf[lang]} ${title}`}
-            className="w-full"
-          />
-        </div>
-
+        <Image
+          src={project.screenshot}
+          alt={`${t.a11y.screenshotOf[lang]} ${title}`}
+          className="w-full"
+        />
         <div className="p-4 flex flex-col flex-1">
-          <h3 className="text-subheading font-bold text-content-heading tracking-wide mb-4">
-            {title}
-          </h3>
+          <figcaption>
+            <h3 className="text-subheading font-bold text-content-heading tracking-wide mb-4">
+              {title}
+            </h3>
 
-          <p className="text-content-body text-base tracking-wide mb-4">
-            {description}
-          </p>
-
+            <p className="text-content-body text-base tracking-wide mb-4">
+              {description}
+            </p>
+          </figcaption>
           <div className="mt-auto">
             <a
               href={project.liveUrl}

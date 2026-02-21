@@ -35,7 +35,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
 
           <div className="flex items-center gap-4 md:gap-5">
             <a
-              href="https://wa.me/201211221277?text=Hello%20Samir%2C%20I%20would%20like%20to%20inquire%20about%20getting%20a%20professional%20website%20for%20my%20business."
+              href="https://wa.me/201274613331"
               target="_blank"
               rel="noopener noreferrer"
               aria-label={t.hero.cta[lang]}

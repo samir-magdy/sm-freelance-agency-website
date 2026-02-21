@@ -23,7 +23,7 @@ const meta = {
   en: {
     title: "SM Web Studio | Web Design & Development in Cairo",
     description:
-      "Grow your business with Web Design in Cairo. Specialized in high-conversion Landing Pages and SEO for SMEs. Get a free quote today!",
+      "Grow your business with expert Web Design in Cairo. Specialized in Landing Pages, Websites and SEO. Get a free quote today!",
     ogLocale: "en_US",
     altLocale: "ar_EG",
     ogAlt:
@@ -34,7 +34,7 @@ const meta = {
   ar: {
     title: "تصميم وتطوير مواقع في القاهرة | SM Web Studio",
     description:
-      "أفضل شركة تصميم مواقع وصفحات هبوط في مصر. مواقعنا سريعة، متوافقة مع الموبايل، وبتظهر على جوجل. ابدأ مشروعك دلوقتي بأفضل سعر.",
+      "أفضل شركة تصميم مواقع وصفحات هبوط في مصر. مواقعنا سريعة، جذابة، وبتظهر على نتائج بحث جوجل. ابدأ مشروعك دلوقتي بأفضل سعر.",
     ogLocale: "ar_EG",
     altLocale: "en_US",
     ogAlt: "تصميم مواقع في القاهرة | SM Web Studio",
@@ -126,7 +126,7 @@ function buildSchemas(lang: Lang) {
       ? "تصميم صفحات هبوط، تطوير مواقع، وتصميم واجهات احترافية لأصحاب الأعمال في القاهرة."
       : "Landing page design, web development, and UI/UX branding for small businesses in Cairo.",
     url: "https://samirmagdy.com",
-    telephone: "+201211221277",
+    telephone: "+201274613331",
     image: "https://samirmagdy.com/open-graph.png",
     logo: "https://samirmagdy.com/favicon.png",
     priceRange: "$$",
@@ -206,7 +206,11 @@ function buildSchemas(lang: Lang) {
         },
       ],
     },
-    sameAs: ["https://www.linkedin.com/in/samirmagdy93"],
+    sameAs: [
+      "https://www.linkedin.com/in/samirmagdy93",
+      "https://www.facebook.com/profile.php?id=61588574217412",
+      "https://www.instagram.com/sm_webstudio/",
+    ],
     founder: {
       "@type": "Person",
       name: "Samir Magdy",
@@ -331,7 +335,7 @@ export default async function LangLayout({
 
           {/* ── App ── */}
           <main id="main-content">{children}</main>
-          <Footer lang={lang} />
+          <Footer />
           <Analytics />
         </ThemeProvider>
       </body>

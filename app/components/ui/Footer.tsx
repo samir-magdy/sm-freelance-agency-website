@@ -1,10 +1,12 @@
-import translations from "@/app/data/translations";
-import type { Lang } from "@/app/data/translations";
+import SocialIcons from "./SocialIcons";
 
-export default function Footer({ lang }: { lang: Lang }) {
+export default function Footer() {
 
   return (
-    <footer id="contact-footer" className="bg-background">
+    <footer id="contact-footer" className="bg-background flex flex-col items-center gap-2">
+      <div className="hidden md:flex">
+        <SocialIcons />
+      </div>
       <p dir="ltr" className="text-content-muted text-caption md:text-base text-center">
         <span className="inline-flex items-center gap-2 font-medium">
           <svg
