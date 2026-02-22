@@ -195,7 +195,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
 
               <div
               onClick={(e) => e.stopPropagation()}
-              className="flex flex-col items-center absolute bottom-8 gap-2.5"
+              className="flex flex-col items-center absolute bottom-10 gap-4"
             >
               <LanguageToggle lang={lang} />
               <ThemeToggle />
@@ -205,7 +205,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#home"
-                  className="font-semibold text-content-body text-subheading tracking-wide"
+                  className="font-semibold text-content-body text-heading tracking-wide"
                 >
                   {t.nav.home[lang]}
                 </a>
@@ -213,7 +213,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#portfolio"
-                  className="font-semibold text-content-body text-subheading tracking-wide"
+                  className="font-semibold text-content-body text-heading tracking-wide"
                 >
                   {t.nav.projects[lang]}
                 </a>
@@ -221,7 +221,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#how-it-works"
-                  className="font-semibold text-content-body text-subheading tracking-wide"
+                  className="font-semibold text-content-body text-heading tracking-wide"
                 >
                   {t.nav.howItWorks[lang]}
                 </a>
@@ -229,7 +229,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#faq"
-                  className="font-semibold text-content-body text-subheading tracking-wide"
+                  className="font-semibold text-content-body text-heading tracking-wide"
                 >
                   {t.nav.faq[lang]}
                 </a>
@@ -237,7 +237,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#contact"
-                  className="font-semibold text-content-body text-subheading tracking-wide"
+                  className="font-semibold text-content-body text-heading tracking-wide"
                 >
                   {t.nav.contact[lang]}
                 </a>
