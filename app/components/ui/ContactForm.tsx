@@ -76,7 +76,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
     }
   };
 
-  const selectBaseClass = "text-base w-full h-14 px-4 rounded-lg border border-border-strong bg-surface-low focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors appearance-none cursor-pointer";
+  const selectBaseClass = "text-base w-full h-14 px-4 rounded-lg border border-gray-600/50 bg-surface-low focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors appearance-none cursor-pointer";
   const selectClass = (value: string) => `${selectBaseClass} ${value ? "text-content-heading" : "text-content-muted"}`;
   const labelClass = "block text-caption font-bold text-content-muted mb-2 ms-1";
 
@@ -103,7 +103,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
               required
               aria-required="true"
               placeholder={t.form.namePlaceholder[lang]}
-              className="text-base w-full h-14 px-4 rounded-lg border border-border-strong bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors"
+              className="dark:placeholder:text-content-muted placeholder:text-gray-600 text-base w-full h-14 px-4 rounded-lg border border-gray-600/50 bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors"
               value={formData.name}
               onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
             />
@@ -124,7 +124,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
               placeholder={t.form.phonePlaceholder[lang]}
               pattern="^01[0125]\d{8}$"
               title="Egyptian mobile number: 11 digits starting with 010, 011, 012, or 015"
-              className={`text-base w-full h-14 px-4 rounded-lg border border-border-strong bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors ${lang === "ar" ? "text-right" : "text-left"}`}
+              className={`dark:placeholder:text-content-muted placeholder:text-gray-600 text-base w-full h-14 px-4 rounded-lg border border-gray-600/50 bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors ${lang === "ar" ? "text-right" : "text-left"}`}
               value={formData.phone}
               onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
             />
@@ -198,7 +198,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
                   className={`flex-1 flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-colors text-base focus-within:ring-2 focus-within:ring-brand-accent focus-within:ring-offset-1 ${
                     formData.onlinePresence === value
                       ? "border-brand-accent bg-brand-accent/10 text-content-heading"
-                      : "border-border-strong bg-surface-low text-content-muted"
+                      : "border-gray-600/50 bg-surface-low text-content-muted"
                   }`}
                 >
                   <input
@@ -212,7 +212,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
                     className="sr-only"
                   />
                   <span className={`flex-shrink-0 w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors ${
-                    formData.onlinePresence === value ? "border-brand-accent" : "border-border-strong"
+                    formData.onlinePresence === value ? "border-brand-accent" : "border-gray-600/50"
                   }`}>
                     {formData.onlinePresence === value && (
                       <span className="w-2 h-2 rounded-full bg-brand-accent" />
@@ -237,7 +237,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
               aria-required="true"
               rows={3}
               placeholder={t.form.messagePlaceholder[lang]}
-              className="text-base w-full px-4 py-2 rounded-lg border border-border-strong bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors"
+              className="dark:placeholder:text-content-muted placeholder:text-gray-600 text-base w-full px-4 py-2 rounded-lg border border-gray-600/50 bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors"
               value={formData.message}
               onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
               onKeyDown={(e) => {

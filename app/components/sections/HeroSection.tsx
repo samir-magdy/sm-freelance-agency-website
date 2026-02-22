@@ -19,7 +19,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
 
         <div
           id="hero-container"
-          className="relative z-10 flex flex-col items-center -mt-12 md:mt-0"
+          className="relative z-10 flex flex-col items-center -mt-12 md:mt-16"
         >
           <h1 className="font-bold text-center text-content-heading">
             <span className="block text-content-muted text-sm md:text-xl font-medium uppercase mb-2">
@@ -27,7 +27,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
             </span>
             <span
               id="hero-hook"
-              className="block text-6xl md:text-9xl leading-tight mb-4 md:mb-12 px-6"
+              className="block text-6xl md:text-9xl leading-tight mb-6 md:mb-12 px-6"
             >
               {t.hero.name[lang]}
             </span>
@@ -54,7 +54,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
 
             <a
               href="#contact"
-              className="bg-gradient-to-b from-blue-500 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200 font-semibold text-xl md:text-4xl px-7 py-3 md:px-12 md:py-6 rounded-full"
+              className="bg-gradient-to-b from-blue-500 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-2xl transition duration-300 font-semibold text-xl md:text-4xl px-7 py-3 md:px-12 md:py-6 rounded-full"
             >
               {t.hero.primaryCta[lang]}
             </a>

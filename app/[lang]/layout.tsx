@@ -16,8 +16,8 @@ const cairo = Cairo({
 // SEO METADATA
 // ─────────────────────────────────────────────
 // Primary target keywords:
-//   EN: "web design cairo", "landing page design egypt", "web developer cairo"
-//   AR: "تصميم مواقع في القاهرة", "تصميم صفحات هبوط", "مطور مواقع القاهرة"
+//   EN: "best web design company cairo", "landing page design egypt", "web design cairo"
+//   AR: "أفضل شركة تصميم مواقع في القاهرة", "تصميم صفحات هبوط", "شركة تصميم مواقع القاهرة"
 
 const meta = {
   en: {
@@ -32,12 +32,12 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: "تصميم وتطوير مواقع في القاهرة | SM Web Studio",
+    title: "أفضل شركة تصميم مواقع في القاهرة | SM Web Studio",
     description:
-      "أفضل شركة تصميم مواقع وصفحات هبوط في مصر. مواقعنا سريعة، جذابة، وبتظهر على نتائج بحث جوجل. ابدأ مشروعك دلوقتي بأفضل سعر.",
+      "أفضل شركة تصميم مواقع في القاهرة. متخصصون في صفحات الهبوط والمواقع الاحترافية والسيو. ابدأ مشروعك دلوقتي بأفضل سعر.",
     ogLocale: "ar_EG",
     altLocale: "en_US",
-    ogAlt: "تصميم مواقع في القاهرة | SM Web Studio",
+    ogAlt: "أفضل شركة تصميم مواقع في القاهرة | SM Web Studio",
     siteName: "SM Web Studio",
     skipToContent: "تخطى إلى المحتوى",
   },
@@ -128,44 +128,31 @@ function buildSchemas(lang: Lang) {
     name: "SM Web Studio",
     alternateName: isAr ? "إس إم ويب ستوديو" : "SM Web Studio Egypt",
     description: isAr
-      ? "تصميم صفحات هبوط، تطوير مواقع، وتصميم واجهات احترافية لأصحاب الأعمال في القاهرة."
-      : "Landing page design, web development, and UI/UX branding for small businesses in Cairo.",
+      ? "أفضل شركة تصميم مواقع في القاهرة. متخصصون في صفحات الهبوط وتطوير المواقع الاحترافية وزيادة المبيعات عبر البرمجة الحديثة."
+      : "Expert Web Design & Landing Pages in Cairo. We build high-converting websites for businesses in Egypt using modern tech.",
     url: "https://samirmagdy.com",
     telephone: "+201274613331",
     image: "https://samirmagdy.com/open-graph.png",
     logo: "https://samirmagdy.com/favicon.png",
     priceRange: "$$",
-    currenciesAccepted: "EGP, USD",
-    paymentAccepted: "Bank Transfer, Online Payment, Cash",
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
-      opens: "09:00",
-      closes: "18:00",
+
+    // 1. THE MISSING ANCHOR: This links you to Cairo without a street address
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Cairo",
+      addressRegion: "Cairo Governorate",
+      addressCountry: "EG",
     },
+
+    // 2. THE LOCAL DOMINANCE: Listing specific neighborhoods targets high-intent searches
     areaServed: [
-      {
-        "@type": "City",
-        name: "Cairo",
-        containedInPlace: {
-          "@type": "Country",
-          name: "Egypt",
-        },
-      },
-      {
-        "@type": "GeoCircle",
-        geoMidpoint: {
-          "@type": "GeoCoordinates",
-          latitude: 30.0444,
-          longitude: 31.2357,
-        },
-        geoRadius: "50000",
-      },
-      {
-        "@type": "AdministrativeArea",
-        name: "MENA Region",
-      },
+      { "@type": "City", name: "Cairo" },
+      { "@type": "City", name: "New Cairo" }, // التجمع الخامس
+      { "@type": "City", name: "Maadi" }, // المعادي
+      { "@type": "City", name: "Sheikh Zayed" }, // الشيخ زايد
+      { "@type": "City", name: "Giza" },
     ],
+
     geo: {
       "@type": "GeoCoordinates",
       latitude: 30.0444,
@@ -174,7 +161,7 @@ function buildSchemas(lang: Lang) {
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: isAr
-        ? "خدمات تصميم وتطوير المواقع"
+        ? "خدمات أفضل شركة تصميم مواقع في القاهرة"
         : "Web Design & Development Services",
       itemListElement: [
         {
@@ -206,7 +193,6 @@ function buildSchemas(lang: Lang) {
       ],
     },
     sameAs: [
-      "https://www.linkedin.com/in/samirmagdy93",
       "https://www.facebook.com/profile.php?id=61588574217412",
       "https://www.instagram.com/sm_webstudio/",
     ],

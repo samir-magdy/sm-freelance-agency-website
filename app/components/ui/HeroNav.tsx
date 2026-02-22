@@ -45,7 +45,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
   return (
     <header>
       {/* Fixed Top Navbar for Desktop */}
-      <nav className="hidden md:flex fixed top-0 left-0 right-0 z-50 items-center justify-between px-4 h-14 border-b border-border-strong backdrop-blur-3xl transition-all duration-300">
+      <nav className="dark:shadow-sky-100/5 shadow-lg hidden md:flex fixed top-0 left-0 right-0 z-50 items-center justify-between px-4 h-14 border-b border-border-strong bg-background transition-all duration-300">
         <a
           href="#home"
           onClick={(e) => handleSmoothScroll(e, "#home")}
@@ -124,7 +124,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
           md:hidden
           fixed top-0 left-0 right-0 z-50
           transition-all duration-300 py-1.5 pl-1 pr-5
-          ${isMenuOpen ? "bg-transparent border-b border-transparent" : "border-b border-border-subtle backdrop-blur-xl"}`}
+          ${isMenuOpen ? "bg-transparent border-b border-transparent" : "border-b border-border-subtle bg-background dark:bg-background/70 dark:backdrop-blur-md shadow-lg"}`}
       >
         <div className="flex justify-between items-center" dir="ltr">
           <a

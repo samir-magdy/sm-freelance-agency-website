@@ -24,7 +24,7 @@ export default function ContactSection({ lang }: { lang: Lang }) {
           </p>
         </div>
 
-        <div className=" md:pt-12">
+        <div className="md:pt-12">
           <ContactForm lang={lang} />
         </div>
       </div>

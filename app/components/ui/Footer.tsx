@@ -10,7 +10,7 @@ export default function Footer() {
       <p dir="ltr" className="text-content-muted text-caption md:text-base text-center">
         <span className="inline-flex items-center gap-2 font-medium">
           <svg
-            className="w-4 h-4"
+            className="w-4 h-4 pt-0.5"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
@@ -24,7 +24,7 @@ export default function Footer() {
               strokeLinecap="round"
             />
           </svg>
-          <small>2026 | Samir Magdy | Web Design & Development</small>
+          <small>2026 | SM Web Studio</small>
         </span>
       </p>
     </footer>

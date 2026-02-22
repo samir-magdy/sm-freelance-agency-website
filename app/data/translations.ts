@@ -21,12 +21,12 @@ const translations = {
       ar: "تواصل",
     },
     primaryCta: {
-      en: "Get Free Consultation",
+      en: "Free Consultation",
       ar: "استشارة مجانية",
     },
     seoLabel: {
       en: "Web Design & Development in Cairo",
-      ar: "تصميم وتطوير مواقع في القاهرة",
+      ar: "أفضل شركة تصميم مواقع في القاهرة",
     },
   },
 
@@ -97,7 +97,7 @@ const translations = {
           ar: "بكام عمل موقع في مصر دلوقتي؟",
         },
         answer: {
-          en: "It depends on what you need. A landing page starts from around 4,000 EGP, while a full website with custom features, a contact form, and SEO optimization can go up to 30,000 EGP. We'll give you an exact quote after our first call — no hidden fees.",
+          en: "It depends on what you need. A landing page starts from around 4,000 EGP, while a full website with custom features, a contact form, and SEO optimization can go up to 30,000 EGP. We'll give you an exact quote after our first call.",
           ar: "بيعتمد على اللي محتاجه. صفحة الهبوط بتبدأ من حوالي 4,000 جنيه، والموقع الكامل بمميزات مخصصة وفورم تواصل وSEO ممكن يوصل لـ 30,000 جنيه. بنديك سعر محدد بعد أول مكالمة — من غير أي رسوم مخفية.",
         },
       },
@@ -128,7 +128,7 @@ const translations = {
         },
         answer: {
           en: "Absolutely. Every website we build is tested across Android and iOS devices to make sure it looks great and loads fast on any screen size.",
-          ar: "أكيد. كل موقع بنبنيه بنجربه على أجهزة أندرويد وiOS عشان نتأكد إنه شايل كويس وبيفتح بسرعة على أي شاشة.",
+          ar: "أكيد. كل موقع بنبنيه بنجربه على أجهزة أندرويد وiOS عشان نتأكد إنه شكله كويس وبيفتح بسرعة على أي شاشة.",
         },
       },
       {
@@ -147,8 +147,8 @@ const translations = {
           ar: "هل فيه دعم فني لو حصلت مشكلة في الموقع؟",
         },
         answer: {
-          en: "Yes. After handover we're still available if something comes up. For ongoing support and maintenance, we offer packages to keep your site running smoothly long-term.",
-          ar: "أيوه. بعد التسليم لو حصلت أي مشكلة بنكون موجودين. وعندنا باقات دعم وصيانة دورية لو حابب موقعك يفضل شغال بكفاءة على المدى البعيد.",
+          en: "Yes. After handover we're still available if a problem occurs. We also offer 2 minor modifications a month for free.",
+          ar: "أيوه. بعد التسليم لو حصلت أي مشكلة بنكون موجودين، وبنقدم كمان تعديلين بسيطين كل شهر مجاناً.",
         },
       },
     ],
@@ -158,8 +158,8 @@ const translations = {
   contactSection: {
     heading: { en: "Get In Touch", ar: "تواصل معنا" },
     subtitle: {
-      en: "Fill the form below for a free consultation, and our team will get back to you shortly. You can also contact us instantly via WhatsApp.",
-      ar: "اطلب استشارة مجانية عبر تعبئة النموذج أدناه، وسيتواصل معك فريقنا في أقرب وقت. كما يمكنك التواصل معنا مباشرة عبر واتساب.",
+      en: "Fill in the form below for a free consultation. You can also contact us directly via WhatsApp.",
+      ar: "اطلب استشارة مجانية عبر تعبئة النموذج. كما يمكنك التواصل معنا مباشرة عبر واتساب.",
     },
   },
 
@@ -215,7 +215,7 @@ const translations = {
         ar: "شركه سكاى واى ترافل",
       },
       description: {
-        en: "A conversion-focused landing page for a travel agency. Designed to showcase tour packages, build trust, and drive direct bookings.",
+        en: "A landing page for a Sky Way travel, a Cairo based travel agency. Designed to showcase tour packages, build trust, and drive direct bookings.",
         ar: "صفحة هبوط لشركة سياحة مصممة لعرض عروض الرحلات وبناء الثقة وتحويل الزوار لحجوزات مباشرة.",
       },
       cta: { en: "Live Demo", ar: "عرض مباشر" },
