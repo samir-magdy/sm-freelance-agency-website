@@ -17,14 +17,18 @@ export function proxy(request: NextRequest) {
   }
 
   // Already at a valid lang route — pass through
-  if (VALID_LANGS.some((lang) => pathname === `/${lang}` || pathname.startsWith(`/${lang}/`))) {
+  if (
+    VALID_LANGS.some(
+      (lang) => pathname === `/${lang}` || pathname.startsWith(`/${lang}/`),
+    )
+  ) {
     return NextResponse.next();
   }
 
   // Everything else (including /) → redirect to /en (default language)
   const url = request.nextUrl.clone();
   url.pathname = `/en`;
-  return NextResponse.redirect(url);
+  return NextResponse.rewrite(url);
 }
 
 export const config = {
