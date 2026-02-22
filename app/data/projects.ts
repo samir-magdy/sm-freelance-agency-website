@@ -1,7 +1,7 @@
 import type { StaticImageData } from "next/image";
 import skywayScnshot from "../../public/project-screenshots/travel-agency.png";
-import weddingsScnshot from "../../public/project-screenshots/wedding-planner.png";
-import gymScnshot from "../../public/project-screenshots/gym.png";
+import weddingsScnshot from "../../public/project-screenshots/wedding.webp";
+import gymScnshot from "../../public/project-screenshots/gym.webp";
 
 
 export interface ProjectSchema {
