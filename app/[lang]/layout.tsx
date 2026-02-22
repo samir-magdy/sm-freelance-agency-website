@@ -60,11 +60,16 @@ export async function generateMetadata({
     description: m.description,
     authors: [{ name: "Samir Magdy", url: "https://samirmagdy.com" }],
     alternates: {
-      canonical: `https://samirmagdy.com/${lang}`,
+      // If the language is 'en', the canonical should be the root URL
+      canonical:
+        lang === "en"
+          ? "https://samirmagdy.com"
+          : `https://samirmagdy.com/${lang}`,
       languages: {
         en: "https://samirmagdy.com/en",
         ar: "https://samirmagdy.com/ar",
-        "x-default": "https://samirmagdy.com/en",
+        // This tells Google: "If you don't know which language to show, show the root"
+        "x-default": "https://samirmagdy.com",
       },
     },
     openGraph: {
@@ -134,13 +139,7 @@ function buildSchemas(lang: Lang) {
     paymentAccepted: "Bank Transfer, Online Payment, Cash",
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-      ],
+      dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
       opens: "09:00",
       closes: "18:00",
     },

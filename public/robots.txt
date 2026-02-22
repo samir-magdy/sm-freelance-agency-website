@@ -1,6 +1,4 @@
 User-agent: *
-Allow: /
-Allow: /_next/static/
-Disallow: /_next/
 Disallow: /api/
+
 Sitemap: https://samirmagdy.com/sitemap.xml
