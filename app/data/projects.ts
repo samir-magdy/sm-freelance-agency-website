@@ -20,22 +20,10 @@ export interface Project {
 
 export const projects: readonly Project[] = [
   {
-    id: "skyway",
-    title: "Sky Way Travel",
-    description:
-      "A conversion-focused landing page for a travel agency. Designed to showcase tour packages, build trust, and drive direct bookings.",
-    liveUrl: "https://www.skyway-travel.org",
-    screenshot: skywayScnshot,
-    ctaText: "Live Demo",
-    schema: {
-      applicationCategory: "Travel Agency Website",
-    },
-  },
-  {
     id: "weddings",
     title: "Weddings Landing Page",
     description:
-      "If you are a wedding planner, photographer or makeup artist, this website is perfect for you. Showcase your work, build trust and convert customers now!",
+    "If you are a wedding planner, photographer or makeup artist, this website is perfect for you. Showcase your work, build trust and convert customers now!",
     liveUrl: "https://weddings.samirmagdy.com/",
     screenshot: weddingsScnshot,
     ctaText: "Live Demo",
@@ -47,14 +35,26 @@ export const projects: readonly Project[] = [
     id: "gym",
     title: "Gym Landing Page",
     description:
-      "A landing page for a fitness center. Designed to present membership plans, highlight facilities, and drive sign-ups.",
+    "A landing page for a fitness center. Designed to present membership plans, highlight facilities, and drive sign-ups.",
     liveUrl: "https://gyms.samirmagdy.com",
     screenshot: gymScnshot,
     ctaText: "Live Demo",
     schema: {
       applicationCategory: "Fitness Website",
     },
-  }
+  },
+  {
+    id: "skyway",
+    title: "Sky Way Travel",
+    description:
+      "A conversion-focused landing page for a travel agency. Designed to showcase tour packages, build trust, and drive direct bookings.",
+    liveUrl: "https://www.skyway-travel.org",
+    screenshot: skywayScnshot,
+    ctaText: "Live Demo",
+    schema: {
+      applicationCategory: "Travel Agency Website",
+    },
+  },
 ];
 
 export const projectsStructuredData = {

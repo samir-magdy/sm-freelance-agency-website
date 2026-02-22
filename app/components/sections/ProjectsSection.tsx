@@ -29,7 +29,7 @@ export default function ProjectsSection({ lang }: { lang: Lang }) {
             {t.projectsSection.subtitle[lang]}
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mx-auto pt-4 md:pt-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto pt-4 md:pt-20">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}
