@@ -19,7 +19,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
 
         <div
           id="hero-container"
-          className="relative z-10 flex flex-col items-center"
+          className="relative z-10 flex flex-col items-center -mt-12 md:mt-0"
         >
           <h1 className="font-bold text-center text-content-heading">
             <span className="block text-content-muted text-sm md:text-xl font-medium uppercase mb-2">
