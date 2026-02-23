@@ -18,14 +18,6 @@ const INDUSTRY_OPTIONS = [
   { value: "other",       en: "Other",                     ar: "أخرى" },
 ];
 
-const BUDGET_OPTIONS = [
-  { value: "under-5k",  en: "Under 5,000 EGP",        ar: "أقل من 5,000 ج.م" },
-  { value: "5k-10k",    en: "5,000 – 10,000 EGP",     ar: "5,000 – 10,000 ج.م" },
-  { value: "10k-15k",   en: "10,000 – 15,000 EGP",    ar: "10,000 – 15,000 ج.م" },
-  { value: "above-15k", en: "Above 15,000 EGP",       ar: "أكثر من 15,000 ج.م" },
-  { value: "not-sure",  en: "Not sure yet",            ar: "لست متأكداً بعد" },
-];
-
 const ChevronDown = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <path d="M6 9l6 6 6-6" />
@@ -156,34 +148,10 @@ export default function ContactForm({ lang }: { lang: Lang }) {
             </div>
           </div>
 
-          {/* Budget */}
-          <div>
-            <label htmlFor="budget" className={labelClass}>
-              {t.form.budget[lang]}{" "}
-              <span className="text-warning opacity-90" aria-label="required">*</span>
-            </label>
-            <div className="relative">
-              <select
-                id="budget"
-                required
-                aria-required="true"
-                className={selectClass(formData.budget)}
-                value={formData.budget}
-                onChange={(e) => setFormData((prev) => ({ ...prev, budget: e.target.value }))}
-              >
-                <option value="">{t.form.budgetPlaceholder[lang]}</option>
-                {BUDGET_OPTIONS.map((opt) => (
-                  <option key={opt.value} value={opt.value}>{opt[lang]}</option>
-                ))}
-              </select>
-              <div className="pointer-events-none absolute inset-y-0 end-4 flex items-center text-content-muted">
-                <ChevronDown />
-              </div>
-            </div>
-          </div>
+         
 
           {/* Online Presence — full width, radio options side-by-side on desktop */}
-          <div className="md:col-span-2">
+          <div className="md:grid-cols-2">
             <p id="online-presence-label" className={labelClass}>
               {t.form.onlinePresence[lang]}{" "}
               <span className="text-warning opacity-90" aria-label="required">*</span>

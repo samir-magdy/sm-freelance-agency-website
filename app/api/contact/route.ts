@@ -13,10 +13,10 @@ const WINDOW_SECONDS = 180; // 3 minutes
 
 export async function POST(request: Request) {
   try {
-    const { name, phone, industry, onlinePresence, budget, message } = await request.json();
+    const { name, phone, industry, onlinePresence, message } = await request.json();
 
     // Basic validation
-    if (!name || !phone || !industry || !onlinePresence || !budget || !message) {
+    if (!name || !phone || !industry || !onlinePresence || !message) {
       return NextResponse.json(
         { error: "All fields are required" },
         { status: 400 }
@@ -60,7 +60,6 @@ export async function POST(request: Request) {
         `Customer Phone: ${phone}`,
         industry       && `Customer Business: ${industry}`,
         onlinePresence && `Has Website?: ${onlinePresence}`,
-        budget         && `Customer Budget: ${budget}`,
         `Message: ${message}`,
       ].filter(Boolean).join("\n"),
     });
