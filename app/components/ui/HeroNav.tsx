@@ -45,7 +45,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
   return (
     <header>
       {/* Fixed Top Navbar for Desktop */}
-      <nav className="dark:shadow-sky-100/5 shadow-lg hidden md:flex fixed top-0 left-0 right-0 z-50 items-center justify-between px-4 h-14 border-b border-border-strong bg-background transition-all duration-300">
+      <nav className="dark:shadow-sky-100/5 shadow-lg hidden md:flex fixed top-0 left-0 right-0 z-50 items-center justify-between px-4 ps-3 h-14 border-b border-border-strong bg-background transition-all duration-300">
         <a
           href="#home"
           onClick={(e) => handleSmoothScroll(e, "#home")}
@@ -53,17 +53,17 @@ export default function HeroNav({ lang }: { lang: Lang }) {
           aria-label="Samir Magdy - Home"
         >
           <Image
-            src="/logo-dark.svg"
+            src="/logo-dark.png"
             alt="SM WEB STUDIO LOGO"
-            width={200}
+            width={180}
             height={0}
             priority
             className="hidden dark:block"
           />
           <Image
-            src="/logo-light.svg"
+            src="/logo-light.png"
             alt="SM WEB STUDIO LOGO"
-            width={200}
+            width={180}
             height={0}
             priority
             className="block dark:hidden"
@@ -133,17 +133,17 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             aria-label="Samir Magdy - Home"
           >
             <Image
-              src="/logo-dark.svg"
+              src="/logo-dark.png"
               alt="SM WEB STUDIO LOGO"
-              width={130}
+              width={110}
               height={0}
               priority
               className="hidden dark:block bg-transparent"
             />
             <Image
-              src="/logo-light.svg"
+              src="/logo-light.png"
               alt="SM WEB STUDIO LOGO"
-              width={130}
+              width={110}
               height={0}
               priority
               className="block dark:hidden bg-transparent"
@@ -151,14 +151,14 @@ export default function HeroNav({ lang }: { lang: Lang }) {
           </a>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="block px-4 py-2 -mr-5"
+            className="block px-4 py-2.5 -mr-5"
             aria-label={
               isMenuOpen ? t.a11y.closeMenu[lang] : t.a11y.openMenu[lang]
             }
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
           >
-            <div className="w-5 flex flex-col gap-1">
+            <div className="w-4 flex flex-col gap-0.5">
               <span
                 className={`block h-0.5 bg-content-heading transition-transform duration-300 ${
                   isMenuOpen ? "rotate-45 translate-y-[4px]" : ""
@@ -171,7 +171,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               />
               <span
                 className={`block h-0.5 bg-content-heading transition-transform duration-300 ${
-                  isMenuOpen ? "-rotate-45 -translate-y-[8px]" : ""
+                  isMenuOpen ? "-rotate-45 -translate-y-[4px]" : ""
                 }`}
               />
             </div>

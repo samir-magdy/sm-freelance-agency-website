@@ -24,7 +24,7 @@ export default function Footer() {
               strokeLinecap="round"
             />
           </svg>
-          <small>2026 | SM Web Studio</small>
+          <small>2026 SM Web Studio | By Samir Magdy</small>
         </span>
       </p>
     </footer>

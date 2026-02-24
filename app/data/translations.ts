@@ -158,7 +158,7 @@ const translations = {
   contactSection: {
     heading: { en: "Get In Touch", ar: "تواصل معنا" },
     subtitle: {
-      en: "Fill in the form below for a free consultation. You can also contact us directly via WhatsApp.",
+      en: "Fill in the form for a free consultation. You can also contact us directly via WhatsApp.",
       ar: "اطلب استشارة مجانية عبر تعبئة النموذج. كما يمكنك التواصل معنا مباشرة عبر واتساب.",
     },
   },

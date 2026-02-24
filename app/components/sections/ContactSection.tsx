@@ -9,9 +9,9 @@ export default function ContactSection({ lang }: { lang: Lang }) {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="pt-20 pb-16 md:pb-24"
+      className="pt-20 pb-16 md:pb-36"
     >
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-4xl mx-auto px-4">
         <div className="mb-5 md:mb-0">
           <h2
             id="contact-heading"
