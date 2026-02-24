@@ -54,7 +54,8 @@ export async function generateMetadata({
   return {
     metadataBase: new URL("https://samirmagdy.com"),
     icons: {
-      icon: "/favicon.svg",
+      icon: [{ url: "/favicon.png", sizes: "48x48", type: "image/png" }],
+      apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
     },
     title: m.title,
     description: m.description,
@@ -133,7 +134,7 @@ function buildSchemas(lang: Lang) {
     url: "https://samirmagdy.com",
     telephone: "+201274613331",
     image: "https://samirmagdy.com/open-graph.png",
-    logo: "https://samirmagdy.com/favicon.png",
+    logo: "https://samirmagdy.com/logo.png",
     priceRange: "$$",
 
     // 1. THE MISSING ANCHOR: This links you to Cairo without a street address
