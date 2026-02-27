@@ -22,9 +22,14 @@ export default {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        "scroll-hint": {
+          "0%, 100%": { transform: "translateY(0px)", opacity: "0.35" },
+          "50%": { transform: "translateY(9px)", opacity: "0.8" },
+        },
       },
       animation: {
         "fade-in": "fade-in 1s ease-out",
+        "scroll-hint": "scroll-hint 2s ease-in-out infinite",
       },
       fontSize: {
         // Hero — 1.75rem (28px) mobile → 3.5rem desktop

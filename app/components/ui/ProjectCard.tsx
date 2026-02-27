@@ -26,10 +26,12 @@ export default function ProjectCard({ project, lang }: ProjectCardProps) {
           src={project.screenshot}
           alt={`${t.a11y.screenshotOf[lang]} ${title}`}
           className="w-full"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          placeholder="blur"
         />
         <div className="p-4 flex flex-col flex-1">
           <figcaption>
-            <h3 className="text-subheading font-bold text-content-heading tracking-wide mb-4">
+            <h3 className="text-subheading font-bold text-content-heading tracking-wide mb-2">
               {title}
             </h3>
 

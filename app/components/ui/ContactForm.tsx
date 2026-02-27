@@ -32,7 +32,6 @@ export default function ContactForm({ lang }: { lang: Lang }) {
     phone: "",
     industry: "",
     onlinePresence: "",
-    budget: "",
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -57,7 +56,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
       }
 
       setStatus("success");
-      setFormData({ name: "", phone: "", industry: "", onlinePresence: "", budget: "", message: "" });
+      setFormData({ name: "", phone: "", industry: "", onlinePresence: "", message: "" });
 
       setTimeout(() => { setStatus("idle"); }, 5000);
     } catch (error) {
@@ -199,13 +198,12 @@ export default function ContactForm({ lang }: { lang: Lang }) {
               <span className="text-warning opacity-90" aria-label="required">*</span>
             </label>
             <textarea
-            style={{resize: "none"}}
               id="message"
               required
               aria-required="true"
               rows={3}
               placeholder={t.form.messagePlaceholder[lang]}
-              className="dark:placeholder:text-content-muted placeholder:text-gray-600 text-base w-full px-4 py-2 rounded-lg border border-gray-600/50 bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors"
+              className="resize-none dark:placeholder:text-content-muted placeholder:text-gray-600 text-base w-full px-4 py-2 rounded-lg border border-gray-600/50 bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors"
               value={formData.message}
               onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
               onKeyDown={(e) => {

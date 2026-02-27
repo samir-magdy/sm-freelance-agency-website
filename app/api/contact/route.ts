@@ -40,7 +40,6 @@ export async function POST(request: Request) {
 
     // Check if the submission count exceeds the limit
     if (count > MAX_SUBMISSIONS) {
-      console.warn(`Rate limit exceeded for identifier: ${userIdentifier}`);
       return NextResponse.json(
         {
           error: `Please wait a few minutes before sending another message.`,

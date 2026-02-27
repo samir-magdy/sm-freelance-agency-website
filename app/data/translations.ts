@@ -4,16 +4,16 @@ const translations = {
   // Navigation
   nav: {
     home: { en: "Home", ar: "الرئيسية" },
-    howItWorks: { en: "Our Process", ar: "آلية العمل" },
-    projects: { en: "Our Work", ar: "سابقة الأعمال" },
+    howItWorks: { en: "Process", ar: "آلية العمل" },
+    projects: { en: "Portfolio", ar: "سابقة الأعمال" },
     faq: { en: "FAQ", ar: "الأسئلة الشائعة" },
-    contact: { en: "Contact Us", ar: "تواصل معنا" },
+    contact: { en: "Contact", ar: "تواصل معنا" },
   },
 
   // Hero
   hero: {
     name: {
-      en: "Your Partner In Success",
+      en: "Your Partner in Success",
       ar: "شريكك في النجاح",
     },
     cta: {
@@ -21,8 +21,8 @@ const translations = {
       ar: "تواصل",
     },
     primaryCta: {
-      en: "Free Consultation",
-      ar: "استشارة مجانية",
+      en: "Book a Free Consultation",
+      ar: "احصل على استشارة مجانية",
     },
     seoLabel: {
       en: "Web Design & Development in Cairo",

@@ -10,7 +10,9 @@ import translations from "../data/translations";
 const cairo = Cairo({
   variable: "--font-cairo",
   subsets: ["arabic", "latin"],
+  display: "swap",
 });
+
 
 // ─────────────────────────────────────────────
 // SEO METADATA

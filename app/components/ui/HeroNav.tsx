@@ -45,7 +45,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
   return (
     <header>
       {/* Fixed Top Navbar for Desktop */}
-      <nav className="dark:shadow-sky-100/5 shadow-lg hidden md:flex fixed top-0 left-0 right-0 z-50 items-center justify-between px-4 ps-3 h-14 border-b border-border-strong bg-background transition-all duration-300">
+      <nav className="dark:shadow-sky-100/5 shadow-lg hidden md:flex fixed top-0 left-0 right-0 z-50 items-center justify-between px-4 ps-3 h-14 border-b border-border-strong bg-background">
         <a
           href="#home"
           onClick={(e) => handleSmoothScroll(e, "#home")}
@@ -56,17 +56,17 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             src="/logo-dark.png"
             alt="SM WEB STUDIO LOGO"
             width={180}
-            height={0}
+            height={39}
             priority
-            className="hidden dark:block"
+            className="hidden dark:block h-auto"
           />
           <Image
             src="/logo-light.png"
             alt="SM WEB STUDIO LOGO"
             width={180}
-            height={0}
+            height={39}
             priority
-            className="block dark:hidden"
+            className="block dark:hidden h-auto"
           />
         </a>
         <ul className="flex gap-10 lg:gap-16 items-center">
@@ -123,7 +123,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
         className={`
           md:hidden
           fixed top-0 left-0 right-0 z-50
-          transition-all duration-300 py-1.5 pl-1 pr-5
+          transition-[border-color,box-shadow] duration-300 py-1 pl-1 pr-5
           ${isMenuOpen ? "bg-transparent border-b border-transparent" : "border-b border-border-subtle bg-background dark:bg-background/70 dark:backdrop-blur-md shadow-lg"}`}
       >
         <div className="flex justify-between items-center" dir="ltr">
@@ -136,17 +136,17 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               src="/logo-dark.png"
               alt="SM WEB STUDIO LOGO"
               width={110}
-              height={0}
+              height={24}
               priority
-              className="hidden dark:block bg-transparent"
+              className="hidden dark:block bg-transparent h-auto"
             />
             <Image
               src="/logo-light.png"
               alt="SM WEB STUDIO LOGO"
               width={110}
-              height={0}
+              height={24}
               priority
-              className="block dark:hidden bg-transparent"
+              className="block dark:hidden bg-transparent h-auto"
             />
           </a>
           <button
@@ -158,7 +158,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
           >
-            <div className="w-4 flex flex-col gap-0.5">
+            <div className="w-5 flex flex-col gap-0.5">
               <span
                 className={`block h-0.5 bg-content-heading transition-transform duration-300 ${
                   isMenuOpen ? "rotate-45 translate-y-[4px]" : ""

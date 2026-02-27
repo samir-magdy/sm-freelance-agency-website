@@ -22,12 +22,12 @@ export default function HeroSection({ lang }: { lang: Lang }) {
           className="relative z-10 flex flex-col items-center -mt-12 md:mt-16"
         >
           <h1 className="font-bold text-center text-content-heading">
-            <span className="block text-content-muted text-sm md:text-xl font-medium uppercase mb-2">
+            <span className="block text-content-muted text-xs md:text-lg font-medium uppercase mb-4 md:mb-6">
               {t.hero.seoLabel[lang]}
             </span>
             <span
               id="hero-hook"
-              className="block text-6xl md:text-9xl leading-tight mb-6 md:mb-12 px-6"
+              className="block text-[4rem] md:text-9xl leading-tight mb-8 md:mb-12 px-6"
             >
               {t.hero.name[lang]}
             </span>
@@ -60,6 +60,17 @@ export default function HeroSection({ lang }: { lang: Lang }) {
             </a>
           </div>
         </div>
+
+        {/* Scroll indicator */}
+        <a
+          href="#portfolio"
+          aria-label="Scroll down"
+          className="absolute bottom-36 md:bottom-10 inset-x-0 mx-auto w-fit text-content-muted/40 hover:text-content-muted transition-colors duration-500 animate-scroll-hint"
+        >
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+            <path d="M1 1l7 7 7-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </a>
       </section>
     </div>
   );

@@ -1,6 +1,6 @@
 import type { StaticImageData } from "next/image";
-import skywayScnshot from "../../public/project-screenshots/travel-agency.png";
-import weddingsScnshot from "../../public/project-screenshots/wedding.webp";
+import skywayScnshot from "../../public/project-screenshots/skyway.webp";
+import weddingsScnshot from "../../public/project-screenshots/weddings.webp";
 import gymScnshot from "../../public/project-screenshots/gym.webp";
 
 
