@@ -39,7 +39,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={t.hero.cta[lang]}
-              className="rtl:pb-4 whatsapp-float inline-flex items-center justify-center gap-2 md:px-6 md:py-3 bg-[#25d366] hover:bg-[#25d365b1] text-[#FFFFFF] font-semibold text-base md:text-subheading rounded-full transition-colors duration-500"
+              className="md:rtl:pb-4 whatsapp-float inline-flex items-center justify-center gap-2 md:px-6 md:py-3 bg-[#25d366] hover:bg-[#25d365b1] text-[#FFFFFF] font-semibold text-base md:text-subheading rounded-full transition-colors duration-500"
             >
               <svg
                 viewBox="0 0 24 24"
