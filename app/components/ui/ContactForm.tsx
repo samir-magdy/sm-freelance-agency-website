@@ -49,10 +49,10 @@ export default function ContactForm({ lang }: { lang: Lang }) {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || "Failed to send message");
+        throw new Error(response.status === 429 ? "rate_limit" : "server_error");
       }
 
       setStatus("success");
@@ -60,7 +60,8 @@ export default function ContactForm({ lang }: { lang: Lang }) {
 
       setTimeout(() => { setStatus("idle"); }, 5000);
     } catch (error) {
-      const errorMsg = error instanceof Error ? error.message : "Failed to send message";
+      const code = error instanceof Error ? error.message : "server_error";
+      const errorMsg = code === "rate_limit" ? t.form.errorRateLimit[lang] : t.form.errorGeneric[lang];
       setStatus("error");
       setErrorMessage(errorMsg);
       setTimeout(() => { setStatus("idle"); setErrorMessage(""); }, 5000);
@@ -248,21 +249,23 @@ export default function ContactForm({ lang }: { lang: Lang }) {
         )}
       </AnimatePresence>
 
-      {status === "error" && (
-        <motion.div
-          role="alert"
-          aria-live="assertive"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.5 }}
-          className="mt-5 md:absolute md:-bottom-20 md:left-0 md:right-0 md:mt-0 mx-auto py-4 rounded-lg border border-danger/30 bg-danger/20 backdrop-blur-sm w-full px-1"
-        >
-          <p className="text-danger text-center font-medium md:font-bold">
-            {errorMessage}
-          </p>
-        </motion.div>
-      )}
+      <AnimatePresence>
+        {status === "error" && (
+          <motion.div
+            role="alert"
+            aria-live="assertive"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="mt-5 md:absolute md:-bottom-20 md:left-0 md:right-0 md:mt-0 mx-auto py-4 rounded-lg border border-danger/30 bg-danger/20 backdrop-blur-sm w-full px-1"
+          >
+            <p className="text-danger text-center font-medium md:font-bold">
+              {errorMessage}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </form>
   );
 }

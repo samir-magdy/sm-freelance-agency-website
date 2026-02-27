@@ -35,7 +35,7 @@ export const projects: readonly Project[] = [
     id: "gym",
     title: "Gym Landing Page",
     description:
-    "A landing page for a fitness center. Designed to present membership plans, highlight facilities, and drive sign-ups.",
+    "A landing page for a fitness center. Designed to  membership plans, highlight facilities, and drive sign-ups. Get your website now!",
     liveUrl: "https://gyms.samirmagdy.com",
     screenshot: gymScnshot,
     ctaText: "Live Demo",

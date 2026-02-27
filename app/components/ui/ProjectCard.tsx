@@ -35,7 +35,7 @@ export default function ProjectCard({ project, lang }: ProjectCardProps) {
               {title}
             </h3>
 
-            <p className="text-content-body text-base tracking-wide mb-4">
+            <p className="text-content-body text-base tracking-wide mb-4 leading-normal">
               {description}
             </p>
           </figcaption>

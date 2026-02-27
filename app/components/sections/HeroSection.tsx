@@ -22,12 +22,12 @@ export default function HeroSection({ lang }: { lang: Lang }) {
           className="relative z-10 flex flex-col items-center -mt-12 md:mt-16"
         >
           <h1 className="font-bold text-center text-content-heading">
-            <span className="block text-content-muted text-xs md:text-lg font-medium uppercase mb-4 md:mb-6">
+            <span className="block text-content-muted text-xs md:text-lg font-medium uppercase mb-4">
               {t.hero.seoLabel[lang]}
             </span>
             <span
               id="hero-hook"
-              className="block text-[4rem] md:text-9xl leading-tight mb-8 md:mb-12 px-6"
+              className="block text-[4rem] md:text-8xl leading-none mb-8 md:mb-12 px-6"
             >
               {t.hero.name[lang]}
             </span>
@@ -39,7 +39,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={t.hero.cta[lang]}
-              className="whatsapp-float inline-flex items-center justify-center gap-2 md:px-6 md:py-3 bg-[#25d366] hover:bg-[#25d365b1] text-[#FFFFFF] font-semibold text-base md:text-subheading rounded-full transition-colors duration-500"
+              className="rtl:pb-4 whatsapp-float inline-flex items-center justify-center gap-2 md:px-6 md:py-3 bg-[#25d366] hover:bg-[#25d365b1] text-[#FFFFFF] font-semibold text-base md:text-subheading rounded-full transition-colors duration-500"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -54,7 +54,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
 
             <a
               href="#contact"
-              className="bg-gradient-to-b from-blue-500 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-2xl transition duration-300 font-semibold text-xl md:text-4xl px-7 py-3 md:px-12 md:py-6 rounded-full"
+              className="bg-gradient-to-b from-blue-500 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-2xl transition duration-300 font-semibold text-md md:text-3xl px-7 py-3 md:px-12 md:py-6 rounded-full"
             >
               {t.hero.primaryCta[lang]}
             </a>
