@@ -186,8 +186,8 @@ const translations = {
     phonePlaceholder: { en: "01XXXXXXXXX", ar: "01XXXXXXXXX" },
     message: { en: "Message", ar: "الرسالة" },
     messagePlaceholder: {
-      en: "Describe your website project or any inquiries...",
-      ar: "اكتب تفاصيل مشروع تصميم موقعك أو صف استفسارك...",
+      en: "Describe your website project or inquiries...",
+      ar: "اكتب تفاصيل مشروع تصميم موقعك أو استفسارك...",
     },
     submit: { en: "Submit Form", ar: "إرسال" },
     sending: { en: "Sending...", ar: "جاري الإرسال..." },
@@ -233,7 +233,7 @@ const translations = {
       },
       description: {
         en: "An elegant, user-friendly website for a Sky Way travel, a Cairo based travel agency. Designed to showcase their tour packages, build trust & drive more bookings.",
-        ar: "تصميم موقع إلكتروني احترافي لشركة سياحة في القاهرة، مخصص لعرض عروض الرحلات وبرامج السفر بشكل منظم وجذاب. الموقع يساعد شركة سكاي واي ترافل على زيادة الحجوزات، وبناء الثقة مع العملاء، وتحسين الظهور في نتائج البحث في جوجل.",
+        ar: "موقع إلكتروني احترافي لشركة سياحة في القاهرة، مخصص لعرض عروض الرحلات وبرامج السفر بشكل منظم وجذاب. الموقع يساعد الشركة على زيادة الحجوزات، بناء الثقة مع العملاء، وتحسين الظهور في نتائج البحث في جوجل.",
       },
       cta: {
         en: "Live Demo",
@@ -243,12 +243,12 @@ const translations = {
 
     weddings: {
       title: {
-        en: "Weddings Website",
-        ar: "تصميم موقع خدمات أفراح في القاهرة",
+        en: "Wedding Services Website",
+        ar: "تصميم موقع خدمات أفراح",
       },
       description: {
-        en: "A website designed for wedding service providers, photographers & makeup artists. Showcases portfolios, highlight testimonials & convert visitors into clients.",
-        ar: "تصميم موقع احترافي لشركات وخدمات الأفراح في القاهرة، مثل مصوري الزفاف وخبراء التجميل. يركز الموقع على عرض الأعمال السابقة، تقييمات العملاء، وزيادة طلبات الحجز من خلال تحسين الظهور في نتائج البحث وجذب عملاء جدد.",
+        en: "A website designed for wedding service providers, photographers & makeup artists. Showcase portfolios, highlight testimonials & convert visitors into clients.",
+        ar: "تصميم لموقع احترافي لشركات وخدمات الأفراح، مثل مصوري الزفاف، منظمين الافراح وخبراء التجميل. يركز الموقع على عرض الأعمال السابقة، تقييمات العملاء، وزيادة طلبات الحجز من خلال تحسين الظهور في نتائج البحث وجذب عملاء جدد.",
       },
       cta: {
         en: "Live Demo",
@@ -259,11 +259,11 @@ const translations = {
     gym: {
       title: {
         en: "Gym Landing Page",
-        ar: "تصميم صفحة هبوط لجيم في القاهرة",
+        ar: "تصميم صفحة هبوط لجيم",
       },
       description: {
-        en: "A modern landing page for a fitness center. Designed to present membership plans, highlight facilities, inspire visitors in order to increase memberships.",
-        ar: "تصميم صفحة هبوط احترافية لجيم في القاهرة، مخصصة لعرض أسعار وخطط الاشتراك، وإبراز الأجهزة والخدمات داخل النادي. الصفحة مصممة لزيادة عدد المشتركين وتحسين الظهور في نتائج البحث المحلية في جوجل.",
+        en: "A modern landing page for fitness centers. Strategically designed to highlight facilities & testimonials, showcase activities and inspire visitors to become loyal members.",
+        ar: "تصميم لصفحة هبوط احترافية لجيم في القاهرة، مخصصة لجذب المتصفحين وإبراز الخدمات داخل النادي. الصفحة مصممة لزيادة عدد المشتركين، بناء الثقة مع الزائرين، وتحسين الظهور في نتائج البحث المحلية في جوجل.",
       },
       cta: {
         en: "Live Demo",

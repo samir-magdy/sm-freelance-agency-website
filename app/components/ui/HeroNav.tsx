@@ -244,7 +244,17 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               </li>
             </ul>
           
-              <SocialIcons />
+            <SocialIcons />
+              <a
+                href="tel:+201274613331"
+                dir="ltr"
+                className="mt-6 inline-flex items-center gap-2 text-content-muted hover:text-content-heading transition-colors duration-300"
+              >
+                <svg className="w-4 h-4" fill="currentColor" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.59a1 1 0 01-.25 1.01l-2.2 2.2z" />
+                </svg>
+                +20 127 461 3331
+              </a>
           </motion.nav>
         )}
       </AnimatePresence>

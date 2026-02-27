@@ -69,7 +69,7 @@ export async function generateMetadata({
           ? "https://samirmagdy.com"
           : `https://samirmagdy.com/${lang}`,
       languages: {
-        en: "https://samirmagdy.com/en",
+        en: "https://samirmagdy.com",
         ar: "https://samirmagdy.com/ar",
         // This tells Google: "If you don't know which language to show, show the root"
         "x-default": "https://samirmagdy.com",
