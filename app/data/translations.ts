@@ -36,7 +36,7 @@ const translations = {
 
   // Services section
   servicesSection: {
-    heading: { en: "The All-In-One Website", ar: "موقعك الإلكتروني المتكامل" },
+    heading: { en: "Your Website, Done Right", ar: "موقعك الإلكتروني المتكامل" },
     subtitle: {
       en: "A complete professional presence engineered into a single, high-performance page.",
       ar: "واجهة احترافية كاملة لعملك، مصممة بدقة لزيادة أرباحك",
@@ -235,7 +235,7 @@ const translations = {
           ar: "تكلفة الموقع كام؟",
         },
         answer: {
-          en: "The cost depends on your business goals. Here at SM Web Studio we use custom code for all our websites. Therefore, a simple landing page with 4–5 sections starts from around 3,000 EGP, while a full single-page website with more sections, deeper detail, and advanced features can reach 30,000 EGP — with additional pages available if needed. We provide clear pricing with no hidden fees after our first consultation.",
+          en: "The cost depends on your business goals. Here at SM Web Studio we use custom code for all our websites. Therefore, a simple landing page with 4–5 sections starts from around 3,000 EGP, while a full single-page website with more sections, deeper detail, and advanced features can reach 30,000 EGP. For more complex projects, additional pages are available as needed. We provide clear pricing with no hidden fees after our first consultation.",
           ar: "التكلفة بتعتمد على الخصائص والمميزات اللي محتاجها موقعك. صفحة هبوط من ٤–٥ أقسام بتبدأ تقريبًا من ٣٬٠٠٠ جنيه، ومع إضافة أقسام أو مميزات إضافية زي دعم لغتين، نموذج تواصل مخصص بربط مباشر على الإيميل، أو تحسين متقدم لمحركات البحث (SEO)، السعر بيزيد حسب المطلوب. بنوضح السعر من أول استشارة من غير أي رسوم مخفية.",
         },
       },
@@ -301,12 +301,12 @@ const translations = {
       },
       {
         question: {
-          en: "Can I update my website content myself?",
+          en: "Can I update my websites content myself?",
           ar: "أقدر أعدّل محتوى الموقع بنفسي؟",
         },
         answer: {
-          en: "Because we build with custom code rather than a CMS like WordPress, you won't be able to edit the website directly. That's why we include free minor content updates every month — things like swapping images, updating text, or adjusting details. If you ever need bigger changes or new features, we're always available as paid work.",
-          ar: "بما إن الموقع مبني بكود مخصص مش نظام إدارة محتوى زي ووردبريس، مش هتقدر تعدّل عليه مباشرة بنفسك. عشان كده بنوفّر تحديثات بسيطة مجانية كل شهر — زي تغيير صورة، تعديل نص، أو تحديث بيانات. لو احتجت تطويرات أكبر أو إضافة مميزات جديدة، بتكون متوفرة كخدمات إضافية. تعديل محتوى الموقع بنفسك بيحتاج لوحة تحكم بنوفرهالك كخاصية إضافية.",
+          en: "Because we build with custom code rather than a CMS like WordPress, you won't be able to edit the website directly, editing it yourself requires a dashboard, which transforms a static page into a more complex project. This feature is available as a paid add-on. However, that's why we also include up to 3 free minor content updates every month — things like swapping images, updating text, or adjusting details, 99% of the time, that's more than you'll ever need.",
+          ar: "بما إن الموقع مبني بكود مخصص مش نظام إدارة محتوى زي ووردبريس، مش هتقدر تعدّل عليه مباشرة بنفسك. عشان كده بنوفّر تحديثات بسيطة مجانية كل شهر — زي تغيير صورة، تعديل نص، أو تحديث بيانات. تعديل محتوى الموقع بنفسك بيحتاج لوحة تحكم بنوفرهالك كخاصية إضافية.",
         },
       },
       {
