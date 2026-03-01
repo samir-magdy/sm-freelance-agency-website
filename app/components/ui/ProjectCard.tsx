@@ -15,9 +15,9 @@ export default function ProjectCard({ project, lang }: ProjectCardProps) {
     ];
   const t = translations;
 
-  const title = pd?.title[lang] ?? project.title;
-  const description = pd?.description[lang] ?? project.description;
-  const ctaText = pd?.cta[lang] ?? project.ctaText;
+  const title = pd.title[lang];
+  const description = pd.description[lang];
+  const ctaText = pd.cta[lang];
 
   return (
     <article className="bg-surface-card w-full rounded-xl overflow-hidden border border-border-strong shadow-lg flex flex-col">

@@ -4,15 +4,17 @@ import ContactForm from "../ui/ContactForm";
 
 export default function ContactSection({ lang }: { lang: Lang }) {
   const t = translations;
+  const isRtl = lang === "ar";
 
   return (
     <section
       id="contact"
       aria-labelledby="contact-heading"
       className="pt-20 pb-16 md:pb-36"
+      dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="max-w-4xl mx-auto px-4">
-        <div className="mb-5 md:mb-0">
+        <div className="mb-5 md:mb-12">
           <h2
             id="contact-heading"
             className="font-bold text-heading text-center mb-2"
@@ -23,10 +25,7 @@ export default function ContactSection({ lang }: { lang: Lang }) {
             {t.contactSection.subtitle[lang]}
           </p>
         </div>
-
-        <div className="md:pt-12">
-          <ContactForm lang={lang} />
-        </div>
+        <ContactForm lang={lang} />
       </div>
     </section>
   );

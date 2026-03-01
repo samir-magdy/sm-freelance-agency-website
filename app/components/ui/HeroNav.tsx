@@ -81,6 +81,15 @@ export default function HeroNav({ lang }: { lang: Lang }) {
           </li>
           <li>
             <a
+              href="#services"
+              onClick={(e) => handleSmoothScroll(e, "#services")}
+              className="text-base font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-300"
+            >
+              {lang === "en" ? "Services" : "الخدمات"}
+            </a>
+          </li>
+          <li>
+            <a
               href="#portfolio"
               className="text-base font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-300"
             >
@@ -208,6 +217,14 @@ export default function HeroNav({ lang }: { lang: Lang }) {
                   className="font-semibold text-content-body text-heading tracking-wide"
                 >
                   {t.nav.home[lang]}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  className="font-semibold text-content-body text-heading tracking-wide"
+                >
+                  {lang === "en" ? "Services" : "الخدمات"}
                 </a>
               </li>
               <li>

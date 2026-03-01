@@ -80,7 +80,7 @@ export function Timeline({ data }: { data: TimelineEntry[] }) {
                   <div
                     className={`h-4 w-4 rounded-full border transition-colors duration-500 ${
                       index <= activeIndex
-                        ? "bg-brand-accent border-brand-accent shadow-[0_0_12px_rgba(59,130,246,0.5)]"
+                        ? "bg-[#d4af37] border-[#d4af37] shadow-[0_0_12px_rgba(212,175,55,0.5)]"
                         : "bg-surface-low border-border-subtle"
                     }`}
                   />
@@ -110,7 +110,7 @@ export function Timeline({ data }: { data: TimelineEntry[] }) {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-brand-accent via-brand-secondary to-transparent from-[0%] via-[10%] rounded-full"
+            className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-[#ffe9a0] via-[#d4af37] to-transparent from-[0%] via-[10%] rounded-full"
           />
         </div>
       </div>

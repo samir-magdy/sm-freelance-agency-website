@@ -4,7 +4,7 @@ const translations = {
   // Navigation
   nav: {
     home: { en: "Home", ar: "الرئيسية" },
-    howItWorks: { en: "Process", ar: "آلية العمل" },
+    howItWorks: { en: "Process", ar: "خطوات العمل" },
     projects: { en: "Portfolio", ar: "سابقة الأعمال" },
     faq: { en: "FAQ", ar: "الأسئلة الشائعة" },
     contact: { en: "Contact", ar: "تواصل معنا" },
@@ -18,16 +18,92 @@ const translations = {
     },
     cta: {
       en: "Chat",
-      ar: "تواصل",
+      ar: "ابدأ محادثة",
     },
     primaryCta: {
       en: "Book a Free Consultation",
       ar: "احصل على استشارة مجانية",
     },
+    secondaryCta: {
+      en: "See Our Work",
+      ar: "سابقة الأعمال",
+    },
     seoLabel: {
       en: "Web Design & Development in Cairo",
-      ar: "أفضل شركة تصميم مواقع في القاهرة",
+      ar: "شركة تصميم مواقع في القاهرة",
     },
+  },
+
+  // Services section
+  servicesSection: {
+    heading: { en: "The All-In-One Website", ar: "موقعك الإلكتروني المتكامل" },
+    subtitle: {
+      en: "A complete professional presence engineered into a single, high-performance page.",
+      ar: "واجهة احترافية كاملة لعملك، مصممة بدقة لزيادة أرباحك",
+    },
+
+    goal: {
+      lines: [
+        {
+          en: "Your growth isn't a project. It’s our reputation.",
+          ar: "نموّك مش مجرد مشروع.. هو سمعتنا.",
+        },
+        {
+          en: "We treat your brand like it's our own.",
+          ar: "بنعامل علامتك التجارية كأنها ملكنا.",
+        },
+      ],
+    },
+    sharedFeatures: [
+      {
+        en: "Fully Responsive",
+        ar: "متوافق مع الموبايل والتابلت",
+        desc: {
+          en: "Your site will look great whether a customer finds you on their phone, tablet, or laptop.",
+          ar: "موقعك هيظهر بأفضل شكل، سواء فتحه العميل من الموبايل أو التابلت أو اللابتوب.",
+        },
+      },
+      {
+        en: "SEO Foundation",
+        ar: "أسس محركات البحث",
+        desc: {
+          en: "Your site is optimized to show up on Google when customers look for your services.",
+          ar: "بنجهز موقعك برمجياً عشان يظهر في نتائج بحث جوجل لما العملاء تبحث على خدماتك.",
+        },
+      },
+      {
+        en: "Fast Loading",
+        ar: "سرعة تحميل عالية",
+        desc: {
+          en: "Slow sites lose customers. We optimize yours to load in under 2 seconds.",
+          ar: "المواقع البطيئة بتضيع عملائك، عشان كدة بنضمن إن موقعك يفتح في أقل من ثانيتين.",
+        },
+      },
+      {
+        en: "Contact Integration",
+        ar: "ربط الواتساب ونماذج الاتصال",
+        desc: {
+          en: "We integrate one-click WhatsApp & contact forms so customers can reach you instantly.",
+          ar: "بنربط موقعك بالواتساب ونماذج الاتصال، عشان العميل يوصلك بضغطة واحدة.",
+        },
+      },
+      {
+        en: "Free Lifetime Support",
+        ar: "دعم مجاني دائم",
+        desc: {
+          en: "Your site is covered for life. If anything ever stops working, we fix it — free of charge.",
+          ar: "موقعك مضمون للأبد. لو أي حاجة عطلت أو وقفت، بنصلحها مجانًا من غير قيود زمنية.",
+        },
+      },
+      {
+        en: "Copywriting Available",
+        ar: "كتابة المحتوى متاحة",
+        desc: {
+          en: "We write the content in English, Arabic, or both—tailored to your brand's identity.",
+          ar: "بنكتب محتوى موقعك بالعربي أو الإنجليزي (أو الاتنين) بأسلوب يناسب هوية البراند بتاعتك.",
+        },
+      },
+    ],
   },
 
   // Projects section
@@ -41,10 +117,58 @@ const translations = {
       ar: "مجموعة من أحدث مشاريعنا",
     },
   },
+  // Project data
+  // Project data
+  projectData: {
+    skyway: {
+      title: {
+        en: "Sky Way Travel",
+        ar: "موقع شركة سياحة – سكاي واي ترافل",
+      },
+      description: {
+        en: "An elegant, user-friendly website for a Sky Way travel, a Cairo based travel agency. Designed to showcase their tour packages, build trust & drive more bookings.",
+        ar: "موقع إلكتروني عصري لشركة سكاى واى ترافل. صممناه لعرض عروض الرحلات وبرامج السفر بشكل احترافي يساعد على بناء الثقة مع العملاء وزيادة الحجوزات.",
+      },
+      cta: {
+        en: "Live Demo",
+        ar: "مشاهدة الموقع",
+      },
+    },
+
+    weddings: {
+      title: {
+        en: "Wedding Services Website",
+        ar: "موقع لخدمات الأفراح والمناسبات",
+      },
+      description: {
+        en: "A website designed for wedding service providers, photographers & makeup artists. Showcase portfolios, highlight testimonials & convert visitors into clients.",
+        ar: "موقع مخصص لمزودي خدمات الأفراح، المصورين، وخبراء التجميل. يركز على عرض سابقة الأعمال وتقييمات العملاء، ويهدف لتحويل الزوار إلى عملاء دائمين.",
+      },
+      cta: {
+        en: "Live Demo",
+        ar: "مشاهدة الموقع",
+      },
+    },
+
+    gym: {
+      title: {
+        en: "Gym Landing Page",
+        ar: "صفحة هبوط لنادي رياضي",
+      },
+      description: {
+        en: "A modern landing page for fitness centers. Strategically designed to highlight facilities & testimonials, showcase activities and inspire visitors to become loyal members.",
+        ar: "صفحة هبوط عصرية للمراكز الرياضية. تم تصميمها استراتيجياً لإبراز الخدمات وآراء المشتركين، مما يحفز الزوار على الاشتراك وبدء رحلتهم الرياضية.",
+      },
+      cta: {
+        en: "Live Demo",
+        ar: "مشاهدة الموقع",
+      },
+    },
+  },
 
   // Our Process section
   workflowSection: {
-    heading: { en: "Our Process", ar: "آلية العمل" },
+    heading: { en: "Our Process", ar: "خطوات العمل" },
     subtitle: {
       en: "A structured process from start to finish",
       ar: "عملية واضحة ومنظمة من البداية للنهاية",
@@ -57,7 +181,7 @@ const translations = {
         },
         description: {
           en: "We connect to understand your business goals and target audience in Cairo, then define the website strategy, timeline, and transparent pricing.",
-          ar: "نتواصل لفهم نشاطك التجاري وأهدافك والجمهور المستهدف في القاهرة، ثم نحدد استراتيجية تصميم الموقع، الجدول الزمني، والتكلفة بشكل واضح.",
+          ar: "نتواصل لفهم نشاطك التجاري وأهدافك والجمهور المستهدف، ثم نحدد استراتيجية تصميم الموقع، الجدول الزمني، والتكلفة بشكل واضح.",
         },
       },
 
@@ -104,65 +228,105 @@ const translations = {
       ar: "إجابات على الأسئلة الأكثر شيوعًا",
     },
     // TO DO. STUDY AND PLAN BEFORE IMPLEMENTING! ==========================================================================================
-    items: [
+   items: [
       {
         question: {
-          en: "How much does it cost to design a website in Cairo, Egypt?",
-          ar: "تكلفة تصميم موقع في القاهرة كام؟",
+          en: "How much does a website cost?",
+          ar: "تكلفة الموقع كام؟",
         },
         answer: {
-          en: "The cost of website design in Cairo depends on your business goals. A professional landing page starts from around 4,000 EGP, while a full business website with custom features and SEO can reach 30,000 EGP. As a web design company in Cairo, we provide clear pricing with no hidden fees after our first consultation.",
-          ar: "تكلفة تصميم موقع في القاهرة بتختلف حسب احتياجات نشاطك. صفحة هبوط احترافية بتبدأ من حوالي 4,000 جنيه، بينما موقع شركة متكامل مع مميزات مخصصة وتحسين محركات البحث ممكن يوصل لـ 30,000 جنيه. كشركة تصميم مواقع في القاهرة بنقدملك عرض سعر واضح بعد أول استشارة بدون أي رسوم مخفية.",
+          en: "The cost depends on your business goals. Here at SM Web Studio we use custom code for all our websites. Therefore, a simple landing page with 4–5 sections starts from around 3,000 EGP, while a full single-page website with more sections, deeper detail, and advanced features can reach 30,000 EGP — with additional pages available if needed. We provide clear pricing with no hidden fees after our first consultation.",
+          ar: "التكلفة بتعتمد على الخصائص والمميزات اللي محتاجها موقعك. صفحة هبوط من ٤–٥ أقسام بتبدأ تقريبًا من ٣٬٠٠٠ جنيه، ومع إضافة أقسام أو مميزات إضافية زي دعم لغتين، نموذج تواصل مخصص بربط مباشر على الإيميل، أو تحسين متقدم لمحركات البحث (SEO)، السعر بيزيد حسب المطلوب. بنوضح السعر من أول استشارة من غير أي رسوم مخفية.",
         },
       },
       {
         question: {
-          en: "What is the difference between a landing page and a full business website?",
-          ar: "إيه الفرق بين صفحة الهبوط والموقع الإلكتروني المتكامل للشركات؟",
+          en: "What technologies do you use to build websites?",
+          ar: "إيه نوع التقنية اللي بتستخدموها في بناء المواقع؟",
         },
         answer: {
-          en: "A landing page is a single conversion-focused page designed to generate leads quickly. A full business website includes multiple pages like About, Services, and Blog, making it better for branding and SEO growth. As a web design company in Cairo, we help you choose the right structure based on your market and competition.",
-          ar: "صفحة الهبوط هي صفحة واحدة هدفها الأساسي تجيب عملاء بسرعة. أما الموقع الإلكتروني المتكامل للشركات بيضم صفحات متعددة زي من نحن والخدمات والمدونة، وده بيساعد في بناء براند أقوى وتحقيق ترتيب أفضل في جوجل. كشركة تصميم مواقع في القاهرة بنساعدك تختار الهيكل المناسب حسب مجالك والمنافسة.",
+          en: "We build all our websites using custom code. For landing pages and lightweight sites, we use Vanilla JS — pure, minimal code with no unnecessary dependencies, which means extremely fast load times. For more advanced, multi-page business websites, we use Next.js — a modern framework that handles dynamic content, routing, and performance optimization at scale. Neither uses WordPress or any page builders.",
+          ar: "إحنا بنبني كل مواقعنا بكود مخصص. لصفحات الهبوط والمواقع الخفيفة بنستخدم Vanilla JS — كود نضيف ومباشر من غير أي تبعيات ملهاش لازمة، وده بيدّي سرعة تحميل عالية جدًا. للمواقع الأكبر متعددة الصفحات بنستخدم Next.js — فريمورك حديث بيساعدنا ندير المحتوى الديناميكي، التنقل بين الصفحات، وتحسين الأداء باحترافية.",
         },
       },
       {
         question: {
-          en: "How long does it take for a new website to rank on Google in Cairo?",
-          ar: "الموقع بياخد قد إيه عشان يترتب على جوجل في القاهرة؟",
+          en: "Why not just use WordPress or a website builder?",
+          ar: "ليه ما نستخدمش ووردبريس أو منصة جاهزة؟",
         },
         answer: {
-          en: "Google may index your website within days, but ranking for competitive keywords in Cairo usually takes 1 to 3 months. As an SEO-focused web design company in Cairo, we optimize your website speed, structure, and content from day one to improve your visibility in local search results.",
-          ar: "جوجل ممكن يأرشف موقعك خلال أيام، لكن الترتيب على كلمات تنافسية في القاهرة غالبًا بياخد من شهر لـ 3 شهور. كشركة تصميم مواقع في القاهرة متخصصة في تحسين محركات البحث بنظبط سرعة الموقع، الهيكلة، والمحتوى من أول يوم علشان نرفع ظهورك في نتائج البحث المحلية.",
+          en: "WordPress and website builders are faster to launch, but they are general-purpose tools built for everyone — which means they carry a lot of extra weight. Plugins, themes, and layers of code you don't actually need slow your site down, make it more vulnerable to hacking, and hurt your Google rankings since page speed is a direct ranking factor. Custom code is built specifically for your needs, so it loads faster, stays more secure, and performs better in search results.",
+          ar: "ووردبريس والمنصات الجاهزة هي أداة لصنع موقع إلكتروني بطريقة سهلة وسريعة لكنها بتفتقد لدور المبرمج والبرمجة المخصصة اللي دورها تبني من الصفر حسب احتياجات موقعك، ووردبريس يُستخدَم فيه إضافات وقوالب وطبقات كود زيادة بتبطّأ موقعك، تزود احتمالية الاختراق، وتأثر على ترتيبك في جوجل لأن السرعة عامل ترتيب أساسي. البرمجة المخصصة بتبني موقعك على مقاس احتياجك، فبيكون أسرع، أأمن، وأقوى في نتائج البحث.",
         },
       },
       {
         question: {
-          en: "Will my website work perfectly on Android and iPhone devices?",
-          ar: "هل الموقع هيكون متوافق مع أندرويد وآيفون؟",
+          en: "Can my website get hacked?",
+          ar: "ممكن موقعي يُخترق؟",
         },
         answer: {
-          en: "Yes. Every website we develop is fully responsive and tested across Android and iOS devices. As a professional web design company in Cairo, we follow modern development standards to ensure fast loading speed, mobile-friendly design, and strong SEO performance.",
-          ar: "أكيد. كل موقع بنطوره بيكون متوافق بالكامل مع أندرويد وآيفون. كشركة تصميم مواقع في القاهرة بنلتزم بأحدث معايير تطوير المواقع علشان نضمن سرعة تحميل عالية، تصميم متجاوب مع الموبايل، وأداء قوي في تحسين محركات البحث.",
+          en: "Extremely difficult. Because your website is built as a static site — meaning pure code with no database, no login panel, and no plugins — there is almost nothing for a hacker to target. Most website hacks exploit WordPress vulnerabilities like outdated plugins or weak passwords. None of those entry points exist in a static custom-coded website, making it one of the most secure options available.",
+          ar: "صعب جدًا. لأن موقعك بيكون Static — يعني كود صافي من غير قاعدة بيانات، من غير لوحة تحكم، ومن غير إضافات. مفيش تقريبًا حاجة يقدر المخترق يدخل منها. أغلب الاختراقات بتحصل بسبب إضافات قديمة أو كلمات سر ضعيفة في ووردبريس — الحاجات دي مش موجودة عندنا أصلًا، وده بيخلي الموقع من أكتر الخيارات أمانًا.",
         },
       },
       {
         question: {
-          en: "Who owns the domain and website files after the project is completed?",
-          ar: "مين بيملك الدومين وملفات الموقع بعد تنفيذ المشروع؟",
+          en: "Can you redesign my existing website?",
+          ar: "تقدروا تعيدوا تصميم موقعي الحالي؟",
         },
         answer: {
-          en: "You have full ownership of your domain, hosting, and website files after project completion. As a trusted web design company in Cairo, we ensure complete transparency and give you full control, whether you prefer us to manage the website or transfer everything to you.",
-          ar: "أنت المالك الكامل للدومين والاستضافة وملفات الموقع بعد انتهاء المشروع. كشركة تصميم مواقع في القاهرة بنضمن شفافية كاملة وبنمنحك كل الصلاحيات، سواء حابب ندير الموقع ليك أو تستلم كل حاجة بنفسك.",
+          en: "It depends on how your current website was built. If it was built with custom code, then yes — we can redesign and improve it. We'll just need access to the existing files and hosting settings, either from you or your previous developer. If your website is built on WordPress, we unfortunately can't work with it directly, but we can build you a brand new custom-coded website that will outperform it in speed, security, and SEO.",
+          ar: "بيعتمد على طريقة بناء موقعك الحالي. لو معمول بكود مخصص نقدر نعيد تصميمه ونطوره — هنحتاج الملفات وإعدادات الاستضافة منك أو من المطور السابق. لو موقعك معمول بووردبريس مش بنشتغل عليه مباشرة، لكن نقدر نبني لك موقع جديد بكود مخصص يتفوق عليه في السرعة، الأمان، والـ SEO.",
+        },
+      },
+      {
+        question: {
+          en: "Does the website support Arabic and English?",
+          ar: "الموقع بيدعم عربي وإنجليزي؟",
+        },
+        answer: {
+          en: "Yes. We build fully bilingual websites that support both Arabic and English, including proper right-to-left (RTL) layout for Arabic. Switching between languages is seamless for your visitors, and both versions are optimized for SEO so your business gets found in both languages on Google. Keep in mind that bilingual websites require additional development work and are priced accordingly — we'll include this clearly in your quote.",
+          ar: "بنبني مواقع ثنائية اللغة تدعم العربي والإنجليزي بالكامل، مع تنسيق RTL مظبوط للعربي. التحويل بين اللغتين بيكون سهل وسلس للزوار، وكل نسخة متهيأة للـ SEO عشان يظهر نشاطك في البحث باللغتين. دعم اللغتين يُصنَّف كخاصية إضافية.",
+        },
+      },
+      {
+        question: {
+          en: "How long does it take to build a website?",
+          ar: "استلام الموقع بياخد وقت قد إيه؟",
+        },
+        answer: {
+          en: "It depends on the scope of the project. A simple landing page with 4–5 sections is typically ready within 5 to 7 business days once we have all your content, images, and branding. A more advanced single-page website with deeper sections and custom features can take 1 to 2 weeks. The biggest factor that affects timeline is how quickly content is provided on your end.",
+          ar: "بيعتمد على حجم المشروع. صفحة هبوط بسيطة من ٤–٥ أقسام بتكون جاهزة غالبًا خلال ٥ لـ ٧ أيام عمل بعد ما نستلم المحتوى والصور والهوية البصرية. موقع أكبر بخصائص وتفاصيل أكتر ممكن ياخد من أسبوع لأسبوعين. أكتر عامل بيأثر على المدة هو سرعة استلام المحتوى من الطرف الآخر.",
+        },
+      },
+      {
+        question: {
+          en: "Can I update my website content myself?",
+          ar: "أقدر أعدّل محتوى الموقع بنفسي؟",
+        },
+        answer: {
+          en: "Because we build with custom code rather than a CMS like WordPress, you won't be able to edit the website directly. That's why we include free minor content updates every month — things like swapping images, updating text, or adjusting details. If you ever need bigger changes or new features, we're always available as paid work.",
+          ar: "بما إن الموقع مبني بكود مخصص مش نظام إدارة محتوى زي ووردبريس، مش هتقدر تعدّل عليه مباشرة بنفسك. عشان كده بنوفّر تحديثات بسيطة مجانية كل شهر — زي تغيير صورة، تعديل نص، أو تحديث بيانات. لو احتجت تطويرات أكبر أو إضافة مميزات جديدة، بتكون متوفرة كخدمات إضافية. تعديل محتوى الموقع بنفسك بيحتاج لوحة تحكم بنوفرهالك كخاصية إضافية.",
+        },
+      },
+      {
+        question: {
+          en: "How long does it take for a new website to rank on Google?",
+          ar: "الظهور في جوجل بياخد وقت قد إيه؟",
+        },
+        answer: {
+          en: "Google may index your website within days, but ranking for competitive keywords in Cairo usually takes 3 to 6 months. We optimize your website speed, structure, and content from day one to improve your visibility in local search results as efficiently as possible.",
+          ar: "جوجل ممكن تُفهرس موقعك خلال أيام، لكن المنافسة على كلمات قوية في القاهرة عادةً بتاخد من ٣ لـ ٦ شهور. إحنا بنظبط سرعة الموقع، هيكله، ومحتواه من أول يوم عشان نزود فرص ظهوره في نتائج البحث المحلية بأكبر كفاءة ممكنة.",
         },
       },
       {
         question: {
           en: "Do you provide technical support after launching the website?",
-          ar: "هل بتقدموا دعم فني بعد إطلاق الموقع؟",
+          ar: "فيه دعم فني بعد إطلاق الموقع؟",
         },
         answer: {
-          en: "Yes. After launching your website, we provide ongoing technical support and minor updates every month. As a web design company in Cairo, our goal is to keep your business website secure, updated, and continuously optimized for SEO and performance.",
-          ar: "أيوه. بعد إطلاق الموقع بنوفر دعم فني مستمر وتعديلات بسيطة شهريًا. كشركة تصميم مواقع في القاهرة هدفنا إن موقع شركتك يفضل آمن، محدث، ومهيأ دايمًا لتحسين محركات البحث وتحقيق أفضل أداء.",
+          en: "Yes. If anything ever breaks or stops working on your website, we'll fix it — free of charge, forever. Any additional changes or new features beyond that are handled as paid work. Our goal is to make sure your website stays up, running, and problem-free long after launch.",
+          ar: "لو أي حاجة عطلت أو وقفت في موقعك، بنصلحها مجانًا. هدفنا إن موقعك يفضل شغال بثبات ومن غير مشاكل بعد الإطلاق.",
         },
       },
     ],
@@ -222,54 +386,6 @@ const translations = {
     skipToContent: { en: "Skip to main content", ar: "تخطى إلى المحتوى" },
     contactForm: { en: "Contact form", ar: "نموذج التواصل" },
     screenshotOf: { en: "Screenshot of", ar: "لقطة شاشة لـ" },
-  },
-
-  // Project data
-  projectData: {
-    skyway: {
-      title: {
-        en: "Sky Way Travel",
-        ar: "موقع شركة سياحة – سكاي واي ترافل",
-      },
-      description: {
-        en: "An elegant, user-friendly website for a Sky Way travel, a Cairo based travel agency. Designed to showcase their tour packages, build trust & drive more bookings.",
-        ar: "موقع إلكتروني احترافي لشركة سياحة في القاهرة، مخصص لعرض عروض الرحلات وبرامج السفر بشكل منظم وجذاب. الموقع يساعد الشركة على زيادة الحجوزات، بناء الثقة مع العملاء، وتحسين الظهور في نتائج البحث في جوجل.",
-      },
-      cta: {
-        en: "Live Demo",
-        ar: "شاهد الموقع",
-      },
-    },
-
-    weddings: {
-      title: {
-        en: "Wedding Services Website",
-        ar: "تصميم موقع خدمات أفراح",
-      },
-      description: {
-        en: "A website designed for wedding service providers, photographers & makeup artists. Showcase portfolios, highlight testimonials & convert visitors into clients.",
-        ar: "تصميم لموقع احترافي لشركات وخدمات الأفراح، مثل مصوري الزفاف، منظمين الافراح وخبراء التجميل. يركز الموقع على عرض الأعمال السابقة، تقييمات العملاء، وزيادة طلبات الحجز من خلال تحسين الظهور في نتائج البحث وجذب عملاء جدد.",
-      },
-      cta: {
-        en: "Live Demo",
-        ar: "شاهد الموقع",
-      },
-    },
-
-    gym: {
-      title: {
-        en: "Gym Landing Page",
-        ar: "تصميم صفحة هبوط لجيم",
-      },
-      description: {
-        en: "A modern landing page for fitness centers. Strategically designed to highlight facilities & testimonials, showcase activities and inspire visitors to become loyal members.",
-        ar: "تصميم لصفحة هبوط احترافية لجيم في القاهرة، مخصصة لجذب المتصفحين وإبراز الخدمات داخل النادي. الصفحة مصممة لزيادة عدد المشتركين، بناء الثقة مع الزائرين، وتحسين الظهور في نتائج البحث المحلية في جوجل.",
-      },
-      cta: {
-        en: "Live Demo",
-        ar: "شاهد الموقع",
-      },
-    },
   },
 
   // Language toggle
