@@ -36,7 +36,10 @@ const translations = {
 
   // Services section
   servicesSection: {
-    heading: { en: "Your Website, Done Right", ar: "موقعك الإلكتروني المتكامل" },
+    heading: {
+      en: "Your Website, Done Right",
+      ar: "موقعك الإلكتروني المتكامل",
+    },
     subtitle: {
       en: "A complete professional presence engineered into a single, high-performance page.",
       ar: "واجهة احترافية كاملة لعملك، مصممة بدقة لزيادة أرباحك",
@@ -227,8 +230,7 @@ const translations = {
       en: "Answers to commonly asked questions",
       ar: "إجابات على الأسئلة الأكثر شيوعًا",
     },
-    // TO DO. STUDY AND PLAN BEFORE IMPLEMENTING! ==========================================================================================
-   items: [
+    items: [
       {
         question: {
           en: "How much does a website cost?",
@@ -271,6 +273,66 @@ const translations = {
       },
       {
         question: {
+          en: "My business is already on Facebook — do I still need a website?",
+          ar: "عندي صفحة على فيسبوك، مازالت محتاج موقع؟",
+        },
+        answer: {
+          en: "A Facebook page is a great starting point, but it has real limitations. You don't own it — Facebook can restrict your reach, change its algorithm, or suspend your page at any time. A website is yours completely. It also lets you show up on Google when people search for your services, which a Facebook page simply can't do. Together, they're much stronger than either one alone.",
+          ar: "صفحة الفيسبوك نقطة بداية كويسة، بس ليها حدود حقيقية. إنت مش مالكها — فيسبوك يقدر يقلل وصولك، يغير الخوارزمية، أو يوقف صفحتك في أي وقت. الموقع ملكك بالكامل. كمان بيخليك تظهر في جوجل لما الناس تدور على خدماتك، وده حاجة صفحة الفيسبوك مش بتعملها. مع بعض بيكونوا أقوى بكتير من أي واحد لوحده.",
+        },
+      },
+      {
+        question: {
+          en: "How will a website help my business more than a Facebook or Instagram page?",
+          ar: "إيه اللي هيقدمهولي الموقع أكتر من صفحة فيسبوك أو إنستجرام؟",
+        },
+        answer: {
+          en: "Social media is rented space — your website is your owned digital headquarters. A website builds professional credibility that social pages can't match, lets you appear on Google when people are actively searching for your services, and gives you full control over how your brand is presented. On a competitor's Facebook page, their ads can appear right next to your content. That never happens on your own website.",
+          ar: "السوشيال ميديا أرض مستأجرة — الموقع هو مقرك الرقمي الرسمي المملوك ليك. الموقع بيبني مصداقية احترافية مش قادر السوشيال ميديا يحققها، وبيخليك تظهر في جوجل لما الناس بتدور فعلاً على خدماتك، وبيديك تحكم كامل في شكل علامتك التجارية. على فيسبوك، إعلانات المنافسين ممكن تظهر جنب محتواك مباشرة — ده مش بيحصل على موقعك الخاص أبدًا.",
+        },
+      },
+      {
+        question: {
+          en: "Will my website work on mobile phones?",
+          ar: "الموقع هيشتغل على الموبايل؟",
+        },
+        answer: {
+          en: "Absolutely. Every website we build is fully responsive, meaning it automatically adapts to look and work perfectly on any screen — phone, tablet, or desktop. This is not optional for us, it's built into everything we do. Given that most people in Egypt browse on mobile, this is something we take very seriously.",
+          ar: "أكيد. كل موقع بنبنيه بيكون responsive بالكامل، يعني بيتكيف تلقائيًا ويشتغل بشكل مثالي على أي شاشة — موبايل، تابلت، أو كمبيوتر. ده مش اختياري عندنا، ده جزء أساسي في كل حاجة بنعملها. وبما إن أغلب الناس في مصر بيتصفحوا على الموبايل، ده موضوع بناخده بجدية كاملة.",
+        },
+      },
+      {
+        question: {
+          en: "Do I own my website after it's built?",
+          ar: "الموقع بيبقى ملكي بعد ما يتسلم؟",
+        },
+        answer: {
+          en: "Yes, completely. Once the project is delivered and final payment is made, the website and all its files are 100% yours. You own the code, the design, and everything in it. We don't hold anything back or lock you into any ongoing contract. You're free to host it wherever you want and work with whoever you want going forward.",
+          ar: "أيوه، بالكامل. بعد ما المشروع يتسلم والدفعة الأخيرة تتأدى، الموقع وكل ملفاته بيبقوا ملكك ١٠٠٪. إنت مالك الكود، التصميم، وكل حاجة فيه. مش بنحتجز أي حاجة أو بنربطك بأي عقد مستمر. حر تستضيفه فين ما تحب وتشتغل مع أي حد تحب بعد كده.",
+        },
+      },
+      {
+        question: {
+          en: "How many revisions do I get?",
+          ar: "بيكون ليا كام تعديل؟",
+        },
+        answer: {
+          en: "We include up to 3 rounds of revisions during the build. In our experience, that's always enough — especially since we align on the design direction before we start building. Revisions beyond that are handled as small paid adjustments. Our goal is to get it right well within those rounds, not to count them against you.",
+          ar: "بنوفر لغاية ٣ جولات تعديل خلال مرحلة البناء. من تجربتنا، دي بتكون كافية دايمًا — خصوصًا إننا بنتفق على اتجاه التصميم قبل ما نبدأ. أي تعديلات بعد كده بتتحسب كتعديلات مدفوعة بسيطة. هدفنا إننا نوصل للنتيجة الصح قبل ما نخلص الجولات دي، مش إننا نحسبها عليك.",
+        },
+      },
+      {
+        question: {
+          en: "Can I add new sections or features to my website later?",
+          ar: "أقدر أضيف أقسام أو خصائص جديدة للموقع بعدين؟",
+        },
+        answer: {
+          en: "Yes. Your website isn't frozen after launch. If your business grows and you want to add a new section, a new feature, or expand the site, we can handle that as additional paid work. Because we built it with clean custom code, making changes is straightforward — there's no plugin mess or platform limitations to work around.",
+          ar: "أيوه. موقعك مش ثابت بعد الإطلاق. لو نشاطك اتوسع وعايز تضيف قسم جديد، خاصية جديدة، أو تكبّر الموقع، بنقدر نعمل ده كشغل إضافي مدفوع. ولأننا بنيناه بكود مخصص نضيف، التعديلات بتكون سهلة ومباشرة — مفيش تعقيدات إضافات أو قيود منصات لازم نتعامل معاها.",
+        },
+      },
+      {
+        question: {
           en: "Can you redesign my existing website?",
           ar: "تقدروا تعيدوا تصميم موقعي الحالي؟",
         },
@@ -301,6 +363,46 @@ const translations = {
       },
       {
         question: {
+          en: "How do I pay?",
+          ar: "بدفع إزاي؟",
+        },
+        answer: {
+          en: "We accept cash and InstaPay. No complicated payment systems or bank transfers. After we agree on the project scope and price, we'll share the payment details with you directly. Simple and straightforward.",
+          ar: "بنقبل كاش وInstaPay. مفيش أنظمة دفع معقدة أو تحويلات بنكية. بعد ما نتفق على تفاصيل المشروع والسعر، بنبعتلك تفاصيل الدفع مباشرة. بسيطة وواضحة.",
+        },
+      },
+      {
+        question: {
+          en: "Can I pay in installments?",
+          ar: "أقدر أدفع على دفعات؟",
+        },
+        answer: {
+          en: "Yes. We typically split the payment into two parts — 50% upfront to begin the project, and the remaining 50% upon delivery before the website goes live. This protects both sides and keeps things clear from day one.",
+          ar: "أيوه. بنقسّم الدفع على جزأين — ٥٠٪ مقدم عشان نبدأ المشروع، و٥٠٪ الباقيين عند التسليم قبل ما الموقع يتنشر. ده بيحمي الطرفين وبيخلي كل حاجة واضحة من أول يوم.",
+        },
+      },
+      {
+        question: {
+          en: "What if I don't have a logo or brand identity yet?",
+          ar: "ماعنديش لوجو أو هوية بصرية لسه، ينفع؟",
+        },
+        answer: {
+          en: "Not a problem at all. Many clients come to us at an early stage. We can work with what you have — even if it's just a name and a general idea of your business. If you need a logo or brand identity designed, we can handle that as a separate service before we start building your website.",
+          ar: "مفيش مشكلة خالص. كتير من عملاءنا بييجوا في مرحلة مبكرة. بنقدر نشتغل بأي حاجة عندك — حتى لو مجرد اسم وفكرة عامة عن نشاطك. لو محتاج لوجو أو هوية بصرية، بنقدر نعملهالك كخدمة منفصلة قبل ما نبدأ في بناء الموقع.",
+        },
+      },
+      {
+        question: {
+          en: "Do you work with businesses outside Cairo?",
+          ar: "بتشتغلوا مع نشاطات تجارية خارج القاهرة؟",
+        },
+        answer: {
+          en: "Yes. Everything we do is remote, so location is never a barrier. We've worked with businesses across Egypt and the entire process — consultation, design, delivery — happens online. Wherever you're based, we can build your website.",
+          ar: "أيوه. شغلنا كله أونلاين، فالموقع الجغرافي مش عائق أبدًا. بنشتغل مع نشاطات تجارية من مختلف أنحاء مصر، وكل العملية — من الاستشارة للتصميم للتسليم — بتحصل إلكترونيًا. أينما كنت، بنقدر نبني موقعك.",
+        },
+      },
+      {
+        question: {
           en: "Can I update my websites content myself?",
           ar: "أقدر أعدّل محتوى الموقع بنفسي؟",
         },
@@ -317,6 +419,46 @@ const translations = {
         answer: {
           en: "Google may index your website within days, but ranking for competitive keywords in Cairo usually takes 3 to 6 months. We optimize your website speed, structure, and content from day one to improve your visibility in local search results as efficiently as possible.",
           ar: "جوجل ممكن تُفهرس موقعك خلال أيام، لكن المنافسة على كلمات قوية في القاهرة عادةً بتاخد من ٣ لـ ٦ شهور. إحنا بنظبط سرعة الموقع، هيكله، ومحتواه من أول يوم عشان نزود فرص ظهوره في نتائج البحث المحلية بأكبر كفاءة ممكنة.",
+        },
+      },
+      {
+        question: {
+          en: "Do I need to buy my own hosting and domain?",
+          ar: "هل أحتاج أشتري الاستضافة والدومين بنفسي؟",
+        },
+        answer: {
+          en: "We handle the technical setup for you. We recommend the best hosting providers for speed and reliability in Egypt, and help you secure your .com or .com.eg domain. These are annual costs paid directly to the provider — typically small and straightforward. We make sure everything is correctly linked to your custom-coded website so you don't have to worry about any of the technical side.",
+          ar: "إحنا بنتولى الإعداد التقني نيابةً عنك. بننصحك بأفضل شركات الاستضافة من حيث السرعة والاعتمادية في مصر، وبنساعدك تحجز دومين .com أو .com.eg. دي تكاليف سنوية بتدفعها مباشرة للمزود — بسيطة ومحددة. إحنا بنضمن إن كل حاجة متربطة صح بموقعك من غير ما تتعب في أي حاجة تقنية.",
+        },
+      },
+      {
+        question: {
+          en: "Will my business show up on Google Maps?",
+          ar: "هل نشاطي التجاري هيظهر على خرائط جوجل؟",
+        },
+        answer: {
+          en: "Yes. A well-built website and a Google Business Profile work together to strengthen your local presence. We structure your website so Google can clearly recognize your business, its location, and its services — making it easier for customers in Cairo to find you whether they're searching on Google Search or Google Maps.",
+          ar: "أيوه. الموقع المبني صح وملف جوجل بيزنس بيشتغلوا مع بعض عشان يقووا ظهورك المحلي. بنبني موقعك بطريقة تخلي جوجل يتعرف على نشاطك التجاري، موقعك، وخدماتك بوضوح — وده بيسهّل على عملاء القاهرة يلاقوك سواء على جوجل أو على الخريطة.",
+        },
+      },
+      {
+        question: {
+          en: "What do I need to provide to get started?",
+          ar: "إيه اللي محتاج أجهزه عشان نبدأ؟",
+        },
+        answer: {
+          en: "Just the basics: your logo, a description of your services, and any photos you have. If you don't have professional photos or written content ready, that's not a problem — we offer copywriting support and can help source high-quality imagery that fits your brand. The goal is to make the process as easy as possible on your end.",
+          ar: "الأساسيات بس: اللوجو بتاعك، وصف خدماتك، وأي صور عندك. لو ملقتش صور احترافية أو محتوى مكتوب جاهز، مفيش مشكلة — بنوفر خدمة كتابة محتوى وبنساعدك تلاقي صور مناسبة لهوية علامتك التجارية. هدفنا إن العملية تبقى سهلة من جهتك قدر الإمكان.",
+        },
+      },
+      {
+        question: {
+          en: "Can I sell products on my website?",
+          ar: "أقدر أبيع منتجاتي من خلال الموقع؟",
+        },
+        answer: {
+          en: "Our main focus is high-performance landing pages and business websites. That said, we can integrate simple buying options such as WhatsApp purchase buttons or lightweight checkout flows for straightforward selling needs. If you're looking to build a large online store with a significant product catalog, we can discuss a custom solution built on Next.js tailored to your requirements.",
+          ar: "تركيزنا الأساسي على صفحات الهبوط والمواقع التجارية عالية الأداء. بس في نفس الوقت بنقدر ندمج خيارات شراء بسيطة زي أزرار واتساب أو منظومة دفع خفيفة لاحتياجات البيع البسيطة. لو بتفكر في متجر إلكتروني كبير بكتالوج منتجات ضخم، نقدر نتكلم عن حل مخصص مبني على Next.js على حسب متطلباتك.",
         },
       },
       {
