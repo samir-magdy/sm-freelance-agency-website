@@ -96,7 +96,13 @@ html {
   position: fixed;
   bottom: 30px;
   right: 30px;
+  left: auto;
   z-index: 5000;
+}
+
+[dir="rtl"] .whatsapp-float {
+  right: auto;
+  left: 30px;
 }
 
 @media (max-width: 768px) {
@@ -104,8 +110,14 @@ html {
     border-radius: 50%;
     bottom: 20px;
     right: 20px;
+    left: auto;
     width: 60px !important;
     height: 60px !important;
+  }
+
+  [dir="rtl"] .whatsapp-float {
+    right: auto;
+    left: 20px;
   }
 }
 

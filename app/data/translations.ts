@@ -18,7 +18,7 @@ const translations = {
     },
     cta: {
       en: "Chat",
-      ar: "ابدأ محادثة",
+      ar: "محادثة",
     },
     primaryCta: {
       en: "Book a Free Consultation",

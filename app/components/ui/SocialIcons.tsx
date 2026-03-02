@@ -2,19 +2,19 @@ export default function SocialIcons() {
   return (
     <ul
       dir="ltr"
-      className="flex items-center gap-4"
+      className="flex items-center gap-3  "
       aria-label="Social media links"
     >
       <li>
         <a
-          href="https://www.facebook.com/profile.php?id=61588574217412"
+          href="https://www.facebook.com/WebDesignCairo"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visit SM Web Studio on Facebook"
           className="text-content-muted hover:text-content-heading transition-colors duration-300"
         >
           <svg
-            className="w-5 h-5"
+            className="w-5 h-5 md:w-4 md:h-4"
             viewBox="0 0 24 24"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
@@ -26,14 +26,14 @@ export default function SocialIcons() {
       </li>
       <li>
         <a
-          href="https://www.instagram.com/sm_webstudio/"
+          href="https://www.instagram.com/webdesign.cairo/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visit SM Web Studio on Instagram"
           className="text-content-muted hover:text-content-heading transition-colors duration-300"
         >
           <svg
-            className="w-5 h-5"
+            className="w-5 h-5 md:w-4 md:h-4"
             viewBox="0 0 24 24"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"

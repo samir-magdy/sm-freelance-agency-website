@@ -135,6 +135,7 @@ function buildSchemas(lang: Lang) {
       : "Expert Web Design & Landing Pages in Cairo. We build high-converting websites for businesses in Egypt using modern tech.",
     url: "https://samirmagdy.com",
     telephone: "+201274613331",
+    email: "studio@samirmagdy.com",
     image: "https://samirmagdy.com/open-graph.png",
     logo: "https://samirmagdy.com/logo.png",
     priceRange: "$$",
