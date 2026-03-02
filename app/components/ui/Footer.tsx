@@ -4,7 +4,7 @@ export default function Footer() {
 
   return (
     <footer id="contact-footer" className="bg-background flex flex-col items-center gap-2">
-      <div className="flex items-center gap-2.5">
+      <div dir="ltr" className="flex items-center gap-2.5">
   <div className="hidden md:flex">
     <SocialIcons />
   </div>
