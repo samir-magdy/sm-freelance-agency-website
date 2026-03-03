@@ -10,7 +10,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="p-2 text-content-muted hover:text-content-heading transition-colors duration-300"
+      className="p-6 md:p-3 text-content-muted hover:text-content-heading transition-colors duration-300"
     >
       {isDark ? (
         /* Sun — click to go light */

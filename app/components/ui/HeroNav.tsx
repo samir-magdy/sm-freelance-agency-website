@@ -204,17 +204,16 @@ export default function HeroNav({ lang }: { lang: Lang }) {
 
               <div
               onClick={(e) => e.stopPropagation()}
-              className="flex flex-col items-center absolute bottom-10 gap-4"
+              className="flex flex-col items-center gap-4 absolute top-44"
             >
-              <LanguageToggle lang={lang} />
               <ThemeToggle />
             </div>
-            <ul className="flex flex-col items-center gap-4 mb-10">
+            <ul className="flex flex-col items-center gap-3 pt-36">
               
               <li>
                 <a
                   href="#home"
-                  className="font-semibold text-content-body text-[1.625rem] tracking-wide"
+                  className="font-semibold text-content-body text-[1.75rem] tracking-wide"
                 >
                   {t.nav.home[lang]}
                 </a>
@@ -222,7 +221,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#services"
-                  className="font-semibold text-content-body text-[1.625rem] tracking-wide"
+                  className="font-semibold text-content-body text-[1.75rem] tracking-wide"
                 >
                   {lang === "en" ? "Services" : "الخدمات"}
                 </a>
@@ -230,7 +229,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#portfolio"
-                  className="font-semibold text-content-body text-[1.625rem] tracking-wide"
+                  className="font-semibold text-content-body text-[1.75rem] tracking-wide"
                 >
                   {t.nav.projects[lang]}
                 </a>
@@ -238,7 +237,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#how-it-works"
-                  className="font-semibold text-content-body text-[1.625rem] tracking-wide"
+                  className="font-semibold text-content-body text-[1.75rem] tracking-wide"
                 >
                   {t.nav.howItWorks[lang]}
                 </a>
@@ -246,7 +245,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#faq"
-                  className="font-semibold text-content-body text-[1.625rem] tracking-wide"
+                  className="font-semibold text-content-body text-[1.75rem] tracking-wide"
                 >
                   {t.nav.faq[lang]}
                 </a>
@@ -254,34 +253,20 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#contact"
-                  className="font-semibold text-content-body text-[1.625rem] tracking-wide"
+                  className="font-semibold text-content-body text-[1.75rem] tracking-wide"
                 >
                   {t.nav.contact[lang]}
                 </a>
               </li>
+              <li className="pt-8">
+              </li>
             </ul>
-          
+          <div className="flex flex-col absolute bottom-4 items-center gap-8">
+              <LanguageToggle lang={lang} />
             <SocialIcons />
-              <a
-                href="tel:+201274613331"
-                dir="ltr"
-                className="mt-4 inline-flex items-center gap-1 text-content-muted hover:text-content-heading transition-colors duration-300"
-              >
-                <svg className="w-4 h-4" fill="currentColor" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.59a1 1 0 01-.25 1.01l-2.2 2.2z" />
-                </svg>
-                +20 127 461 3331
-              </a>
-              <a
-                href="mailto:studio@samirmagdy.com"
-                dir="ltr"
-                className="mt-2 mb-4 inline-flex items-center gap-1 text-content-muted hover:text-content-heading transition-colors duration-300"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                </svg>
-                studio@samirmagdy.com
-              </a>
+             
+            
+              </div>
           </motion.nav>
         )}
       </AnimatePresence>
