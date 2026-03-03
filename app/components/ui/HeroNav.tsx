@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import translations from "@/app/data/translations";
@@ -12,6 +12,13 @@ import SocialIcons from "./SocialIcons";
 export default function HeroNav({ lang }: { lang: Lang }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = translations;
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
 
   const handleSmoothScroll = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -160,7 +167,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
           </a>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="block px-4 py-2.5 -mr-5"
+            className="block px-4 py-4 -mr-5"
             aria-label={
               isMenuOpen ? t.a11y.closeMenu[lang] : t.a11y.openMenu[lang]
             }
@@ -204,11 +211,11 @@ export default function HeroNav({ lang }: { lang: Lang }) {
 
               <div
               onClick={(e) => e.stopPropagation()}
-              className="flex flex-col items-center gap-4 absolute top-44"
+              className="flex flex-col items-center gap-4 absolute top-24"
             >
               <ThemeToggle />
             </div>
-            <ul className="flex flex-col items-center gap-3 pt-36">
+            <ul className="flex flex-col items-center gap-3">
               
               <li>
                 <a
@@ -258,10 +265,9 @@ export default function HeroNav({ lang }: { lang: Lang }) {
                   {t.nav.contact[lang]}
                 </a>
               </li>
-              <li className="pt-8">
-              </li>
+             
             </ul>
-          <div className="flex flex-col absolute bottom-4 items-center gap-8">
+          <div className="flex flex-col absolute bottom-16 items-center gap-8">
               <LanguageToggle lang={lang} />
             <SocialIcons />
              
