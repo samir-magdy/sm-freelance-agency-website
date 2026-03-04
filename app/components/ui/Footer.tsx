@@ -23,7 +23,7 @@ export default function Footer() {
     studio@samirmagdy.com
   </a>
 </div>
-      <p dir="ltr" className="text-white/40 text-base text-center">
+      <p dir="ltr" className="text-content-muted text-base text-center">
         <span className="inline-flex items-center gap-1 font-medium">
           <svg
             className="w-4 h-4 pt-0.5"
