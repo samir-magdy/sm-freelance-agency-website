@@ -38,8 +38,8 @@ export default function FAQSection({ lang }: { lang: Lang }) {
                 `}
               >
                 <div className={`relative flex-shrink-0 w-5 h-5 ${isRtl ? "ml-5" : "mr-5"}`}>
-                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-px bg-content-muted [details[open]_&]:bg-content-body" />
-                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-3 bg-content-muted [details[open]_&]:h-0 [details[open]_&]:opacity-0" />
+                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-0.5 rounded-full bg-icon [details[open]_&]:bg-icon" />
+                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-3 rounded-full bg-icon [details[open]_&]:h-0 [details[open]_&]:opacity-0" />
                 </div>
 
                 <h3 className="text-content-body font-normal tracking-wide text-subheading">

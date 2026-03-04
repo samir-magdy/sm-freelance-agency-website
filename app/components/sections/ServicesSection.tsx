@@ -41,7 +41,7 @@ export default function ServicesSection({ lang }: { lang: Lang }) {
                 
                 <div
                   key={feature.en}
-                  className="text-center group bg-surface-card/15 relative overflow-hidden rounded-2xl border border-[#d4af37]/5 p-6 px-4 shadow-lg hover:-translate-y-1.5 hover:border-[#d4af37]/30  transition-all duration-300"
+                  className="text-center group bg-surface-card/15 relative overflow-hidden rounded-2xl border border-border-subtle p-6 px-4 shadow-lg hover:-translate-y-1.5 hover:border-border-strong  transition-all duration-300"
                 >
                   
                   {/* Frosted gradient sheen */}
@@ -50,8 +50,8 @@ export default function ServicesSection({ lang }: { lang: Lang }) {
                   />
 
                   <div className="relative space-y-3">
-                    <div className="mx-auto   flex items-center justify-center  shadow-[#d4af37]/15  transition-all duration-300">
-                      <Icon className="w-12 h-12 md:w-16 md:h-16 text-[#d4af37]" aria-hidden="true" />
+                    <div className="mx-auto flex items-center justify-center transition-all duration-300">
+                      <Icon className="w-12 h-12 md:w-16 md:h-16 text-icon" aria-hidden="true" />
                     </div>
                     <p className="font-semibold text-base text-content-heading md:text-subheading">{feature[lang]}</p>
                     <p className="leading-relaxed text-content-body md:text-base">{feature.desc[lang]}</p>

@@ -10,7 +10,7 @@ export default function Footer() {
   </div>
 
   {/* Elegant Golden Dot (Hidden on mobile to match the other elements) */}
-  <span className=" md:block w-1 h-1 rounded-full bg-content-muted shadow-[0_0_4px_rgba(212,175,55,0.6)]"></span>
+  <span className=" md:block w-1 h-1 rounded-full bg-content-muted"></span>
 
   <a
     href="mailto:studio@samirmagdy.com"

@@ -7,55 +7,28 @@ html {
 }
 
 :root {
-  /* Light theme
-     Strategy: cool blue-gray page so pure-white surfaces pop cleanly.
-     Cards rely on shadow-lg for depth; inputs rely on border-strong.
-     Both surfaces = pure white — consistent, elegant, Stripe/Linear pattern. */
-  --background: 220 16% 95%;     /* ≈ #EEF0F5 — subtle cool blue-gray page */
-  --surface-low: 0 0% 100%;      /* pure white — inputs & form fields */
-  --surface-card: 0 0% 100%;     /* pure white — cards (shadow-lg provides depth) */
-  --surface-hover: 220 14% 91%;  /* ≈ #E5E8F0 — slightly deeper cool-gray */
-  --content-heading: 0 0% 7%;
-  --content-body: 0 0% 30%;
-  --content-muted: 0 0% 38%;     /* Darkened from 44% to hit 4.5:1 contrast */
-
-  --border-subtle: 220 12% 0% / 0.07;
-  --border-strong: 220 12% 0% / 0.16; /* stronger + cool-tinted — crisp edges on white */
-
-  --brand-primary: 220 20% 20%;
-  --brand-secondary: 215 16% 47%;
-  --brand-accent: 221 83% 53%;   /* #2563EB blue-600 — passes WCAG AA with white text */
-
-  /* Shifted utility colors for light mode accessibility */
-  --color-success: 160 84% 28%;  /* Darker emerald */
-  --color-danger: 348 83% 40%;   /* Darker red */
-  --color-warning: 38 92% 38%;   /* Darker amber/orange */
-}
-
-.dark {
-  /* Dark theme
-     Strategy: rich blue-black base (hue 222 coheres with brand-accent 221).
+  /* Dark theme — rich blue-black base.
      Large lightness jumps between layers so surfaces are unmistakably distinct.
-     bg(8%) → inputs(16%) = +8pt gap | bg(8%) → cards(21%) = +13pt gap */
-  --background: 222 18% 8%;      /* ≈ #0F1120 — deep blue-black */
-  --surface-low: 222 14% 16%;    /* ≈ #1F2336 — inputs: clearly elevated */
-  --surface-card: 222 13% 21%;   /* ≈ #292E42 — cards: another clear step up */
-  --surface-hover: 222 12% 27%;  /* ≈ #363D55 — hover: clearly above card */
+     bg(8%) → inputs(16%) = +8pt gap | bg(8%) → cards(12%) = +4pt gap */
+  --background: 222 18% 8%; /* ≈ #0F1120 — deep blue-black */
+  --surface-low: 222 14% 16%; /* ≈ #1F2336 — inputs: clearly elevated */
+  --surface-card: 222 18% 12%; /* ≈ #292E42 — cards: another clear step up */
   --content-heading: 222 10% 90%; /* near-white, slight cool tint for harmony */
   --content-body: 222 6% 74%;
-  --content-muted: 222 8% 58%;   /* Lightened from 46% to hit 4.5:1 contrast */
+  --content-muted: 222 8% 58%; /* Lightened from 46% to hit 4.5:1 contrast */
 
-  --border-subtle: 0 0% 100% / 0.07;  /* more visible than before (was 0.04) */
-  --border-strong: 0 0% 100% / 0.14;  /* clearly visible on dark surfaces (was 0.08) */
+  --border-subtle: 0 0% 100% / 0.07;
+  --border-strong: 0 0% 100% / 0.14;
 
-  --brand-primary: 214 32% 91%;
-  --brand-secondary: 215 20% 65%;
-  --brand-accent: 217 91% 60%;   /* #3B82F6 — pops on dark backgrounds */
+  /* Accent — gold is the primary brand accent across CTAs, highlights, and interactive states */
+  --icon: 51 25% 75%; /* #e0ded2 — cool blue-silver for informational icons */
+  --gold: 46 65% 52%; /* #d4af37 */
+  --gold-light: 46 100% 45%; /* #ffe9a0 */
+  --gold-dark: 46 50% 32%; /* #7a6820 — gradient endpoint */
 
-  /* Shifted utility colors for dark mode visibility */
-  --color-success: 152 76% 40%;  /* #10B981 */
-  --color-danger: 0 84% 60%;     /* #EF4444 */
-  --color-warning: 43 96% 50%;   /* #F59E0B */
+  --color-success: 152 76% 40%; /* #10B981 */
+  --color-danger: 0 84% 60%; /* #EF4444 */
+  --color-warning: 43 96% 50%; /* #F59E0B */
 }
 
 @layer base {
@@ -65,28 +38,23 @@ html {
   body {
     background-color: hsl(var(--background));
   }
-}
-[dir="rtl"] *{
-    letter-spacing: 0 !important;
-}
-
-@media (max-width:578px){
-
-  [dir="rtl"] #hero-hook{
-    margin-bottom: 2.5rem;
-    font-size: 2.85rem;
+  :focus-visible {
+    outline-style: solid;
   }
-
 }
-@media (min-width: 1000px){
+[dir="rtl"] * {
+  letter-spacing: 0 !important;
+}
 
-  [dir="rtl"] #hero-hook{
-    margin-bottom: 4.5rem;
-    margin-top: 1.5rem;
+@media (max-width: 578px) {
+  [dir="rtl"] #hero-hook {
+    font-size: 3rem;
   }
-  [dir="rtl"] #hero-container{
-    margin-top: 7rem;
 }
+@media (min-width: 1000px) {
+  [dir="rtl"] #hero-hook {
+    margin-bottom: 1.25rem;
+  }
 }
 /* ══════════════════════════════════════
    WhatsApp Float
@@ -99,25 +67,54 @@ html {
   left: auto;
   z-index: 5000;
 }
-
+@media (max-width: 586px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 30px;
+  }
+}
 [dir="rtl"] .whatsapp-float {
-  right: auto;
   left: 30px;
+  right: auto;
 }
 
-@media (max-width: 768px) {
-  .whatsapp-float {
-    border-radius: 50%;
-    bottom: 20px;
-    right: 20px;
-    left: auto;
-    width: 60px !important;
-    height: 60px !important;
-  }
+/* ══════════════════════════════════════
+   Primary CTA — shimmer + glow
+   ══════════════════════════════════════ */
 
-  [dir="rtl"] .whatsapp-float {
-    right: auto;
-    left: 20px;
+.cta-primary {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* Shimmer streak */
+.cta-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    hsl(0 0% 100% / 0.25) 45%,
+    hsl(0 0% 100% / 0.35) 50%,
+    hsl(0 0% 100% / 0.25) 55%,
+    transparent 65%
+  );
+  translate: -100% 0;
+  transition: none;
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cta-primary:hover::after {
+    animation: shimmer-sweep 0.6s ease-out forwards;
+  }
+}
+
+@keyframes shimmer-sweep {
+  to {
+    translate: 100% 0;
   }
 }
 
@@ -129,23 +126,39 @@ html {
   position: absolute;
   inset: 0;
   z-index: 0;
-  /* Dark: white dots; Light: dark dots — both at low opacity */
-  background-image: radial-gradient(circle, hsl(var(--content-heading) / 0.12) 1px, transparent 1px);
+  /* Subtle dot pattern at low opacity */
+  background-image: radial-gradient(
+    circle,
+    hsl(var(--content-heading) / 0.12) 1px,
+    transparent 1px
+  );
   background-size: 28px 28px;
-  mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 30%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 30%, transparent 100%);
+  mask-image: radial-gradient(
+    ellipse 60% 50% at 50% 50%,
+    black 30%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 60% 50% at 50% 50%,
+    black 30%,
+    transparent 100%
+  );
 }
 
 .hero-glow {
   position: absolute;
   z-index: 0;
-  width: 60%;
+  width: 100%;
   aspect-ratio: 1;
-  top: 45%;
+  top: 51%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* Dark: cool blue-grey glow; Light: warm grey glow */
-  background: radial-gradient(circle, hsl(var(--brand-secondary) / 0.1) 0%, transparent 75%);
+  /* Subtle radial glow */
+  background: radial-gradient(
+    circle,
+    hsl(var(--gold-light) / 0.025) 0%,
+    transparent 65%
+  );
   pointer-events: none;
 }
 
@@ -153,14 +166,26 @@ html {
 @media (max-width: 768px) {
   .hero-grid {
     background-size: 22px 22px;
-    mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black 20%, transparent 100%);
-    -webkit-mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black 20%, transparent 100%);
+    mask-image: radial-gradient(
+      ellipse 80% 50% at 50% 50%,
+      black 20%,
+      transparent 100%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 80% 50% at 50% 50%,
+      black 20%,
+      transparent 100%
+    );
   }
 
   .hero-glow {
     width: 100%;
-    background: radial-gradient(circle, hsl(var(--brand-secondary) / 0.1) 0%, transparent 70%);
+    aspect-ratio: auto;
+    height: 100%;
+    background: radial-gradient(
+      circle,
+      hsl(var(--gold-light) / 0.03) 0%,
+      transparent 100%
+    );
   }
 }
-
-

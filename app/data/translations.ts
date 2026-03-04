@@ -13,12 +13,8 @@ const translations = {
   // Hero
   hero: {
     name: {
-      en: "Your Partner in Success",
-      ar: "شريكك في النجاح",
-    },
-    cta: {
-      en: "Chat",
-      ar: "محادثة",
+      en: ["Be Found.", "Be Trusted.", "Be Chosen."],
+      ar: ["تصدّر البحث.", "اكسب الثقة.", "اجذب العملاء."],
     },
     primaryCta: {
       en: "Book a Free Consultation",
@@ -31,6 +27,10 @@ const translations = {
     seoLabel: {
       en: "Web Design & Development in Cairo",
       ar: "شركة تصميم مواقع في القاهرة",
+    },
+    subheading: {
+      en: "We build websites, earn instant trust, and turn visitors into customers.",
+      ar: "مواقع تتصدر جوجل، تكسب ثقة فورية، وتحوّل الزوار لعملاء.",
     },
   },
 

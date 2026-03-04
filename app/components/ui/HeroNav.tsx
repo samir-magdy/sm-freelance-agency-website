@@ -6,7 +6,6 @@ import Image from "next/image";
 import translations from "@/app/data/translations";
 import type { Lang } from "@/app/data/translations";
 import LanguageToggle from "./LanguageToggle";
-import ThemeToggle from "./ThemeToggle";
 import SocialIcons from "./SocialIcons";
 
 export default function HeroNav({ lang }: { lang: Lang }) {
@@ -52,12 +51,12 @@ export default function HeroNav({ lang }: { lang: Lang }) {
   return (
     <header>
       {/* Fixed Top Navbar for Desktop */}
-      <nav className="dark:shadow-sky-100/5 shadow-lg hidden md:flex fixed top-0 left-0 right-0 z-50 items-center justify-between px-4 ps-3 h-14 border-b border-border-strong bg-background">
+      <nav className="hidden md:flex fixed top-0 left-0 right-0 z-50 items-center justify-center px-4 ps-3 h-14 border-b border-border-strong backdrop-blur-3xl">
         <a
           href="#home"
           onClick={(e) => handleSmoothScroll(e, "#home")}
-          className="flex-1"
           aria-label="Samir Magdy - Home"
+          className="absolute start-3"
         >
           <Image
             src="/logo-dark.png"
@@ -65,23 +64,15 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             width={180}
             height={39}
             priority
-            className="hidden dark:block h-auto"
-          />
-          <Image
-            src="/logo-light.png"
-            alt="SM WEB STUDIO LOGO"
-            width={180}
-            height={39}
-            priority
-            className="block dark:hidden h-auto"
+            className="h-auto"
           />
         </a>
-        <ul className="flex gap-10 lg:gap-16 items-center">
+        <ul className="flex gap-20">
           <li>
             <a
               href="#home"
               onClick={(e) => handleSmoothScroll(e, "#home")}
-              className="text-base font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-300"
+              className="text-base font-medium tracking-wider text-content-body hover:text-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
             >
               {t.nav.home[lang]}
             </a>
@@ -90,7 +81,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             <a
               href="#services"
               onClick={(e) => handleSmoothScroll(e, "#services")}
-              className="text-base font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-300"
+              className="text-base font-medium tracking-wider text-content-body hover:text-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
             >
               {lang === "en" ? "Services" : "الخدمات"}
             </a>
@@ -98,7 +89,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
           <li>
             <a
               href="#portfolio"
-              className="text-base font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-300"
+              className="text-base font-medium tracking-wider text-content-body hover:text-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
             >
               {t.nav.projects[lang]}
             </a>
@@ -106,7 +97,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
           <li>
             <a
               href="#how-it-works"
-              className="text-base font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-300"
+              className="text-base font-medium tracking-wider text-content-body hover:text-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
             >
               {t.nav.howItWorks[lang]}
             </a>
@@ -114,7 +105,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
           <li>
             <a
               href="#faq"
-              className="text-base font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-300"
+              className="text-base font-medium tracking-wider text-content-body hover:text-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
             >
               {t.nav.faq[lang]}
             </a>
@@ -122,14 +113,13 @@ export default function HeroNav({ lang }: { lang: Lang }) {
           <li>
             <a
               href="#contact"
-              className="text-base font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-300"
+              className="text-base font-medium tracking-wider text-content-body hover:text-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
             >
               {t.nav.contact[lang]}
             </a>
           </li>
         </ul>
-        <div className="flex-1 flex justify-end items-center gap-2">
-          <ThemeToggle />
+        <div className="absolute end-4">
           <LanguageToggle lang={lang} />
         </div>
       </nav>
@@ -140,7 +130,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
           md:hidden
           fixed top-0 left-0 right-0 z-50
           transition-[border-color,box-shadow] duration-300 py-1 pl-1 pr-5
-          ${isMenuOpen ? "bg-transparent border-b border-transparent" : "border-b border-border-subtle bg-background dark:bg-background/70 dark:backdrop-blur-md shadow-lg"}`}
+          ${isMenuOpen ? "bg-transparent border-b border-transparent" : "border-b border-border-subtle bg-background/70 backdrop-blur-md shadow-lg"}`}
       >
         <div className="flex justify-between items-center" dir="ltr">
           <a
@@ -154,15 +144,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               width={110}
               height={24}
               priority
-              className="hidden dark:block bg-transparent h-auto"
-            />
-            <Image
-              src="/logo-light.png"
-              alt="SM WEB STUDIO LOGO"
-              width={110}
-              height={24}
-              priority
-              className="block dark:hidden bg-transparent h-auto"
+              className="bg-transparent h-auto"
             />
           </a>
           <button
@@ -209,18 +191,12 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             className="md:hidden fixed inset-0 flex flex-col items-center justify-center bg-background z-40"
           >
 
-              <div
-              onClick={(e) => e.stopPropagation()}
-              className="flex flex-col items-center gap-4 absolute top-24"
-            >
-              <ThemeToggle />
-            </div>
             <ul className="flex flex-col items-center gap-3">
               
               <li>
                 <a
                   href="#home"
-                  className="font-semibold text-content-body text-[1.75rem] tracking-wide"
+                  className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
                 >
                   {t.nav.home[lang]}
                 </a>
@@ -228,7 +204,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#services"
-                  className="font-semibold text-content-body text-[1.75rem] tracking-wide"
+                  className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
                 >
                   {lang === "en" ? "Services" : "الخدمات"}
                 </a>
@@ -236,7 +212,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#portfolio"
-                  className="font-semibold text-content-body text-[1.75rem] tracking-wide"
+                  className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
                 >
                   {t.nav.projects[lang]}
                 </a>
@@ -244,7 +220,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#how-it-works"
-                  className="font-semibold text-content-body text-[1.75rem] tracking-wide"
+                  className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
                 >
                   {t.nav.howItWorks[lang]}
                 </a>
@@ -252,7 +228,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#faq"
-                  className="font-semibold text-content-body text-[1.75rem] tracking-wide"
+                  className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
                 >
                   {t.nav.faq[lang]}
                 </a>
@@ -260,7 +236,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               <li>
                 <a
                   href="#contact"
-                  className="font-semibold text-content-body text-[1.75rem] tracking-wide"
+                  className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
                 >
                   {t.nav.contact[lang]}
                 </a>

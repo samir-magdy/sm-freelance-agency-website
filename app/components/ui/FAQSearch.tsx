@@ -81,7 +81,7 @@ export default function FAQSearch({
             type="search"
             onChange={handleSearch}
             placeholder={placeholder[lang]}
-            className={`w-full bg-transparent border-b border-border-subtle py-3 text-base text-content-body placeholder:text-content-muted focus:border-content-body focus:outline-none transition-colors ${
+            className={`w-full bg-transparent border-b border-border-subtle py-3 text-base text-content-body placeholder:text-content-muted focus-visible:border-content-muted focus-visible:outline-none transition-colors ${
               isRtl ? "pr-6 pl-0" : "pl-6 pr-0"
             }`}
           />

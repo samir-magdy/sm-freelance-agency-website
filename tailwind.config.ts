@@ -2,7 +2,6 @@ import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 
 export default {
-  darkMode: "class",
   content: [
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -67,21 +66,21 @@ export default {
         surface: {
           low: "hsl(var(--surface-low))",
           card: "hsl(var(--surface-card))",
-          hover: "hsl(var(--surface-hover))",
         },
         content: {
           heading: "hsl(var(--content-heading))",
           body: "hsl(var(--content-body))",
           muted: "hsl(var(--content-muted))",
         },
-        brand: {
-          primary: "hsl(var(--brand-primary))",
-          secondary: "hsl(var(--brand-secondary))",
-          accent: "hsl(var(--brand-accent))",
-        },
         border: {
           subtle: "hsl(var(--border-subtle))",
           strong: "hsl(var(--border-strong))",
+        },
+        icon: "hsl(var(--icon))",
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
+          dark: "hsl(var(--gold-dark))",
         },
         // These stay fixed
         success: "#10B981",

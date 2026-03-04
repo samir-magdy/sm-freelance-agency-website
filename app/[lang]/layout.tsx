@@ -3,7 +3,6 @@ import { Cairo } from "next/font/google";
 import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Footer from "../components/ui/Footer";
-import { ThemeProvider } from "../components/providers/ThemeProvider";
 import type { Lang } from "../data/translations";
 import translations from "../data/translations";
 
@@ -276,22 +275,13 @@ export default async function LangLayout({
     <html
       lang={lang}
       dir={lang === "ar" ? "rtl" : "ltr"}
-      suppressHydrationWarning
     >
-      <head>
-        {/* Prevent flash of wrong theme — runs before first paint */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.remove('dark')}else{document.documentElement.classList.add('dark')}}catch(e){document.documentElement.classList.add('dark')}})();`,
-          }}
-        />
-      </head>
+      <head />
       <body className={`${cairo.variable} font-cairo antialiased`}>
-        <ThemeProvider>
           {/* ── Skip navigation ── */}
           <a
             href="#main-content"
-            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-md focus:outline-2 focus:outline-offset-2 focus:outline-brand-accent"
+            className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-4 focus-visible:left-4 focus-visible:z-[100] focus-visible:px-4 focus-visible:py-2 focus-visible:bg-white focus-visible:text-black focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
             {skipLabel}
           </a>
@@ -326,8 +316,7 @@ export default async function LangLayout({
           <main id="main-content">{children}</main>
           <Footer />
           <Analytics />
-        </ThemeProvider>
-      </body>
+        </body>
     </html>
   );
 }

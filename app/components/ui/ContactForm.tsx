@@ -68,7 +68,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
     }
   };
 
-  const selectBaseClass = "text-base w-full h-14 px-4 rounded-lg border border-gray-600/50 bg-surface-low focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors appearance-none cursor-pointer";
+  const selectBaseClass = "text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low focus:border-border-subtle outline-none transition-colors appearance-none cursor-pointer";
   const selectClass = (value: string) => `${selectBaseClass} ${value ? "text-content-heading" : "text-content-muted"}`;
   const labelClass = "block text-caption font-bold text-content-muted mb-2 ms-1";
 
@@ -95,7 +95,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
               required
               aria-required="true"
               placeholder={t.form.namePlaceholder[lang]}
-              className="dark:placeholder:text-content-muted placeholder:text-gray-600 text-base w-full h-14 px-4 rounded-lg border border-gray-600/50 bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors"
+              className="placeholder:text-content-muted text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-border-subtle outline-none transition-colors"
               value={formData.name}
               onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
             />
@@ -116,7 +116,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
               placeholder={t.form.phonePlaceholder[lang]}
               pattern="^01[0125]\d{8}$"
               title="Egyptian mobile number: 11 digits starting with 010, 011, 012, or 015"
-              className={`dark:placeholder:text-content-muted placeholder:text-gray-600 text-base w-full h-14 px-4 rounded-lg border border-gray-600/50 bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors ${lang === "ar" ? "text-right" : "text-left"}`}
+              className={`placeholder:text-content-muted text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-border-subtle outline-none transition-colors ${lang === "ar" ? "text-right" : "text-left"}`}
               value={formData.phone}
               onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
             />
@@ -163,10 +163,10 @@ export default function ContactForm({ lang }: { lang: Lang }) {
               ] as const).map(({ value, label }) => (
                 <label
                   key={value}
-                  className={`flex-1 flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-colors text-base focus-within:ring-2 focus-within:ring-brand-accent focus-within:ring-offset-1 ${
+                  className={`bg-surface-low flex-1 flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-colors text-base ${
                     formData.onlinePresence === value
-                      ? "border-brand-accent bg-brand-accent/10 text-content-heading"
-                      : "border-gray-600/50 bg-surface-low text-content-muted"
+                      ? "border-border-subtle text-content-heading"
+                      : "border-transparent text-content-muted"
                   }`}
                 >
                   <input
@@ -180,10 +180,10 @@ export default function ContactForm({ lang }: { lang: Lang }) {
                     className="sr-only"
                   />
                   <span className={`flex-shrink-0 w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors ${
-                    formData.onlinePresence === value ? "border-brand-accent" : "border-gray-600/50"
+                    formData.onlinePresence === value ? "border-content-muted" : "border-border-strong"
                   }`}>
                     {formData.onlinePresence === value && (
-                      <span className="w-2 h-2 rounded-full bg-brand-accent" />
+                      <span className="w-2 h-2 rounded-full bg-content-heading" />
                     )}
                   </span>
                   {label}
@@ -204,7 +204,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
               aria-required="true"
               rows={3}
               placeholder={t.form.messagePlaceholder[lang]}
-              className="resize-none dark:placeholder:text-content-muted placeholder:text-gray-600 text-base w-full px-4 py-2 rounded-lg border border-gray-600/50 bg-surface-low text-content-heading focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none transition-colors"
+              className="resize-none placeholder:text-content-muted text-base w-full px-4 py-2 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-border-subtle outline-none transition-colors"
               value={formData.message}
               onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
               onKeyDown={(e) => {
@@ -223,7 +223,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
         type="submit"
         disabled={status === "loading"}
         aria-busy={status === "loading"}
-        className="mt-4 w-full mx-auto block bg-brand-primary font-bold text-base py-4 hover:bg-brand-primary/80 focus:outline-2 focus:outline-offset-2 focus:outline-brand-accent text-background rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="mt-4 w-full mx-auto block bg-gold tracking-wide font-bold text-base py-4 hover:bg-gold-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light text-gray-900 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === "loading" ? t.form.sending[lang] : t.form.submit[lang]}
       </button>

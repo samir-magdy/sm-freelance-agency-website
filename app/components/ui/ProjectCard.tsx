@@ -45,7 +45,7 @@ export default function ProjectCard({ project, lang }: ProjectCardProps) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${ctaText} for ${title} (opens in new tab)`}
-              className="inline-block w-full bg-brand-primary text-center font-bold text-caption py-3 px-8 hover:bg-brand-primary/80 text-background rounded-lg transition-colors duration-200 focus:outline-2 focus:outline-offset-2 focus:outline-brand-accent"
+              className="inline-block w-full bg-gold text-center font-bold tracking-wide text-caption py-3 px-8 hover:bg-gold-light text-gray-900 rounded-lg transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
             >
               {ctaText}
             </a>

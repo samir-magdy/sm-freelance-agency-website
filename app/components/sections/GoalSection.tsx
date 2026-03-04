@@ -6,7 +6,7 @@ function highlightWords(text: string, words: string[]) {
   const parts = text.split(new RegExp(`(${escaped.join("|")})`));
   return parts.map((part, i) =>
     words.includes(part) ? (
-      <span key={i} className="text-[#d4af37]">{part}</span>
+      <span key={i} className="text-gold">{part}</span>
     ) : (
       part
     )
