@@ -2,33 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
+/* ══════════════════════════════════════
+   1. Design Tokens
+   ══════════════════════════════════════ */
 
 :root {
   /* Dark theme — rich blue-black base.
      Large lightness jumps between layers so surfaces are unmistakably distinct.
      bg(8%) → inputs(16%) = +8pt gap | bg(8%) → cards(12%) = +4pt gap */
-  --background: 222 18% 8%; /* ≈ #0F1120 — deep blue-black */
-  --surface-low: 222 14% 16%; /* ≈ #1F2336 — inputs: clearly elevated */
-  --surface-card: 222 18% 12%; /* ≈ #292E42 — cards: another clear step up */
-  --content-heading: 222 10% 90%; /* near-white, slight cool tint for harmony */
+  --background: 222 18% 8%; /* deep blue-black */
+  --surface-low: 222 14% 16%; /* inputs: clearly elevated */
+  --surface-card: 222 18% 12%; /* cards: another clear step up */
+  --content-heading: 222 10% 90%; /* near-white, slight cool tint */
   --content-body: 222 6% 74%;
-  --content-muted: 222 8% 58%; /* Lightened from 46% to hit 4.5:1 contrast */
+  --content-muted: 222 8% 58%; /* 4.5:1 contrast minimum */
 
   --border-subtle: 0 0% 100% / 0.07;
   --border-strong: 0 0% 100% / 0.14;
 
-  /* Accent — gold is the primary brand accent across CTAs, highlights, and interactive states */
-  --icon: 222 12% 62%; /* #e0ded2 — cool blue-silver for informational icons */
-  --gold: 46 65% 52%; /* #d4af37 */
-  --gold-light: 46 100% 45%; /* #ffe9a0 */
-  --gold-dark: 46 50% 32%; /* #7a6820 — gradient endpoint */
+  /* Accent — gold brand accent for CTAs, highlights, interactive states */
+  --icon: 222 12% 62%; /* cool blue-silver for informational icons */
+  --gold: 46 65% 52%;
+  --gold-light: 46 100% 45%;
+  --gold-dark: 46 50% 32%; /* gradient endpoint */
 
-  --color-success: 152 76% 40%; /* #10B981 */
-  --color-danger: 0 84% 60%; /* #EF4444 */
-  --color-warning: 43 96% 50%; /* #F59E0B */
+  /* Status */
+  --color-success: 152 76% 40%;
+  --color-danger: 0 84% 60%;
+  --color-warning: 43 96% 50%;
+}
+
+/* ══════════════════════════════════════
+   2. Base & Reset
+   ══════════════════════════════════════ */
+
+html {
+  scroll-behavior: smooth;
 }
 
 @layer base {
@@ -42,6 +51,11 @@ html {
     outline-style: solid;
   }
 }
+
+/* ══════════════════════════════════════
+   3. RTL — Global Adjustments
+   ══════════════════════════════════════ */
+
 [dir="rtl"] * {
   letter-spacing: 0 !important;
 }
@@ -51,35 +65,44 @@ html {
     font-size: 3rem;
   }
 }
+
 @media (min-width: 1000px) {
   [dir="rtl"] #hero-hook {
     margin-bottom: 1.25rem;
   }
 }
+
 /* ══════════════════════════════════════
-   WhatsApp Float
+   4. Nav Link — Underline Hover Effect
    ══════════════════════════════════════ */
 
-.whatsapp-float {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  left: auto;
-  z-index: 5000;
+.nav-link-underline {
+  position: relative;
 }
-@media (max-width: 586px) {
-  .whatsapp-float {
-    bottom: 20px;
-    right: 30px;
-  }
+
+.nav-link-underline::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  inset-inline-start: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, hsl(var(--gold-light)), hsl(var(--gold)), hsl(var(--gold-dark)));
+  border-radius: 0;
+  transition: all 0.15s ease-in-out;
 }
-[dir="rtl"] .whatsapp-float {
-  left: 30px;
-  right: auto;
+
+.nav-link-underline:hover::before {
+  width: 100%;
+  border-radius: 9999px;
+}
+
+[dir="rtl"] .nav-link-underline::before {
+  background: linear-gradient(-90deg, hsl(var(--gold-light)), hsl(var(--gold)), hsl(var(--gold-dark)));
 }
 
 /* ══════════════════════════════════════
-   Primary CTA — shimmer + glow
+   5. Primary CTA — Shimmer Effect
    ══════════════════════════════════════ */
 
 .cta-primary {
@@ -88,7 +111,6 @@ html {
   transition: transform 0.3s ease;
 }
 
-/* Shimmer streak */
 .cta-primary::after {
   content: "";
   position: absolute;
@@ -108,7 +130,7 @@ html {
 
 @media (hover: hover) and (pointer: fine) {
   .cta-primary:hover::after {
-    animation: shimmer-sweep 0.6s ease-out forwards;
+    animation: shimmer-sweep 0.4s ease-out forwards;
   }
 }
 
@@ -118,15 +140,39 @@ html {
   }
 }
 
+/* CTA shimmer — RTL */
+[dir="rtl"] .cta-primary::after {
+  background: linear-gradient(
+    -105deg,
+    transparent 35%,
+    hsl(0 0% 100% / 0.25) 45%,
+    hsl(0 0% 100% / 0.35) 50%,
+    hsl(0 0% 100% / 0.25) 55%,
+    transparent 65%
+  );
+  translate: 100% 0;
+}
+
+@keyframes shimmer-sweep-rtl {
+  to {
+    translate: -100% 0;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  [dir="rtl"] .cta-primary:hover::after {
+    animation: shimmer-sweep-rtl 0.4s ease-out forwards;
+  }
+}
+
 /* ══════════════════════════════════════
-   Dot Grid + Radial Glow — Hero Background
+   6. Hero Section — Dot Grid & Radial Glow
    ══════════════════════════════════════ */
 
 .hero-grid {
   position: absolute;
   inset: 0;
   z-index: 0;
-  /* Subtle dot pattern at low opacity */
   background-image: radial-gradient(
     circle,
     hsl(var(--content-heading) / 0.12) 1px,
@@ -153,7 +199,6 @@ html {
   top: 51%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* Subtle radial glow */
   background: radial-gradient(
     circle,
     hsl(var(--gold-light) / 0.025) 0%,
@@ -162,28 +207,6 @@ html {
   pointer-events: none;
 }
 
-.nav-link-underline {
-  position: relative;
-}
-
-.nav-link-underline::before {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, hsl(var(--gold-light)), hsl(var(--gold)), hsl(var(--gold-dark)));
-  border-radius: 0;
-  transition: all 0.15s ease-in-out;
-}
-
-.nav-link-underline:hover::before {
-  width: 100%;
-  border-radius: 9999px;
-}
-
-/* Mobile: tighter grid, wider glow so it's clearly visible */
 @media (max-width: 768px) {
   .hero-grid {
     background-size: 22px 22px;
@@ -209,4 +232,28 @@ html {
       transparent 100%
     );
   }
+}
+
+/* ══════════════════════════════════════
+   7. WhatsApp Floating Button
+   ══════════════════════════════════════ */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  left: auto;
+  z-index: 5000;
+}
+
+@media (max-width: 586px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 30px;
+  }
+}
+
+[dir="rtl"] .whatsapp-float {
+  left: 30px;
+  right: auto;
 }

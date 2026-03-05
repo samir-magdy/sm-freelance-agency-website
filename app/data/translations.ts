@@ -5,7 +5,7 @@ const translations = {
   nav: {
     services: { en: "What's Included", ar: "المميزات المضمنة" },
     projects: { en: "Our Work", ar: "سابقة الأعمال" },
-    howItWorks: { en: "How It Works", ar: "كيف نعمل" },
+    howItWorks: { en: "How It Works", ar: "خطوات العمل" },
     faq: { en: "FAQ", ar: "الأسئلة الشائعة" },
     contact: { en: "Get Started", ar: "ابدأ الآن" },
   },
@@ -29,7 +29,7 @@ const translations = {
       ar: "شركة تصميم مواقع في القاهرة",
     },
     subheading: {
-      en: "Custom web design and search visibility that drive real growth for businesses in Cairo, Egypt and beyond.",
+      en: "Custom web design and search visibility that drive real growth for businesses in Cairo, Egypt and across the region.",
       ar: "تصميم مواقع مخصصة وتحسين الظهور في محركات البحث لتحقيق نمو حقيقي لأصحاب الأعمال في القاهرة، مصر، وخارجها.",
     },
   },
@@ -41,7 +41,7 @@ const translations = {
       ar: "المميزات المضمنة",
     },
     subtitle: {
-      en: "Included in every website at no extra costs.",
+      en: "Features included in every website at no extra cost",
       ar: "كل مواقعنا تأتي بهذه المميزات دون أي تكاليف إضافية",
     },
 
@@ -86,7 +86,7 @@ const translations = {
         en: "Contact Integration",
         ar: "ربط الواتساب ونماذج الاتصال",
         desc: {
-          en: "We integrate one-click WhatsApp & contact forms so customers can reach you instantly.",
+          en: "We integrate one-click WhatsApp so customers can reach you instantly.",
           ar: "بنربط موقعك بالواتساب ونماذج الاتصال، عشان العميل يوصلك بضغطة واحدة.",
         },
       },

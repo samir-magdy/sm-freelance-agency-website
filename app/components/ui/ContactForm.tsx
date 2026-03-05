@@ -68,7 +68,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
     }
   };
 
-  const selectBaseClass = "text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low focus:border-border-subtle outline-none transition-colors appearance-none cursor-pointer";
+  const selectBaseClass = "text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low focus:border-2 focus:border-border-subtle outline-none transition-colors appearance-none cursor-pointer";
   const selectClass = (value: string) => `${selectBaseClass} ${value ? "text-content-heading" : "text-content-muted"}`;
   const labelClass = "block text-caption font-bold text-content-muted mb-2 ms-1";
 
@@ -95,7 +95,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
               required
               aria-required="true"
               placeholder={t.form.namePlaceholder[lang]}
-              className="placeholder:text-content-muted text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-border-subtle outline-none transition-colors"
+              className="placeholder:text-content-muted text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-subtle outline-none transition-colors"
               value={formData.name}
               onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
             />
@@ -116,7 +116,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
               placeholder={t.form.phonePlaceholder[lang]}
               pattern="^01[0125]\d{8}$"
               title="Egyptian mobile number: 11 digits starting with 010, 011, 012, or 015"
-              className={`placeholder:text-content-muted text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-border-subtle outline-none transition-colors ${lang === "ar" ? "text-right" : "text-left"}`}
+              className={`placeholder:text-content-muted text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-subtle outline-none transition-colors ${lang === "ar" ? "text-right" : "text-left"}`}
               value={formData.phone}
               onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
             />
@@ -163,9 +163,9 @@ export default function ContactForm({ lang }: { lang: Lang }) {
               ] as const).map(({ value, label }) => (
                 <label
                   key={value}
-                  className={`bg-surface-low flex-1 flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-colors text-base ${
+                  className={`bg-surface-low flex-1 flex items-center gap-3 px-4 py-[0.63rem] rounded-lg border cursor-pointer transition-colors text-base ${
                     formData.onlinePresence === value
-                      ? "border-border-subtle text-content-heading"
+                      ? "border-border-subtle text-content-heading border-2"
                       : "border-transparent text-content-muted"
                   }`}
                 >
@@ -204,7 +204,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
               aria-required="true"
               rows={3}
               placeholder={t.form.messagePlaceholder[lang]}
-              className="resize-none placeholder:text-content-muted text-base w-full px-4 py-2 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-border-subtle outline-none transition-colors"
+              className="resize-none placeholder:text-content-muted text-base w-full px-4 py-2 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-subtle outline-none transition-colors"
               value={formData.message}
               onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
               onKeyDown={(e) => {
