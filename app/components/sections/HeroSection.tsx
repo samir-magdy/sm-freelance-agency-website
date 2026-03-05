@@ -10,14 +10,14 @@ import { motion } from "motion/react";
   Adjust any value independently.
 ────────────────────────────────────────────────────────────*/
 const timeline = {
-  seoLabel:   { delay: 1.8,    duration: 0.75 },
+  seoLabel:   { delay: 1.2,    duration: 0.75 },
   hookLine1:  { delay: 0.2,  duration: 0.5 },
   hookLine2:  { delay: 0.6,  duration: 0.5 },
   hookLine3:  { delay: 1.2,  duration: 0.5 },
-  subheading: { delay: 1.8,  duration: 0.75 },
-  navbar:     { delay: 1.8,  duration: 0.75 },
-  buttons:    { delay: 1.8,  duration: 0.75 },
-  whatsapp:   { delay: 1.8,  duration: 0.75 },
+  subheading: { delay: 1.2,  duration: 0.75 },
+  navbar:     { delay: 1.2,  duration: 0.75 },
+  buttons:    { delay: 1.2,  duration: 0.75 },
+  whatsapp:   { delay: 1.2,  duration: 0.75 },
 };
 
 const hookTimeline = [timeline.hookLine1, timeline.hookLine2, timeline.hookLine3];

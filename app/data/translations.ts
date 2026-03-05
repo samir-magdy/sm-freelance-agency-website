@@ -3,11 +3,11 @@ export type Lang = "en" | "ar";
 const translations = {
   // Navigation
   nav: {
-    home: { en: "Home", ar: "الرئيسية" },
-    howItWorks: { en: "Process", ar: "خطوات العمل" },
-    projects: { en: "Portfolio", ar: "سابقة الأعمال" },
+    services: { en: "What's Included", ar: "المميزات المضمنة" },
+    projects: { en: "Our Work", ar: "سابقة الأعمال" },
+    howItWorks: { en: "How It Works", ar: "كيف نعمل" },
     faq: { en: "FAQ", ar: "الأسئلة الشائعة" },
-    contact: { en: "Contact", ar: "تواصل معنا" },
+    contact: { en: "Get Started", ar: "ابدأ الآن" },
   },
 
   // Hero
@@ -25,24 +25,24 @@ const translations = {
       ar: "سابقة الأعمال",
     },
     seoLabel: {
-      en: "Web Design & Development in Cairo",
+      en: "Website Design Company in Cairo",
       ar: "شركة تصميم مواقع في القاهرة",
     },
     subheading: {
-      en: "We build websites, earn instant trust, and turn visitors into customers.",
-      ar: "مواقع تتصدر جوجل، تكسب ثقة فورية، وتحوّل الزوار لعملاء.",
+      en: "Custom web design and search visibility that drive real growth for businesses in Cairo, Egypt and beyond.",
+      ar: "تصميم مواقع مخصصة وتحسين الظهور في محركات البحث لتحقيق نمو حقيقي لأصحاب الأعمال في القاهرة، مصر، وخارجها.",
     },
   },
 
   // Services section
   servicesSection: {
     heading: {
-      en: "Your Website, Done Right",
-      ar: "موقعك الإلكتروني المتكامل",
+      en: "What's Included",
+      ar: "المميزات المضمنة",
     },
     subtitle: {
-      en: "A complete professional presence engineered into a single, high-performance page.",
-      ar: "واجهة احترافية كاملة لعملك، مصممة بدقة لزيادة أرباحك",
+      en: "Included in every website at no extra costs.",
+      ar: "كل مواقعنا تأتي بهذه المميزات دون أي تكاليف إضافية",
     },
 
     goal: {
@@ -171,7 +171,7 @@ const translations = {
 
   // Our Process section
   workflowSection: {
-    heading: { en: "Our Process", ar: "خطوات العمل" },
+    heading: { en: "How It Works", ar: "كيف نعمل" },
     subtitle: {
       en: "A structured process from start to finish",
       ar: "عملية واضحة ومنظمة من البداية للنهاية",
@@ -237,7 +237,7 @@ const translations = {
           ar: "تكلفة الموقع كام؟",
         },
         answer: {
-          en: "The cost depends on your business goals. Here at SM Web Studio we use custom code for all our websites. Therefore, a simple landing page with 4–5 sections starts from around 3,000 EGP, while a full single-page website with more sections, deeper detail, and advanced features can reach 30,000 EGP. For more complex projects, additional pages are available as needed. We provide clear pricing with no hidden fees after our first consultation.",
+          en: "The cost depends on your business goals. Here at SM Web Studio we use custom code for all our websites. Therefore, a simple landing page with 4–5 sections starts from around 4,000 EGP, while a full single-page website with more sections, deeper detail, and advanced features can reach 30,000 EGP. For more complex projects, additional pages are available as needed. We provide clear pricing with no hidden fees after our first consultation.",
           ar: "التكلفة بتعتمد على الخصائص والمميزات اللي محتاجها موقعك. صفحة هبوط من ٤–٥ أقسام بتبدأ تقريبًا من ٣٬٠٠٠ جنيه، ومع إضافة أقسام أو مميزات إضافية زي دعم لغتين، نموذج تواصل مخصص بربط مباشر على الإيميل، أو تحسين متقدم لمحركات البحث (SEO)، السعر بيزيد حسب المطلوب. بنوضح السعر من أول استشارة من غير أي رسوم مخفية.",
         },
       },
@@ -427,8 +427,8 @@ const translations = {
           ar: "هل أحتاج أشتري الاستضافة والدومين بنفسي؟",
         },
         answer: {
-          en: "We handle the technical setup for you. We recommend the best hosting providers for speed and reliability in Egypt, and help you secure your .com or .com.eg domain. These are annual costs paid directly to the provider — typically small and straightforward. We make sure everything is correctly linked to your custom-coded website so you don't have to worry about any of the technical side.",
-          ar: "إحنا بنتولى الإعداد التقني نيابةً عنك. بننصحك بأفضل شركات الاستضافة من حيث السرعة والاعتمادية في مصر، وبنساعدك تحجز دومين .com أو .com.eg. دي تكاليف سنوية بتدفعها مباشرة للمزود — بسيطة ومحددة. إحنا بنضمن إن كل حاجة متربطة صح بموقعك من غير ما تتعب في أي حاجة تقنية.",
+          en: "You'll need your own domain name (like yourbusiness.com), which we'll help you set up — it's a small annual cost paid directly to the domain registrar. As for hosting, that's fully covered on our end at no extra charge. Your website is deployed on professional cloud infrastructure that we manage, so you don't need to set up any accounts or worry about server maintenance.",
+          ar: "هتحتاج دومين خاص بيك (زي yourbusiness.com)، وإحنا هنساعدك تحجزه وتظبطه — دي تكلفة سنوية بسيطة بتدفعها مباشرة لمزود الدومين. أما الاستضافة، فدي علينا بالكامل من غير أي تكلفة إضافية. موقعك بيتنشر على بنية سحابية احترافية إحنا بنديرها، فمش محتاج تعمل أي حسابات أو تشيل هم أي إعدادات تقنية.",
         },
       },
       {

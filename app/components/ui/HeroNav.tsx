@@ -51,7 +51,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
   return (
     <header>
       {/* Fixed Top Navbar for Desktop */}
-      <nav className="hidden md:flex fixed top-0 left-0 right-0 z-50 items-center justify-center px-4 ps-3 h-14 border-b border-border-strong backdrop-blur-3xl">
+      <nav className="hidden md:flex fixed top-0 left-0 right-0 z-50 items-center justify-center px-4 ps-3 h-16 backdrop-blur-3xl">
         <a
           href="#home"
           onClick={(e) => handleSmoothScroll(e, "#home")}
@@ -70,26 +70,17 @@ export default function HeroNav({ lang }: { lang: Lang }) {
         <ul className="flex gap-20">
           <li>
             <a
-              href="#home"
-              onClick={(e) => handleSmoothScroll(e, "#home")}
-              className="text-base font-medium tracking-wider text-content-body hover:text-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
-            >
-              {t.nav.home[lang]}
-            </a>
-          </li>
-          <li>
-            <a
               href="#services"
               onClick={(e) => handleSmoothScroll(e, "#services")}
-              className="text-base font-medium tracking-wider text-content-body hover:text-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+              className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
             >
-              {lang === "en" ? "Services" : "الخدمات"}
+              {t.nav.services[lang]}
             </a>
           </li>
           <li>
             <a
               href="#portfolio"
-              className="text-base font-medium tracking-wider text-content-body hover:text-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+              className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
             >
               {t.nav.projects[lang]}
             </a>
@@ -97,7 +88,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
           <li>
             <a
               href="#how-it-works"
-              className="text-base font-medium tracking-wider text-content-body hover:text-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+              className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
             >
               {t.nav.howItWorks[lang]}
             </a>
@@ -105,7 +96,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
           <li>
             <a
               href="#faq"
-              className="text-base font-medium tracking-wider text-content-body hover:text-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+              className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
             >
               {t.nav.faq[lang]}
             </a>
@@ -113,7 +104,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
           <li>
             <a
               href="#contact"
-              className="text-base font-medium tracking-wider text-content-body hover:text-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+              className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
             >
               {t.nav.contact[lang]}
             </a>
@@ -195,18 +186,10 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               
               <li>
                 <a
-                  href="#home"
-                  className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
-                >
-                  {t.nav.home[lang]}
-                </a>
-              </li>
-              <li>
-                <a
                   href="#services"
                   className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
                 >
-                  {lang === "en" ? "Services" : "الخدمات"}
+                  {t.nav.services[lang]}
                 </a>
               </li>
               <li>
