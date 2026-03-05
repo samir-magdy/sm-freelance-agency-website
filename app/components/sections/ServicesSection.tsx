@@ -53,7 +53,7 @@ export default function ServicesSection({ lang }: { lang: Lang }) {
                     <div className="mx-auto flex items-center justify-center transition-all duration-300">
                       <Icon className="w-12 h-12 md:w-16 md:h-16 text-icon" aria-hidden="true" />
                     </div>
-                    <p className="font-semibold text-base text-content-heading md:text-subheading">{feature[lang]}</p>
+                    <p className="font-semibold text-subheading text-content-heading">{feature[lang]}</p>
                     <p className="leading-relaxed text-content-body md:text-base">{feature.desc[lang]}</p>
                   </div>
                 </div>

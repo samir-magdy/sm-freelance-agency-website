@@ -21,7 +21,7 @@ html {
   --border-strong: 0 0% 100% / 0.14;
 
   /* Accent — gold is the primary brand accent across CTAs, highlights, and interactive states */
-  --icon: 51 25% 75%; /* #e0ded2 — cool blue-silver for informational icons */
+  --icon: 222 12% 62%; /* #e0ded2 — cool blue-silver for informational icons */
   --gold: 46 65% 52%; /* #d4af37 */
   --gold-light: 46 100% 45%; /* #ffe9a0 */
   --gold-dark: 46 50% 32%; /* #7a6820 — gradient endpoint */
