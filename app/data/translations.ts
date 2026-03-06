@@ -86,7 +86,7 @@ const translations = {
         en: "SEO Foundation",
         ar: "أسس محركات البحث",
         desc: {
-          en: "Your website is built to rank on Google so customers find you before they find your competitors.",
+          en: "Your site is built to rank on Google so customers find you before they find your competitors.",
           ar: "موقعك مهيَّأ لمحركات البحث منذ اليوم الأول، لتظهر في نتائج جوجل قبل منافسيك.",
         },
       },
@@ -102,7 +102,7 @@ const translations = {
         en: "Contact Integration",
         ar: "ربط جهات الاتصال",
         desc: {
-          en: "One-click WhatsApp and social media links so customers can reach and interact with you instantly.",
+          en: "WhatsApp and social media links so customers can reach and interact with you instantly.",
           ar: "نربط موقعك بالواتساب وجميع وسائل التواصل حتى يصل إليك العملاء بضغطة واحدة.",
         },
       },
@@ -142,7 +142,7 @@ const translations = {
     skyway: {
       title: {
         en: "Sky Way Travel - Travel Agency",
-        ar: "موقع شركة سياحة – سكاي واي ترافل",
+        ar: "شركة سكاي واي ترافل للسياحة",
       },
       description: {
         en: "Sky Way Travel came to us needing a website that matched the quality of their packages. The result was a clean, professional website that gives their clients the extra boost of confidence to make the booking.",
@@ -160,7 +160,7 @@ const translations = {
         ar: "موقع لخدمات الأفراح والمناسبات",
       },
       description: {
-        en: "Built for wedding photographers, planners, and makeup artists who need more than an Instagram or Facebook page. A website that showcases your work in an elegant photo gallery and converts passive browsers into clients.",
+        en: "Built for wedding photographers, planners, and makeup artists who need more than an Instagram or Facebook page. A website that showcases your work in an elegant photo gallery and converts browsers into clients.",
         ar: "مصمم لمصوري الأفراح والمخططين وخبراء التجميل الذين يحتاجون أكثر من صفحة فيسبوك او إنستغرام. موقع يعرض أعمالك ويحوّل الزوار إلى عملاء.",
       },
       cta: {
@@ -176,7 +176,7 @@ const translations = {
       },
       description: {
         en: "A landing page built for gyms and fitness centers that want to turn online visitors into paying members. Highlights facilities, builds trust with testimonials, and makes it effortless for visitors to take the next step.",
-        ar: "صفحة هبوط للنوادي الرياضية التي تريد تحويل زوار الإنترنت إلى مشتركين فعليين. واضحة، سريعة، ومصممة لعرض الخدمات، وزيادة وتسهيل عملية الاشتراك",
+        ar: "صفحة هبوط للنوادي الرياضية التي تسعى لتحويل زوار الإنترنت إلى مشتركين فعليين. مصممة لعرض الخدمات، بالأضافة لزيادة وتسهيل عملية الاشتراك.",
       },
       cta: {
         en: "Live Demo",
