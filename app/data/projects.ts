@@ -13,9 +13,29 @@ export interface Project {
   descriptionAr: string;
   genre: string;
   keywords: string[];
+  isShowcase: boolean;
 }
 
 export const projects: readonly Project[] = [
+    {
+    id: "skyway",
+    liveUrl: "https://www.skyway-travel.org",
+    screenshot: skywayScreenshot,
+    schemaName: "Sky Way Travel – Travel Agency Website Cairo",
+    schemaNameAr: "سكاي واي ترافل – موقع وكالة سياحة في القاهرة",
+    description:
+      "Professional travel agency website for Sky Way Travel, a Cairo-based tour operator. Designed to showcase packages and convert visitors into bookings.",
+    descriptionAr:
+      "موقع احترافي لشركة سكاي واي ترافل، وكالة سياحة في القاهرة، مصمم لعرض برامج الرحلات وتحويل الزوار إلى حجوزات فعلية.",
+    genre: "Travel & Tourism",
+    keywords: [
+      "travel agency website Cairo",
+      "tour operator website Egypt",
+      "موقع وكالة سياحة القاهرة",
+      "تصميم موقع شركة سياحة مصر",
+    ],
+    isShowcase: false,
+  },
   {
     id: "weddings",
     liveUrl: "https://weddings.samirmagdy.com/",
@@ -33,6 +53,7 @@ export const projects: readonly Project[] = [
       "موقع أفراح القاهرة",
       "تصميم موقع خدمات أفراح",
     ],
+    isShowcase: true,
   },
   {
     id: "gym",
@@ -51,25 +72,9 @@ export const projects: readonly Project[] = [
       "موقع نادي رياضي القاهرة",
       "تصميم موقع جيم مصر",
     ],
+    isShowcase: true,
   },
-  {
-    id: "skyway",
-    liveUrl: "https://www.skyway-travel.org",
-    screenshot: skywayScreenshot,
-    schemaName: "Sky Way Travel – Travel Agency Website Cairo",
-    schemaNameAr: "سكاي واي ترافل – موقع وكالة سياحة في القاهرة",
-    description:
-      "Professional travel agency website for Sky Way Travel, a Cairo-based tour operator. Designed to showcase packages and convert visitors into bookings.",
-    descriptionAr:
-      "موقع احترافي لشركة سكاي واي ترافل، وكالة سياحة في القاهرة، مصمم لعرض برامج الرحلات وتحويل الزوار إلى حجوزات فعلية.",
-    genre: "Travel & Tourism",
-    keywords: [
-      "travel agency website Cairo",
-      "tour operator website Egypt",
-      "موقع وكالة سياحة القاهرة",
-      "تصميم موقع شركة سياحة مصر",
-    ],
-  },
+
 ];
 
 // SM Web Studio identity — reused across all project schema

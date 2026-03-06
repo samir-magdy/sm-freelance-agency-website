@@ -132,8 +132,8 @@ const translations = {
       ar: "سابقة الأعمال",
     },
     subtitle: {
-      en: "A selection of our latest projects",
-      ar: "مجموعة من أحدث مشاريعنا",
+      en: "The quality and style we bring to every project",
+      ar: "إطلالة على جودة التصميم والأسلوب في كل مشروع",
     },
   },
   // Project data
@@ -141,15 +141,15 @@ const translations = {
   projectData: {
     skyway: {
       title: {
-        en: "Sky Way Travel",
+        en: "Sky Way Travel - Travel Agency",
         ar: "موقع شركة سياحة – سكاي واي ترافل",
       },
       description: {
-        en: "An elegant, user-friendly website for a Sky Way travel, a Cairo based travel agency. Designed to showcase their tour packages, build trust & drive more bookings.",
-        ar: "موقع إلكتروني عصري لشركة سكاى واى ترافل. صممناه لعرض عروض الرحلات وبرامج السفر بشكل احترافي يساعد على بناء الثقة مع العملاء وزيادة الحجوزات.",
+        en: "Sky Way Travel came to us needing a website that matched the quality of their packages. The result was a clean, professional website that gives their clients the extra boost of confidence to make the booking.",
+        ar: "تواصلت شركة سكاي واي ترافل للسياحة معنا لبناء موقع إلكتروني يعكس مستوى خدماتهم. النتيجة كانت موقع احترافي يمنح عملائهم الثقة ويدفعهم للحجز المباشر.",
       },
       cta: {
-        en: "Live Demo",
+        en: "View Live Site",
         ar: "مشاهدة الموقع",
       },
     },
@@ -160,8 +160,8 @@ const translations = {
         ar: "موقع لخدمات الأفراح والمناسبات",
       },
       description: {
-        en: "A website designed for wedding service providers, photographers & makeup artists. Showcase portfolios, highlight testimonials & convert visitors into clients.",
-        ar: "موقع مخصص لمزودي خدمات الأفراح، المصورين، وخبراء التجميل. يركز على عرض سابقة الأعمال وتقييمات العملاء، ويهدف لتحويل الزوار إلى عملاء دائمين.",
+        en: "Built for wedding photographers, planners, and makeup artists who need more than an Instagram or Facebook page. A website that showcases your work in an elegant photo gallery and converts passive browsers into clients.",
+        ar: "مصمم لمصوري الأفراح والمخططين وخبراء التجميل الذين يحتاجون أكثر من صفحة فيسبوك او إنستغرام. موقع يعرض أعمالك ويحوّل الزوار إلى عملاء.",
       },
       cta: {
         en: "Live Demo",
@@ -175,8 +175,8 @@ const translations = {
         ar: "صفحة هبوط لنادي رياضي",
       },
       description: {
-        en: "A modern landing page for fitness centers. Strategically designed to highlight facilities & testimonials, showcase activities and inspire visitors to become loyal members.",
-        ar: "صفحة هبوط عصرية للمراكز الرياضية. تم تصميمها استراتيجياً لإبراز الخدمات وآراء المشتركين، مما يحفز الزوار على الاشتراك وبدء رحلتهم الرياضية.",
+        en: "A landing page built for gyms and fitness centers that want to turn online visitors into paying members. Highlights facilities, builds trust with testimonials, and makes it effortless for visitors to take the next step.",
+        ar: "صفحة هبوط للنوادي الرياضية التي تريد تحويل زوار الإنترنت إلى مشتركين فعليين. واضحة، سريعة، ومصممة لعرض الخدمات، وزيادة وتسهيل عملية الاشتراك",
       },
       cta: {
         en: "Live Demo",
@@ -185,12 +185,13 @@ const translations = {
     },
   },
 
+  // YOU ARE HERE
   // Our Process section
   workflowSection: {
-    heading: { en: "How It Works", ar: "كيف نعمل" },
+    heading: { en: "How It Works", ar: "خطوات العمل" },
     subtitle: {
-      en: "A structured process from start to finish",
-      ar: "عملية واضحة ومنظمة من البداية للنهاية",
+      en: "A clear, straightforward process from start to finish",
+      ar: "عملية بسيطة ومنظمة من البداية للنهاية",
     },
     steps: {
       discovery: {
@@ -199,7 +200,7 @@ const translations = {
           ar: "التنسيق",
         },
         description: {
-          en: "We connect to understand your business goals and target audience in Cairo, then define the website strategy, timeline, and transparent pricing.",
+          en: "We connect to understand your business goals and target audience, then define the website strategy, timeline, and transparent pricing.",
           ar: "نتواصل لفهم نشاطك التجاري وأهدافك والجمهور المستهدف، ثم نحدد استراتيجية تصميم الموقع، الجدول الزمني، والتكلفة بشكل واضح.",
         },
       },

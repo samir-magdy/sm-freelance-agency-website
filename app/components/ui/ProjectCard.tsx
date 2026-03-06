@@ -21,7 +21,12 @@ export default function ProjectCard({ project, lang }: ProjectCardProps) {
 
   return (
     <article className="bg-surface-card w-full rounded-xl overflow-hidden border border-border-strong shadow-lg flex flex-col">
-      <figure className="flex flex-col h-full">
+      <figure className="relative flex flex-col h-full">
+        {project.isShowcase && (
+          <span style={lang === "ar" ? { borderBottomRightRadius: "0", borderTopLeftRadius: "0" } : { borderBottomLeftRadius: "0", borderTopRightRadius: "0" }} className="absolute ltr:text-xs bg-background/60 top-0 ltr:left-0 rtl:right-0 rtl:pb-2 z-10 backdrop-blur-sm text-white text-sm md:text-md font-medium px-2 py-1 rounded-xl border border-white/10">
+            {lang === "ar" ? "نموذج" : "Showcase"}
+          </span>
+        )}
         <Image
           src={project.screenshot}
           alt={`${t.a11y.screenshotOf[lang]} ${title}`}
@@ -35,7 +40,7 @@ export default function ProjectCard({ project, lang }: ProjectCardProps) {
               {title}
             </h3>
 
-            <p className="text-content-body text-base tracking-wide mb-4 leading-normal">
+            <p style={lang === 'ar' ? {lineHeight: "2rem"} : {lineHeight: "1.7rem"}} className="text-content-body text-base tracking-wide mb-4 leading-normal">
               {description}
             </p>
           </figcaption>
