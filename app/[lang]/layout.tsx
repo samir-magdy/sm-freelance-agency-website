@@ -24,7 +24,7 @@ const meta = {
   en: {
     title: "SM Web Studio | Web Design & Development in Cairo",
     description:
-      "Grow your business with expert Web Design in Cairo. Specialized in Landing Pages, Websites and SEO. Get a free quote today!",
+      "Grow with custom-coded web design in Cairo, Egypt. We specialize in modern websites built to rank on search engines. Claim your free quote today!",
     ogLocale: "en_US",
     altLocale: "ar_EG",
     ogAlt:
