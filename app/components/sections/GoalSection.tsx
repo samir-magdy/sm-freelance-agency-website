@@ -22,7 +22,7 @@ export default function GoalSection({ lang }: { lang: Lang }) {
   return (
     <section
       aria-label={lang === "en" ? "Our mission" : "مهمتنا"}
-      className="relative py-12 md:py-40 px-4"
+      className="relative py-12 md:py-52 px-4"
       dir={isRtl ? "rtl" : "ltr"}
     >
       {/* Seamless gradient: transparent → surface-card → transparent */}
@@ -35,9 +35,7 @@ export default function GoalSection({ lang }: { lang: Lang }) {
         <p className="text-4xl md:text-7xl font-bold text-content-heading leading-tight md:rtl:leading-snug">
           {highlightWords(lines[0][lang], line0Words)}
         </p>
-        <p className="text-lg md:text-2xl italic text-content-body leading-snug">
-          {lines[1][lang]}
-        </p>
+       
       </div>
     </section>
   );

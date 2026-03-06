@@ -1,8 +1,8 @@
 import type { Lang } from "@/app/data/translations";
 import translations from "@/app/data/translations";
-import { Smartphone, Search, Zap, MessageCircle, LifeBuoy, PenLine } from "lucide-react";
+import { MonitorSmartphone, Search, Zap, MessageCircle, ShieldCheck, PenLine, Globe, RefreshCw } from "lucide-react";
 
-const featureIcons = [Smartphone, Search, Zap, MessageCircle, LifeBuoy, PenLine];
+const featureIcons = [Globe, ShieldCheck, Zap, Search, MonitorSmartphone, MessageCircle, PenLine, RefreshCw];
 
 export default function ServicesSection({ lang }: { lang: Lang }) {
   const t = translations.servicesSection;
@@ -15,7 +15,7 @@ export default function ServicesSection({ lang }: { lang: Lang }) {
       aria-labelledby="services-heading"
       dir={isRtl ? "rtl" : "ltr"}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
 
         {/* Header */}
         <div className="mb-10 md:mb-16 text-center">
@@ -34,14 +34,14 @@ export default function ServicesSection({ lang }: { lang: Lang }) {
         <div className="relative mb-16 md:mb-20">
 
 
-          <div className="relative grid grid-cols-1 sm:grid-cols-3  gap-4 md:gap-6">
+          <div className="relative grid grid-cols-1 sm:grid-cols-4  gap-4 md:gap-6">
             {t.sharedFeatures.map((feature, i) => {
               const Icon = featureIcons[i];
               return (
                 
                 <div
                   key={feature.en}
-                  className="text-center group bg-surface-card/15 relative overflow-hidden rounded-2xl border border-border-subtle p-6 px-4 shadow-lg hover:-translate-y-1.5 hover:border-border-strong  transition-all duration-300"
+                  className="text-center group bg-surface-card/80 relative overflow-hidden rounded-2xl border border-border-subtle py-6 px-4 shadow-lg hover:-translate-y-1.5 hover:border-border-strong  transition-all duration-300"
                 >
                   
                   {/* Frosted gradient sheen */}

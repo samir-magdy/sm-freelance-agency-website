@@ -59,51 +59,67 @@ const translations = {
     },
     sharedFeatures: [
       {
-        en: "Fully Responsive",
-        ar: "متوافق مع الموبايل والتابلت",
+        en: "Hosting & Deployment",
+        ar: "استضافة ونشر الموقع",
         desc: {
-          en: "Your site will look great whether a customer finds you on their phone, tablet, or laptop.",
-          ar: "موقعك هيظهر بأفضل شكل، سواء فتحه العميل من الموبايل أو التابلت أو اللابتوب.",
+          en: "We handle all the technical details. Your website goes live and stays live with no recurring fees.",
+          ar: "نتولى جميع التفاصيل التقنية. موقعك يعمل باستمرار دون أي رسوم شهرية أو تكاليف إضافية.",
         },
       },
       {
-        en: "SEO Foundation",
-        ar: "أسس محركات البحث",
+        en: "Lifetime Guarantee",
+        ar: "ضمان مدى الحياة",
         desc: {
-          en: "Your site is optimized to show up on Google when customers look for your services.",
-          ar: "بنجهز موقعك برمجياً عشان يظهر في نتائج بحث جوجل لما العملاء تبحث على خدماتك.",
+          en: "If anything ever stops working, we fix it free of charge. No invoices, expiry dates or hidden fees.",
+          ar: "في حال توقف أي شيء عن العمل، نتولى إصلاح الموقع مجاناً دون أي رسوم إضافية مدى الحياة.",
         },
       },
       {
         en: "Fast Loading",
         ar: "سرعة تحميل عالية",
         desc: {
-          en: "Slow sites lose customers. We optimize yours to load in under 2 seconds.",
-          ar: "المواقع البطيئة بتضيع عملائك، عشان كدة بنضمن إن موقعك يفتح في أقل من ثانيتين.",
+          en: "Slow websites lose customers. That's why we optimize yours to load in under two seconds.",
+          ar: "المواقع البطيئة تُفقدك عملائك. لهذا نحرص على تحميل موقعك في أقل من ثانيتين.",
+        },
+      },
+      {
+        en: "SEO Foundation",
+        ar: "أسس محركات البحث",
+        desc: {
+          en: "Your website is built to rank on Google so customers find you before they find your competitors.",
+          ar: "موقعك مهيَّأ لمحركات البحث منذ اليوم الأول، لتظهر في نتائج جوجل قبل منافسيك.",
+        },
+      },
+      {
+        en: "Fully Responsive",
+        ar: "توافق مع جميع الأجهزة",
+        desc: {
+          en: "Your website will work perfectly and look great on all devices. Phone, tablet, or laptop.",
+          ar: "موقعك يعمل بشكل مثالي ويظهر باحترافية على جميع الأجهزة. بما يشمل موبايل، تابلت، أو لابتوب.",
         },
       },
       {
         en: "Contact Integration",
-        ar: "ربط الواتساب ونماذج الاتصال",
+        ar: "ربط جهات الاتصال",
         desc: {
-          en: "We integrate one-click WhatsApp so customers can reach you instantly.",
-          ar: "بنربط موقعك بالواتساب ونماذج الاتصال، عشان العميل يوصلك بضغطة واحدة.",
+          en: "One-click WhatsApp and social media links so customers can reach and interact with you instantly.",
+          ar: "نربط موقعك بالواتساب وجميع وسائل التواصل حتى يصل إليك العملاء بضغطة واحدة.",
         },
       },
       {
-        en: "Free Lifetime Support",
-        ar: "دعم مجاني دائم",
+        en: "Content Refinement",
+        ar: "صياغة وتحرير المحتوى",
         desc: {
-          en: "Your site is covered for life. If anything ever stops working, we fix it — free of charge.",
-          ar: "موقعك مضمون للأبد. لو أي حاجة عطلت أو وقفت، بنصلحها مجانًا من غير قيود زمنية.",
+          en: "You give us a rough draft of the content you want included. We turn it into clean, professional copy.",
+          ar: "زوّدنا بالمعلومات الأساسية وسنحوّلها إلى محتوى احترافي يعكس هوية نشاطك.",
         },
       },
       {
-        en: "Copywriting Available",
-        ar: "كتابة المحتوى متاحة",
+        en: "3 Updates per Month",
+        ar: "تعديلات شهرية مجانية",
         desc: {
-          en: "We write the content in English, Arabic, or both—tailored to your brand's identity.",
-          ar: "بنكتب محتوى موقعك بالعربي أو الإنجليزي (أو الاتنين) بأسلوب يناسب هوية البراند بتاعتك.",
+          en: "Request up to three basic content changes a month at no charge. Text, images, prices, and more.",
+          ar: "يمكنك طلب ثلاث تعديلات شهرياً على المحتوى مجاناً. نصوص أو صور أو أسعار وغير ذلك.",
         },
       },
     ],
