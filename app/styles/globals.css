@@ -248,7 +248,7 @@ html {
 
 @media (max-width: 586px) {
   .whatsapp-float {
-    bottom: 10px;
+    bottom: 25px;
     right: 20px;
   }
 }

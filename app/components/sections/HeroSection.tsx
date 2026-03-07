@@ -42,7 +42,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
 
       <section
         id="home"
-        className="h-screen flex md:p-0 items-center justify-center relative"
+        className="h-screen flex md:p-0 items-start pt-36 md:items-center justify-center relative"
       >
         {/* Dot grid + radial glow background */}
         <div className="hero-grid" aria-hidden="true" />
@@ -135,15 +135,15 @@ export default function HeroSection({ lang }: { lang: Lang }) {
             <img src="/utility/whatsapp.svg" alt="Open Whatsapp chat" className="w-8 h-8" aria-hidden="true" />
           </motion.a>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator
         <span
           aria-label="Scroll down"
-          className="absolute bottom-20 md:bottom-16 inset-x-0 mx-auto w-fit text-content-muted/40 hover:text-content-muted transition-colors duration-500 animate-scroll-hint"
+          className="absolute bottom-28 md:bottom-16 inset-x-0 mx-auto w-fit text-content-muted/40 hover:text-content-muted transition-colors duration-500 animate-scroll-hint"
         >
           <svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
             <path d="M1 1l7 7 7-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-        </span>
+        </span> */}
       </section>
     </div>
   );

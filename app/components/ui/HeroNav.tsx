@@ -120,8 +120,8 @@ export default function HeroNav({ lang }: { lang: Lang }) {
         className={`
           md:hidden
           fixed top-0 left-0 right-0 z-50
-          transition-[border-color,box-shadow] duration-300 py-1 pl-1 pr-5
-          ${isMenuOpen ? "bg-transparent border-b border-transparent" : "border-b border-border-subtle bg-background/70 backdrop-blur-md shadow-lg"}`}
+          transition-[border-color,box-shadow] duration-300 py-1 pl-2 pr-6
+          ${isMenuOpen ? "bg-transparent" : " bg-background/70 backdrop-blur-lg"}`}
       >
         <div className="flex justify-between items-center" dir="ltr">
           <a

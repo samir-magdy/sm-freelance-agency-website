@@ -22,20 +22,20 @@ const cairo = Cairo({
 
 const meta = {
   en: {
-    title: "SM Web Studio | Web Design & Development in Cairo",
+    title: "SM Web Studio | Web Design Cairo",
     description:
-      "Grow with custom-coded web design in Cairo, Egypt. We specialize in modern websites built to rank on search engines. Claim your free quote today!",
+      "Grow with custom web design in Cairo, Egypt. We specialize in modern websites built to rank on Google search. Claim your free quote today!",
     ogLocale: "en_US",
     altLocale: "ar_EG",
     ogAlt:
-      "SM Web Studio — Web Design & Development Cairo | Your Partner in Success",
+      "SM Web Studio | Web Design Cairo",
     siteName: "SM Web Studio",
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: "أفضل شركة تصميم مواقع في القاهرة | SM Web Studio",
-    description:
-      "أفضل شركة تصميم مواقع في القاهرة. متخصصون في صفحات الهبوط والمواقع الاحترافية والسيو. ابدأ مشروعك دلوقتي بأفضل سعر.",
+    title: "أفضل شركة تصميم مواقع فالقاهرة | SM Web Studio",
+   description:
+      "أفضل شركة تصميم مواقع في القاهرة، مصر. متخصصون في برمجة مواقع احترافية تتصدر نتائج محركات البحث وجوجل. اطلب استشارتك المجانية الآن!",
     ogLocale: "ar_EG",
     altLocale: "en_US",
     ogAlt: "أفضل شركة تصميم مواقع في القاهرة | SM Web Studio",
@@ -130,8 +130,8 @@ function buildSchemas(lang: Lang) {
     name: "SM Web Studio",
     alternateName: isAr ? "إس إم ويب ستوديو" : "SM Web Studio Egypt",
     description: isAr
-      ? "أفضل شركة تصميم مواقع في القاهرة. متخصصون في صفحات الهبوط وتطوير المواقع الاحترافية وزيادة المبيعات عبر البرمجة الحديثة."
-      : "Expert Web Design & Landing Pages in Cairo. We build high-converting websites for businesses in Egypt using modern tech.",
+      ? "أفضل شركة تصميم مواقع في القاهرة، مصر. متخصصون في برمجة مواقع احترافية تتصدر نتائج محركات البحث وجوجل. اطلب استشارتك المجانية الآن!"
+      : "Grow with custom web design in Cairo, Egypt. We specialize in modern websites built to rank on Google search. Claim your free quote today!",
     url: "https://samirmagdy.com",
     telephone: "+201274613331",
     email: "studio@samirmagdy.com",
