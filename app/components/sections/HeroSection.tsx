@@ -128,18 +128,11 @@ export default function HeroSection({ lang }: { lang: Lang }) {
             href="https://wa.me/201274613331"
             target="_blank"
             rel="noopener noreferrer"
-            className="whatsapp-float inline-flex items-center justify-center gap-2 bg-[#25d365] hover:bg-[#198942]  font-semibold text-base md:text-subheading rounded-full transition-colors duration-300"
+            className="whatsapp-float inline-flex transition-colors duration-300"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: timeline.whatsapp.duration, ease: "easeOut", delay: timeline.whatsapp.delay } }}
           >
-            <svg
-              viewBox="0 0 32 32"
-              fill="currentColor"
-              className="w-10 h-10"
-              aria-hidden="true"
-            >
-              <path d="M16.004 0h-.008C7.174 0 .187 6.988.187 15.82c0 3.46 1.124 6.666 3.024 9.27L1.1 31.068l6.212-1.99c2.492 1.66 5.473 2.627 8.692 2.627 8.83 0 15.818-6.99 15.818-15.822S24.834 0 16.004 0zm9.462 22.356c-.396 1.116-1.982 2.042-3.236 2.312-.856.182-1.974.326-5.738-1.234-4.818-1.996-7.92-6.884-8.162-7.204-.232-.32-1.95-2.6-1.95-4.96s1.226-3.51 1.694-3.998c.396-.414 1.046-.604 1.668-.604.2 0 .38.01.54.018.468.02.702.048 1.012.786.386.924 1.326 3.224 1.44 3.46.116.236.232.552.074.872-.148.33-.278.476-.514.746-.236.27-.46.476-.696.766-.216.252-.458.522-.19.988.27.462 1.196 1.972 2.57 3.196 1.768 1.576 3.2 2.088 3.726 2.316.396.172.868.134 1.148-.166.358-.384.8-.996 1.25-1.598.32-.428.724-.482 1.158-.322.44.154 2.784 1.314 3.262 1.554.478.24.796.356.914.558.116.2.116 1.166-.282 2.282z" />
-            </svg>
+            <img src="/utility/whatsapp.svg" alt="Open Whatsapp chat" className="w-8 h-8" aria-hidden="true" />
           </motion.a>
 
         {/* Scroll indicator */}

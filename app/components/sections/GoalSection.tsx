@@ -14,10 +14,10 @@ function highlightWords(text: string, words: string[]) {
 }
 
 export default function GoalSection({ lang }: { lang: Lang }) {
-  const lines = translations.servicesSection.goal.lines;
+  const t = translations;
   const isRtl = lang === "ar";
 
-  const line0Words = lang === "en" ? ["growth", "reputation"] : ["نموّك", "سمعتنا"];
+  const goalWords = lang === "en" ? ["growth", "reputation"] : ["نموّك", "سمعتنا"];
 
   return (
     <section
@@ -33,9 +33,9 @@ export default function GoalSection({ lang }: { lang: Lang }) {
 
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-4">
         <p className="text-4xl md:text-7xl font-bold text-content-heading leading-tight md:rtl:leading-snug">
-          {highlightWords(lines[0][lang], line0Words)}
+          {highlightWords(t.servicesSection.goal[lang], goalWords)}
         </p>
-       
+
       </div>
     </section>
   );

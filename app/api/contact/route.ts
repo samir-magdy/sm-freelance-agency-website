@@ -13,12 +13,33 @@ const WINDOW_SECONDS = 180; // 3 minutes
 
 export async function POST(request: Request) {
   try {
-    const { name, phone, industry, onlinePresence, message } = await request.json();
+    const { name, phone, industry, contactMethod, bestTime, email, message } = await request.json();
 
     // Basic validation
-    if (!name || !phone || !industry || !onlinePresence || !message) {
+    if (!name || !industry || !contactMethod) {
       return NextResponse.json(
         { error: "All fields are required" },
+        { status: 400 }
+      );
+    }
+
+    if ((contactMethod === "whatsapp" || contactMethod === "phone-call") && !phone) {
+      return NextResponse.json(
+        { error: "Phone is required for WhatsApp or Phone Call contact method" },
+        { status: 400 }
+      );
+    }
+
+    if (contactMethod === "phone-call" && !bestTime) {
+      return NextResponse.json(
+        { error: "Best time is required for Phone Call contact method" },
+        { status: 400 }
+      );
+    }
+
+    if (contactMethod === "email" && !email) {
+      return NextResponse.json(
+        { error: "Email is required when email is selected as contact method" },
         { status: 400 }
       );
     }
@@ -56,10 +77,12 @@ export async function POST(request: Request) {
       subject: `New Contact Form Submission from ${name}`,
       text: [
         `Customer Name: ${name}`,
-        `Customer Phone: ${phone}`,
-        industry       && `Customer Business: ${industry}`,
-        onlinePresence && `Has Website?: ${onlinePresence}`,
-        `Message: ${message}`,
+        `Customer Business: ${industry}`,
+        `Preferred Contact Method: ${contactMethod}`,
+        phone && `Customer Phone: ${phone}`,
+        email && `Customer Email: ${email}`,
+        bestTime && `Best Time to Call: ${bestTime}`,
+        message && `Message: ${message}`,
       ].filter(Boolean).join("\n"),
     });
 

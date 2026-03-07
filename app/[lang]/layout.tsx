@@ -175,7 +175,7 @@ function buildSchemas(lang: Lang) {
             alternateName: isAr ? "Landing Page Design" : "تصميم صفحات هبوط",
             description: isAr
               ? "صفحات هبوط عالية التحويل مصممة لتحويل الزوار إلى عملاء."
-              : "High-converting landing pages designed to turn visitors into clients.",
+              : "High-converting websites designed to turn visitors into clients.",
           },
         },
         {
@@ -196,8 +196,8 @@ function buildSchemas(lang: Lang) {
       ],
     },
     sameAs: [
-      "https://www.facebook.com/profile.php?id=61588574217412",
-      "https://www.instagram.com/sm_webstudio/",
+      "https://www.facebook.com/WebDesignCairo",
+      "https://www.instagram.com/webdesign.cairo/",
     ],
     founder: {
       "@type": "Person",

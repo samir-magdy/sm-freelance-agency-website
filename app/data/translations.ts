@@ -46,16 +46,8 @@ const translations = {
     },
 
     goal: {
-      lines: [
-        {
-          en: "Your growth isn't a project. It’s our reputation.",
-          ar: "نموّك مش مجرد مشروع.. هو سمعتنا.",
-        },
-        {
-          en: "We treat your brand like it's our own.",
-          ar: "بنعامل علامتك التجارية كأنها ملكنا.",
-        },
-      ],
+      en: "Your growth isn’t a project. It’s our reputation.",
+      ar: "نموّك مش بس مشروع.. هو سمعتنا.",
     },
     sharedFeatures: [
       {
@@ -136,8 +128,6 @@ const translations = {
       ar: "إطلالة على جودة التصميم والأسلوب في كل مشروع",
     },
   },
-  // Project data
-  // Project data
   projectData: {
     skyway: {
       title: {
@@ -196,22 +186,22 @@ const translations = {
     steps: {
       discovery: {
         title: {
-          en: "Communication",
+          en: "Consultation",
           ar: "التنسيق",
         },
         description: {
-          en: "We connect to understand your business goals and target audience, then define the website strategy, timeline, and transparent pricing.",
+          en: "We connect to understand your business goals and target audience, then define the website strategy, timeline, and more.",
           ar: "نتواصل لفهم نشاطك التجاري وأهدافك والجمهور المستهدف، ثم نحدد استراتيجية تصميم الموقع، الجدول الزمني، والتكلفة بشكل واضح.",
         },
       },
 
       design: {
         title: {
-          en: "Design",
+          en: "Approval",
           ar: "التصميم",
         },
         description: {
-          en: "We create a modern website design that reflects your brand identity. Once approved, a 50% deposit is paid to begin professional web development.",
+          en: "Once commited, we create a modern website design that reflects your brand identity. Once approved, we begin the development phase.",
           ar: "نصمم واجهة موقع عصرية تعكس هوية علامتك التجارية. بعد الموافقة، يتم دفع 50٪ لبدء تطوير الموقع بشكل احترافي.",
         },
       },
@@ -222,7 +212,7 @@ const translations = {
           ar: "التطوير",
         },
         description: {
-          en: "We develop a fast, secure, and mobile-friendly website optimized for search engines and strong online visibility.",
+          en: "We work on developing a fast, secure, and mobile-friendly website optimized for search engines and strong online visibility.",
           ar: "نقوم بتطوير موقع سريع وآمن ومتوافق مع الموبايل، ومهيأ لتحسين محركات البحث وزيادة الظهور في نتائج جوجل.",
         },
       },
@@ -233,7 +223,7 @@ const translations = {
           ar: "التسليم",
         },
         description: {
-          en: "After final approval and remaining payment, your website goes live fully optimized and ready to rank on Google.",
+          en: "We show you the final product. After final approval and remaining payment, your website goes live.",
           ar: "بعد الموافقة النهائية وسداد المبلغ المتبقي، يتم إطلاق موقعك الإلكتروني مهيأ بالكامل وجاهز للظهور في نتائج بحث جوجل.",
         },
       },
@@ -493,10 +483,10 @@ const translations = {
 
   // Contact section
   contactSection: {
-    heading: { en: "Get In Touch", ar: "تواصل معنا" },
+    heading: { en: "Get Started", ar: "ابدأ الآن" },
     subtitle: {
-      en: "Fill in the form for a free consultation. You can also contact us directly via WhatsApp.",
-      ar: "اطلب استشارة مجانية عبر تعبئة النموذج. كما يمكنك التواصل معنا مباشرة عبر واتساب.",
+      en: "Share a few details and we'll reach out. Rather chat? Tap the WhatsApp button.",
+      ar: "شاركنا بعض التفاصيل وسنتواصل معك. تفضّل المحادثة المباشرة؟ أضغط زر الواتساب.",
     },
   },
 
@@ -505,18 +495,25 @@ const translations = {
     legend: { en: "Contact information", ar: "معلومات التواصل" },
     name: { en: "Name", ar: "الاسم" },
     namePlaceholder: { en: "Your name", ar: "اسمك" },
-    phone: { en: "Phone", ar: "الهاتف" },
+    phone: { en: "Number", ar: "الهاتف" },
     phonePlaceholder: { en: "01XXXXXXXXX", ar: "01XXXXXXXXX" },
-    message: { en: "Message", ar: "الرسالة" },
-    messagePlaceholder: {
-      en: "Describe your website project or inquiries...",
-      ar: "اكتب تفاصيل مشروع تصميم موقعك أو استفسارك...",
-    },
-    submit: { en: "Submit Form", ar: "إرسال" },
+    industry: { en: "What's your business?", ar: "ما هو مجال عملك؟" },
+    industryPlaceholder: { en: "Select your industry", ar: "اختر مجالك" },
+contactMethod: { en: "Preferred contact method", ar: "طريقة التواصل المفضلة" },
+    whatsapp: { en: "WhatsApp", ar: "واتساب" },
+    phoneCall: { en: "Phone Call", ar: "مكالمة" },
+    email: { en: "Email", ar: "الإيميل" },
+    emailAddress: { en: "Email", ar: "البريد الإلكتروني" },
+    emailPlaceholder: { en: "your@email.com", ar: "your@email.com" },
+    bestTime: { en: "Best time to call", ar: "أفضل وقت للاتصال" },
+    bestTimePlaceholder: { en: "Select a time", ar: "اختر الوقت" },
+    message: { en: "Any special inquiries?", ar: "هل لديك أي استفسارات خاصة؟" },
+    messagePlaceholder: { en: "Optional — tell us anything else...", ar: "أخبرنا بأي شيء آخر..." },
+    submit: { en: "Send My Request", ar: "أرسل طلبي" },
     sending: { en: "Sending...", ar: "جاري الإرسال..." },
     success: {
-      en: "Message sent successfully!",
-      ar: "تم إرسال الرسالة بنجاح!",
+      en: "We will be reaching out soon!",
+      ar: "سنتواصل معك قريباً!",
     },
     errorRateLimit: {
       en: "Please wait a few minutes before sending another message.",
@@ -526,14 +523,6 @@ const translations = {
       en: "Something went wrong. Please try again.",
       ar: "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
     },
-    industry: { en: "What's your business?", ar: "ما هو مجال عملك؟" },
-    industryPlaceholder: { en: "Select your industry", ar: "اختر مجالك" },
-    onlinePresence: {
-      en: "Do you currently have a website?",
-      ar: "هل لديك موقع إلكتروني حالياً؟",
-    },
-    hasWebsite: { en: "Yes", ar: "نعم" },
-    noWebsite: { en: "No", ar: "لا" },
   },
 
   // Accessibility
