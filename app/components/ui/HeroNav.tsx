@@ -127,8 +127,8 @@ export default function HeroNav({ lang }: { lang: Lang }) {
         className={`
           xl:hidden
           fixed top-0 left-0 right-0 z-50
-          duration-100 py-1 pl-2 pr-6
-          ${isMenuOpen ? "bg-transparent" : " bg-background/70 backdrop-blur-lg"}`}
+          transition-all duration-[250ms] py-1 pl-2 pr-6
+          ${isMenuOpen ? "bg-transparent" : "bg-background/70 backdrop-blur-lg"}`}
       >
         <div className="flex justify-between items-center" dir="ltr">
           <a

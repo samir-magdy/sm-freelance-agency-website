@@ -74,7 +74,11 @@ export default function HeroSection({ lang }: { lang: Lang }) {
                         className="md:inline block"
                         variants={fadeIn(hookTimeline[i] ?? hookTimeline[hookTimeline.length - 1])}
                       >
-                        {words[0]}{" "}<span className="text-gold">{words.slice(1).join(" ")}</span>{" "}
+                        {(() => {
+                          const tail = words.slice(1).join(" ");
+                          const hasDot = tail.endsWith(".");
+                          return (<>{words[0]}{" "}<span className="text-gold">{hasDot ? tail.slice(0, -1) : tail}</span>{hasDot && "."}{" "}</>);
+                        })()}
                       </motion.span>
                     );
                   })
