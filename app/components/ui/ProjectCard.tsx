@@ -30,7 +30,7 @@ export default function ProjectCard({ project, lang }: ProjectCardProps) {
         <Image
           src={project.screenshot}
           alt={`${t.a11y.screenshotOf[lang]} ${title}`}
-          className="w-full"
+          className="mx-auto"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           placeholder="blur"
         />

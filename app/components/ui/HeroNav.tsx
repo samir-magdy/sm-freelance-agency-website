@@ -51,7 +51,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
   return (
     <header>
       {/* Fixed Top Navbar for Desktop */}
-      <nav className="hidden xl:flex fixed top-0 left-0 right-0 z-50 items-center justify-center px-4 ps-3 h-16 backdrop-blur-3xl">
+      <nav className="ps-12 hidden xl:flex fixed top-0 left-0 right-0 z-50 items-center justify-center h-16 backdrop-blur-3xl">
         <a
           href="#home"
           onClick={(e) => handleSmoothScroll(e, "#home")}
@@ -61,12 +61,12 @@ export default function HeroNav({ lang }: { lang: Lang }) {
           <Image
             src="/logo-dark.png"
             alt="SM WEB STUDIO LOGO"
-            width={160}
+            width={180}
             height={30}
             priority
           />
         </a>
-        <ul className="flex w-[60%] justify-around">
+        <ul className="flex w-1/2 justify-around">
           <li>
             <a
               href="#services"
@@ -127,7 +127,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
         className={`
           xl:hidden
           fixed top-0 left-0 right-0 z-50
-          transition-all duration-[250ms] py-1 pl-2 pr-6
+          transition-all duration-[250ms] py-0.5 pl-1 pr-6
           ${isMenuOpen ? "bg-transparent" : "bg-background/70 backdrop-blur-lg"}`}
       >
         <div className="flex justify-between items-center" dir="ltr">
@@ -154,7 +154,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
           >
-            <div className="w-5 flex flex-col gap-0.5">
+            <div className="w-6 flex flex-col gap-0.5">
               <span
                 className={`block h-0.5 bg-content-heading transition-transform duration-300 ${
                   isMenuOpen ? "rotate-45 translate-y-[4px]" : ""

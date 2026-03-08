@@ -5,7 +5,7 @@ const translations = {
   nav: {
     services: { en: "Features", ar: "المميزات" },
     addOns: { en: "Services", ar: "الخدمات" },
-    projects: { en: "Portfolio", ar: "الأعمال" },
+    projects: { en: "Portfolio", ar: "سابقة الأعمال" },
     howItWorks: { en: "Process", ar: "خطوات العمل" },
     faq: { en: "FAQs", ar: "الأسئلة الشائعة" },
     contact: { en: "Get Started", ar: "ابدأ الآن" },
@@ -265,12 +265,12 @@ const translations = {
   workflowSection: {
     heading: { en: "How It Works", ar: "خطوات العمل" },
     subtitle: {
-      en: "A clear, straightforward process from start to finish",
-      ar: "عملية واضحة وبسيطة من البداية للنهاية",
+      en: "A clear process from start to finish",
+      ar: "عملية واضحة من البداية للنهاية",
     },
     steps: {
       discovery: {
-        title: { en: "Consult", ar: "الاستشارة" },
+        title: { en: "Consultation", ar: "الاستشارة" },
         description: {
           en: "We connect to understand everything you need from your website, then send a full proposal including timeline and pricing. Once approved, the design phase begins.",
           ar: "نتواصل معك لفهم كل ما تحتاجه من موقعك، ثم نرسل لك عرضًا بالمشروع. بعد موافقتك، تبدأ مرحلة التصميم.",

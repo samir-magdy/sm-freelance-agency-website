@@ -136,7 +136,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: timeline.whatsapp.duration, ease: "easeOut", delay: timeline.whatsapp.delay } }}
           >
-            <img src="/utility/whatsapp.svg" alt="Open Whatsapp chat" className="w-8 h-8" aria-hidden="true" />
+            <img src="/utility/whatsapp.svg" alt="Open Whatsapp chat" className="w-10 h-10 sm:w-8 sm:h-8" aria-hidden="true" />
           </motion.a>
 
         {/* Scroll indicator

@@ -9,7 +9,7 @@ export default function ProjectsSection({ lang }: { lang: Lang }) {
   return (
     <section
       id="portfolio"
-      className="py-20 md:pt-24 px-4 mx-auto"
+      className="py-20 md:pt-24 px-4 sm:px-12 md:px-20 xl:px-32"
       aria-labelledby="portfolio-heading"
     >
       <script
@@ -17,7 +17,7 @@ export default function ProjectsSection({ lang }: { lang: Lang }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsStructuredData) }}
       />
 
-      <div className="mx-auto md:px-40">
+      <div className="mx-auto">
         <div className="mb-5 md:mb-0 px-4">
           <h2
             id="portfolio-heading"
@@ -29,7 +29,7 @@ export default function ProjectsSection({ lang }: { lang: Lang }) {
             {t.projectsSection.subtitle[lang]}
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto pt-4 md:pt-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-8 mx-auto pt-4 md:pt-20">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}
