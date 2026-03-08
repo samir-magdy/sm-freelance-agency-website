@@ -73,6 +73,49 @@ html {
 }
 
 /* ══════════════════════════════════════
+   Hero Section — Staggered Fade-In
+   ══════════════════════════════════════
+   Replaces Framer Motion with pure CSS.
+   Timeline matches the original exactly:
+     Hook 1:  0.2s delay, 0.5s duration
+     Hook 2:  0.6s delay, 0.5s duration
+     Hook 3:  1.2s delay, 0.5s duration
+     Nav/UI:  1.6s delay, 0.6s duration
+   ══════════════════════════════════════ */
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-fade {
+  opacity: 0;
+  animation-name: heroFadeIn;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+.hero-fade-hook-1 {
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+}
+.hero-fade-hook-2 {
+  animation-delay: 0.5s;
+  animation-duration: 0.5s;
+}
+.hero-fade-hook-3 {
+  animation-delay: 1s;
+  animation-duration: 0.5s;
+}
+.hero-fade-nav {
+  animation-delay: 1.5s;
+  animation-duration: 0.8s;
+}
+/* ══════════════════════════════════════
    4. Nav Link — Underline Hover Effect
    ══════════════════════════════════════ */
 
@@ -81,13 +124,18 @@ html {
 }
 
 .nav-link-underline::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   inset-inline-start: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, hsl(var(--gold-light)), hsl(var(--gold)), hsl(var(--gold-dark)));
+  background: linear-gradient(
+    90deg,
+    hsl(var(--gold-light)),
+    hsl(var(--gold)),
+    hsl(var(--gold-dark))
+  );
   border-radius: 0;
   transition: all 0.15s ease-in-out;
 }
@@ -98,7 +146,12 @@ html {
 }
 
 [dir="rtl"] .nav-link-underline::before {
-  background: linear-gradient(-90deg, hsl(var(--gold-light)), hsl(var(--gold)), hsl(var(--gold-dark)));
+  background: linear-gradient(
+    -90deg,
+    hsl(var(--gold-light)),
+    hsl(var(--gold)),
+    hsl(var(--gold-dark))
+  );
 }
 
 /* ══════════════════════════════════════

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import translations from "@/app/data/translations";
 import type { Lang } from "@/app/data/translations";
@@ -127,7 +126,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
         className={`
           xl:hidden
           fixed top-0 left-0 right-0 z-50
-          transition-all duration-[250ms] py-0.5 pl-1 pr-6
+          transition-all duration-[250ms] py-0.5 pl-2 pr-6
           ${isMenuOpen ? "bg-transparent" : "bg-background/70 backdrop-blur-lg"}`}
       >
         <div className="flex justify-between items-center" dir="ltr">
@@ -176,21 +175,16 @@ export default function HeroNav({ lang }: { lang: Lang }) {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.nav
-            id="mobile-menu"
-            aria-label={t.a11y.mobileNav[lang]}
-            onClick={() => setIsMenuOpen(false)}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="2xl:hidden fixed inset-0 flex flex-col items-center justify-center bg-background z-40"
-          >
+      <nav
+        id="mobile-menu"
+        aria-label={t.a11y.mobileNav[lang]}
+        aria-hidden={!isMenuOpen}
+        onClick={() => setIsMenuOpen(false)}
+        className={`2xl:hidden fixed inset-0 flex flex-col items-center justify-center bg-background z-40 transition-[opacity,visibility] duration-[250ms] ease-out ${isMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"}`}
+      >
 
             <ul className="flex flex-col items-center gap-3">
-              
+
               <li>
                 <a
                   href="#services"
@@ -239,17 +233,15 @@ export default function HeroNav({ lang }: { lang: Lang }) {
                   {t.nav.contact[lang]}
                 </a>
               </li>
-             
+
             </ul>
           <div className="flex flex-col absolute bottom-16 items-center gap-8">
               <LanguageToggle lang={lang} />
             <SocialIcons />
-             
-            
+
+
               </div>
-          </motion.nav>
-        )}
-      </AnimatePresence>
+      </nav>
     </header>
   );
 }

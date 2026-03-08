@@ -12,7 +12,6 @@ const cairo = Cairo({
   display: "swap",
 });
 
-
 // ─────────────────────────────────────────────
 // SEO METADATA
 // ─────────────────────────────────────────────
@@ -27,14 +26,13 @@ const meta = {
       "Grow your business with custom web design in Egypt. We specialize in modern websites optimized to rank on Google. Claim your free quote today!",
     ogLocale: "en_US",
     altLocale: "ar_EG",
-    ogAlt:
-      "Logo of the Best Web Design Company in Egypt | SM Web Studio",
+    ogAlt: "Logo of the Best Web Design Company in Egypt | SM Web Studio",
     siteName: "SM Web Studio",
     skipToContent: "Skip to main content",
   },
   ar: {
     title: "أفضل شركة تصميم مواقع فى القاهرة | تصميم مواقع في مصر",
-   description:
+    description:
       "أفضل شركة تصميم مواقع في مصر. متخصصون في برمجة مواقع احترافية تتصدر نتائج جوجل. اطلب استشارتك المجانية اليوم!",
     ogLocale: "ar_EG",
     altLocale: "en_US",
@@ -44,6 +42,17 @@ const meta = {
   },
 } as const;
 
+// ─────────────────────────────────────────────
+// CANONICAL URL HELPER
+// ─────────────────────────────────────────────
+// Single source of truth so canonical, OG url, and structured data never drift apart.
+
+function getCanonicalUrl(lang: Lang): string {
+  return lang === "en"
+    ? "https://samirmagdy.com"
+    : `https://samirmagdy.com/${lang}`;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -51,33 +60,29 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const m = meta[lang as Lang] ?? meta.en;
+  const canonicalUrl = getCanonicalUrl(lang as Lang);
 
   return {
     metadataBase: new URL("https://samirmagdy.com"),
     icons: {
-      icon: [{ url: "/favicon-v2.svg", sizes: "48x48", type: "image/xml+svg" }],
+      icon: [{ url: "/favicon-v2.svg", type: "image/svg+xml" }],
       apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
     },
     title: m.title,
     description: m.description,
     authors: [{ name: "Samir Magdy", url: "https://samirmagdy.com" }],
     alternates: {
-      // If the language is 'en', the canonical should be the root URL
-      canonical:
-        lang === "en"
-          ? "https://samirmagdy.com"
-          : `https://samirmagdy.com/${lang}`,
+      canonical: canonicalUrl,
       languages: {
         en: "https://samirmagdy.com",
         ar: "https://samirmagdy.com/ar",
-        // This tells Google: "If you don't know which language to show, show the root"
         "x-default": "https://samirmagdy.com",
       },
     },
     openGraph: {
       title: m.title,
       description: m.description,
-      url: `https://samirmagdy.com/${lang}`,
+      url: canonicalUrl,
       siteName: m.siteName,
       images: [
         {
@@ -119,12 +124,12 @@ export function generateStaticParams() {
 // STRUCTURED DATA / JSON-LD SCHEMAS
 // ─────────────────────────────────────────────
 
-function buildSchemas(lang: Lang) {
+function buildStructuredData(lang: Lang) {
   const isAr = lang === "ar";
+  const pageUrl = getCanonicalUrl(lang);
 
   // 1. ProfessionalService — Primary business schema
   const businessSchema = {
-    "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": "https://samirmagdy.com/#business",
     name: "SM Web Studio",
@@ -138,24 +143,19 @@ function buildSchemas(lang: Lang) {
     image: "https://samirmagdy.com/open-graph.png",
     logo: "https://samirmagdy.com/logo.png",
     priceRange: "$$",
-
-    // 1. THE MISSING ANCHOR: This links you to Cairo without a street address
     address: {
       "@type": "PostalAddress",
       addressLocality: "Cairo",
       addressRegion: "Cairo Governorate",
       addressCountry: "EG",
     },
-
-    // 2. THE LOCAL DOMINANCE: Listing specific neighborhoods targets high-intent searches
     areaServed: [
       { "@type": "City", name: "Cairo" },
-      { "@type": "City", name: "New Cairo" }, // التجمع الخامس
-      { "@type": "City", name: "Maadi" }, // المعادي
-      { "@type": "City", name: "Sheikh Zayed" }, // الشيخ زايد
+      { "@type": "City", name: "New Cairo" },
+      { "@type": "City", name: "Maadi" },
+      { "@type": "City", name: "Sheikh Zayed" },
       { "@type": "City", name: "Giza" },
     ],
-
     geo: {
       "@type": "GeoCoordinates",
       latitude: 30.0444,
@@ -211,7 +211,6 @@ function buildSchemas(lang: Lang) {
 
   // 2. WebSite schema
   const websiteSchema = {
-    "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": "https://samirmagdy.com/#website",
     name: "SM Web Studio",
@@ -225,10 +224,9 @@ function buildSchemas(lang: Lang) {
 
   // 3. WebPage schema
   const webPageSchema = {
-    "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `https://samirmagdy.com/${lang}#webpage`,
-    url: `https://samirmagdy.com/${lang}`,
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
     name: meta[lang].title,
     description: meta[lang].description,
     inLanguage: lang,
@@ -242,9 +240,8 @@ function buildSchemas(lang: Lang) {
 
   // 4. FAQPage schema
   const faqSchema = {
-    "@context": "https://schema.org",
     "@type": "FAQPage",
-    "@id": `https://samirmagdy.com/${lang}#faqpage`,
+    "@id": `${pageUrl}#faqpage`,
     mainEntity: translations.faqSection.items.map((item) => ({
       "@type": "Question",
       name: item.question[lang],
@@ -255,7 +252,10 @@ function buildSchemas(lang: Lang) {
     })),
   };
 
-  return { businessSchema, websiteSchema, webPageSchema, faqSchema };
+  return {
+    "@context": "https://schema.org",
+    "@graph": [businessSchema, websiteSchema, webPageSchema, faqSchema],
+  };
 }
 
 export default async function LangLayout({
@@ -267,56 +267,33 @@ export default async function LangLayout({
 }) {
   const { lang: rawLang } = await params;
   const lang: Lang = rawLang === "en" || rawLang === "ar" ? rawLang : "en";
-  const { businessSchema, websiteSchema, webPageSchema, faqSchema } =
-    buildSchemas(lang);
+  const structuredData = buildStructuredData(lang);
   const skipLabel = meta[lang].skipToContent;
 
   return (
-    <html
-      lang={lang}
-      dir={lang === "ar" ? "rtl" : "ltr"}
-    >
-
+    <html lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
       <body className={`${cairo.variable} font-cairo antialiased`}>
-          {/* ── Skip navigation ── */}
-          <a
-            href="#main-content"
-            className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-4 focus-visible:left-4 focus-visible:z-[100] focus-visible:px-4 focus-visible:py-2 focus-visible:bg-white focus-visible:text-black focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
-          >
-            {skipLabel}
-          </a>
+        {/* ── Skip navigation ── */}
+        <a
+          href="#main-content"
+          className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-4 focus-visible:left-4 focus-visible:z-[100] focus-visible:px-4 focus-visible:py-2 focus-visible:bg-white focus-visible:text-black focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+        >
+          {skipLabel}
+        </a>
 
-          {/* ── Structured Data (JSON-LD) ── */}
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(businessSchema),
-            }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(websiteSchema),
-            }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(webPageSchema),
-            }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(faqSchema),
-            }}
-          />
+        {/* ── Structured Data (JSON-LD) ── */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
 
-          {/* ── App ── */}
-          <main id="main-content">{children}</main>
-          <Footer />
-          <Analytics />
-        </body>
+        {/* ── App ── */}
+        <main id="main-content">{children}</main>
+        <Footer />
+        <Analytics />
+      </body>
     </html>
   );
 }

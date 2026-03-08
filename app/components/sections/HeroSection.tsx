@@ -1,31 +1,6 @@
-"use client";
-
 import translations from "@/app/data/translations";
 import type { Lang } from "@/app/data/translations";
 import HeroNav from "../ui/HeroNav";
-import { motion } from "motion/react";
-
-/*─── HERO ANIMATION TIMELINE ───────────────────────────────
-  Each entry: [delay, duration]  (in seconds)
-  Adjust any value independently.
-────────────────────────────────────────────────────────────*/
-const timeline = {
-  seoLabel:   { delay: 1.6,    duration: 0.6 },
-  hookLine1:  { delay: 0.2,  duration: 0.5 },
-  hookLine2:  { delay: 0.6,  duration: 0.5 },
-  hookLine3:  { delay: 1.2,  duration: 0.5 },
-  subheading: { delay: 1.6,  duration: 0.6 },
-  navbar:     { delay: 1.6,  duration: 0.6 },
-  buttons:    { delay: 1.6,  duration: 0.6 },
-  whatsapp:   { delay: 1.6,  duration: 0.6 },
-};
-
-const hookTimeline = [timeline.hookLine1, timeline.hookLine2, timeline.hookLine3];
-
-const fadeIn = ({ delay, duration }: { delay: number; duration: number }) => ({
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { duration, ease: "easeOut" as const, delay } },
-});
 
 export default function HeroSection({ lang }: { lang: Lang }) {
   const t = translations;
@@ -33,12 +8,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
 
   return (
     <div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: timeline.navbar.duration, ease: "easeOut", delay: timeline.navbar.delay } }}
-      >
         <HeroNav lang={lang} />
-      </motion.div>
 
       <section
         id="home"
@@ -48,19 +18,14 @@ export default function HeroSection({ lang }: { lang: Lang }) {
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-glow" aria-hidden="true" />
 
-        <motion.div
+        <div
           id="hero-container"
           className="relative z-10 flex flex-col items-center md:mt-16 w-full"
-          initial="hidden"
-          animate="show"
         >
           <h1 className="font-bold text-center text-content-heading px-10">
-            <motion.span
-              className="block text-content-muted text-[0.7rem] md:text-[0.85rem] tracking-wide font-medium uppercase mb-4"
-              variants={fadeIn(timeline.seoLabel)}
-            >
+            <span className="hero-fade hero-fade-nav block text-content-muted text-[0.7rem] md:text-[0.85rem] tracking-wide font-medium uppercase mb-4">
               {t.hero.seoLabel[lang]}
-            </motion.span>
+            </span>
             <span
               id="hero-hook"
               className="block text-[clamp(2.25rem,14vw,4rem)] md:text-8xl rtl:leading-normal rtl:md:mb-0 leading-tight mb-4 md:mb-8"
@@ -68,39 +33,44 @@ export default function HeroSection({ lang }: { lang: Lang }) {
               {Array.isArray(hookLines)
                 ? hookLines.map((line, i) => {
                     const words = line.split(" ");
+                    const fadeClass =
+                      i === 0
+                        ? "hero-fade-hook-1"
+                        : i === 1
+                          ? "hero-fade-hook-2"
+                          : "hero-fade-hook-3";
                     return (
-                      <motion.span
-                        key={i}
-                        className="md:inline block"
-                        variants={fadeIn(hookTimeline[i] ?? hookTimeline[hookTimeline.length - 1])}
-                      >
+                      <span key={i} className={`hero-fade ${fadeClass} md:inline block`}>
                         {(() => {
                           const tail = words.slice(1).join(" ");
                           const hasDot = tail.endsWith(".");
-                          return (<>{words[0]}{" "}<span className="text-gold">{hasDot ? tail.slice(0, -1) : tail}</span>{hasDot && "."}{" "}</>);
+                          return (
+                            <>
+                              {words[0]}{" "}
+                              <span className="text-gold">
+                                {hasDot ? tail.slice(0, -1) : tail}
+                              </span>
+                              {hasDot && "."}
+                              {" "}
+                            </>
+                          );
                         })()}
-                      </motion.span>
+                      </span>
                     );
                   })
                 : (
-                  <motion.span variants={fadeIn(hookTimeline[0])}>
+                  <span className="hero-fade hero-fade-hook-1">
                     {hookLines}
-                  </motion.span>
+                  </span>
                 )}
             </span>
           </h1>
 
-          <motion.p
-            className="text-content-body text-base md:text-2xl text-center mb-8 px-16"
-            variants={fadeIn(timeline.subheading)}
-          >
+          <p className="hero-fade hero-fade-nav text-content-body text-base md:text-2xl text-center mb-8 px-16">
             {t.hero.subheading[lang]}
-          </motion.p>
+          </p>
 
-          <motion.div
-            className="flex flex-col items-center gap-6 px-6 sm:px-0"
-            variants={fadeIn(timeline.buttons)}
-          >
+          <div className="hero-fade hero-fade-nav flex flex-col items-center gap-6 px-6 sm:px-0">
             <a
               href="#contact"
               className="cta-primary text-center bg-gradient-to-b from-gold to-gold-dark text-gray-900 font-semibold text-lg md:text-xl px-10 md:px-10 py-4 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
@@ -124,30 +94,19 @@ export default function HeroSection({ lang }: { lang: Lang }) {
                 <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
-          </motion.div>
+          </div>
+        </div>
 
-        </motion.div>
-          {/* WhatsApp floating button — fixed position via .whatsapp-float CSS */}
-          <motion.a
-            href="https://wa.me/201274613331"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="whatsapp-float inline-flex transition-colors duration-300"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: timeline.whatsapp.duration, ease: "easeOut", delay: timeline.whatsapp.delay } }}
-          >
-            <img src="/utility/whatsapp.svg" alt="Open Whatsapp chat" className="w-10 h-10 sm:w-8 sm:h-8" aria-hidden="true" />
-          </motion.a>
-
-        {/* Scroll indicator
-        <span
-          aria-label="Scroll down"
-          className="absolute bottom-28 md:bottom-16 inset-x-0 mx-auto w-fit text-content-muted/40 hover:text-content-muted transition-colors duration-500 animate-scroll-hint"
+        {/* WhatsApp floating button */}
+        <a
+          href="https://wa.me/201274613331"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Whatsapp chat"
+          className="hero-fade hero-fade-nav whatsapp-float inline-flex transition-colors duration-300"
         >
-          <svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
-            <path d="M1 1l7 7 7-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </span> */}
+          <img src="/utility/whatsapp.svg" alt="" className="w-10 md:w-8 h-10 md:h-8" aria-hidden="true" />
+        </a>
       </section>
     </div>
   );
