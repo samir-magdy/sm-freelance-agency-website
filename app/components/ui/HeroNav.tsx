@@ -61,7 +61,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             src="/logo-dark.png"
             alt="SM WEB STUDIO LOGO"
             width={180}
-            height={30}
+            height={39}
             priority
           />
         </a>
@@ -139,9 +139,8 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               src="/logo-dark.png"
               alt="SM WEB STUDIO LOGO"
               width={130}
-              height={24}
+              height={28}
               priority
-              className="bg-transparent h-auto"
             />
           </a>
           <button
