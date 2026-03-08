@@ -79,15 +79,20 @@ export const projects: readonly Project[] = [
 
 // SM Web Studio identity — reused across all project schema
 const smWebStudio = {
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
   name: "SM Web Studio",
   alternateName: "إس إم ويب ستوديو",
   url: "https://samirmagdy.com",
   description:
-    "Web design and development agency in Cairo specializing in custom-coded, conversion-focused websites for small businesses in Egypt and the MENA region.",
+    "Grow your business with custom web design in Egypt. We specialize in modern websites optimized to rank on Google. Claim your free quote today!",
+  telephone: "+201274613331",
+  email: "studio@samirmagdy.com",
+  image: "https://samirmagdy.com/open-graph.png",
+  logo: "https://samirmagdy.com/logo.png",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Cairo",
+    addressRegion: "Cairo Governorate",
     addressCountry: "EG",
   },
   geo: {
@@ -97,11 +102,16 @@ const smWebStudio = {
   },
   areaServed: [
     { "@type": "City", name: "Cairo" },
-    { "@type": "Country", name: "Egypt" },
-    { "@type": "AdministrativeArea", name: "MENA" },
+    { "@type": "City", name: "New Cairo" },
+    { "@type": "City", name: "Maadi" },
+    { "@type": "City", name: "Sheikh Zayed" },
+    { "@type": "City", name: "Giza" },
   ],
   knowsLanguage: ["ar", "en"],
-  sameAs: ["https://www.linkedin.com/in/samir-magdy-sm/"],
+  sameAs: [
+    "https://www.facebook.com/WebDesignCairo",
+    "https://www.instagram.com/webdesign.cairo/",
+  ],
 };
 
 export const projectsStructuredData = {
