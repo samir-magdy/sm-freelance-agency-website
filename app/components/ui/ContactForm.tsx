@@ -117,7 +117,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
   const labelClass =
     "block text-caption font-bold text-content-muted mb-2 ms-1";
   const chipClass = (selected: boolean) =>
-    `bg-surface-low flex-1 flex items-center justify-center px-4 py-[0.63rem] rounded-lg border cursor-pointer text-base ${
+    `bg-surface-low hover:bg-icon/20 flex-1 flex items-center justify-center px-4 py-[0.63rem] rounded-lg border cursor-pointer text-base ${
       selected
         ? "border-icon text-content-heading border-2"
         : "border-transparent text-content-muted"

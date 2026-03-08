@@ -3,10 +3,11 @@ export type Lang = "en" | "ar";
 const translations = {
   // Navigation
   nav: {
-    services: { en: "What's Included", ar: "المميزات المضمنة" },
-    projects: { en: "Our Work", ar: "سابقة الأعمال" },
-    howItWorks: { en: "How It Works", ar: "خطوات العمل" },
-    faq: { en: "FAQ", ar: "الأسئلة الشائعة" },
+    services: { en: "Features", ar: "المميزات" },
+    addOns: { en: "Services", ar: "الخدمات" },
+    projects: { en: "Portfolio", ar: "الأعمال" },
+    howItWorks: { en: "Process", ar: "خطوات العمل" },
+    faq: { en: "FAQs", ar: "الأسئلة الشائعة" },
     contact: { en: "Get Started", ar: "ابدأ الآن" },
   },
 
@@ -17,7 +18,7 @@ const translations = {
       ar: ["تصدّر البحث.", "اكسب الثقة.", "اجذب العملاء."],
     },
     primaryCta: {
-      en: "Book a Free Consultation",
+      en: "Claim a Free Consultation",
       ar: "احصل على استشارة مجانية",
     },
     secondaryCta: {
@@ -25,16 +26,16 @@ const translations = {
       ar: "سابقة الأعمال",
     },
     seoLabel: {
-      en: "Website Design Company in Cairo",
-      ar: "شركة تصميم مواقع في القاهرة",
+      en: "Website Design Company in Egypt",
+      ar: "شركة تصميم مواقع في القاهرة، مصر",
     },
     subheading: {
-      en: "Custom web design and search visibility that drive real growth for businesses in Cairo, Egypt and across the region.",
+      en: "Custom web design and development that drive real growth for businesses in Cairo, Egypt and around the world.",
       ar: "تصميم مواقع مخصصة وتحسين الظهور في محركات البحث لتحقيق نمو حقيقي لأصحاب الأعمال في القاهرة، مصر، وخارجها.",
     },
   },
 
-  // Services section
+  // Features section
   servicesSection: {
     heading: {
       en: "What's Included",
@@ -46,8 +47,8 @@ const translations = {
     },
 
     goal: {
-      en: "Your growth isn’t a project. It’s our reputation.",
-      ar: "نموّك مش بس مشروع.. هو سمعتنا.",
+      en: "Your growth isn’t another project. It’s our reputation.",
+      ar: ["نموّك مش بس مشروع..","هو سمعتنا."],
     },
     sharedFeatures: [
       {
@@ -79,14 +80,14 @@ const translations = {
         ar: "أسس محركات البحث",
         desc: {
           en: "Your site is built to rank on Google so customers find you before they find your competitors.",
-          ar: "موقعك مهيَّأ لمحركات البحث منذ اليوم الأول، لتظهر في نتائج جوجل قبل منافسيك.",
+          ar: "موقعك مهيأ لمحركات البحث منذ اليوم الأول، لتظهر في نتائج جوجل قبل منافسيك.",
         },
       },
       {
         en: "Fully Responsive",
         ar: "توافق مع جميع الأجهزة",
         desc: {
-          en: "Your website will work perfectly and look great on all devices. Phone, tablet, or laptop.",
+          en: "Your website will work perfectly and look great on all devices. Phone, tablet, laptop or Desktop.",
           ar: "موقعك يعمل بشكل مثالي ويظهر باحترافية على جميع الأجهزة. بما يشمل موبايل، تابلت، أو لابتوب.",
         },
       },
@@ -112,6 +113,90 @@ const translations = {
         desc: {
           en: "Request up to three basic content changes a month at no charge. Text, images, prices, and more.",
           ar: "يمكنك طلب ثلاث تعديلات شهرياً على المحتوى مجاناً. نصوص أو صور أو أسعار وغير ذلك.",
+        },
+      },
+    ],
+  },
+
+  // Services section
+  addOnsSection: {
+    heading: {
+      en: "Our Services",
+      ar: "الخدمات الإضافية",
+    },
+    subtitle: {
+      en: "Extras that enhance your website's capabilities",
+      ar: "خصائص وخدمات اختيارية لتوسيع نطاق موقعك وقدراته",
+    },
+    items: [
+      {
+        title: {
+          en: "Bilingual (AR/EN)",
+          ar: "دعم اللغتين (عربي/إنجليزي)",
+        },
+        description: {
+          en: "Your website is written in both Arabic and English. Users can toggle the language easily.",
+          ar: "موقعك مبني بالعربي والإنجليزي بالكامل مع دعم RTL وتبديل سلس بين اللغتين للزوار.",
+        },
+      },
+      {
+        title: {
+          en: "Custom Contact Form",
+          ar: "نموذج تواصل",
+        },
+        description: {
+          en: "A custom-built form that delivers enquiries directly to your preferred channel and gathers leads.",
+          ar: "نموذج مخصص يوصل استفسارات العملاء مباشرة إلى بريدك الإلكتروني، واتساب، أو كلاهما.",
+        },
+      },
+      {
+        title: {
+          en: "Full Copywriting",
+          ar: "كتابة محتوى كامل",
+        },
+        description: {
+          en: "We write all your website content from scratch, tailored to your brand voice and audience.",
+          ar: "نكتب كل محتوى موقعك من الصفر، مصمّم لهوية علامتك التجارية وجمهورك المستهدف.",
+        },
+      },
+      {
+        title: {
+          en: "Google Business Profile",
+          ar: "Google Business Profile",
+        },
+        description: {
+          en: "Full setup of your GBP so your business appears on Google Maps and local search results.",
+          ar: "إعداد وتحسين كامل لملفك على جوجل ليظهر نشاطك على خرائط جوجل ونتائج البحث المحلية.",
+        },
+      },
+      {
+        title: {
+          en: "SEO Strategy Package",
+          ar: "تطوير SEO للمحتوى",
+        },
+        description: {
+          en: "Targeted research and content optimization designed to maximize search engine visibility.",
+          ar: "محتوى مبني على كلمات بحث مستهدفة لتحسين ترتيب موقعك في جوجل للمصطلحات المهمة لنشاطك.",
+        },
+      },
+      {
+        title: {
+          en: "Logo & Brand Identity",
+          ar: "لوجو وهوية بصرية",
+        },
+        description: {
+          en: "Custom logo and visual identity designed to give your brand a professional, consistent look.",
+          ar: "لوجو وهوية بصرية مخصصة تمنح علامتك التجارية مظهر احترافي ومتناسق.",
+        },
+      },
+      {
+        title: {
+          en: "Built-in Dashboard",
+          ar: "لوحة تحكم للمحتوى",
+        },
+        description: {
+          en: "A private control panel to update your website's content instantly. No third party needed.",
+          ar: "واجهة إدارة محتوى تتيح لك تعديل النصوص، الصور، والتفاصيل في موقعك دون الحاجة للكود.",
         },
       },
     ],
@@ -181,301 +266,319 @@ const translations = {
     heading: { en: "How It Works", ar: "خطوات العمل" },
     subtitle: {
       en: "A clear, straightforward process from start to finish",
-      ar: "عملية بسيطة ومنظمة من البداية للنهاية",
+      ar: "عملية واضحة وبسيطة من البداية للنهاية",
     },
     steps: {
       discovery: {
-        title: {
-          en: "Consultation",
-          ar: "التنسيق",
-        },
+        title: { en: "Consult", ar: "الاستشارة" },
         description: {
-          en: "We connect to understand your business goals and target audience, then define the website strategy, timeline, and more.",
-          ar: "نتواصل لفهم نشاطك التجاري وأهدافك والجمهور المستهدف، ثم نحدد استراتيجية تصميم الموقع، الجدول الزمني، والتكلفة بشكل واضح.",
+          en: "We connect to understand everything you need from your website, then send a full proposal including timeline and pricing. Once approved, the design phase begins.",
+          ar: "نتواصل معك لفهم كل ما تحتاجه من موقعك، ثم نرسل لك عرضًا بالمشروع. بعد موافقتك، تبدأ مرحلة التصميم.",
         },
       },
-
       design: {
-        title: {
-          en: "Approval",
-          ar: "التصميم",
-        },
+        title: { en: "Design", ar: "التصميم" },
         description: {
-          en: "Once commited, we create a modern website design that reflects your brand identity. Once approved, we begin the development phase.",
-          ar: "نصمم واجهة موقع عصرية تعكس هوية علامتك التجارية. بعد الموافقة، يتم دفع 50٪ لبدء تطوير الموقع بشكل احترافي.",
+          en: "We design the look and feel of your website and present it to you for feedback. Once you approve, the build phase begins.",
+          ar: "نصمم الشكل والأسلوب العام لموقعك ونعرضه عليك للمراجعة. بعد اعتمادك للتصميم، تبدأ مرحلة التطوير.",
         },
       },
-
       development: {
-        title: {
-          en: "Development",
-          ar: "التطوير",
-        },
+        title: { en: "Build", ar: "التطوير" },
         description: {
-          en: "We work on developing a fast, secure, and mobile-friendly website optimized for search engines and strong online visibility.",
-          ar: "نقوم بتطوير موقع سريع وآمن ومتوافق مع الموبايل، ومهيأ لتحسين محركات البحث وزيادة الظهور في نتائج جوجل.",
+          en: "We develop your website based on the approved design, bringing it to life while you stay focused on running your business.",
+          ar: "نبدأ مرحلة التطوير لتحويل التصميم إلى موقع فعلي يعمل بكفاءة، بينما تركز أنت على إدارة نشاطك.",
         },
       },
-
       launch: {
-        title: {
-          en: "Handover",
-          ar: "التسليم",
-        },
+        title: { en: "Launch", ar: "الإطلاق" },
         description: {
-          en: "We show you the final product. After final approval and remaining payment, your website goes live.",
-          ar: "بعد الموافقة النهائية وسداد المبلغ المتبقي، يتم إطلاق موقعك الإلكتروني مهيأ بالكامل وجاهز للظهور في نتائج بحث جوجل.",
+          en: "We review the finished website together before going live. Once you are satisfied with the final result, your website launches.",
+          ar: "نستعرض معك الموقع بعد اكتماله قبل نشره. بعد موافقتك وسداد المبلغ المتبقي، يتم إطلاق موقعك رسميًا.",
+        },
+      },
+      support: {
+        title: { en: "Support", ar: "الدعم" },
+        description: {
+          en: "After launch, we stay available for updates, fixes, and any questions or requests that may come up.",
+          ar: "بعد الإطلاق، نبقى متاحين للتحديثات والإصلاحات وأي استفسارات قد تظهر.",
         },
       },
     },
   },
 
   // FAQ section
+  // FAQ Section — FULLY LOCKED
+  // Last updated: March 7, 2026
+  // Total: 22 items
+  // Order: SEO-optimized buyer journey (awareness → research → decision → post-launch)
+  // Style: Colloquial Arabic questions, MSA-leaning Arabic answers, direct English throughout
+
   faqSection: {
-    heading: { en: "FAQ", ar: "الأسئلة الشائعة" },
+    heading: { en: "Frequently Asked Questions", ar: "الأسئلة الشائعة" },
     subtitle: {
-      en: "Answers to commonly asked questions",
-      ar: "إجابات على الأسئلة الأكثر شيوعًا",
+      en: "Have a question? It's likely answered here",
+      ar: "هل لديك استفسار؟ ستجد الإجابة هنا على الأرجح",
     },
     items: [
+      // ===== TOP OF FUNNEL (Awareness) =====
+      {
+        question: {
+          en: "Do I need a website for my business?",
+          ar: "هو شغلي محتاج موقع إلكتروني؟",
+        },
+        answer: {
+          en: "A website makes your business discoverable on Google and other search engines like Bing and DuckDuckGo, it gives you a professional presence that you fully control, and works for you 24/7. Whether you're a service provider, a retailer, or a freelancer, not having a website guarantees that you are losing potential clients.",
+          ar: "الموقع الإلكتروني يجعل نشاطك التجاري قابلاً للاكتشاف على جوجل ومحركات البحث الأخرى، كما يمنحك حضوراً احترافياً تسيطر عليه بالكامل ويعمل لصالحك على مدار الساعة. سواء كنت مقدم خدمات، أو مستقلاً، فإن عدم امتلاك موقع يضمن لك خسارة عملاء محتملين.",
+        },
+      },
+      {
+        question: {
+          en: "What is SEO and why does my business need it?",
+          ar: "إيه هو الـ SEO وليه شغلي محتاجه؟",
+        },
+        answer: {
+          en: "SEO stands for Search Engine Optimization. It's the process of making your website easier for Google to find, understand, and rank when people search for your services. Without SEO, your website may exist but remain invisible in search results. With proper SEO, your business can appear when potential customers in your area are actively looking for what you offer. Every website we build includes a technical SEO foundation as standard, and we offer an advanced SEO Content Package as an add-on for businesses that want to compete for specific search terms.",
+          ar: "SEO هو اختصار لـ 'تحسين محركات البحث'. وهي عملية تهدف لجعل موقعك أسهل في الاكتشاف والفهم والظهور في المراتب الأولى على جوجل عندما يبحث الناس عن خدماتك. بدون SEO، قد يتواجد موقعك تقنياً لكنه سيظل غير مرئي في نتائج البحث. مع التهيئة الصحيحة، يظهر نشاطك للعملاء الذين يبحثون فعلياً عما تقدمه. كل موقع نبنيه يتضمن أساساً تقنياً للـ SEO كمعيار قياسي، ونوفر تطوير محتوى SEO متقدمة كإضافة للشركات التي ترغب في المنافسة على كلمات بحث محددة.",
+        },
+      },
+      {
+        question: {
+          en: "Can I build my own website instead of hiring someone?",
+          ar: "ينفع أعمل موقعي بنفسي بدل ما أجيب حد متخصص؟",
+        },
+        answer: {
+          en: "You can. Tools like Wix and Squarespace let you build a basic website yourself. However, these platforms come with trade-offs like limited control over performance, slower load times, weaker SEO, and designs that often look similar to thousands of other sites. A custom-coded website is built specifically for your business, loads faster, ranks better on Google, and gives you a result that stands out. If your online presence is important to your growth, working with a professional typically pays for itself through the customers it brings in.",
+          ar: "يمكنك ذلك بالفعل عبر أدوات مثل Wix. ومع ذلك، تأتي هذه المنصات مع تنازلات مثل التحكم المحدود في الأداء، وبطء سرعة التحميل، وضعف الـ SEO، بالإضافة إلى تصاميم تتشابه مع آلاف المواقع الأخرى. أما الموقع المبرمج خصيصاً فيُبنى ليلبي احتياجات عملك بدقة، ويتميز بسرعة أكبر وظهور أفضل على جوجل. إذا كان حضورك الرقمي محورياً لنموك، فإن الاستعانة بمتخصص ستعوض تكلفتها سريعاً من خلال العملاء الجدد الذين سيجذبهم الموقع.",
+        },
+      },
+
+      // ===== MID-FUNNEL (Research) =====
+      {
+        question: {
+          en: "What is the difference between a landing page and a website?",
+          ar: "إيه الفرق بين صفحة الهبوط والموقع الإلكتروني الكامل؟",
+        },
+        answer: {
+          en: "A landing page is a single page with a focused structure, typically 4–6 sections, designed to present your business and drive one clear action like a call or a WhatsApp message. A full website goes deeper with more sections, more detailed content, and can include additional pages. Both are custom-coded. The right choice depends on where your business is and what you need right now, we help you decide during our consultation.",
+          ar: "صفحة الهبوط هي صفحة واحدة بهيكل مركز (عادة من 4-6 أقسام)، مصممة لعرض نشاطك ودفع الزائر لاتخاذ إجراء واحد واضح مثل الاتصال أو المراسلة عبر واتساب. أما الموقع الكامل فيتوسع ليشمل أقساماً وصفحات أكثر تفصيلاً. كلاهما مبرمج خصيصاً، ويعتمد الاختيار الأنسب على مرحلة عملك واحتياجاتك الحالية، وهو ما نساعدك في تحديده خلال استشارتنا.",
+        },
+      },
+      {
+        question: {
+          en: "What's the difference between WordPress and custom code?",
+          ar: "إيه الفرق بين ووردبريس (WordPress) والكود المخصص؟",
+        },
+        answer: {
+          en: "WordPress and similar online builders are faster to launch, but they're general-purpose tools built for everyone, which means they carry a lot of extra weight. Outdated Plugins, themes are just some of the factors that can slow a Wordpress website down, make it more vulnerable to hacking, and hurt your Google rankings since page speed is a direct ranking factor. Custom code is built specifically for your needs, so it loads faster, stays more secure, and performs better in search results.",
+          ar: "ووردبريس والمنصات الجاهزة أسرع في الإطلاق، لكنها أدوات عامة مصممة للجميع، مما يعني أنها تحمل الكثير من الأكواد الزائدة. الإضافات والقوالب قد تبطئ الموقع وتجعله أكثر عرضة للاختراق وتضر بترتيبك على جوجل، حيث أن سرعة الصفحة عامل تصنيف أساسي. أما الكود المخصص فيُبنى خصيصاً لاحتياجاتك، مما يجعله أسرع، وأكثر أماناً، وأفضل أداءً في نتائج البحث.",
+        },
+      },
       {
         question: {
           en: "How much does a website cost?",
-          ar: "تكلفة الموقع كام؟",
+          ar: "تكلفة الموقع الإلكتروني بتبقى كام؟",
         },
         answer: {
-          en: "The cost depends on your business goals. Here at SM Web Studio we use custom code for all our websites. Therefore, a simple landing page with 4–5 sections starts from around 4,000 EGP, while a full single-page website with more sections, deeper detail, and advanced features can reach 30,000 EGP. For more complex projects, additional pages are available as needed. We provide clear pricing with no hidden fees after our first consultation.",
-          ar: "التكلفة بتعتمد على الخصائص والمميزات اللي محتاجها موقعك. صفحة هبوط من ٤–٥ أقسام بتبدأ تقريبًا من ٣٬٠٠٠ جنيه، ومع إضافة أقسام أو مميزات إضافية زي دعم لغتين، نموذج تواصل مخصص بربط مباشر على الإيميل، أو تحسين متقدم لمحركات البحث (SEO)، السعر بيزيد حسب المطلوب. بنوضح السعر من أول استشارة من غير أي رسوم مخفية.",
+          en: "Every project is priced based on its actual scope and requirements. A simple landing page with 4–5 sections starts from 5,000 EGP, with the price increasing as you add more sections, features, or add-ons like bilingual support, custom contact form and more. We provide a clear, detailed quote after our first consultation with no hidden fees.",
+          ar: "يتم تسعير كل مشروع بناءً على نطاق العمل ومتطلباته الفعلية. تبدأ تكلفة صفحة الهبوط البسيطة (4-5 أقسام) من 5,000 جنيه مصري، وتزداد التكلفة مع إضافة أقسام أو ميزات أخرى مثل دعم اللغتين أو نماذج التواصل المخصصة. نقدم عرض سعر واضحاً ومفصلاً بعد الاستشارة الأولى دون أي رسوم مخفية.",
         },
       },
       {
         question: {
           en: "What technologies do you use to build websites?",
-          ar: "إيه نوع التقنية اللي بتستخدموها في بناء المواقع؟",
+          ar: "بتستخدموا تقنيات إيه في بناء المواقع؟",
         },
         answer: {
-          en: "We build all our websites using custom code. For landing pages and lightweight sites, we use Vanilla JS — pure, minimal code with no unnecessary dependencies, which means extremely fast load times. For more advanced, multi-page business websites, we use Next.js — a modern framework that handles dynamic content, routing, and performance optimization at scale. Neither uses WordPress or any page builders.",
-          ar: "إحنا بنبني كل مواقعنا بكود مخصص. لصفحات الهبوط والمواقع الخفيفة بنستخدم Vanilla JS — كود نضيف ومباشر من غير أي تبعيات ملهاش لازمة، وده بيدّي سرعة تحميل عالية جدًا. للمواقع الأكبر متعددة الصفحات بنستخدم Next.js — فريمورك حديث بيساعدنا ندير المحتوى الديناميكي، التنقل بين الصفحات، وتحسين الأداء باحترافية.",
-        },
-      },
-      {
-        question: {
-          en: "Why not just use WordPress or a website builder?",
-          ar: "ليه ما نستخدمش ووردبريس أو منصة جاهزة؟",
-        },
-        answer: {
-          en: "WordPress and website builders are faster to launch, but they are general-purpose tools built for everyone — which means they carry a lot of extra weight. Plugins, themes, and layers of code you don't actually need slow your site down, make it more vulnerable to hacking, and hurt your Google rankings since page speed is a direct ranking factor. Custom code is built specifically for your needs, so it loads faster, stays more secure, and performs better in search results.",
-          ar: "ووردبريس والمنصات الجاهزة هي أداة لصنع موقع إلكتروني بطريقة سهلة وسريعة لكنها بتفتقد لدور المبرمج والبرمجة المخصصة اللي دورها تبني من الصفر حسب احتياجات موقعك، ووردبريس يُستخدَم فيه إضافات وقوالب وطبقات كود زيادة بتبطّأ موقعك، تزود احتمالية الاختراق، وتأثر على ترتيبك في جوجل لأن السرعة عامل ترتيب أساسي. البرمجة المخصصة بتبني موقعك على مقاس احتياجك، فبيكون أسرع، أأمن، وأقوى في نتائج البحث.",
-        },
-      },
-      {
-        question: {
-          en: "Can my website get hacked?",
-          ar: "ممكن موقعي يُخترق؟",
-        },
-        answer: {
-          en: "Extremely difficult. Because your website is built as a static site — meaning pure code with no database, no login panel, and no plugins — there is almost nothing for a hacker to target. Most website hacks exploit WordPress vulnerabilities like outdated plugins or weak passwords. None of those entry points exist in a static custom-coded website, making it one of the most secure options available.",
-          ar: "صعب جدًا. لأن موقعك بيكون Static — يعني كود صافي من غير قاعدة بيانات، من غير لوحة تحكم، ومن غير إضافات. مفيش تقريبًا حاجة يقدر المخترق يدخل منها. أغلب الاختراقات بتحصل بسبب إضافات قديمة أو كلمات سر ضعيفة في ووردبريس — الحاجات دي مش موجودة عندنا أصلًا، وده بيخلي الموقع من أكتر الخيارات أمانًا.",
-        },
-      },
-      {
-        question: {
-          en: "My business is already on Facebook — do I still need a website?",
-          ar: "عندي صفحة على فيسبوك، مازالت محتاج موقع؟",
-        },
-        answer: {
-          en: "A Facebook page is a great starting point, but it has real limitations. You don't own it — Facebook can restrict your reach, change its algorithm, or suspend your page at any time. A website is yours completely. It also lets you show up on Google when people search for your services, which a Facebook page simply can't do. Together, they're much stronger than either one alone.",
-          ar: "صفحة الفيسبوك نقطة بداية كويسة، بس ليها حدود حقيقية. إنت مش مالكها — فيسبوك يقدر يقلل وصولك، يغير الخوارزمية، أو يوقف صفحتك في أي وقت. الموقع ملكك بالكامل. كمان بيخليك تظهر في جوجل لما الناس تدور على خدماتك، وده حاجة صفحة الفيسبوك مش بتعملها. مع بعض بيكونوا أقوى بكتير من أي واحد لوحده.",
-        },
-      },
-      {
-        question: {
-          en: "How will a website help my business more than a Facebook or Instagram page?",
-          ar: "إيه اللي هيقدمهولي الموقع أكتر من صفحة فيسبوك أو إنستجرام؟",
-        },
-        answer: {
-          en: "Social media is rented space — your website is your owned digital headquarters. A website builds professional credibility that social pages can't match, lets you appear on Google when people are actively searching for your services, and gives you full control over how your brand is presented. On a competitor's Facebook page, their ads can appear right next to your content. That never happens on your own website.",
-          ar: "السوشيال ميديا أرض مستأجرة — الموقع هو مقرك الرقمي الرسمي المملوك ليك. الموقع بيبني مصداقية احترافية مش قادر السوشيال ميديا يحققها، وبيخليك تظهر في جوجل لما الناس بتدور فعلاً على خدماتك، وبيديك تحكم كامل في شكل علامتك التجارية. على فيسبوك، إعلانات المنافسين ممكن تظهر جنب محتواك مباشرة — ده مش بيحصل على موقعك الخاص أبدًا.",
+          en: "We build every website from scratch using custom code. For most projects we use clean, lightweight code that loads extremely fast. For larger or more complex websites, we use a modern framework called Next.js that handles advanced functionality and performance at scale. The result is the same either way: a faster, more secure, and better-performing website.",
+          ar: "نحن نبني كل موقع من الصفر باستخدام الكود المخصص. في أغلب المشاريع، نستخدم أكواداً تضمن سرعة تحميل فائقة. أما للمواقع الأكبر أو الأكثر تعقيداً، فنستخدم إطار عمل حديث يسمى Next.js للتعامل مع الوظائف المتقدمة والأداء العالي. النتيجة في كلتا الحالتين واحدة: موقع أسرع، وأكثر أماناً، وأفضل أداءً.",
         },
       },
       {
         question: {
           en: "Will my website work on mobile phones?",
-          ar: "الموقع هيشتغل على الموبايل؟",
+          ar: "هل الموقع هيشتغل كويس على الموبايل؟",
         },
         answer: {
           en: "Absolutely. Every website we build is fully responsive, meaning it automatically adapts to look and work perfectly on any screen — phone, tablet, or desktop. This is not optional for us, it's built into everything we do. Given that most people in Egypt browse on mobile, this is something we take very seriously.",
-          ar: "أكيد. كل موقع بنبنيه بيكون responsive بالكامل، يعني بيتكيف تلقائيًا ويشتغل بشكل مثالي على أي شاشة — موبايل، تابلت، أو كمبيوتر. ده مش اختياري عندنا، ده جزء أساسي في كل حاجة بنعملها. وبما إن أغلب الناس في مصر بيتصفحوا على الموبايل، ده موضوع بناخده بجدية كاملة.",
-        },
-      },
-      {
-        question: {
-          en: "Do I own my website after it's built?",
-          ar: "الموقع بيبقى ملكي بعد ما يتسلم؟",
-        },
-        answer: {
-          en: "Yes, completely. Once the project is delivered and final payment is made, the website and all its files are 100% yours. You own the code, the design, and everything in it. We don't hold anything back or lock you into any ongoing contract. You're free to host it wherever you want and work with whoever you want going forward.",
-          ar: "أيوه، بالكامل. بعد ما المشروع يتسلم والدفعة الأخيرة تتأدى، الموقع وكل ملفاته بيبقوا ملكك ١٠٠٪. إنت مالك الكود، التصميم، وكل حاجة فيه. مش بنحتجز أي حاجة أو بنربطك بأي عقد مستمر. حر تستضيفه فين ما تحب وتشتغل مع أي حد تحب بعد كده.",
-        },
-      },
-      {
-        question: {
-          en: "How many revisions do I get?",
-          ar: "بيكون ليا كام تعديل؟",
-        },
-        answer: {
-          en: "We include up to 3 rounds of revisions during the build. In our experience, that's always enough — especially since we align on the design direction before we start building. Revisions beyond that are handled as small paid adjustments. Our goal is to get it right well within those rounds, not to count them against you.",
-          ar: "بنوفر لغاية ٣ جولات تعديل خلال مرحلة البناء. من تجربتنا، دي بتكون كافية دايمًا — خصوصًا إننا بنتفق على اتجاه التصميم قبل ما نبدأ. أي تعديلات بعد كده بتتحسب كتعديلات مدفوعة بسيطة. هدفنا إننا نوصل للنتيجة الصح قبل ما نخلص الجولات دي، مش إننا نحسبها عليك.",
-        },
-      },
-      {
-        question: {
-          en: "Can I add new sections or features to my website later?",
-          ar: "أقدر أضيف أقسام أو خصائص جديدة للموقع بعدين؟",
-        },
-        answer: {
-          en: "Yes. Your website isn't frozen after launch. If your business grows and you want to add a new section, a new feature, or expand the site, we can handle that as additional paid work. Because we built it with clean custom code, making changes is straightforward — there's no plugin mess or platform limitations to work around.",
-          ar: "أيوه. موقعك مش ثابت بعد الإطلاق. لو نشاطك اتوسع وعايز تضيف قسم جديد، خاصية جديدة، أو تكبّر الموقع، بنقدر نعمل ده كشغل إضافي مدفوع. ولأننا بنيناه بكود مخصص نضيف، التعديلات بتكون سهلة ومباشرة — مفيش تعقيدات إضافات أو قيود منصات لازم نتعامل معاها.",
-        },
-      },
-      {
-        question: {
-          en: "Can you redesign my existing website?",
-          ar: "تقدروا تعيدوا تصميم موقعي الحالي؟",
-        },
-        answer: {
-          en: "It depends on how your current website was built. If it was built with custom code, then yes — we can redesign and improve it. We'll just need access to the existing files and hosting settings, either from you or your previous developer. If your website is built on WordPress, we unfortunately can't work with it directly, but we can build you a brand new custom-coded website that will outperform it in speed, security, and SEO.",
-          ar: "بيعتمد على طريقة بناء موقعك الحالي. لو معمول بكود مخصص نقدر نعيد تصميمه ونطوره — هنحتاج الملفات وإعدادات الاستضافة منك أو من المطور السابق. لو موقعك معمول بووردبريس مش بنشتغل عليه مباشرة، لكن نقدر نبني لك موقع جديد بكود مخصص يتفوق عليه في السرعة، الأمان، والـ SEO.",
-        },
-      },
-      {
-        question: {
-          en: "Does the website support Arabic and English?",
-          ar: "الموقع بيدعم عربي وإنجليزي؟",
-        },
-        answer: {
-          en: "Yes. We build fully bilingual websites that support both Arabic and English, including proper right-to-left (RTL) layout for Arabic. Switching between languages is seamless for your visitors, and both versions are optimized for SEO so your business gets found in both languages on Google. Keep in mind that bilingual websites require additional development work and are priced accordingly — we'll include this clearly in your quote.",
-          ar: "بنبني مواقع ثنائية اللغة تدعم العربي والإنجليزي بالكامل، مع تنسيق RTL مظبوط للعربي. التحويل بين اللغتين بيكون سهل وسلس للزوار، وكل نسخة متهيأة للـ SEO عشان يظهر نشاطك في البحث باللغتين. دعم اللغتين يُصنَّف كخاصية إضافية.",
-        },
-      },
-      {
-        question: {
-          en: "How long does it take to build a website?",
-          ar: "استلام الموقع بياخد وقت قد إيه؟",
-        },
-        answer: {
-          en: "It depends on the scope of the project. A simple landing page with 4–5 sections is typically ready within 5 to 7 business days once we have all your content, images, and branding. A more advanced single-page website with deeper sections and custom features can take 1 to 2 weeks. The biggest factor that affects timeline is how quickly content is provided on your end.",
-          ar: "بيعتمد على حجم المشروع. صفحة هبوط بسيطة من ٤–٥ أقسام بتكون جاهزة غالبًا خلال ٥ لـ ٧ أيام عمل بعد ما نستلم المحتوى والصور والهوية البصرية. موقع أكبر بخصائص وتفاصيل أكتر ممكن ياخد من أسبوع لأسبوعين. أكتر عامل بيأثر على المدة هو سرعة استلام المحتوى من الطرف الآخر.",
-        },
-      },
-      {
-        question: {
-          en: "How do I pay?",
-          ar: "بدفع إزاي؟",
-        },
-        answer: {
-          en: "We accept cash and InstaPay. No complicated payment systems or bank transfers. After we agree on the project scope and price, we'll share the payment details with you directly. Simple and straightforward.",
-          ar: "بنقبل كاش وInstaPay. مفيش أنظمة دفع معقدة أو تحويلات بنكية. بعد ما نتفق على تفاصيل المشروع والسعر، بنبعتلك تفاصيل الدفع مباشرة. بسيطة وواضحة.",
-        },
-      },
-      {
-        question: {
-          en: "Can I pay in installments?",
-          ar: "أقدر أدفع على دفعات؟",
-        },
-        answer: {
-          en: "Yes. We typically split the payment into two parts — 50% upfront to begin the project, and the remaining 50% upon delivery before the website goes live. This protects both sides and keeps things clear from day one.",
-          ar: "أيوه. بنقسّم الدفع على جزأين — ٥٠٪ مقدم عشان نبدأ المشروع، و٥٠٪ الباقيين عند التسليم قبل ما الموقع يتنشر. ده بيحمي الطرفين وبيخلي كل حاجة واضحة من أول يوم.",
-        },
-      },
-      {
-        question: {
-          en: "What if I don't have a logo or brand identity yet?",
-          ar: "ماعنديش لوجو أو هوية بصرية لسه، ينفع؟",
-        },
-        answer: {
-          en: "Not a problem at all. Many clients come to us at an early stage. We can work with what you have — even if it's just a name and a general idea of your business. If you need a logo or brand identity designed, we can handle that as a separate service before we start building your website.",
-          ar: "مفيش مشكلة خالص. كتير من عملاءنا بييجوا في مرحلة مبكرة. بنقدر نشتغل بأي حاجة عندك — حتى لو مجرد اسم وفكرة عامة عن نشاطك. لو محتاج لوجو أو هوية بصرية، بنقدر نعملهالك كخدمة منفصلة قبل ما نبدأ في بناء الموقع.",
-        },
-      },
-      {
-        question: {
-          en: "Do you work with businesses outside Cairo?",
-          ar: "بتشتغلوا مع نشاطات تجارية خارج القاهرة؟",
-        },
-        answer: {
-          en: "Yes. Everything we do is remote, so location is never a barrier. We've worked with businesses across Egypt and the entire process — consultation, design, delivery — happens online. Wherever you're based, we can build your website.",
-          ar: "أيوه. شغلنا كله أونلاين، فالموقع الجغرافي مش عائق أبدًا. بنشتغل مع نشاطات تجارية من مختلف أنحاء مصر، وكل العملية — من الاستشارة للتصميم للتسليم — بتحصل إلكترونيًا. أينما كنت، بنقدر نبني موقعك.",
-        },
-      },
-      {
-        question: {
-          en: "Can I update my websites content myself?",
-          ar: "أقدر أعدّل محتوى الموقع بنفسي؟",
-        },
-        answer: {
-          en: "Because we build with custom code rather than a CMS like WordPress, you won't be able to edit the website directly, editing it yourself requires a dashboard, which transforms a static page into a more complex project. This feature is available as a paid add-on. However, that's why we also include up to 3 free minor content updates every month — things like swapping images, updating text, or adjusting details, 99% of the time, that's more than you'll ever need.",
-          ar: "بما إن الموقع مبني بكود مخصص مش نظام إدارة محتوى زي ووردبريس، مش هتقدر تعدّل عليه مباشرة بنفسك. عشان كده بنوفّر تحديثات بسيطة مجانية كل شهر — زي تغيير صورة، تعديل نص، أو تحديث بيانات. تعديل محتوى الموقع بنفسك بيحتاج لوحة تحكم بنوفرهالك كخاصية إضافية.",
+          ar: "بكل تأكيد. كل موقع نبنيه يكون متجاوباً بالكامل، مما يعني أنه يتكيف تلقائياً ليعمل بمثالية على أي شاشة، سواء كانت هاتفاً أو تابلت أو حاسوباً. هذا ليس خياراً إضافياً بل هو جزء أساسي من عملنا، خاصة وأن أغلب المستخدمين في مصر يتصفحون عبر الهواتف.",
         },
       },
       {
         question: {
           en: "How long does it take for a new website to rank on Google?",
-          ar: "الظهور في جوجل بياخد وقت قد إيه؟",
+          ar: "الموقع الجديد بياخد وقت قد إيه عشان يظهر في بحث جوجل؟",
         },
         answer: {
           en: "Google may index your website within days, but ranking for competitive keywords in Cairo usually takes 3 to 6 months. We optimize your website speed, structure, and content from day one to improve your visibility in local search results as efficiently as possible.",
-          ar: "جوجل ممكن تُفهرس موقعك خلال أيام، لكن المنافسة على كلمات قوية في القاهرة عادةً بتاخد من ٣ لـ ٦ شهور. إحنا بنظبط سرعة الموقع، هيكله، ومحتواه من أول يوم عشان نزود فرص ظهوره في نتائج البحث المحلية بأكبر كفاءة ممكنة.",
+          ar: "قد يقوم جوجل بفهرسة موقعك خلال أيام، ولكن الظهور في المراتب الأولى للكلمات التنافسية يستغرق عادة من 3 إلى 6 أشهر. نحن نعمل على تحسين سرعة الموقع وهيكليته ومحتواه من اليوم الأول لتعزيز ظهورك في نتائج البحث المحلية بأقصى كفاءة ممكنة.",
         },
       },
+
+      // ===== DECISION STAGE (Ready to act) =====
       {
         question: {
-          en: "Do I need to buy my own hosting and domain?",
-          ar: "هل أحتاج أشتري الاستضافة والدومين بنفسي؟",
+          en: "How long does it take to build a website?",
+          ar: "بناء الموقع بياخد وقت قد إيه؟",
         },
         answer: {
-          en: "You'll need your own domain name (like yourbusiness.com), which we'll help you set up — it's a small annual cost paid directly to the domain registrar. As for hosting, that's fully covered on our end at no extra charge. Your website is deployed on professional cloud infrastructure that we manage, so you don't need to set up any accounts or worry about server maintenance.",
-          ar: "هتحتاج دومين خاص بيك (زي yourbusiness.com)، وإحنا هنساعدك تحجزه وتظبطه — دي تكلفة سنوية بسيطة بتدفعها مباشرة لمزود الدومين. أما الاستضافة، فدي علينا بالكامل من غير أي تكلفة إضافية. موقعك بيتنشر على بنية سحابية احترافية إحنا بنديرها، فمش محتاج تعمل أي حسابات أو تشيل هم أي إعدادات تقنية.",
-        },
-      },
-      {
-        question: {
-          en: "Will my business show up on Google Maps?",
-          ar: "هل نشاطي التجاري هيظهر على خرائط جوجل؟",
-        },
-        answer: {
-          en: "Yes. A well-built website and a Google Business Profile work together to strengthen your local presence. We structure your website so Google can clearly recognize your business, its location, and its services — making it easier for customers in Cairo to find you whether they're searching on Google Search or Google Maps.",
-          ar: "أيوه. الموقع المبني صح وملف جوجل بيزنس بيشتغلوا مع بعض عشان يقووا ظهورك المحلي. بنبني موقعك بطريقة تخلي جوجل يتعرف على نشاطك التجاري، موقعك، وخدماتك بوضوح — وده بيسهّل على عملاء القاهرة يلاقوك سواء على جوجل أو على الخريطة.",
+          en: "The timeline depends on the scope of the project.. A simple landing page with 4–5 sections is typically ready within 5 to 7 business days once we have all your content, images, and branding. A more advanced single-page website with deeper sections and custom features can take 1 to 2 weeks. The biggest factor that affects timeline is how quickly content is provided on your end.",
+          ar: "يعتمد ذلك على حجم المشروع. صفحة الهبوط البسيطة (4-5 أقسام) تستغرق عادة من 5 إلى 7 أيام عمل بمجرد استلام المحتوى والصور والهوية البصرية. أما المواقع الأكثر تقدماً فقد تستغرق من أسبوع إلى أسبوعين. العامل الأكبر المؤثر على الجدول الزمني هو سرعة توفير المحتوى من جانبكم.",
         },
       },
       {
         question: {
           en: "What do I need to provide to get started?",
-          ar: "إيه اللي محتاج أجهزه عشان نبدأ؟",
+          ar: "إيه اللي محتاج أوفره عشان نبدأ؟",
         },
         answer: {
-          en: "Just the basics: your logo, a description of your services, and any photos you have. If you don't have professional photos or written content ready, that's not a problem — we offer copywriting support and can help source high-quality imagery that fits your brand. The goal is to make the process as easy as possible on your end.",
-          ar: "الأساسيات بس: اللوجو بتاعك، وصف خدماتك، وأي صور عندك. لو ملقتش صور احترافية أو محتوى مكتوب جاهز، مفيش مشكلة — بنوفر خدمة كتابة محتوى وبنساعدك تلاقي صور مناسبة لهوية علامتك التجارية. هدفنا إن العملية تبقى سهلة من جهتك قدر الإمكان.",
+          en: "Your logo, a description of your services, and any photos you have. If your content needs shaping or organizing, that's included in every build. If you don't have any written content at all, we offer full copywriting as a paid add-on. We can also help source high-quality imagery if needed. The goal is to make the process as easy as possible on your end.",
+          ar: "كل ما نحتاجه هو شعارك، ووصف لخدماتك، وأي صور متوفرة لديك. إذا كان المحتوى يحتاج إلى تنظيم، فهذا مشمول في الخدمة. أما إذا لم يتوفر لديك محتوى مكتوب، فنحن نقدم خدمة كتابة المحتوى كإضافة مدفوعة. كما يمكننا المساعدة في توفير صور عالية الجودة. هدفنا هو جعل العملية سهلة وسلسة قدر الإمكان بالنسبة لك.",
+        },
+      },
+      {
+        question: {
+          en: "Does the website support Arabic and English?",
+          ar: "هل الموقع بيدعم عربي وإنجليزي؟",
+        },
+        answer: {
+          en: "Yes. We build fully bilingual websites that support both Arabic and English, including proper right-to-left (RTL) layout for Arabic. Switching between languages is seamless for visitors, and both versions are optimized for SEO so your business gets found in both languages on Google. Bilingual support is available as an add-on and priced accordingly.",
+          ar: "نعم، نحن نبني مواقع ثنائية اللغة تدعم العربية والإنجليزية بالكامل، مع تنسيق صحيح من اليمين إلى اليسار (RTL) للنسخة العربية. التنقل بين اللغتين سلس للزوار، وكلا النسختين مهيأتان للـ SEO لضمان ظهور نشاطك باللغتين على جوجل. دعم اللغتين متاح كإضافة مدفوعة.",
+        },
+      },
+      {
+        question: {
+          en: "What if I don't have a logo or brand identity yet?",
+          ar: "أعمل إيه لو لسه معنديش لوجو أو هوية بصرية؟",
+        },
+        answer: {
+          en: "Not a problem at all. We can work with what you have, even if it's just a name and a general idea of your business. If you need a logo or brand identity designed, our designer can handle that as a separate service before we start building your website.",
+          ar: "لا توجد مشكلة على الإطلاق. يمكننا العمل بما هو متاح لديك، حتى لو كان مجرد اسم وفكرة عامة. إذا كنت بحاجة لتصميم شعار أو هوية بصرية، يمكن لمصممنا تولي ذلك كخدمة منفصلة قبل البدء في بناء الموقع.",
+        },
+      },
+      {
+        question: {
+          en: "How many revisions do I get?",
+          ar: "متاح ليا كام تعديل؟",
+        },
+        answer: {
+          en: "We include one revision round during the build. Because we align on the design direction before development begins, one round is typically all that's needed. Any revisions beyond that are handled as small paid adjustments.",
+          ar: "نحن نوفر جولة واحدة من التعديلات خلال مرحلة البناء. وبما أننا نتفق على توجه التصميم قبل بدء البرمجة، فإن جولة واحدة عادة ما تكون كافية. أي تعديلات إضافية بعد ذلك يتم التعامل معها كتحسينات بسيطة مدفوعة الأجر.",
+        },
+      },
+      {
+        question: {
+          en: "How does the payment process go?",
+          ar: "نظام الدفع بيمشي إزاي؟",
+        },
+        answer: {
+          en: "Our payment system is installment-based, we split the payment into three parts, 25% upfront to begin the project, 50% upon design approval before development begins, and the remaining 25% upon launch. This keeps things clear and safe for both sides at every stage.",
+          ar: "نظام الدفع لدينا يعتمد على الأقساط؛ حيث نقسم المبلغ إلى ثلاث مراحل: 25% مقدم لتبدأ العملية، 50% عند الموافقة على التصميم وقبل البدء في البرمجة، والـ 25% المتبقية عند الإطلاق. هذا يضمن الوضوح والأمان للطرفين في كل مرحلة.",
+        },
+      },
+
+      // ===== POST-LAUNCH (Retention) =====
+      {
+        question: {
+          en: "Can I update my website's content myself?",
+          ar: "ينفع أحدث محتوى الموقع بنفسي؟",
+        },
+        answer: {
+          en: "Editing it yourself requires a content management dashboard, which is available as a paid add-on. That said, we include 3 free minor content updates every month. Things like swapping an image, updating text, or adjusting details, so with us, a dashboard system is not necessary unless you plan to change content on the website very frequently.",
+          ar: "التعديل الذاتي يتطلب لوحة تحكم لإدارة المحتوى، وهي متاحة كإضافة مدفوعة. ومع ذلك، نحن نوفر 3 تحديثات بسيطة مجانية شهرياً (مثل تغيير صورة أو تعديل نص)، لذا لن تحتاج لنظام لوحة التحكم إلا إذا كنت تخطط لتغيير المحتوى بشكل متكرر جداً.",
+        },
+      },
+      {
+        question: {
+          en: "Can I add new sections or features to my website later?",
+          ar: "ينفع أزود أقسام أو ميزات جديدة للموقع بعدين؟",
+        },
+        answer: {
+          en: "Yes. If your business grows and you want to add a new section, a new feature, or expand the site, we can handle that as additional paid work. Because we are the ones that built it and it is our code, making changes is straightforward.",
+          ar: "نعم، موقعك قابل للتوسع دائماً. إذا نما نشاطك وأردت إضافة أقسام أو ميزات جديدة، يمكننا القيام بذلك كعمل إضافي مدفوع. ولأننا نحن من قمنا ببرمجة الموقع، فإن إجراء التعديلات يكون عملية مباشرة وسهلة.",
+        },
+      },
+      {
+        question: {
+          en: "Can you redesign my existing website?",
+          ar: "ينفع تعيدوا تصميم موقعي الحالي؟",
+        },
+        answer: {
+          en: "It depends on how your current website was built. If it was built with custom code, we can redesign and improve it. We'll need access to the existing files and hosting settings, either from you or your previous developer. If your website is built on WordPress, we can't work with it directly, but we can build you a brand new custom-coded website designed to be faster, more secure, and better optimized for search engines.",
+          ar: "يعتمد ذلك على كيفية بناء موقعك الحالي؛ فإذا كان مبرمجاً بكود مخصص، يمكننا إعادة تصميمه وتحسينه. أما إذا كان مبنياً على ووردبريس، فلا يمكننا العمل عليه مباشرة، ولكن يمكننا بناء موقع جديد تماماً بكود مخصص ليكون أسرع وأكثر أماناً وأفضل في نتائج البحث.",
+        },
+      },
+      {
+        question: {
+          en: "Will my business show up on Google Maps?",
+          ar: "هل شغلي هيظهر على خرايط جوجل؟",
+        },
+        answer: {
+          en: "A well-built website and a Google Business Profile work together to strengthen your local presence. We structure every website so Google can clearly recognize your business, its location, and its services. If you don't have a Google Business Profile yet, we offer full setup as an add-on to help you appear on Google Maps and local search results.",
+          ar: "الموقع الإلكتروني المتقن وحساب 'جوجل لنشاطي التجاري' يعملان معاً لتعزيز حضورك المحلي. نحن نهيئ الموقع ليتعرف جوجل بوضوح على موقعك وخدماتك. وإذا لم تكن تملك حساباً على خرائط جوجل بعد، فنحن نقدم خدمة إعداده بالكامل كإضافة لمساعدتك في الظهور المحلي.",
         },
       },
       {
         question: {
           en: "Can I sell products on my website?",
-          ar: "أقدر أبيع منتجاتي من خلال الموقع؟",
+          ar: "ينفع أبيع منتجات من خلال موقعي؟",
         },
         answer: {
-          en: "Our main focus is high-performance landing pages and business websites. That said, we can integrate simple buying options such as WhatsApp purchase buttons or lightweight checkout flows for straightforward selling needs. If you're looking to build a large online store with a significant product catalog, we can discuss a custom solution built on Next.js tailored to your requirements.",
-          ar: "تركيزنا الأساسي على صفحات الهبوط والمواقع التجارية عالية الأداء. بس في نفس الوقت بنقدر ندمج خيارات شراء بسيطة زي أزرار واتساب أو منظومة دفع خفيفة لاحتياجات البيع البسيطة. لو بتفكر في متجر إلكتروني كبير بكتالوج منتجات ضخم، نقدر نتكلم عن حل مخصص مبني على Next.js على حسب متطلباتك.",
+          en: "Our focus is high-performance landing pages and business websites. That said, we can integrate simple buying options such as WhatsApp purchase buttons for straightforward selling needs. For businesses that need a full online store, we recommend working with a platform designed specifically for e-commerce.",
+          ar: "ينصب تركيزنا على صفحات الهبوط والمواقع التعريفية عالية الأداء. ومع ذلك، يمكننا دمج خيارات شراء بسيطة مثل أزرار الطلب عبر واتساب. أما الشركات التي تحتاج إلى متجر إلكتروني متكامل، فننصح باستخدام منصات مخصصة للتجارة الإلكترونية.",
         },
       },
       {
         question: {
           en: "Do you provide technical support after launching the website?",
-          ar: "فيه دعم فني بعد إطلاق الموقع؟",
+          ar: "بتقدموا دعم فني بعد إطلاق الموقع؟",
         },
         answer: {
-          en: "Yes. If anything ever breaks or stops working on your website, we'll fix it — free of charge, forever. Any additional changes or new features beyond that are handled as paid work. Our goal is to make sure your website stays up, running, and problem-free long after launch.",
-          ar: "لو أي حاجة عطلت أو وقفت في موقعك، بنصلحها مجانًا. هدفنا إن موقعك يفضل شغال بثبات ومن غير مشاكل بعد الإطلاق.",
+          en: "Yes. If anything ever breaks or stops working on your website, we fix it free of charge, for life. We also include 3 free minor content updates every month, things like swapping an image, updating text, or adjusting details. Any changes beyond that, or new features, are handled as paid work.",
+          ar: "نعم، إذا حدث أي خلل فني في موقعك، فنحن نلتزم بإصلاحه مجاناً مدى الحياة. كما نوفر 3 تحديثات بسيطة للمحتوى شهرياً مجاناً. أي تغييرات جذرية أو ميزات جديدة تضاف لاحقاً يتم التعامل معها كعمل مدفوع.",
+        },
+      },
+      {
+        question: {
+          en: "Do you work with businesses outside Cairo?",
+          ar: "بتشتغلوا مع شركات بره القاهرة؟",
+        },
+        answer: {
+          en: "Yes. Everything we do is remote, so location is never a barrier. Wherever you're based, we can build your website.",
+          ar: "نعم، نحن نعمل عن بُعد بالكامل، لذا لا يشكل الموقع الجغرافي أي عائق. أينما كان مقر عملك، يمكننا بناء موقعك الإلكتروني باحترافية.",
+        },
+      },
+      // ===== DECISION STAGE =====
+      {
+        question: {
+          en: "What happens if I want to cancel the project?",
+          ar: "إيه اللي يحصل لو حبيت ألغي المشروع؟",
+        },
+        answer: {
+          en: "The 25% upfront payment is non-refundable, as it covers the time and resources committed to starting your project. If you cancel before the design phase is complete, no further payments are due. If you've already approved the design and paid the 50% development deposit, that payment is also non-refundable since development will have already begun. We keep things fair and clearly outlined in your proposal before any money changes hands.",
+          ar: "الدفعة المقدمة بنسبة ٢٥٪ غير قابلة للاسترداد، لأنها تغطي الوقت والموارد المخصصة لبدء مشروعك. إذا ألغيت قبل اكتمال مرحلة التصميم، لا تُستحق أي دفعات إضافية. أما إذا كنت قد وافقت على التصميم ودفعت ٥٠٪ لبدء التطوير، فهذه الدفعة أيضًا غير قابلة للاسترداد لأن العمل على التطوير يكون قد بدأ فعلاً. كل هذا يكون موضحًا بالتفصيل في العرض المقدم قبل أي دفعة.",
+        },
+      },
+      {
+        question: {
+          en: "Will I receive a written agreement before we start?",
+          ar: "هاخد اتفاق مكتوب قبل ما نبدأ؟",
+        },
+        answer: {
+          en: "Yes. Before any payment is made, you receive a detailed proposal that outlines the full project scope, timeline, pricing, and payment schedule.",
+          ar: "نعم. قبل أي دفعة، تحصل على عرض تفصيلي يوضح نطاق المشروع بالكامل، الجدول الزمني، التكلفة، وجدول الدفعات.",
+        },
+      },
+
+      // ===== POST-LAUNCH =====
+      {
+        question: {
+          en: "Do you help with content for social media too?",
+          ar: "بتساعدوا في محتوى السوشيال ميديا كمان؟",
+        },
+        answer: {
+          en: "Our focus is on building and optimizing your website. We don't offer social media management or content creation for social platforms. That said, a strong website gives you a professional link to share across all your social channels, which makes every post more credible and more likely to convert.",
+          ar: "تركيزنا على بناء وتحسين موقعك الإلكتروني. لا نقدم إدارة حسابات السوشيال ميديا أو إنشاء محتوى لها. مع ذلك، الموقع الاحترافي يمنحك رابطًا قويًا تشاركه عبر جميع قنواتك، مما يجعل كل منشور أكثر مصداقية وأكثر قدرة على تحويل المتابعين إلى عملاء.",
         },
       },
     ],
@@ -485,8 +588,8 @@ const translations = {
   contactSection: {
     heading: { en: "Get Started", ar: "ابدأ الآن" },
     subtitle: {
-      en: "Share a few details and we'll reach out. Rather chat? Tap the WhatsApp button.",
-      ar: "شاركنا بعض التفاصيل وسنتواصل معك. تفضّل المحادثة المباشرة؟ أضغط زر الواتساب.",
+      en: "Share a few details and we'll reach out to you for a free consultation.",
+      ar: "شاركنا بعض التفاصيل وسنتواصل معك. أو أضغط زر الواتساب للمحادثة المباشرة.",
     },
   },
 
@@ -497,9 +600,12 @@ const translations = {
     namePlaceholder: { en: "Your name", ar: "اسمك" },
     phone: { en: "Number", ar: "الهاتف" },
     phonePlaceholder: { en: "01XXXXXXXXX", ar: "01XXXXXXXXX" },
-    industry: { en: "What's your business?", ar: "ما هو مجال عملك؟" },
+    industry: { en: "Your business", ar: "ما هو مجال عملك؟" },
     industryPlaceholder: { en: "Select your industry", ar: "اختر مجالك" },
-contactMethod: { en: "Preferred contact method", ar: "طريقة التواصل المفضلة" },
+    contactMethod: {
+      en: "Preferred contact method",
+      ar: "طريقة التواصل المفضلة",
+    },
     whatsapp: { en: "WhatsApp", ar: "واتساب" },
     phoneCall: { en: "Phone Call", ar: "مكالمة" },
     email: { en: "Email", ar: "الإيميل" },
@@ -507,8 +613,11 @@ contactMethod: { en: "Preferred contact method", ar: "طريقة التواصل 
     emailPlaceholder: { en: "your@email.com", ar: "your@email.com" },
     bestTime: { en: "Best time to call", ar: "أفضل وقت للاتصال" },
     bestTimePlaceholder: { en: "Select a time", ar: "اختر الوقت" },
-    message: { en: "Any special inquiries?", ar: "هل لديك أي استفسارات خاصة؟" },
-    messagePlaceholder: { en: "Optional — tell us anything else...", ar: "أخبرنا بأي شيء آخر..." },
+    message: { en: "Message", ar: "هل لديك أي استفسارات خاصة؟" },
+    messagePlaceholder: {
+      en: "Describe your inquiry..",
+      ar: "أخبرنا باستفساراتك...",
+    },
     submit: { en: "Send My Request", ar: "أرسل طلبي" },
     sending: { en: "Sending...", ar: "جاري الإرسال..." },
     success: {

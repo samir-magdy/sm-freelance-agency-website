@@ -34,7 +34,7 @@ export default function ServicesSection({ lang }: { lang: Lang }) {
         <div className="relative mb-16 md:mb-20">
 
 
-          <div className="relative grid grid-cols-1 sm:grid-cols-4  gap-4 md:gap-6">
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {t.sharedFeatures.map((feature, i) => {
               const Icon = featureIcons[i];
               return (

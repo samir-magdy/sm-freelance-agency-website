@@ -22,23 +22,23 @@ const cairo = Cairo({
 
 const meta = {
   en: {
-    title: "SM Web Studio | Web Design Cairo",
+    title: "Best Web Design Company in Cairo, Egypt | SM Web Studio",
     description:
-      "Grow with custom web design in Cairo, Egypt. We specialize in modern websites built to rank on Google search. Claim your free quote today!",
+      "Grow your business with custom web design in Egypt. We specialize in modern websites optimized to rank on Google. Claim your free quote today!",
     ogLocale: "en_US",
     altLocale: "ar_EG",
     ogAlt:
-      "SM Web Studio | Web Design Cairo",
+      "Logo of the Best Web Design Company in Egypt | SM Web Studio",
     siteName: "SM Web Studio",
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: "أفضل شركة تصميم مواقع فالقاهرة | SM Web Studio",
+    title: "أفضل شركة تصميم مواقع فى القاهرة | تصميم مواقع في مصر",
    description:
-      "أفضل شركة تصميم مواقع في القاهرة، مصر. متخصصون في برمجة مواقع احترافية تتصدر نتائج محركات البحث وجوجل. اطلب استشارتك المجانية الآن!",
+      "أفضل شركة تصميم مواقع في مصر. متخصصون في برمجة مواقع احترافية تتصدر نتائج جوجل. اطلب استشارتك المجانية اليوم!",
     ogLocale: "ar_EG",
     altLocale: "en_US",
-    ogAlt: "أفضل شركة تصميم مواقع في القاهرة | SM Web Studio",
+    ogAlt: "تصميم مواقع محترفة في مصر | احصل على موقعك وتصدر المنافسة",
     siteName: "SM Web Studio",
     skipToContent: "تخطى إلى المحتوى",
   },
@@ -55,7 +55,7 @@ export async function generateMetadata({
   return {
     metadataBase: new URL("https://samirmagdy.com"),
     icons: {
-      icon: [{ url: "/favicon.png", sizes: "48x48", type: "image/png" }],
+      icon: [{ url: "/favicon-v2.svg", sizes: "48x48", type: "image/xml+svg" }],
       apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
     },
     title: m.title,
@@ -128,7 +128,7 @@ function buildSchemas(lang: Lang) {
     "@type": "ProfessionalService",
     "@id": "https://samirmagdy.com/#business",
     name: "SM Web Studio",
-    alternateName: isAr ? "إس إم ويب ستوديو" : "SM Web Studio Egypt",
+    alternateName: isAr ? "إس إم ويب ستوديو مصر" : "SM Web Studio Egypt",
     description: isAr
       ? "أفضل شركة تصميم مواقع في القاهرة، مصر. متخصصون في برمجة مواقع احترافية تتصدر نتائج محركات البحث وجوجل. اطلب استشارتك المجانية الآن!"
       : "Grow with custom web design in Cairo, Egypt. We specialize in modern websites built to rank on Google search. Claim your free quote today!",
@@ -165,7 +165,7 @@ function buildSchemas(lang: Lang) {
       "@type": "OfferCatalog",
       name: isAr
         ? "خدمات أفضل شركة تصميم مواقع في القاهرة"
-        : "Web Design & Development Services",
+        : "Web Design & Development Services in Egypt",
       itemListElement: [
         {
           "@type": "Offer",
@@ -266,7 +266,7 @@ export default async function LangLayout({
   params: Promise<{ lang: string }>;
 }) {
   const { lang: rawLang } = await params;
-  const lang: Lang = rawLang === "en" || rawLang === "ar" ? rawLang : "ar";
+  const lang: Lang = rawLang === "en" || rawLang === "ar" ? rawLang : "en";
   const { businessSchema, websiteSchema, webPageSchema, faqSchema } =
     buildSchemas(lang);
   const skipLabel = meta[lang].skipToContent;
@@ -276,7 +276,7 @@ export default async function LangLayout({
       lang={lang}
       dir={lang === "ar" ? "rtl" : "ltr"}
     >
-      <head />
+
       <body className={`${cairo.variable} font-cairo antialiased`}>
           {/* ── Skip navigation ── */}
           <a

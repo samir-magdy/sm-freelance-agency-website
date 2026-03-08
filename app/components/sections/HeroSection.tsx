@@ -54,9 +54,9 @@ export default function HeroSection({ lang }: { lang: Lang }) {
           initial="hidden"
           animate="show"
         >
-          <h1 className="font-bold text-center text-content-heading">
+          <h1 className="font-bold text-center text-content-heading px-10">
             <motion.span
-              className="block text-content-muted text-[0.75rem] md:text-[0.85rem] tracking-wide font-medium uppercase mb-4"
+              className="block text-content-muted text-[0.7rem] md:text-[0.85rem] tracking-wide font-medium uppercase mb-4"
               variants={fadeIn(timeline.seoLabel)}
             >
               {t.hero.seoLabel[lang]}
@@ -87,7 +87,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
           </h1>
 
           <motion.p
-            className="text-content-body text-base md:text-2xl text-center mb-8 px-12"
+            className="text-content-body text-base md:text-2xl text-center mb-8 px-16"
             variants={fadeIn(timeline.subheading)}
           >
             {t.hero.subheading[lang]}

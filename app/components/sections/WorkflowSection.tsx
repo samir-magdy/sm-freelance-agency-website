@@ -9,7 +9,7 @@ export default function WorkflowSection({ lang }: { lang: Lang }) {
     {
       title: t.steps.discovery.title[lang],
       content: (
-        <p className="text-content-body text-subheading">
+        <p className="text-content-body text-subheading px-2">
           {t.steps.discovery.description[lang]}
         </p>
       ),
@@ -17,7 +17,7 @@ export default function WorkflowSection({ lang }: { lang: Lang }) {
     {
       title: t.steps.design.title[lang],
       content: (
-        <p className="text-content-body text-subheading">
+        <p className="text-content-body text-subheading px-2">
           {t.steps.design.description[lang]}
         </p>
       ),
@@ -25,7 +25,7 @@ export default function WorkflowSection({ lang }: { lang: Lang }) {
     {
       title: t.steps.development.title[lang],
       content: (
-        <p className="text-content-body text-subheading">
+        <p className="text-content-body text-subheading px-2">
           {t.steps.development.description[lang]}
         </p>
       ),
@@ -33,8 +33,16 @@ export default function WorkflowSection({ lang }: { lang: Lang }) {
     {
       title: t.steps.launch.title[lang],
       content: (
-        <p className="text-content-body text-subheading">
+        <p className="text-content-body text-subheading px-2">
           {t.steps.launch.description[lang]}
+        </p>
+      ),
+    },
+    {
+      title: t.steps.support.title[lang],
+      content: (
+        <p className="text-content-body text-subheading px-2">
+          {t.steps.support.description[lang]}
         </p>
       ),
     },

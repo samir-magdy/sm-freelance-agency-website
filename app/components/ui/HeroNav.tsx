@@ -51,7 +51,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
   return (
     <header>
       {/* Fixed Top Navbar for Desktop */}
-      <nav className="hidden md:flex fixed top-0 left-0 right-0 z-50 items-center justify-center px-4 ps-3 h-16 backdrop-blur-3xl">
+      <nav className="hidden xl:flex fixed top-0 left-0 right-0 z-50 items-center justify-center px-4 ps-3 h-16 backdrop-blur-3xl">
         <a
           href="#home"
           onClick={(e) => handleSmoothScroll(e, "#home")}
@@ -61,13 +61,12 @@ export default function HeroNav({ lang }: { lang: Lang }) {
           <Image
             src="/logo-dark.png"
             alt="SM WEB STUDIO LOGO"
-            width={180}
-            height={39}
+            width={160}
+            height={30}
             priority
-            className="h-auto"
           />
         </a>
-        <ul className="flex gap-20">
+        <ul className="flex w-[60%] justify-around">
           <li>
             <a
               href="#services"
@@ -75,6 +74,14 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
             >
               {t.nav.services[lang]}
+            </a>
+          </li>
+          <li>
+            <a
+              href="#add-ons"
+              className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+            >
+              {t.nav.addOns[lang]}
             </a>
           </li>
           <li>
@@ -118,9 +125,9 @@ export default function HeroNav({ lang }: { lang: Lang }) {
       {/* Mobile Hamburger Nav */}
       <nav
         className={`
-          md:hidden
+          xl:hidden
           fixed top-0 left-0 right-0 z-50
-          transition-[border-color,box-shadow] duration-300 py-1 pl-2 pr-6
+          duration-100 py-1 pl-2 pr-6
           ${isMenuOpen ? "bg-transparent" : " bg-background/70 backdrop-blur-lg"}`}
       >
         <div className="flex justify-between items-center" dir="ltr">
@@ -132,7 +139,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             <Image
               src="/logo-dark.png"
               alt="SM WEB STUDIO LOGO"
-              width={110}
+              width={130}
               height={24}
               priority
               className="bg-transparent h-auto"
@@ -179,7 +186,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden fixed inset-0 flex flex-col items-center justify-center bg-background z-40"
+            className="2xl:hidden fixed inset-0 flex flex-col items-center justify-center bg-background z-40"
           >
 
             <ul className="flex flex-col items-center gap-3">
@@ -190,6 +197,14 @@ export default function HeroNav({ lang }: { lang: Lang }) {
                   className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
                 >
                   {t.nav.services[lang]}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#add-ons"
+                  className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+                >
+                  {t.nav.addOns[lang]}
                 </a>
               </li>
               <li>

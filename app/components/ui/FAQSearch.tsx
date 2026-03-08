@@ -3,7 +3,7 @@
 import { useRef, useState, useCallback } from "react";
 import type { Lang } from "@/app/data/translations";
 
-const placeholder = { en: "Search questions...", ar: "ابحث في الأسئلة..." };
+const placeholder = { en: "Search questions...", ar: "ابحث عن سؤالك..." };
 const noResultsText = {
   en: "No matching questions found.",
   ar: "لم يتم العثور على أسئلة مطابقة.",
