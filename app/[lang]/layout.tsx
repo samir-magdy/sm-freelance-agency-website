@@ -21,19 +21,19 @@ const cairo = Cairo({
 
 const meta = {
   en: {
-    title: "Best Web Design Company in Cairo, Egypt | SM Web Studio",
+    title: "Custom Web Design Egypt | Website Designer in Cairo | SM Web Studio",
     description:
-      "Grow your business with custom web design in Egypt. We specialize in modern websites optimized to rank on Google. Claim your free quote today!",
+      "Custom website design for your business. Web Designer specialised in professional websites. Get your free website consultation!",
     ogLocale: "en_US",
     altLocale: "ar_EG",
-    ogAlt: "Logo of the Best Web Design Company in Egypt | SM Web Studio",
+    ogAlt: "Logo of the Best top design company in Egypt | SM Web Studio",
     siteName: "SM Web Studio",
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: "أفضل شركة تصميم مواقع فى القاهرة | تصميم مواقع في مصر",
+    title: "أفضل شركة تصميم مواقع إلكترونية فى القاهرة | مصمم ومبرمج مواقع فى مصر",
     description:
-      "أفضل شركة تصميم مواقع في مصر. متخصصون في برمجة مواقع احترافية تتصدر نتائج جوجل. اطلب استشارتك المجانية اليوم!",
+      "أفضل شركة تصميم مواقع في مصر. احصل على موقع الإلكتروني الآن. اطلب استشارتك المجانية!",
     ogLocale: "ar_EG",
     altLocale: "en_US",
     ogAlt: "تصميم مواقع محترفة في مصر | احصل على موقعك وتصدر المنافسة",
@@ -136,7 +136,7 @@ function buildStructuredData(lang: Lang) {
     alternateName: isAr ? "إس إم ويب ستوديو مصر" : "SM Web Studio Egypt",
     description: isAr
       ? "أفضل شركة تصميم مواقع في القاهرة، مصر. متخصصون في برمجة مواقع احترافية تتصدر نتائج محركات البحث وجوجل. اطلب استشارتك المجانية الآن!"
-      : "Grow with custom web design in Cairo, Egypt. We specialize in modern websites built to rank on Google search. Claim your free quote today!",
+      : "Grow your business with custom web design in Cairo, Egypt. We specialize in professional, modern websites. Claim your free quote today!",
     url: "https://samirmagdy.com",
     telephone: "+201274613331",
     email: "studio@samirmagdy.com",
