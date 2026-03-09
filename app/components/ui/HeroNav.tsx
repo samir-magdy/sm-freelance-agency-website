@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import translations from "@/app/data/translations";
 import type { Lang } from "@/app/data/translations";
@@ -11,141 +11,105 @@ export default function HeroNav({ lang }: { lang: Lang }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = translations;
 
-  useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isMenuOpen]);
-
-  const handleSmoothScroll = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    targetId: string,
-  ) => {
-    e.preventDefault();
-    setIsMenuOpen(false);
-
-    const isDesktop = window.innerWidth >= 768;
-
-    if (!isDesktop) {
-      const element = document.querySelector(targetId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-      return;
-    }
-
-    const navbarOffset = -30;
-    const element = document.querySelector(targetId);
-    if (element) {
-      const elementPosition =
-        element.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({
-        top: elementPosition - navbarOffset,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <header>
       {/* Fixed Top Navbar for Desktop */}
-      <nav className="ps-12 hidden xl:flex fixed top-0 left-0 right-0 z-50 items-center justify-center h-16 backdrop-blur-3xl">
-        <a
-          href="#home"
-          onClick={(e) => handleSmoothScroll(e, "#home")}
-          aria-label="Samir Magdy - Home"
-          className="absolute start-3"
-        >
-          <Image
-            src="/logo-dark.png"
-            alt="SM WEB STUDIO LOGO"
-            width={180}
-            height={39}
-            priority
-          />
-        </a>
-        <ul className="flex w-1/2 justify-around">
-          <li>
-            <a
-              href="#services"
-              onClick={(e) => handleSmoothScroll(e, "#services")}
-              className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
-            >
-              {t.nav.services[lang]}
-            </a>
-          </li>
-          <li>
-            <a
-              href="#add-ons"
-              className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
-            >
-              {t.nav.addOns[lang]}
-            </a>
-          </li>
-          <li>
-            <a
-              href="#portfolio"
-              className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
-            >
-              {t.nav.projects[lang]}
-            </a>
-          </li>
-          <li>
-            <a
-              href="#how-it-works"
-              className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
-            >
-              {t.nav.howItWorks[lang]}
-            </a>
-          </li>
-          <li>
-            <a
-              href="#faq"
-              className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
-            >
-              {t.nav.faq[lang]}
-            </a>
-          </li>
-          <li>
-            <a
-              href="#contact"
-              className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
-            >
-              {t.nav.contact[lang]}
-            </a>
-          </li>
-        </ul>
-        <div className="absolute end-4">
-          <LanguageToggle lang={lang} />
+      <nav
+        aria-label={t.a11y.desktopNav[lang]}
+        className="hidden xl:flex fixed top-0 left-0 right-0 z-50 h-24 backdrop-blur-3xl"
+      >
+        <div className="relative flex items-center justify-center w-[85%] max-w-[85%] mx-auto">
+          <a
+            href="#home"
+            aria-label="Samir Magdy - Home"
+            className="absolute start-0"
+          >
+            <Image
+              src="/brand.svg"
+              alt="SM WEB STUDIO LOGO"
+              width={75}
+              height={75}
+              priority
+            />
+          </a>
+          <ul className="flex w-1/2 justify-between">
+            <li>
+              <a
+                href="#services"
+                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+              >
+                {t.nav.services[lang]}
+              </a>
+            </li>
+            <li>
+              <a
+                href="#add-ons"
+                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+              >
+                {t.nav.addOns[lang]}
+              </a>
+            </li>
+            <li>
+              <a
+                href="#portfolio"
+                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+              >
+                {t.nav.projects[lang]}
+              </a>
+            </li>
+            <li>
+              <a
+                href="#how-it-works"
+                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+              >
+                {t.nav.howItWorks[lang]}
+              </a>
+            </li>
+            <li>
+              <a
+                href="#faq"
+                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+              >
+                {t.nav.faq[lang]}
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+              >
+                {t.nav.contact[lang]}
+              </a>
+            </li>
+          </ul>
+          <div className="absolute end-0">
+            <LanguageToggle lang={lang} />
+          </div>
         </div>
       </nav>
 
-      {/* Mobile Hamburger Nav */}
-      <nav
+      {/* Mobile Hamburger Bar */}
+      <div
         className={`
           xl:hidden
           fixed top-0 left-0 right-0 z-50
-          transition-all duration-[250ms] py-0.5 pl-2 pr-6
-          ${isMenuOpen ? "bg-transparent" : "bg-background/70 backdrop-blur-lg"}`}
+          transition-all duration-[250ms] px-4 pe-5
+          backdrop-blur-2xl`}
       >
         <div className="flex justify-between items-center" dir="ltr">
-          <a
-            href="#home"
-            onClick={(e) => handleSmoothScroll(e, "#home")}
-            aria-label="Samir Magdy - Home"
-          >
+          <a href="#home" aria-label="Samir Magdy - Home">
             <Image
-              src="/logo-dark.png"
+              src="/favicon-v3.svg"
               alt="SM WEB STUDIO LOGO"
-              width={130}
-              height={28}
+              width={30}
+              height={30}
               priority
+              style={{ filter: "brightness(0.80)" }}
             />
           </a>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="block px-4 py-4 -mr-5"
+            className="block p-6 py-5 -mr-6"
             aria-label={
               isMenuOpen ? t.a11y.closeMenu[lang] : t.a11y.openMenu[lang]
             }
@@ -171,7 +135,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             </div>
           </button>
         </div>
-      </nav>
+      </div>
 
       {/* Mobile Menu Overlay */}
       <nav
@@ -179,67 +143,62 @@ export default function HeroNav({ lang }: { lang: Lang }) {
         aria-label={t.a11y.mobileNav[lang]}
         aria-hidden={!isMenuOpen}
         onClick={() => setIsMenuOpen(false)}
-        className={`2xl:hidden fixed inset-0 flex flex-col items-center justify-center bg-background z-40 transition-[opacity,visibility] duration-[250ms] ease-out ${isMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"}`}
+        className={`2xl:hidden fixed inset-0 flex flex-col items-center justify-center bg-background/90 backdrop-blur-2xl z-40 transition-[opacity,visibility] duration-[250ms] ease-out overscroll-none touch-none ${isMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"}`}
       >
-
-            <ul className="flex flex-col items-center gap-3">
-
-              <li>
-                <a
-                  href="#services"
-                  className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
-                >
-                  {t.nav.services[lang]}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#add-ons"
-                  className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
-                >
-                  {t.nav.addOns[lang]}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#portfolio"
-                  className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
-                >
-                  {t.nav.projects[lang]}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#how-it-works"
-                  className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
-                >
-                  {t.nav.howItWorks[lang]}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#faq"
-                  className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
-                >
-                  {t.nav.faq[lang]}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
-                >
-                  {t.nav.contact[lang]}
-                </a>
-              </li>
-
-            </ul>
-          <div className="flex flex-col absolute bottom-16 items-center gap-8">
-              <LanguageToggle lang={lang} />
-            <SocialIcons />
-
-
-              </div>
+        <ul className="flex flex-col items-center gap-3">
+          <li>
+            <a
+              href="#services"
+              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+            >
+              {t.nav.services[lang]}
+            </a>
+          </li>
+          <li>
+            <a
+              href="#add-ons"
+              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+            >
+              {t.nav.addOns[lang]}
+            </a>
+          </li>
+          <li>
+            <a
+              href="#portfolio"
+              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+            >
+              {t.nav.projects[lang]}
+            </a>
+          </li>
+          <li>
+            <a
+              href="#how-it-works"
+              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+            >
+              {t.nav.howItWorks[lang]}
+            </a>
+          </li>
+          <li>
+            <a
+              href="#faq"
+              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+            >
+              {t.nav.faq[lang]}
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+            >
+              {t.nav.contact[lang]}
+            </a>
+          </li>
+        </ul>
+        <div className="flex flex-col absolute bottom-16 items-center gap-8">
+          <LanguageToggle lang={lang} />
+          <SocialIcons />
+        </div>
       </nav>
     </header>
   );

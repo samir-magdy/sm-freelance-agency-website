@@ -65,7 +65,7 @@ export async function generateMetadata({
   return {
     metadataBase: new URL("https://samirmagdy.com"),
     icons: {
-      icon: [{ url: "/favicon-v2.svg", type: "image/svg+xml" }],
+      icon: [{ url: "/favicon-v3.svg", type: "image/svg+xml" }],
       apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
     },
     title: m.title,
@@ -140,7 +140,7 @@ function buildStructuredData(lang: Lang) {
     url: "https://samirmagdy.com",
     telephone: "+201274613331",
     email: "studio@samirmagdy.com",
-    image: "https://samirmagdy.com/open-graph.png",
+    image: "https://samirmagdy.com/open-graph.webp",
     logo: "https://samirmagdy.com/logo.png",
     priceRange: "$$",
     address: {

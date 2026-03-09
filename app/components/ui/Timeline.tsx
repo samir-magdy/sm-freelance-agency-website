@@ -1,6 +1,5 @@
 "use client";
 
-import { useScroll, useTransform, motion, useMotionValueEvent } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
@@ -11,10 +10,13 @@ interface TimelineEntry {
 export function Timeline({ data }: { data: TimelineEntry[] }) {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const beamRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
   const [trackTop, setTrackTop] = useState(0);
   const [activeIndex, setActiveIndex] = useState(-1);
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
+  const trackTopRef = useRef(0);
+  const activeIndexRef = useRef(-1);
 
   useEffect(() => {
     const container = ref.current;
@@ -25,14 +27,18 @@ export function Timeline({ data }: { data: TimelineEntry[] }) {
       if (items.length === 0) {
         setHeight(container.getBoundingClientRect().height);
         setTrackTop(0);
+        trackTopRef.current = 0;
         return;
       }
       const containerRect = container.getBoundingClientRect();
       const firstTop = items[0].getBoundingClientRect().top - containerRect.top;
       const lastItem = items[items.length - 1];
       const lastBottom = lastItem.getBoundingClientRect().bottom - containerRect.top;
-      setTrackTop(firstTop);
-      setHeight(lastBottom - firstTop);
+      const newTrackTop = firstTop;
+      const newHeight = lastBottom - firstTop;
+      setTrackTop(newTrackTop);
+      setHeight(newHeight);
+      trackTopRef.current = newTrackTop;
     };
     measure();
 
@@ -41,56 +47,75 @@ export function Timeline({ data }: { data: TimelineEntry[] }) {
     return () => ro.disconnect();
   }, []);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 30%", "end 50%"],
-  });
+  useEffect(() => {
+    const container = containerRef.current;
+    const beam = beamRef.current;
+    if (!container || !beam || height === 0) return;
 
-  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
-  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+    const update = () => {
+      const wh = window.innerHeight;
+      const rect = container.getBoundingClientRect();
+      const containerDocTop = rect.top + window.scrollY;
+      const containerDocBottom = rect.bottom + window.scrollY;
 
-  // Track which bullet points the beam has passed
-  useMotionValueEvent(heightTransform, "change", (beamHeight) => {
-    if (!ref.current) return;
-    const containerTop = ref.current.getBoundingClientRect().top + trackTop;
-    let newActive = -1;
-    for (let i = 0; i < itemRefs.current.length; i++) {
-      const el = itemRefs.current[i];
-      if (!el) continue;
-      const bulletTop = el.getBoundingClientRect().top - containerTop;
-      if (beamHeight >= bulletTop + 20) {
-        newActive = i;
+      // Replicates useScroll offset: ["start 30%", "end 50%"]
+      const startY = containerDocTop - wh * 0.3;
+      const endY = containerDocBottom - wh * 0.5;
+
+      const progress = Math.max(0, Math.min(1, (window.scrollY - startY) / (endY - startY)));
+      const beamHeight = progress * height;
+      const opacity = Math.min(1, progress / 0.1);
+
+      beam.style.height = `${beamHeight}px`;
+      beam.style.opacity = `${opacity}`;
+
+      // Update active index without re-rendering on every scroll tick
+      if (!ref.current) return;
+      const containerTop = ref.current.getBoundingClientRect().top + trackTopRef.current;
+      let newActive = -1;
+      for (let i = 0; i < itemRefs.current.length; i++) {
+        const el = itemRefs.current[i];
+        if (!el) continue;
+        const bulletTop = el.getBoundingClientRect().top - containerTop;
+        if (beamHeight >= bulletTop + 20) newActive = i;
       }
-    }
-    setActiveIndex(newActive);
-  });
+      if (newActive !== activeIndexRef.current) {
+        activeIndexRef.current = newActive;
+        setActiveIndex(newActive);
+      }
+    };
+
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+    return () => window.removeEventListener("scroll", update);
+  }, [height]);
 
   return (
-    <div className="w-full md:pt-8 pt-16" ref={containerRef}>
-      <div ref={ref} className="relative max-w-7xl mx-auto ">
+    <div className="w-full" ref={containerRef}>
+      <div ref={ref} className="relative max-w-7xl mx-auto md:pt-8 pt-12">
         <ol className="list-none">
           {data.map((item, index) => (
             <li
               key={index}
               ref={(el) => { itemRefs.current[index] = el; }}
-              className="flex justify-start min-h-[15rem] md:min-h-0 md:py-24 md:gap-24"
+              className="flex justify-start min-h-[15rem] md:min-h-0 md:py-24"
             >
               <div className="sticky flex flex-col md:flex-row z-[1] items-center md:w-full">
                 <div className="h-12 absolute start-3 w-10 rounded-full bg-background flex items-center justify-center">
                   <div
                     className={`h-4 w-4 rounded-full border transition-colors duration-500 ${
                       index <= activeIndex
-                        ? "bg-icon border-icon shadow-[0_0_12px_hsl(var(--icon)/0.5)]"
+                        ? "bg-zinc-200 border-zinc-200 shadow-[0_0_12px_rgb(228_228_231/0.7)]"
                         : "bg-surface-low border-border-subtle"
                     }`}
                   />
                 </div>
-                <h3 className="hidden md:block md:ps-20 md:text-heading font-bold text-content-heading">
+                <h3 className="hidden md:block md:ps-16 md:text-heading font-bold text-content-heading">
                   {item.title}
                 </h3>
               </div>
 
-              <div className="relative ps-20 pe-4 md:ps-4 w-full flex flex-col md:block pt-2 md:pt-0">
+              <div className="relative ps-16 md:ps-0 w-full flex flex-col md:block pt-2 md:pt-0">
                 <h3 className="md:hidden block text-heading text-start font-semibold text-content-heading">
                   {item.title}
                 </h3>
@@ -105,11 +130,9 @@ export function Timeline({ data }: { data: TimelineEntry[] }) {
           style={{ height: height + "px", top: trackTop + "px" }}
           className="absolute md:start-8 start-8 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-border-subtle to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
         >
-          <motion.div
-            style={{
-              height: heightTransform,
-              opacity: opacityTransform,
-            }}
+          <div
+            ref={beamRef}
+            style={{ height: 0, opacity: 0 }}
             className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-icon/60 via-icon to-transparent from-[0%] via-[10%] rounded-full"
           />
         </div>

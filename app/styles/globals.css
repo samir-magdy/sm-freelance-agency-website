@@ -101,19 +101,19 @@ html {
 
 .hero-fade-hook-1 {
   animation-delay: 0s;
-  animation-duration: 0.5s;
+  animation-duration: 0.3s;
 }
 .hero-fade-hook-2 {
-  animation-delay: 0.5s;
-  animation-duration: 0.5s;
+  animation-delay: 0.6s;
+  animation-duration: 0.3s;
 }
 .hero-fade-hook-3 {
-  animation-delay: 1s;
-  animation-duration: 0.5s;
+  animation-delay: 1.2s;
+  animation-duration: 0.3s;
 }
 .hero-fade-nav {
-  animation-delay: 1.5s;
-  animation-duration: 0.8s;
+  animation-delay: 1.8s;
+  animation-duration: 0.5s;
 }
 /* ══════════════════════════════════════
    4. Nav Link — Underline Hover Effect

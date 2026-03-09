@@ -49,8 +49,8 @@ export default function WorkflowSection({ lang }: { lang: Lang }) {
   ];
 
   return (
-    <section id="how-it-works" aria-labelledby="workflow-heading" className="py-20 md:pt-28">
-      <div className="max-w-7xl mx-auto px-6 mb-4 md:mb-0">
+    <section id="how-it-works" aria-labelledby="workflow-heading" className="py-16 md:py-28">
+      <div className="max-w-7xl mx-auto">
         <h2
           id="workflow-heading"
           className="font-bold text-heading text-center mb-2"

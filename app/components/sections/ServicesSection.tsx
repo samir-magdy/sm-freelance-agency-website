@@ -11,14 +11,14 @@ export default function ServicesSection({ lang }: { lang: Lang }) {
   return (
     <section
       id="services"
-      className="py-20 md:py-24 md:pt-36 px-4"
+      className="py-16 md:py-28 px-4"
       aria-labelledby="services-heading"
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
-        <div className="mb-10 md:mb-16 text-center">
+        <div className="mb-6 md:mb-8 text-center">
           <h2
             id="services-heading"
             className="font-bold text-heading text-center mb-2"

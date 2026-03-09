@@ -11,14 +11,14 @@ export default function AddOnsSection({ lang }: { lang: Lang }) {
   return (
     <section
       id="add-ons"
-      className="py-20 md:py-24 md:pt-36 px-4"
+      className="py-16 md:py-28 px-4"
       aria-labelledby="addons-heading"
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
-        <div className="mb-10 md:mb-16 text-center">
+        <div className="mb-6 md:mb-8 text-center">
           <h2
             id="addons-heading"
             className="font-bold text-heading text-center mb-2"
@@ -30,7 +30,7 @@ export default function AddOnsSection({ lang }: { lang: Lang }) {
           </p>
         </div>
 
-        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-8 gap-4 md:gap-6 mb-16 md:mb-20">
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-8 gap-4 md:gap-6">
           {t.items.map((item, i) => {
             const Icon = addOnIcons[i];
             return (

@@ -54,7 +54,7 @@ export default function FAQSearch({
   return (
     <>
       {/* Search input */}
-      <div className="w-full max-w-xl mb-2">
+      <div className="w-full max-w-xl px-8 pt-8">
         <label htmlFor="faq-search" className="sr-only">
           {placeholder[lang]}
         </label>

@@ -315,7 +315,7 @@ const translations = {
   // Style: Colloquial Arabic questions, MSA-leaning Arabic answers, direct English throughout
 
   faqSection: {
-    heading: { en: "Frequently Asked Questions", ar: "الأسئلة الشائعة" },
+    heading: { en: "FAQs", ar: "الأسئلة الشائعة" },
     subtitle: {
       en: "Have a question? It's likely answered here",
       ar: "هل لديك استفسار؟ ستجد الإجابة هنا على الأرجح",
@@ -638,6 +638,7 @@ const translations = {
   a11y: {
     openMenu: { en: "Open menu", ar: "فتح القائمة" },
     closeMenu: { en: "Close menu", ar: "إغلاق القائمة" },
+    desktopNav: { en: "Desktop navigation", ar: "قائمة سطح المكتب" },
     mobileNav: { en: "Mobile navigation", ar: "قائمة الهاتف" },
     socialLinks: { en: "Social links", ar: "روابط التواصل" },
     skipToContent: { en: "Skip to main content", ar: "تخطى إلى المحتوى" },
