@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: "https://samirmagdy.com",
-      lastModified: "2026-03-08",
+      lastModified: "2026-03-09",
       alternates: {
         languages: {
           en: "https://samirmagdy.com",
@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://samirmagdy.com/ar",
-      lastModified: "2026-03-08",
+      lastModified: "2026-03-09",
       alternates: {
         languages: {
           en: "https://samirmagdy.com",
