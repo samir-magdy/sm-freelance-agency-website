@@ -66,7 +66,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
             </span>
           </h1>
 
-          <p className="hero-fade hero-fade-nav text-content-body text-base md:text-2xl text-center mb-8 px-16">
+          <p className="hero-fade hero-fade-nav text-content-body text-base md:text-2xl text-center mb-8 px-12">
             {t.hero.subheading[lang]}
           </p>
 
@@ -103,7 +103,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Open Whatsapp chat"
-          className="hero-fade hero-fade-nav whatsapp-float inline-flex transition-colors duration-300"
+          className="hero-fade hero-fade-nav whatsapp-float whatsapp-pulse"
         >
           <img src="/utility/whatsapp.svg" alt="" className="w-10 md:w-8 h-10 md:h-8" aria-hidden="true" />
         </a>

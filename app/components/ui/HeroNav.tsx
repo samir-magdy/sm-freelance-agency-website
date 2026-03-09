@@ -93,18 +93,17 @@ export default function HeroNav({ lang }: { lang: Lang }) {
         className={`
           xl:hidden
           fixed top-0 left-0 right-0 z-50
-          transition-all duration-[250ms] px-4 pe-5
+          transition-all duration-[250ms] pl-2 pr-5 py-1
           backdrop-blur-2xl`}
       >
         <div className="flex justify-between items-center" dir="ltr">
           <a href="#home" aria-label="Samir Magdy - Home">
             <Image
-              src="/favicon-v3.svg"
+              src="/brand.svg"
               alt="SM WEB STUDIO LOGO"
-              width={30}
-              height={30}
+              width={48}
+              height={48}
               priority
-              style={{ filter: "brightness(0.80)" }}
             />
           </a>
           <button
@@ -143,7 +142,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
         aria-label={t.a11y.mobileNav[lang]}
         aria-hidden={!isMenuOpen}
         onClick={() => setIsMenuOpen(false)}
-        className={`2xl:hidden fixed inset-0 flex flex-col items-center justify-center bg-background/90 backdrop-blur-2xl z-40 transition-[opacity,visibility] duration-[250ms] ease-out overscroll-none touch-none ${isMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"}`}
+        className={`2xl:hidden fixed pb-20 inset-0 flex flex-col items-center justify-center bg-background/90 backdrop-blur-2xl z-40 transition-[opacity,visibility] duration-[250ms] ease-out overscroll-none touch-none ${isMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"}`}
       >
         <ul className="flex flex-col items-center gap-3">
           <li>
@@ -195,7 +194,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             </a>
           </li>
         </ul>
-        <div className="flex flex-col absolute bottom-16 items-center gap-8">
+        <div className="flex flex-col absolute bottom-32 items-center gap-8">
           <LanguageToggle lang={lang} />
           <SocialIcons />
         </div>

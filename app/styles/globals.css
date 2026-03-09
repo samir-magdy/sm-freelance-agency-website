@@ -310,3 +310,30 @@ html {
   left: 30px;
   right: auto;
 }
+
+@keyframes whatsapp-pulsate {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+.whatsapp-pulse {
+  animation-name: whatsapp-pulsate;
+  animation-duration: 1.8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* When fading in alongside hero-fade, run both animations.
+   Double-class specificity (0,2,0) beats hero-fade-nav (0,1,0). */
+.hero-fade.whatsapp-pulse {
+  animation-name: heroFadeIn, whatsapp-pulsate;
+  animation-duration: 0.5s, 1.8s;
+  animation-timing-function: ease-out, ease-in-out;
+  animation-fill-mode: both, none;
+  animation-iteration-count: 1, infinite;
+  animation-delay: 1.8s, 2.3s;
+}

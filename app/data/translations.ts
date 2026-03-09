@@ -18,8 +18,8 @@ const translations = {
       ar: ["تصدّر البحث.", "اكسب الثقة.", "اجذب العملاء."],
     },
     primaryCta: {
-      en: "Claim a Free Consultation",
-      ar: "احصل على استشارة مجانية",
+      en: "Get Started",
+      ar: "احصل على موقعك الإلكتروني",
     },
     secondaryCta: {
       en: "See Our Work",
@@ -30,7 +30,7 @@ const translations = {
       ar: "شركة تصميم مواقع في القاهرة، مصر",
     },
     subheading: {
-      en: "Custom web design and development that drive real growth for businesses in Cairo, Egypt and around the world.",
+      en: "Custom web design & development that grow your business. Get your website, start today.",
       ar: "تصميم مواقع مخصصة وتحسين الظهور في محركات البحث لتحقيق نمو حقيقي لأصحاب الأعمال في القاهرة، مصر، وخارجها.",
     },
   },
@@ -588,8 +588,8 @@ const translations = {
   contactSection: {
     heading: { en: "Get Started", ar: "ابدأ الآن" },
     subtitle: {
-      en: "Share a few details and we'll reach out to you for a free consultation.",
-      ar: "شاركنا بعض التفاصيل وسنتواصل معك. أو أضغط زر الواتساب للمحادثة المباشرة.",
+      en: "Chat on WhatsApp or share a few details to get started.",
+      ar: "تواصل معنا عبر الواتساب أو أكمل بياناتك للبدء فى موقعك",
     },
   },
 
@@ -613,7 +613,8 @@ const translations = {
     emailPlaceholder: { en: "your@email.com", ar: "your@email.com" },
     bestTime: { en: "Best time to call", ar: "أفضل وقت للاتصال" },
     bestTimePlaceholder: { en: "Select a time", ar: "اختر الوقت" },
-    message: { en: "Message", ar: "هل لديك أي استفسارات خاصة؟" },
+    message: { en: "Message", ar: "رسالة" },
+    messageOptional: { en: "optional", ar: "اختياري" },
     messagePlaceholder: {
       en: "Describe your inquiry..",
       ar: "أخبرنا باستفساراتك...",

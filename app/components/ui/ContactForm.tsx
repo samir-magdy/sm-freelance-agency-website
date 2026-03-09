@@ -125,7 +125,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
 
   return (
     <form
-      className="text-start pt-2 relative"
+      className="text-start relative pt-4"
       onSubmit={handleSubmit}
       aria-label={t.a11y.contactForm[lang]}
     >
@@ -328,7 +328,8 @@ export default function ContactForm({ lang }: { lang: Lang }) {
           {/* Optional message */}
           <div className="md:col-span-2">
             <label htmlFor="message" className={labelClass}>
-              {t.form.message[lang]}
+              {t.form.message[lang]}{" "}
+              <span className="text-content-body font-light">({t.form.messageOptional[lang]})</span>
             </label>
             <textarea
               id="message"
