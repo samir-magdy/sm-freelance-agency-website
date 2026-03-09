@@ -26,12 +26,12 @@ const translations = {
       ar: "سابقة الأعمال",
     },
     seoLabel: {
-      en: "Website Design Company in Egypt",
+      en: "Web Design Company in Cairo, Egypt",
       ar: "شركة تصميم مواقع في القاهرة، مصر",
     },
     subheading: {
-      en: "Custom web design & development that grow your business. Get your website, start today.",
-      ar: "تصميم مواقع مخصصة وتحسين الظهور في محركات البحث لتحقيق نمو حقيقي لأصحاب الأعمال في القاهرة، مصر، وخارجها.",
+      en: "We build websites that grow your business. Get started on your website today.",
+      ar: "تصميم مواقع إلكترونية إحترافية لتوسيع أعمالك. ابدأ اليوم!",
     },
   },
 

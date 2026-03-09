@@ -194,7 +194,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             </a>
           </li>
         </ul>
-        <div className="flex flex-col absolute bottom-32 items-center gap-8">
+        <div className="flex flex-col absolute bottom-24 items-center gap-8">
           <LanguageToggle lang={lang} />
           <SocialIcons />
         </div>

@@ -36,7 +36,6 @@ const ChevronDown = () => (
 type ContactMethod = "whatsapp" | "phone-call" | "email" | "";
 
 const TIME_OPTIONS = [
-  { value: "10am-11am", en: "10 AM - 11 AM", ar: "١٠ ص - ١١ ص" },
   { value: "11am-12pm", en: "11 AM - 12 PM", ar: "١١ ص - ١٢ م" },
   { value: "12pm-1pm", en: "12 PM - 1 PM", ar: "١٢ م - ١ م" },
   { value: "1pm-2pm", en: "1 PM - 2 PM", ar: "١ م - ٢ م" },
@@ -45,7 +44,6 @@ const TIME_OPTIONS = [
   { value: "4pm-5pm", en: "4 PM - 5 PM", ar: "٤ م - ٥ م" },
   { value: "5pm-6pm", en: "5 PM - 6 PM", ar: "٥ م - ٦ م" },
   { value: "6pm-7pm", en: "6 PM - 7 PM", ar: "٦ م - ٧ م" },
-  { value: "7pm-8pm", en: "7 PM - 8 PM", ar: "٧ م - ٨ م" },
 ];
 
 export default function ContactForm({ lang }: { lang: Lang }) {

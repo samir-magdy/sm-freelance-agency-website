@@ -21,22 +21,23 @@ const cairo = Cairo({
 
 const meta = {
   en: {
-    title: "Custom Web Design Egypt | Website Designer in Cairo | SM Web Studio",
+    title:
+      "Website Designer in Cairo | Professional Web Design in Egypt | SM Web Studio",
     description:
-      "Custom website design for your business. Web Designer specialised in professional websites. Get your free website consultation!",
+      "Professional web design services for your business. We create modern, digital solutions that help you grow. Claim a free website consultation!",
     ogLocale: "en_US",
     altLocale: "ar_EG",
-    ogAlt: "Logo of the Best top design company in Egypt | SM Web Studio",
+    ogAlt: "Logo of the top web design company in Egypt | SM Web Studio",
     siteName: "SM Web Studio",
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: "تصميم مواقع إلكترونية فى مصر | مصمم ومبرمج مواقع فى القاهرة",
+    title: "مصمم ومبرمج موقع إلكتروني فى مصر | تصميم وتطوير مواقع إلكترونية",
     description:
-      "شركة تصميم مواقع أحترافية في مصر. احصل على موقع إلكتروني الآن. اطلب استشارتك المجانية!",
+      "شركة تصميم مواقع إحترافية في مصر. احصل على موقع إلكتروني الآن، اطلب استشارتك المجانية!",
     ogLocale: "ar_EG",
     altLocale: "en_US",
-    ogAlt: "تصميم مواقع محترفة في مصر | احصل على موقعك وتصدر المنافسة",
+    ogAlt: "تصميم مواقع محترفة في مصر | احصل على موقعك SM Web Studio Logo",
     siteName: "SM Web Studio",
     skipToContent: "تخطى إلى المحتوى",
   },
@@ -86,7 +87,7 @@ export async function generateMetadata({
       siteName: m.siteName,
       images: [
         {
-          url: "https://samirmagdy.com/open-graph.png",
+          url: "https://samirmagdy.com/open-graph.webp",
           width: 1200,
           height: 630,
           alt: m.ogAlt,
@@ -100,7 +101,8 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: m.title,
       description: m.description,
-      images: ["https://samirmagdy.com/open-graph.png"],
+      images: ["https://samirmagdy.com/open-graph.webp"],
+      site: "@WebDesign_EG",
     },
     robots: {
       index: true,
@@ -197,7 +199,8 @@ function buildStructuredData(lang: Lang) {
     },
     sameAs: [
       "https://www.facebook.com/WebDesignCairo",
-      "https://www.instagram.com/webdesign.cairo/",
+      "https://www.instagram.com/webdesign.cairo",
+      "https://x.com/WebDesign_EG",
     ],
     founder: {
       "@type": "Person",
