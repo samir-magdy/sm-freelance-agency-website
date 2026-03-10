@@ -9,7 +9,7 @@ export default function ProjectsSection({ lang }: { lang: Lang }) {
   return (
     <section
       id="portfolio"
-      className="py-16 md:py-28 px-4 sm:px-12 md:px-20 xl:px-32"
+      className="py-24 md:py-36 px-4 sm:px-12 md:px-20 xl:px-32"
       aria-labelledby="portfolio-heading"
     >
       <script
@@ -18,7 +18,7 @@ export default function ProjectsSection({ lang }: { lang: Lang }) {
       />
 
       <div className="mx-auto">
-        <div className="mb-5 md:mb-0 px-4">
+        <div className="mb-8 md:mb-12 px-4">
           <h2
             id="portfolio-heading"
             className="font-bold text-heading text-center mb-2"
@@ -29,7 +29,7 @@ export default function ProjectsSection({ lang }: { lang: Lang }) {
             {t.projectsSection.subtitle[lang]}
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-8 mx-auto pt-2 md:pt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-8 mx-auto">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}

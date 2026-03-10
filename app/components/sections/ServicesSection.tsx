@@ -1,8 +1,8 @@
 import type { Lang } from "@/app/data/translations";
 import translations from "@/app/data/translations";
-import { MonitorSmartphone, Search, Zap, MessageCircle, ShieldCheck, PenLine, Globe, RefreshCw } from "lucide-react";
+import { MonitorSmartphone, Search, Zap, MessageCircle, ShieldCheck, Globe, RefreshCw } from "lucide-react";
 
-const featureIcons = [Globe, ShieldCheck, Zap, Search, MonitorSmartphone, MessageCircle, PenLine, RefreshCw];
+const featureIcons = [ShieldCheck, MonitorSmartphone, Zap, Globe, Search, MessageCircle, RefreshCw];
 
 export default function ServicesSection({ lang }: { lang: Lang }) {
   const t = translations.servicesSection;
@@ -11,14 +11,14 @@ export default function ServicesSection({ lang }: { lang: Lang }) {
   return (
     <section
       id="services"
-      className="py-16 md:py-28 px-4"
+      className="py-24 md:py-36 px-4"
       aria-labelledby="services-heading"
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
-        <div className="mb-6 md:mb-8 text-center">
+        <div className="mb-8 md:mb-12 text-center">
           <h2
             id="services-heading"
             className="font-bold text-heading text-center mb-2"
@@ -34,20 +34,19 @@ export default function ServicesSection({ lang }: { lang: Lang }) {
         <div className="relative mb-16 md:mb-20">
 
 
-          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-8 gap-4 md:gap-6">
             {t.sharedFeatures.map((feature, i) => {
               const Icon = featureIcons[i];
               return (
-                
+
                 <div
                   key={feature.en}
-                  className="text-center group bg-surface-card/80 relative overflow-hidden rounded-2xl border border-border-subtle py-6 px-4 shadow-lg hover:-translate-y-1.5 hover:border-border-strong  transition-all duration-300"
+                  className={`text-center group bg-surface-card/80 relative overflow-hidden rounded-2xl border border-border-subtle py-6 px-4 shadow-lg hover:-translate-y-1.5 hover:border-border-strong transition-all duration-300 xl:col-span-2${
+                    i === 4 ? " xl:col-start-2" :
+                    i === 6 ? " sm:col-span-2 sm:w-1/2 sm:mx-auto lg:col-span-1 lg:w-auto lg:mx-0 lg:col-start-2 xl:col-span-2 xl:col-start-6" : ""
+                  }`}
                 >
-                  
-                  {/* Frosted gradient sheen */}
-                  <div
-                    aria-hidden="true"
-                  />
+                  <div aria-hidden="true" />
 
                   <div className="relative space-y-3">
                     <div className="mx-auto flex items-center justify-center transition-all duration-300">

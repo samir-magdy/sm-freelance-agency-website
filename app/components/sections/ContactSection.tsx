@@ -10,11 +10,11 @@ export default function ContactSection({ lang }: { lang: Lang }) {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="py-16 md:py-28 px-4"
+      className="py-24 pb-4 md:p-0 px-4"
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="max-w-4xl mx-auto">
-        <div className="mb-2 md:mb-8">
+        <div className="mb-4 md:mb-6">
           <h2
             id="contact-heading"
             className="font-bold text-heading text-center mb-2"

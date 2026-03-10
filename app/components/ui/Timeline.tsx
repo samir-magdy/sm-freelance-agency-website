@@ -59,7 +59,7 @@ export function Timeline({ data }: { data: TimelineEntry[] }) {
       const containerDocBottom = rect.bottom + window.scrollY;
 
       // Replicates useScroll offset: ["start 30%", "end 50%"]
-      const startY = containerDocTop - wh * 0.3;
+      const startY = containerDocTop - wh * 0.4;
       const endY = containerDocBottom - wh * 0.5;
 
       const progress = Math.max(0, Math.min(1, (window.scrollY - startY) / (endY - startY)));
@@ -92,13 +92,13 @@ export function Timeline({ data }: { data: TimelineEntry[] }) {
 
   return (
     <div className="w-full" ref={containerRef}>
-      <div ref={ref} className="relative max-w-7xl mx-auto md:pt-8 pt-12">
+      <div ref={ref} className="relative max-w-7xl mx-auto">
         <ol className="list-none">
           {data.map((item, index) => (
             <li
               key={index}
               ref={(el) => { itemRefs.current[index] = el; }}
-              className="flex justify-start min-h-[15rem] md:min-h-0 md:py-24"
+              className="flex justify-start min-h-[15rem] md:min-h-0 md:py-20"
             >
               <div className="sticky flex flex-col md:flex-row z-[1] items-center md:w-full">
                 <div className="h-12 absolute start-3 w-10 rounded-full bg-background flex items-center justify-center">
@@ -119,7 +119,7 @@ export function Timeline({ data }: { data: TimelineEntry[] }) {
                 <h3 className="md:hidden block text-heading text-start font-semibold text-content-heading">
                   {item.title}
                 </h3>
-                <div className="flex-1 flex items-center md:block">
+                <div className="flex-1 flex items-center md:block max-w-[90%]">
                   {item.content}
                 </div>
               </div>

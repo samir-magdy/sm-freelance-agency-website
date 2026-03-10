@@ -48,39 +48,15 @@ const translations = {
 
     goal: {
       en: "Your growth isn’t another project. It’s our reputation.",
-      ar: ["نموّك مش بس مشروع..","هو سمعتنا."],
+      ar: ["نموّك مش بس مشروع..", "هو سمعتنا."],
     },
     sharedFeatures: [
-      {
-        en: "Hosting & Deployment",
-        ar: "استضافة ونشر الموقع",
-        desc: {
-          en: "We handle all the technical details. Your website goes live and stays live with no recurring fees.",
-          ar: "نتولى جميع التفاصيل التقنية. موقعك يعمل باستمرار دون أي رسوم شهرية أو تكاليف إضافية.",
-        },
-      },
       {
         en: "Lifetime Guarantee",
         ar: "ضمان مدى الحياة",
         desc: {
           en: "If anything ever stops working, we fix it free of charge. No invoices, expiry dates or hidden fees.",
           ar: "في حال توقف أي شيء عن العمل، نتولى إصلاح الموقع مجاناً دون أي رسوم إضافية مدى الحياة.",
-        },
-      },
-      {
-        en: "Fast Loading",
-        ar: "سرعة تحميل عالية",
-        desc: {
-          en: "Slow websites lose customers. That's why we optimize yours to load in under two seconds.",
-          ar: "المواقع البطيئة تُفقدك عملائك. لهذا نحرص على تحميل موقعك في أقل من ثانيتين.",
-        },
-      },
-      {
-        en: "SEO Foundation",
-        ar: "أسس محركات البحث",
-        desc: {
-          en: "Your site is built to rank on Google so customers find you before they find your competitors.",
-          ar: "موقعك مهيأ لمحركات البحث منذ اليوم الأول، لتظهر في نتائج جوجل قبل منافسيك.",
         },
       },
       {
@@ -92,26 +68,42 @@ const translations = {
         },
       },
       {
+        en: "Fast Loading",
+        ar: "سرعة تحميل عالية",
+        desc: {
+          en: "Slow websites lose customers. That's why we optimize yours to load in under two seconds.",
+          ar: "المواقع البطيئة تُفقدك عملائك. لهذا نحرص على تحميل موقعك في أقل من ثانيتين.",
+        },
+      },
+      {
+        en: "Hosting & Deployment",
+        ar: "استضافة ونشر الموقع",
+        desc: {
+          en: "We handle all the technical details. Your website goes live and stays live with no recurring fees.",
+          ar: "نتولى جميع التفاصيل التقنية. موقعك يعمل باستمرار دون أي رسوم شهرية أو تكاليف إضافية.",
+        },
+      },
+      {
+        en: "SEO Foundation",
+        ar: "أسس محركات البحث",
+        desc: {
+          en: "Your site is properly indexed on Google so customers find you they search for your business.",
+          ar: "موقعك مهيأ لمحركات البحث منذ اليوم الأول، لتظهر في نتائج جوجل قبل منافسيك.",
+        },
+      },
+      {
         en: "Contact Integration",
         ar: "ربط جهات الاتصال",
         desc: {
-          en: "WhatsApp and social media links so customers can reach and interact with you instantly.",
+          en: "WhatsApp and social media links built-in allowing customers to reach you instantly.",
           ar: "نربط موقعك بالواتساب وجميع وسائل التواصل حتى يصل إليك العملاء بضغطة واحدة.",
         },
       },
       {
-        en: "Content Refinement",
-        ar: "صياغة وتحرير المحتوى",
-        desc: {
-          en: "You give us a rough draft of the content you want included. We turn it into clean, professional copy.",
-          ar: "زوّدنا بالمعلومات الأساسية وسنحوّلها إلى محتوى احترافي يعكس هوية نشاطك.",
-        },
-      },
-      {
-        en: "3 Updates per Month",
+        en: "Content Updates",
         ar: "تعديلات شهرية مجانية",
         desc: {
-          en: "Request up to three basic content changes a month at no charge. Text, images, prices, and more.",
+          en: "Request up to three basic content changes a month at no charge. Text, images and more.",
           ar: "يمكنك طلب ثلاث تعديلات شهرياً على المحتوى مجاناً. نصوص أو صور أو أسعار وغير ذلك.",
         },
       },
@@ -131,32 +123,12 @@ const translations = {
     items: [
       {
         title: {
-          en: "Bilingual (AR/EN)",
-          ar: "دعم اللغتين (عربي/إنجليزي)",
+          en: "SEO Strategy Package",
+          ar: "تطوير SEO للمحتوى",
         },
         description: {
-          en: "Your website is written in both Arabic and English. Users can toggle the language easily.",
-          ar: "موقعك مبني بالعربي والإنجليزي بالكامل مع دعم RTL وتبديل سلس بين اللغتين للزوار.",
-        },
-      },
-      {
-        title: {
-          en: "Custom Contact Form",
-          ar: "نموذج تواصل",
-        },
-        description: {
-          en: "A custom-built form that delivers enquiries directly to your preferred channel and gathers leads.",
-          ar: "نموذج مخصص يوصل استفسارات العملاء مباشرة إلى بريدك الإلكتروني، واتساب، أو كلاهما.",
-        },
-      },
-      {
-        title: {
-          en: "Full Copywriting",
-          ar: "كتابة محتوى كامل",
-        },
-        description: {
-          en: "We write all your website content from scratch, tailored to your brand voice and audience.",
-          ar: "نكتب كل محتوى موقعك من الصفر، مصمّم لهوية علامتك التجارية وجمهورك المستهدف.",
+          en: "Targeted research and content optimization designed to maximize search engine visibility.",
+          ar: "محتوى مبني على كلمات بحث مستهدفة لتحسين ترتيب موقعك في جوجل للمصطلحات المهمة لنشاطك.",
         },
       },
       {
@@ -171,12 +143,32 @@ const translations = {
       },
       {
         title: {
-          en: "SEO Strategy Package",
-          ar: "تطوير SEO للمحتوى",
+          en: "Built-in Dashboard",
+          ar: "لوحة تحكم للمحتوى",
         },
         description: {
-          en: "Targeted research and content optimization designed to maximize search engine visibility.",
-          ar: "محتوى مبني على كلمات بحث مستهدفة لتحسين ترتيب موقعك في جوجل للمصطلحات المهمة لنشاطك.",
+          en: "A private control panel to update your website's content instantly. No third party needed.",
+          ar: "واجهة إدارة محتوى تتيح لك تعديل النصوص، الصور، والتفاصيل في موقعك دون الحاجة للكود.",
+        },
+      },
+      {
+        title: {
+          en: "Bilingual (AR/EN)",
+          ar: "دعم اللغتين (عربي/إنجليزي)",
+        },
+        description: {
+          en: "Your website is written in both Arabic and English. Users can toggle the language easily.",
+          ar: "موقعك مبني بالعربي والإنجليزي بالكامل مع دعم RTL وتبديل سلس بين اللغتين للزوار.",
+        },
+      },
+      {
+        title: {
+          en: "Full Copywriting",
+          ar: "كتابة محتوى كامل",
+        },
+        description: {
+          en: "We write all your website content from scratch, tailored to your brand voice and audience.",
+          ar: "نكتب كل محتوى موقعك من الصفر، مصمّم لهوية علامتك التجارية وجمهورك المستهدف.",
         },
       },
       {
@@ -191,12 +183,12 @@ const translations = {
       },
       {
         title: {
-          en: "Built-in Dashboard",
-          ar: "لوحة تحكم للمحتوى",
+          en: "Custom Contact Form",
+          ar: "نموذج تواصل",
         },
         description: {
-          en: "A private control panel to update your website's content instantly. No third party needed.",
-          ar: "واجهة إدارة محتوى تتيح لك تعديل النصوص، الصور، والتفاصيل في موقعك دون الحاجة للكود.",
+          en: "A custom-built form that delivers enquiries directly to your preferred channel and gathers leads.",
+          ar: "نموذج مخصص يوصل استفسارات العملاء مباشرة إلى بريدك الإلكتروني، واتساب، أو كلاهما.",
         },
       },
     ],
@@ -611,22 +603,23 @@ const translations = {
     email: { en: "Email", ar: "الإيميل" },
     emailAddress: { en: "Email", ar: "البريد الإلكتروني" },
     emailPlaceholder: { en: "your@email.com", ar: "your@email.com" },
+    bestDate: { en: "Preferred date", ar: "التاريخ المفضل" },
     bestTime: { en: "Best time to call", ar: "أفضل وقت للاتصال" },
     bestTimePlaceholder: { en: "Select a time", ar: "اختر الوقت" },
     message: { en: "Message", ar: "رسالة" },
     messageOptional: { en: "optional", ar: "اختياري" },
     messagePlaceholder: {
-      en: "Describe your inquiry..",
-      ar: "أخبرنا باستفساراتك...",
+      en: "Describe what you need from your website or ask us anything..",
+      ar: "أخبرنا باستفسارك...",
     },
     submit: { en: "Send My Request", ar: "أرسل طلبي" },
     sending: { en: "Sending...", ar: "جاري الإرسال..." },
     success: {
-      en: "We will be reaching out soon!",
+      en: "Thank you. We have receieved your message.",
       ar: "سنتواصل معك قريباً!",
     },
     errorRateLimit: {
-      en: "Please wait a few minutes before sending another message.",
+      en: "Wait a few minutes to send another request.",
       ar: "يرجى الانتظار بضع دقائق قبل إرسال رسالة أخرى.",
     },
     errorGeneric: {

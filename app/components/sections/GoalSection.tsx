@@ -22,7 +22,7 @@ export default function GoalSection({ lang }: { lang: Lang }) {
   return (
     <section
       aria-label={lang === "en" ? "Our mission" : "مهمتنا"}
-      className="relative py-16 md:py-28 px-4 ltr:px-14"
+      className="relative py-24 md:py-36 px-4 ltr:px-14"
       dir={isRtl ? "rtl" : "ltr"}
     >
       {/* Seamless gradient: transparent → surface-card → transparent */}

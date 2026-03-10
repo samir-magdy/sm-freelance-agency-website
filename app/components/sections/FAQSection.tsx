@@ -8,16 +8,16 @@ export default function FAQSection({ lang }: { lang: Lang }) {
   const isRtl = lang === "ar";
 
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="py-16 md:py-28 px-4" dir={dir}>
+    <section id="faq" aria-labelledby="faq-heading" className="py-24 md:py-36 px-4" dir={dir}>
       <div className="max-w-7xl mx-auto flex flex-col items-center">
-        <div>
+        <div className="mb-8 md:mb-12 text-center">
           <h2
             id="faq-heading"
-            className="font-bold text-heading text-center mb-2"
+            className="font-bold text-heading mb-2"
           >
             {t.heading[lang]}
           </h2>
-          <p className="text-content-body text-center text-base md:text-subheading mb-4">
+          <p className="text-content-body text-base md:text-subheading">
             {t.subtitle[lang]}
           </p>
         </div>
@@ -28,7 +28,7 @@ export default function FAQSection({ lang }: { lang: Lang }) {
               key={i}
               name="faq"
               data-search={`${item.question[lang]} ${item.answer[lang]}`.toLowerCase()}
-              className="border-b border-border-subtle first:border-t-none"
+              className="border-b border-border-subtle first:border-t-none px-2"
             >
               <summary
                 className={`

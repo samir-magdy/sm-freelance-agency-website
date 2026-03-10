@@ -51,7 +51,7 @@ export default function Footer() {
               strokeLinecap="round"
             />
           </svg>
-          <small className="tracking-wide">2026 SM Web Studio | By Samir Magdy</small>
+          <small className="tracking-wide md:text-[1rem]">2026 SM Web Studio | By Samir Magdy</small>
         </span>
       </p>
     </footer>

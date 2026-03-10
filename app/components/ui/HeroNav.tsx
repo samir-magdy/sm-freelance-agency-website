@@ -16,9 +16,9 @@ export default function HeroNav({ lang }: { lang: Lang }) {
       {/* Fixed Top Navbar for Desktop */}
       <nav
         aria-label={t.a11y.desktopNav[lang]}
-        className="hidden xl:flex fixed top-0 left-0 right-0 z-50 h-24 backdrop-blur-3xl"
+        className="hidden xl:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl"
       >
-        <div className="relative flex items-center justify-center w-[85%] max-w-[85%] mx-auto">
+        <div className="py-12 relative flex items-center justify-center w-[90%] mx-auto">
           <a
             href="#home"
             aria-label="Samir Magdy - Home"
@@ -27,16 +27,16 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             <Image
               src="/brand.svg"
               alt="SM WEB STUDIO LOGO"
-              width={75}
-              height={75}
+              width={115}
+              height={115}
               priority
             />
           </a>
-          <ul className="flex w-1/2 justify-between">
+          <ul className="ms-10 flex w-[65%] justify-between">
             <li>
               <a
                 href="#services"
-                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
+                className="nav-link-underline text-[1.3rem] font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
               >
                 {t.nav.services[lang]}
               </a>
@@ -44,7 +44,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             <li>
               <a
                 href="#add-ons"
-                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
+                className="nav-link-underline text-[1.3rem] font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
               >
                 {t.nav.addOns[lang]}
               </a>
@@ -52,7 +52,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             <li>
               <a
                 href="#portfolio"
-                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
+                className="nav-link-underline text-[1.3rem] font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
               >
                 {t.nav.projects[lang]}
               </a>
@@ -60,7 +60,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             <li>
               <a
                 href="#how-it-works"
-                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
+                className="nav-link-underline text-[1.3rem] font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
               >
                 {t.nav.howItWorks[lang]}
               </a>
@@ -68,7 +68,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             <li>
               <a
                 href="#faq"
-                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
+                className="nav-link-underline text-[1.3rem] font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
               >
                 {t.nav.faq[lang]}
               </a>
@@ -76,13 +76,13 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             <li>
               <a
                 href="#contact"
-                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
+                className="nav-link-underline text-[1.3rem] font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
               >
                 {t.nav.contact[lang]}
               </a>
             </li>
           </ul>
-          <div className="absolute end-0">
+          <div className="absolute -end-5">
             <LanguageToggle lang={lang} />
           </div>
         </div>
@@ -93,7 +93,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
         className={`
           xl:hidden
           fixed top-0 left-0 right-0 z-50
-          transition-all duration-[250ms] pl-2 pr-5 py-1
+          p-2 pr-5
           backdrop-blur-2xl`}
       >
         <div className="flex justify-between items-center" dir="ltr">
@@ -101,24 +101,24 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             <Image
               src="/brand.svg"
               alt="SM WEB STUDIO LOGO"
-              width={48}
-              height={48}
+              width={75}
+              height={75}
               priority
             />
           </a>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="block p-6 py-5 -mr-6"
+            className="block"
             aria-label={
               isMenuOpen ? t.a11y.closeMenu[lang] : t.a11y.openMenu[lang]
             }
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
           >
-            <div className="w-6 flex flex-col gap-0.5">
+            <div className="w-10 flex flex-col gap-2">
               <span
                 className={`block h-0.5 bg-content-heading transition-transform duration-500 ${
-                  isMenuOpen ? "rotate-45 translate-y-[4px]" : ""
+                  isMenuOpen ? "rotate-45 translate-y-[10px]" : ""
                 }`}
               />
               <span
@@ -128,7 +128,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
               />
               <span
                 className={`block h-0.5 bg-content-heading transition-transform duration-500 ${
-                  isMenuOpen ? "-rotate-45 -translate-y-[4px]" : ""
+                  isMenuOpen ? "-rotate-45 -translate-y-[10px]" : ""
                 }`}
               />
             </div>

@@ -1,8 +1,8 @@
 import type { Lang } from "@/app/data/translations";
 import translations from "@/app/data/translations";
-import { Languages, Mail, PenTool, MapPin, FileSearch, Palette, LayoutDashboard } from "lucide-react";
+import { Languages, Mail, PenLine, MapPin, FileSearch, Palette, LayoutDashboard } from "lucide-react";
 
-const addOnIcons = [Languages, Mail, PenTool, MapPin, FileSearch, Palette, LayoutDashboard];
+const addOnIcons = [FileSearch, MapPin, LayoutDashboard, Languages, PenLine, Palette, Mail];
 
 export default function AddOnsSection({ lang }: { lang: Lang }) {
   const t = translations.addOnsSection;
@@ -11,14 +11,14 @@ export default function AddOnsSection({ lang }: { lang: Lang }) {
   return (
     <section
       id="add-ons"
-      className="py-16 md:py-28 px-4"
+      className="py-24 md:py-36 px-4"
       aria-labelledby="addons-heading"
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
-        <div className="mb-6 md:mb-8 text-center">
+        <div className="mb-8 md:mb-12 text-center">
           <h2
             id="addons-heading"
             className="font-bold text-heading text-center mb-2"

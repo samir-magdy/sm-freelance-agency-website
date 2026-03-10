@@ -55,9 +55,11 @@ export default function ContactForm({ lang }: { lang: Lang }) {
     contactMethod: "" as ContactMethod,
     phone: "",
     email: "",
+    bestDate: new Date().toISOString().split("T")[0],
     bestTime: "",
     message: "",
   });
+  const [dateTouched, setDateTouched] = useState(false);
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
@@ -88,11 +90,12 @@ export default function ContactForm({ lang }: { lang: Lang }) {
         contactMethod: "",
         phone: "",
         email: "",
+        bestDate: "",
         bestTime: "",
         message: "",
       });
 
-      setTimeout(() => setStatus("idle"), 5000);
+      setTimeout(() => setStatus("idle"), 4000);
     } catch (error) {
       const code = error instanceof Error ? error.message : "server_error";
       const errorMsg =
@@ -104,13 +107,13 @@ export default function ContactForm({ lang }: { lang: Lang }) {
       setTimeout(() => {
         setStatus("idle");
         setErrorMessage("");
-      }, 5000);
+      }, 3000);
     }
   };
 
   const selectBaseClass =
     "text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low focus:border-2 focus:border-border-strong outline-none appearance-none cursor-pointer";
-  const selectClass = (value: string) =>
+const selectClass = (value: string) =>
     `${selectBaseClass} ${value ? "text-content-heading" : "text-content-muted"}`;
   const labelClass =
     "block text-caption font-bold text-content-muted mb-2 ms-1";
@@ -123,7 +126,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
 
   return (
     <form
-      className="text-start relative pt-4"
+      className="text-start relative pb-4 lg:min-h-[575px]"
       onSubmit={handleSubmit}
       aria-label={t.a11y.contactForm[lang]}
     >
@@ -218,9 +221,9 @@ export default function ContactForm({ lang }: { lang: Lang }) {
                         ...prev,
                         contactMethod: value,
                         ...(value === "email"
-                          ? { phone: "", bestTime: "" }
+                          ? { phone: "", bestDate: "", bestTime: "" }
                           : { email: "" }),
-                        ...(value !== "phone-call" && { bestTime: "" }),
+                        ...(value !== "phone-call" && { bestDate: "", bestTime: "" }),
                       }))
                     }
                     className="sr-only"
@@ -264,37 +267,65 @@ export default function ContactForm({ lang }: { lang: Lang }) {
             </div>
           )}
 
-          {/* Best Time - Instant Toggle */}
+          {/* Best Date + Time - Instant Toggle */}
           {formData.contactMethod === "phone-call" && (
-            <div>
-              <label htmlFor="bestTime" className={labelClass}>
-                {t.form.bestTime[lang]}{" "}
-                <span className="text-warning opacity-90" aria-label="required">
-                  *
-                </span>
-              </label>
-              <div className="relative">
-                <select
-                  id="bestTime"
-                  required
-                  className={selectClass(formData.bestTime)}
-                  value={formData.bestTime}
-                  onChange={(e) =>
-                    setFormData((prev) => ({
-                      ...prev,
-                      bestTime: e.target.value,
-                    }))
-                  }
-                >
-                  <option value="">{t.form.bestTimePlaceholder[lang]}</option>
-                  {TIME_OPTIONS.map((opt) => (
-                    <option key={opt.value} value={opt.value}>
-                      {opt[lang]}
-                    </option>
-                  ))}
-                </select>
-                <div className="pointer-events-none absolute inset-y-0 end-4 flex items-center text-content-muted">
-                  <ChevronDown />
+            <div className="grid grid-cols-2 gap-3">
+              {/* Date */}
+              <div>
+                <label htmlFor="bestDate" className={labelClass}>
+                  {t.form.bestDate[lang]}{" "}
+                  <span className="text-warning opacity-90" aria-label="required">
+                    *
+                  </span>
+                </label>
+                <div className="relative">
+                  <input
+                    type="date"
+                    id="bestDate"
+                    required
+                    min={new Date().toISOString().split("T")[0]}
+                    className={`${selectBaseClass} ${dateTouched ? "text-content-heading" : "text-content-muted"} cursor-text`}
+                    value={formData.bestDate}
+                    onChange={(e) => {
+                      setDateTouched(true);
+                      setFormData((prev) => ({ ...prev, bestDate: e.target.value }));
+                    }}
+                  />
+                  <div
+                    className="absolute inset-y-0 end-0 w-10 cursor-pointer"
+                    onClick={() => (document.getElementById("bestDate") as HTMLInputElement)?.showPicker?.()}
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+              {/* Time */}
+              <div>
+                <label htmlFor="bestTime" className={labelClass}>
+                  {t.form.bestTime[lang]}{" "}
+                  <span className="text-warning opacity-90" aria-label="required">
+                    *
+                  </span>
+                </label>
+                <div className="relative">
+                  <select
+                    id="bestTime"
+                    required
+                    className={selectClass(formData.bestTime)}
+                    value={formData.bestTime}
+                    onChange={(e) =>
+                      setFormData((prev) => ({ ...prev, bestTime: e.target.value }))
+                    }
+                  >
+                    <option value="">{t.form.bestTimePlaceholder[lang]}</option>
+                    {TIME_OPTIONS.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt[lang]}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 end-4 flex items-center text-content-muted">
+                    <ChevronDown />
+                  </div>
                 </div>
               </div>
             </div>
@@ -331,7 +362,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
             </label>
             <textarea
               id="message"
-              rows={3}
+              rows={2}
               placeholder={t.form.messagePlaceholder[lang]}
               className="resize-none placeholder:text-content-muted text-base w-full px-4 py-3 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-strong outline-none"
               value={formData.message}
@@ -345,50 +376,31 @@ export default function ContactForm({ lang }: { lang: Lang }) {
 
       <button
         type="submit"
-        disabled={status === "loading"}
-        className="mt-4 w-full mx-auto block bg-gold tracking-wide font-bold text-base py-4 hover:bg-gold-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light text-gray-900 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+        disabled={status !== "idle"}
+        aria-live="polite"
+        className={`mt-4 w-full mx-auto block tracking-wide font-bold text-base py-4 rounded-lg disabled:cursor-not-allowed transition-[background-color,border-color,color,opacity] duration-300 ${
+          status === "success"
+            ? "btn-success-entrance bg-success/50 text-content-heading md:text-[1.3rem]"
+            : status === "error"
+              ? "bg-danger/50 text-base md:text-[1.3rem] text-content-heading"
+              : "bg-gold hover:bg-gold-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light text-gray-900 disabled:opacity-50"
+        }`}
       >
-        {status === "loading" ? t.form.sending[lang] : t.form.submit[lang]}
+        <span key={status === "loading" ? "default" : status} className="btn-label">
+          {status === "loading" ? (
+            t.form.sending[lang]
+          ) : status === "success" ? (
+            <span className="flex items-center justify-center gap-1">
+
+              {t.form.success[lang]}
+            </span>
+          ) : status === "error" ? (
+            errorMessage
+          ) : (
+            t.form.submit[lang]
+          )}
+        </span>
       </button>
-
-      {/* Success Message - Instant */}
-      {status === "success" && (
-        <div
-          role="status"
-          className="mt-5 md:absolute md:-bottom-20 md:left-0 md:right-0 md:mt-0 w-full text-base mx-auto py-4 rounded-lg border border-success/30 bg-success/20 backdrop-blur-sm px-2 md:px-8"
-        >
-          <p className="flex gap-1 justify-center text-success text-center font-medium md:font-bold">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M5 13L9 17L19 7"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            {t.form.success[lang]}
-          </p>
-        </div>
-      )}
-
-      {/* Error Message - Instant */}
-      {status === "error" && (
-        <div
-          role="alert"
-          className="mt-5 md:absolute md:-bottom-20 md:left-0 md:right-0 md:mt-0 mx-auto py-4 rounded-lg border border-danger/30 bg-danger/20 backdrop-blur-sm w-full px-1"
-        >
-          <p className="text-danger text-center font-medium md:font-bold">
-            {errorMessage}
-          </p>
-        </div>
-      )}
     </form>
   );
 }
