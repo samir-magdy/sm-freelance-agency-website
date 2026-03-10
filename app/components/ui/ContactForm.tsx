@@ -284,7 +284,7 @@ const selectClass = (value: string) =>
                     id="bestDate"
                     required
                     min={new Date().toISOString().split("T")[0]}
-                    className={`${selectBaseClass} ${dateTouched ? "text-content-heading" : "text-content-muted"} cursor-text`}
+                    className={`${selectBaseClass} ${dateTouched ? "text-content-heading" : "text-content-muted"} cursor-auto [&::-webkit-calendar-picker-indicator]:invert [&::-webkit-calendar-picker-indicator]:opacity-50 [&::-webkit-calendar-picker-indicator]:cursor-pointer`}
                     value={formData.bestDate}
                     onChange={(e) => {
                       setDateTouched(true);
