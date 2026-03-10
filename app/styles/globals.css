@@ -101,7 +101,7 @@ html {
 
 .hero-fade-label {
   animation-delay: 0.5s;
-  animation-duration: 0.3s;
+  animation-duration: 0.25s;
 }
 .hero-fade-hook-1 {
   animation-delay: 1s;
@@ -116,12 +116,12 @@ html {
   animation-duration: 0.05s;
 }
 .hero-fade-nav {
-  animation-delay: 2.3s;
-  animation-duration: 0.8s;
+  animation-delay: 2.5s;
+  animation-duration: 0.3s;
 }
 .hero-fade-secondary-cta {
-  animation-delay: 2.8s;
-  animation-duration: 0.3s;
+  animation-delay: 3.5s;
+  animation-duration: 0.25s;
 }
 /* ══════════════════════════════════════
    4. Nav Link — Underline Hover Effect
@@ -202,11 +202,11 @@ html {
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease;
-  animation: ctaEntrance 0.5s ease-out 2.3s both;
+  animation: ctaEntrance 1.2s ease-out 2.5s both;
 }
 
 [dir="rtl"] .cta-primary {
-  animation: ctaEntranceRtl 0.5s ease-out 2.3s both;
+  animation: ctaEntranceRtl 1.2s ease-out 2.5s both;
 }
 
 .cta-primary::before {
@@ -223,7 +223,7 @@ html {
   );
   translate: -110% 0;
   pointer-events: none;
-  animation: ctaAutoShimmer 5s ease-out 2.8s infinite;
+  animation: ctaAutoShimmer 5s ease-out 4s infinite;
 }
 
 [dir="rtl"] .cta-primary::before {
