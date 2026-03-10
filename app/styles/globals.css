@@ -123,6 +123,10 @@ html {
   animation-delay: 2.6s;
   animation-duration: 0.3s;
 }
+.hero-fade-whatsapp {
+  animation-delay: 3.5s;
+  animation-duration: 0.5s;
+}
 /* ══════════════════════════════════════
    4. Nav Link — Underline Hover Effect
    ══════════════════════════════════════ */
@@ -440,6 +444,6 @@ html {
     animation-timing-function: ease-out, ease-in-out;
     animation-fill-mode: both, none;
     animation-iteration-count: 1, infinite;
-    animation-delay: 1.6s, 1.9s;
+    animation-delay: 3.5s, 3.8s;
   }
 }
