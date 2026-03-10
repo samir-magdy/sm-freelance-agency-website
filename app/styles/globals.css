@@ -76,11 +76,11 @@ html {
    Hero Section — Staggered Fade-In
    ══════════════════════════════════════
    Replaces Framer Motion with pure CSS.
-   Timeline matches the original exactly:
-     Hook 1:  0.2s delay, 0.5s duration
-     Hook 2:  0.6s delay, 0.5s duration
-     Hook 3:  1.2s delay, 0.5s duration
-     Nav/UI:  1.6s delay, 0.6s duration
+   Timeline:
+     Hook 1:  0.7s delay, 0.3s duration
+     Hook 2:  1.2s delay, 0.3s duration
+     Hook 3:  1.7s delay, 0.3s duration
+     Nav/UI:  2.2s delay, 0.5s duration
    ══════════════════════════════════════ */
 
 @keyframes heroFadeIn {
@@ -99,21 +99,29 @@ html {
   animation-fill-mode: both;
 }
 
-.hero-fade-hook-1 {
-  animation-delay: 0.2s;
+.hero-fade-label {
+  animation-delay: 0.5s;
   animation-duration: 0.3s;
+}
+.hero-fade-hook-1 {
+  animation-delay: 1s;
+  animation-duration: 0.05s;
 }
 .hero-fade-hook-2 {
-  animation-delay: 0.7s;
-  animation-duration: 0.3s;
+  animation-delay: 1.5s;
+  animation-duration: 0.05s;
 }
 .hero-fade-hook-3 {
-  animation-delay: 1.2s;
-  animation-duration: 0.3s;
+  animation-delay: 2s;
+  animation-duration: 0.05s;
 }
 .hero-fade-nav {
-  animation-delay: 1.7s;
-  animation-duration: 0.5s;
+  animation-delay: 2.3s;
+  animation-duration: 0.8s;
+}
+.hero-fade-secondary-cta {
+  animation-delay: 2.8s;
+  animation-duration: 0.3s;
 }
 /* ══════════════════════════════════════
    4. Nav Link — Underline Hover Effect
@@ -155,13 +163,80 @@ html {
 }
 
 /* ══════════════════════════════════════
-   5. Primary CTA — Shimmer Effect
+   5. Primary CTA — Shimmer Effect + Conversion Animations
+   ══════════════════════════════════════
+   ::after  → hover shimmer (existing)
+   ::before → auto-shimmer loop (fires every 6s, sweeps in 0.72s)
+   nudge    → one-time scale pulse on the button itself when it appears
    ══════════════════════════════════════ */
+
+/* Entrance: shimmer leads a clip-path wipe — the button draws itself
+   left-to-right as if the shimmer is painting it into existence.
+   Both start at 2.5s. Shimmer sweeps in 0.48s, wipe completes in 0.55s
+   so the shimmer exits just before the button is fully revealed. */
+@keyframes ctaEntrance {
+  from { clip-path: inset(0 100% 0 0 round 0.75rem); }
+  to   { clip-path: inset(0 0%   0 0 round 0.75rem); }
+}
+
+@keyframes ctaEntranceRtl {
+  from { clip-path: inset(0 0 0 100% round 0.75rem); }
+  to   { clip-path: inset(0 0 0 0%   round 0.75rem); }
+}
+
+@keyframes ctaAutoShimmer {
+  0%    { translate: -110% 0; }
+  12%   { translate:  110% 0; }
+  12.1% { translate: -110% 0; }
+  100%  { translate: -110% 0; }
+}
+
+@keyframes ctaAutoShimmerRtl {
+  0%    { translate:  110% 0; }
+  12%   { translate: -110% 0; }
+  12.1% { translate:  110% 0; }
+  100%  { translate:  110% 0; }
+}
 
 .cta-primary {
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease;
+  animation: ctaEntrance 0.5s ease-out 2.3s both;
+}
+
+[dir="rtl"] .cta-primary {
+  animation: ctaEntranceRtl 0.5s ease-out 2.3s both;
+}
+
+.cta-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    hsl(0 0% 100% / 0.25) 45%,
+    hsl(0 0% 100% / 0.35) 50%,
+    hsl(0 0% 100% / 0.25) 55%,
+    transparent 65%
+  );
+  translate: -110% 0;
+  pointer-events: none;
+  animation: ctaAutoShimmer 5s ease-out 2.8s infinite;
+}
+
+[dir="rtl"] .cta-primary::before {
+  background: linear-gradient(
+    -105deg,
+    transparent 35%,
+    hsl(0 0% 100% / 0.25) 45%,
+    hsl(0 0% 100% / 0.35) 50%,
+    hsl(0 0% 100% / 0.25) 55%,
+    transparent 65%
+  );
+  translate: 110% 0;
+  animation: ctaAutoShimmerRtl 5s ease-out 2.8s infinite;
 }
 
 .cta-primary::after {
@@ -336,6 +411,6 @@ html {
     animation-timing-function: ease-out, ease-in-out;
     animation-fill-mode: both, none;
     animation-iteration-count: 1, infinite;
-    animation-delay: 1.7s, 2.3s;
+    animation-delay: 2.3s, 2.9s;
   }
 }

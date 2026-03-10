@@ -11,10 +11,10 @@ export default function SocialIcons() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visit SM Web Studio on Instagram"
-          className="text-content-muted hover:text-content-heading transition-colors duration-300"
+          className="text-content-muted hover:text-content-heading"
         >
           <svg
-            className="w-5 h-5 md:w-4 md:h-4"
+            className="w-5 h-5 me-0.5"
             viewBox="0 0 24 24"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
@@ -30,10 +30,10 @@ export default function SocialIcons() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visit SM Web Studio on Facebook"
-          className="text-content-muted hover:text-content-heading transition-colors duration-300"
+          className="text-content-muted hover:text-content-heading"
         >
           <svg
-            className="w-5 h-5 md:w-4 md:h-4"
+            className="w-5 h-5"
             viewBox="0 0 24 24"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
@@ -50,10 +50,10 @@ export default function SocialIcons() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visit SM Web Studio on X"
-          className="text-content-muted hover:text-content-heading transition-colors duration-300"
+          className="text-content-muted hover:text-content-heading"
         >
           <svg
-            className="w-5 h-5 md:w-4 md:h-4"
+            className="w-5 h-5"
             viewBox="0 0 24 24"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"

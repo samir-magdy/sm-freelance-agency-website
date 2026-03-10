@@ -19,19 +19,19 @@ const translations = {
     },
     primaryCta: {
       en: "Get Started",
-      ar: "احصل على موقعك الإلكتروني",
+      ar: "ابدأ الآن",
     },
     secondaryCta: {
       en: "See Our Work",
       ar: "سابقة الأعمال",
     },
     seoLabel: {
-      en: "Web Design Company in Cairo, Egypt",
+      en: "Web Design Company in Egypt",
       ar: "شركة تصميم مواقع في القاهرة، مصر",
     },
     subheading: {
-      en: "We build websites that grow your business. Get started on your website today.",
-      ar: "تصميم مواقع إلكترونية إحترافية لتوسيع أعمالك. ابدأ اليوم!",
+      en: "We build websites that grow your business. Bring your brand to life today.",
+      ar: "تصميم مواقع إلكترونية إحترافية لتوسيع أعمالك.",
     },
   },
 

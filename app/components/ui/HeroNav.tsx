@@ -36,7 +36,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             <li>
               <a
                 href="#services"
-                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
               >
                 {t.nav.services[lang]}
               </a>
@@ -44,7 +44,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             <li>
               <a
                 href="#add-ons"
-                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
               >
                 {t.nav.addOns[lang]}
               </a>
@@ -52,7 +52,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             <li>
               <a
                 href="#portfolio"
-                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
               >
                 {t.nav.projects[lang]}
               </a>
@@ -60,7 +60,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             <li>
               <a
                 href="#how-it-works"
-                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
               >
                 {t.nav.howItWorks[lang]}
               </a>
@@ -68,7 +68,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             <li>
               <a
                 href="#faq"
-                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
               >
                 {t.nav.faq[lang]}
               </a>
@@ -76,7 +76,7 @@ export default function HeroNav({ lang }: { lang: Lang }) {
             <li>
               <a
                 href="#contact"
-                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-300"
+                className="nav-link-underline text-base font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
               >
                 {t.nav.contact[lang]}
               </a>
@@ -117,17 +117,17 @@ export default function HeroNav({ lang }: { lang: Lang }) {
           >
             <div className="w-6 flex flex-col gap-0.5">
               <span
-                className={`block h-0.5 bg-content-heading transition-transform duration-300 ${
+                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${
                   isMenuOpen ? "rotate-45 translate-y-[4px]" : ""
                 }`}
               />
               <span
-                className={`block h-0.5 bg-content-heading transition-all duration-300 ${
+                className={`block h-0.5 bg-content-heading transition-all duration-500 ${
                   isMenuOpen ? "opacity-0 scale-0" : ""
                 }`}
               />
               <span
-                className={`block h-0.5 bg-content-heading transition-transform duration-300 ${
+                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${
                   isMenuOpen ? "-rotate-45 -translate-y-[4px]" : ""
                 }`}
               />

@@ -22,7 +22,7 @@ const cairo = Cairo({
 const meta = {
   en: {
     title:
-      "Website Designer in Cairo | Professional Web Design in Egypt | SM Web Studio",
+      "Website Designer Cairo | Web Design Egypt | SM Web Studio",
     description:
       "Professional web design services for your business. We create modern, digital solutions that help you grow. Claim a free website consultation!",
     ogLocale: "en_US",
@@ -66,7 +66,17 @@ export async function generateMetadata({
   return {
     metadataBase: new URL("https://samirmagdy.com"),
     icons: {
-      icon: [{ url: "/favicon-v3.svg", type: "image/svg+xml" }],
+      icon: [
+        {
+          url: "/favicon-v3-on-dark.svg",
+          type: "image/svg+xml",
+        },
+        {
+          url: "/favicon-v3-on-light.svg",
+          type: "image/svg+xml",
+          media: "(prefers-color-scheme: dark)",
+        },
+      ],
       apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
     },
     title: m.title,
