@@ -1,10 +1,40 @@
+import dynamic from "next/dynamic";
 import translations from "@/app/data/translations";
 import type { Lang } from "@/app/data/translations";
-import ContactForm from "../ui/ContactForm";
+
+const ContactForm = dynamic(() => import("../ui/ContactForm"));
 
 export default function ContactSection({ lang }: { lang: Lang }) {
   const t = translations;
   const isRtl = lang === "ar";
+
+  const formStrings = {
+    legend: t.form.legend[lang],
+    name: t.form.name[lang],
+    namePlaceholder: t.form.namePlaceholder[lang],
+    phone: t.form.phone[lang],
+    phonePlaceholder: t.form.phonePlaceholder[lang],
+    industry: t.form.industry[lang],
+    industryPlaceholder: t.form.industryPlaceholder[lang],
+    contactMethod: t.form.contactMethod[lang],
+    whatsapp: t.form.whatsapp[lang],
+    phoneCall: t.form.phoneCall[lang],
+    email: t.form.email[lang],
+    emailAddress: t.form.emailAddress[lang],
+    emailPlaceholder: t.form.emailPlaceholder[lang],
+    bestDate: t.form.bestDate[lang],
+    bestTime: t.form.bestTime[lang],
+    bestTimePlaceholder: t.form.bestTimePlaceholder[lang],
+    message: t.form.message[lang],
+    messageOptional: t.form.messageOptional[lang],
+    messagePlaceholder: t.form.messagePlaceholder[lang],
+    submit: t.form.submit[lang],
+    sending: t.form.sending[lang],
+    success: t.form.success[lang],
+    errorRateLimit: t.form.errorRateLimit[lang],
+    errorGeneric: t.form.errorGeneric[lang],
+    contactFormA11y: t.a11y.contactForm[lang],
+  };
 
   return (
     <section
@@ -25,7 +55,7 @@ export default function ContactSection({ lang }: { lang: Lang }) {
             {t.contactSection.subtitle[lang]}
           </p>
         </div>
-        <ContactForm lang={lang} />
+        <ContactForm lang={lang} strings={formStrings} />
       </div>
     </section>
   );

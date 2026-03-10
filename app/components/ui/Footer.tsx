@@ -34,7 +34,7 @@ export default function Footer() {
           <p className="md:pb-0.5">studio@samirmagdy.com</p>
         </a>
       </div>
-      <p dir="ltr" className="text-gray-500/90 text-center">
+      <p dir="ltr" className="text-content-muted text-center">
         <span className="inline-flex items-center gap-1 font-medium">
           <svg
             className="w-4 h-4"

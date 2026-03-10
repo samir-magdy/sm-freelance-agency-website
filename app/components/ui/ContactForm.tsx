@@ -1,20 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import translations from "@/app/data/translations";
 import type { Lang } from "@/app/data/translations";
 
 const INDUSTRY_OPTIONS = [
-  { value: "restaurant", en: "Restaurant / Café", ar: "مطعم / كافيه" },
-  { value: "retail", en: "Retail / E-commerce", ar: "تجارة / متجر إلكتروني" },
-  { value: "healthcare", en: "Healthcare / Clinic", ar: "صحة / عيادة" },
-  { value: "real-estate", en: "Real Estate", ar: "عقارات" },
-  { value: "education", en: "Education / Training", ar: "تعليم / تدريب" },
-  { value: "travel", en: "Travel / Tourism", ar: "سياحة / سفر" },
-  { value: "fitness", en: "Fitness / Gym", ar: "لياقة بدنية / جيم" },
-  { value: "fashion", en: "Fashion / Beauty", ar: "أزياء / تجميل" },
-  { value: "services", en: "Services / Consulting", ar: "خدمات / استشارات" },
-  { value: "other", en: "Other", ar: "أخرى" },
+  { value: "restaurant", en: "Restaurant / Caf\u00e9", ar: "\u0645\u0637\u0639\u0645 / \u0643\u0627\u0641\u064a\u0647" },
+  { value: "retail", en: "Retail / E-commerce", ar: "\u062a\u062c\u0627\u0631\u0629 / \u0645\u062a\u062c\u0631 \u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a" },
+  { value: "healthcare", en: "Healthcare / Clinic", ar: "\u0635\u062d\u0629 / \u0639\u064a\u0627\u062f\u0629" },
+  { value: "real-estate", en: "Real Estate", ar: "\u0639\u0642\u0627\u0631\u0627\u062a" },
+  { value: "education", en: "Education / Training", ar: "\u062a\u0639\u0644\u064a\u0645 / \u062a\u062f\u0631\u064a\u0628" },
+  { value: "travel", en: "Travel / Tourism", ar: "\u0633\u064a\u0627\u062d\u0629 / \u0633\u0641\u0631" },
+  { value: "fitness", en: "Fitness / Gym", ar: "\u0644\u064a\u0627\u0642\u0629 \u0628\u062f\u0646\u064a\u0629 / \u062c\u064a\u0645" },
+  { value: "fashion", en: "Fashion / Beauty", ar: "\u0623\u0632\u064a\u0627\u0621 / \u062a\u062c\u0645\u064a\u0644" },
+  { value: "services", en: "Services / Consulting", ar: "\u062e\u062f\u0645\u0627\u062a / \u0627\u0633\u062a\u0634\u0627\u0631\u0627\u062a" },
+  { value: "other", en: "Other", ar: "\u0623\u062e\u0631\u0649" },
 ];
 
 const ChevronDown = () => (
@@ -36,19 +35,51 @@ const ChevronDown = () => (
 type ContactMethod = "whatsapp" | "phone-call" | "email" | "";
 
 const TIME_OPTIONS = [
-  { value: "11am-12pm", en: "11 AM - 12 PM", ar: "١١ ص - ١٢ م" },
-  { value: "12pm-1pm", en: "12 PM - 1 PM", ar: "١٢ م - ١ م" },
-  { value: "1pm-2pm", en: "1 PM - 2 PM", ar: "١ م - ٢ م" },
-  { value: "2pm-3pm", en: "2 PM - 3 PM", ar: "٢ م - ٣ م" },
-  { value: "3pm-4pm", en: "3 PM - 4 PM", ar: "٣ م - ٤ م" },
-  { value: "4pm-5pm", en: "4 PM - 5 PM", ar: "٤ م - ٥ م" },
-  { value: "5pm-6pm", en: "5 PM - 6 PM", ar: "٥ م - ٦ م" },
-  { value: "6pm-7pm", en: "6 PM - 7 PM", ar: "٦ م - ٧ م" },
+  { value: "11am-12pm", en: "11 AM - 12 PM", ar: "\u0661\u0661 \u0635 - \u0661\u0662 \u0645" },
+  { value: "12pm-1pm", en: "12 PM - 1 PM", ar: "\u0661\u0662 \u0645 - \u0661 \u0645" },
+  { value: "1pm-2pm", en: "1 PM - 2 PM", ar: "\u0661 \u0645 - \u0662 \u0645" },
+  { value: "2pm-3pm", en: "2 PM - 3 PM", ar: "\u0662 \u0645 - \u0663 \u0645" },
+  { value: "3pm-4pm", en: "3 PM - 4 PM", ar: "\u0663 \u0645 - \u0664 \u0645" },
+  { value: "4pm-5pm", en: "4 PM - 5 PM", ar: "\u0664 \u0645 - \u0665 \u0645" },
+  { value: "5pm-6pm", en: "5 PM - 6 PM", ar: "\u0665 \u0645 - \u0666 \u0645" },
+  { value: "6pm-7pm", en: "6 PM - 7 PM", ar: "\u0666 \u0645 - \u0667 \u0645" },
 ];
 
-export default function ContactForm({ lang }: { lang: Lang }) {
-  const t = translations;
+export interface ContactFormStrings {
+  legend: string;
+  name: string;
+  namePlaceholder: string;
+  phone: string;
+  phonePlaceholder: string;
+  industry: string;
+  industryPlaceholder: string;
+  contactMethod: string;
+  whatsapp: string;
+  phoneCall: string;
+  email: string;
+  emailAddress: string;
+  emailPlaceholder: string;
+  bestDate: string;
+  bestTime: string;
+  bestTimePlaceholder: string;
+  message: string;
+  messageOptional: string;
+  messagePlaceholder: string;
+  submit: string;
+  sending: string;
+  success: string;
+  errorRateLimit: string;
+  errorGeneric: string;
+  contactFormA11y: string;
+}
 
+export default function ContactForm({
+  lang,
+  strings,
+}: {
+  lang: Lang;
+  strings: ContactFormStrings;
+}) {
   const [formData, setFormData] = useState({
     name: "",
     industry: "",
@@ -100,8 +131,8 @@ export default function ContactForm({ lang }: { lang: Lang }) {
       const code = error instanceof Error ? error.message : "server_error";
       const errorMsg =
         code === "rate_limit"
-          ? t.form.errorRateLimit[lang]
-          : t.form.errorGeneric[lang];
+          ? strings.errorRateLimit
+          : strings.errorGeneric;
       setStatus("error");
       setErrorMessage(errorMsg);
       setTimeout(() => {
@@ -128,16 +159,16 @@ const selectClass = (value: string) =>
     <form
       className="text-start relative pb-4 lg:min-h-[575px]"
       onSubmit={handleSubmit}
-      aria-label={t.a11y.contactForm[lang]}
+      aria-label={strings.contactFormA11y}
     >
       <fieldset className="border-none p-0 m-0">
-        <legend className="sr-only">{t.form.legend[lang]}</legend>
+        <legend className="sr-only">{strings.legend}</legend>
 
         <div className="grid md:grid-cols-2 gap-4 md:gap-x-3">
           {/* Name */}
           <div>
             <label htmlFor="name" className={labelClass}>
-              {t.form.name[lang]}{" "}
+              {strings.name}{" "}
               <span className="text-warning opacity-90" aria-label="required">
                 *
               </span>
@@ -146,7 +177,7 @@ const selectClass = (value: string) =>
               type="text"
               id="name"
               required
-              placeholder={t.form.namePlaceholder[lang]}
+              placeholder={strings.namePlaceholder}
               className="placeholder:text-content-muted text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-strong outline-none"
               value={formData.name}
               onChange={(e) =>
@@ -158,7 +189,7 @@ const selectClass = (value: string) =>
           {/* Industry */}
           <div>
             <label htmlFor="industry" className={labelClass}>
-              {t.form.industry[lang]}{" "}
+              {strings.industry}{" "}
               <span className="text-warning opacity-90" aria-label="required">
                 *
               </span>
@@ -173,7 +204,7 @@ const selectClass = (value: string) =>
                   setFormData((prev) => ({ ...prev, industry: e.target.value }))
                 }
               >
-                <option value="">{t.form.industryPlaceholder[lang]}</option>
+                <option value="">{strings.industryPlaceholder}</option>
                 {INDUSTRY_OPTIONS.map((opt) => (
                   <option key={opt.value} value={opt.value}>
                     {opt[lang]}
@@ -189,7 +220,7 @@ const selectClass = (value: string) =>
           {/* Contact method chips */}
           <div className="md:col-span-2">
             <p id="contact-method-label" className={labelClass}>
-              {t.form.contactMethod[lang]}{" "}
+              {strings.contactMethod}{" "}
               <span className="text-warning opacity-90" aria-label="required">
                 *
               </span>
@@ -201,9 +232,9 @@ const selectClass = (value: string) =>
             >
               {(
                 [
-                  { value: "whatsapp", label: t.form.whatsapp[lang] },
-                  { value: "phone-call", label: t.form.phoneCall[lang] },
-                  { value: "email", label: t.form.email[lang] },
+                  { value: "whatsapp", label: strings.whatsapp },
+                  { value: "phone-call", label: strings.phoneCall },
+                  { value: "email", label: strings.email },
                 ] as const
               ).map(({ value, label }) => (
                 <label
@@ -245,7 +276,7 @@ const selectClass = (value: string) =>
               }
             >
               <label htmlFor="phone" className={labelClass}>
-                {t.form.phone[lang]}{" "}
+                {strings.phone}{" "}
                 <span className="text-warning opacity-90" aria-label="required">
                   *
                 </span>
@@ -255,7 +286,7 @@ const selectClass = (value: string) =>
                 id="phone"
                 dir="ltr"
                 required
-                placeholder={t.form.phonePlaceholder[lang]}
+                placeholder={strings.phonePlaceholder}
                 pattern="^01[0125]\d{8}$"
                 title="Egyptian mobile number"
                 className={`placeholder:text-content-muted text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-strong outline-none ${lang === "ar" ? "text-right" : "text-left"}`}
@@ -273,7 +304,7 @@ const selectClass = (value: string) =>
               {/* Date */}
               <div>
                 <label htmlFor="bestDate" className={labelClass}>
-                  {t.form.bestDate[lang]}{" "}
+                  {strings.bestDate}{" "}
                   <span className="text-warning opacity-90" aria-label="required">
                     *
                   </span>
@@ -301,7 +332,7 @@ const selectClass = (value: string) =>
               {/* Time */}
               <div>
                 <label htmlFor="bestTime" className={labelClass}>
-                  {t.form.bestTime[lang]}{" "}
+                  {strings.bestTime}{" "}
                   <span className="text-warning opacity-90" aria-label="required">
                     *
                   </span>
@@ -316,7 +347,7 @@ const selectClass = (value: string) =>
                       setFormData((prev) => ({ ...prev, bestTime: e.target.value }))
                     }
                   >
-                    <option value="">{t.form.bestTimePlaceholder[lang]}</option>
+                    <option value="">{strings.bestTimePlaceholder}</option>
                     {TIME_OPTIONS.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt[lang]}
@@ -335,7 +366,7 @@ const selectClass = (value: string) =>
           {formData.contactMethod === "email" && (
             <div className="md:col-span-2">
               <label htmlFor="email" className={labelClass}>
-                {t.form.emailAddress[lang]}{" "}
+                {strings.emailAddress}{" "}
                 <span className="text-warning opacity-90" aria-label="required">
                   *
                 </span>
@@ -344,7 +375,7 @@ const selectClass = (value: string) =>
                 type="email"
                 id="email"
                 required
-                placeholder={t.form.emailPlaceholder[lang]}
+                placeholder={strings.emailPlaceholder}
                 className="placeholder:text-content-muted text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-strong outline-none"
                 value={formData.email}
                 onChange={(e) =>
@@ -357,13 +388,13 @@ const selectClass = (value: string) =>
           {/* Optional message */}
           <div className="md:col-span-2">
             <label htmlFor="message" className={labelClass}>
-              {t.form.message[lang]}{" "}
-              <span className="text-content-body font-light">({t.form.messageOptional[lang]})</span>
+              {strings.message}{" "}
+              <span className="text-content-body font-light">({strings.messageOptional})</span>
             </label>
             <textarea
               id="message"
               rows={2}
-              placeholder={t.form.messagePlaceholder[lang]}
+              placeholder={strings.messagePlaceholder}
               className="resize-none placeholder:text-content-muted text-base w-full px-4 py-3 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-strong outline-none"
               value={formData.message}
               onChange={(e) =>
@@ -388,16 +419,16 @@ const selectClass = (value: string) =>
       >
         <span key={status === "loading" ? "default" : status} className="btn-label">
           {status === "loading" ? (
-            t.form.sending[lang]
+            strings.sending
           ) : status === "success" ? (
             <span className="flex items-center justify-center gap-1">
 
-              {t.form.success[lang]}
+              {strings.success}
             </span>
           ) : status === "error" ? (
             errorMessage
           ) : (
-            t.form.submit[lang]
+            strings.submit
           )}
         </span>
       </button>

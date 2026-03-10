@@ -1,6 +1,10 @@
+import dynamic from "next/dynamic";
 import translations from "@/app/data/translations";
 import type { Lang } from "@/app/data/translations";
-import { Timeline } from "../ui/Timeline";
+
+const Timeline = dynamic(() =>
+  import("../ui/Timeline").then((mod) => mod.Timeline),
+);
 
 export default function WorkflowSection({ lang }: { lang: Lang }) {
   const t = translations.workflowSection;

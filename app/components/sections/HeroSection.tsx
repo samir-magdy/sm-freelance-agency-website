@@ -6,9 +6,27 @@ export default function HeroSection({ lang }: { lang: Lang }) {
   const t = translations;
   const hookLines = t.hero.name[lang];
 
+  const heroNavStrings = {
+    nav: {
+      services: t.nav.services[lang],
+      addOns: t.nav.addOns[lang],
+      projects: t.nav.projects[lang],
+      howItWorks: t.nav.howItWorks[lang],
+      faq: t.nav.faq[lang],
+      contact: t.nav.contact[lang],
+    },
+    a11y: {
+      desktopNav: t.a11y.desktopNav[lang],
+      mobileNav: t.a11y.mobileNav[lang],
+      openMenu: t.a11y.openMenu[lang],
+      closeMenu: t.a11y.closeMenu[lang],
+    },
+    langToggleLabel: lang === "ar" ? t.langToggle.en : t.langToggle.ar,
+  };
+
   return (
     <div>
-        <HeroNav lang={lang} />
+        <HeroNav lang={lang} strings={heroNavStrings} />
 
       <section
         id="home"

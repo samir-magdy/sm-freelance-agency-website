@@ -1,24 +1,20 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import translations from "@/app/data/translations";
 import type { Lang } from "@/app/data/translations";
 
-export default function LanguageToggle({ lang }: { lang: Lang }) {
-  const router = useRouter();
-  const label = lang === "ar" ? translations.langToggle.en : translations.langToggle.ar;
-
-  const handleToggle = () => {
-    const nextLang: Lang = lang === "ar" ? "en" : "ar";
-    router.push(`/${nextLang}`);
-  };
+export default function LanguageToggle({
+  lang,
+  label,
+}: {
+  lang: Lang;
+  label: string;
+}) {
+  const nextLang: Lang = lang === "ar" ? "en" : "ar";
 
   return (
-    <button
+    <a
       id="language-toggler"
-      onClick={handleToggle}
+      href={`/${nextLang}`}
       aria-label={`Switch to ${lang === "ar" ? "English" : "Arabic"}`}
-      className="flex items-center gap-2 text-subheading md:text-[1.2rem] font-bold font-cairo text-content-muted hover:text-content-heading text-center"
+      className="flex items-center gap-1.5 text-subheading md:text-[1.2rem] font-bold font-cairo text-content-muted hover:text-content-heading text-center"
     >
       <svg
         className="hidden md:block order-1 ltr:pt-0.5"
@@ -38,6 +34,6 @@ export default function LanguageToggle({ lang }: { lang: Lang }) {
         <path d="M2 12h20" />
       </svg>
       {label}
-    </button>
+    </a>
   );
 }
