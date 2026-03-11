@@ -40,13 +40,13 @@ export default function HeroSection({ lang }: { lang: Lang }) {
           id="hero-container"
           className="relative z-10 flex flex-col items-center w-full pb-12 md:pt-36"
         >
-          <h1 className="font-bold text-center text-content-heading px-10">
+          <h1 className="font-bold text-center text-content-heading px-4">
             <span className="hero-fade hero-fade-label block text-content-muted text-[0.7rem] md:text-[1.125rem] tracking-wider font-medium uppercase mb-3 md:mb-6">
               {t.hero.seoLabel[lang]}
             </span>
             <span
               id="hero-hook"
-              className="block text-[clamp(4rem,9vw,6rem)] rtl:leading-normal rtl:md:mb-0 leading-tight mb-6"
+              className="block text-[clamp(3.5rem,6vw,5.5rem)] rtl:leading-normal rtl:md:mb-0 leading-tight mb-6"
             >
               {Array.isArray(hookLines)
                 ? hookLines.map((line, i) => {
@@ -84,14 +84,14 @@ export default function HeroSection({ lang }: { lang: Lang }) {
             </span>
           </h1>
 
-          <p className="hero-fade hero-fade-nav text-content-body text-[clamp(1rem,2vw,1.75rem)] text-center mb-8 px-8">
+          <p className="hero-fade hero-fade-nav text-content-body text-[clamp(1rem,2vw,1.75rem)] text-center mb-8 px-12">
             {t.hero.subheading[lang]}
           </p>
 
           <div className="flex flex-col items-center gap-5">
             <a
               href="#contact"
-              className="cta-primary text-center bg-gradient-to-b from-gold to-gold-dark text-gray-900 font-semibold text-base md:text-2xl px-12 md:px-28 py-4 md:py-6 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+              className="cta-primary font-bold text-center bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-base md:text-2xl px-12 md:px-28 py-4 md:py-6 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
             >
               {t.hero.primaryCta[lang]}
             </a>
