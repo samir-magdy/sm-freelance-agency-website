@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Lang } from "@/app/data/translations";
+import DesktopNavLinks from "./DesktopNavLinks";
 import LanguageToggle from "./LanguageToggle";
 import MobileMenu from "./MobileMenu";
 
@@ -51,56 +52,7 @@ export default function HeroNav({
               priority
             />
           </a>
-          <ul className="ms-10 flex w-[65%] justify-between">
-            <li>
-              <a
-                href="#services"
-                className="nav-link-underline text-[1.3rem] font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
-              >
-                {nav.services}
-              </a>
-            </li>
-            <li>
-              <a
-                href="#add-ons"
-                className="nav-link-underline text-[1.3rem] font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
-              >
-                {nav.addOns}
-              </a>
-            </li>
-            <li>
-              <a
-                href="#portfolio"
-                className="nav-link-underline text-[1.3rem] font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
-              >
-                {nav.projects}
-              </a>
-            </li>
-            <li>
-              <a
-                href="#how-it-works"
-                className="nav-link-underline text-[1.3rem] font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
-              >
-                {nav.howItWorks}
-              </a>
-            </li>
-            <li>
-              <a
-                href="#faq"
-                className="nav-link-underline text-[1.3rem] font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
-              >
-                {nav.faq}
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contact"
-                className="nav-link-underline text-[1.3rem] font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
-              >
-                {nav.contact}
-              </a>
-            </li>
-          </ul>
+          <DesktopNavLinks nav={nav} />
           <div className="absolute -end-5">
             <LanguageToggle lang={lang} label={strings.langToggleLabel} />
           </div>

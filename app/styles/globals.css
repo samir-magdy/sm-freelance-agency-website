@@ -163,6 +163,13 @@ html {
   );
 }
 
+/* Active section: same look as hover, no transition so it doesn't re-animate on click/scroll */
+.nav-link-underline.nav-link-active::before {
+  width: 100%;
+  border-radius: 9999px;
+  transition: none;
+}
+
 /* ══════════════════════════════════════
    5. Primary CTA — Shimmer Effect + Conversion Animations
    ══════════════════════════════════════

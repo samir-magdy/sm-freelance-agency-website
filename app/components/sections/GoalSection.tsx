@@ -24,6 +24,7 @@ export default function GoalSection({ lang }: { lang: Lang }) {
       aria-label={lang === "en" ? "Our mission" : "مهمتنا"}
       className="relative py-24 md:py-36 px-4 ltr:px-14"
       dir={isRtl ? "rtl" : "ltr"}
+      id="goals"
     >
       {/* Seamless gradient: transparent → surface-card → transparent */}
       <div
@@ -33,13 +34,13 @@ export default function GoalSection({ lang }: { lang: Lang }) {
 
       <div className="relative z-10 max-w-6xl mx-auto text-center space-y-4 md:px-4">
         <p className="text-4xl md:text-7xl font-bold text-content-heading leading-tight md:rtl:leading-snug">
-          {Array.isArray(t.servicesSection.goal[lang])
-            ? (t.servicesSection.goal[lang] as string[]).map((line, i) => (
+          {Array.isArray(t.goal[lang])
+            ? (t.goal[lang] as string[]).map((line, i) => (
                 <span key={i} className="block">
                   {highlightWords(line, goalWords)}
                 </span>
               ))
-            : highlightWords(t.servicesSection.goal[lang] as string, goalWords)}
+            : highlightWords(t.goal[lang] as string, goalWords)}
         </p>
 
       </div>

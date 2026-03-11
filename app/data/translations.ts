@@ -35,6 +35,10 @@ const translations = {
     },
   },
 
+     goal: {
+      en: "Your growth isn’t another project. It’s our reputation.",
+      ar: ["نموّك مش بس مشروع..", "هو سمعتنا."],
+    },
   // Features section
   servicesSection: {
     heading: {
@@ -46,10 +50,7 @@ const translations = {
       ar: "كل مواقعنا تأتي بهذه المميزات دون أي تكاليف إضافية",
     },
 
-    goal: {
-      en: "Your growth isn’t another project. It’s our reputation.",
-      ar: ["نموّك مش بس مشروع..", "هو سمعتنا."],
-    },
+ 
     sharedFeatures: [
       {
         en: "Lifetime Guarantee",
