@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { ipAddress } from "@vercel/functions";
 import { NextResponse } from "next/server";
 // 1. Import the Redis client utility
 import { redis } from "@/lib/redis";
@@ -13,40 +14,78 @@ const WINDOW_SECONDS = 180; // 3 minutes
 
 export async function POST(request: Request) {
   try {
-    const { name, phone, industry, contactMethod, bestTime, email, message } = await request.json();
+    const {
+      name,
+      phone,
+      industry,
+      contactMethod,
+      bestDate,
+      bestTime,
+      email,
+      message,
+    } = await request.json();
 
     // Basic validation
     if (!name || !industry || !contactMethod) {
       return NextResponse.json(
         { error: "All fields are required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
-    if ((contactMethod === "whatsapp" || contactMethod === "phone-call") && !phone) {
+    if (
+      (contactMethod === "whatsapp" || contactMethod === "phone-call") &&
+      !phone
+    ) {
       return NextResponse.json(
-        { error: "Phone is required for WhatsApp or Phone Call contact method" },
-        { status: 400 }
+        {
+          error: "Phone is required for WhatsApp or Phone Call contact method",
+        },
+        { status: 400 },
       );
     }
 
-    if (contactMethod === "phone-call" && !bestTime) {
+    if (contactMethod === "phone-call" && (!bestTime || !bestDate)) {
       return NextResponse.json(
-        { error: "Best time is required for Phone Call contact method" },
-        { status: 400 }
+        {
+          error: "Best time and date is required for Phone Call contact method",
+        },
+        { status: 400 },
       );
     }
 
     if (contactMethod === "email" && !email) {
       return NextResponse.json(
         { error: "Email is required when email is selected as contact method" },
-        { status: 400 }
+        { status: 400 },
+      );
+    }
+
+    // Add after existing validation, before rate limiting
+    const MAX_LENGTHS = {
+      name: 50,
+      industry: 50,
+      phone: 20,
+      email: 100, // RFC 5321 max email length
+      message: 500,
+    };
+
+    if (
+      name.length > MAX_LENGTHS.name ||
+      industry.length > MAX_LENGTHS.industry ||
+      (phone && phone.length > MAX_LENGTHS.phone) ||
+      (email && email.length > MAX_LENGTHS.email) ||
+      (message && message.length > MAX_LENGTHS.message)
+    ) {
+      return NextResponse.json(
+        { error: "One or more fields exceed the maximum allowed length." },
+        { status: 400 },
       );
     }
 
     // --- ✅ CORRECTED RATE LIMITING IMPLEMENTATION ✅ ---
     // Get a unique identifier for the user (IP address is used here)
-    const userIdentifier = request.headers.get("x-forwarded-for") || "anon";
+    const userIdentifier = ipAddress(request) ?? "anon";
     const key = `rate-limit:contact-form:${userIdentifier}`;
 
     // 1. Increment the counter. This returns the new value.
@@ -65,32 +104,35 @@ export async function POST(request: Request) {
         {
           error: `Please wait a few minutes before sending another message.`,
         },
-        { status: 429 } // 429: Too Many Requests
+        { status: 429 }, // 429: Too Many Requests
       );
     }
     // ----------------------------------------------------
 
     // Send Email via Resend
     const data = await resend.emails.send({
-      from: "Portfolio Contact Form <noreply@mail.samirmagdy.com>",
+      from: "SM Web Studio <noreply@mail.samirmagdy.com>",
       to: process.env.CONTACT_EMAIL as string,
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `Website Consulation Request`,
       text: [
-        `Customer Name: ${name}`,
-        `Customer Business: ${industry}`,
-        `Preferred Contact Method: ${contactMethod}`,
-        phone && `Customer Phone: ${phone}`,
-        email && `Customer Email: ${email}`,
+        `Name: ${name}`,
+        `Business: ${industry}`,
+        `Contact Method: ${contactMethod}`,
+        phone && `Phone: ${phone}`,
+        email && `Email: ${email}`,
+        bestDate && `Preferred Date: ${bestDate}`,
         bestTime && `Best Time to Call: ${bestTime}`,
         message && `Message: ${message}`,
-      ].filter(Boolean).join("\n"),
+      ]
+        .filter(Boolean)
+        .join("\n"),
     });
 
     // Check if the email was actually sent
     if (data.error) {
       return NextResponse.json(
         { error: data.error.message || "Failed to send email" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -100,7 +142,7 @@ export async function POST(request: Request) {
       {
         error: error instanceof Error ? error.message : "Failed to send email",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

@@ -47,7 +47,7 @@ const translations = {
     },
     subtitle: {
       en: "Features included in every website we build",
-      ar: "كل موقع إلكترونى مصمم يأتي بهذه المميزات ",
+      ar: "كل موقع إلكترونى مصمم يأتي بهذه المميزات",
     },
 
  
@@ -415,7 +415,7 @@ const translations = {
           ar: "بناء الموقع بياخد وقت قد إيه؟",
         },
         answer: {
-          en: "The timeline depends on the scope of the project.. A simple landing page with 4–5 sections is typically ready within 5 to 7 business days once we have all your content, images, and branding. A more advanced single-page website with deeper sections and custom features can take 1 to 2 weeks. The biggest factor that affects timeline is how quickly content is provided on your end.",
+          en: "The timeline depends on the scope of the project. A simple landing page with 4–5 sections is typically ready within 5 to 7 business days once we have all your content, images, and branding. A more advanced single-page website with deeper sections and custom features can take 1 to 2 weeks. The biggest factor that affects timeline is how quickly content is provided on your end.",
           ar: "يعتمد ذلك على حجم المشروع. صفحة الهبوط البسيطة (4-5 أقسام) تستغرق عادة من 5 إلى 7 أيام عمل بمجرد استلام المحتوى والصور والهوية البصرية. أما المواقع الأكثر تقدماً فقد تستغرق من أسبوع إلى أسبوعين. العامل الأكبر المؤثر على الجدول الزمني هو سرعة توفير المحتوى من جانبكم.",
         },
       },
@@ -610,7 +610,7 @@ const translations = {
     message: { en: "Message", ar: "رسالة" },
     messageOptional: { en: "optional", ar: "اختياري" },
     messagePlaceholder: {
-      en: "Describe what you need from your website or ask us anything..",
+      en: "Describe what you need from your website..",
       ar: "أخبرنا باستفسارك...",
     },
     submit: { en: "Send My Request", ar: "أرسل طلبي" },

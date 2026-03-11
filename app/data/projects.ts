@@ -13,11 +13,10 @@ export interface Project {
   descriptionAr: string;
   genre: string;
   keywords: string[];
-  isShowcase: boolean;
 }
 
 export const projects: readonly Project[] = [
-    {
+  {
     id: "skyway",
     liveUrl: "https://www.skyway-travel.org",
     screenshot: skywayScreenshot,
@@ -34,7 +33,6 @@ export const projects: readonly Project[] = [
       "موقع وكالة سياحة القاهرة",
       "تصميم موقع شركة سياحة مصر",
     ],
-    isShowcase: false,
   },
   {
     id: "weddings",
@@ -53,7 +51,6 @@ export const projects: readonly Project[] = [
       "موقع أفراح القاهرة",
       "تصميم موقع خدمات أفراح",
     ],
-    isShowcase: true,
   },
   {
     id: "gym",
@@ -72,9 +69,7 @@ export const projects: readonly Project[] = [
       "موقع نادي رياضي القاهرة",
       "تصميم موقع جيم مصر",
     ],
-    isShowcase: true,
   },
-
 ];
 
 // SM Web Studio identity — reused across all project schema
@@ -87,7 +82,7 @@ const smWebStudio = {
     "Grow your business with custom web design in Egypt. We specialize in modern websites optimized to rank on Google. Claim your free quote today!",
   telephone: "+201274613331",
   email: "studio@samirmagdy.com",
-  image: "https://samirmagdy.com/open-graph.png",
+  image: "https://samirmagdy.com/open-graph.webp",
   logo: "https://samirmagdy.com/logo.png",
   address: {
     "@type": "PostalAddress",
@@ -111,6 +106,7 @@ const smWebStudio = {
   sameAs: [
     "https://www.facebook.com/WebDesignCairo",
     "https://www.instagram.com/webdesign.cairo/",
+    "https://x.com/WebDesign_EG",
   ],
 };
 

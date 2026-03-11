@@ -91,7 +91,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
           <div className="flex flex-col items-center gap-5">
             <a
               href="#contact"
-              className="cta-primary font-bold text-center bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-base md:text-2xl px-12 md:px-28 py-4 md:py-6 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+              className="cta-primary font-semibold text-center bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-base md:text-2xl px-12 md:px-28 py-4 md:py-6 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
             >
               {t.hero.primaryCta[lang]}
             </a>
