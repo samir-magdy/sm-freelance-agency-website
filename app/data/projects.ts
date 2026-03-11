@@ -13,6 +13,7 @@ export interface Project {
   descriptionAr: string;
   genre: string;
   keywords: string[];
+  badge?: { en: string; ar: string };
 }
 
 export const projects: readonly Project[] = [
@@ -37,6 +38,7 @@ export const projects: readonly Project[] = [
   {
     id: "weddings",
     liveUrl: "https://weddings.samirmagdy.com/",
+    badge: { en: "Showcase", ar: "نموذج" },
     screenshot: weddingsScreenshot,
     schemaName: "Wedding Services Website – Cairo",
     schemaNameAr: "موقع خدمات أفراح – القاهرة",
@@ -55,6 +57,7 @@ export const projects: readonly Project[] = [
   {
     id: "gym",
     liveUrl: "https://gyms.samirmagdy.com",
+    badge: { en: "Showcase", ar: "نموذج" },
     screenshot: gymScreenshot,
     schemaName: "Gym & Fitness Center Landing Page – Cairo",
     schemaNameAr: "صفحة هبوط نادي رياضي – القاهرة",

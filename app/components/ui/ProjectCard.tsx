@@ -22,9 +22,9 @@ export default function ProjectCard({ project, lang }: ProjectCardProps) {
   return (
     <article className="bg-surface-card w-full rounded-xl overflow-hidden border border-border-strong shadow-lg flex flex-col">
       <figure className="relative flex flex-col h-full">
-        {project.isShowcase && (
+        {project.badge && (
           <span style={lang === "ar" ? { borderBottomRightRadius: "0", borderTopLeftRadius: "0" } : { borderBottomLeftRadius: "0", borderTopRightRadius: "0" }} className="absolute ltr:text-xs bg-background/60 top-0 ltr:left-0 rtl:right-0 rtl:pb-2 z-10 backdrop-blur-sm text-white text-sm md:text-md font-medium px-2 py-1 rounded-xl border border-white/10">
-            {lang === "ar" ? "نموذج" : "Showcase"}
+            {project.badge[lang]}
           </span>
         )}
         <Image
