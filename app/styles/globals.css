@@ -123,10 +123,7 @@ html {
   animation-delay: 2.1s;
   animation-duration: 0.5s;
 }
-.hero-fade-whatsapp {
-  animation-delay: 2s;
-  animation-duration: 2s;
-}
+
 /* ══════════════════════════════════════
    4. Nav Link — Underline Hover Effect
    ══════════════════════════════════════ */
@@ -392,57 +389,3 @@ html {
   }
 }
 
-/* ══════════════════════════════════════
-   7. WhatsApp Floating Button
-   ══════════════════════════════════════ */
-
-.whatsapp-float {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  left: auto;
-  z-index: 5000;
-}
-
-@media (max-width: 586px) {
-  .whatsapp-float {
-    bottom: 25px;
-    right: 20px;
-  }
-}
-
-[dir="rtl"] .whatsapp-float {
-  left: 30px;
-  right: auto;
-}
-
-@keyframes whatsapp-pulsate {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-@media (max-width: 586px) {
-  .whatsapp-pulse {
-    animation-name: whatsapp-pulsate;
-    animation-duration: 1.7s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-  }
-
-  /* When fading in alongside hero-fade, run both animations.
-     Double-class specificity (0,2,0) beats hero-fade-nav (0,1,0).
-     Fade mirrors hero-fade-nav (1.6s delay, 0.3s duration).
-     Pulse starts the moment fade completes (1.6 + 0.3 = 1.9s). */
-  .hero-fade.whatsapp-pulse {
-    animation-name: heroFadeIn, whatsapp-pulsate;
-    animation-duration: 0.3s, 1.7s;
-    animation-timing-function: ease-out, ease-in-out;
-    animation-fill-mode: both, none;
-    animation-iteration-count: 1, infinite;
-    animation-delay: 3.5s, 3.8s;
-  }
-}

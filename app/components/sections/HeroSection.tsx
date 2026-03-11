@@ -115,16 +115,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
           </div>
         </div>
 
-        {/* WhatsApp floating button */}
-        <a
-          href="https://wa.me/201274613331"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open Whatsapp chat"
-          className="hero-fade hero-fade-whatsapp whatsapp-float whatsapp-pulse"
-        >
-          <img src="/utility/whatsapp.svg" alt="" className="w-10 md:w-8 h-10 md:h-8" aria-hidden="true" />
-        </a>
+      
       </section>
     </div>
   );
