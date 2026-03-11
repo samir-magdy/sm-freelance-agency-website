@@ -30,8 +30,8 @@ const translations = {
       ar: "تصميم مواقع في القاهرة، مصر",
     },
     subheading: {
-      en: "Own your space online.",
-      ar: "امتلك مساحتك على الإنترنت.",
+      en: "Boost your brand's credibility, reach, and revenue with a professional online presence.",
+      ar: "امتلك حضورك الرقمي بموقع احترافي يرفع مصداقية علامتك التجارية، انتشارها، ومبيعاتك.",
     },
   },
 
