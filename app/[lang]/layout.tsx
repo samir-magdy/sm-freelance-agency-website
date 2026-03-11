@@ -15,16 +15,13 @@ const cairo = Cairo({
 // ─────────────────────────────────────────────
 // SEO METADATA
 // ─────────────────────────────────────────────
-// Primary target keywords:
-//   EN: "best web design company cairo", "landing page design egypt", "web design cairo"
-//   AR: "أفضل شركة تصميم مواقع في القاهرة", "تصميم صفحات هبوط", "شركة تصميم مواقع القاهرة"
 
 const meta = {
   en: {
     title:
-      "Website Designer Cairo | Web Design Egypt | SM Web Studio",
+      "SM Web Studio | Modern Web Design services in Egypt",
     description:
-      "Professional web design services for your business. We create modern, digital solutions that help you grow. Claim a free website consultation!",
+      "Professional web design services for your business. We create modern, digital solutions that help you grow. Get started with a free consultation.",
     ogLocale: "en_US",
     altLocale: "ar_EG",
     ogAlt: "Logo of the top web design company in Egypt | SM Web Studio",
@@ -32,9 +29,9 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: "مصمم ومبرمج موقع إلكتروني فى مصر | تصميم وتطوير مواقع إلكترونية",
+    title: "SM Web Studio | تصميم وتطوير مواقع إلكترونية فى مصر",
     description:
-      "شركة تصميم مواقع إحترافية في مصر. احصل على موقع إلكتروني الآن، اطلب استشارتك المجانية!",
+      "شركة تصميم مواقع إحترافية في مصر. إبدء فى إنشاء موقعك الإلكتروني لعملك، اطلب استشارتك المجانية!",
     ogLocale: "ar_EG",
     altLocale: "en_US",
     ogAlt: "تصميم مواقع محترفة في مصر | احصل على موقعك SM Web Studio Logo",
