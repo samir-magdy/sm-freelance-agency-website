@@ -100,8 +100,8 @@ html {
 }
 
 .hero-fade-label {
-  animation-delay: 2.6s;
-  animation-duration: 0.3s;
+  animation-delay: 2s;
+  animation-duration: 1s;
 }
 .hero-fade-hook-1 {
   animation-delay: 0.4s;
@@ -120,12 +120,12 @@ html {
   animation-duration: 0.3s;
 }
 .hero-fade-secondary-cta {
-  animation-delay: 2.6s;
-  animation-duration: 0.3s;
+  animation-delay: 2.1s;
+  animation-duration: 0.5s;
 }
 .hero-fade-whatsapp {
-  animation-delay: 3.5s;
-  animation-duration: 0.5s;
+  animation-delay: 2s;
+  animation-duration: 2s;
 }
 /* ══════════════════════════════════════
    4. Nav Link — Underline Hover Effect
@@ -178,15 +178,18 @@ html {
    left-to-right as if the shimmer is painting it into existence.
    Both start at 2.5s. Shimmer sweeps in 0.48s, wipe completes in 0.55s
    so the shimmer exits just before the button is fully revealed. */
+/* Entrance: Hardware-accelerated fade and slide from the side */
 @keyframes ctaEntrance {
-  from { clip-path: inset(0 100% 0 0 round 0.75rem); }
-  to   { clip-path: inset(0 0%   0 0 round 0.75rem); }
+  from { 
+    opacity: 0;
+    transform: translateY(100); 
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0); 
+  }
 }
 
-@keyframes ctaEntranceRtl {
-  from { clip-path: inset(0 0 0 100% round 0.75rem); }
-  to   { clip-path: inset(0 0 0 0%   round 0.75rem); }
-}
 
 @keyframes ctaAutoShimmer {
   0%    { translate: -110% 0; }
@@ -205,12 +208,8 @@ html {
 .cta-primary {
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease;
-  animation: ctaEntrance 0.6s ease-out 2s both;
-}
-
-[dir="rtl"] .cta-primary {
-  animation: ctaEntranceRtl 0.6s ease-out 2s both;
+  transition: transform 0.2s ease;
+  animation: ctaEntrance 0.5s ease-out 1.6s both;
 }
 
 .cta-primary::before {
@@ -227,7 +226,7 @@ html {
   );
   translate: -110% 0;
   pointer-events: none;
-  animation: ctaAutoShimmer 5s ease-out 3s infinite;
+  animation: ctaAutoShimmer 5s ease-out 2.8s infinite;
 }
 
 [dir="rtl"] .cta-primary::before {
@@ -240,7 +239,7 @@ html {
     transparent 65%
   );
   translate: 110% 0;
-  animation: ctaAutoShimmerRtl 5s ease-out 3s infinite;
+  animation: ctaAutoShimmerRtl 5s ease-out 2.8s infinite;
 }
 
 .cta-primary::after {

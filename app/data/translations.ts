@@ -26,7 +26,7 @@ const translations = {
       ar: "سابقة الأعمال",
     },
     seoLabel: {
-      en: "Web Design Company in Egypt",
+      en: "Web Design Services in Egypt",
       ar: "شركة تصميم مواقع في القاهرة، مصر",
     },
     subheading: {
