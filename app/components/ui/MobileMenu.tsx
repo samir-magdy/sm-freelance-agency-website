@@ -10,7 +10,7 @@ interface MobileMenuProps {
   lang: Lang;
   nav: {
     services: string;
-    addOns: string;
+    // addOns: string;
     projects: string;
     howItWorks: string;
     faq: string;
@@ -83,7 +83,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
         onClick={() => setIsMenuOpen(false)}
         className={`2xl:hidden fixed pb-20 inset-0 flex flex-col items-center justify-center bg-background/90 backdrop-blur-2xl z-40 transition-[opacity,visibility] duration-[250ms] ease-out overscroll-none touch-none ${isMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"}`}
       >
-        <ul className="flex flex-col items-center gap-3">
+        <ul className="flex flex-col items-center gap-6">
           <li>
             <a
               href="#services"
@@ -92,14 +92,14 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
               {nav.services}
             </a>
           </li>
-          <li>
+          {/* <li>
             <a
               href="#add-ons"
               className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav.addOns}
             </a>
-          </li>
+          </li> */}
           <li>
             <a
               href="#portfolio"

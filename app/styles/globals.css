@@ -60,11 +60,11 @@ html {
   letter-spacing: 0 !important;
 }
 
-@media (max-width: 578px) {
+/* @media (max-width: 578px) {
   [dir="rtl"] #hero-hook {
     font-size: 3rem;
   }
-}
+} */
 
 @media (min-width: 1000px) {
   [dir="rtl"] #hero-hook {

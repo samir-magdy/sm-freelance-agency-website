@@ -3,8 +3,8 @@ export type Lang = "en" | "ar";
 const translations = {
   // Navigation
   nav: {
-    services: { en: "Features", ar: "المميزات" },
-    addOns: { en: "Services", ar: "الخدمات" },
+    services: { en: "Features", ar: " المميزات المضمنة" },
+    // addOns: { en: "Services", ar: "الخدمات" },
     projects: { en: "Portfolio", ar: "سابقة الأعمال" },
     howItWorks: { en: "Process", ar: "خطوات العمل" },
     faq: { en: "FAQs", ar: "الأسئلة الشائعة" },
@@ -15,7 +15,7 @@ const translations = {
   hero: {
     name: {
       en: ["Be Found.", "Be Trusted.", "Be Chosen."],
-      ar: ["تصدّر البحث.", "اكسب الثقة.", "اجذب العملاء."],
+      ar: ["كن حاضراً.", "اكسب الثقة.", "اجذب العملاء."],
     },
     primaryCta: {
       en: "Get Started",
@@ -26,12 +26,12 @@ const translations = {
       ar: "سابقة الأعمال",
     },
     seoLabel: {
-      en: "Web Design Services in Egypt",
-      ar: "شركة تصميم مواقع في القاهرة، مصر",
+      en: "Website Design Services",
+      ar: "تصميم مواقع في القاهرة، مصر",
     },
     subheading: {
-      en: "We build websites that grow your business. Bring your brand to life today.",
-      ar: "تصميم مواقع إلكترونية إحترافية لتوسيع أعمالك.",
+      en: "Own your space online.",
+      ar: "امتلك مساحتك على الإنترنت.",
     },
   },
 
@@ -46,8 +46,8 @@ const translations = {
       ar: "المميزات المضمنة",
     },
     subtitle: {
-      en: "Features included in every website at no extra cost",
-      ar: "كل مواقعنا تأتي بهذه المميزات دون أي تكاليف إضافية",
+      en: "Features included in every website we build",
+      ar: "كل موقع إلكترونى مصمم يأتي بهذه المميزات ",
     },
 
  
@@ -616,7 +616,7 @@ const translations = {
     submit: { en: "Send My Request", ar: "أرسل طلبي" },
     sending: { en: "Sending...", ar: "جاري الإرسال..." },
     success: {
-      en: "Thank you. We have receieved your message.",
+      en: "Thank you. We have received your message.",
       ar: "سنتواصل معك قريباً!",
     },
     errorRateLimit: {

@@ -7,7 +7,7 @@ import MobileMenu from "./MobileMenu";
 interface HeroNavStrings {
   nav: {
     services: string;
-    addOns: string;
+    // addOns: string;
     projects: string;
     howItWorks: string;
     faq: string;

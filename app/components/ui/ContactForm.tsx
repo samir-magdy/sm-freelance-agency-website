@@ -157,7 +157,7 @@ const selectClass = (value: string) =>
 
   return (
     <form
-      className="text-start relative pb-4 lg:min-h-[575px]"
+      className="text-start relative pb-4 lg:min-h-[555px]"
       onSubmit={handleSubmit}
       aria-label={strings.contactFormA11y}
     >
