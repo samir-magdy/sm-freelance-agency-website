@@ -16,27 +16,7 @@ export default {
         md: "0.375rem",
         sm: "0.25rem",
       },
-      keyframes: {
-        "fade-in": {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
-        },
-        "scroll-hint": {
-          "0%, 100%": { transform: "translateY(0px)", opacity: "0.35" },
-          "50%": { transform: "translateY(9px)", opacity: "0.8" },
-        },
-      },
-      animation: {
-        "fade-in": "fade-in 1s ease-out",
-        "scroll-hint": "scroll-hint 2s ease-in-out infinite",
-      },
       fontSize: {
-        // Hero — 1.75rem (28px) mobile → 3.5rem desktop
-        display: [
-          "clamp(1.75rem, 1rem + 3.2vw, 3.5rem)",
-          { lineHeight: "1.25", letterSpacing: "-0.02em" },
-        ],
-
         // Section Titles — 1.5rem (24px) → 2.25rem ✓ no change
         heading: [
           "clamp(1.5rem, 1.1rem + 1.7vw, 2.25rem)",

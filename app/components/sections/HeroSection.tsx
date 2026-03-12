@@ -30,7 +30,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
 
       <section
         id="home"
-        className="h-screen flex items-center justify-center relative"
+        className="h-[100dvh] flex items-center justify-center relative"
       >
         {/* Dot grid + radial glow background */}
         <div className="hero-grid" aria-hidden="true" />
@@ -38,10 +38,10 @@ export default function HeroSection({ lang }: { lang: Lang }) {
 
         <div
           id="hero-container"
-          className="relative z-10 flex flex-col items-center w-full pb-12 md:pt-36"
+          className="relative z-10 flex flex-col items-center w-full pt-24"
         >
           <h1 className="font-bold text-center text-content-heading px-4">
-            <span className="hero-fade hero-fade-label block text-content-muted text-[0.7rem] md:text-[1.125rem] tracking-wider font-medium uppercase mb-3 md:mb-6">
+            <span className="hero-fade hero-fade-label block text-content-muted text-[0.7rem] md:text-[1.125rem] tracking-wider font-normal uppercase mb-3 md:mb-6">
               {t.hero.seoLabel[lang]}
             </span>
             <span
@@ -84,21 +84,21 @@ export default function HeroSection({ lang }: { lang: Lang }) {
             </span>
           </h1>
 
-          <p className="hero-fade hero-fade-nav text-content-body text-[clamp(1rem,2vw,1.75rem)] text-center mb-8 px-12">
+          <p className="hero-fade hero-fade-nav text-content-body text-[clamp(1.2rem,2vw,1.75rem)] text-center mb-8 px-8">
             {t.hero.subheading[lang]}
           </p>
 
           <div className="flex flex-col items-center gap-5">
             <a
               href="#contact"
-              className="cta-primary font-semibold text-center bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-base md:text-2xl px-12 md:px-28 py-4 md:py-6 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+              className="cta-primary font-semibold text-center bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.2rem,2vw,1.75rem)] px-12 md:px-28 py-4 md:py-6 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
             >
               {t.hero.primaryCta[lang]}
             </a>
 
             <a
               href="#portfolio"
-              className="hero-fade hero-fade-secondary-cta group inline-flex items-center gap-1.5 text-content-muted hover:text-content-body text-sm md:text-lg font-medium transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+              className="hero-fade hero-fade-secondary-cta group inline-flex items-center gap-1.5 text-content-muted hover:text-content-body text-md md:text-xl font-medium transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {t.hero.secondaryCta[lang]}
               <svg
@@ -114,8 +114,6 @@ export default function HeroSection({ lang }: { lang: Lang }) {
             </a>
           </div>
         </div>
-
-      
       </section>
     </div>
   );
