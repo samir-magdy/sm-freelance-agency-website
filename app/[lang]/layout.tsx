@@ -3,6 +3,7 @@ import { Cairo } from "next/font/google";
 import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Footer from "../components/ui/Footer";
+import HeroNav from "../components/ui/HeroNav";
 import type { Lang } from "../data/translations";
 import translations from "../data/translations";
 
@@ -19,9 +20,9 @@ const cairo = Cairo({
 const meta = {
   en: {
     title:
-      "Website Design Company in Egypt | Boost Your Online Presence",
+      "SM Web Studio | Expert Website Design Agency in Egypt",
     description:
-      "Boost your business's online presence and revenue with a modern, high-performance website. Get a free quote today.",
+      "Boost your online presence and revenue with a modern, high-performance website. Expert web design & development. Launch your own website in days.",
     ogLocale: "en_US",
     altLocale: "ar_EG",
     ogAlt: "Logo of the top web design company in Egypt | SM Web Studio",
@@ -29,9 +30,9 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: "إنشاء موقع إلكتروني | أفضل شركة تصميم مواقع في مصر",
+    title: "SM Web Studio | شركة تصميم مواقع احترافية في مصر",
     description:
-      "أفضل شركة تصميم وبرمجة مواقع في مصر. نقدم خدمات برمجة المواقع، إنشاء متجر إلكتروني، إبدأ فى إنشاء موقعك الإلكتروني، اطلب استشارة مجانية اليوم.",
+      "شركة تصميم وبرمجة مواقع في مصر. نقدم خدمات برمجة المواقع، إنشاء متجر إلكتروني، إبدأ فى إنشاء موقعك الإلكتروني، اطلب استشارة مجانية اليوم.",
     ogLocale: "ar_EG",
     altLocale: "en_US",
     ogAlt: "تصميم مواقع محترفة في مصر | احصل على موقعك SM Web Studio Logo",
@@ -279,6 +280,25 @@ export default async function LangLayout({
   const lang: Lang = rawLang === "en" || rawLang === "ar" ? rawLang : "en";
   const structuredData = buildStructuredData(lang);
   const skipLabel = meta[lang].skipToContent;
+  const t = translations;
+
+  const heroNavStrings = {
+    nav: {
+      services: t.nav.services[lang],
+      addOns: t.nav.addOns[lang],
+      projects: t.nav.projects[lang],
+      howItWorks: t.nav.howItWorks[lang],
+      faq: t.nav.faq[lang],
+      contact: t.nav.contact[lang],
+    },
+    a11y: {
+      desktopNav: t.a11y.desktopNav[lang],
+      mobileNav: t.a11y.mobileNav[lang],
+      openMenu: t.a11y.openMenu[lang],
+      closeMenu: t.a11y.closeMenu[lang],
+    },
+    langToggleLabel: lang === "ar" ? t.langToggle.en : t.langToggle.ar,
+  };
 
   return (
     <html lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
@@ -299,7 +319,10 @@ export default async function LangLayout({
           }}
         />
 
-        {/* ── App ── */}
+        {/* ── Navigation ── */}
+        <HeroNav lang={lang} strings={heroNavStrings} />
+
+        {/* ── Main content ── */}
         <main id="main-content">{children}</main>
         <Footer />
         <Analytics />

@@ -36,13 +36,13 @@ export default function HeroNav({
       {/* Fixed Top Navbar for Desktop — fully static, server-rendered */}
       <nav
         aria-label={a11y.desktopNav}
-        className="hidden xl:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl px-28"
+        className="hidden xl:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl px-8 pe-10"
       >
         <div className="py-2 relative flex items-center w-full">
           <a href="#home" aria-label="Samir Magdy - Home">
             <Image
               src="/brand.svg"
-              alt="SM WEB STUDIO LOGO"
+              alt="SM Web Studio – Website Design Company in Egypt"
               width={115}
               height={115}
               priority

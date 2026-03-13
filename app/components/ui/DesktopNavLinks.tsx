@@ -114,7 +114,7 @@ export default function DesktopNavLinks({ nav }: DesktopNavLinksProps) {
     "nav-link-underline text-[1.3rem] font-medium tracking-wider focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500";
 
   return (
-    <ul className="flex w-full justify-around px-16">
+    <ul className="flex w-full justify-around px-40">
       {LINK_CONFIG.map(({ href, labelKey }) => {
         const sectionId = hrefToSectionId(href);
         const isActive = sectionId !== null && activeId === sectionId;

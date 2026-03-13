@@ -22,7 +22,7 @@ export default function LanguageToggle({
         width="24"
         height="24"
         viewBox="0 0 24 24"
-        fill="black"
+        fill="transparent"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"

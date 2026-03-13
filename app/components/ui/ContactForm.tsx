@@ -35,14 +35,10 @@ const ChevronDown = () => (
 type ContactMethod = "whatsapp" | "phone-call" | "email" | "";
 
 const TIME_OPTIONS = [
-  { value: "11am-12pm", en: "11 AM - 12 PM", ar: "\u0661\u0661 \u0635 - \u0661\u0662 \u0645" },
-  { value: "12pm-1pm", en: "12 PM - 1 PM", ar: "\u0661\u0662 \u0645 - \u0661 \u0645" },
-  { value: "1pm-2pm", en: "1 PM - 2 PM", ar: "\u0661 \u0645 - \u0662 \u0645" },
-  { value: "2pm-3pm", en: "2 PM - 3 PM", ar: "\u0662 \u0645 - \u0663 \u0645" },
-  { value: "3pm-4pm", en: "3 PM - 4 PM", ar: "\u0663 \u0645 - \u0664 \u0645" },
-  { value: "4pm-5pm", en: "4 PM - 5 PM", ar: "\u0664 \u0645 - \u0665 \u0645" },
-  { value: "5pm-6pm", en: "5 PM - 6 PM", ar: "\u0665 \u0645 - \u0666 \u0645" },
-  { value: "6pm-7pm", en: "6 PM - 7 PM", ar: "\u0666 \u0645 - \u0667 \u0645" },
+  { value: "11am-1pm", en: "11:00 AM - 01:00 PM", ar: "١١:٠٠ ص - ١:٠٠ م" },
+  { value: "1pm-3pm", en: "01:00 PM - 03:00 PM", ar: "١:٠٠ م - ٣:٠٠ م" },
+  { value: "3pm-5pm", en: "03:00 PM - 05:00 PM", ar: "٣:٠٠ م - ٥:٠٠ م" },
+  { value: "5pm-7pm", en: "05:00 PM - 07:00 PM", ar: "٥:٠٠ م - ٧:٠٠ م" },
 ];
 
 export interface ContactFormStrings {

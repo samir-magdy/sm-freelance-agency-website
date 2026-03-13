@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const modifyDate = "2026-03-11";
+  const modifyDate = "2026-03-13";
   return [
     {
       url: "https://samirmagdy.com",

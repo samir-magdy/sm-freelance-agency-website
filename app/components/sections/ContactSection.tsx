@@ -44,7 +44,7 @@ export default function ContactSection({ lang }: { lang: Lang }) {
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="max-w-4xl mx-auto">
-        <div className="mb-4 md:mb-6">
+        <div className="mb-4 md:mb-8">
           <h2
             id="contact-heading"
             className="font-bold text-heading text-center mb-2"

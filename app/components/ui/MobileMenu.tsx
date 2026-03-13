@@ -28,26 +28,35 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <>
-      {/* Mobile Hamburger Bar */}
+    <nav
+      id="mobile-menu"
+      aria-label={a11y.mobileNav}
+      aria-hidden={!isMenuOpen}
+      onClick={() => isMenuOpen && setIsMenuOpen(false)}
+      className={`xl:hidden fixed inset-0 z-50 ${isMenuOpen ? "pointer-events-auto overscroll-none touch-none" : "pointer-events-none"}`}
+    >
+      {/* Full-screen backdrop — animates in when open */}
       <div
-        className={`
-          xl:hidden
-          fixed top-0 left-0 right-0 z-50 py-2
-          backdrop-blur-2xl`}
+        className={`absolute inset-0 backdrop-blur-3xl transition-opacity duration-[250ms] ease-out ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
+      />
+
+      {/* Navbar row — always visible and interactive, clicking it also closes the menu */}
+      <div
+        className="absolute top-0 left-0 right-0 z-10 py-2 backdrop-blur-2xl pointer-events-auto"
+        dir="ltr"
       >
-        <div className="flex justify-between items-center px-4" dir="ltr">
+        <div className="flex justify-between items-center px-4">
           <a href="#home" aria-label="Samir Magdy - Home">
             <Image
               src="/brand.svg"
-              alt="SM WEB STUDIO LOGO"
+              alt="SM Web Studio – Website Design Company in Egypt"
               width={75}
               height={75}
               priority
             />
           </a>
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={(e) => { e.stopPropagation(); setIsMenuOpen(!isMenuOpen); }}
             className="block p-4 pe-2"
             aria-label={isMenuOpen ? a11y.closeMenu : a11y.openMenu}
             aria-expanded={isMenuOpen}
@@ -74,13 +83,9 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      <nav
-        id="mobile-menu"
-        aria-label={a11y.mobileNav}
-        aria-hidden={!isMenuOpen}
-        onClick={() => setIsMenuOpen(false)}
-        className={`2xl:hidden fixed inset-0 flex flex-col items-center justify-center bg-background/90 backdrop-blur-2xl z-40 transition-[opacity,visibility] duration-[250ms] ease-out overscroll-none touch-none ${isMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"}`}
+      {/* Menu content — animates in/out */}
+      <div
+        className={`absolute inset-0 flex flex-col items-center justify-center transition-[opacity,visibility] duration-[250ms] ease-out ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
       >
         <ul className="flex flex-col items-center gap-4">
           <li>
@@ -136,7 +141,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
           <LanguageToggle lang={lang} label={langToggleLabel} />
           <SocialIcons />
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 }

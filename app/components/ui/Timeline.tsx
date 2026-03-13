@@ -98,7 +98,7 @@ export function Timeline({ data }: { data: TimelineEntry[] }) {
             <li
               key={index}
               ref={(el) => { itemRefs.current[index] = el; }}
-              className="flex justify-start min-h-[15rem] md:min-h-0 md:py-20"
+              className="flex justify-start min-h-[15rem] md:min-h-0 md:py-28"
             >
               <div className="sticky flex flex-col md:flex-row z-[1] items-center md:w-full">
                 <div className="h-12 absolute start-3 w-10 rounded-full bg-background flex items-center justify-center">

@@ -79,6 +79,9 @@ html {
     opacity: 1;
   }
 }
+[dir="rtl"] h2{
+  margin-bottom: 1rem;
+}
 
 .hero-fade {
   opacity: 0;
@@ -88,8 +91,8 @@ html {
 }
 
 .hero-fade-label {
-  animation-delay: 1.9s;
-  animation-duration: 0.8s;
+  animation-delay: 2.3s;
+  animation-duration: 0.3s;
 }
 .hero-fade-hook-1 {
   animation-delay: 0.4s;
@@ -108,7 +111,7 @@ html {
   animation-duration: 0.3s;
 }
 .hero-fade-secondary-cta {
-  animation-delay: 1.9s;
+  animation-delay: 2.3s;
   animation-duration: 0.3s;
 }
 
@@ -200,8 +203,8 @@ html {
 .cta-primary {
   position: relative;
   overflow: hidden;
-  transition: transform 0.2s ease;
-  animation: ctaEntrance 0.3s ease-out 1.6s both;
+  /* transition: transform 1 ease; */
+  animation: ctaEntrance 0.7s ease-out 1.6s both;
 }
 
 .cta-primary::before {
@@ -218,7 +221,7 @@ html {
   );
   translate: -110% 0;
   pointer-events: none;
-  animation: ctaAutoShimmer 5s ease-out 2.4s infinite;
+  animation: ctaAutoShimmer 5s ease-out 2.8s infinite;
 }
 
 [dir="rtl"] .cta-primary::before {
@@ -231,7 +234,7 @@ html {
     transparent 65%
   );
   translate: 110% 0;
-  animation: ctaAutoShimmerRtl 5s ease-out 2.4s infinite;
+  animation: ctaAutoShimmerRtl 5s ease-out 2.8s infinite;
 }
 
 .cta-primary::after {
