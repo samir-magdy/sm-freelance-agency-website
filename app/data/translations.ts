@@ -42,11 +42,11 @@ const translations = {
   // Features section
   servicesSection: {
     heading: {
-      en: "What's Included in Every Website",
+      en: "Features Included in Every Website",
       ar: "المميزات المضمنة في كل موقع",
     },
     subtitle: {
-      en: "Every website comes loaded with these features",
+      en: "A solid foundation from the start",
       ar: "كل موقع إلكترونى نصممه يأتي بهذه المميزات",
     },
 
@@ -113,7 +113,7 @@ const translations = {
   // Services section
   addOnsSection: {
     heading: {
-      en: "Add-On Services",
+      en: "Our Services",
       ar: "الخدمات الإضافية",
     },
     subtitle: {
@@ -198,7 +198,7 @@ const translations = {
   // Projects section
   projectsSection: {
     heading: {
-      en: "Website Design Portfolio",
+      en: "Web Design Portfolio",
       ar: "معرض أعمال تصميم المواقع",
     },
     subtitle: {
@@ -256,7 +256,7 @@ const translations = {
   // YOU ARE HERE
   // Our Process section
   workflowSection: {
-    heading: { en: "Our Website Design Process", ar: "خطوات تصميم موقعك" },
+    heading: { en: "Website Development Process", ar: "خطوات تصميم موقعك" },
     subtitle: {
       en: "A clear process from start to finish",
       ar: "عملية واضحة من البداية للنهاية",
@@ -633,7 +633,7 @@ const translations = {
   // Contact section
   contactSection: {
     heading: {
-      en: "Get Started on Your Website",
+      en: "Start With a Free Consultaion",
       ar: "ابدأ خطوات إنشاء موقعك",
     },
     subtitle: {
