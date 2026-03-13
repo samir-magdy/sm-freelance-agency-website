@@ -593,7 +593,7 @@ const translations = {
         },
         answer: {
           en: "In Egypt, standard annual maintenance packages for small to mid-sized websites start from around 6000 EGP (500 EGP/month) and increases based on server needs. This covers essential services like hosting, security patches, backups, and performance optimization.",
-          ar: "في مصر، تبدأ باقات الصيانة السنوية للمواقع الصغيرة والمتوسطة من حوالي 6,000 جنيه مصري (500 جنيه شهرياً) وتزداد بحسب احتياجات الخادم. تشمل هذه الباقات خدمات أساسية مثل الاستضافة، والتحديثات الأمنية، والنسخ الاحتياطي، وتحسين الأداء.",
+          ar: "في مصر، تبدأ باقات الصيانة السنوية للمواقع الصغيرة والمتوسطة من حوالي 6,000 جنيه مصري (500 جنيه شهرياً) وتزداد بحسب احتياجات الخادم. وتشمل خدمات أساسية مثل الاستضافة، التحديثات الأمنية، النسخ الاحتياطي، وتحسين الأداء.",
         },
       },
       {
