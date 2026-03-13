@@ -60,18 +60,6 @@ html {
   letter-spacing: 0 !important;
 }
 
-/* @media (max-width: 578px) {
-  [dir="rtl"] #hero-hook {
-    font-size: 3rem;
-  }
-} */
-
-@media (min-width: 1000px) {
-  [dir="rtl"] #hero-hook {
-    margin-bottom: 1.25rem;
-  }
-}
-
 /* ══════════════════════════════════════
    Hero Section — Staggered Fade-In
    ══════════════════════════════════════
@@ -100,8 +88,8 @@ html {
 }
 
 .hero-fade-label {
-  animation-delay: 2s;
-  animation-duration: 1s;
+  animation-delay: 1.9s;
+  animation-duration: 0.8s;
 }
 .hero-fade-hook-1 {
   animation-delay: 0.4s;
@@ -120,8 +108,8 @@ html {
   animation-duration: 0.3s;
 }
 .hero-fade-secondary-cta {
-  animation-delay: 2.1s;
-  animation-duration: 0.5s;
+  animation-delay: 1.9s;
+  animation-duration: 0.3s;
 }
 
 /* ══════════════════════════════════════
@@ -213,7 +201,7 @@ html {
   position: relative;
   overflow: hidden;
   transition: transform 0.2s ease;
-  animation: ctaEntrance 0.5s ease-out 1.6s both;
+  animation: ctaEntrance 0.3s ease-out 1.6s both;
 }
 
 .cta-primary::before {
@@ -230,7 +218,7 @@ html {
   );
   translate: -110% 0;
   pointer-events: none;
-  animation: ctaAutoShimmer 5s ease-out 2.8s infinite;
+  animation: ctaAutoShimmer 5s ease-out 2.4s infinite;
 }
 
 [dir="rtl"] .cta-primary::before {
@@ -243,7 +231,7 @@ html {
     transparent 65%
   );
   translate: 110% 0;
-  animation: ctaAutoShimmerRtl 5s ease-out 2.8s infinite;
+  animation: ctaAutoShimmerRtl 5s ease-out 2.4s infinite;
 }
 
 .cta-primary::after {

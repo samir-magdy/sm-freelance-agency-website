@@ -389,7 +389,7 @@ const selectClass = (value: string) =>
           <div className="md:col-span-2">
             <label htmlFor="message" className={labelClass}>
               {strings.message}{" "}
-              <span className="text-content-body font-light">({strings.messageOptional})</span>
+              <span className="text-content-muted font-normal">({strings.messageOptional})</span>
             </label>
             <textarea
               id="message"

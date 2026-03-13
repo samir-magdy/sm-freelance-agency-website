@@ -6,7 +6,7 @@ const SECTION_IDS = [
   "home",
   "goals",
   "services",
-  // "add-ons",
+  "add-ons",
   "portfolio",
   "how-it-works",
   "faq",
@@ -17,7 +17,7 @@ type SectionId = (typeof SECTION_IDS)[number];
 
 const LINK_CONFIG: { href: `#${SectionId}`; labelKey: keyof typeof defaultNav }[] = [
   { href: "#services", labelKey: "services" },
-  // { href: "#add-ons", labelKey: "addOns" },
+  { href: "#add-ons", labelKey: "addOns" },
   { href: "#portfolio", labelKey: "projects" },
   { href: "#how-it-works", labelKey: "howItWorks" },
   { href: "#faq", labelKey: "faq" },
@@ -26,7 +26,7 @@ const LINK_CONFIG: { href: `#${SectionId}`; labelKey: keyof typeof defaultNav }[
 
 const defaultNav = {
   services: "",
-  // addOns: "",
+  addOns: "",
   projects: "",
   howItWorks: "",
   faq: "",
@@ -36,7 +36,7 @@ const defaultNav = {
 interface DesktopNavLinksProps {
   nav: {
     services: string;
-    // addOns: string;
+    addOns: string;
     projects: string;
     howItWorks: string;
     faq: string;
@@ -114,7 +114,7 @@ export default function DesktopNavLinks({ nav }: DesktopNavLinksProps) {
     "nav-link-underline text-[1.3rem] font-medium tracking-wider focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500";
 
   return (
-    <ul className="flex w-[50%] justify-between">
+    <ul className="flex w-full justify-around px-16">
       {LINK_CONFIG.map(({ href, labelKey }) => {
         const sectionId = hrefToSectionId(href);
         const isActive = sectionId !== null && activeId === sectionId;

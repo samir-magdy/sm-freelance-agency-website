@@ -1,8 +1,8 @@
 import type { Lang } from "@/app/data/translations";
 import translations from "@/app/data/translations";
-import { MonitorSmartphone, Search, Zap, MessageCircle, ShieldCheck, Globe, RefreshCw } from "lucide-react";
+import { MonitorSmartphone, Search, Zap, MessageCircle, ShieldCheck, RefreshCw } from "lucide-react";
 
-const featureIcons = [ShieldCheck, MonitorSmartphone, Zap, Globe, Search, MessageCircle, RefreshCw];
+const featureIcons = [ShieldCheck, MonitorSmartphone, Zap, Search, MessageCircle, RefreshCw];
 
 export default function ServicesSection({ lang }: { lang: Lang }) {
   const t = translations.servicesSection;
@@ -34,17 +34,14 @@ export default function ServicesSection({ lang }: { lang: Lang }) {
         <div className="relative mb-16 md:mb-20">
 
 
-          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-8 gap-4 md:gap-6">
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {t.sharedFeatures.map((feature, i) => {
               const Icon = featureIcons[i];
               return (
 
                 <div
                   key={feature.en}
-                  className={`text-center group bg-surface-card/80 relative overflow-hidden rounded-2xl border border-border-subtle py-6 px-4 shadow-lg hover:-translate-y-1.5 hover:border-border-strong transition-all duration-300 xl:col-span-2${
-                    i === 4 ? " xl:col-start-2" :
-                    i === 6 ? " sm:col-span-2 sm:w-1/2 sm:mx-auto lg:col-span-1 lg:w-auto lg:mx-0 lg:col-start-2 xl:col-span-2 xl:col-start-6" : ""
-                  }`}
+                  className={`text-center group bg-surface-card/80 relative overflow-hidden rounded-2xl border border-border-subtle py-6 px-4 shadow-lg hover:-translate-y-1.5 hover:border-border-strong transition-all duration-300`}
                 >
                   <div aria-hidden="true" />
 
@@ -61,28 +58,6 @@ export default function ServicesSection({ lang }: { lang: Lang }) {
           </div>
     
         </div>
-
-
-        {/* About strip */}
-        {/* <div className="border-t border-border-subtle pt-12 md:pt-14">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
-            <div
-              className="shrink-0 w-12 h-12 rounded-full flex items-center justify-center bg-surface-card border border-border-strong"
-              aria-hidden="true"
-            >
-              <span className="text-base font-bold text-content-heading">SM</span>
-            </div>
-            <div>
-              <p className="font-semibold text-content-heading mb-1">
-                {t.about.name[lang]}
-              </p>
-              <p className="text-base text-content-body leading-relaxed max-w-2xl">
-                {t.about.bio[lang]}
-              </p>
-            </div>
-          </div>
-        </div> */}
-
       </div>
     </section>
   );

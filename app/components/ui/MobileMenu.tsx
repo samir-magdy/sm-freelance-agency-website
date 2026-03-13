@@ -10,7 +10,7 @@ interface MobileMenuProps {
   lang: Lang;
   nav: {
     services: string;
-    // addOns: string;
+    addOns: string;
     projects: string;
     howItWorks: string;
     faq: string;
@@ -33,11 +33,10 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
       <div
         className={`
           xl:hidden
-          fixed top-0 left-0 right-0 z-50
-          p-2 pr-5
+          fixed top-0 left-0 right-0 z-50 py-2
           backdrop-blur-2xl`}
       >
-        <div className="flex justify-between items-center" dir="ltr">
+        <div className="flex justify-between items-center px-4" dir="ltr">
           <a href="#home" aria-label="Samir Magdy - Home">
             <Image
               src="/brand.svg"
@@ -49,7 +48,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
           </a>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="block"
+            className="block p-4 pe-2"
             aria-label={isMenuOpen ? a11y.closeMenu : a11y.openMenu}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
@@ -81,9 +80,9 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
         aria-label={a11y.mobileNav}
         aria-hidden={!isMenuOpen}
         onClick={() => setIsMenuOpen(false)}
-        className={`2xl:hidden fixed pb-20 inset-0 flex flex-col items-center justify-center bg-background/90 backdrop-blur-2xl z-40 transition-[opacity,visibility] duration-[250ms] ease-out overscroll-none touch-none ${isMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"}`}
+        className={`2xl:hidden fixed inset-0 flex flex-col items-center justify-center bg-background/90 backdrop-blur-2xl z-40 transition-[opacity,visibility] duration-[250ms] ease-out overscroll-none touch-none ${isMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"}`}
       >
-        <ul className="flex flex-col items-center gap-6">
+        <ul className="flex flex-col items-center gap-4">
           <li>
             <a
               href="#services"
@@ -92,14 +91,14 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
               {nav.services}
             </a>
           </li>
-          {/* <li>
+          <li>
             <a
               href="#add-ons"
               className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav.addOns}
             </a>
-          </li> */}
+          </li>
           <li>
             <a
               href="#portfolio"
@@ -133,7 +132,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
             </a>
           </li>
         </ul>
-        <div className="flex flex-col absolute bottom-24 items-center gap-8">
+        <div className="flex flex-col absolute bottom-12 items-center gap-10">
           <LanguageToggle lang={lang} label={langToggleLabel} />
           <SocialIcons />
         </div>

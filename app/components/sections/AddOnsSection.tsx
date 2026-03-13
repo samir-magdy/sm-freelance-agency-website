@@ -2,7 +2,7 @@ import type { Lang } from "@/app/data/translations";
 import translations from "@/app/data/translations";
 import { Languages, Mail, PenLine, MapPin, FileSearch, Palette, LayoutDashboard } from "lucide-react";
 
-const addOnIcons = [FileSearch, MapPin, LayoutDashboard, Languages, PenLine, Palette, Mail];
+const addOnIcons = [LayoutDashboard, Languages,  FileSearch, MapPin,  PenLine, Palette, Mail];
 
 export default function AddOnsSection({ lang }: { lang: Lang }) {
   const t = translations.addOnsSection;

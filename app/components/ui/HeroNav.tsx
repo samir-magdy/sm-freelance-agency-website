@@ -7,7 +7,7 @@ import MobileMenu from "./MobileMenu";
 interface HeroNavStrings {
   nav: {
     services: string;
-    // addOns: string;
+    addOns: string;
     projects: string;
     howItWorks: string;
     faq: string;
@@ -36,14 +36,10 @@ export default function HeroNav({
       {/* Fixed Top Navbar for Desktop — fully static, server-rendered */}
       <nav
         aria-label={a11y.desktopNav}
-        className="hidden xl:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl"
+        className="hidden xl:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl px-28"
       >
-        <div className="py-12 relative flex items-center justify-center w-[90%] mx-auto">
-          <a
-            href="#home"
-            aria-label="Samir Magdy - Home"
-            className="absolute start-0"
-          >
+        <div className="py-2 relative flex items-center w-full">
+          <a href="#home" aria-label="Samir Magdy - Home">
             <Image
               src="/brand.svg"
               alt="SM WEB STUDIO LOGO"
@@ -53,9 +49,7 @@ export default function HeroNav({
             />
           </a>
           <DesktopNavLinks nav={nav} />
-          <div className="absolute -end-5">
-            <LanguageToggle lang={lang} label={strings.langToggleLabel} />
-          </div>
+          <LanguageToggle lang={lang} label={strings.langToggleLabel} />
         </div>
       </nav>
 

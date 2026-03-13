@@ -19,9 +19,9 @@ const cairo = Cairo({
 const meta = {
   en: {
     title:
-      "Modern Web Design | Website Designer in Egypt | SM Web Studio",
+      "Website Design Company in Egypt | Boost Your Online Presence",
     description:
-      "Boost your business's credibility and reach with a custom, modern and high-performance website. Get a free quote.",
+      "Boost your business's online presence and revenue with a modern, high-performance website. Get a free quote today.",
     ogLocale: "en_US",
     altLocale: "ar_EG",
     ogAlt: "Logo of the top web design company in Egypt | SM Web Studio",
@@ -29,9 +29,9 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: "إنشاء موقع إلكتروني فى مصر | تصميم مواقع إلكترونية",
+    title: "إنشاء موقع إلكتروني | أفضل شركة تصميم مواقع في مصر",
     description:
-      "شركة تصميم مواقع إحترافية في مصر. ابدأ فى إنشاء موقعك الإلكتروني لعملك، اطلب استشارة مجانية!",
+      "أفضل شركة تصميم وبرمجة مواقع في مصر. نقدم خدمات برمجة المواقع، إنشاء متجر إلكتروني، إبدأ فى إنشاء موقعك الإلكتروني، اطلب استشارة مجانية اليوم.",
     ogLocale: "ar_EG",
     altLocale: "en_US",
     ogAlt: "تصميم مواقع محترفة في مصر | احصل على موقعك SM Web Studio Logo",

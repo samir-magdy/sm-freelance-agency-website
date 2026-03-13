@@ -3,8 +3,8 @@ export type Lang = "en" | "ar";
 const translations = {
   // Navigation
   nav: {
-    services: { en: "Features", ar: " المميزات المضمنة" },
-    // addOns: { en: "Services", ar: "الخدمات" },
+    services: { en: "Features", ar: "المميزات" },
+    addOns: { en: "Services", ar: "الخدمات" },
     projects: { en: "Portfolio", ar: "سابقة الأعمال" },
     howItWorks: { en: "Process", ar: "خطوات العمل" },
     faq: { en: "FAQs", ar: "الأسئلة الشائعة" },
@@ -15,30 +15,30 @@ const translations = {
   hero: {
     name: {
       en: ["Be Found.", "Be Trusted.", "Be Chosen."],
-      ar: ["كن حاضراً.", "اكسب الثقة.", "اجذب العملاء."],
+      ar: ["إنشئ موقعك.", "إطلق متجرك.", "تصدر البحث."],
     },
     primaryCta: {
       en: "Get Started",
       ar: "ابدأ الآن",
     },
     secondaryCta: {
-      en: "See Our Work",
+      en: "Our Work",
       ar: "سابقة الأعمال",
     },
     seoLabel: {
-      en: "Website Design Services",
-      ar: "تصميم مواقع في القاهرة، مصر",
+      en: "Website Design Company in Egypt",
+      ar: "شركة تصميم مواقع فى مصر",
     },
     subheading: {
-      en: "Boost your brand's credibility, reach, and revenue with a modern online presence.",
-      ar: "امتلك حضورك الرقمي بموقع احترافي يرفع مصداقية علامتك التجارية، انتشارها، ومبيعاتك.",
+      en: "Boost your brand's online presence with a modern, professional website.",
+      ar: "امتلك حضورك الرقمي من خلال تصميم موقع إلكترونى إحترافي لزيادة مبيعاتك ومصداقية علامتك التجارية.",
     },
   },
 
-     goal: {
-      en: "Your growth isn’t another project. It’s our reputation.",
-      ar: ["نموّك مش بس مشروع..", "هو سمعتنا."],
-    },
+  goal: {
+    en: "Your growth isn’t another project. It’s our reputation.",
+    ar: ["نموّك مش بس مشروع..", "هو سمعتنا."],
+  },
   // Features section
   servicesSection: {
     heading: {
@@ -50,7 +50,6 @@ const translations = {
       ar: "كل موقع إلكترونى مصمم يأتي بهذه المميزات",
     },
 
- 
     sharedFeatures: [
       {
         en: "Lifetime Guarantee",
@@ -76,14 +75,14 @@ const translations = {
           ar: "المواقع البطيئة تُفقدك عملائك. لهذا نحرص على تحميل موقعك في أقل من ثانيتين.",
         },
       },
-      {
-        en: "Hosting & Deployment",
-        ar: "استضافة ونشر الموقع",
-        desc: {
-          en: "We handle all the technical details. Your website goes live and stays live with no recurring fees.",
-          ar: "نتولى جميع التفاصيل التقنية. موقعك يعمل باستمرار دون أي رسوم شهرية أو تكاليف إضافية.",
-        },
-      },
+      // {
+      //   en: "Hosting & Deployment",
+      //   ar: "استضافة ونشر الموقع",
+      //   desc: {
+      //     en: "We handle all the technical details. Your website goes live and stays live with no recurring fees.",
+      //     ar: "نتولى جميع التفاصيل التقنية. موقعك يعمل باستمرار دون أي رسوم شهرية أو تكاليف إضافية.",
+      //   },
+      // },
       {
         en: "SEO Foundation",
         ar: "أسس محركات البحث",
@@ -124,26 +123,6 @@ const translations = {
     items: [
       {
         title: {
-          en: "SEO Strategy Package",
-          ar: "تطوير SEO للمحتوى",
-        },
-        description: {
-          en: "Targeted research and content optimization designed to maximize search engine visibility.",
-          ar: "محتوى مبني على كلمات بحث مستهدفة لتحسين ترتيب موقعك في جوجل للمصطلحات المهمة لنشاطك.",
-        },
-      },
-      {
-        title: {
-          en: "Google Business Profile",
-          ar: "Google Business Profile",
-        },
-        description: {
-          en: "Full setup of your GBP so your business appears on Google Maps and local search results.",
-          ar: "إعداد وتحسين كامل لملفك على جوجل ليظهر نشاطك على خرائط جوجل ونتائج البحث المحلية.",
-        },
-      },
-      {
-        title: {
           en: "Built-in Dashboard",
           ar: "لوحة تحكم للمحتوى",
         },
@@ -162,6 +141,27 @@ const translations = {
           ar: "موقعك مبني بالعربي والإنجليزي بالكامل مع دعم RTL وتبديل سلس بين اللغتين للزوار.",
         },
       },
+      {
+        title: {
+          en: "SEO Strategy Package",
+          ar: "تطوير SEO للمحتوى",
+        },
+        description: {
+          en: "Targeted research and content optimization designed to maximize search engine visibility.",
+          ar: "محتوى مبني على كلمات بحث مستهدفة لتحسين ترتيب موقعك في جوجل للمصطلحات المهمة لنشاطك.",
+        },
+      },
+      {
+        title: {
+          en: "Google Business Profile",
+          ar: "Google Business Profile",
+        },
+        description: {
+          en: "Full setup of your GBP so your business appears on Google Maps and local search results.",
+          ar: "إعداد وتحسين كامل لملفك على جوجل ليظهر نشاطك على خرائط جوجل ونتائج البحث المحلية.",
+        },
+      },
+
       {
         title: {
           en: "Full Copywriting",

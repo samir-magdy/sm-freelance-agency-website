@@ -14,10 +14,10 @@ export default function LanguageToggle({
       id="language-toggler"
       href={`/${nextLang}`}
       aria-label={`Switch to ${lang === "ar" ? "English" : "Arabic"}`}
-      className="flex items-center gap-1.5 text-subheading md:text-[1.2rem] font-bold font-cairo text-content-muted hover:text-content-heading text-center"
+      className="flex items-center gap-1 md:gap-1.5 ps-1 md:p-0 text-subheading md:text-[1.2rem] font-bold font-cairo text-content-muted hover:text-content-heading text-center"
     >
       <svg
-        className="hidden md:block order-1 ltr:pt-0.5"
+        className="order-1 ltr:pt-0.5"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
