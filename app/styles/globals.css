@@ -14,8 +14,8 @@
   --surface-low: 222 14% 16%; /* inputs: clearly elevated */
   --surface-card: 222 18% 12%; /* cards: another clear step up */
   --content-heading: 222 10% 90%; /* near-white, slight cool tint */
-  --content-body: 222 6% 74%;
-  --content-muted: 222 8% 58%; /* 4.5:1 contrast minimum */
+  --content-body: 222 10% 78%;
+  --content-muted: 222 10% 68%; /* 4.5:1 contrast minimum */
 
   --border-subtle: 0 0% 100% / 0.07;
   --border-strong: 0 0% 100% / 0.14;
@@ -79,9 +79,6 @@ html {
     opacity: 1;
   }
 }
-[dir="rtl"] h2{
-  margin-bottom: 1rem;
-}
 
 .hero-fade {
   opacity: 0;
@@ -91,7 +88,7 @@ html {
 }
 
 .hero-fade-label {
-  animation-delay: 2.3s;
+  animation-delay: 2s;
   animation-duration: 0.3s;
 }
 .hero-fade-hook-1 {
@@ -111,7 +108,7 @@ html {
   animation-duration: 0.3s;
 }
 .hero-fade-secondary-cta {
-  animation-delay: 2.3s;
+  animation-delay: 2s;
   animation-duration: 0.3s;
 }
 
@@ -204,7 +201,7 @@ html {
   position: relative;
   overflow: hidden;
   /* transition: transform 1 ease; */
-  animation: ctaEntrance 0.7s ease-out 1.6s both;
+  animation: ctaEntrance 0.4s ease-out 1.6s both;
 }
 
 .cta-primary::before {
@@ -221,7 +218,7 @@ html {
   );
   translate: -110% 0;
   pointer-events: none;
-  animation: ctaAutoShimmer 5s ease-out 3s infinite;
+  animation: ctaAutoShimmer 5s ease-out 2.3s infinite;
 }
 
 [dir="rtl"] .cta-primary::before {
@@ -234,7 +231,7 @@ html {
     transparent 65%
   );
   translate: 110% 0;
-  animation: ctaAutoShimmerRtl 5s ease-out 3s infinite;
+  animation: ctaAutoShimmerRtl 5s ease-out 2.3s infinite;
 }
 
 .cta-primary::after {

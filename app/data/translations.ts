@@ -15,7 +15,7 @@ const translations = {
   hero: {
     name: {
       en: ["Be Found.", "Be Trusted.", "Be Chosen."],
-      ar: ["إنشئ موقعك.", "إطلق متجرك.", "تصدر البحث."],
+      ar: ["صمّم موقعك.", "أنشئ متجرك.", "تصدّر البحث."],
     },
     primaryCta: {
       en: "Get Started",
@@ -23,19 +23,11 @@ const translations = {
     },
     secondaryCta: {
       en: "Learn more",
-      ar: "الأسئلة الشائعة",
-    },
-    seoLabelBrand: {
-      en: "SM Web Studio",
-      ar: "SM Web Studio",
-    },
-    seoLabelTagline: {
-      en: "Web Design in Egypt",
-      ar: "شركة تصميم مواقع احترافية فى مصر",
+      ar: "اعرف المزيد",
     },
     subheading: {
       en: "Boost your online presence with the website your brand deserves.",
-      ar: "امتلك حضورك الرقمي من خلال تصميم موقع إلكترونى إحترافي لزيادة مبيعاتك ومصداقية علامتك التجارية.",
+      ar: "امتلك حضورك الرقمي من خلال تصميم موقع إلكترونى إحترافي يليق بعلامتك التجارية.",
     },
   },
 
@@ -47,7 +39,7 @@ const translations = {
   servicesSection: {
     heading: {
       en: "Features Included in Every Website",
-      ar: "المميزات المضمنة في كل موقع",
+      ar: "مميزات تصميم كل موقع",
     },
     subtitle: {
       en: "A solid foundation from the start",
@@ -637,7 +629,7 @@ const translations = {
   // Contact section
   contactSection: {
     heading: {
-      en: "Start With a Free Consultaion",
+      en: "Start With a Free Consultation",
       ar: "ابدأ خطوات إنشاء موقعك",
     },
     subtitle: {

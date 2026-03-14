@@ -19,22 +19,22 @@ const cairo = Cairo({
 
 const meta = {
   en: {
-    title: "SM Web Studio | Expert Website Design Company in Egypt",
+    title: "Website Design & Development in Egypt | SM Web Studio",
     description:
-      "Web design & development services in Egypt. Boost your online presence with a modern, professional website. Get started today.",
+      "SM Web Studio builds websites that create lasting trust. Boost your online presence with modern web design & development.",
     ogLocale: "en_US",
     altLocale: "ar_EG",
-    ogAlt: "Logo of the top web design company in Egypt | SM Web Studio",
+    ogAlt: "SM Web Studio logo",
     siteName: "SM Web Studio",
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: "SM Web Studio | شركة تصميم مواقع احترافية في مصر",
+    title: "تصميم وتطوير مواقع إلكترونية في مصر | SM Web Studio",
     description:
-      "شركة تصميم وبرمجة مواقع في مصر. خدمات إنشاء موقع لعملك، تطوير متجر إلكتروني، اطلب استشارة مجانية.",
+      "نصمم مواقع إلكترونية عصرية تبني الثقة. امتلك حضور رقمي يليق بعلامتك التجارية. ابدأ اليوم.",
     ogLocale: "ar_EG",
     altLocale: "en_US",
-    ogAlt: "تصميم مواقع محترفة في مصر | احصل على موقعك SM Web Studio Logo",
+    ogAlt: "شعار إس إم ويب ستوديو",
     siteName: "SM Web Studio",
     skipToContent: "تخطى إلى المحتوى",
   },
@@ -147,10 +147,10 @@ function buildStructuredData(lang: Lang) {
     "@type": "ProfessionalService",
     "@id": "https://samirmagdy.com/#business",
     name: "SM Web Studio",
-    alternateName: isAr ? "إس إم ويب ستوديو مصر" : "SM Web Studio Egypt",
+    alternateName: isAr ? "إس إم ويب ستوديو" : "SM Web Studio",
     description: isAr
-      ? "شركة تصميم وبرمجة مواقع في مصر. خدمات إنشاء موقع لعملك، تطوير متجر إلكتروني، اطلب استشارة مجانية."
-      : "Expert web design & development services in Egypt. Boost your online presence with a modern, high-performance website. Get started today.",
+      ? "نصمم مواقع إلكترونية عصرية تبني الثقة. امتلك حضور رقمي يليق بعلامتك التجارية. ابدأ اليوم."
+      : "SM Web Studio builds websites that create lasting trust. Boost your online presence with modern web design & development.",
     url: "https://samirmagdy.com",
     telephone: "+201274613331",
     email: "studio@samirmagdy.com",
@@ -175,7 +175,7 @@ function buildStructuredData(lang: Lang) {
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: isAr
-        ? "خدمات شركة تصميم مواقع في القاهرة"
+        ? "خدمات تصميم وتطوير مواقع في مصر"
         : "Web Design & Development Services in Egypt",
       itemListElement: [
         {
@@ -183,14 +183,14 @@ function buildStructuredData(lang: Lang) {
           itemOffered: {
             "@type": "Service",
             name: isAr
-              ? "تصميم مواقع"
+              ? "تصميم وتطوير مواقع"
               : "Website Design & Development",
             alternateName: isAr
               ? "Website Design & Development"
-              : "تصميم مواقع",
+              : "تصميم وتطوير مواقع",
             description: isAr
-              ? "تصميم وتطوير مواقع متكاملة للشركات الصغيرة باستخدام أحدث التقنيات."
-              : "Website design and development for startups and small businesses using modern technologies.",
+              ? "تصميم وتطوير مواقع إحترافية باستخدام أحدث التقنيات."
+              : "Expert website design & development using modern technologies.",
           },
         },
       ],
@@ -200,13 +200,7 @@ function buildStructuredData(lang: Lang) {
       "https://www.instagram.com/webdesign.cairo",
       "https://x.com/WebDesign_EG",
     ],
-    founder: {
-      "@type": "Person",
-      name: "Samir Magdy",
-      alternateName: "سمير مجدي",
-      jobTitle: isAr ? "مؤسس ومصمم مواقع" : "Founder & Web Designer",
-      url: "https://samirmagdy.com",
-    },
+    founder: { "@id": "https://samirmagdy.com/#founder" },
     knowsLanguage: ["en", "ar"],
     openingHoursSpecification: [
       {
@@ -247,7 +241,25 @@ function buildStructuredData(lang: Lang) {
     },
   };
 
-  // 4. FAQPage schema
+  // 4. Person schema — ties Samir Magdy to SM Web Studio
+  const founderSchema = {
+    "@type": "Person",
+    "@id": "https://samirmagdy.com/#founder",
+    name: "Samir Magdy",
+    alternateName: "سمير مجدي",
+    jobTitle: isAr
+      ? "مؤسس ومصمم ومطور مواقع"
+      : "Founder, Web Designer & Developer",
+    url: "https://samirmagdy.com",
+    worksFor: { "@id": "https://samirmagdy.com/#business" },
+    sameAs: [
+      "https://www.facebook.com/WebDesignCairo",
+      "https://www.instagram.com/webdesign.cairo",
+      "https://x.com/WebDesign_EG",
+    ],
+  };
+
+  // 5. FAQPage schema
   const faqSchema = {
     "@type": "FAQPage",
     "@id": `${pageUrl}#faqpage`,
@@ -263,7 +275,7 @@ function buildStructuredData(lang: Lang) {
 
   return {
     "@context": "https://schema.org",
-    "@graph": [businessSchema, websiteSchema, webPageSchema, faqSchema],
+    "@graph": [businessSchema, websiteSchema, webPageSchema, founderSchema, faqSchema],
   };
 }
 

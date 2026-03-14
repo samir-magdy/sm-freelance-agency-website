@@ -79,7 +79,7 @@ export const projects: readonly Project[] = [
 const smWebStudio = {
   "@type": "ProfessionalService",
   name: "SM Web Studio",
-  alternateName: "إس إم ويب ستوديو",
+  alternateName: "SM Web Studio",
   url: "https://samirmagdy.com",
   description:
     "Grow your business with custom web design in Egypt. We specialize in modern websites optimized to rank on Google. Claim your free quote today!",

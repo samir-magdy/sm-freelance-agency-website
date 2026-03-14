@@ -17,20 +17,11 @@ export default function HeroSection({ lang }: { lang: Lang }) {
 
         <div
           id="hero-container"
-          className="relative z-10 flex flex-col items-center w-full justify-center pt-16 md:pt-24"
+          className="relative z-10 flex flex-col items-center w-full justify-center pt-14 md:pt-32"
         >
-          <h1 className="hero-fade hero-fade-label font-medium text-center text-content-muted text-[clamp(0.75rem,2vw,1rem)] rtl:text-[clamp(0.85rem,2vw,1rem)] me-2 tracking-wider uppercase mb-6">
-            {lang !== "ar" && (
-              <>
-                <span>{t.hero.seoLabelBrand[lang]}</span>
-                <span className="inline-block w-[1px] md:w-[1.5px] h-3 md:h-4 mb-[2px] md:mb-[4px] mx-1.5 md:mx-2 bg-content-muted align-middle" aria-hidden="true"></span>
-              </>
-            )}
-            {t.hero.seoLabelTagline[lang]}
-          </h1>
-          <p
+          <h1
             id="hero-hook"
-            className="font-bold text-center text-content-heading px-4 block text-[clamp(3.8rem,11vw,7rem)] rtl:text-[clamp(3rem,5vw,5.5rem)] rtl:leading-normal leading-tight mb-6"
+            className="font-bold text-center text-content-heading px-4 block text-[clamp(2rem,16vw,7rem)] rtl:text-[clamp(2.2rem,11vw,6rem)] rtl:leading-relaxed leading-tight"
           >
             {Array.isArray(hookLines) ? (
               hookLines.map((line, i) => {
@@ -65,23 +56,23 @@ export default function HeroSection({ lang }: { lang: Lang }) {
             ) : (
               <span className="hero-fade hero-fade-hook-1">{hookLines}</span>
             )}
-          </p>
+          </h1>
 
-          <p className="hero-fade hero-fade-nav text-content-body text-[clamp(1.2rem,5vw,2.2rem)] rtl:text-[clamp(1.1rem,4vw,1.8rem)] rtl:leading-relaxed text-center mb-6 md:mb-8 px-8 sm:px-16">
+          <h2 className="mt-8 md:mt-10 mb-8 hero-fade hero-fade-nav text-content-body text-[clamp(1.3rem,2vw,2rem)] rtl:text-[clamp(1.2rem,1.8vw,3rem)] rtl:leading-loose text-center px-8 sm:px-16">
             {t.hero.subheading[lang]}
-          </p>
+          </h2>
 
-          <div className="flex flex-col items-center justify-center gap-4">
+          <div className="flex flex-col items-center justify-center gap-6">
             <a
               href="#contact"
-              className="cta-primary font-semibold md:font-normal text-center bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.2rem,5vw,2.2rem)] px-12 md:px-16 py-4 md:py-4.5 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+              className="cta-primary font-semibold md:font-normal text-center bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.1rem,1.8vw,1.6rem)] px-12 py-4 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
             >
               {t.hero.primaryCta[lang]}
             </a>
 
             <a
               href="#faq"
-              className="tracking-wide hero-fade hero-fade-secondary-cta group ms-2.5 flex items-center gap-1 text-content-muted hover:text-content-body text-md md:text-xl font-medium transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+              className="ms-2 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-1 text-content-muted hover:text-content-body text-[clamp(1rem,1.3vw,1.25rem)] font-medium transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
             >
               {t.hero.secondaryCta[lang]}
               <svg
