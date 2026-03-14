@@ -1,4 +1,36 @@
+"use client";
+
 import type { Lang } from "@/app/data/translations";
+
+const SECTION_IDS = [
+  "home",
+  "goals",
+  "services",
+  "add-ons",
+  "portfolio",
+  "how-it-works",
+  "faq",
+  "contact",
+];
+
+function getCurrentSection(): string {
+  let bestId = "home";
+  let bestDistance = Infinity;
+  const viewportMiddle = window.innerHeight / 2;
+
+  for (const id of SECTION_IDS) {
+    const el = document.getElementById(id);
+    if (!el) continue;
+    const rect = el.getBoundingClientRect();
+    const distance = Math.abs(rect.top - viewportMiddle);
+    if (rect.top <= viewportMiddle && rect.bottom >= 0 && distance < bestDistance) {
+      bestDistance = distance;
+      bestId = id;
+    }
+  }
+
+  return bestId;
+}
 
 export default function LanguageToggle({
   lang,
@@ -9,10 +41,18 @@ export default function LanguageToggle({
 }) {
   const nextLang: Lang = lang === "ar" ? "en" : "ar";
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const section = getCurrentSection();
+    const hash = section === "home" ? "" : `#${section}`;
+    window.location.href = `/${nextLang}${hash}`;
+  };
+
   return (
     <a
       id="language-toggler"
       href={`/${nextLang}`}
+      onClick={handleClick}
       aria-label={`Switch to ${lang === "ar" ? "English" : "Arabic"}`}
       className="flex items-center gap-1 md:gap-1.5 ps-1 md:p-0 text-subheading md:text-[1.2rem] font-bold font-cairo text-content-muted hover:text-content-heading text-center"
     >

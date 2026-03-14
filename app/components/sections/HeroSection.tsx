@@ -23,7 +23,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
             {lang !== "ar" && (
               <>
                 <span>{t.hero.seoLabelBrand[lang]}</span>
-                <span className="inline-block w-[1px] md:w-[1.5px] h-3 md:h-4 mb-[2px] md:mb-[4px] mx-1.5 md:mx-2 bg-content-muted align-middle"></span>
+                <span className="inline-block w-[1px] md:w-[1.5px] h-3 md:h-4 mb-[2px] md:mb-[4px] mx-1.5 md:mx-2 bg-content-muted align-middle" aria-hidden="true"></span>
               </>
             )}
             {t.hero.seoLabelTagline[lang]}
