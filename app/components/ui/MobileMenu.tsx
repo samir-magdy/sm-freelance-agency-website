@@ -42,7 +42,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
 
       {/* Navbar row — always visible and interactive, clicking it also closes the menu */}
       <div
-        className="absolute top-0 left-0 right-0 z-10 py-2 backdrop-blur-2xl pointer-events-auto"
+        className="absolute top-0 left-0 right-0 z-10 py-2 backdrop-blur-xl pointer-events-auto"
         dir="ltr"
       >
         <div className="flex justify-between items-center px-4">

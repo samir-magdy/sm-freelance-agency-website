@@ -21,7 +21,7 @@ const meta = {
   en: {
     title: "SM Web Studio | Expert Website Design Company in Egypt",
     description:
-      "Expert web design & development services in Egypt. Boost your online presence with a modern, high-performance website. Launch your own website in days.",
+      "Web design & development services in Egypt. Boost your online presence with a modern, professional website. Get started today.",
     ogLocale: "en_US",
     altLocale: "ar_EG",
     ogAlt: "Logo of the top web design company in Egypt | SM Web Studio",
@@ -150,7 +150,7 @@ function buildStructuredData(lang: Lang) {
     alternateName: isAr ? "إس إم ويب ستوديو مصر" : "SM Web Studio Egypt",
     description: isAr
       ? "شركة تصميم وبرمجة مواقع في مصر. خدمات إنشاء موقع لعملك، تطوير متجر إلكتروني، اطلب استشارة مجانية."
-      : "Expert web design & development services in Egypt. Boost your online presence with a modern, high-performance website. Launch your own website in days.",
+      : "Expert web design & development services in Egypt. Boost your online presence with a modern, high-performance website. Get started today.",
     url: "https://samirmagdy.com",
     telephone: "+201274613331",
     email: "studio@samirmagdy.com",

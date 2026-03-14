@@ -221,7 +221,7 @@ html {
   );
   translate: -110% 0;
   pointer-events: none;
-  animation: ctaAutoShimmer 5s ease-out 2.8s infinite;
+  animation: ctaAutoShimmer 5s ease-out 3s infinite;
 }
 
 [dir="rtl"] .cta-primary::before {
@@ -234,7 +234,7 @@ html {
     transparent 65%
   );
   translate: 110% 0;
-  animation: ctaAutoShimmerRtl 5s ease-out 2.8s infinite;
+  animation: ctaAutoShimmerRtl 5s ease-out 3s infinite;
 }
 
 .cta-primary::after {

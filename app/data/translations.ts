@@ -25,8 +25,12 @@ const translations = {
       en: "Learn more",
       ar: "الأسئلة الشائعة",
     },
-    seoLabel: {
-      en: "SM Web Studio - Website Design Company in Egypt",
+    seoLabelBrand: {
+      en: "SM Web Studio",
+      ar: "SM Web Studio",
+    },
+    seoLabelTagline: {
+      en: "Web Design in Egypt",
       ar: "شركة تصميم مواقع احترافية فى مصر",
     },
     subheading: {
