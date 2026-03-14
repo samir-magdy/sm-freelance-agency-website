@@ -21,7 +21,7 @@ const meta = {
   en: {
     title: "SM Web Studio | Expert Website Design Company in Egypt",
     description:
-      "Expert web design & development services Egypt. Boost your online presence with a modern, high-performance website. Launch your own website in days.",
+      "Expert web design & development services in Egypt. Boost your online presence with a modern, high-performance website. Launch your own website in days.",
     ogLocale: "en_US",
     altLocale: "ar_EG",
     ogAlt: "Logo of the top web design company in Egypt | SM Web Studio",
@@ -149,7 +149,7 @@ function buildStructuredData(lang: Lang) {
     name: "SM Web Studio",
     alternateName: isAr ? "إس إم ويب ستوديو مصر" : "SM Web Studio Egypt",
     description: isAr
-      ? "أفضل شركة تصميم مواقع في القاهرة، مصر. متخصصون في برمجة مواقع احترافية تتصدر نتائج محركات البحث وجوجل. اطلب استشارتك المجانية الآن"
+      ? "شركة تصميم وبرمجة مواقع في مصر. خدمات إنشاء موقع لعملك، تطوير متجر إلكتروني، اطلب استشارة مجانية."
       : "Expert web design & development services in Egypt. Boost your online presence with a modern, high-performance website. Launch your own website in days.",
     url: "https://samirmagdy.com",
     telephone: "+201274613331",
@@ -163,14 +163,8 @@ function buildStructuredData(lang: Lang) {
       addressCountry: "EG",
     },
     areaServed: [
+      { "@type": "Country", name: "Egypt" },
       { "@type": "City", name: "Cairo" },
-      { "@type": "City", name: "New Cairo" },
-      { "@type": "City", name: "Maadi" },
-      { "@type": "City", name: "Sheikh Zayed" },
-      { "@type": "City", name: "Giza" },
-      { "@type": "City", name: "6th of October City" },
-      { "@type": "City", name: "Nasr City" },
-      { "@type": "City", name: "Heliopolis" },
       { "@type": "City", name: "Alexandria" },
     ],
     geo: {
@@ -181,33 +175,22 @@ function buildStructuredData(lang: Lang) {
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: isAr
-        ? "خدمات أفضل شركة تصميم مواقع في القاهرة"
+        ? "خدمات شركة تصميم مواقع في القاهرة"
         : "Web Design & Development Services in Egypt",
       itemListElement: [
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: isAr ? "تصميم صفحات هبوط" : "Landing Page Design",
-            alternateName: isAr ? "Landing Page Design" : "تصميم صفحات هبوط",
-            description: isAr
-              ? "صفحات هبوط عالية التحويل مصممة لتحويل الزوار إلى عملاء."
-              : "High-converting websites designed to turn visitors into clients.",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
             name: isAr
-              ? "تصميم وتطوير المواقع"
+              ? "تصميم المواقع"
               : "Website Design & Development",
             alternateName: isAr
               ? "Website Design & Development"
-              : "تصميم وتطوير المواقع",
+              : "تصميم المواقع",
             description: isAr
               ? "تصميم وتطوير مواقع متكاملة للشركات الصغيرة باستخدام أحدث التقنيات."
-              : "Full website design and development for small businesses using modern technologies.",
+              : "Website design and development for startups and small businesses using modern technologies.",
           },
         },
       ],
