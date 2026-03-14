@@ -183,11 +183,11 @@ function buildStructuredData(lang: Lang) {
           itemOffered: {
             "@type": "Service",
             name: isAr
-              ? "تصميم المواقع"
+              ? "تصميم مواقع"
               : "Website Design & Development",
             alternateName: isAr
               ? "Website Design & Development"
-              : "تصميم المواقع",
+              : "تصميم مواقع",
             description: isAr
               ? "تصميم وتطوير مواقع متكاملة للشركات الصغيرة باستخدام أحدث التقنيات."
               : "Website design and development for startups and small businesses using modern technologies.",
