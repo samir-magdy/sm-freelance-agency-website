@@ -26,7 +26,7 @@ const translations = {
       ar: "الأسئلة الشائعة",
     },
     seoLabel: {
-      en: "Expert Web Design Agency in Egypt",
+      en: "Expert Web Design Company in Egypt",
       ar: "شركة تصميم مواقع احترافية فى مصر",
     },
     subheading: {
