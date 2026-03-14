@@ -19,10 +19,9 @@ const cairo = Cairo({
 
 const meta = {
   en: {
-    title:
-      "SM Web Studio | Expert Website Design Agency in Egypt",
+    title: "SM Web Studio | Expert Website Design Company in Egypt",
     description:
-      "Boost your online presence and revenue with a modern, high-performance website. Expert web design & development. Launch your own website in days.",
+      "Expert web design & development services Egypt. Boost your online presence with a modern, high-performance website. Launch your own website in days.",
     ogLocale: "en_US",
     altLocale: "ar_EG",
     ogAlt: "Logo of the top web design company in Egypt | SM Web Studio",
@@ -65,6 +64,11 @@ export async function generateMetadata({
     metadataBase: new URL("https://samirmagdy.com"),
     icons: {
       icon: [
+        {
+          url: "/favicon.png",
+          type: "image/png",
+          sizes: "96x96",
+        },
         {
           url: "/favicon-v3-on-dark.svg",
           type: "image/svg+xml",
@@ -145,14 +149,13 @@ function buildStructuredData(lang: Lang) {
     name: "SM Web Studio",
     alternateName: isAr ? "إس إم ويب ستوديو مصر" : "SM Web Studio Egypt",
     description: isAr
-      ? "أفضل شركة تصميم مواقع في القاهرة، مصر. متخصصون في برمجة مواقع احترافية تتصدر نتائج محركات البحث وجوجل. اطلب استشارتك المجانية الآن!"
-      : "Grow your business with custom web design in Cairo, Egypt. We specialize in professional, modern websites. Claim your free quote today!",
+      ? "أفضل شركة تصميم مواقع في القاهرة، مصر. متخصصون في برمجة مواقع احترافية تتصدر نتائج محركات البحث وجوجل. اطلب استشارتك المجانية الآن"
+      : "Expert web design & development services in Egypt. Boost your online presence with a modern, high-performance website. Launch your own website in days.",
     url: "https://samirmagdy.com",
     telephone: "+201274613331",
     email: "studio@samirmagdy.com",
     image: "https://samirmagdy.com/open-graph.webp",
     logo: "https://samirmagdy.com/logo.png",
-    priceRange: "$$",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Cairo",
@@ -165,6 +168,10 @@ function buildStructuredData(lang: Lang) {
       { "@type": "City", name: "Maadi" },
       { "@type": "City", name: "Sheikh Zayed" },
       { "@type": "City", name: "Giza" },
+      { "@type": "City", name: "6th of October City" },
+      { "@type": "City", name: "Nasr City" },
+      { "@type": "City", name: "Heliopolis" },
+      { "@type": "City", name: "Alexandria" },
     ],
     geo: {
       "@type": "GeoCoordinates",
@@ -218,6 +225,14 @@ function buildStructuredData(lang: Lang) {
       url: "https://samirmagdy.com",
     },
     knowsLanguage: ["en", "ar"],
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+        opens: "11:00",
+        closes: "19:00",
+      },
+    ],
   };
 
   // 2. WebSite schema
@@ -225,7 +240,7 @@ function buildStructuredData(lang: Lang) {
     "@type": "WebSite",
     "@id": "https://samirmagdy.com/#website",
     name: "SM Web Studio",
-    alternateName: "SM Web Studio Egypt",
+    alternateName: "إس إم ويب ستوديو",
     url: "https://samirmagdy.com",
     inLanguage: ["en", "ar"],
     publisher: {
