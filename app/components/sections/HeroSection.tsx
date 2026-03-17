@@ -1,6 +1,7 @@
 import translations from "@/app/data/translations";
 import type { Lang } from "@/app/data/translations";
 import ScrollLink from "@/app/components/ui/ScrollLink";
+import HeroAnimationGate from "@/app/components/ui/HeroAnimationGate";
 
 export default function HeroSection({ lang }: { lang: Lang }) {
   const t = translations;
@@ -8,6 +9,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
 
   return (
     <>
+      <HeroAnimationGate />
       <section
         id="home"
         className="h-[100dvh] flex items-center justify-center relative"

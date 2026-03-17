@@ -25,10 +25,14 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Everything else (including /) → redirect to /en (default language)
-  const url = request.nextUrl.clone();
-  url.pathname = `/en`;
-  return NextResponse.rewrite(url);
+  // Only bare root → rewrite to /en
+  if (pathname === "/") {
+    const url = request.nextUrl.clone();
+    url.pathname = "/en";
+    return NextResponse.rewrite(url);
+  }
+
+  return NextResponse.next();
 }
 
 export const config = {

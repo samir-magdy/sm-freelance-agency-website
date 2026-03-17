@@ -112,6 +112,13 @@ html {
   animation-duration: 0.3s;
 }
 
+/* Return visits within the same session — skip all hero entrance animations */
+.skip-hero .hero-fade,
+.skip-hero .cta-primary {
+  animation: none;
+  opacity: 1;
+}
+
 /* ══════════════════════════════════════
    4. Nav Link — Underline Hover Effect
    ══════════════════════════════════════ */

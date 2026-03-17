@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { Cairo } from "next/font/google";
 import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
@@ -287,7 +288,8 @@ export default async function LangLayout({
   params: Promise<{ lang: string }>;
 }) {
   const { lang: rawLang } = await params;
-  const lang: Lang = rawLang === "en" || rawLang === "ar" ? rawLang : "en";
+  if (rawLang !== "en" && rawLang !== "ar") notFound();
+  const lang: Lang = rawLang;
   const structuredData = buildStructuredData(lang);
   const skipLabel = meta[lang].skipToContent;
   const t = translations;

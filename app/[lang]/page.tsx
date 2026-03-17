@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import type { Lang } from "../data/translations";
 import HeroSection from "../components/sections/HeroSection";
 import GoalSection from "../components/sections/GoalSection";
@@ -14,7 +15,8 @@ export default async function Page({
   params: Promise<{ lang: string }>;
 }) {
   const { lang: rawLang } = await params;
-  const lang: Lang = rawLang === "en" || rawLang === "ar" ? rawLang : "en";
+  if (rawLang !== "en" && rawLang !== "ar") notFound();
+  const lang: Lang = rawLang;
 
   return (
     <div className="relative min-h-screen bg-background text-content-heading">
