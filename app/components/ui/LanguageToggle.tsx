@@ -50,17 +50,12 @@ export default function LanguageToggle({
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const section = getCurrentSection();
-    const hash = section === "home" ? "" : `#${section}`;
-    // Temporarily kill smooth scroll so the jump is instant
-    document.documentElement.style.scrollBehavior = "auto";
 
-    router.push(`/${nextLang}${hash}`);
+    router.push(`/${nextLang}`);
 
-    // Restore smooth scroll after navigation settles
     setTimeout(() => {
-      document.documentElement.style.scrollBehavior = "";
-      history.replaceState(null, "", `/${nextLang}`);
-    }, 1000);
+      document.getElementById(section)?.scrollIntoView();
+    }, 250);
   };
 
   return (
