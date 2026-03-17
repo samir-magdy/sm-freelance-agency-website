@@ -83,37 +83,34 @@ export async function POST(request: Request) {
       );
     }
 
-    // --- ✅ CORRECTED RATE LIMITING IMPLEMENTATION ✅ ---
-    // Get a unique identifier for the user (IP address is used here)
-    const userIdentifier = ipAddress(request) ?? "anon";
-    const key = `rate-limit:contact-form:${userIdentifier}`;
+    // --- Rate Limiting (degrades gracefully if Redis is down) ---
+    try {
+      const userIdentifier = ipAddress(request);
 
-    // 1. Increment the counter. This returns the new value.
-    // We use a single command first for simplicity and clarity.
-    const count = await redis.incr(key);
+      if (userIdentifier) {
+        const key = `rate-limit:contact-form:${userIdentifier}`;
+        const count = await redis.incr(key);
 
-    // 2. CRITICAL FIX: Only set the expiration if this is the first submission (count == 1).
-    // This ensures the timer starts now and is NOT reset on subsequent requests.
-    if (count === 1) {
-      await redis.expire(key, WINDOW_SECONDS);
+        if (count === 1) {
+          await redis.expire(key, WINDOW_SECONDS);
+        }
+        if (count > MAX_SUBMISSIONS) {
+          return NextResponse.json(
+            {
+              error: `Please wait a few minutes before sending another message.`,
+            },
+            { status: 429 },
+          );
+        }
+      }
+    } catch {
+      // Redis unavailable — skip rate limiting so the form still works
     }
-
-    // Check if the submission count exceeds the limit
-    if (count > MAX_SUBMISSIONS) {
-      return NextResponse.json(
-        {
-          error: `Please wait a few minutes before sending another message.`,
-        },
-        { status: 429 }, // 429: Too Many Requests
-      );
-    }
-    // ----------------------------------------------------
-
     // Send Email via Resend
     const data = await resend.emails.send({
       from: "SM Web Studio <noreply@mail.samirmagdy.com>",
       to: process.env.CONTACT_EMAIL as string,
-      subject: `Website Consulation Request`,
+      subject: `Website Consultation Request`,
       text: [
         `Name: ${name}`,
         `Business: ${industry}`,

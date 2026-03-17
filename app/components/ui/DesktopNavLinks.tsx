@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { scrollToSection } from "@/app/utils/scrollToSection";
 
 const SECTION_IDS = [
   "home",
@@ -122,7 +123,11 @@ export default function DesktopNavLinks({ nav }: DesktopNavLinksProps) {
           <li key={href}>
             <a
               href={href}
-              onClick={() => handleClick(sectionId)}
+              onClick={(e) => {
+                e.preventDefault();
+                handleClick(sectionId);
+                if (sectionId) scrollToSection(sectionId);
+              }}
               className={`${linkClass} ${isActive ? "nav-link-active text-content-heading" : "text-content-body hover:text-content-heading"}`}
             >
               {nav[labelKey] ?? defaultNav[labelKey]}

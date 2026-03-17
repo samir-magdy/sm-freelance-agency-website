@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import type { Lang } from "@/app/data/translations";
+import { scrollToSection } from "@/app/utils/scrollToSection";
 import LanguageToggle from "./LanguageToggle";
 import SocialIcons from "./SocialIcons";
 
@@ -46,7 +47,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
         dir="ltr"
       >
         <div className="flex justify-between items-center px-4">
-          <a href="#home" aria-label="Samir Magdy - Home">
+          <a href="#home" aria-label="Samir Magdy - Home" onClick={(e) => { e.preventDefault(); scrollToSection("home"); }}>
             <Image
               src="/brand.svg"
               alt="SM Web Studio – Website Design Company in Egypt"
@@ -91,6 +92,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
           <li>
             <a
               href="#services"
+              onClick={(e) => { e.preventDefault(); scrollToSection("services"); }}
               className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav.services}
@@ -99,6 +101,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
           <li>
             <a
               href="#add-ons"
+              onClick={(e) => { e.preventDefault(); scrollToSection("add-ons"); }}
               className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav.addOns}
@@ -107,6 +110,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
           <li>
             <a
               href="#portfolio"
+              onClick={(e) => { e.preventDefault(); scrollToSection("portfolio"); }}
               className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav.projects}
@@ -115,6 +119,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
           <li>
             <a
               href="#how-it-works"
+              onClick={(e) => { e.preventDefault(); scrollToSection("how-it-works"); }}
               className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav.howItWorks}
@@ -123,6 +128,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
           <li>
             <a
               href="#faq"
+              onClick={(e) => { e.preventDefault(); scrollToSection("faq"); }}
               className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav.faq}
@@ -131,6 +137,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
           <li>
             <a
               href="#contact"
+              onClick={(e) => { e.preventDefault(); scrollToSection("contact"); }}
               className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav.contact}

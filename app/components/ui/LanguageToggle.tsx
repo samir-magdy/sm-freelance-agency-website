@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import type { Lang } from "@/app/data/translations";
 
 const SECTION_IDS = [
@@ -23,7 +24,11 @@ function getCurrentSection(): string {
     if (!el) continue;
     const rect = el.getBoundingClientRect();
     const distance = Math.abs(rect.top - viewportMiddle);
-    if (rect.top <= viewportMiddle && rect.bottom >= 0 && distance < bestDistance) {
+    if (
+      rect.top <= viewportMiddle &&
+      rect.bottom >= 0 &&
+      distance < bestDistance
+    ) {
       bestDistance = distance;
       bestId = id;
     }
@@ -39,13 +44,23 @@ export default function LanguageToggle({
   lang: Lang;
   label: string;
 }) {
+  const router = useRouter();
   const nextLang: Lang = lang === "ar" ? "en" : "ar";
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const section = getCurrentSection();
     const hash = section === "home" ? "" : `#${section}`;
-    window.location.href = `/${nextLang}${hash}`;
+    // Temporarily kill smooth scroll so the jump is instant
+    document.documentElement.style.scrollBehavior = "auto";
+
+    router.push(`/${nextLang}${hash}`);
+
+    // Restore smooth scroll after navigation settles
+    setTimeout(() => {
+      document.documentElement.style.scrollBehavior = "";
+      history.replaceState(null, "", `/${nextLang}`);
+    }, 1000);
   };
 
   return (
