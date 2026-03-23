@@ -38,7 +38,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
     >
       {/* Full-screen backdrop — animates in when open */}
       <div
-        className={`absolute inset-0 backdrop-blur-3xl transition-opacity duration-[250ms] ease-out ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 backdrop-blur-3xl bg-black/40 transition-opacity duration-[250ms] ease-out ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
       />
 
       {/* Navbar row — always visible and interactive, clicking it also closes the menu */}

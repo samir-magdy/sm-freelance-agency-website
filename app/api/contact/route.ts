@@ -83,24 +83,26 @@ export async function POST(request: Request) {
       );
     }
 
-    // --- Rate Limiting (degrades gracefully if Redis is down) ---
+    // --- Rate Limiting (degrades gracefully if Redis is unavailable) ---
     try {
-      const userIdentifier = ipAddress(request);
+      if (redis) {
+        const userIdentifier = ipAddress(request);
 
-      if (userIdentifier) {
-        const key = `rate-limit:contact-form:${userIdentifier}`;
-        const count = await redis.incr(key);
+        if (userIdentifier) {
+          const key = `rate-limit:contact-form:${userIdentifier}`;
+          const count = await redis.incr(key);
 
-        if (count === 1) {
-          await redis.expire(key, WINDOW_SECONDS);
-        }
-        if (count > MAX_SUBMISSIONS) {
-          return NextResponse.json(
-            {
-              error: `Please wait a few minutes before sending another message.`,
-            },
-            { status: 429 },
-          );
+          if (count === 1) {
+            await redis.expire(key, WINDOW_SECONDS);
+          }
+          if (count > MAX_SUBMISSIONS) {
+            return NextResponse.json(
+              {
+                error: `Please wait a few minutes before sending another message.`,
+              },
+              { status: 429 },
+            );
+          }
         }
       }
     } catch {
@@ -135,6 +137,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true, id: data.data?.id });
   } catch (error) {
+    console.log("CONTACT ROUTE ERROR:", error);
     return NextResponse.json(
       {
         error: error instanceof Error ? error.message : "Failed to send email",

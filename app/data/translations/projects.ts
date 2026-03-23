@@ -6,7 +6,7 @@ const projectsSection = {
   subtitle: {
     en: "The quality and style we bring to every project",
     ar: "إطلالة على جودة التصميم والأسلوب في كل مشروع",
-  },
+  }
 } as const;
 
 const projectData = {

@@ -1,7 +1,6 @@
 import type { StaticImageData } from "next/image";
-import skywayScreenshot from "../../public/project-screenshots/skyway.webp";
+import skywayScreenshot from "../../public/project-screenshots/skyway.png";
 import weddingsScreenshot from "../../public/project-screenshots/weddings.webp";
-import gymScreenshot from "../../public/project-screenshots/gym.webp";
 
 export interface Project {
   id: string;
@@ -14,6 +13,7 @@ export interface Project {
   genre: string;
   keywords: string[];
   badge?: { en: string; ar: string };
+  accentColor: string;
 }
 
 export const projects: readonly Project[] = [
@@ -34,11 +34,11 @@ export const projects: readonly Project[] = [
       "موقع وكالة سياحة القاهرة",
       "تصميم موقع شركة سياحة مصر",
     ],
+    accentColor: "#f5c469",
   },
   {
     id: "weddings",
     liveUrl: "https://weddings.samirmagdy.com/",
-    badge: { en: "Showcase", ar: "نموذج" },
     screenshot: weddingsScreenshot,
     schemaName: "Wedding Services Website – Cairo",
     schemaNameAr: "موقع خدمات أفراح – القاهرة",
@@ -53,25 +53,7 @@ export const projects: readonly Project[] = [
       "موقع أفراح القاهرة",
       "تصميم موقع خدمات أفراح",
     ],
-  },
-  {
-    id: "gym",
-    liveUrl: "https://gyms.samirmagdy.com",
-    badge: { en: "Showcase", ar: "نموذج" },
-    screenshot: gymScreenshot,
-    schemaName: "Gym & Fitness Center Landing Page – Cairo",
-    schemaNameAr: "صفحة هبوط نادي رياضي – القاهرة",
-    description:
-      "High-conversion landing page for a Cairo fitness center. Built to highlight facilities, drive memberships, and rank on Google Egypt.",
-    descriptionAr:
-      "صفحة هبوط عالية التحويل لنادٍ رياضي في القاهرة، مصممة لعرض الخدمات وزيادة الاشتراكات والظهور في نتائج جوجل مصر.",
-    genre: "Health & Fitness",
-    keywords: [
-      "gym website Cairo",
-      "fitness center landing page Egypt",
-      "موقع نادي رياضي القاهرة",
-      "تصميم موقع جيم مصر",
-    ],
+    accentColor: "#d4a5a5",
   },
 ];
 
