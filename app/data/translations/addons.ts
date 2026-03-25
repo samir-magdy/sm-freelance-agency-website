@@ -1,6 +1,6 @@
 const addOnsSection = {
   heading: {
-    en: "Our Services",
+    en: "Add-ons For Your Website",
     ar: "الخدمات الإضافية",
   },
   subtitle: {

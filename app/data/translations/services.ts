@@ -1,6 +1,6 @@
 const servicesSection = {
   heading: {
-    en: "Features in Every Website",
+    en: "Included in Every Website",
     ar: "مميزات تصميم المواقع",
   },
   subtitle: {

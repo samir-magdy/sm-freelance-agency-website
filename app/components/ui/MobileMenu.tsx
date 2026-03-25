@@ -51,22 +51,22 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
             <Image
               src="/brand.svg"
               alt="SM Web Studio – Website Design Company in Egypt"
-              width={55}
-              height={55}
+              width={65}
+              height={65}
               priority
             />
           </a>
           <button
             onClick={(e) => { e.stopPropagation(); setIsMenuOpen(!isMenuOpen); }}
-            className="block p-4 pe-2"
+            className="block p-4"
             aria-label={isMenuOpen ? a11y.closeMenu : a11y.openMenu}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
           >
-            <div className="w-8 flex flex-col gap-1.5">
+            <div className="w-10 flex flex-col gap-2">
               <span
                 className={`block h-0.5 bg-content-heading transition-transform duration-500 ${
-                  isMenuOpen ? "rotate-45 translate-y-[8px]" : ""
+                  isMenuOpen ? "rotate-45 translate-y-[10px]" : ""
                 }`}
               />
               <span
@@ -76,7 +76,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
               />
               <span
                 className={`block h-0.5 bg-content-heading transition-transform duration-500 ${
-                  isMenuOpen ? "-rotate-45 -translate-y-[8px]" : ""
+                  isMenuOpen ? "-rotate-45 -translate-y-[10px]" : ""
                 }`}
               />
             </div>

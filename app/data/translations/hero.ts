@@ -12,8 +12,8 @@ const hero = {
     ar: "شاهد أعمالنا",
   },
   subheading: {
-    en: "We craft your website. We don't manufacture it.",
-    ar: "امتلك حضورك الرقمي من خلال تصميم موقع إلكترونى يليق بعلامتك التجارية.",
+    en: ["We craft your website. ", "We don't manufacture it."],
+    ar: ["استوديو متخصص في تصميم مواقع إلكترونية عالية الجودة وبسعر منافس."],
   },
 } as const;
 

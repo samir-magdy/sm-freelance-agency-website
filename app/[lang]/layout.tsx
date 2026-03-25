@@ -21,7 +21,7 @@ const cairo = Cairo({
 
 const meta = {
   en: {
-    title: "Website Design & Development in Egypt | SM Web Studio",
+    title: "Expert Web Design in Egypt | SM Web Studio",
     description:
       "SM Web Studio builds websites that create lasting trust. Boost your online presence with modern web design & development.",
     ogLocale: "en_US",
@@ -31,9 +31,9 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: "تصميم مواقع إلكترونية في مصر | SM Web Studio Egypt",
+    title: "تصميم مواقع إحترافية في مصر | SM Web Studio Egypt",
     description:
-      "نصمم مواقع إلكترونية عصرية تبني الثقة. امتلك حضور رقمي يليق بعلامتك التجارية. ابدأ اليوم.",
+      "استوديو متخصص في تصميم مواقع الكترونية عالية الجودة وبسعر منافس. نموذج مختلف يجمع بين احترافية الشركات ومرونة الفريلانسرز.",
     ogLocale: "ar_EG",
     altLocale: "en_US",
     ogAlt: "شعار إس إم ويب ستوديو",
@@ -116,7 +116,7 @@ export async function generateMetadata({
       title: m.title,
       description: m.description,
       images: [`${SITE_URL}/open-graph.webp`],
-      site: "@WebDesign_EG",
+      site: "@smweb_studio",
     },
     robots: {
       index: true,
@@ -198,9 +198,9 @@ function buildStructuredData(lang: Lang) {
       ],
     },
     sameAs: [
-      "https://www.facebook.com/WebDesignCairo",
-      "https://www.instagram.com/webdesign.cairo",
-      "https://x.com/WebDesign_EG",
+      "https://www.facebook.com/SMWebStudioEG",
+      "https://www.instagram.com/smweb.studio",
+      "https://x.com/SMWebStudioEG",
     ],
     founder: { "@id": `${SITE_URL}/#founder` },
     knowsLanguage: ["en", "ar"],
@@ -254,11 +254,6 @@ function buildStructuredData(lang: Lang) {
       : "Founder, Web Designer & Developer",
     url: SITE_URL,
     worksFor: { "@id": `${SITE_URL}/#business` },
-    sameAs: [
-      "https://www.facebook.com/WebDesignCairo",
-      "https://www.instagram.com/webdesign.cairo",
-      "https://x.com/WebDesign_EG",
-    ],
   };
 
   // 5. FAQPage schema

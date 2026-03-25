@@ -17,7 +17,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
 
         <div
           id="hero-container"
-          className="relative z-10 flex flex-col items-center w-full justify-center pt-14 md:pt-32"
+          className="relative z-10 flex flex-col items-center w-full justify-center pt-16 md:pt-32"
         >
           <h1
             id="hero-hook"
@@ -58,8 +58,10 @@ export default function HeroSection({ lang }: { lang: Lang }) {
             )}
           </h1>
 
-          <h2 className="mt-8 md:mt-10 mb-8 hero-fade hero-fade-nav text-content-body text-[clamp(1.3rem,2vw,2rem)] rtl:text-[clamp(1.2rem,1.8vw,3rem)] rtl:leading-loose text-center px-10 sm:px-16">
-            {t.hero.subheading[lang]}
+          <h2 className="mt-6 md:mt-10 mb-8 hero-fade hero-fade-nav text-content-body text-[clamp(1.4rem,2vw,2rem)] rtl:text-[clamp(1.2rem,1.8vw,3rem)] rtl:leading-loose text-center px-10 sm:px-16">
+            {t.hero.subheading[lang].map((line, i) => (
+              <span key={i} className="block sm:inline">{line}</span>
+            ))}
           </h2>
 
           <div className="flex flex-col items-center justify-center gap-6">

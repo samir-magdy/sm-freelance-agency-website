@@ -1,7 +1,7 @@
 const projectsSection = {
   heading: {
     en: "Web Design Portfolio",
-    ar: "معرض أعمال تصميم المواقع",
+    ar: "معرض تصميم المواقع",
   },
   subtitle: {
     en: "The quality and style we bring to every project",
