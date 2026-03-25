@@ -43,7 +43,7 @@ export default function ContactSection({ lang }: { lang: Lang }) {
       className="py-24 pb-4 md:pt-32 md:pb-0 px-4"
       dir={isRtl ? "rtl" : "ltr"}
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="mb-4 md:mb-8">
           <h2
             id="contact-heading"

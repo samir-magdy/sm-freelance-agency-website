@@ -132,8 +132,7 @@ export function Timeline({ data }: { data: TimelineEntry[] }) {
         >
           <div
             ref={beamRef}
-            style={{ height: 0, opacity: 0 }}
-            className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-icon/60 via-icon to-transparent from-[0%] via-[10%] rounded-full"
+            className="absolute inset-x-0 top-0 w-[2px] h-0 opacity-0 bg-gradient-to-t from-icon/60 via-icon to-transparent from-[0%] via-[10%] rounded-full"
           />
         </div>
       </div>

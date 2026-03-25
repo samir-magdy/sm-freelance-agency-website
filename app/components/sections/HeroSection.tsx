@@ -1,15 +1,12 @@
 import translations from "@/app/data/translations";
 import type { Lang } from "@/app/data/translations";
 import ScrollLink from "@/app/components/ui/ScrollLink";
-import HeroAnimationGate from "@/app/components/ui/HeroAnimationGate";
-
 export default function HeroSection({ lang }: { lang: Lang }) {
   const t = translations;
   const hookLines = t.hero.name[lang];
 
   return (
     <>
-      <HeroAnimationGate />
       <section
         id="home"
         className="h-[100dvh] flex items-center justify-center relative"
@@ -61,7 +58,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
             )}
           </h1>
 
-          <h2 className="mt-8 md:mt-10 mb-8 hero-fade hero-fade-nav text-content-body text-[clamp(1.3rem,2vw,2rem)] rtl:text-[clamp(1.2rem,1.8vw,3rem)] rtl:leading-loose text-center px-8 sm:px-16">
+          <h2 className="mt-8 md:mt-10 mb-8 hero-fade hero-fade-nav text-content-body text-[clamp(1.3rem,2vw,2rem)] rtl:text-[clamp(1.2rem,1.8vw,3rem)] rtl:leading-loose text-center px-10 sm:px-16">
             {t.hero.subheading[lang]}
           </h2>
 
@@ -74,7 +71,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
             </ScrollLink>
 
             <ScrollLink
-              to="faq"
+              to="portfolio"
               className="ms-2 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-1 text-content-muted hover:text-content-body text-[clamp(1rem,1.3vw,1.25rem)] font-medium transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
             >
               {t.hero.secondaryCta[lang]}

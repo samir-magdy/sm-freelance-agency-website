@@ -4,16 +4,16 @@ const hero = {
     ar: ["صمّم موقعك.", "أنشئ متجرك.", "تصدّر البحث."],
   },
   primaryCta: {
-    en: "Get Started",
-    ar: "ابدأ الآن",
+    en: "Start a Project",
+    ar: "ابدأ مشروعك",
   },
   secondaryCta: {
-    en: "Learn more",
-    ar: "اعرف المزيد",
+    en: "See Our Work",
+    ar: "شاهد أعمالنا",
   },
   subheading: {
-    en: "Boost your online presence with the website your brand deserves.",
-    ar: "امتلك حضورك الرقمي من خلال تصميم موقع إلكترونى إحترافي يليق بعلامتك التجارية.",
+    en: "We craft your website. We don't manufacture it.",
+    ar: "امتلك حضورك الرقمي من خلال تصميم موقع إلكترونى يليق بعلامتك التجارية.",
   },
 } as const;
 

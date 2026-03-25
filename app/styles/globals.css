@@ -112,11 +112,11 @@ html {
   animation-duration: 0.3s;
 }
 
-/* Return visits within the same session — skip all hero entrance animations */
-.skip-hero .hero-fade,
-.skip-hero .cta-primary {
-  animation: none;
-  opacity: 1;
+
+@media (max-width: 640px) {
+  section[id]:not(#home) {
+    scroll-margin-top: -30px;
+  }
 }
 
 /* ══════════════════════════════════════
@@ -211,7 +211,7 @@ html {
   animation: ctaEntrance 0.4s ease-out 1.6s both;
 }
 
-.cta-primary::before {
+.cta-primary::before, #portfolio-cta::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -228,7 +228,7 @@ html {
   animation: ctaAutoShimmer 5s ease-out 2.3s infinite;
 }
 
-[dir="rtl"] .cta-primary::before {
+[dir="rtl"] .cta-primary::before, [dir="rtl"] #portfolio-cta::before {
   background: linear-gradient(
     -105deg,
     transparent 35%,
@@ -241,7 +241,7 @@ html {
   animation: ctaAutoShimmerRtl 5s ease-out 2.3s infinite;
 }
 
-.cta-primary::after {
+.cta-primary::after, #portfolio-cta::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -259,7 +259,7 @@ html {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .cta-primary:hover::after {
+  .cta-primary:hover::after, #portfolio-cta:hover::after {
     animation: shimmer-sweep 0.4s ease-out forwards;
   }
 }
@@ -271,7 +271,7 @@ html {
 }
 
 /* CTA shimmer — RTL */
-[dir="rtl"] .cta-primary::after {
+[dir="rtl"] .cta-primary::after, [dir="rtl"] #portfolio-cta::after {
   background: linear-gradient(
     -105deg,
     transparent 35%,
@@ -290,7 +290,7 @@ html {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  [dir="rtl"] .cta-primary:hover::after {
+  [dir="rtl"] .cta-primary:hover::after, [dir="rtl"] #portfolio-cta:hover::after {
     animation: shimmer-sweep-rtl 0.4s ease-out forwards;
   }
 }
@@ -396,19 +396,21 @@ html {
    ══════════════════════════════════════ */
 
 @keyframes portfolioInfoIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(-10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 .portfolio-info-enter { animation: portfolioInfoIn 0.3s ease-out both; }
 
+@keyframes phonePulse {
+  0%, 100% { filter: drop-shadow(0 0 0 transparent); }
+  50%      { filter: drop-shadow(0 0 12px hsla(var(--gold) / 0.3)); }
+}
+
+.phone-frame-pulse {
+  animation: phonePulse 1s ease-in-out 3;
+}
+
 .portfolio-snap::-webkit-scrollbar { display: none; }
 .phone-scroll::-webkit-scrollbar { display: none; }
-
-@media (hover: hover) and (pointer: fine) {
-  .portfolio-cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 24px hsla(46 65% 52% / 0.4);
-  }
-}
 

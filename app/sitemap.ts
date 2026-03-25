@@ -1,25 +1,26 @@
 import { MetadataRoute } from "next";
+import { SITE_URL } from "./data/translations/lang";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const modifyDate = "2026-03-14";
   return [
     {
-      url: "https://samirmagdy.com",
+      url: SITE_URL,
       lastModified: modifyDate,
       alternates: {
         languages: {
-          en: "https://samirmagdy.com",
-          ar: "https://samirmagdy.com/ar",
+          en: SITE_URL,
+          ar: `${SITE_URL}/ar`,
         },
       },
     },
     {
-      url: "https://samirmagdy.com/ar",
+      url: `${SITE_URL}/ar`,
       lastModified: modifyDate,
       alternates: {
         languages: {
-          en: "https://samirmagdy.com",
-          ar: "https://samirmagdy.com/ar",
+          en: SITE_URL,
+          ar: `${SITE_URL}/ar`,
         },
       },
     },

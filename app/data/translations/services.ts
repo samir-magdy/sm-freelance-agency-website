@@ -1,11 +1,11 @@
 const servicesSection = {
   heading: {
-    en: "Features Included in Every Website",
-    ar: "مميزات تصميم كل موقع",
+    en: "Features in Every Website",
+    ar: "مميزات تصميم المواقع",
   },
   subtitle: {
     en: "A solid foundation from the start",
-    ar: "كل موقع إلكترونى نصممه يأتي بهذه المميزات",
+    ar: "كل موقع نصممه يأتي بهذه المميزات",
   },
 
   sharedFeatures: [

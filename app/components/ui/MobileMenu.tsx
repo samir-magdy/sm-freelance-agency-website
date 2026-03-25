@@ -43,16 +43,16 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
 
       {/* Navbar row — always visible and interactive, clicking it also closes the menu */}
       <div
-        className="absolute top-0 left-0 right-0 z-10 py-2 backdrop-blur-xl pointer-events-auto"
+        className="absolute top-0 left-0 right-0 z-10 backdrop-blur-xl pointer-events-auto"
         dir="ltr"
       >
-        <div className="flex justify-between items-center px-4">
+        <div className="flex justify-between items-center py-1 px-3">
           <a href="#home" aria-label="Samir Magdy - Home" onClick={(e) => { e.preventDefault(); scrollToSection("home"); }}>
             <Image
               src="/brand.svg"
               alt="SM Web Studio – Website Design Company in Egypt"
-              width={75}
-              height={75}
+              width={55}
+              height={55}
               priority
             />
           </a>
@@ -63,10 +63,10 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
           >
-            <div className="w-10 flex flex-col gap-2">
+            <div className="w-8 flex flex-col gap-1.5">
               <span
                 className={`block h-0.5 bg-content-heading transition-transform duration-500 ${
-                  isMenuOpen ? "rotate-45 translate-y-[10px]" : ""
+                  isMenuOpen ? "rotate-45 translate-y-[8px]" : ""
                 }`}
               />
               <span
@@ -76,7 +76,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
               />
               <span
                 className={`block h-0.5 bg-content-heading transition-transform duration-500 ${
-                  isMenuOpen ? "-rotate-45 -translate-y-[10px]" : ""
+                  isMenuOpen ? "-rotate-45 -translate-y-[8px]" : ""
                 }`}
               />
             </div>

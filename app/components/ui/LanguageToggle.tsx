@@ -51,11 +51,11 @@ export default function LanguageToggle({
     e.preventDefault();
     const section = getCurrentSection();
 
-    router.push(`/${nextLang}`);
+    router.push(`/${nextLang}`, { scroll: false });
 
     setTimeout(() => {
-      document.getElementById(section)?.scrollIntoView();
-    }, 250);
+      document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+    }, 500);
   };
 
   return (

@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next";
 import Footer from "../components/ui/Footer";
 import HeroNav from "../components/ui/HeroNav";
 import type { Lang } from "../data/translations";
+import { SITE_URL } from "../data/translations/lang";
 import translations from "../data/translations";
 
 const cairo = Cairo({
@@ -30,7 +31,7 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: "تصميم وتطوير مواقع إلكترونية في مصر | SM Web Studio",
+    title: "تصميم مواقع إلكترونية في مصر | SM Web Studio Egypt",
     description:
       "نصمم مواقع إلكترونية عصرية تبني الثقة. امتلك حضور رقمي يليق بعلامتك التجارية. ابدأ اليوم.",
     ogLocale: "ar_EG",
@@ -48,8 +49,8 @@ const meta = {
 
 function getCanonicalUrl(lang: Lang): string {
   return lang === "en"
-    ? "https://samirmagdy.com"
-    : `https://samirmagdy.com/${lang}`;
+    ? SITE_URL
+    : `${SITE_URL}/${lang}`;
 }
 
 export async function generateMetadata({
@@ -62,7 +63,7 @@ export async function generateMetadata({
   const canonicalUrl = getCanonicalUrl(lang as Lang);
 
   return {
-    metadataBase: new URL("https://samirmagdy.com"),
+    metadataBase: new URL(SITE_URL),
     icons: {
       icon: [
         {
@@ -84,13 +85,13 @@ export async function generateMetadata({
     },
     title: m.title,
     description: m.description,
-    authors: [{ name: "Samir Magdy", url: "https://samirmagdy.com" }],
+    authors: [{ name: "Samir Magdy", url: SITE_URL }],
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        en: "https://samirmagdy.com",
-        ar: "https://samirmagdy.com/ar",
-        "x-default": "https://samirmagdy.com",
+        en: SITE_URL,
+        ar: `${SITE_URL}/ar`,
+        "x-default": SITE_URL,
       },
     },
     openGraph: {
@@ -100,7 +101,7 @@ export async function generateMetadata({
       siteName: m.siteName,
       images: [
         {
-          url: "https://samirmagdy.com/open-graph.webp",
+          url: `${SITE_URL}/open-graph.webp`,
           width: 1200,
           height: 630,
           alt: m.ogAlt,
@@ -114,7 +115,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: m.title,
       description: m.description,
-      images: ["https://samirmagdy.com/open-graph.webp"],
+      images: [`${SITE_URL}/open-graph.webp`],
       site: "@WebDesign_EG",
     },
     robots: {
@@ -146,17 +147,17 @@ function buildStructuredData(lang: Lang) {
   // 1. ProfessionalService — Primary business schema
   const businessSchema = {
     "@type": "ProfessionalService",
-    "@id": "https://samirmagdy.com/#business",
+    "@id": `${SITE_URL}/#business`,
     name: "SM Web Studio",
     alternateName: isAr ? "إس إم ويب ستوديو" : "SM Web Studio",
     description: isAr
       ? "نصمم مواقع إلكترونية عصرية تبني الثقة. امتلك حضور رقمي يليق بعلامتك التجارية. ابدأ اليوم."
       : "SM Web Studio builds websites that create lasting trust. Boost your online presence with modern web design & development.",
-    url: "https://samirmagdy.com",
+    url: SITE_URL,
     telephone: "+201274613331",
     email: "studio@samirmagdy.com",
-    image: "https://samirmagdy.com/open-graph.webp",
-    logo: "https://samirmagdy.com/logo.png",
+    image: `${SITE_URL}/open-graph.webp`,
+    logo: `${SITE_URL}/logo.png`,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Cairo",
@@ -201,7 +202,7 @@ function buildStructuredData(lang: Lang) {
       "https://www.instagram.com/webdesign.cairo",
       "https://x.com/WebDesign_EG",
     ],
-    founder: { "@id": "https://samirmagdy.com/#founder" },
+    founder: { "@id": `${SITE_URL}/#founder` },
     knowsLanguage: ["en", "ar"],
     openingHoursSpecification: [
       {
@@ -216,13 +217,13 @@ function buildStructuredData(lang: Lang) {
   // 2. WebSite schema
   const websiteSchema = {
     "@type": "WebSite",
-    "@id": "https://samirmagdy.com/#website",
+    "@id": `${SITE_URL}/#website`,
     name: "SM Web Studio",
     alternateName: "إس إم ويب ستوديو",
-    url: "https://samirmagdy.com",
+    url: SITE_URL,
     inLanguage: ["en", "ar"],
     publisher: {
-      "@id": "https://samirmagdy.com/#business",
+      "@id": `${SITE_URL}/#business`,
     },
   };
 
@@ -235,24 +236,24 @@ function buildStructuredData(lang: Lang) {
     description: meta[lang].description,
     inLanguage: lang,
     isPartOf: {
-      "@id": "https://samirmagdy.com/#website",
+      "@id": `${SITE_URL}/#website`,
     },
     about: {
-      "@id": "https://samirmagdy.com/#business",
+      "@id": `${SITE_URL}/#business`,
     },
   };
 
   // 4. Person schema — ties Samir Magdy to SM Web Studio
   const founderSchema = {
     "@type": "Person",
-    "@id": "https://samirmagdy.com/#founder",
+    "@id": `${SITE_URL}/#founder`,
     name: "Samir Magdy",
     alternateName: "سمير مجدي",
     jobTitle: isAr
       ? "مؤسس ومصمم ومطور مواقع"
       : "Founder, Web Designer & Developer",
-    url: "https://samirmagdy.com",
-    worksFor: { "@id": "https://samirmagdy.com/#business" },
+    url: SITE_URL,
+    worksFor: { "@id": `${SITE_URL}/#business` },
     sameAs: [
       "https://www.facebook.com/WebDesignCairo",
       "https://www.instagram.com/webdesign.cairo",

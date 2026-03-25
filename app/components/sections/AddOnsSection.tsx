@@ -21,13 +21,10 @@ export default function AddOnsSection({ lang }: { lang: Lang }) {
         <div className="mb-8 md:mb-12 text-center">
           <h2
             id="addons-heading"
-            className="font-bold text-heading text-center mb-2"
+            className="font-bold text-heading text-center"
           >
             {t.heading[lang]}
           </h2>
-          <p className="text-content-body text-center text-base md:text-subheading">
-            {t.subtitle[lang]}
-          </p>
         </div>
 
         <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-8 gap-4 md:gap-6">

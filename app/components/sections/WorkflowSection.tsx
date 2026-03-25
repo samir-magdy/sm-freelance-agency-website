@@ -58,13 +58,10 @@ export default function WorkflowSection({ lang }: { lang: Lang }) {
         <div className="mb-8 md:mb-12 text-center">
           <h2
             id="workflow-heading"
-            className="font-bold text-heading mb-2"
+            className="font-bold text-heading"
           >
             {t.heading[lang]}
           </h2>
-          <p className="text-content-body text-base md:text-subheading">
-            {t.subtitle[lang]}
-          </p>
         </div>
       </div>
       <Timeline data={data} />

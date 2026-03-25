@@ -36,13 +36,10 @@ export default function ServicesSection({ lang }: { lang: Lang }) {
         <div className="mb-8 md:mb-12 text-center">
           <h2
             id="services-heading"
-            className="font-bold text-heading text-center mb-2"
+            className="font-bold text-heading text-center"
           >
             {t.heading[lang]}
           </h2>
-          <p className="text-content-body text-center text-base md:text-subheading">
-            {t.subtitle[lang]}
-          </p>
         </div>
 
         {/* Every project includes */}
