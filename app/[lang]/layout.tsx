@@ -92,11 +92,11 @@ export async function generateMetadata({
           sizes: "48x48",
         },
         {
-          url: "/favicon-v3-on-light.svg",
+          url: "/favicon-stable-on-light.svg",
           type: "image/svg+xml",
         },
         {
-          url: "/favicon-v3-on-dark.svg",
+          url: "/favicon-stable-on-dark.svg",
           type: "image/svg+xml",
           media: "(prefers-color-scheme: dark)",
         },
@@ -177,7 +177,7 @@ function buildStructuredData(lang: Lang) {
     telephone: PHONE_NUMBER,
     email: CONTACT_EMAIL,
     image: `${SITE_URL}/open-graph.webp`,
-    logo: `${SITE_URL}/logo.png`,
+    logo: `${SITE_URL}/logo-stable.png`,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Cairo",
