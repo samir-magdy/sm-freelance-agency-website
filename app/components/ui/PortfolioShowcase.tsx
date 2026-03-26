@@ -86,7 +86,7 @@ export default function PortfolioShowcase({ lang }: { lang: Lang }) {
     <section
       ref={sectionRef}
       id="portfolio"
-      className="py-20 md:py-36 md:pt-32 flex flex-col items-center justify-center relative overflow-hidden select-none px-5"
+      className="py-20 pt-16 md:py-36 md:pt-32 flex flex-col items-center justify-center relative overflow-hidden select-none px-5"
       aria-labelledby="portfolio-heading"
     >
       <script
