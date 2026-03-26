@@ -27,7 +27,7 @@ export default function ServicesSection({ lang }: { lang: Lang }) {
   return (
     <section
       id="services"
-      className="py-24 md:py-36 px-4"
+      className="py-20 md:py-36 px-4"
       aria-labelledby="services-heading"
       dir={isRtl ? "rtl" : "ltr"}
     >
@@ -36,7 +36,7 @@ export default function ServicesSection({ lang }: { lang: Lang }) {
         <div className="mb-8 md:mb-12 text-center">
           <h2
             id="services-heading"
-            className="font-bold text-heading text-center"
+            className="font-bold text-heading"
           >
             {t.heading[lang]}
           </h2>
@@ -52,8 +52,6 @@ export default function ServicesSection({ lang }: { lang: Lang }) {
                   key={feature.en}
                   className={`w-full sm:w-[calc(50%-8px)] md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] text-center group bg-surface-card/80 relative overflow-hidden rounded-2xl border border-border-subtle py-6 px-4 shadow-lg hover:-translate-y-1.5 hover:border-border-strong transition-all duration-300`}
                 >
-                  <div aria-hidden="true" />
-
                   <div className="relative space-y-3">
                     <div className="mx-auto flex items-center justify-center transition-all duration-300">
                       <Icon

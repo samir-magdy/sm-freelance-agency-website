@@ -16,24 +16,6 @@ const SECTION_IDS = [
 
 type SectionId = (typeof SECTION_IDS)[number];
 
-const LINK_CONFIG: { href: `#${SectionId}`; labelKey: keyof typeof defaultNav }[] = [
-  { href: "#services", labelKey: "services" },
-  { href: "#add-ons", labelKey: "addOns" },
-  { href: "#portfolio", labelKey: "projects" },
-  { href: "#how-it-works", labelKey: "howItWorks" },
-  { href: "#faq", labelKey: "faq" },
-  { href: "#contact", labelKey: "contact" },
-];
-
-const defaultNav = {
-  services: "",
-  addOns: "",
-  projects: "",
-  howItWorks: "",
-  faq: "",
-  contact: "",
-};
-
 interface DesktopNavLinksProps {
   nav: {
     services: string;
@@ -44,6 +26,15 @@ interface DesktopNavLinksProps {
     contact: string;
   };
 }
+
+const LINK_CONFIG: { href: `#${SectionId}`; labelKey: keyof DesktopNavLinksProps["nav"] }[] = [
+  { href: "#services", labelKey: "services" },
+  { href: "#add-ons", labelKey: "addOns" },
+  { href: "#portfolio", labelKey: "projects" },
+  { href: "#how-it-works", labelKey: "howItWorks" },
+  { href: "#faq", labelKey: "faq" },
+  { href: "#contact", labelKey: "contact" },
+];
 
 function hrefToSectionId(href: string): SectionId | null {
   const id = href.replace(/^#/, "");
@@ -82,6 +73,14 @@ export default function DesktopNavLinks({ nav }: DesktopNavLinksProps) {
       setActiveId(bestId === "goals" ? null : bestId);
     };
 
+    // Read nav height from the CSS variable so the observer's exclusion zone
+    // matches the fixed nav exactly — one source of truth.
+    const navH =
+      parseInt(
+        getComputedStyle(document.documentElement).getPropertyValue("--nav-h"),
+        10
+      ) || 80;
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -95,7 +94,7 @@ export default function DesktopNavLinks({ nav }: DesktopNavLinksProps) {
       },
       {
         root: null,
-        rootMargin: "-15% 0px -15% 0px",
+        rootMargin: `-${navH}px 0px -15% 0px`,
         threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
       }
     );
@@ -130,7 +129,7 @@ export default function DesktopNavLinks({ nav }: DesktopNavLinksProps) {
               }}
               className={`${linkClass} ${isActive ? "nav-link-active text-content-heading" : "text-content-body hover:text-content-heading"}`}
             >
-              {nav[labelKey] ?? defaultNav[labelKey]}
+              {nav[labelKey]}
             </a>
           </li>
         );

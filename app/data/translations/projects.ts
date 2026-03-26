@@ -3,10 +3,6 @@ const projectsSection = {
     en: "Web Design Portfolio",
     ar: "معرض تصميم المواقع",
   },
-  subtitle: {
-    en: "The quality and style we bring to every project",
-    ar: "إطلالة على التصميم والأسلوب في كل مشروع",
-  }
 } as const;
 
 const projectData = {

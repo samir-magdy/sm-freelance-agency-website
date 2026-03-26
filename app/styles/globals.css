@@ -26,11 +26,13 @@
   --gold-light: 46 100% 45%;
   --gold-dark: 46 50% 32%; /* gradient endpoint */
 
-  /* Status */
-  --color-success: 152 76% 40%;
-  --color-danger: 0 84% 60%;
-  --color-warning: 43 96% 50%;
+  /* Fixed nav height — single source of truth consumed by scroll-margin-top
+     (CSS) and IntersectionObserver rootMargin (JS via getComputedStyle).
+     Mobile navbar: 65px logo + 2×4px py-1 = 73px.
+     Desktop navbar: 115px logo + 2×8px py-2 = 131px (xl breakpoint). */
 }
+
+
 
 /* ══════════════════════════════════════
    2. Base & Reset
@@ -82,15 +84,14 @@ html {
 
 .hero-fade {
   opacity: 0;
+}
+
+html.fonts-ready .hero-fade {
   animation-name: heroFadeIn;
   animation-timing-function: ease-out;
   animation-fill-mode: both;
 }
 
-.hero-fade-label {
-  animation-delay: 2s;
-  animation-duration: 0.3s;
-}
 .hero-fade-hook-1 {
   animation-delay: 0.4s;
   animation-duration: 0.05s;
@@ -113,12 +114,6 @@ html {
 }
 
 
-@media (max-width: 640px) {
-  section[id]:not(#home) {
-    scroll-margin-top: 5px;
-  }
-}
-
 /* ══════════════════════════════════════
    4. Nav Link — Underline Hover Effect
    ══════════════════════════════════════ */
@@ -140,7 +135,6 @@ html {
     hsl(var(--gold)),
     hsl(var(--gold-dark))
   );
-  border-radius: 0;
   transition: all 0.15s ease-in-out;
 }
 
@@ -207,7 +201,10 @@ html {
 .cta-primary {
   position: relative;
   overflow: hidden;
-  /* transition: transform 1 ease; */
+  opacity: 0;
+}
+
+html.fonts-ready .cta-primary {
   animation: ctaEntrance 0.4s ease-out 1.6s both;
 }
 
@@ -225,6 +222,10 @@ html {
   );
   translate: -110% 0;
   pointer-events: none;
+}
+
+html.fonts-ready .cta-primary::before,
+html.fonts-ready #portfolio-cta::before {
   animation: ctaAutoShimmer 8s ease-out 2.3s infinite;
 }
 
@@ -238,6 +239,10 @@ html {
     transparent 65%
   );
   translate: 110% 0;
+}
+
+html.fonts-ready[dir="rtl"] .cta-primary::before,
+html.fonts-ready[dir="rtl"] #portfolio-cta::before {
   animation: ctaAutoShimmerRtl 8s ease-out 2.3s infinite;
 }
 
@@ -258,16 +263,8 @@ html {
   pointer-events: none;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .cta-primary:hover::after, #portfolio-cta:hover::after {
-    animation: shimmer-sweep 0.4s ease-out forwards;
-  }
-}
-
 @keyframes shimmer-sweep {
-  to {
-    translate: 100% 0;
-  }
+  to { translate: 100% 0; }
 }
 
 /* CTA shimmer — RTL */
@@ -284,12 +281,13 @@ html {
 }
 
 @keyframes shimmer-sweep-rtl {
-  to {
-    translate: -100% 0;
-  }
+  to { translate: -100% 0; }
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .cta-primary:hover::after, #portfolio-cta:hover::after {
+    animation: shimmer-sweep 0.4s ease-out forwards;
+  }
   [dir="rtl"] .cta-primary:hover::after, [dir="rtl"] #portfolio-cta:hover::after {
     animation: shimmer-sweep-rtl 0.4s ease-out forwards;
   }
@@ -316,10 +314,6 @@ html {
 
 .btn-success-entrance {
   animation: ctaEntrance 0.55s ease-out both;
-}
-
-[dir="rtl"] .btn-success-entrance {
-  animation: ctaEntranceRtl 0.55s ease-out both;
 }
 
 /* ══════════════════════════════════════

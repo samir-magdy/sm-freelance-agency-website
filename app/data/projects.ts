@@ -3,14 +3,13 @@ import skywayScreenshot from "../../public/project-screenshots/skyway.webp";
 import ecommScnshot from "../../public/project-screenshots/e-commerce.webp";
 import { SITE_URL } from "./translations/lang";
 
-export interface Project {
+interface Project {
   id: string;
   liveUrl: string;
   screenshot: StaticImageData;
   schemaName: string;
   schemaNameAr: string;
   description: string;
-  descriptionAr: string;
   genre: string;
   genreAr: string;
   keywords: string[];
@@ -25,8 +24,6 @@ export const projects: readonly Project[] = [
     schemaNameAr: "متجر إلكتروني للأزياء – مصر",
     description:
       "A custom-built fashion e-commerce store with advanced product listings, intelligent filtering, and a smart shopping cart. Streamlined WhatsApp checkout with no account creation required.",
-    descriptionAr:
-      "متجر إلكتروني للأزياء مصمم بالكامل، يضم قوائم منتجات متطورة، فلترة ذكية، وسلة تسوق سهلة. طلب مباشر على واتساب وبدون الحاجة لإنشاء حساب.",
     genre: "Fashion e-commerce",
     genreAr: "التجارة الإلكترونية للأزياء",
     keywords: [
@@ -44,8 +41,6 @@ export const projects: readonly Project[] = [
     schemaNameAr: "سكاي واي ترافل – موقع وكالة سياحة في القاهرة",
     description:
       "A conversion-optimized travel agency website for Sky Way Travel, designed to attract, engage, and convert visitors into bookings by showcasing tour packages in a structured format, building trust, and guiding users effortlessly from interest to reservation.",
-    descriptionAr:
-      "موقع إلكتروني لوكالة 'سكاي واي ترافيل' للسياحة، مُصمم لزيادة معدلات الحجز عن طريق جذب الزوار والتفاعل معاهم، وتحويلهم لعملاء. وده من خلال عرض برامج سياحية مميزة، وبناء الثقة، وتوجيه المستخدم بكل سلاسة من مرحلة الاهتمام لحد تنفيذ الحجز.",
     genre: "Travel & Tourism",
     genreAr: "سياحة وسفر",
     keywords: [

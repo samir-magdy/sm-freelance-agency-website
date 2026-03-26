@@ -5,10 +5,9 @@ import FAQSearch from "@/app/components/ui/FAQSearch";
 export default function FAQSection({ lang }: { lang: Lang }) {
   const t = translations.faqSection;
   const dir = lang === "ar" ? "rtl" : "ltr";
-  const isRtl = lang === "ar";
 
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="py-24 md:py-36 px-4" dir={dir}>
+    <section id="faq" aria-labelledby="faq-heading" className="py-20 md:py-36 px-4" dir={dir}>
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         <div className="mb-8 md:mb-12 text-center">
           <h2
@@ -17,9 +16,6 @@ export default function FAQSection({ lang }: { lang: Lang }) {
           >
             {t.heading[lang]}
           </h2>
-          <p className="text-content-body text-base md:text-subheading">
-            {t.subtitle[lang]}
-          </p>
         </div>
 
         <FAQSearch lang={lang}>
@@ -37,7 +33,7 @@ export default function FAQSection({ lang }: { lang: Lang }) {
                   focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border-strong focus-visible:ring-offset-4 focus-visible:ring-offset-background rounded-sm
                 `}
               >
-                <div className={`relative flex-shrink-0 w-5 h-5 ${isRtl ? "ml-5" : "mr-5"}`}>
+                <div className="relative flex-shrink-0 w-5 h-5 me-5">
                   <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-0.5 rounded-full bg-icon [details[open]_&]:bg-icon" />
                   <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-3 rounded-full bg-icon [details[open]_&]:h-0 [details[open]_&]:opacity-0" />
                 </div>
@@ -47,7 +43,7 @@ export default function FAQSection({ lang }: { lang: Lang }) {
                 </h3>
               </summary>
 
-              <div className={`pb-6 md:pb-7 ${isRtl ? "pr-10" : "pl-10"}`}>
+              <div className="pb-6 md:pb-7 ps-10">
                 <p className="text-base text-content-muted leading-relaxed">
                   {item.answer[lang]}
                 </p>

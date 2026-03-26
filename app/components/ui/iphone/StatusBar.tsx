@@ -2,7 +2,6 @@
 export function StatusBar({
   color = "white",
 }: {
-  opacity?: number;
   color?: string;
 }) {
   return (

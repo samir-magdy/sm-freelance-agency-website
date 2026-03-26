@@ -3,10 +3,7 @@ const addOnsSection = {
     en: "Add-ons For Your Website",
     ar: "الخدمات الإضافية",
   },
-  subtitle: {
-    en: "Enhance your website's reach and capabilities",
-    ar: "خصائص وخدمات اختيارية لتوسيع نطاق موقعك وقدراته",
-  },
+
   items: [
     {
       title: {

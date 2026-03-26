@@ -5,6 +5,7 @@ import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Footer from "../components/ui/Footer";
 import HeroNav from "../components/ui/HeroNav";
+import FontReadyTrigger from "../components/ui/FontReadyTrigger";
 import type { Lang } from "../data/translations";
 import { SITE_URL } from "../data/translations/lang";
 import translations from "../data/translations";
@@ -12,7 +13,7 @@ import translations from "../data/translations";
 const cairo = Cairo({
   variable: "--font-cairo",
   subsets: ["arabic", "latin"],
-  display: "swap",
+  display: "block",
 });
 
 // ─────────────────────────────────────────────
@@ -341,6 +342,8 @@ export default async function LangLayout({
             __html: JSON.stringify(structuredData),
           }}
         />
+
+        <FontReadyTrigger />
 
         {/* ── Navigation ── */}
         <HeroNav lang={lang} strings={heroNavStrings} />

@@ -40,7 +40,7 @@ export default function ContactSection({ lang }: { lang: Lang }) {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="py-24 pb-4 md:pt-32 md:pb-0 px-4"
+      className="pt-20 pb-4 md:pt-32 md:pb-0 px-4"
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="max-w-5xl mx-auto">

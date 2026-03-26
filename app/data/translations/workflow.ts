@@ -1,9 +1,6 @@
 const workflowSection = {
   heading: { en: "Web Development Process", ar: "خطوات تصميم موقعك" },
-  subtitle: {
-    en: "A clear process from start to finish",
-    ar: "عملية واضحة من البداية للنهاية",
-  },
+  
   steps: {
     discovery: {
       title: { en: "Consultation", ar: "الاستشارة" },

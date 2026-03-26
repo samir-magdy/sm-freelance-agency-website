@@ -86,7 +86,7 @@ export default function PortfolioShowcase({ lang }: { lang: Lang }) {
     <section
       ref={sectionRef}
       id="portfolio"
-      className="py-20 pt-16 md:py-36 md:pt-32 flex flex-col items-center justify-center relative overflow-hidden select-none px-5"
+      className="py-20 md:pb-36 md:pt-32 flex flex-col items-center justify-center relative overflow-hidden select-none px-5"
       aria-labelledby="portfolio-heading"
     >
       <script
@@ -98,7 +98,7 @@ export default function PortfolioShowcase({ lang }: { lang: Lang }) {
       <div className="text-center relative z-[2] px-5 mb-6 sm:mb-10 lg:mb-16">
         <h2
           id="portfolio-heading"
-          className="font-bold text-heading text-center"
+          className="font-bold text-heading"
         >
           {t.heading[lang]}
         </h2>
@@ -141,7 +141,7 @@ export default function PortfolioShowcase({ lang }: { lang: Lang }) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-xl font-normal tracking-wide transition-all duration-200 hidden lg:!inline-flex"
+            className="relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-xl font-normal tracking-wide transition-all duration-200 hidden lg:inline-flex"
             aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
           >
             {pd.cta[lang]}
@@ -177,7 +177,7 @@ export default function PortfolioShowcase({ lang }: { lang: Lang }) {
               <div className="w-full h-full rounded-[43px] overflow-hidden relative bg-black">
                 <DynamicIsland />
                 <div className="absolute top-2 inset-x-0 z-[15]">
-                  <StatusBar opacity={0.5} />
+                  <StatusBar />
                 </div>
 
                 {/* Horizontal snap-scroll carousel of project screenshots */}

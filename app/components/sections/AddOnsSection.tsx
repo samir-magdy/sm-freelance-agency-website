@@ -11,7 +11,7 @@ export default function AddOnsSection({ lang }: { lang: Lang }) {
   return (
     <section
       id="add-ons"
-      className="py-24 md:py-36 px-4"
+      className="py-20 md:py-36 px-4"
       aria-labelledby="addons-heading"
       dir={isRtl ? "rtl" : "ltr"}
     >
@@ -21,7 +21,7 @@ export default function AddOnsSection({ lang }: { lang: Lang }) {
         <div className="mb-8 md:mb-12 text-center">
           <h2
             id="addons-heading"
-            className="font-bold text-heading text-center"
+            className="font-bold text-heading"
           >
             {t.heading[lang]}
           </h2>
@@ -38,7 +38,6 @@ export default function AddOnsSection({ lang }: { lang: Lang }) {
                   i === 6 ? " sm:col-span-2 sm:w-1/2 sm:mx-auto lg:col-span-1 lg:w-auto lg:mx-0 lg:col-start-2 xl:col-span-2 xl:col-start-6" : ""
                 }`}
               >
-                <div aria-hidden="true" />
                 <div className="relative space-y-3">
                   <div className="mx-auto flex items-center justify-center transition-all duration-300">
                     <Icon className="w-12 h-12 md:w-16 md:h-16 text-icon" aria-hidden="true" />
@@ -50,17 +49,6 @@ export default function AddOnsSection({ lang }: { lang: Lang }) {
             );
           })}
         </div>
-
-        {/* CTA */}
-        {/* <div className="text-center">
-          <p className="text-content-body mb-5">{t.cta[lang]}</p>
-          <a
-            href="#contact"
-            className="cta-primary text-center bg-gradient-to-b from-gold to-gold-dark text-gray-900 font-semibold text-lg md:text-xl px-10 md:px-10 py-4 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
-          >
-            {translations.hero.primaryCta[lang]}
-          </a>
-        </div> */}
 
       </div>
     </section>
