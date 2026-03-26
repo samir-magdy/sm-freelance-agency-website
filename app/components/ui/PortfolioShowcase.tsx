@@ -195,7 +195,7 @@ export default function PortfolioShowcase({ lang }: { lang: Lang }) {
                           className="w-full h-auto block"
                           sizes="(min-width:1024px) 320px, 280px"
                           placeholder="blur"
-                          priority={i === 0}
+                          priority
                         />
                       </div>
                     </div>
