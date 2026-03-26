@@ -115,7 +115,7 @@ html {
 
 @media (max-width: 640px) {
   section[id]:not(#home) {
-    scroll-margin-top: -20px;
+    scroll-margin-top: 14px;
   }
 }
 

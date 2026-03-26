@@ -211,7 +211,7 @@ export default function PortfolioShowcase({ lang }: { lang: Lang }) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative overflow-hidden inline-flex items-center gap-2 py-3.5 px-5 rounded-xl bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-sm font-medium tracking-wide transition-all duration-200 lg:hidden"
+            className="relative overflow-hidden inline-flex items-center gap-2 py-3 px-5 rounded-xl bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-sm font-medium tracking-wide transition-all duration-200 lg:hidden"
             aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
           >
             {pd.cta[lang]}
