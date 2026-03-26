@@ -165,7 +165,7 @@ export default function PortfolioShowcase({ lang }: { lang: Lang }) {
             {/* Phone outer shell — gradient bezel + hardware buttons */}
             <div
               ref={phoneRef}
-              className="phone-outer w-[60%] h-[54vh] md:w-[290px] md:h-[540px] lg:w-[320px] lg:h-[600px] rounded-[48px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-[4px] relative shrink-0"
+              className="phone-outer w-[60%] h-[54vh] sm:w-[260px] sm:h-[520px] md:w-[290px] md:h-[550px] lg:w-[320px] lg:h-[610px] rounded-[48px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-[4px] relative shrink-0"
             >
               {/* Left volume buttons */}
               <div className="absolute -left-[2.5px] top-[126px] w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-[2px]" />
