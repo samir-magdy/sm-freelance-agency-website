@@ -115,7 +115,7 @@ html {
 
 @media (max-width: 640px) {
   section[id]:not(#home) {
-    scroll-margin-top: 14px;
+    scroll-margin-top: 5px;
   }
 }
 
@@ -413,4 +413,10 @@ html {
 
 .portfolio-snap::-webkit-scrollbar { display: none; }
 .phone-scroll::-webkit-scrollbar { display: none; }
+
+/* Safari-only mobile overrides for portfolio section */
+@media (max-width: 767px) {
+  #portfolio.is-safari { padding-top: 6rem; padding-bottom: 7rem; }
+  .is-safari .phone-outer { height: 57vh; }
+}
 

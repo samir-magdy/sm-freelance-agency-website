@@ -16,28 +16,47 @@ const cairo = Cairo({
 });
 
 // ─────────────────────────────────────────────
+// SITE-WIDE CONSTANTS
+// ─────────────────────────────────────────────
+
+const SITE_NAME = "SM Web Studio";
+const SITE_NAME_AR = "إس إم ويب ستوديو";
+const CONTACT_EMAIL = "studio@samirmagdy.com";
+const PHONE_NUMBER = "+201274613331";
+const TWITTER_HANDLE = "@SMWebStudioEG";
+
+const META_DESCRIPTION = {
+  en: "High-end web design studio offering premium quality at competitive rates. We bridge the gap between agency-level professionalism & freelancer flexibility.",
+  ar: "استوديو متخصص في تصميم مواقع الكترونية عالية الجودة وبسعر منافس. نموذج مختلف يجمع بين احترافية الشركات ومرونة الفريلانسرز.",
+} as const;
+
+const SOCIAL_LINKS = {
+  instagram: "https://www.instagram.com/smweb.studio",
+  facebook: "https://www.facebook.com/SMWebStudioEG",
+  x: "https://x.com/SMWebStudioEG",
+} as const;
+
+// ─────────────────────────────────────────────
 // SEO METADATA
 // ─────────────────────────────────────────────
 
 const meta = {
   en: {
-    title: "Expert Web Design in Egypt | SM Web Studio",
-    description:
-      "SM Web Studio builds websites that create lasting trust. Boost your online presence with modern web design & development.",
+    title: `Expert Web Design in Egypt | ${SITE_NAME}`,
+    description: META_DESCRIPTION.en,
     ogLocale: "en_US",
     altLocale: "ar_EG",
-    ogAlt: "SM Web Studio logo",
-    siteName: "SM Web Studio",
+    ogAlt: `${SITE_NAME} logo`,
+    siteName: SITE_NAME,
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: "تصميم مواقع إحترافية في مصر | SM Web Studio Egypt",
-    description:
-      "استوديو متخصص في تصميم مواقع الكترونية عالية الجودة وبسعر منافس. نموذج مختلف يجمع بين احترافية الشركات ومرونة الفريلانسرز.",
+    title: `تصميم مواقع إحترافية في مصر | ${SITE_NAME} Egypt`,
+    description: META_DESCRIPTION.ar,
     ogLocale: "ar_EG",
     altLocale: "en_US",
-    ogAlt: "شعار إس إم ويب ستوديو",
-    siteName: "SM Web Studio",
+    ogAlt: `شعار ${SITE_NAME_AR}`,
+    siteName: SITE_NAME,
     skipToContent: "تخطى إلى المحتوى",
   },
 } as const;
@@ -116,7 +135,7 @@ export async function generateMetadata({
       title: m.title,
       description: m.description,
       images: [`${SITE_URL}/open-graph.webp`],
-      site: "@smweb_studio",
+      site: TWITTER_HANDLE,
     },
     robots: {
       index: true,
@@ -148,14 +167,14 @@ function buildStructuredData(lang: Lang) {
   const businessSchema = {
     "@type": "ProfessionalService",
     "@id": `${SITE_URL}/#business`,
-    name: "SM Web Studio",
-    alternateName: isAr ? "إس إم ويب ستوديو" : "SM Web Studio",
+    name: SITE_NAME,
+    alternateName: SITE_NAME_AR,
     description: isAr
       ? "نصمم مواقع إلكترونية عصرية تبني الثقة. امتلك حضور رقمي يليق بعلامتك التجارية. ابدأ اليوم."
       : "SM Web Studio builds websites that create lasting trust. Boost your online presence with modern web design & development.",
     url: SITE_URL,
-    telephone: "+201274613331",
-    email: "studio@samirmagdy.com",
+    telephone: PHONE_NUMBER,
+    email: CONTACT_EMAIL,
     image: `${SITE_URL}/open-graph.webp`,
     logo: `${SITE_URL}/logo.png`,
     address: {
@@ -197,11 +216,7 @@ function buildStructuredData(lang: Lang) {
         },
       ],
     },
-    sameAs: [
-      "https://www.facebook.com/SMWebStudioEG",
-      "https://www.instagram.com/smweb.studio",
-      "https://x.com/SMWebStudioEG",
-    ],
+    sameAs: [SOCIAL_LINKS.facebook, SOCIAL_LINKS.instagram, SOCIAL_LINKS.x],
     founder: { "@id": `${SITE_URL}/#founder` },
     knowsLanguage: ["en", "ar"],
     openingHoursSpecification: [
@@ -218,8 +233,8 @@ function buildStructuredData(lang: Lang) {
   const websiteSchema = {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
-    name: "SM Web Studio",
-    alternateName: "إس إم ويب ستوديو",
+    name: SITE_NAME,
+    alternateName: SITE_NAME_AR,
     url: SITE_URL,
     inLanguage: ["en", "ar"],
     publisher: {

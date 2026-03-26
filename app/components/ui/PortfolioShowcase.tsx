@@ -19,6 +19,15 @@ export default function PortfolioShowcase({ lang }: { lang: Lang }) {
   const [active, setActive] = useState(0);
   const snapRef = useRef<HTMLDivElement>(null);
   const phoneRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  /* Tag section for Safari-specific styling */
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    if (/Safari/.test(ua) && !/Chrome|CriOS|Chromium/.test(ua)) {
+      sectionRef.current?.classList.add("is-safari");
+    }
+  }, []);
 
   /* Pulse the phone frame once it enters the viewport */
   useEffect(() => {
@@ -75,8 +84,9 @@ export default function PortfolioShowcase({ lang }: { lang: Lang }) {
 
   return (
     <section
+      ref={sectionRef}
       id="portfolio"
-      className="py-24 md:py-36 md:pt-32 flex flex-col items-center justify-center relative overflow-hidden select-none px-5"
+      className="py-20 md:py-36 md:pt-32 flex flex-col items-center justify-center relative overflow-hidden select-none px-5"
       aria-labelledby="portfolio-heading"
     >
       <script
@@ -155,7 +165,7 @@ export default function PortfolioShowcase({ lang }: { lang: Lang }) {
             {/* Phone outer shell — gradient bezel + hardware buttons */}
             <div
               ref={phoneRef}
-              className="w-[60%] h-[52vh] md:w-[290px] md:h-[540px] lg:w-[320px] lg:h-[600px] rounded-[48px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-[4px] relative shrink-0"
+              className="phone-outer w-[60%] h-[54vh] md:w-[290px] md:h-[540px] lg:w-[320px] lg:h-[600px] rounded-[48px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-[4px] relative shrink-0"
             >
               {/* Left volume buttons */}
               <div className="absolute -left-[2.5px] top-[126px] w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-[2px]" />
@@ -211,7 +221,7 @@ export default function PortfolioShowcase({ lang }: { lang: Lang }) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative overflow-hidden inline-flex items-center gap-2 py-3 px-5 rounded-xl bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-sm font-medium tracking-wide transition-all duration-200 lg:hidden"
+            className="relative overflow-hidden inline-flex items-center gap-2 py-3 px-5 rounded-xl bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-sm font-semibold tracking-wide transition-all duration-200 lg:hidden"
             aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
           >
             {pd.cta[lang]}
