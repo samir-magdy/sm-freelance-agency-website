@@ -1,5 +1,3 @@
-export type { Lang } from "./lang";
-
 import nav from "./nav";
 import hero from "./hero";
 import goal from "./goal";
@@ -27,6 +25,6 @@ const translations = {
   form,
   a11y,
   langToggle,
-} as const;
+};
 
 export default translations;

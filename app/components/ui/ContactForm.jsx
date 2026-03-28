@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import type { Lang } from "@/app/data/translations";
 
 const INDUSTRY_OPTIONS = [
   { value: "restaurant", en: "Restaurant / Caf\u00e9", ar: "\u0645\u0637\u0639\u0645 / \u0643\u0627\u0641\u064a\u0647" },
@@ -32,8 +31,6 @@ const ChevronDown = () => (
   </svg>
 );
 
-type ContactMethod = "whatsapp" | "phone-call" | "email" | "";
-
 const TIME_OPTIONS = [
   { value: "11am-1pm", en: "11:00 AM - 01:00 PM", ar: "١١:٠٠ ص - ١:٠٠ م" },
   { value: "1pm-3pm", en: "01:00 PM - 03:00 PM", ar: "١:٠٠ م - ٣:٠٠ م" },
@@ -41,45 +38,11 @@ const TIME_OPTIONS = [
   { value: "5pm-7pm", en: "05:00 PM - 07:00 PM", ar: "٥:٠٠ م - ٧:٠٠ م" },
 ];
 
-export interface ContactFormStrings {
-  legend: string;
-  name: string;
-  namePlaceholder: string;
-  phone: string;
-  phonePlaceholder: string;
-  industry: string;
-  industryPlaceholder: string;
-  contactMethod: string;
-  whatsapp: string;
-  phoneCall: string;
-  email: string;
-  emailAddress: string;
-  emailPlaceholder: string;
-  bestDate: string;
-  bestTime: string;
-  bestTimePlaceholder: string;
-  message: string;
-  messageOptional: string;
-  messagePlaceholder: string;
-  submit: string;
-  sending: string;
-  success: string;
-  errorRateLimit: string;
-  errorGeneric: string;
-  contactFormA11y: string;
-}
-
-export default function ContactForm({
-  lang,
-  strings,
-}: {
-  lang: Lang;
-  strings: ContactFormStrings;
-}) {
+export default function ContactForm({ lang, strings }) {
   const [formData, setFormData] = useState({
     name: "",
     industry: "",
-    contactMethod: "" as ContactMethod,
+    contactMethod: "",
     phone: "",
     email: "",
     bestDate: new Date().toISOString().split("T")[0],
@@ -87,12 +50,10 @@ export default function ContactForm({
     message: "",
   });
   const [dateTouched, setDateTouched] = useState(false);
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
+  const [status, setStatus] = useState("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("loading");
     setErrorMessage("");
@@ -140,11 +101,11 @@ export default function ContactForm({
 
   const selectBaseClass =
     "text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low focus:border-2 focus:border-border-strong outline-none appearance-none cursor-pointer";
-const selectClass = (value: string) =>
+const selectClass = (value) =>
     `${selectBaseClass} ${value ? "text-content-heading" : "text-content-muted"}`;
   const labelClass =
     "block text-caption font-bold text-content-muted mb-2 ms-1";
-  const chipClass = (selected: boolean) =>
+  const chipClass = (selected) =>
     `bg-surface-low hover:bg-icon/20 flex-1 flex items-center justify-center px-4 py-[0.63rem] rounded-lg border cursor-pointer text-base ${
       selected
         ? "border-icon text-content-heading border-2"
@@ -231,7 +192,7 @@ const selectClass = (value: string) =>
                   { value: "whatsapp", label: strings.whatsapp },
                   { value: "phone-call", label: strings.phoneCall },
                   { value: "email", label: strings.email },
-                ] as const
+                ]
               ).map(({ value, label }) => (
                 <label
                   key={value}
@@ -320,7 +281,7 @@ const selectClass = (value: string) =>
                   />
                   <div
                     className="absolute inset-y-0 end-0 w-10 cursor-pointer"
-                    onClick={() => (document.getElementById("bestDate") as HTMLInputElement)?.showPicker?.()}
+                    onClick={() => document.getElementById("bestDate")?.showPicker?.()}
                     aria-hidden="true"
                   />
                 </div>

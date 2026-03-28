@@ -77,6 +77,6 @@ const addOnsSection = {
       },
     },
   ],
-} as const;
+};
 
 export default addOnsSection;

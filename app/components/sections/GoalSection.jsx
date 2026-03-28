@@ -1,7 +1,6 @@
-import type { Lang } from "@/app/data/translations";
 import translations from "@/app/data/translations";
 
-function highlightWords(text: string, words: string[]) {
+function highlightWords(text, words) {
   const escaped = words.map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
   const parts = text.split(new RegExp(`(${escaped.join("|")})`));
   return parts.map((part, i) =>
@@ -13,7 +12,7 @@ function highlightWords(text: string, words: string[]) {
   );
 }
 
-export default function GoalSection({ lang }: { lang: Lang }) {
+export default function GoalSection({ lang }) {
   const t = translations;
   const isRtl = lang === "ar";
 
@@ -35,12 +34,12 @@ export default function GoalSection({ lang }: { lang: Lang }) {
       <div className="relative z-10 max-w-6xl mx-auto text-center space-y-4 md:px-4">
         <p className="text-4xl md:text-7xl font-bold text-content-heading leading-tight md:rtl:leading-snug">
           {Array.isArray(t.goal[lang])
-            ? (t.goal[lang] as string[]).map((line, i) => (
+            ? t.goal[lang].map((line, i) => (
                 <span key={i} className="block">
                   {highlightWords(line, goalWords)}
                 </span>
               ))
-            : highlightWords(t.goal[lang] as string, goalWords)}
+            : highlightWords(t.goal[lang], goalWords)}
         </p>
 
       </div>

@@ -1,15 +1,7 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 /* ── Nav Arrow ── */
-export function NavArrow({
-  direction,
-  disabled,
-  onClick,
-}: {
-  direction: "prev" | "next";
-  disabled: boolean;
-  onClick: () => void;
-}) {
+export function NavArrow({ direction, disabled, onClick }) {
   const Icon = direction === "prev" ? ArrowLeft : ArrowRight;
   
   return (

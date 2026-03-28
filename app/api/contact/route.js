@@ -12,7 +12,7 @@ const MAX_SUBMISSIONS = 1;
 const WINDOW_SECONDS = 180; // 3 minutes
 // ------------------------------------
 
-export async function POST(request: Request) {
+export async function POST(request) {
   try {
     const {
       name,
@@ -111,7 +111,7 @@ export async function POST(request: Request) {
     // Send Email via Resend
     const data = await resend.emails.send({
       from: "SM Web Studio <noreply@mail.samirmagdy.com>",
-      to: process.env.CONTACT_EMAIL as string,
+      to: process.env.CONTACT_EMAIL,
       subject: `Website Consultation Request`,
       text: [
         `Name: ${name}`,

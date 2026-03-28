@@ -1,4 +1,3 @@
-import type { Lang } from "@/app/data/translations";
 import translations from "@/app/data/translations";
 import {
   MonitorSmartphone,
@@ -20,7 +19,7 @@ const featureIcons = [
   RefreshCw,
 ];
 
-export default function ServicesSection({ lang }: { lang: Lang }) {
+export default function ServicesSection({ lang }) {
   const t = translations.servicesSection;
   const isRtl = lang === "ar";
 

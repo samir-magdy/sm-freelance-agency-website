@@ -2,29 +2,10 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import type { Lang } from "@/app/data/translations";
 import LanguageToggle from "./LanguageToggle";
 import SocialIcons from "./SocialIcons";
 
-interface MobileMenuProps {
-  lang: Lang;
-  nav: {
-    features: string;
-    services: string;
-    portfolio: string;
-    process: string;
-    FAQs: string;
-    contact: string;
-  };
-  a11y: {
-    mobileNav: string;
-    openMenu: string;
-    closeMenu: string;
-  };
-  langToggleLabel: string;
-}
-
-export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileMenuProps) {
+export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (

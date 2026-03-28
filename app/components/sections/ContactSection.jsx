@@ -1,10 +1,9 @@
 import dynamic from "next/dynamic";
 import translations from "@/app/data/translations";
-import type { Lang } from "@/app/data/translations";
 
 const ContactForm = dynamic(() => import("../ui/ContactForm"));
 
-export default function ContactSection({ lang }: { lang: Lang }) {
+export default function ContactSection({ lang }) {
   const t = translations;
   const isRtl = lang === "ar";
 

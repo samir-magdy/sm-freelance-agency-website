@@ -7,6 +7,6 @@ const contactSection = {
     en: "Share a few details and we'll reach out.",
     ar: "شاركنا بعض التفاصيل وسنتواصل معك لتقديم استشارة.",
   },
-} as const;
+};
 
 export default contactSection;

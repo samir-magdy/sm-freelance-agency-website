@@ -1,6 +1,5 @@
 import translations from "@/app/data/translations";
-import type { Lang } from "@/app/data/translations";
-export default function HeroSection({ lang }: { lang: Lang }) {
+export default function HeroSection({ lang }) {
   const t = translations;
   const hookLines = t.hero.name[lang];
 

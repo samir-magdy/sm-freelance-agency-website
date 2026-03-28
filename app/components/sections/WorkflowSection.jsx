@@ -1,15 +1,14 @@
 import dynamic from "next/dynamic";
 import translations from "@/app/data/translations";
-import type { Lang } from "@/app/data/translations";
 
 const Timeline = dynamic(() =>
   import("../ui/Timeline").then((mod) => mod.Timeline),
 );
 
-export default function WorkflowSection({ lang }: { lang: Lang }) {
+export default function WorkflowSection({ lang }) {
   const t = translations.workflowSection;
 
-  const STEP_KEYS = ["discovery", "design", "development", "launch", "support"] as const;
+  const STEP_KEYS = ["discovery", "design", "development", "launch", "support"];
   const data = STEP_KEYS.map((key) => ({
     title: t.steps[key].title[lang],
     content: (

@@ -38,6 +38,6 @@ const workflowSection = {
       },
     },
   },
-} as const;
+};
 
 export default workflowSection;

@@ -1,5 +1,5 @@
 /* ── Home Indicator ── */
-export function HomeIndicator({ opacity = 0.25 }: { opacity?: number }) {
+export function HomeIndicator({ opacity = 0.25 }) {
   return (
     <div
       aria-hidden

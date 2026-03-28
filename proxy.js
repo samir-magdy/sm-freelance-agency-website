@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
 
 const VALID_LANGS = ["en", "ar"];
 const PUBLIC_FILE = /\.([^.]+)$/;
 
-export function proxy(request: NextRequest) {
+export function proxy(request) {
   const { pathname } = request.nextUrl;
 
   // Skip _next internals, API routes, and public files with extensions

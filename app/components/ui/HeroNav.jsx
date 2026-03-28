@@ -1,34 +1,9 @@
 import Image from "next/image";
-import type { Lang } from "@/app/data/translations";
 import DesktopNavLinks from "./DesktopNavLinks";
 import LanguageToggle from "./LanguageToggle";
 import MobileMenu from "./MobileMenu";
 
-interface HeroNavStrings {
-  nav: {
-    features: string;
-    services: string;
-    portfolio: string;
-    process: string;
-    FAQs: string;
-    contact: string;
-  };
-  a11y: {
-    desktopNav: string;
-    mobileNav: string;
-    openMenu: string;
-    closeMenu: string;
-  };
-  langToggleLabel: string;
-}
-
-export default function HeroNav({
-  lang,
-  strings,
-}: {
-  lang: Lang;
-  strings: HeroNavStrings;
-}) {
+export default function HeroNav({ lang, strings }) {
   const { nav, a11y } = strings;
 
   return (

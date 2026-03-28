@@ -15,6 +15,6 @@ const hero = {
     en: ["We craft your website. ", "We don't manufacture it."],
     ar: ["استوديو متخصص في تصميم مواقع إلكترونية عالية الجودة وبسعر منافس."],
   },
-} as const;
+};
 
 export default hero;

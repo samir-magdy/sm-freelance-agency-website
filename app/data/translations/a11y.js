@@ -8,6 +8,6 @@ const a11y = {
     en: "Website design by SM Web Studio –",
     ar: "تصميم موقع من SM Web Studio –",
   },
-} as const;
+};
 
 export default a11y;

@@ -3,7 +3,7 @@ const projectsSection = {
     en: "Web Design Portfolio",
     ar: "معرض تصميم المواقع",
   },
-} as const;
+};
 
 const projectData = {
   skyway: {
@@ -35,6 +35,6 @@ const projectData = {
       ar: "مشاهدة الموقع",
     },
   },
-} as const;
+};
 
 export { projectsSection, projectData };

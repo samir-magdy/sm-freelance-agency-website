@@ -303,6 +303,6 @@ const faqSection = {
       },
     },
   ],
-} as const;
+};
 
 export default faqSection;

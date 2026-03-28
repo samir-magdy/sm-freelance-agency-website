@@ -1,15 +1,4 @@
-interface DesktopNavLinksProps {
-  nav: {
-    features: string;
-    services: string;
-    portfolio: string;
-    process: string;
-    FAQs: string;
-    contact: string;
-  };
-}
-
-const LINK_CONFIG: { href: string; labelKey: keyof DesktopNavLinksProps["nav"] }[] = [
+const LINK_CONFIG = [
   { href: "#features", labelKey: "features" },
   { href: "#services", labelKey: "services" },
   { href: "#portfolio", labelKey: "portfolio" },
@@ -18,7 +7,7 @@ const LINK_CONFIG: { href: string; labelKey: keyof DesktopNavLinksProps["nav"] }
   { href: "#contact", labelKey: "contact" },
 ];
 
-export default function DesktopNavLinks({ nav }: DesktopNavLinksProps) {
+export default function DesktopNavLinks({ nav }) {
   return (
     <ul className="flex w-full justify-around px-40">
       {LINK_CONFIG.map(({ href, labelKey }) => (

@@ -2,19 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 
-interface TimelineEntry {
-  title: string;
-  content: React.ReactNode;
-}
-
-export function Timeline({ data }: { data: TimelineEntry[] }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const beamRef = useRef<HTMLDivElement>(null);
+export function Timeline({ data }) {
+  const ref = useRef(null);
+  const containerRef = useRef(null);
+  const beamRef = useRef(null);
   const [height, setHeight] = useState(0);
   const [trackTop, setTrackTop] = useState(0);
   const [activeIndex, setActiveIndex] = useState(-1);
-  const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
+  const itemRefs = useRef([]);
   const trackTopRef = useRef(0);
   const activeIndexRef = useRef(-1);
 
@@ -23,7 +18,7 @@ export function Timeline({ data }: { data: TimelineEntry[] }) {
     if (!container) return;
 
     const measure = () => {
-      const items = itemRefs.current.filter(Boolean) as HTMLElement[];
+      const items = itemRefs.current.filter(Boolean);
       if (items.length === 0) {
         setHeight(container.getBoundingClientRect().height);
         setTrackTop(0);

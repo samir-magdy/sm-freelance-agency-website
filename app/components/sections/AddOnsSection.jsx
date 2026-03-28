@@ -1,10 +1,9 @@
-import type { Lang } from "@/app/data/translations";
 import translations from "@/app/data/translations";
 import { Languages, Mail, PenLine, MapPin, FileSearch, Palette, LayoutDashboard } from "lucide-react";
 
 const addOnIcons = [LayoutDashboard, Languages,  FileSearch, MapPin,  PenLine, Palette, Mail];
 
-export default function AddOnsSection({ lang }: { lang: Lang }) {
+export default function AddOnsSection({ lang }) {
   const t = translations.addOnsSection;
   const isRtl = lang === "ar";
 

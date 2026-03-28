@@ -1,9 +1,5 @@
 /* ── Status Bar (iPhone chrome) ── */
-export function StatusBar({
-  color = "white",
-}: {
-  color?: string;
-}) {
+export function StatusBar({ color = "white" }) {
   return (
     <div
       dir="ltr"

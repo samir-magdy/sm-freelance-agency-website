@@ -5,6 +5,6 @@ const nav = {
   process: { en: "Process", ar: "خطوات العمل" },
   FAQs: { en: "FAQs", ar: "الأسئلة الشائعة" },
   contact: { en: "Get Started", ar: "ابدأ الآن" },
-} as const;
+};
 
 export default nav;

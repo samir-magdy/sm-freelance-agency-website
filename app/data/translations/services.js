@@ -63,6 +63,6 @@ const servicesSection = {
       },
     },
   ],
-} as const;
+};
 
 export default servicesSection;

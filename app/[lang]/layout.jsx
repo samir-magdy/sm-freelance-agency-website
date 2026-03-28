@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Cairo } from "next/font/google";
 import "../styles/globals.css";
@@ -6,7 +5,6 @@ import { Analytics } from "@vercel/analytics/next";
 import Footer from "../components/ui/Footer";
 import HeroNav from "../components/ui/HeroNav";
 import FontReadyTrigger from "../components/ui/FontReadyTrigger";
-import type { Lang } from "../data/translations";
 import { SITE_URL } from "../data/translations/lang";
 import translations from "../data/translations";
 
@@ -29,13 +27,13 @@ const TWITTER_HANDLE = "@SMWebStudioEG";
 const META_DESCRIPTION = {
   en: "High-end web design studio offering premium quality at competitive rates. We bridge the gap between agency-level professionalism & freelancer flexibility.",
   ar: "استوديو متخصص في تصميم مواقع الكترونية عالية الجودة وبسعر منافس. نموذج مختلف يجمع بين احترافية الشركات ومرونة الفريلانسرز.",
-} as const;
+};
 
 const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/smweb.studio",
   facebook: "https://www.facebook.com/SMWebStudioEG",
   x: "https://x.com/SMWebStudioEG",
-} as const;
+};
 
 // ─────────────────────────────────────────────
 // SEO METADATA
@@ -60,27 +58,23 @@ const meta = {
     siteName: SITE_NAME,
     skipToContent: "تخطى إلى المحتوى",
   },
-} as const;
+};
 
 // ─────────────────────────────────────────────
 // CANONICAL URL HELPER
 // ─────────────────────────────────────────────
 // Single source of truth so canonical, OG url, and structured data never drift apart.
 
-function getCanonicalUrl(lang: Lang): string {
+function getCanonicalUrl(lang) {
   return lang === "en"
     ? SITE_URL
     : `${SITE_URL}/${lang}`;
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }) {
   const { lang } = await params;
-  const m = meta[lang as Lang] ?? meta.en;
-  const canonicalUrl = getCanonicalUrl(lang as Lang);
+  const m = meta[lang] ?? meta.en;
+  const canonicalUrl = getCanonicalUrl(lang);
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -160,7 +154,7 @@ export function generateStaticParams() {
 // STRUCTURED DATA / JSON-LD SCHEMAS
 // ─────────────────────────────────────────────
 
-function buildStructuredData(lang: Lang) {
+function buildStructuredData(lang) {
   const isAr = lang === "ar";
   const pageUrl = getCanonicalUrl(lang);
 
@@ -292,16 +286,10 @@ function buildStructuredData(lang: Lang) {
   };
 }
 
-export default async function LangLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: Promise<{ lang: string }>;
-}) {
+export default async function LangLayout({ children, params }) {
   const { lang: rawLang } = await params;
   if (rawLang !== "en" && rawLang !== "ar") notFound();
-  const lang: Lang = rawLang;
+  const lang = rawLang;
   const structuredData = buildStructuredData(lang);
   const skipLabel = meta[lang].skipToContent;
   const t = translations;

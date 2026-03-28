@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import type { Lang } from "@/app/data/translations";
 
 const SECTION_IDS = [
   "home",
@@ -14,7 +13,7 @@ const SECTION_IDS = [
   "contact",
 ];
 
-function getCurrentSection(): string {
+function getCurrentSection() {
   let bestId = "home";
   let bestDistance = Infinity;
   const viewportMiddle = window.innerHeight / 2;
@@ -37,17 +36,11 @@ function getCurrentSection(): string {
   return bestId;
 }
 
-export default function LanguageToggle({
-  lang,
-  label,
-}: {
-  lang: Lang;
-  label: string;
-}) {
+export default function LanguageToggle({ lang, label }) {
   const router = useRouter();
-  const nextLang: Lang = lang === "ar" ? "en" : "ar";
+  const nextLang = lang === "ar" ? "en" : "ar";
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleClick = (e) => {
     e.preventDefault();
     const section = getCurrentSection();
 

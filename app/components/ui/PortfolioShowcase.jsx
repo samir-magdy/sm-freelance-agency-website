@@ -5,7 +5,6 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { projects, projectsStructuredData } from "@/app/data/projects";
 import translations from "@/app/data/translations";
-import type { Lang } from "@/app/data/translations";
 import { StatusBar } from "@/app/components/ui/iphone/StatusBar";
 import { DynamicIsland } from "@/app/components/ui/iphone/DynamicIsland";
 import { HomeIndicator } from "@/app/components/ui/iphone/HomeIndicator";
@@ -14,12 +13,12 @@ import { NavArrow } from "@/app/components/ui/navigation/NavArrow";
 /* ─────────────────────────────────────
    Main Component
    ───────────────────────────────────── */
-export default function PortfolioShowcase({ lang }: { lang: Lang }) {
+export default function PortfolioShowcase({ lang }) {
   const t = translations.projectsSection;
   const [active, setActive] = useState(0);
-  const snapRef = useRef<HTMLDivElement>(null);
-  const phoneRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
+  const snapRef = useRef(null);
+  const phoneRef = useRef(null);
+  const sectionRef = useRef(null);
 
   /* Tag section for Safari-specific styling */
   useEffect(() => {
@@ -66,7 +65,7 @@ export default function PortfolioShowcase({ lang }: { lang: Lang }) {
   }, []);
 
   /* Programmatic scroll */
-  const scrollToProject = useCallback((idx: number) => {
+  const scrollToProject = useCallback((idx) => {
     const el = snapRef.current;
     if (!el || idx < 0 || idx >= projects.length) return;
     el.scrollTo({ left: idx * el.clientWidth, behavior: "smooth" });
@@ -74,9 +73,7 @@ export default function PortfolioShowcase({ lang }: { lang: Lang }) {
 
   const project = projects[active];
   const pd =
-    translations.projectData[
-      project.id as keyof typeof translations.projectData
-    ];
+    translations.projectData[project.id];
 
   const isRtl = lang === "ar";
 
@@ -189,7 +186,7 @@ export default function PortfolioShowcase({ lang }: { lang: Lang }) {
                       <div className="phone-scroll overflow-y-auto h-full [scrollbar-width:none]">
                         <Image
                           src={proj.screenshot}
-                          alt={`${translations.a11y.screenshotOf[lang]} ${translations.projectData[proj.id as keyof typeof translations.projectData].title[lang]}`}
+                          alt={`${translations.a11y.screenshotOf[lang]} ${translations.projectData[proj.id].title[lang]}`}
                           className="w-full h-auto block"
                           sizes="(min-width:1024px) 320px, 280px"
                           placeholder="blur"

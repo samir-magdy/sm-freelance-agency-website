@@ -38,6 +38,6 @@ const form = {
     en: "Something went wrong. Please try again.",
     ar: "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
   },
-} as const;
+};
 
 export default form;

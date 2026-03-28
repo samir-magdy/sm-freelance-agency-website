@@ -1,21 +1,8 @@
-import type { StaticImageData } from "next/image";
 import skywayScreenshot from "../../public/project-screenshots/skyway.webp";
 import ecommScnshot from "../../public/project-screenshots/e-commerce.webp";
 import { SITE_URL } from "./translations/lang";
 
-interface Project {
-  id: string;
-  liveUrl: string;
-  screenshot: StaticImageData;
-  schemaName: string;
-  schemaNameAr: string;
-  description: string;
-  genre: string;
-  genreAr: string;
-  keywords: string[];
-}
-
-export const projects: readonly Project[] = [
+export const projects = [
   {
     id: "fashion-ecommerce",
     liveUrl: "https://ecommerce.samirmagdy.com/",

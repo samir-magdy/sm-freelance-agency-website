@@ -1,8 +1,7 @@
 import translations from "@/app/data/translations";
-import type { Lang } from "@/app/data/translations";
 import FAQSearch from "@/app/components/ui/FAQSearch";
 
-export default function FAQSection({ lang }: { lang: Lang }) {
+export default function FAQSection({ lang }) {
   const t = translations.faqSection;
   const dir = lang === "ar" ? "rtl" : "ltr";
 

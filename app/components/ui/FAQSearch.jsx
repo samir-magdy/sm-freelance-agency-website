@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState, useCallback } from "react";
-import type { Lang } from "@/app/data/translations";
 
 const placeholder = { en: "Search questions...", ar: "ابحث في الأسئلة..." };
 const noResultsText = {
@@ -10,7 +9,7 @@ const noResultsText = {
 };
 
 /** Normalize Arabic text for fuzzy matching */
-function normalizeArabic(text: string): string {
+function normalizeArabic(text) {
   return text
     // Alef variants → bare alef (includes wavy hamza forms U+0672/0673/0675 and alef wasla U+0671)
     .replace(/[إأآٱٲٳٵ\u0622-\u0623\u0625]/g, "ا")
@@ -30,21 +29,15 @@ function normalizeArabic(text: string): string {
     .replace(/[\u200C\u200D]/g, "");
 }
 
-export default function FAQSearch({
-  lang,
-  children,
-}: {
-  lang: Lang;
-  children: React.ReactNode;
-}) {
+export default function FAQSearch({ lang, children }) {
   const isRtl = lang === "ar";
-  const listRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef(null);
   const [query, setQuery] = useState("");
   const [noResults, setNoResults] = useState(false);
 
-  const applyFilter = useCallback((value: string) => {
+  const applyFilter = useCallback((value) => {
     const q = normalizeArabic(value.toLowerCase().trim());
-    const items = listRef.current?.querySelectorAll<HTMLElement>(
+    const items = listRef.current?.querySelectorAll(
       "details[data-search]"
     );
     if (!items) return;
@@ -60,7 +53,7 @@ export default function FAQSearch({
   }, []);
 
   const handleSearch = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
+    (e) => {
       setQuery(e.target.value);
       applyFilter(e.target.value);
     },
