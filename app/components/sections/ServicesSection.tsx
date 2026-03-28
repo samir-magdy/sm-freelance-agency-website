@@ -26,16 +26,16 @@ export default function ServicesSection({ lang }: { lang: Lang }) {
 
   return (
     <section
-      id="services"
+      id="features"
       className="py-20 md:py-36 px-4"
-      aria-labelledby="services-heading"
+      aria-labelledby="features-heading"
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8 md:mb-12 text-center">
           <h2
-            id="services-heading"
+            id="features-heading"
             className="font-bold text-heading"
           >
             {t.heading[lang]}

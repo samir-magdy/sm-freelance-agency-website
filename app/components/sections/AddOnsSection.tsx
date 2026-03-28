@@ -10,9 +10,9 @@ export default function AddOnsSection({ lang }: { lang: Lang }) {
 
   return (
     <section
-      id="add-ons"
+      id="services"
       className="py-20 md:py-36 px-4"
-      aria-labelledby="addons-heading"
+      aria-labelledby="services-heading"
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="max-w-7xl mx-auto">
@@ -20,7 +20,7 @@ export default function AddOnsSection({ lang }: { lang: Lang }) {
         {/* Header */}
         <div className="mb-8 md:mb-12 text-center">
           <h2
-            id="addons-heading"
+            id="services-heading"
             className="font-bold text-heading"
           >
             {t.heading[lang]}

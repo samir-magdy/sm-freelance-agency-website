@@ -1,139 +1,36 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-import { scrollToSection } from "@/app/utils/scrollToSection";
-
-const SECTION_IDS = [
-  "home",
-  "goals",
-  "services",
-  "add-ons",
-  "portfolio",
-  "how-it-works",
-  "faq",
-  "contact",
-] as const;
-
-type SectionId = (typeof SECTION_IDS)[number];
-
 interface DesktopNavLinksProps {
   nav: {
+    features: string;
     services: string;
-    addOns: string;
-    projects: string;
-    howItWorks: string;
-    faq: string;
+    portfolio: string;
+    process: string;
+    FAQs: string;
     contact: string;
   };
 }
 
-const LINK_CONFIG: { href: `#${SectionId}`; labelKey: keyof DesktopNavLinksProps["nav"] }[] = [
+const LINK_CONFIG: { href: string; labelKey: keyof DesktopNavLinksProps["nav"] }[] = [
+  { href: "#features", labelKey: "features" },
   { href: "#services", labelKey: "services" },
-  { href: "#add-ons", labelKey: "addOns" },
-  { href: "#portfolio", labelKey: "projects" },
-  { href: "#how-it-works", labelKey: "howItWorks" },
-  { href: "#faq", labelKey: "faq" },
+  { href: "#portfolio", labelKey: "portfolio" },
+  { href: "#process", labelKey: "process" },
+  { href: "#FAQs", labelKey: "FAQs" },
   { href: "#contact", labelKey: "contact" },
 ];
 
-function hrefToSectionId(href: string): SectionId | null {
-  const id = href.replace(/^#/, "");
-  return SECTION_IDS.includes(id as SectionId) ? (id as SectionId) : null;
-}
-
-/** Ignore observer updates for this long after a nav click (smooth scroll duration). */
-const CLICK_LOCK_MS = 900;
-
 export default function DesktopNavLinks({ nav }: DesktopNavLinksProps) {
-  const [activeId, setActiveId] = useState<SectionId | null>(null);
-  const lockUntilRef = useRef(0);
-
-  const handleClick = (sectionId: SectionId | null) => {
-    if (sectionId === null) return;
-    setActiveId(sectionId);
-    lockUntilRef.current = Date.now() + CLICK_LOCK_MS;
-  };
-
-  useEffect(() => {
-    const ratios = new Map<string, number>();
-    let debounceId: ReturnType<typeof setTimeout> | null = null;
-    const DEBOUNCE_MS = 120;
-
-    const updateActive = () => {
-      if (Date.now() < lockUntilRef.current) return;
-      let bestId: SectionId | null = null;
-      let bestRatio = 0;
-      ratios.forEach((ratio, id) => {
-        if (ratio > bestRatio && SECTION_IDS.includes(id as SectionId)) {
-          bestRatio = ratio;
-          bestId = id as SectionId;
-        }
-      });
-      // Goals section is observed for scroll position but must not trigger an active nav state
-      setActiveId(bestId === "goals" ? null : bestId);
-    };
-
-    // Read nav height from the CSS variable so the observer's exclusion zone
-    // matches the fixed nav exactly — one source of truth.
-    const navH =
-      parseInt(
-        getComputedStyle(document.documentElement).getPropertyValue("--nav-h"),
-        10
-      ) || 80;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          const id = entry.target.id;
-          if (SECTION_IDS.includes(id as SectionId)) {
-            ratios.set(id, entry.intersectionRatio);
-          }
-        }
-        if (debounceId) clearTimeout(debounceId);
-        debounceId = setTimeout(updateActive, DEBOUNCE_MS);
-      },
-      {
-        root: null,
-        rootMargin: `-${navH}px 0px -15% 0px`,
-        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
-      }
-    );
-
-    SECTION_IDS.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => {
-      if (debounceId) clearTimeout(debounceId);
-      observer.disconnect();
-    };
-  }, []);
-
-  const linkClass =
-    "nav-link-underline text-[1.3rem] font-medium tracking-wider focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500";
-
   return (
     <ul className="flex w-full justify-around px-40">
-      {LINK_CONFIG.map(({ href, labelKey }) => {
-        const sectionId = hrefToSectionId(href);
-        const isActive = sectionId !== null && activeId === sectionId;
-        return (
-          <li key={href}>
-            <a
-              href={href}
-              onClick={(e) => {
-                e.preventDefault();
-                handleClick(sectionId);
-                if (sectionId) scrollToSection(sectionId);
-              }}
-              className={`${linkClass} ${isActive ? "nav-link-active text-content-heading" : "text-content-body hover:text-content-heading"}`}
-            >
-              {nav[labelKey]}
-            </a>
-          </li>
-        );
-      })}
+      {LINK_CONFIG.map(({ href, labelKey }) => (
+        <li key={href}>
+          <a
+            href={href}
+            className="nav-link-underline text-[1.3rem] font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
+          >
+            {nav[labelKey]}
+          </a>
+        </li>
+      ))}
     </ul>
   );
 }

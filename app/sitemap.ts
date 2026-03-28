@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { SITE_URL } from "./data/translations/lang";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const modifyDate = "2026-03-26";
+  const modifyDate = "2026-03-28";
   return [
     {
       url: SITE_URL,

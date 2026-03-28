@@ -7,11 +7,11 @@ export default function FAQSection({ lang }: { lang: Lang }) {
   const dir = lang === "ar" ? "rtl" : "ltr";
 
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="py-20 md:py-36 px-4" dir={dir}>
+    <section id="FAQs" aria-labelledby="FAQs-heading" className="py-20 md:py-36 px-4" dir={dir}>
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         <div className="mb-8 md:mb-12 text-center">
           <h2
-            id="faq-heading"
+            id="FAQs-heading"
             className="font-bold text-heading mb-2"
           >
             {t.heading[lang]}

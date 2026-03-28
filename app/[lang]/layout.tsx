@@ -308,11 +308,11 @@ export default async function LangLayout({
 
   const heroNavStrings = {
     nav: {
+      features: t.nav.features[lang],
       services: t.nav.services[lang],
-      addOns: t.nav.addOns[lang],
-      projects: t.nav.projects[lang],
-      howItWorks: t.nav.howItWorks[lang],
-      faq: t.nav.faq[lang],
+      portfolio: t.nav.portfolio[lang],
+      process: t.nav.process[lang],
+      FAQs: t.nav.FAQs[lang],
       contact: t.nav.contact[lang],
     },
     a11y: {

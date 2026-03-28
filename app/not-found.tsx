@@ -5,7 +5,7 @@ import "./styles/globals.css";
 const cairo = Cairo({
   variable: "--font-cairo",
   subsets: ["arabic", "latin"],
-  display: "swap",
+  display: "block",
 });
 
 export default function NotFound() {

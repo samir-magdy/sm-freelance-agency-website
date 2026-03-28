@@ -1,6 +1,5 @@
 import translations from "@/app/data/translations";
 import type { Lang } from "@/app/data/translations";
-import ScrollLink from "@/app/components/ui/ScrollLink";
 export default function HeroSection({ lang }: { lang: Lang }) {
   const t = translations;
   const hookLines = t.hero.name[lang];
@@ -65,15 +64,15 @@ export default function HeroSection({ lang }: { lang: Lang }) {
           </h2>
 
           <div className="flex flex-col items-center justify-center gap-6">
-            <ScrollLink
-              to="contact"
+            <a
+              href="#contact"
               className="cta-primary font-semibold md:font-normal text-center bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.1rem,1.8vw,1.6rem)] px-12 py-4 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
             >
               {t.hero.primaryCta[lang]}
-            </ScrollLink>
+            </a>
 
-            <ScrollLink
-              to="portfolio"
+            <a
+              href="#portfolio"
               className="ms-2 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-1 text-content-muted hover:text-content-body text-[clamp(1rem,1.3vw,1.25rem)] font-medium transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
             >
               {t.hero.secondaryCta[lang]}
@@ -93,7 +92,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
                   strokeLinejoin="round"
                 />
               </svg>
-            </ScrollLink>
+            </a>
           </div>
         </div>
       </section>

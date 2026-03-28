@@ -6,11 +6,11 @@ import type { Lang } from "@/app/data/translations";
 const SECTION_IDS = [
   "home",
   "goals",
+  "features",
   "services",
-  "add-ons",
   "portfolio",
-  "how-it-works",
-  "faq",
+  "process",
+  "FAQs",
   "contact",
 ];
 
@@ -55,7 +55,7 @@ export default function LanguageToggle({
 
     setTimeout(() => {
       document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
-    }, 500);
+    }, 650);
   };
 
   return (

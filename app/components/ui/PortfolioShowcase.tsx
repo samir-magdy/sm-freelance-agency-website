@@ -33,17 +33,15 @@ export default function PortfolioShowcase({ lang }: { lang: Lang }) {
   useEffect(() => {
     const el = phoneRef.current;
     if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("phone-frame-pulse");
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.5 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
+    const onScroll = () => {
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.75) {
+        el.classList.add("phone-frame-pulse");
+        window.removeEventListener("scroll", onScroll);
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   /* Sync scroll position → active state */

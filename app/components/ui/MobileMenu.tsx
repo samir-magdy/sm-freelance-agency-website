@@ -3,18 +3,17 @@
 import { useState } from "react";
 import Image from "next/image";
 import type { Lang } from "@/app/data/translations";
-import { scrollToSection } from "@/app/utils/scrollToSection";
 import LanguageToggle from "./LanguageToggle";
 import SocialIcons from "./SocialIcons";
 
 interface MobileMenuProps {
   lang: Lang;
   nav: {
+    features: string;
     services: string;
-    addOns: string;
-    projects: string;
-    howItWorks: string;
-    faq: string;
+    portfolio: string;
+    process: string;
+    FAQs: string;
     contact: string;
   };
   a11y: {
@@ -47,7 +46,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
         dir="ltr"
       >
         <div className="flex justify-between items-center py-1 px-3">
-          <a href="#home" aria-label="Samir Magdy - Home" onClick={(e) => { e.preventDefault(); scrollToSection("home"); }}>
+          <a href="#home" aria-label="Samir Magdy - Home">
             <Image
               src="/brand.svg"
               alt="SM Web Studio – Website Design Company in Egypt"
@@ -91,8 +90,15 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
         <ul className="flex flex-col items-center gap-4">
           <li>
             <a
+              href="#features"
+              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+            >
+              {nav.features}
+            </a>
+          </li>
+          <li>
+            <a
               href="#services"
-              onClick={(e) => { e.preventDefault(); scrollToSection("services"); }}
               className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav.services}
@@ -100,44 +106,31 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
           </li>
           <li>
             <a
-              href="#add-ons"
-              onClick={(e) => { e.preventDefault(); scrollToSection("add-ons"); }}
-              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
-            >
-              {nav.addOns}
-            </a>
-          </li>
-          <li>
-            <a
               href="#portfolio"
-              onClick={(e) => { e.preventDefault(); scrollToSection("portfolio"); }}
               className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
-              {nav.projects}
+              {nav.portfolio}
             </a>
           </li>
           <li>
             <a
-              href="#how-it-works"
-              onClick={(e) => { e.preventDefault(); scrollToSection("how-it-works"); }}
+              href="#process"
               className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
-              {nav.howItWorks}
+              {nav.process}
             </a>
           </li>
           <li>
             <a
-              href="#faq"
-              onClick={(e) => { e.preventDefault(); scrollToSection("faq"); }}
+              href="#FAQs"
               className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
-              {nav.faq}
+              {nav.FAQs}
             </a>
           </li>
           <li>
             <a
               href="#contact"
-              onClick={(e) => { e.preventDefault(); scrollToSection("contact"); }}
               className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav.contact}

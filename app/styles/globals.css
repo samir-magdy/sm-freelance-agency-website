@@ -26,8 +26,7 @@
   --gold-light: 46 100% 45%;
   --gold-dark: 46 50% 32%; /* gradient endpoint */
 
-  /* Fixed nav height — single source of truth consumed by scroll-margin-top
-     (CSS) and IntersectionObserver rootMargin (JS via getComputedStyle).
+  /* Fixed nav height reference values.
      Mobile navbar: 65px logo + 2×4px py-1 = 73px.
      Desktop navbar: 115px logo + 2×8px py-2 = 131px (xl breakpoint). */
 }
@@ -152,12 +151,6 @@ html.fonts-ready .hero-fade {
   );
 }
 
-/* Active section: same look as hover, no transition so it doesn't re-animate on click/scroll */
-.nav-link-underline.nav-link-active::before {
-  width: 100%;
-  border-radius: 9999px;
-  transition: none;
-}
 
 /* ══════════════════════════════════════
    5. Primary CTA — Shimmer Effect + Conversion Animations
@@ -175,7 +168,7 @@ html.fonts-ready .hero-fade {
 @keyframes ctaEntrance {
   from { 
     opacity: 0;
-    transform: translateY(100); 
+    transform: translateY(100%);
   }
   to { 
     opacity: 1;
