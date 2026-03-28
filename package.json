@@ -1,5 +1,5 @@
 {
-  "name": "samir-magdy-portfolio",
+  "name": "sm-web-studio",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
