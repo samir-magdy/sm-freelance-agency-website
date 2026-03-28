@@ -7,7 +7,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
   return (
     <>
       <section
-        id="home"
+        id="SMWebStudioEG"
         className="h-[100dvh] flex items-center justify-center relative"
       >
         {/* Dot grid + radial glow background */}

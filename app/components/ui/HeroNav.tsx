@@ -39,7 +39,7 @@ export default function HeroNav({
         className="hidden xl:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl px-8 pe-10"
       >
         <div className="py-2 relative flex items-center w-full">
-          <a href="#home" aria-label="Samir Magdy - Home">
+          <a href="#SMWebStudioEG" aria-label="Samir Magdy Web Studio - Home">
             <Image
               src="/brand.svg"
               alt="SM Web Studio – Website Design Company in Egypt"

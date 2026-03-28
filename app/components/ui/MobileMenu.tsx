@@ -46,7 +46,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }: MobileM
         dir="ltr"
       >
         <div className="flex justify-between items-center py-1 px-3">
-          <a href="#home" aria-label="Samir Magdy - Home">
+          <a href="#SMWebStudioEG" aria-label="Samir Magdy Web Studio - Home">
             <Image
               src="/brand.svg"
               alt="SM Web Studio – Website Design Company in Egypt"
