@@ -2,12 +2,12 @@ export default function SocialIcons() {
   return (
     <ul
       dir="ltr"
-      className="flex items-center gap-3 sm:gap-2.5"
+      className="flex items-center gap-3 sm:gap-4"
       aria-label="Social media links"
     >
       <li>
         <a
-          href="https://www.instagram.com/smweb.studio"
+          href="https://www.instagram.com/SMWebStudioEG"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visit SM Web Studio on Instagram"
