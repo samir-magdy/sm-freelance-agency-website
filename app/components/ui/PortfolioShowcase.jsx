@@ -90,7 +90,7 @@ export default function PortfolioShowcase({ lang }) {
       />
 
       {/* ── Section heading ── */}
-      <div className="text-center relative z-[2] px-5 mb-6 sm:mb-10 lg:mb-16">
+      <div className="text-center relative z-[2] px-5 mb-4 sm:mb-10 lg:mb-12">
         <h2
           id="portfolio-heading"
           className="font-bold text-heading"

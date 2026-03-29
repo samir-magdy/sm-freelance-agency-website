@@ -1,6 +1,12 @@
 const faqSection = {
   heading: { en: "Frequently Asked Questions", ar: "الأسئلة الشائعة" },
-
+  searchBar: {
+    placeholder: { en: "Search questions...", ar: "ابحث في الأسئلة..." },
+    noResultsText: {
+      en: "No matching keywords found.",
+      ar: "لم يتم العثور على أسئلة مطابقة.",
+    },
+  },
   items: [
     // ===== TOP OF FUNNEL (Awareness) =====
     {
@@ -19,7 +25,7 @@ const faqSection = {
         ar: "إيه هو الـ SEO وليه شغلي محتاجه؟",
       },
       answer: {
-        en: "SEO stands for Search Engine Optimization. It's the process of making your website easier for Google to find, understand, and rank when people search for your services. Without SEO, your website may exist but remain invisible in search results. With proper SEO, your business can appear when potential customers in your area (and globaly) are actively looking for what you offer. Every website we build includes a technical SEO foundation as standard, and we offer an advanced SEO Content Package as an add-on for businesses that want maximum optimization for specific consumer search intent.",
+        en: "SEO stands for Search Engine Optimization. It's the process of making your website easier for Google to find, understand, and rank when people search for your services. Without SEO, your website may exist but remain invisible in search results. With proper SEO, your business can appear when potential customers in your area (and globally) are actively looking for what you offer. Every website we build includes a technical SEO foundation as standard, and we offer an advanced SEO Content Package as an add-on for businesses that want maximum optimization for specific consumer search intent.",
         ar: "SEO هو اختصار لـ 'تحسين محركات البحث'. وهي عملية تهدف لجعل موقعك أسهل في الاكتشاف والفهم والظهور في المراتب الأولى على جوجل عندما يبحث الناس عن خدماتك. بدون SEO، قد يتواجد موقعك تقنياً لكنه سيظل غير مرئي في نتائج البحث. مع التهيئة الصحيحة، يظهر نشاطك للعملاء الذين يبحثون فعلياً عما تقدمه. كل موقع نبنيه يتضمن أساساً تقنياً للـ SEO كمعيار قياسي، ونوفر تطوير محتوى SEO متقدمة كإضافة للشركات التي ترغب في المنافسة على كلمات بحث محددة.",
       },
     },
@@ -61,7 +67,7 @@ const faqSection = {
         ar: "إيه الفرق بين ووردبريس (WordPress) والكود المخصص؟",
       },
       answer: {
-        en: "WordPress and similar online builders are faster to build and launch a website, but they're general-purpose tools built for everyone, which means they carry a lot of extra weight. Outdated Plugins and bloated themes are just some of the factors that can slow a Wordpress website down, make it more vulnerable to hacking, and hurt your Google rankings since page speed is a direct ranking factor. Custom code is built specifically for your needs by a professional so it does not suffer from these issues.",
+        en: "WordPress and similar online builders are faster to build and launch a website, but they're general-purpose tools built for everyone, which means they carry a lot of extra weight. Outdated Plugins and bloated themes are just some of the factors that can slow a WordPress website down, make it more vulnerable to hacking, and hurt your Google rankings since page speed is a direct ranking factor. Custom code is built specifically for your needs by a professional so it does not suffer from these issues.",
         ar: "ووردبريس والمنصات الجاهزة أسرع في الإطلاق، لكنها أدوات عامة مصممة للجميع، مما يعني أنها تحمل الكثير من الأكواد الزائدة. الإضافات والقوالب قد تبطئ الموقع وتجعله أكثر عرضة للاختراق وتضر بترتيبك على جوجل، حيث أن سرعة الصفحة عامل تصنيف أساسي. أما الكود المخصص فيُبنى خصيصاً لاحتياجاتك، مما يجعله أسرع، وأكثر أماناً، وأفضل أداءً في نتائج البحث.",
       },
     },
@@ -71,7 +77,7 @@ const faqSection = {
         ar: "ايه أسعار تصميم المواقع في مصر؟",
       },
       answer: {
-        en: "The reality of the tech industry is that there is no single average cost for a website, it can start anywhere from 5000 EGP and reach much higher costs. Every website is priced according to its scope and complexity. Price also varies greatly based on what technology was used to build the website. Let's say, there are 2 sites, one built with WordPress and the other with Next.js. Assuming that both websites have the same or similiar features WordPress is usually quite cheaper than a custom coded website, and for good reason (see 'What's the difference between WordPress and custom code?'). Since we do not use wordpress, we will be noting custom website prices in the following explanation. A simple custom-coded landing page with just the basic features starts from anywhere around 6,000 EGP, the price increases as more content, sections and features are added. Multi-page websites and e-commerce websites start from around 12,000 can reach much higher costs, since these are by far the most complex and time-consuming to build. We provide a clear, detailed price quote after our first consultation.",
+        en: "The reality of the tech industry is that there is no single average cost for a website; it can start anywhere from 5000 EGP and reach much higher costs. Every website is priced according to its scope and complexity. Price also varies greatly based on what technology was used to build the website. Let's say, there are 2 sites, one built with WordPress and the other with Next.js. Assuming that both websites have the same or similar features, WordPress is usually quite cheaper than a custom coded website, and for good reason (see 'What's the difference between WordPress and custom code?'). Since we do not use wordpress, we will be noting custom website prices in the following explanation. A simple custom-coded landing page with just the basic features starts from anywhere around 6,000 EGP, the price increases as more content, sections and features are added. Multi-page websites and e-commerce websites start from around 12,000 EGP and can reach much higher costs, since these are by far the most complex and time-consuming to build. We provide a clear, detailed price quote after our first consultation.",
         ar: "الحقيقة في مجال التكنولوجيا هي أنه لا يوجد تكلفة متوسطة ثابتة للموقع الإلكتروني؛ فتكلفة الموقع قد تبدأ من 6,000 جنيه مصري وتصل إلى مبالغ أعلى بكثير. يتم تسعير كل موقع بناءً على حجمه ومدى تعقيده، كما تختلف التكلفة بشكل كبير حسب التقنية المستخدمة في بنائه. تبدأ تكلفة صفحة الهبوط البسيطة والمبرمجة من الصفر (بالميزات الأساسية فقط) من حوالي 6,000 جنيه، وتزداد التكلفة مع إضافة المزيد من المحتوى والأقسام والخصائص. أما المواقع متعددة الصفحات والمتاجر الإلكترونية فتصل تكلفتها إلى مبالغ أعلى بكثير، وتُعد المتاجر الإلكترونية هي الأغلى على الإطلاق نظراً لتعقيد برمجتها. ومع ذلك، نضمن لك أن أسعارنا تنافسية ومناسبة مقارنة بالسوق المحلي، ونقدم لك عرض سعر واضحاً ومفصلاً بعد جلستنا الاستشارية الأولى.",
       },
     },
@@ -81,8 +87,8 @@ const faqSection = {
         ar: "بتستخدموا تقنيات إيه في بناء المواقع؟",
       },
       answer: {
-        en: "We build every website from scratch using the Next.js frame-work, which is the industry standard. Websites of giants like TikTok, Netflix, Nike, Github and more are all built with. The result is better SEO, higher performance, better security, and an all-round better website.",
-        ar: "نحن نبني كل موقع من الصفر باستخدام الكود المخصص. في أغلب المشاريع، نستخدم أكواداً تضمن سرعة تحميل فائقة. أما للمواقع الأكبر أو الأكثر تعقيداً، فنستخدم إطار عمل حديث يسمى Next.js للتعامل مع الوظائف المتقدمة والأداء العالي. النتيجة في كلتا الحالتين واحدة: موقع أسرع، وأكثر أماناً، وأفضل أداءً.",
+        en: "We build every website from scratch using the Next.js framework, which is the industry standard. Websites of giants like TikTok, Netflix, Nike, GitHub and more are all built with it. The result is better SEO, higher performance, better security, and an all-round better website.",
+        ar: "نحن نبني كل موقع من الصفر باستخدام إطار عمل Next.js، وهو المعيار الصناعي المستخدم حالياً. مواقع عمالقة مثل TikTok وNike وGitHub وغيرهم مبنية باستخدامه. النتيجة: موقع أسرع، وأكثر أماناً، وأفضل في محركات البحث، وأفضل أداءً بشكل عام.",
       },
     },
 
@@ -115,7 +121,7 @@ const faqSection = {
       },
       answer: {
         en: "The timeline depends on the scope of the project and the technology used. With custom-code, a simple landing page is typically ready within 1 to 2 weeks. A more advanced website with more content and custom features can take 2 to 4 weeks.",
-        ar: "يعتمد ذلك على حجم المشروع. صفحة الهبوط البسيطة (4-5 أقسام) تستغرق عادة من 5 إلى 7 أيام عمل بمجرد استلام المحتوى والصور والهوية البصرية. أما المواقع الأكثر تقدماً فقد تستغرق من أسبوع إلى أسبوعين. العامل الأكبر المؤثر على الجدول الزمني هو سرعة توفير المحتوى من جانبكم.",
+        ar: "يعتمد ذلك على حجم المشروع والتقنية المستخدمة. صفحة الهبوط البسيطة المبرمجة بكود مخصص تكون جاهزة عادة خلال أسبوع إلى أسبوعين. أما المواقع الأكثر تقدماً مع محتوى وميزات إضافية فقد تستغرق من أسبوعين إلى أربعة أسابيع.",
       },
     },
     {
@@ -185,7 +191,7 @@ const faqSection = {
       },
       answer: {
         en: "If you change your mind before the design phase completes. We can refund your initial 25% deposit, this is not the standard in the industry however we aim at not just building excellent websites, but also customer satisfaction, which is why we provide this extra flexibility. If you cancel before the design phase is complete, no further payments are due. If you've already approved the design and paid the 50% development deposit, that payment is non-refundable since development will have already begun. We keep things fair and clearly outlined in your proposal before any transactions are made.",
-        ar: "الدفعة المقدمة بنسبة ٢٥٪ غير قابلة للاسترداد، لأنها تغطي الوقت والموارد المخصصة لبدء مشروعك. إذا ألغيت قبل اكتمال مرحلة التصميم، لا تُستحق أي دفعات إضافية. أما إذا كنت قد وافقت على التصميم ودفعت ٥٠٪ لبدء التطوير، فهذه الدفعة أيضًا غير قابلة للاسترداد لأن العمل على التطوير يكون قد بدأ فعلاً. كل هذا يكون موضحًا بالتفصيل في العرض المقدم قبل أي دفعة.",
+        ar: "إذا غيرت رأيك قبل اكتمال مرحلة التصميم، يمكننا استرداد دفعتك المقدمة بنسبة ٢٥٪. هذا ليس المعتاد في المجال، لكننا نسعى ليس فقط لبناء مواقع ممتازة بل أيضاً لرضا العملاء، ولهذا نوفر هذه المرونة الإضافية. إذا ألغيت قبل اكتمال مرحلة التصميم، لا تُستحق أي دفعات إضافية. أما إذا كنت قد وافقت على التصميم ودفعت ٥٠٪ لبدء التطوير، فهذه الدفعة غير قابلة للاسترداد لأن العمل على التطوير يكون قد بدأ فعلاً. نحرص على أن يكون كل شيء واضحاً ومفصلاً في العرض المقدم قبل أي دفعة.",
       },
     },
 
@@ -226,7 +232,7 @@ const faqSection = {
         ar: "هل شغلي هيظهر على خرايط جوجل؟",
       },
       answer: {
-        en: "For your business to appear on Google maps you need 2 things, a physical location and a Google Business Profile. A well-built website and a Google Business Profile work together to strengthen your local presence. We structure every website so Google can clearly recognize your business, its location, and its services. If you don't have a Google Business Profile yet, we offer full setup as an add-on to help you appear on Google Maps and local search results.",
+        en: "For your business to appear on Google Maps you need 2 things: a physical location and a Google Business Profile. A well-built website and a Google Business Profile work together to strengthen your local presence. We structure every website so Google can clearly recognize your business, its location, and its services. If you don't have a Google Business Profile yet, we offer full setup as an add-on to help you appear on Google Maps and local search results.",
         ar: "الموقع الإلكتروني المتقن وحساب 'جوجل لنشاطي التجاري' يعملان معاً لتعزيز حضورك المحلي. نحن نهيئ الموقع ليتعرف جوجل بوضوح على موقعك وخدماتك. وإذا لم تكن تملك حساباً على خرائط جوجل بعد، فنحن نقدم خدمة إعداده بالكامل كإضافة لمساعدتك في الظهور المحلي.",
       },
     },
@@ -237,7 +243,7 @@ const faqSection = {
       },
       answer: {
         en: "At SM Web Studio, we have a unique approach to e-commerce. Our default build is a 'no login', COD system. This makes the build simpler, much more user friendly and most importantly much more affordable. A professional e-commerce store with us starts from around 10,000 EGP. Since e-commerce requires more complexity, it carries a higher starting price to ensure your store is reliable and ready for sales. If you're curious about the general market prices here they are. Standard shopify/wordpress site starts around 20,000 EGP, custom-coded e-commerce with authentication and payment gateways start around 30,000.",
-        ar: "تبدأ تكلفة إنشاء متجر إلكتروني احترافي من تقريباً 12,000 جنيه مصري لأبسط متجر ممكن. يشمل ذلك إعداد قائمة المنتجات، ودمج طرق دفع سهلة مثل إنستاباي (InstaPay) والدفع عند الاستلام (COD)، مع ضمان تجربة شراء سلسة لعملائك. ولأن المتاجر الإلكترونية تتطلب برمجة أكثر تعقيداً وإدارة لقواعد البيانات وتأميناً مكثفاً مقارنة بالمواقع العادية، فإنها تبدأ بتكلفة أعلى لضمان استقرار المتجر وجاهزيته للبيع.",
+        ar: "تبدأ تكلفة إنشاء متجر إلكتروني احترافي من تقريباً 10,000 جنيه مصري لأبسط متجر ممكن. يشمل ذلك إعداد قائمة المنتجات، ودمج طرق دفع سهلة مثل إنستاباي (InstaPay) والدفع عند الاستلام (COD)، مع ضمان تجربة شراء سلسة لعملائك. ولأن المتاجر الإلكترونية تتطلب برمجة أكثر تعقيداً وإدارة لقواعد البيانات وتأميناً مكثفاً مقارنة بالمواقع العادية، فإنها تبدأ بتكلفة أعلى لضمان استقرار المتجر وجاهزيته للبيع.",
       },
     },
     {
@@ -287,7 +293,7 @@ const faqSection = {
         ar: "بتشتغلوا مع شركات بره القاهرة؟",
       },
       answer: {
-        en: "Yes. Everything we do is remote, so location is never a barrier. Wherever you're based, we can build your website. We use online meeting tools and Payoneer to communicate and exchange payment.",
+        en: "Yes. Everything we do is remote, so location is never a barrier. Wherever you're based, we can build your website. We use online meeting tools to communicate and Payoneer to exchange payment.",
         ar: "نحن نعمل عن بُعد بالكامل، لذا لا يشكل الموقع الجغرافي أي عائق. أينما كان مقر عملك، يمكننا بناء موقعك الإلكتروني باحترافية.",
       },
     },

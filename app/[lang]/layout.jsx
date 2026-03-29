@@ -30,9 +30,11 @@ const META_DESCRIPTION = {
 };
 
 const SOCIAL_LINKS = {
-  instagram: "https://www.instagram.com/smweb.studio",
   facebook: "https://www.facebook.com/SMWebStudioEG",
+  instagram: "https://www.instagram.com/SMWebStudioEG",
   x: "https://x.com/SMWebStudioEG",
+  youtube: "https://www.youtube.com/@SMWebStudioEG",
+  linkedin: "https://www.linkedin.com/in/SMWebStudioEG"
 };
 
 // ─────────────────────────────────────────────
@@ -211,7 +213,7 @@ function buildStructuredData(lang) {
         },
       ],
     },
-    sameAs: [SOCIAL_LINKS.facebook, SOCIAL_LINKS.instagram, SOCIAL_LINKS.x],
+    sameAs: [SOCIAL_LINKS.facebook, SOCIAL_LINKS.instagram, SOCIAL_LINKS.x, SOCIAL_LINKS.youtube, SOCIAL_LINKS.linkedin],
     founder: { "@id": `${SITE_URL}/#founder` },
     knowsLanguage: ["en", "ar"],
     openingHoursSpecification: [

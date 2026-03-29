@@ -80,13 +80,14 @@ Other section IDs: `#home` (HeroSection), `#goals` (GoalSection).
 | DynamicIsland | `app/components/ui/iphone/DynamicIsland.jsx` |
 | HomeIndicator | `app/components/ui/iphone/HomeIndicator.jsx` |
 | StatusBar | `app/components/ui/iphone/StatusBar.jsx` |
+| LanguageToggle | `app/components/ui/LanguageToggle.jsx` |
+
 
 **Client Components (7):**
 
 | Component | Path | Why Client |
 |-----------|------|------------|
 | MobileMenu | `app/components/ui/MobileMenu.jsx` | useState for open/close |
-| LanguageToggle | `app/components/ui/LanguageToggle.jsx` | Hash preservation on lang switch |
 | FontReadyTrigger | `app/components/ui/FontReadyTrigger.jsx` | document.fonts API |
 | FAQSearch | `app/components/ui/FAQSearch.jsx` | Search input state |
 | ContactForm | `app/components/ui/ContactForm.jsx` | Form state + submission |

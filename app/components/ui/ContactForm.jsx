@@ -1,17 +1,53 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const INDUSTRY_OPTIONS = [
-  { value: "restaurant", en: "Restaurant / Caf\u00e9", ar: "\u0645\u0637\u0639\u0645 / \u0643\u0627\u0641\u064a\u0647" },
-  { value: "retail", en: "Retail / E-commerce", ar: "\u062a\u062c\u0627\u0631\u0629 / \u0645\u062a\u062c\u0631 \u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a" },
-  { value: "healthcare", en: "Healthcare / Clinic", ar: "\u0635\u062d\u0629 / \u0639\u064a\u0627\u062f\u0629" },
-  { value: "real-estate", en: "Real Estate", ar: "\u0639\u0642\u0627\u0631\u0627\u062a" },
-  { value: "education", en: "Education / Training", ar: "\u062a\u0639\u0644\u064a\u0645 / \u062a\u062f\u0631\u064a\u0628" },
-  { value: "travel", en: "Travel / Tourism", ar: "\u0633\u064a\u0627\u062d\u0629 / \u0633\u0641\u0631" },
-  { value: "fitness", en: "Fitness / Gym", ar: "\u0644\u064a\u0627\u0642\u0629 \u0628\u062f\u0646\u064a\u0629 / \u062c\u064a\u0645" },
-  { value: "fashion", en: "Fashion / Beauty", ar: "\u0623\u0632\u064a\u0627\u0621 / \u062a\u062c\u0645\u064a\u0644" },
-  { value: "services", en: "Services / Consulting", ar: "\u062e\u062f\u0645\u0627\u062a / \u0627\u0633\u062a\u0634\u0627\u0631\u0627\u062a" },
+  {
+    value: "restaurant",
+    en: "Restaurant / Caf\u00e9",
+    ar: "\u0645\u0637\u0639\u0645 / \u0643\u0627\u0641\u064a\u0647",
+  },
+  {
+    value: "retail",
+    en: "Retail / E-commerce",
+    ar: "\u062a\u062c\u0627\u0631\u0629 / \u0645\u062a\u062c\u0631 \u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a",
+  },
+  {
+    value: "healthcare",
+    en: "Healthcare / Clinic",
+    ar: "\u0635\u062d\u0629 / \u0639\u064a\u0627\u062f\u0629",
+  },
+  {
+    value: "real-estate",
+    en: "Real Estate",
+    ar: "\u0639\u0642\u0627\u0631\u0627\u062a",
+  },
+  {
+    value: "education",
+    en: "Education / Training",
+    ar: "\u062a\u0639\u0644\u064a\u0645 / \u062a\u062f\u0631\u064a\u0628",
+  },
+  {
+    value: "travel",
+    en: "Travel / Tourism",
+    ar: "\u0633\u064a\u0627\u062d\u0629 / \u0633\u0641\u0631",
+  },
+  {
+    value: "fitness",
+    en: "Fitness / Gym",
+    ar: "\u0644\u064a\u0627\u0642\u0629 \u0628\u062f\u0646\u064a\u0629 / \u062c\u064a\u0645",
+  },
+  {
+    value: "fashion",
+    en: "Fashion / Beauty",
+    ar: "\u0623\u0632\u064a\u0627\u0621 / \u062a\u062c\u0645\u064a\u0644",
+  },
+  {
+    value: "services",
+    en: "Services / Consulting",
+    ar: "\u062e\u062f\u0645\u0627\u062a / \u0627\u0633\u062a\u0634\u0627\u0631\u0627\u062a",
+  },
   { value: "other", en: "Other", ar: "\u0623\u062e\u0631\u0649" },
 ];
 
@@ -39,19 +75,26 @@ const TIME_OPTIONS = [
 ];
 
 export default function ContactForm({ lang, strings }) {
+  const [currentDate, setCurrentDate] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     industry: "",
     contactMethod: "",
     phone: "",
     email: "",
-    bestDate: new Date().toISOString().split("T")[0],
+    bestDate: "",
     bestTime: "",
     message: "",
   });
   const [dateTouched, setDateTouched] = useState(false);
   const [status, setStatus] = useState("idle");
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    const today = new Date().toISOString().split("T")[0];
+    setCurrentDate(today);
+    setFormData((prev) => ({ ...prev, bestDate: today }));
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -78,7 +121,7 @@ export default function ContactForm({ lang, strings }) {
         contactMethod: "",
         phone: "",
         email: "",
-        bestDate: "",
+        bestDate: currentDate,
         bestTime: "",
         message: "",
       });
@@ -87,9 +130,7 @@ export default function ContactForm({ lang, strings }) {
     } catch (error) {
       const code = error instanceof Error ? error.message : "server_error";
       const errorMsg =
-        code === "rate_limit"
-          ? strings.errorRateLimit
-          : strings.errorGeneric;
+        code === "rate_limit" ? strings.errorRateLimit : strings.errorGeneric;
       setStatus("error");
       setErrorMessage(errorMsg);
       setTimeout(() => {
@@ -101,7 +142,7 @@ export default function ContactForm({ lang, strings }) {
 
   const selectBaseClass =
     "text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low focus:border-2 focus:border-border-strong outline-none appearance-none cursor-pointer";
-const selectClass = (value) =>
+  const selectClass = (value) =>
     `${selectBaseClass} ${value ? "text-content-heading" : "text-content-muted"}`;
   const labelClass =
     "block text-caption font-bold text-content-muted mb-2 ms-1";
@@ -187,13 +228,11 @@ const selectClass = (value) =>
               aria-labelledby="contact-method-label"
               className="flex flex-row gap-3"
             >
-              {(
-                [
-                  { value: "whatsapp", label: strings.whatsapp },
-                  { value: "phone-call", label: strings.phoneCall },
-                  { value: "email", label: strings.email },
-                ]
-              ).map(({ value, label }) => (
+              {[
+                { value: "whatsapp", label: strings.whatsapp },
+                { value: "phone-call", label: strings.phoneCall },
+                { value: "email", label: strings.email },
+              ].map(({ value, label }) => (
                 <label
                   key={value}
                   className={chipClass(formData.contactMethod === value)}
@@ -211,7 +250,9 @@ const selectClass = (value) =>
                         ...(value === "email"
                           ? { phone: "", bestDate: "", bestTime: "" }
                           : { email: "" }),
-                        ...(value !== "phone-call" && { bestDate: "", bestTime: "" }),
+                        ...(value !== "phone-call"
+                          ? { bestDate: "", bestTime: "" }
+                          : { bestDate: prev.bestDate || currentDate }),
                       }))
                     }
                     className="sr-only"
@@ -262,7 +303,10 @@ const selectClass = (value) =>
               <div>
                 <label htmlFor="bestDate" className={labelClass}>
                   {strings.bestDate}{" "}
-                  <span className="text-warning opacity-90" aria-label="required">
+                  <span
+                    className="text-warning opacity-90"
+                    aria-label="required"
+                  >
                     *
                   </span>
                 </label>
@@ -271,17 +315,22 @@ const selectClass = (value) =>
                     type="date"
                     id="bestDate"
                     required
-                    min={new Date().toISOString().split("T")[0]}
+                    min={currentDate || undefined}
                     className={`${selectBaseClass} ${dateTouched ? "text-content-heading" : "text-content-muted"} cursor-auto [&::-webkit-calendar-picker-indicator]:invert [&::-webkit-calendar-picker-indicator]:opacity-50 [&::-webkit-calendar-picker-indicator]:cursor-pointer`}
                     value={formData.bestDate}
                     onChange={(e) => {
                       setDateTouched(true);
-                      setFormData((prev) => ({ ...prev, bestDate: e.target.value }));
+                      setFormData((prev) => ({
+                        ...prev,
+                        bestDate: e.target.value,
+                      }));
                     }}
                   />
                   <div
                     className="absolute inset-y-0 end-0 w-10 cursor-pointer"
-                    onClick={() => document.getElementById("bestDate")?.showPicker?.()}
+                    onClick={() =>
+                      document.getElementById("bestDate")?.showPicker?.()
+                    }
                     aria-hidden="true"
                   />
                 </div>
@@ -290,7 +339,10 @@ const selectClass = (value) =>
               <div>
                 <label htmlFor="bestTime" className={labelClass}>
                   {strings.bestTime}{" "}
-                  <span className="text-warning opacity-90" aria-label="required">
+                  <span
+                    className="text-warning opacity-90"
+                    aria-label="required"
+                  >
                     *
                   </span>
                 </label>
@@ -301,7 +353,10 @@ const selectClass = (value) =>
                     className={selectClass(formData.bestTime)}
                     value={formData.bestTime}
                     onChange={(e) =>
-                      setFormData((prev) => ({ ...prev, bestTime: e.target.value }))
+                      setFormData((prev) => ({
+                        ...prev,
+                        bestTime: e.target.value,
+                      }))
                     }
                   >
                     <option value="">{strings.bestTimePlaceholder}</option>
@@ -346,7 +401,9 @@ const selectClass = (value) =>
           <div className="md:col-span-2">
             <label htmlFor="message" className={labelClass}>
               {strings.message}{" "}
-              <span className="text-content-muted font-normal">({strings.messageOptional})</span>
+              <span className="text-content-muted font-normal">
+                ({strings.messageOptional})
+              </span>
             </label>
             <textarea
               id="message"
@@ -374,12 +431,14 @@ const selectClass = (value) =>
               : "bg-gold hover:bg-gold-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light text-gray-900 disabled:opacity-50"
         }`}
       >
-        <span key={status === "loading" ? "default" : status} className="btn-label">
+        <span
+          key={status === "loading" ? "default" : status}
+          className="btn-label"
+        >
           {status === "loading" ? (
             strings.sending
           ) : status === "success" ? (
             <span className="flex items-center justify-center gap-1">
-
               {strings.success}
             </span>
           ) : status === "error" ? (

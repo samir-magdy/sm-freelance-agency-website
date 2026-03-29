@@ -26,13 +26,13 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
         className="absolute top-0 left-0 right-0 z-10 backdrop-blur-xl pointer-events-auto"
         dir="ltr"
       >
-        <div className="flex justify-between items-center py-1 px-3">
+        <div className="flex justify-between items-center px-3">
           <a href="#SMWebStudioEG" aria-label="Samir Magdy Web Studio - Home">
             <Image
               src="/brand.svg"
               alt="SM Web Studio – Website Design Company in Egypt"
-              width={65}
-              height={65}
+              width={80}
+              height={80}
               priority
             />
           </a>
@@ -68,7 +68,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
       <div
         className={`absolute inset-0 flex flex-col items-center justify-center transition-[opacity,visibility] duration-[250ms] ease-out ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
       >
-        <ul className="flex flex-col items-center gap-4">
+        <ul className="flex flex-col items-center gap-4 pb-12">
           <li>
             <a
               href="#features"
@@ -118,9 +118,9 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             </a>
           </li>
         </ul>
-        <div className="flex flex-col absolute bottom-12 items-center gap-10">
-          <LanguageToggle lang={lang} label={langToggleLabel} />
+        <div className="flex flex-col absolute bottom-20 items-center gap-6">
           <SocialIcons />
+          <LanguageToggle lang={lang} label={langToggleLabel} />
         </div>
       </div>
     </nav>

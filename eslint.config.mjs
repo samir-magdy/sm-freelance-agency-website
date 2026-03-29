@@ -1,16 +1,15 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import coreWebVitals from "eslint-config-next/core-web-vitals";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
+/** @type {import("eslint").Linter.Config[]} */
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals"),
+  ...coreWebVitals,
+  {
+    files: ["**/*.js", "**/*.jsx"],
+    rules: {
+      "no-undef": "error",
+      "no-unused-vars": "warn",
+    },
+  },
 ];
 
 export default eslintConfig;

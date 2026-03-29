@@ -18,7 +18,7 @@ const servicesSection = {
       en: "Fully Responsive",
       ar: "توافق مع جميع الأجهزة",
       desc: {
-        en: "Your website will work perfectly and look great on all devices. Phone, tablet, laptop, or Desktop.",
+        en: "Your website will work perfectly and look great on all devices. Phone, tablet, laptop, or desktop.",
         ar: "موقعك يعمل بشكل مثالي ويظهر باحترافية على جميع الأجهزة. بما يشمل موبايل، تابلت، أو لابتوب.",
       },
     },
@@ -42,7 +42,7 @@ const servicesSection = {
       en: "SEO Foundation",
       ar: "أسس محركات البحث",
       desc: {
-        en: "Your website is properly setup so customers find your website when searching for you on Google.",
+        en: "Your website is properly set up so customers can find you when searching on Google.",
         ar: "موقعك مهيأ لمحركات البحث منذ اليوم الأول، لتظهر في نتائج جوجل عند البحث.",
       },
     },

@@ -1,12 +1,9 @@
 "use client";
 
 import { useRef, useState, useCallback } from "react";
+import translations from "@/app/data/translations";
 
-const placeholder = { en: "Search questions...", ar: "ابحث في الأسئلة..." };
-const noResultsText = {
-  en: "No matching questions found.",
-  ar: "لم يتم العثور على أسئلة مطابقة.",
-};
+
 
 /** Normalize Arabic text for fuzzy matching */
 function normalizeArabic(text) {
@@ -70,7 +67,7 @@ export default function FAQSearch({ lang, children }) {
       {/* Search input */}
       <div className="w-full max-w-xl px-8 md:pt-8">
         <label htmlFor="faq-search" className="sr-only">
-          {placeholder[lang]}
+          {translations.faqSection.searchBar.placeholder[lang]}
         </label>
         <div className="relative">
           <svg
@@ -95,7 +92,7 @@ export default function FAQSearch({ lang, children }) {
             type="text"
             value={query}
             onChange={handleSearch}
-            placeholder={placeholder[lang]}
+            placeholder={translations.faqSection.searchBar.placeholder[lang]}
             className={`w-full bg-transparent border-b border-border-subtle py-3 text-base text-content-body placeholder:text-content-muted focus-visible:border-content-muted focus-visible:outline-none transition-colors ${
               isRtl ? "pr-6 pl-6" : "pl-6 pr-6"
             }`}
@@ -135,7 +132,7 @@ export default function FAQSearch({ lang, children }) {
       {/* No results message */}
       {noResults && (
         <p className="text-content-muted text-base text-center py-10">
-          {noResultsText[lang]}
+          {translations.faqSection.searchBar.noResultsText[lang]}
         </p>
       )}
     </>
