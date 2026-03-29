@@ -2,7 +2,7 @@ export default function SocialIcons() {
   return (
     <ul
       dir="ltr"
-      className="flex items-center gap-3 sm:gap-4"
+      className="flex items-center gap-4"
       aria-label="Social media links"
     >
       <li>
