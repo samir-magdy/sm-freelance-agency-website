@@ -1,7 +1,7 @@
 import { SITE_URL } from "./data/translations/lang";
 
 export default function sitemap() {
-  const modifyDate = "2026-03-28";
+  const modifyDate = new Date().toISOString();
   return [
     {
       url: SITE_URL,

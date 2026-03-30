@@ -157,18 +157,20 @@ export function generateStaticParams() {
 // ─────────────────────────────────────────────
 
 function buildStructuredData(lang) {
-  const isAr = lang === "ar";
   const pageUrl = getCanonicalUrl(lang);
 
   // 1. ProfessionalService — Primary business schema
+  // Canonical English content for stable @id resolution across locales.
+  // Language-specific content belongs on the WebPage and FAQPage nodes,
+  // which carry their own per-locale @id values.
   const businessSchema = {
     "@type": "ProfessionalService",
     "@id": `${SITE_URL}/#business`,
     name: SITE_NAME,
     alternateName: SITE_NAME_AR,
-    description: isAr
-      ? "نصمم مواقع إلكترونية عصرية تبني الثقة. امتلك حضور رقمي يليق بعلامتك التجارية. ابدأ اليوم."
-      : "SM Web Studio builds websites that create lasting trust. Boost your online presence with modern web design & development.",
+    inLanguage: "en",
+    description:
+      "SM Web Studio builds websites that create lasting trust. Boost your online presence with modern web design & development.",
     url: SITE_URL,
     telephone: PHONE_NUMBER,
     email: CONTACT_EMAIL,
@@ -192,23 +194,16 @@ function buildStructuredData(lang) {
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: isAr
-        ? "خدمات تصميم وتطوير مواقع في مصر"
-        : "Web Design & Development Services in Egypt",
+      name: "Web Design & Development Services in Egypt",
       itemListElement: [
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: isAr
-              ? "تصميم وتطوير مواقع"
-              : "Website Design & Development",
-            alternateName: isAr
-              ? "Website Design & Development"
-              : "تصميم وتطوير مواقع",
-            description: isAr
-              ? "تصميم وتطوير مواقع إحترافية باستخدام أحدث التقنيات."
-              : "Expert website design & development using modern technologies.",
+            name: "Website Design & Development",
+            alternateName: "تصميم وتطوير مواقع",
+            description:
+              "Expert website design & development using modern technologies.",
           },
         },
       ],
@@ -261,9 +256,7 @@ function buildStructuredData(lang) {
     "@id": `${SITE_URL}/#founder`,
     name: "Samir Magdy",
     alternateName: "سمير مجدي",
-    jobTitle: isAr
-      ? "مؤسس ومصمم ومطور مواقع"
-      : "Founder, Web Designer & Developer",
+    jobTitle: "Founder, Web Designer & Developer",
     url: SITE_URL,
     worksFor: { "@id": `${SITE_URL}/#business` },
   };
@@ -329,7 +322,7 @@ export default async function LangLayout({ children, params }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData),
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
           }}
         />
 
