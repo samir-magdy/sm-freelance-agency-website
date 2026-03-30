@@ -120,7 +120,10 @@ html.fonts-ready .hero-fade {
   animation-delay: 1.6s;
   animation-duration: 0.3s;
 }
-
+.hero-fade-whatsapp {
+  animation-delay: 2.8s;
+  animation-duration: 1s;
+}
 
 /* ══════════════════════════════════════
    4. Nav Link — Underline Hover Effect
@@ -395,16 +398,16 @@ html.fonts-ready[dir="rtl"] #portfolio-cta::before {
   from { opacity: 0; transform: translateY(-10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
+Fpulse
 .portfolio-info-enter { animation: portfolioInfoIn 0.3s ease-out both; }
 
 @keyframes phonePulse {
   0%, 100% { filter: drop-shadow(0 0 0 transparent); }
-  50%      { filter: drop-shadow(0 0 12px hsla(var(--gold-light) / 0.3)); }
+  50%      { filter: drop-shadow(0 0 12px hsla(var(--gold-light) / 0.6)); }
 }
 
 .phone-frame-pulse {
-  animation: phonePulse 1s ease-in-out 3;
+  animation: phonePulse 1s ease-in-out 2;
 }
 
 .portfolio-snap::-webkit-scrollbar { display: none; }

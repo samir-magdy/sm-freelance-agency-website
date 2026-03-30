@@ -2,6 +2,7 @@ const LINK_CONFIG = [
   { href: "#features", labelKey: "features" },
   { href: "#services", labelKey: "services" },
   { href: "#portfolio", labelKey: "portfolio" },
+  { href: "#pricing", labelKey: "pricing" },
   { href: "#process", labelKey: "process" },
   { href: "#FAQs", labelKey: "FAQs" },
   { href: "#contact", labelKey: "contact" },

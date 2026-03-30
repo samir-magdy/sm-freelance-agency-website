@@ -5,6 +5,8 @@ import servicesSection from "./services";
 import addOnsSection from "./addons";
 import { projectsSection, projectData } from "./projects";
 import workflowSection from "./workflow";
+import pricingSection from "./pricing";
+import aboutStrip from "./about";
 import faqSection from "./faq";
 import contactSection from "./contact";
 import form from "./form";
@@ -19,6 +21,8 @@ const translations = {
   addOnsSection,
   projectsSection,
   projectData,
+  aboutStrip,
+  pricingSection,
   workflowSection,
   faqSection,
   contactSection,

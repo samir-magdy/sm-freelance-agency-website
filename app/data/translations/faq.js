@@ -7,26 +7,26 @@ const faqSection = {
       ar: "لم يتم العثور على أسئلة مطابقة.",
     },
   },
-  items: [
+ items: [
     // ===== TOP OF FUNNEL (Awareness) =====
     {
       question: {
         en: "Do I need a website for my business?",
-        ar: "هل فعلاً شغلي محتاج موقع إلكتروني؟",
+        ar: "هل يحتاج شغلي فعلاً لموقع إلكتروني؟",
       },
       answer: {
-        en: "A professional website establishes a credible online presence, builds brand authority, captures search-driven consumer demand, and works for you 24/7. Whether you're a service provider, retailer, or freelancer, not having a website guarantees that you are losing potential customers.",
-        ar: "الموقع الإلكتروني الاحترافي بيزود مصداقيتك وبيرسخ وجودك أونلاين، ده غير إنه بيجيب لك عملاء بيدوروا عليك فعلاً وشغال لصالحك 24 ساعة. سواء كنت بتقدم خدمات، تاجر، أو فريلانسر، فعدم وجود موقع بيخليك تخسر عملاء محتملين كل يوم.",
+        en: "A professional website serves as the primary infrastructure for your digital identity. It establishes credibility, centralizes brand authority, and captures organic search traffic. In a digital-first economy, the absence of a dedicated website results in a loss of market share to competitors who maintain an accessible online presence.",
+        ar: "يعد الموقع الإلكتروني الاحترافي البنية التحتية الأساسية لهويتك الرقمية، حيث يعمل على ترسيخ المصداقية ومركزية سلطة العلامة التجارية واستقطاب الزيارات من محركات البحث. في ظل الاقتصاد الرقمي الحالي، يؤدي غياب الموقع الإلكتروني إلى فقدان حصة سوقية لصالح المنافسين الذين يمتلكون حضوراً متاحاً عبر الإنترنت.",
       },
     },
     {
       question: {
         en: "What is SEO and is it important for my business?",
-        ar: "يعني إيه SEO وليه هو مهم للبيزنس بتاعي؟",
+        ar: "يعني إيه SEO وليه هو مهم لشغلي؟",
       },
       answer: {
-        en: "SEO stands for Search Engine Optimization. It's the process of making your website easier for Google to find, understand, and rank when people search for your services. Without SEO, your website may exist but remain invisible in search results. With proper SEO, your business can appear when potential customers in your area (and globally) are actively looking for what you offer.",
-        ar: "الـ SEO هو 'تحسين محركات البحث'، ودي عملية بتخلي موقعك يظهر لجوجل بشكل أوضح ويرتبك في نتايج البحث الأولى لما الناس تدور على خدماتك. من غير SEO، موقعك ممكن يكون موجود بس مفيش حد شايفه. لكن بالـ SEO الصح، البيزنس بتاعك هيظهر للناس اللي بتدور فعلياً على اللي بتقدمه.",
+        en: "SEO (Search Engine Optimization) is the technical and strategic process of improving a website's visibility within search engine results pages. By optimizing technical structure and content relevance, SEO ensures your business is discoverable by users actively searching for your specific services, thereby reducing long-term customer acquisition costs.",
+        ar: "تحسين محركات البحث (SEO) هو عملية تقنية واستراتيجية تهدف لزيادة ظهور الموقع الإلكتروني في صفحات نتائج البحث. من خلال تحسين الهيكل التقني وملاءمة المحتوى، يضمن الـ SEO إمكانية وصول المستخدمين الذين يبحثون بنشاط عن خدماتك إليك، مما يقلل تكاليف جذب العملاء على المدى الطويل.",
       },
     },
     {
@@ -35,91 +35,50 @@ const faqSection = {
         ar: "إيه الفرق بين الـ SEO والإعلانات الممولة؟",
       },
       answer: {
-        en: "SEO (Search Engine Optimization) focuses on improving your website to rank organically in search engine results over time, driving sustainable, free traffic. Paid advertising, such as Google Ads, involves paying for ad placements to appear immediately at the top of search results. In short, SEO is a long-term strategy for organic growth, while paid ads offer instant visibility that stops as soon as your budget runs out.",
-        ar: "الـ SEO بيركز على تحسين موقعك عشان يظهر بشكل طبيعي ومجاني في نتايج البحث بمرور الوقت، وده بيجيب لك زوار بشكل مستدام. أما الإعلانات الممولة (زي إعلانات جوجل)، فإنت بتدفع مقابل إنك تظهر في الأول فوراً، بس الظهور ده بيوقف بمجرد ما الميزانية تخلص. باختصار: الـ SEO استثمار طويل الأمد، والإعلانات حل سريع ومؤقت.",
+        en: "SEO focuses on building organic equity and sustainable traffic through long-term optimization. Paid advertising, such as Google Ads (PPC), provides immediate visibility through financial bidding on keywords. While paid ads generate instant results that cease once the budget is exhausted, SEO builds a lasting digital asset that continues to drive traffic without per-click costs.",
+        ar: "يركز الـ SEO على بناء قيمة طبيعية وزيارات مستدامة من خلال التحسين طويل الأمد. أما الإعلانات الممولة (مثل إعلانات جوجل)، فتوفر ظهوراً فورياً عبر المزايدة المالية على الكلمات المفتاحية. وبينما تحقق الإعلانات نتائج لحظية تتوقف بانتهاء الميزانية، يبني الـ SEO أصلاً رقمياً دائماً يستمر في جلب الزيارات دون تكاليف مقابل كل نقرة.",
       },
     },
     {
       question: {
         en: "Can I build my own website instead of hiring someone?",
-        ar: "ينفع أعمل الموقع بنفسي بدل ما أجيب حد متخصص؟",
+        ar: "هل ينفع أعمل موقعي بنفسي بدل ما أجيب متخصص؟",
       },
       answer: {
-        en: "With the rise of AI tools, people with no technical background can now build a website. However, this comes with trade-offs like limited control over customization, weaker SEO, and the fact that it's quite time-consuming for non-tech individuals to build, deploy, and maintain a website. At one point or another, chances are you will need the help of a professional.",
-        ar: "مع أدوات الذكاء الاصطناعي، أي حد ممكن يعمل موقع من غير خلفية تقنية. بس ده بيكون ليه ضريبة، زي إنك مش هتعرف تخصص كل حاجة على مزاجك، والـ SEO بيكون أضعف، ده غير إن الموضوع بياخد وقت ومجهود كبير في المتابعة والصيانة. في مرحلة ما، غالباً هتحتاج مساعدة متخصص عشان تطلع نتيجة احترافية.",
+        en: "While automated tools allow for basic web construction, they often result in technical debt, limited scalability, and suboptimal SEO performance. Professional development ensures your site is built to modern engineering standards, providing superior performance, security, and a customized user experience that DIY platforms typically cannot match.",
+        ar: "بينما تسمح الأدوات المؤتمتة ببناء مواقع أساسية، إلا أنها غالباً ما تؤدي إلى مشاكل تقنية، محدودية في التوسع، وأداء ضعيف في محركات البحث. يضمن التطوير الاحترافي بناء موقعك وفقاً للمعايير الهندسية الحديثة، مما يوفر أداءً وتأميناً وتجربة مستخدم مخصصة لا تستطيع المنصات الجاهزة توفيرها عادةً.",
       },
     },
 
     // ===== MID-FUNNEL (Research) =====
     {
       question: {
-        en: "What is the difference between a landing page and a website?",
-        ar: "إيه الفرق بين صفحة الهبوط (Landing Page) والموقع الكامل؟",
-      },
-      answer: {
-        en: "They are essentially the same thing—a website. However, from a technical standpoint, a landing page is a single-page website designed to present your business and drive one clear action like a booking, call, or WhatsApp message. A 'website' includes additional pages and goes deeper with more detailed content. The right choice depends on where your business is and what you need right now. Landing pages are usually best suited for startups and smaller businesses, while multi-page websites are usually best suited for established businesses with more content to share.",
-        ar: "الاتنين في الأساس موقع إلكتروني، بس الفرق في الهدف. صفحة الهبوط بتكون صفحة واحدة مركزة على فعل معين (زي الحجز أو مكالمة واتساب). أما الموقع الكامل فبيكون فيه كذا صفحة وتفاصيل أكتر بكتير. الاختيار بيعتمد على مرحلة شغلك؛ صفحات الهبوط ممتازة للبدايات والشركات الصغيرة، والمواقع الكبيرة بتناسب الشركات المستقرة اللي عندها محتوى كتير.",
-      },
-    },
-    {
-      question: {
-        en: "What is WordPress?",
-        ar: "يعني إيه ووردبريس (WordPress)؟",
-      },
-      answer: {
-        en: "WordPress is a platform that lets you build websites quickly. Think of it like buying a pre-built house in pieces that you put together yourself. People use it because it's fast to set up, offers 'plug-and-play' features through plugins, and lets you instantly change the look with themes. However, downsides include being limited to available themes—which can result in a generic look—plugins that can conflict and cause bugs, and customization that can become tricky and messy.",
-        ar: "ووردبريس منصة بتخليك تعمل مواقع بسرعة، زي فكرة البيت الجاهز اللي بتركبه. ميزتها السرعة وإن فيها إضافات (Plugins) وقوالب جاهزة كتير. بس عيوبها إنك مقيد بالتصاميم المتاحة فموقعك ممكن يبان تقليدي، وساعات الإضافات دي بتعمل مشاكل وتهنيج في الموقع، والتعديلات العميقة فيه بتكون صعبة ومعقدة.",
-      },
-    },
-    {
-      question: {
-        en: "What's the difference between WordPress and custom code?",
-        ar: "إيه الفرق بين ووردبريس والكود المخصص (Custom Code)؟",
-      },
-      answer: {
-        en: "WordPress gives you a ready-made framework with themes and plugins for quick setup, while custom code is built from scratch by a web developer. Neither is necessarily better than the other; it all depends on your needs. If you want a decent-looking website in days, WordPress is the way to go. If you want to stand out, custom code offers better performance, SEO, security, and full customization. Think of it like this: a well-coded website is a handcrafted piece of art, whereas a WordPress site is a factory-line product.",
-        ar: "ووردبريس بيديك قالب جاهز عشان تخلص بسرعة، أما الكود المخصص فبيتبني من الصفر عشانك. مفيش واحد أحسن من التاني بالمطلق؛ لو مستعجل وعايز حاجة تمشي الحال فووردبريس مناسب. لكن لو عايز تميز، الكود المخصص بيديك أداء أحسن، أمان أعلى، وتخصيص كامل. الفرق بالظبط زي الفرق بين حاجة معمولة يدوي 'هاند ميد' وحاجة طالعة من مصنع.",
-      },
-    },
-    {
-      question: {
         en: "How much does a website cost in Egypt?",
-        ar: "أسعار المواقع في مصر كام؟",
+        ar: "تكلفة إنشاء موقع إلكتروني في مصر كام؟",
       },
       answer: {
-        en: "That question is directly comparable to asking, 'how much does an apartment cost?'. The cost of an apartment can range from EGP 400,000 for a small place to EGP 250,000,000 for a luxury penthouse. The concept is the same for websites. Prices can range from EGP 5,000 for a basic website to EGP 300,000+ for a sophisticated enterprise site built by large teams of specialized experts.",
-        ar: "السؤال ده شبيه بسؤال 'هي الشقة بكام؟'. السعر بيعتمد على المساحة والمكان والتشطيب. نفس الكلام في المواقع؛ السعر بيبدأ من 5,000 جنيه للمواقع البسيطة، وممكن يوصل لأرقام كبيرة للمواقع الضخمة اللي بتحتاج فريق عمل كامل. كل حاجة بتتسعر حسب احتياجاتك والمميزات اللي هتضيفها.",
+        en: "Pricing is determined by project scope and technical complexity, similar to how real estate valuation depends on specifications and location. Development costs can range from EGP 5,000 for standard landing pages to over EGP 300,000 for enterprise-grade solutions requiring custom integrations and dedicated engineering teams.",
+        ar: "يتم تحديد السعر بناءً على نطاق المشروع والتعقيد التقني، تماماً كما يعتمد تقييم العقارات على المواصفات والموقع. تتراوح تكاليف التطوير من 5,000 جنيه لصفحات الهبوط القياسية إلى أكثر من 300,000 جنيه للحلول المؤسسية الضخمة التي تتطلب تكاملات مخصصة وفرق هندسية متخصصة.",
       },
     },
     {
       question: {
         en: "What technologies do you use to build websites?",
-        ar: "بتستخدموا تكنولوجيا إيه في بناء المواقع؟",
+        ar: "إيه التقنيات اللي بتستخدموها في بناء المواقع؟",
       },
       answer: {
-        en: "We use the Next.js framework, which is one of the most widely used JavaScript frameworks. Websites for giants like Netflix, Nike, and Apple are all built using Next.js.",
-        ar: "بنستخدم إطار عمل Next.js، وده من أقوى وأشهر التكنولوجيات اللي بتستخدمها شركات عملاقة زي Netflix وNike وApple. وده بيضمن لك موقع سريع، آمن، ومواكب لأحدث المعايير.",
-      },
-    },
-
-    {
-      question: {
-        en: "Will my website work on mobile phones?",
-        ar: "هل الموقع هيشتغل كويس على الموبايل؟",
-      },
-      answer: {
-        en: "Of course. Every website we build is fully responsive, meaning it automatically adapts to look and work perfectly on any screen—phone, tablet, or desktop. This is crucial given that around 70% of Egyptians browse on mobile devices.",
-        ar: "أكيد طبعاً. كل موقع بنعمله بيكون متجاوب (Responsive) بالكامل، يعني بيظبط نفسه تلقائياً عشان يظهر بشكل مثالي على الموبايل أو التابلت أو الكمبيوتر. وده مهم جداً لأن حوالي 70% من المصريين بيتصفحوا من الموبايل.",
+        en: "We utilize the Next.js framework, a leading industry standard for high-performance web applications. This technology is employed by global enterprises such as Netflix, Nike, and Apple to ensure speed, SEO efficiency, and robust security architecture.",
+        ar: "نحن نستخدم إطار عمل Next.js، وهو معيار رائد في الصناعة لتطبيقات الويب عالية الأداء. تُستخدم هذه التقنية من قبل شركات عالمية مثل Netflix وNike وApple لضمان السرعة، وكفاءة الـ SEO، وبنية أمنية قوية.",
       },
     },
     {
       question: {
         en: "How long does it take for a new website to rank on Google?",
-        ar: "الموقع هياخد وقت قد إيه عشان يظهر في نتايج بحث جوجل؟",
+        ar: "الموقع بيحتاج وقت قد إيه عشان يظهر في نتائج بحث جوجل؟",
       },
       answer: {
-        en: "Google may index your website within days, but ranking for competitive keywords usually takes 3 to 6 months. We optimize your website speed, structure, and content from day one to improve your visibility in search results as efficiently as possible.",
-        ar: "جوجل ممكن يقرأ موقعك في خلال أيام، بس عشان تظهر في النتايج الأولى لكلمات عليها منافسة، الموضوع بياخد من 3 لـ 6 شهور. إحنا بنظبط سرعة الموقع وهيكليته من أول يوم عشان نسرع العملية دي على قد ما نقدر.",
+        en: "Search engines typically index new URLs within several days; however, achieving competitive rankings generally requires a consistent optimization period of 3 to 6 months. We implement structural SEO and performance optimization from the initial development phase to accelerate this timeline.",
+        ar: "تقوم محركات البحث عادةً بأرشفة الروابط الجديدة خلال أيام؛ ومع ذلك، فإن تحقيق ترتيب تنافسي يتطلب عادةً فترة تحسين مستمرة تتراوح من 3 إلى 6 أشهر. نحن نطبق قواعد الـ SEO الهيكلية وتحسين الأداء منذ مرحلة التطوير الأولى لتسريع هذه الدورة الزمنية.",
       },
     },
 
@@ -130,28 +89,18 @@ const faqSection = {
         ar: "بناء الموقع بياخد وقت قد إيه؟",
       },
       answer: {
-        en: "The timeline depends on the scope, size, and features requested. A landing page is typically ready within 1 to 2 weeks. A more advanced website with more content and custom features can take 2 to 3 weeks.",
-        ar: "الوقت بيعتمد على حجم المشروع والميزات المطلوبة. صفحة الهبوط غالباً بتخلص في أسبوع أو أسبوعين، والمواقع الأكبر اللي فيها تفاصيل أكتر بتاخد من أسبوعين لـ 3 أسابيع.",
+        en: "The development timeline is contingent upon project requirements. A standard landing page is typically deployed within 1 to 2 weeks, while advanced multi-page websites involving custom functionalities generally require a 2 to 3-week development cycle.",
+        ar: "تعتمد المدة الزمنية للتطوير على متطلبات المشروع. يتم نشر صفحة الهبوط القياسية عادةً في غضون أسبوع إلى أسبوعين، بينما تتطلب المواقع المتقدمة متعددة الصفحات التي تتضمن وظائف مخصصة دورة تطوير تتراوح من أسبوعين إلى 3 أسابيع.",
       },
     },
     {
       question: {
         en: "What do I need to provide to get started?",
-        ar: "إيه المطلوب مني عشان نبدأ؟",
+        ar: "إيه المطلوب مني عشان نبدأ شغل؟",
       },
       answer: {
-        en: "After the consultation, we will have a clear idea of your brand identity, goals, and functionalities. Following that, we just need your logo, written content, and any photos you want to include.",
-        ar: "بعد ما نتناقش ونعرف أهدافك، هنحتاج منك اللوجو (الشعار)، والكلام اللي حابب تكتبه عن خدماتك، وأي صور عايزنا نستخدمها. ومن هنا بنبدأ التنفيذ فوراً.",
-      },
-    },
-    {
-      question: {
-        en: "Do your websites support both English and Arabic?",
-        ar: "هل الموقع بيدعم لغتين (عربي وإنجليزي)؟",
-      },
-      answer: {
-        en: "We can build fully bilingual websites, including proper right-to-left (RTL) layout for Arabic. A bilingual site ensures your business is found on Google in either language, which is essential if you are targeting a diverse audience.",
-        ar: "نقدر نعمل موقع يدعم اللغتين بامتياز، مع مراعاة إن العربي يظهر من اليمين للشمال بشكل سليم. وجود لغتين بيساعدك تظهر في بحث جوجل باللغتين ويخليك توصل لجمهور أكبر وأنوع.",
+        en: "Following the initial consultation and requirements gathering, we require the provision of core brand assets. This includes your corporate identity (logo), finalized copywriting for each section, and any high-resolution visual assets or photography intended for the site.",
+        ar: "بعد الاستشارة الأولية وجمع المتطلبات، نحتاج إلى توفير أصول العلامة التجارية الأساسية. يشمل ذلك الهوية البصرية (اللوجو)، المحتوى المكتوب النهائي لكل قسم، وأي أصول بصرية أو صور فوتوغرافية عالية الجودة مخصصة للموقع.",
       },
     },
     {
@@ -160,49 +109,28 @@ const faqSection = {
         ar: "أعمل إيه لو لسه معنديش لوجو أو هوية بصرية؟",
       },
       answer: {
-        en: "We can work with what you have, even if it's just a name and a general business idea. If you need a logo or brand identity designed, our designer can handle that as a separate service before we start building your website.",
-        ar: "ما تقلقش خالص، نقدر نشتغل باللي معاك حتى لو مجرد اسم وفكرة. ولو محتاج تصميم لوجو أو هوية بصرية، المصمم بتاعنا يقدر ينفذ ده كخدمة منفصلة قبل ما نبدأ في بناء الموقع.",
-      },
-    },
-    // ===== POST-LAUNCH (Retention) =====
-    {
-      question: {
-        en: "Can I update my website's content myself?",
-        ar: "ينفع أعدل في محتوى الموقع بنفسي؟",
-      },
-      answer: {
-        en: "Editing it yourself requires a content management dashboard—a 'control panel' where you can create, modify, or delete content within the website's existing structure. A dashboard system adds complexity and cost and is not necessary unless you plan to change content frequently, such as for an e-commerce store.",
-        ar: "عشان تعدل بنفسك، بنحتاج نعمل 'لوحة تحكم' (Dashboard) للموقع. ودي بتزود تكلفة ووقت التنفيذ شوية، ومش بننصح بيها إلا لو كنت هتغير المحتوى كتير جداً، زي المتاجر الإلكترونية اللي محتاجة تحديث يومي للمنتجات والأسعار.",
-      },
-    },
-    {
-      question: {
-        en: "Can I add new sections or features to my website?",
-        ar: "ينفع أزود ميزات أو أقسام جديدة للموقع بعدين؟",
-      },
-      answer: {
-        en: "Yes. Your website is expandable. If you want to add a new section, feature, or functionality later on, we can handle that for you since we built the original code.",
-        ar: "طبعاً، موقعك قابل للتطوير في أي وقت. لو شغلك كبر وحبيت تزود قسم جديد أو ميزة تانية، بنقدر نعمل ده بسهولة لإننا إحنا اللي كاتبين الكود الأساسي للموقع.",
+        en: "We can initiate development based on your business objectives and preliminary naming. If required, we offer professional brand development and visual identity design as a separate consulting service to establish your brand guidelines before the website launch.",
+        ar: "يمكننا بدء التطوير بناءً على أهداف عملك والاسم المقترح. وإذا لزم الأمر، نقدم خدمة تطوير العلامة التجارية وتصميم الهوية البصرية كخدمة استشارية منفصلة لوضع معايير علامتك التجارية قبل إطلاق الموقع.",
       },
     },
     {
       question: {
         en: "Will my business show up on Google Maps?",
-        ar: "هل شغلي هيظهر على خرايط جوجل؟",
+        ar: "هل شغلي هيظهر على خرائط جوجل؟",
       },
       answer: {
-        en: "To appear on Google Maps, you need a physical location and a Google Business Profile. While a website isn't technically required for a map listing, a well-built site and a Business Profile work together to strengthen your local presence and help you rank higher.",
-        ar: "عشان تظهر على الخرايط، بتحتاج يكون ليك مكان فعلي وحساب على Google Business Profile. الموقع مش شرط أساسي للظهور، بس وجود موقع احترافي مع حساب الخرائط بيقوي وجودك جداً ويخليك تظهر في النتايج الأولى.",
+        en: "Visibility on Google Maps requires a verified Google Business Profile and a physical operating location. While a website is not a prerequisite for a map listing, a high-quality site significantly enhances your Local SEO signals, improving your rank in localized search queries.",
+        ar: "تطلب الظهور على خرائط جوجل وجود ملف تجاري مفعل وموقع جغرافي فعلي. وبينما لا يعد الموقع الإلكتروني شرطاً مسبقاً للإدراج في الخرائط، إلا أن الموقع عالي الجودة يعزز إشارات الـ SEO المحلية، مما يحسن ترتيبك في نتائج البحث الجغرافية.",
       },
     },
     {
       question: {
         en: "Can I sell products on my website?",
-        ar: "ينفع أبيع منتجاتي على الموقع؟",
+        ar: "هل ينفع أبيع منتجاتي من خلال الموقع؟",
       },
       answer: {
-        en: "At SM Web Studio, we have a unique approach to e-commerce. Our default build is a 'no-login', payment-on-delivery WhatsApp checkout system. This makes the build faster, more user-friendly, and more affordable. We also provide an admin dashboard to control stock availability and manage products.",
-        ar: "إحنا في SM Web Studio بنستخدم طريقة ذكية للمتاجر؛ بنعمل نظام 'طلب عبر واتساب' من غير تعقيدات تسجيل الدخول، وده بيخلي الشراء أسرع وأرخص في التنفيذ. وبنديك لوحة تحكم بسيطة تقدر منها تغير المنتجات والأسعار والمخزون بسهولة.",
+        en: "We implement a streamlined e-commerce model optimized for conversion, utilizing a 'direct-to-WhatsApp' checkout system that bypasses mandatory account registration. This approach reduces friction and development overhead while providing a dedicated administrative interface for inventory and product management.",
+        ar: "نحن نطبق نموذجاً للتجارة الإلكترونية مصمماً لزيادة معدل التحويل، باستخدام نظام طلب عبر واتساب يتجاوز إلزامية تسجيل الحساب. يقلل هذا النهج من تعقيد الاستخدام وتكاليف التطوير، مع توفير واجهة إدارية مخصصة لإدارة المخزون والمنتجات.",
       },
     },
     {
@@ -211,8 +139,8 @@ const faqSection = {
         ar: "يعني إيه استضافة (Hosting) ونشر (Deployment)؟",
       },
       answer: {
-        en: "Think of hosting as renting space on the internet where your website lives. Without it, your site has no place to exist. Deployment is simply the final step of turning files on a computer into a live website accessible to the world.",
-        ar: "الاستضافة هي كأنك بتأجر 'مساحة' على الإنترنت عشان ملفات موقعك تسكن فيها. أما النشر (Deployment) فهو الخطوة الأخيرة اللي بنحول فيها الأكواد لموقع حي أي حد في العالم يقدر يشوفه.",
+        en: "Hosting refers to the server infrastructure where your website's data is stored for global accessibility. Deployment is the technical procedure of transferring the developed source code to these live servers, making the application accessible via the public internet.",
+        ar: "تشير الاستضافة إلى بنية الخادم التحتية حيث يتم تخزين بيانات موقعك لضمان إمكانية الوصول العالمي. أما النشر فهو الإجراء التقني لنقل الكود المصدري المطور إلى هذه الخوادم الحية، مما يجعل التطبيق متاحاً عبر شبكة الإنترنت العامة.",
       },
     },
     {
@@ -221,19 +149,18 @@ const faqSection = {
         ar: "يعني إيه دومين (Domain)؟",
       },
       answer: {
-        en: "A domain is your website's address, like 'yourcompany.com'. If hosting is the physical store, the domain is the street address you give to customers. Domains must be purchased and are subject to availability; we help you through this process.",
-        ar: "الدومين هو عنوان موقعك (زي yourcompany.com). لو الاستضافة هي المحل، فالدومين هو 'عنوان الشارع' اللي الناس هتوصل لك بيه. الدومين خدمة مدفوعة وإحنا بنساعدك تختار وتحجز اسم متاح ومناسب لشغلك.",
+        en: "A domain is the unique alphanumeric identifier (URL) used to access your website, such as 'company.com'. Functionally, it acts as a digital address that points users toward your hosted content. We facilitate the registration and configuration process based on availability.",
+        ar: "الدومين هو المعرف الفريد (URL) المستخدم للوصول إلى موقعك، مثل 'company.com'. من الناحية الوظيفية، يعمل كعنوان رقمي يوجه المستخدمين نحو محتواك المستضاف. نحن نقوم بتسهيل عملية التسجيل والإعداد بناءً على توفر الاسم.",
       },
     },
-
     {
       question: {
         en: "Do you work with businesses outside Cairo?",
-        ar: "بتشتغلوا مع شركات بره القاهرة؟",
+        ar: "هل بتشتغلوا مع شركات بره القاهرة؟",
       },
       answer: {
-        en: "Yes. Our work is entirely remote, so location is never a barrier. Wherever you are based, we can build your website professionaly.",
-        ar: "أكيد، شغلنا كله بيتم أونلاين 'عن بُعد'، فالمكان مش عائق أبداً. أياً كان مكانك فين، نقدر نطلع لك موقع احترافي ونتابع معاك كل الخطوات.",
+        en: "Yes. Our operational model is remote-first, allowing us to collaborate effectively regardless of geographic location. We maintain rigorous communication standards to ensure project alignment with clients both domestically and internationally.",
+        ar: "نعم. نموذج عملنا يعتمد على العمل عن بُعد، مما يسمح لنا بالتعاون الفعال بغض النظر عن الموقع الجغرافي. نحن نلتزم بمعايير اتصال صارمة لضمان توافق المشروع مع تطلعات عملائنا محلياً ودولياً.",
       },
     },
   ],

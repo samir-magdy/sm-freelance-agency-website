@@ -195,18 +195,17 @@ function buildStructuredData(lang) {
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Web Design & Development Services in Egypt",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Website Design & Development",
-            alternateName: "تصميم وتطوير مواقع",
-            description:
-              "Expert website design & development using modern technologies.",
-          },
+      itemListElement: translations.pricingSection.tiers.map((tier) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: tier.name.en,
+          alternateName: tier.name.ar,
+          description: tier.tagline.en,
         },
-      ],
+        price: tier.price.replace(/,/g, ""),
+        priceCurrency: "EGP",
+      })),
     },
     sameAs: [SOCIAL_LINKS.facebook, SOCIAL_LINKS.instagram, SOCIAL_LINKS.x, SOCIAL_LINKS.youtube, SOCIAL_LINKS.linkedin],
     founder: { "@id": `${SITE_URL}/#founder` },
@@ -294,6 +293,7 @@ export default async function LangLayout({ children, params }) {
       features: t.nav.features[lang],
       services: t.nav.services[lang],
       portfolio: t.nav.portfolio[lang],
+      pricing: t.nav.pricing[lang],
       process: t.nav.process[lang],
       FAQs: t.nav.FAQs[lang],
       contact: t.nav.contact[lang],
@@ -334,6 +334,23 @@ export default async function LangLayout({ children, params }) {
         {/* ── Main content ── */}
         <main id="main-content">{children}</main>
         <Footer />
+
+        {/* ── Floating WhatsApp button ── */}
+        <a
+          href="https://wa.me/201274613331"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat on WhatsApp"
+          className="hero-fade hero-fade-whatsapp fixed bottom-1 right-1 rtl:right-auto rtl:left-1 z-10 size-14 rounded-full shadow-lg transition-transform hover:scale-110"
+        >
+          <img
+            src="/whatsapp.svg"
+            alt=""
+         
+            className="size-full w-12 h-12 ltr:hidden md:w-10 md:h-10"
+          />
+        </a>
+
         <Analytics />
       </body>
     </html>
