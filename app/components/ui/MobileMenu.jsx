@@ -68,7 +68,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
       <div
         className={`absolute inset-0 flex flex-col items-center justify-center transition-[opacity,visibility] duration-[250ms] ease-out ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
       >
-        <ul className="flex flex-col items-center gap-4 pb-16">
+        <ul className="flex flex-col items-center gap-4 pb-6">
           <li>
             <a
               href="#features"
