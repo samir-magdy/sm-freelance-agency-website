@@ -94,35 +94,23 @@ html {
   opacity: 0;
 }
 
-html.fonts-ready .hero-fade {
-  animation-name: heroFadeIn;
-  animation-timing-function: ease-out;
-  animation-fill-mode: both;
+html.fonts-ready .hero-fade-hook-1 {
+  animation: heroFadeIn 0.05s ease-out 0s both;
 }
-
-.hero-fade-hook-1 {
-  animation-delay: 0s;
-  animation-duration: 0.05s;
+html.fonts-ready .hero-fade-hook-2 {
+  animation: heroFadeIn 0.05s ease-out 0.4s both;
 }
-.hero-fade-hook-2 {
-  animation-delay: 0.4s;
-  animation-duration: 0.05s;
+html.fonts-ready .hero-fade-hook-3 {
+  animation: heroFadeIn 0.05s ease-out 0.8s both;
 }
-.hero-fade-hook-3 {
-  animation-delay: 0.8s;
-  animation-duration: 0.05s;
+html.fonts-ready .hero-fade-nav {
+  animation: heroFadeIn 0.3s ease-out 1.2s both;
 }
-.hero-fade-nav {
-  animation-delay: 1.2s;
-  animation-duration: 0.3s;
+html.fonts-ready .hero-fade-secondary-cta {
+  animation: heroFadeIn 0.3s ease-out 1.6s both;
 }
-.hero-fade-secondary-cta {
-  animation-delay: 1.6s;
-  animation-duration: 0.3s;
-}
-.hero-fade-whatsapp {
-  animation-delay: 2.8s;
-  animation-duration: 1s;
+html.fonts-ready .hero-fade-whatsapp {
+  animation: heroFadeIn 1s ease-out 2.8s both;
 }
 
 /* ══════════════════════════════════════
