@@ -105,10 +105,10 @@ html {
 .hero-go .hero-fade-hook-1 { animation: heroFadeIn 0.3s ease-out 0s both; }
 .hero-go .hero-fade-hook-2 { animation: heroFadeIn 0.3s ease-out 0.5s both; }
 .hero-go .hero-fade-hook-3 { animation: heroFadeIn 0.3s ease-out 1.0s both; }
-.hero-go .hero-fade-nav    { animation: heroFadeIn 0.3s ease-out 1.5s both; }
-.hero-go .cta-primary      { animation: ctaEntrance 0.4s ease-out 1.6s both; }
-.hero-go .hero-fade-secondary-cta { animation: heroFadeIn 0.5s ease-out 2.0s both; }
-.hero-go .hero-fade-whatsapp      { animation: heroFadeIn 0.8s ease-out 3.0s both; }
+.hero-go .hero-fade-nav    { animation: heroFadeIn 0.3s ease-out 1.4s both; }
+.hero-go .cta-primary      { animation: ctaEntrance 0.3s ease-out 1.5s both; }
+.hero-go .hero-fade-secondary-cta { animation: heroFadeIn 0.3s ease-out 1.6s both; }
+.hero-go .hero-fade-whatsapp      { animation: heroFadeIn 0.8s ease-out 2.5s both; }
 
 /* ══════════════════════════════════════
    4. Nav Link — Underline Hover Effect
@@ -165,7 +165,7 @@ html {
 @keyframes ctaEntrance {
   from { 
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(50);
   }
   to { 
     opacity: 1;
@@ -191,7 +191,7 @@ html {
 .cta-primary {
   position: relative;
   overflow: hidden;
-  animation: ctaEntrance 0.4s ease-out 2s both;
+  animation: ctaEntrance 0s ease-out 1s both;
 }
 
 .cta-primary::before, #portfolio-cta::before, #pricing-cta::before {
@@ -212,7 +212,7 @@ html {
 
 .cta-primary::before,
 #portfolio-cta::before, #pricing-cta::before {
-  animation: ctaAutoShimmer 8s ease-out 2.5s infinite;
+  animation: ctaAutoShimmer 8s ease-out 2s infinite;
 }
 
 [dir="rtl"] .cta-primary::before, [dir="rtl"] #portfolio-cta::before, [dir="rtl"] #pricing-cta::before {
@@ -229,7 +229,7 @@ html {
 
 [dir="rtl"] .cta-primary::before,
 [dir="rtl"] #portfolio-cta::before, [dir="rtl"] #pricing-cta::before {
-  animation: ctaAutoShimmerRtl 8s ease-out 2.5s infinite;
+  animation: ctaAutoShimmerRtl 8s ease-out 2s infinite;
 }
 
 .cta-primary::after, #portfolio-cta::after, #pricing-cta::after {
