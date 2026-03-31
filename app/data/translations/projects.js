@@ -1,6 +1,6 @@
 const projectsSection = {
   heading: {
-    en: "Web Design Portfolio",
+    en: "Website Design Portfolio",
     ar: "معرض تصميم المواقع",
   },
 };
@@ -12,7 +12,7 @@ const projectData = {
       ar: "شركة سكاي واي ترافل للسياحة",
     },
     description: {
-      en: "A conversion-optimized travel agency website for Sky Way Travel, designed to attract, engage, and convert visitors into bookings by showcasing irresistible tour packages, building trust, and guiding users effortlessly from interest to reservation.",
+      en: "A conversion-optimized travel agency website for Sky Way Travel, designed to attract, engage, and convert visitors into bookings by showcasing tour packages, building trust, and guiding users effortlessly from interest to reservation.",
       ar: "موقع إلكتروني لشركة 'سكاي واي ترافيل' للسياحة، مُصمم لزيادة معدلات الحجز عن طريق جذب الزوار والتفاعل معهم، وتحويلهم لعملاء. وهذا من خلال عرض برامج سياحية مميزة، وبناء الثقة، وتوجيه المستخدم بكل سلاسة من مرحلة الاهتمام لحد تنفيذ الحجز.",
     },
     cta: {
@@ -21,9 +21,9 @@ const projectData = {
     },
   },
 
-  "fashion-ecommerce": {
+  "Ecommerce": {
     title: {
-      en: "Fashion E-commerce Store",
+      en: "Fashion Online Store",
       ar: "متجر إلكتروني للأزياء",
     },
     description: {

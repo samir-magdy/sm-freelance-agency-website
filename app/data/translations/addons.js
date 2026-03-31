@@ -1,7 +1,7 @@
 const addOnsSection = {
   heading: {
     en: "Add-ons For Your Website",
-    ar: "الخدمات الإضافية",
+    ar: "إضافات للمواقع",
   },
 
   items: [
@@ -38,7 +38,7 @@ const addOnsSection = {
     {
       title: {
         en: "Google Business Profile",
-        ar: "Google Business Profile",
+        ar: "جوجل بزنس بروفايل",
       },
       description: {
         en: "Full setup of your GBP so that your business appears on Google Maps and local search results.",

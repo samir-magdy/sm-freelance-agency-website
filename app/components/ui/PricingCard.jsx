@@ -17,7 +17,7 @@ export default function PricingCard({
     <div
       className={`relative flex flex-col rounded-2xl border p-6 md:p-8 transition-all duration-300${
         isHighlighted
-          ? " border-gold/30 bg-surface-card shadow-[0_0_40px_-12px_hsl(var(--gold)/0.15)] lg:scale-105"
+          ? " border-gold/30 bg-surface-card shadow-[0_0_20px_-8px_hsl(var(--gold)/0.1)] lg:scale-105"
           : " border-border-subtle bg-surface-card/80 hover:border-border-strong"
       }`}
     >
@@ -36,9 +36,9 @@ export default function PricingCard({
       </h3>
 
       {/* Tagline */}
-      {/* <p className="mt-2 text-content-body text-caption leading-relaxed">
+      <p className="mt-2 text-content-body text-caption leading-relaxed">
         {tier.tagline[lang]}
-      </p> */}
+      </p>
 
       {/* Price */}
       <div className="mt-5 flex items-baseline gap-1.5">
@@ -85,7 +85,7 @@ export default function PricingCard({
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className={`mt-6 flex items-center justify-center gap-2 font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light${
+        className={`mt-6 flex items-center justify-center gap-2 font-semibold py-3 px-6 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light${
           isHighlighted
             ? " relative overflow-hidden bg-gradient-to-b from-gold to-gold-dark text-gray-900"
             : " border border-border-strong text-content-heading hover:border-gold/40 hover:text-gold"

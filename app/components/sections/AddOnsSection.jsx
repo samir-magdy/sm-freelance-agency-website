@@ -41,7 +41,7 @@ export default function AddOnsSection({ lang }) {
                   <div className="mx-auto flex items-center justify-center transition-all duration-300">
                     <Icon className="w-12 h-12 md:w-16 md:h-16 text-icon" aria-hidden="true" />
                   </div>
-                  <p className="font-semibold text-subheading text-content-heading">{item.title[lang]}</p>
+                  <h3 className="font-semibold text-subheading text-content-heading">{item.title[lang]}</h3>
                   <p className="leading-relaxed text-content-body md:text-base">{item.description[lang]}</p>
                 </div>
               </div>

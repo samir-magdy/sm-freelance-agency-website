@@ -19,7 +19,7 @@ export default function HeroSection({ lang }) {
         >
           <h1
             id="hero-hook"
-            className="font-bold text-center text-content-heading px-4 block text-[clamp(2rem,16vw,7rem)] rtl:text-[clamp(2.2rem,11vw,6rem)] rtl:leading-relaxed leading-tight"
+            className="font-bold text-center text-content-heading px-4 block text-[clamp(3rem,4vw,6rem)] rtl:text-[clamp(2.5rem,5vw,5rem)] rtl:leading-relaxed leading-snug"
           >
             {Array.isArray(hookLines) ? (
               hookLines.map((line, i) => {
@@ -36,15 +36,11 @@ export default function HeroSection({ lang }) {
                     className={`hero-fade ${fadeClass} md:inline block`}
                   >
                     {(() => {
-                      const tail = words.slice(1).join(" ");
-                      const hasDot = tail.endsWith(".");
+                      const rest = words.slice(1).join(" ");
                       return (
                         <>
-                          {words[0]}{" "}
-                          <span className="text-gold">
-                            {hasDot ? tail.slice(0, -1) : tail}
-                          </span>
-                          {hasDot && "."}{" "}
+                          <span className="text-gold">{words[0]}</span>{" "}
+                          {rest}{" "}
                         </>
                       );
                     })()}
@@ -56,10 +52,8 @@ export default function HeroSection({ lang }) {
             )}
           </h1>
 
-          <h2 className="mt-6 md:mt-10 mb-8 hero-fade hero-fade-nav text-content-body text-[clamp(1.4rem,2vw,2rem)] rtl:text-[clamp(1.2rem,1.8vw,3rem)] rtl:leading-loose text-center px-10 sm:px-16">
-            {t.hero.subheading[lang].map((line, i) => (
-              <span key={i} className="block sm:inline">{line}</span>
-            ))}
+          <h2 className="mt-6 md:mt-10 mb-8 hero-fade hero-fade-nav text-content-body text-[clamp(1.2rem,2vw,2rem)] rtl:text-[clamp(1.2rem,1.8vw,3rem)] rtl:leading-loose text-center px-10 sm:px-16">
+            {t.hero.subheading[lang]}
           </h2>
 
           <div className="flex flex-col items-center justify-center gap-6">

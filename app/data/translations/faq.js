@@ -12,7 +12,7 @@ const faqSection = {
     {
       question: {
         en: "Do I need a website for my business?",
-        ar: "هل يحتاج شغلي فعلاً لموقع إلكتروني؟",
+        ar: "هل يحتاج نشاطي التجاري فعلاً لموقع إلكتروني؟",
       },
       answer: {
         en: "A professional website serves as the primary infrastructure for your digital identity. It establishes credibility, centralizes brand authority, and captures organic search traffic. In a digital-first economy, the absence of a dedicated website results in a loss of market share to competitors who maintain an accessible online presence.",
@@ -22,7 +22,7 @@ const faqSection = {
     {
       question: {
         en: "What is SEO and is it important for my business?",
-        ar: "يعني إيه SEO وليه هو مهم لشغلي؟",
+        ar: "يعني إيه SEO وليه هو مهم لنشاطي التجاري؟",
       },
       answer: {
         en: "SEO (Search Engine Optimization) is the technical and strategic process of improving a website's visibility within search engine results pages. By optimizing technical structure and content relevance, SEO ensures your business is discoverable by users actively searching for your specific services, thereby reducing long-term customer acquisition costs.",
@@ -53,14 +53,45 @@ const faqSection = {
     // ===== MID-FUNNEL (Research) =====
     {
       question: {
-        en: "How much does a website cost in Egypt?",
-        ar: "تكلفة إنشاء موقع إلكتروني في مصر كام؟",
+        en: "how much does a website cost for a small business?",
+        ar: "اسعار تصميم المواقع للشركات الصغيرة كام",
       },
       answer: {
-        en: "Pricing is determined by project scope and technical complexity, similar to how real estate valuation depends on specifications and location. Development costs can range from EGP 5,000 for standard landing pages to over EGP 300,000 for enterprise-grade solutions requiring custom integrations and dedicated engineering teams.",
-        ar: "يتم تحديد السعر بناءً على نطاق المشروع والتعقيد التقني، تماماً كما يعتمد تقييم العقارات على المواصفات والموقع. تتراوح تكاليف التطوير من 5,000 جنيه لصفحات الهبوط القياسية إلى أكثر من 300,000 جنيه للحلول المؤسسية الضخمة التي تتطلب تكاملات مخصصة وفرق هندسية متخصصة.",
+        en: "Pricing is determined by project scope and technical complexity, similar to how real estate valuation depends on specifications and location. See our pricing section for our ready packages.",
+        ar: "يتم تحديد السعر بناءً على نطاق المشروع والتعقيد التقني، تتراوح تكاليف التطوير من 5,000 جنيه للمواقع البسيطة إلى مبالغ ضخمة للحلول المؤسسية الضخمة التي تتطلب تكاملات مخصصة وفرق هندسية متخصصة.",
       },
     },
+    {
+  question: {
+    en: "What is responsive web design?",
+    ar: "يعني إيه تصميم متجاوب (Responsive)؟",
+  },
+  answer: {
+    en: "Responsive web design is an engineering approach that ensures a website adapts its layout, typography, and interactive elements to function optimally across all screen sizes — from desktop monitors to mobile devices. With mobile traffic now accounting for over 60% of global web usage, responsive design is not a feature but a structural requirement for search engine visibility and user retention.",
+    ar: "التصميم المتجاوب هو منهج هندسي يضمن تكيّف تخطيط الموقع وخطوطه وعناصره التفاعلية للعمل بشكل مثالي على جميع أحجام الشاشات — من شاشات الكمبيوتر إلى الهواتف المحمولة. مع تجاوز حركة المرور عبر الهاتف المحمول لأكثر من 60% من الاستخدام العالمي للإنترنت، لم يعد التصميم المتجاوب ميزة إضافية بل متطلب هيكلي لظهور الموقع في محركات البحث والحفاظ على الزوار.",
+  },
+},
+{
+  question: {
+    en: "What is the difference between a website and an online store?",
+    ar: "إيه الفرق بين الموقع الإلكتروني والمتجر الإلكتروني؟",
+  },
+  answer: {
+    en: "A standard website presents information about your business — services, portfolio, contact details — and is designed to generate enquiries or build brand awareness. An online store (e-commerce website) adds transactional functionality: product catalogues, inventory management, shopping carts, and payment processing. Both require professional design and SEO, but an online store involves additional infrastructure for order management and checkout workflows.",
+    ar: "الموقع الإلكتروني القياسي يعرض معلومات عن نشاطك — الخدمات، الأعمال السابقة، بيانات التواصل — وهو مصمم لجذب الاستفسارات أو بناء الوعي بالعلامة التجارية. أما المتجر الإلكتروني فيضيف وظائف تجارية: كتالوج المنتجات، إدارة المخزون، سلة المشتريات، ومعالجة الدفع. كلاهما يحتاج تصميم احترافي وتحسين محركات بحث، لكن المتجر يتطلب بنية إضافية لإدارة الطلبات وعمليات الشراء.",
+  },
+},
+
+{
+  question: {
+    en: "Will my website be optimized for mobile?",
+    ar: "الموقع هيكون متوافق مع الموبايل؟",
+  },
+  answer: {
+    en: "Every website we build follows a mobile-first development methodology. This means the interface is engineered for small screens first, then progressively enhanced for tablets and desktops. Google's indexing system prioritizes the mobile version of your site for ranking purposes, making mobile optimization a non-negotiable factor in search engine visibility.",
+    ar: "كل موقع نبنيه يتبع منهجية التطوير للموبايل أولاً. هذا يعني أن الواجهة مصممة هندسياً للشاشات الصغيرة أولاً، ثم تُحسّن تدريجياً للأجهزة اللوحية وشاشات الكمبيوتر. نظام الفهرسة في جوجل يعطي الأولوية لنسخة الموبايل من موقعك لأغراض الترتيب، مما يجعل تحسين الموبايل عاملاً أساسياً غير قابل للتفاوض في الظهور بمحركات البحث.",
+  },
+},
     {
       question: {
         en: "What technologies do you use to build websites?",

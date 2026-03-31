@@ -126,7 +126,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             </a>
           </li>
         </ul>
-        <div className="flex flex-col absolute bottom-12 items-center gap-6">
+        <div className="flex flex-col absolute bottom-8 items-center gap-5">
           <div className="flex flex-col items-center gap-4">
           <SocialIcons />
           </div>

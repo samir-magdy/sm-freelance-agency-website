@@ -21,7 +21,7 @@ export default function Footer() {
           className="inline-flex items-center gap-1 hover:text-content-heading transition-colors"
         >
           <svg
-            className="w-4 h-4"
+            className="w-4 h-4 sm:w-5 sm:h-5"
             fill="none"
             stroke="currentColor"
             strokeWidth="1.5"
@@ -35,7 +35,7 @@ export default function Footer() {
             />
           </svg>
           
-          <span className="text-md pb-0.5">studio@samirmagdy.com</span>
+          <span className="text-md sm:text-lg pb-0.5">studio@samirmagdy.com</span>
         </a>
         </div>
         {/* <span className="sm:hidden inline-block w-1 h-1 rounded-full bg-content-muted mx-3" aria-hidden="true" /> */}

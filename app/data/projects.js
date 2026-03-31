@@ -4,14 +4,14 @@ import { SITE_URL } from "./translations/lang";
 
 export const projects = [
   {
-    id: "fashion-ecommerce",
+    id: "Ecommerce",
     liveUrl: "https://ecommerce.samirmagdy.com/",
     screenshot: ecommScnshot,
     schemaName: "Fashion E-commerce – Egypt",
     schemaNameAr: "متجر إلكتروني للأزياء – مصر",
     description:
       "A custom-built fashion e-commerce store with advanced product listings, intelligent filtering, and a smart shopping cart. Streamlined WhatsApp checkout with no account creation required.",
-    genre: "Fashion e-commerce",
+    genre: "Ecommerce",
     genreAr: "التجارة الإلكترونية للأزياء",
     keywords: [
       "fashion ecommerce Egypt",

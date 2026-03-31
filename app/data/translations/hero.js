@@ -1,6 +1,6 @@
 const hero = {
   name: {
-    en: ["Be Found.", "Be Trusted.", "Be Chosen."],
+    en: ["Build Stores.","Design Websites.", "Rank Higher."],
     ar: ["صمّم موقعك.", "أنشئ متجرك.", "تصدّر البحث."],
   },
   primaryCta: {
@@ -12,8 +12,8 @@ const hero = {
     ar: "شاهد أعمالنا",
   },
   subheading: {
-    en: ["We craft your website. ", "We don't manufacture it."],
-    ar: ["استوديو متخصص في تصميم مواقع إلكترونية عالية الجودة وبسعر منافس."],
+    en: "Website design, online stores, and SEO for small businesses, startups and brands.",
+    ar: "تصميم مواقع، متاجر الكترونية، وتحسين محركات البحث للشركات الناشئة والأفراد.",
   },
 };
 

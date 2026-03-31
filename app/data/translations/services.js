@@ -1,6 +1,6 @@
 const servicesSection = {
   heading: {
-    en: "Included in Every Website",
+    en: "Features in Every Website",
     ar: "مميزات تصميم المواقع",
   },
 
@@ -15,15 +15,15 @@ const servicesSection = {
       },
     },
     {
-      en: "Fully Responsive",
-      ar: "توافق مع جميع الأجهزة",
+      en: "Responsive Web Design",
+      ar: "تصميم متجاوب",
       desc: {
         en: "Your website will work perfectly and look great on all devices. Phone, tablet, laptop, or desktop.",
         ar: "موقعك يعمل بشكل مثالي ويظهر باحترافية على جميع الأجهزة. بما يشمل موبايل، تابلت، أو لابتوب.",
       },
     },
     {
-      en: "Fast Loading",
+      en: "Fast Loading Website",
       ar: "سرعة تحميل عالية",
       desc: {
         en: "Slow websites lose customers. That's why we optimize yours for maximum performance.",
@@ -55,10 +55,10 @@ const servicesSection = {
       },
     },
     {
-      en: "Content Updates",
+      en: "Website Maintenance",
       ar: "تعديلات شهرية مجانية",
       desc: {
-        en: "Request up to three basic content changes a month at no charge. Text, images, and more.",
+        en: "Request up to three basic content changes a month at no charge. Text, images, contact info..",
         ar: "يمكنك طلب ثلاث تعديلات شهرياً على المحتوى مجاناً. نصوص أو صور أو أسعار وغير ذلك.",
       },
     },

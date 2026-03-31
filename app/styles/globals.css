@@ -91,22 +91,22 @@ html {
 }
 
 .hero-fade-hook-1 {
-  animation: heroFadeIn 0.3s ease-out 0s both;
+  animation: heroFadeIn 0.3s ease-out 0.5s both;
 }
 .hero-fade-hook-2 {
-  animation: heroFadeIn 0.3s ease-out 0.4s both;
+  animation: heroFadeIn 0.3s ease-out 1s both;
 }
 .hero-fade-hook-3 {
-  animation: heroFadeIn 0.3s ease-out 0.8s both;
+  animation: heroFadeIn 0.3s ease-out 1.5s both;
 }
 .hero-fade-nav {
-  animation: heroFadeIn 0.3s ease-out 1.2s both;
+  animation: heroFadeIn 0.5s ease-out 2s both;
 }
 .hero-fade-secondary-cta {
-  animation: heroFadeIn 0.3s ease-out 1.6s both;
+  animation: heroFadeIn 0.5s ease-out 2.5s both;
 }
 .hero-fade-whatsapp {
-  animation: heroFadeIn 1s ease-out 2.7s both;
+  animation: heroFadeIn 0.8s ease-out 3.5s both;
 }
 
 /* ══════════════════════════════════════
@@ -190,7 +190,7 @@ html {
 .cta-primary {
   position: relative;
   overflow: hidden;
-  animation: ctaEntrance 0.4s ease-out 1.2s both;
+  animation: ctaEntrance 0.4s ease-out 2s both;
 }
 
 .cta-primary::before, #portfolio-cta::before, #pricing-cta::before {
@@ -211,7 +211,7 @@ html {
 
 .cta-primary::before,
 #portfolio-cta::before, #pricing-cta::before {
-  animation: ctaAutoShimmer 8s ease-out 1.9s infinite;
+  animation: ctaAutoShimmer 8s ease-out 2.5s infinite;
 }
 
 [dir="rtl"] .cta-primary::before, [dir="rtl"] #portfolio-cta::before, [dir="rtl"] #pricing-cta::before {
@@ -228,7 +228,7 @@ html {
 
 [dir="rtl"] .cta-primary::before,
 [dir="rtl"] #portfolio-cta::before, [dir="rtl"] #pricing-cta::before {
-  animation: ctaAutoShimmerRtl 8s ease-out 1.9s infinite;
+  animation: ctaAutoShimmerRtl 8s ease-out 2.5s infinite;
 }
 
 .cta-primary::after, #portfolio-cta::after, #pricing-cta::after {

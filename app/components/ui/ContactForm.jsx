@@ -423,7 +423,7 @@ export default function ContactForm({ lang, strings }) {
         type="submit"
         disabled={status !== "idle"}
         aria-live="polite"
-        className={`mt-4 w-full mx-auto block tracking-wide font-bold text-base py-4 rounded-lg disabled:cursor-not-allowed transition-[background-color,border-color,color,opacity] duration-300 ${
+        className={`z-20 mt-4 w-full mx-auto block tracking-wide font-bold text-base py-4 rounded-lg disabled:cursor-not-allowed transition-[background-color,border-color,color,opacity] duration-300 ${
           status === "success"
             ? "btn-success-entrance bg-success/50 text-content-heading md:text-[1.3rem]"
             : status === "error"

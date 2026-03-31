@@ -24,8 +24,8 @@ const PHONE_NUMBER = "+201274613331";
 const TWITTER_HANDLE = "@SMWebStudioEG";
 
 const META_DESCRIPTION = {
-  en: "High-end web design studio offering premium quality at competitive rates. We bridge the gap between agency-level professionalism & freelancer flexibility.",
-  ar: "استوديو متخصص في تصميم مواقع الكترونية عالية الجودة وبسعر منافس. نموذج مختلف يجمع بين احترافية الشركات ومرونة الفريلانسرز.",
+  en: "Website design, online shops, and SEO for small businesses, startups and individuals. Custom-built sites at competitive pricing.",
+  ar: "تصميم مواقع احترافية و متاجر الكترونية بأسعار منافسة. نخدم الشركات الناشئة وأصحاب المشاريع في مصر والخارج.",
 };
 
 const SOCIAL_LINKS = {
@@ -42,7 +42,7 @@ const SOCIAL_LINKS = {
 
 const meta = {
   en: {
-    title: `Expert Web Design in Egypt | ${SITE_NAME}`,
+    title: `Affordable Web Design & Ecommerce | ${SITE_NAME}`,
     description: META_DESCRIPTION.en,
     ogLocale: "en_US",
     altLocale: "ar_EG",
@@ -51,7 +51,7 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: `تصميم مواقع إحترافية في مصر | ${SITE_NAME} Egypt`,
+    title: `تصميم مواقع و متاجر الكترونية بسعر منافس | ${SITE_NAME}`,
     description: META_DESCRIPTION.ar,
     ogLocale: "ar_EG",
     altLocale: "en_US",
@@ -198,8 +198,8 @@ function buildStructuredData(lang) {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: tier.name.en,
-          alternateName: tier.name.ar,
+          name: tier.seoName.en,
+          alternateName: tier.seoName.ar,
           description: tier.tagline.en,
         },
         price: tier.price.replace(/,/g, ""),
@@ -338,13 +338,13 @@ export default async function LangLayout({ children, params }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
-          className="hero-fade hero-fade-whatsapp fixed bottom-1 right-1 rtl:right-auto rtl:left-1 z-10 size-14 rounded-full shadow-lg transition-transform hover:scale-110"
+          className="hero-fade hero-fade-whatsapp fixed bottom-3 right-3 sm:bottom-6 sm:right-6 rtl:right-auto rtl:left-3 z-[5] size-14 rounded-full shadow-lg transition-transform hover:scale-110"
         >
           <img
             src="/whatsapp.svg"
-            alt=""
+            alt="Whatsapp Contact Widget"
          
-            className="size-full w-12 h-12 md:w-10 md:h-10"
+            className="w-10 h-10"
           />
         </a>
 

@@ -22,7 +22,7 @@ const form = {
   messageOptional: { en: "optional", ar: "اختياري" },
   messagePlaceholder: {
     en: "Describe what you need from your website..",
-    ar: "أخبرنا باستفسارك...",
+    ar: "أخبرنا ما تحتاجه من موقعك..",
   },
   submit: { en: "Send My Request", ar: "أرسل طلبي" },
   sending: { en: "Sending...", ar: "جاري الإرسال..." },

@@ -58,9 +58,9 @@ export default function ServicesSection({ lang }) {
                         aria-hidden="true"
                       />
                     </div>
-                    <p className="font-semibold text-subheading text-content-heading">
+                    <h3 className="font-semibold text-subheading text-content-heading">
                       {feature[lang]}
-                    </p>
+                    </h3>
                     <p className="leading-relaxed text-content-body md:text-base">
                       {feature.desc[lang]}
                     </p>
