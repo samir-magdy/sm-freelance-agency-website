@@ -452,7 +452,7 @@ export default function ContactForm({ lang, strings }) {
         href="https://wa.me/201274613331"
         target="_blank"
         rel="noopener noreferrer"
-        className="md:hidden mt-3 bg-white/10 w-full text-md flex items-center justify-center gap-2 py-4 rounded-lg font-bold text-base"
+        className="md:hidden mt-3 bg-white/10 w-full text-md text-content-body flex items-center justify-center gap-2 py-4 rounded-lg font-bold text-base"
       >
         <img src="/whatsapp-green.svg" alt="" className="w-5 h-5" aria-hidden="true" />
         {strings.chatInstead}
