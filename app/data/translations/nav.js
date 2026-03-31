@@ -1,10 +1,10 @@
 const nav = {
-  features: { en: "Features", ar: "المميزات المضمنة" },
-  services: { en: "Services", ar: "الخدمات الإضافية" },
-  portfolio: { en: "Portfolio", ar: "سابقة الأعمال" },
-  pricing: { en: "Pricing", ar: "أسعار التصميم" },
-  process: { en: "Process", ar: "خطوات العمل" },
-  FAQs: { en: "FAQs", ar: "الأسئلة الشائعة" },
+  features: { en: "Features", ar: "مميزات" },
+  services: { en: "Services", ar: "خدمات" },
+  portfolio: { en: "Portfolio", ar: "أعمال" },
+  pricing: { en: "Pricing", ar: "أسعار" },
+  process: { en: "Process", ar: "خطوات" },
+  FAQs: { en: "FAQs", ar: "أسئلة شائعة" },
   contact: { en: "Contact", ar: "تواصل معنا" },
 };
 

@@ -81,18 +81,25 @@ export async function generateMetadata({ params }) {
     metadataBase: new URL(SITE_URL),
     icons: {
       icon: [
+         {
+          url: "/favicon.png",
+          type: "image/png",
+          sizes: "96x96",
+        },
         {
           url: "/favicon.ico",
           type: "image/x-icon",
           sizes: "48x48",
         },
         {
-          url: "/favicon-stable-on-light.svg",
+          url: "/favicon-light.svg",
           type: "image/svg+xml",
+          sizes: "any"
         },
         {
-          url: "/favicon-stable-on-dark.svg",
+          url: "/favicon-dark.svg",
           type: "image/svg+xml",
+          sizes: "any",
           media: "(prefers-color-scheme: dark)",
         },
       ],
@@ -174,7 +181,7 @@ function buildStructuredData(lang) {
     telephone: PHONE_NUMBER,
     email: CONTACT_EMAIL,
     image: `${SITE_URL}/open-graph.webp`,
-    logo: `${SITE_URL}/logo-stable.png`,
+    logo: `${SITE_URL}/business-logo.png`,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Cairo",
