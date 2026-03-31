@@ -47,13 +47,15 @@ export function Timeline({ data }) {
     const beam = beamRef.current;
     if (!container || !beam || height === 0) return;
 
+    let rafId = 0;
+
     const update = () => {
+      rafId = 0;
       const wh = window.innerHeight;
       const rect = container.getBoundingClientRect();
       const containerDocTop = rect.top + window.scrollY;
       const containerDocBottom = rect.bottom + window.scrollY;
 
-      // Replicates useScroll offset: ["start 30%", "end 50%"]
       const startY = containerDocTop - wh * 0.4;
       const endY = containerDocBottom - wh * 0.5;
 
@@ -64,7 +66,6 @@ export function Timeline({ data }) {
       beam.style.height = `${beamHeight}px`;
       beam.style.opacity = `${opacity}`;
 
-      // Update active index without re-rendering on every scroll tick
       if (!ref.current) return;
       const containerTop = ref.current.getBoundingClientRect().top + trackTopRef.current;
       let newActive = -1;
@@ -80,9 +81,16 @@ export function Timeline({ data }) {
       }
     };
 
-    window.addEventListener("scroll", update, { passive: true });
+    const onScroll = () => {
+      if (!rafId) rafId = requestAnimationFrame(update);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
     update();
-    return () => window.removeEventListener("scroll", update);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, [height]);
 
   return (

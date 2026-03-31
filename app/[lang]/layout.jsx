@@ -334,10 +334,10 @@ export default async function LangLayout({ children, params }) {
 
         <Analytics />
 
-        {/* Reset will-change after hero entrance animations complete (~1.9s) */}
+        {/* Reset will-change after all hero entrance animations complete (~3.4s) */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `setTimeout(function(){document.querySelectorAll('.hero-fade-hook-1,.hero-fade-hook-2,.hero-fade-hook-3,.hero-fade-nav,.hero-fade-secondary-cta,.hero-fade-whatsapp,.cta-primary').forEach(function(el){el.style.willChange='auto'})},2000)`,
+            __html: `setTimeout(function(){document.querySelectorAll('.hero-fade-hook-1,.hero-fade-hook-2,.hero-fade-hook-3,.hero-fade-nav,.hero-fade-secondary-cta,.cta-primary').forEach(function(el){el.style.willChange='auto'})},3500)`,
           }}
         />
       </body>

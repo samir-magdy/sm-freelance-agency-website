@@ -31,8 +31,6 @@
      Desktop navbar: 115px logo + 2×8px py-2 = 131px (xl breakpoint). */
 }
 
-
-
 /* ══════════════════════════════════════
    2. Base & Reset
    ══════════════════════════════════════ */
@@ -70,15 +68,14 @@ html {
 /* ══════════════════════════════════════
    Hero Section — Staggered Fade-In
    ══════════════════════════════════════
-   Replaces Framer Motion with pure CSS.
-   Timeline (0-based, no initial delay):
-     Hook 1:  0s delay, 0.05s duration
-     Hook 2:  0.4s delay, 0.05s duration
-     Hook 3:  0.8s delay, 0.05s duration
-     Nav/UI:  1.2s delay, 0.3s duration
-     CTA:     1.2s delay, 0.4s duration
-     2nd CTA: 1.6s delay, 0.3s duration
-     Shimmer: 1.9s delay, 8s loop
+   Pure CSS entrance sequence:
+     Hook 1:    0.5s delay,  0.2s duration
+     Hook 2:    1.0s delay,  0.2s duration
+     Hook 3:    1.5s delay,  0.2s duration
+     Nav/Sub:   2.0s delay,  0.8s duration
+     CTA:       2.0s delay,  0.7s duration  (ends ~2.7s)
+     2nd CTA:   2.3s delay,  0.3s duration  (ends ~2.6s)
+     Shimmer:   2.6s delay,  0.8s duration  (ends ~3.4s)
    ══════════════════════════════════════ */
 
 @keyframes heroFadeIn {
@@ -96,29 +93,34 @@ html {
 .hero-fade-hook-3,
 .hero-fade-nav,
 .hero-fade-secondary-cta,
-.hero-fade-whatsapp,
 .cta-primary {
   opacity: 0;
   will-change: transform, opacity; /* Optimizes for GPU compositing */
 }
 
 /* 1. Fast, snappy entrance for text hooks */
-.hero-fade-hook-1 { animation: heroFadeIn 0.3s ease-out 0s both; }
-.hero-fade-hook-2 { animation: heroFadeIn 0.3s ease-out 0.4s both; }
-.hero-fade-hook-3 { animation: heroFadeIn 0.3s ease-out 0.8s both; }
+.hero-fade-hook-1 {
+  animation: heroFadeIn 0.2s ease-out 0.5s both;
+}
+.hero-fade-hook-2 {
+  animation: heroFadeIn 0.2s ease-out 1s both;
+}
+.hero-fade-hook-3 {
+  animation: heroFadeIn 0.2s ease-out 1.5s both;
+}
 
 /* 2. Smoother, longer entrance for layout components */
-.hero-fade-nav { 
-  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both; 
+.hero-fade-nav {
+  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 2s both;
 }
 
 /* 3. Staggered CTA entrance */
-.cta-primary { 
-  animation: ctaEntrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s both; 
+.cta-primary {
+  animation: ctaEntrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 2s both;
 }
 
-.hero-fade-secondary-cta { 
-  animation: heroFadeIn 0.3s ease-out 1.45s both; 
+.hero-fade-secondary-cta {
+  animation: heroFadeIn 0.3s ease-out 2.3s both;
 }
 
 /* ══════════════════════════════════════
@@ -142,7 +144,7 @@ html {
     hsl(var(--gold)),
     hsl(var(--gold-dark))
   );
-  transition: all 0.15s ease-in-out;
+  transition: width 0.15s ease-in-out;
 }
 
 .nav-link-underline:hover::before {
@@ -159,39 +161,41 @@ html {
   );
 }
 
-
 /* ══════════════════════════════════════
    5. Primary CTA — Shimmer Effect + Conversion Animations
    ══════════════════════════════════════
-   ::before → one-time initial shimmer sweep on hero CTA (fires at 2.2s)
-   ::after  → hover shimmer
+   ::before → one-time initial shimmer sweep on hero CTA (fires at 2.6s)
+   ::after  → hover shimmer (re-fires each hover via animation reset)
    ══════════════════════════════════════ */
 
-/* Entrance: shimmer leads a clip-path wipe — the button draws itself
-   left-to-right as if the shimmer is painting it into existence.
-   Both start at 2.5s. Shimmer sweeps in 0.48s, wipe completes in 0.55s
-   so the shimmer exits just before the button is fully revealed. */
-/* Entrance: Hardware-accelerated fade and slide from the side */
+/* Entrance: fade + slide up */
 @keyframes ctaEntrance {
-  from { 
+  from {
     opacity: 0;
     transform: translateY(50px);
   }
-  to { 
+  to {
     opacity: 1;
-    transform: translateY(0); 
+    transform: translateY(0);
   }
 }
 
-
 @keyframes ctaInitialShimmer {
-  from { translate: -110% 0; }
-  to   { translate:  110% 0; }
+  from {
+    translate: -110% 0;
+  }
+  to {
+    translate: 110% 0;
+  }
 }
 
 @keyframes ctaInitialShimmerRtl {
-  from { translate:  110% 0; }
-  to   { translate: -110% 0; }
+  from {
+    translate: 110% 0;
+  }
+  to {
+    translate: -110% 0;
+  }
 }
 
 .cta-primary {
@@ -213,7 +217,7 @@ html {
   );
   translate: -110% 0;
   pointer-events: none;
-  animation: ctaInitialShimmer 0.6s ease-out 2.2s forwards;
+  animation: ctaInitialShimmer 0.8s ease-out 2.6s forwards;
 }
 
 [dir="rtl"] .cta-primary::before {
@@ -226,7 +230,7 @@ html {
     transparent 65%
   );
   translate: 110% 0;
-  animation: ctaInitialShimmerRtl 0.6s ease-out 2.2s forwards;
+  animation: ctaInitialShimmerRtl 0.8s ease-out 2.6s forwards;
 }
 
 .cta-primary::after {
@@ -242,12 +246,14 @@ html {
     transparent 65%
   );
   translate: -100% 0;
-  transition: none;
   pointer-events: none;
+  animation: none;
 }
 
 @keyframes shimmer-sweep {
-  to { translate: 100% 0; }
+  to {
+    translate: 100% 0;
+  }
 }
 
 /* CTA shimmer — RTL */
@@ -264,7 +270,9 @@ html {
 }
 
 @keyframes shimmer-sweep-rtl {
-  to { translate: -100% 0; }
+  to {
+    translate: -100% 0;
+  }
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -281,8 +289,12 @@ html {
    ══════════════════════════════════════ */
 
 @keyframes btnLabelIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .btn-label {
@@ -299,33 +311,72 @@ html {
   animation: ctaEntrance 0.55s ease-out both;
 }
 
-
 /* ══════════════════════════════════════
    7. Portfolio Showcase — Scroll-Snap
    ══════════════════════════════════════ */
 
 @keyframes portfolioInfoIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.portfolio-info-enter { animation: portfolioInfoIn 0.3s ease-out both; }
+.portfolio-info-enter {
+  animation: portfolioInfoIn 0.3s ease-out both;
+}
 
 @keyframes phonePulse {
-  0%, 100% { filter: drop-shadow(0 0 0 transparent); }
-  50%      { filter: drop-shadow(0 0 12px hsla(var(--gold-light) / 0.6)); }
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px hsla(var(--gold-light) / 0.6));
+  }
 }
 
 .phone-frame-pulse {
   animation: phonePulse 1s ease-in-out 2;
+  will-change: filter;
 }
 
-.portfolio-snap::-webkit-scrollbar { display: none; }
-.phone-scroll::-webkit-scrollbar { display: none; }
+.portfolio-snap::-webkit-scrollbar {
+  display: none;
+}
+.phone-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ══════════════════════════════════════
+   Reduced Motion — Accessibility
+   ══════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
 
 /* Safari-only mobile overrides for portfolio section */
 @media (max-width: 767px) {
-  #portfolio.is-safari { padding-top: 6rem; padding-bottom: 7rem; }
-  .is-safari .phone-outer { height: 57vh; }
+  #portfolio.is-safari {
+    padding-top: 6rem;
+    padding-bottom: 7rem;
+  }
+  .is-safari .phone-outer {
+    height: 57vh;
+  }
 }
-

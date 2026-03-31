@@ -53,7 +53,7 @@ export default function HeroSection({ lang }) {
             {t.hero.subheading[lang]}
           </h2>
 
-          <div className="flex flex-col items-center justify-center gap-4">
+          <div className="flex flex-col items-center justify-center gap-4 mt-1">
             <a
               href="#contact"
               className="cta-primary font-semibold md:font-normal text-center bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.1rem,1.8vw,1.6rem)] px-12 py-4 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"

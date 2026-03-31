@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const INDUSTRY_OPTIONS = [
   {
@@ -89,11 +89,16 @@ export default function ContactForm({ lang, strings }) {
   const [dateTouched, setDateTouched] = useState(false);
   const [status, setStatus] = useState("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const statusTimerRef = useRef(null);
 
   useEffect(() => {
     const today = new Date().toISOString().split("T")[0];
     setCurrentDate(today);
     setFormData((prev) => ({ ...prev, bestDate: today }));
+  }, []);
+
+  useEffect(() => {
+    return () => { if (statusTimerRef.current) clearTimeout(statusTimerRef.current); };
   }, []);
 
   const handleSubmit = async (e) => {
@@ -126,14 +131,14 @@ export default function ContactForm({ lang, strings }) {
         message: "",
       });
 
-      setTimeout(() => setStatus("idle"), 4000);
+      statusTimerRef.current = setTimeout(() => setStatus("idle"), 4000);
     } catch (error) {
       const code = error instanceof Error ? error.message : "server_error";
       const errorMsg =
         code === "rate_limit" ? strings.errorRateLimit : strings.errorGeneric;
       setStatus("error");
       setErrorMessage(errorMsg);
-      setTimeout(() => {
+      statusTimerRef.current = setTimeout(() => {
         setStatus("idle");
         setErrorMessage("");
       }, 3000);

@@ -32,15 +32,17 @@ export default function PortfolioShowcase({ lang }) {
   useEffect(() => {
     const el = phoneRef.current;
     if (!el) return;
-    const onScroll = () => {
-      if (el.getBoundingClientRect().top < window.innerHeight * 0.75) {
-        el.classList.add("phone-frame-pulse");
-        window.removeEventListener("scroll", onScroll);
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add("phone-frame-pulse");
+          observer.disconnect();
+        }
+      },
+      { threshold: 0, rootMargin: "0px 0px -25% 0px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   /* Sync scroll position → active state */
@@ -190,7 +192,7 @@ export default function PortfolioShowcase({ lang }) {
                           className="w-full h-auto block"
                           sizes="(min-width:1024px) 320px, 280px"
                           placeholder="blur"
-                          loading="eager"
+                          loading={i === 0 ? "eager" : "lazy"}
                         />
                       </div>
                     </div>
