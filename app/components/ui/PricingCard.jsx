@@ -36,9 +36,9 @@ export default function PricingCard({
       </h3>
 
       {/* Tagline */}
-      <p className="mt-2 text-content-body text-caption leading-relaxed">
+      {/* <p className="mt-2 text-content-body text-caption leading-relaxed">
         {tier.tagline[lang]}
-      </p>
+      </p> */}
 
       {/* Price */}
       <div className="mt-5 flex items-baseline gap-1.5">
@@ -81,12 +81,13 @@ export default function PricingCard({
 
       {/* CTA */}
       <a
+        {...(isHighlighted ? { id: "pricing-cta" } : {})}
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         className={`mt-6 flex items-center justify-center gap-2 font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light${
           isHighlighted
-            ? " bg-gradient-to-b from-gold to-gold-dark text-gray-900 hover:shadow-[0_4px_24px_-4px_hsl(var(--gold)/0.4)]"
+            ? " relative overflow-hidden bg-gradient-to-b from-gold to-gold-dark text-gray-900"
             : " border border-border-strong text-content-heading hover:border-gold/40 hover:text-gold"
         }`}
       >

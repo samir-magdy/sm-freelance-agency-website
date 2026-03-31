@@ -25,11 +25,11 @@ const pricingSection = {
         ar: "موقع يضم حتى 5 أقسام",
       },
       {
-        en: "Standard design customized to brand",
+        en: "Standard design",
         ar: "تصميم قياسي مخصص لهوية علامتك التجارية",
       },
       {
-        en: "WhatsApp, social media & contact details",
+        en: "Socials + contact integration",
         ar: "واتساب، وسائل التواصل وبيانات الاتصال",
       },
       {
@@ -72,10 +72,10 @@ const pricingSection = {
         en: "Advanced SEO",
         ar: "تحسين محركات بحث متقدم",
       },
-      {
-        en: "Contact form",
-        ar: "نموذج تواصل",
-      },
+      // {
+      //   en: "Contact form",
+      //   ar: "نموذج تواصل",
+      // },
     ],
     delivery: { en: "1–2 weeks", ar: "١–٢ أسابيع" },
   },
@@ -87,25 +87,26 @@ const pricingSection = {
       ar: "موقع متعدد الصفحات مصمم للنمو.",
     },
     features: [
+     
       {
         en: "Premium custom design",
         ar: "تصميم مخصص متقدم",
       },
       {
-        en: "Multi-page online store",
-        ar: "موقع متعدد الصفحات يضم حتى 6 صفحات",
-      },
-      {
-        en: "Content Managment dashboard",
+        en: "Content Managment Dashboard",
         ar: "لوحة تحكم للمحتوى",
       },
       {
-        en: "Targered SEO",
+        en: "Advanced SEO",
         ar: "تحسين محركات بحث متقدم",
       },
       {
         en: "Payment On Delivery",
         ar: "الدفع عند التسليم",
+      },
+       {
+        en: "Whatsapp checkout",
+        ar: "موقع متعدد الصفحات يضم حتى 6 صفحات",
       },
       {
         en: "English OR Arabic",

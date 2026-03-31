@@ -20,11 +20,11 @@ export default async function Page({ params }) {
       <HeroSection lang={lang} />
       <ServicesSection lang={lang} />
       <AddOnsSection lang={lang} />
-      <AboutStrip lang={lang} />
+      {/* <AboutStrip lang={lang} /> */}
+      <GoalSection lang={lang} />
       <PortfolioShowcase lang={lang} />
       <PricingSection lang={lang} />
       <WorkflowSection lang={lang} />
-      <GoalSection lang={lang} />
       <FAQSection lang={lang} />
       <ContactSection lang={lang} />
     </div>

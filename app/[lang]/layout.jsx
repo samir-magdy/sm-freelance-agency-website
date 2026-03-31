@@ -4,7 +4,6 @@ import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Footer from "../components/ui/Footer";
 import HeroNav from "../components/ui/HeroNav";
-import FontReadyTrigger from "../components/ui/FontReadyTrigger";
 import { SITE_URL } from "../data/translations/lang";
 import translations from "../data/translations";
 
@@ -326,8 +325,6 @@ export default async function LangLayout({ children, params }) {
           }}
         />
 
-        <FontReadyTrigger />
-
         {/* ── Navigation ── */}
         <HeroNav lang={lang} strings={heroNavStrings} />
 
@@ -347,7 +344,7 @@ export default async function LangLayout({ children, params }) {
             src="/whatsapp.svg"
             alt=""
          
-            className="size-full w-12 h-12 ltr:hidden md:w-10 md:h-10"
+            className="size-full w-12 h-12 md:w-10 md:h-10"
           />
         </a>
 

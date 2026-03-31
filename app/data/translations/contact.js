@@ -4,7 +4,7 @@ const contactSection = {
     ar: "ابدأ في إنشاء موقعك",
   },
   subtitle: {
-    en: "Share a few details and we'll reach out.",
+    en: "Share a few details and we'll reach out or tap the WhatsApp button below.",
     ar: "شاركنا بعض التفاصيل وسنتواصل معك لتقديم استشارة.",
   },
 };

@@ -90,27 +90,23 @@ html {
   }
 }
 
-.hero-fade {
-  opacity: 0;
+.hero-fade-hook-1 {
+  animation: heroFadeIn 0.3s ease-out 0s both;
 }
-
-html.fonts-ready .hero-fade-hook-1 {
-  animation: heroFadeIn 0.05s ease-out 0s both;
+.hero-fade-hook-2 {
+  animation: heroFadeIn 0.3s ease-out 0.4s both;
 }
-html.fonts-ready .hero-fade-hook-2 {
-  animation: heroFadeIn 0.05s ease-out 0.4s both;
+.hero-fade-hook-3 {
+  animation: heroFadeIn 0.3s ease-out 0.8s both;
 }
-html.fonts-ready .hero-fade-hook-3 {
-  animation: heroFadeIn 0.05s ease-out 0.8s both;
-}
-html.fonts-ready .hero-fade-nav {
+.hero-fade-nav {
   animation: heroFadeIn 0.3s ease-out 1.2s both;
 }
-html.fonts-ready .hero-fade-secondary-cta {
+.hero-fade-secondary-cta {
   animation: heroFadeIn 0.3s ease-out 1.6s both;
 }
-html.fonts-ready .hero-fade-whatsapp {
-  animation: heroFadeIn 1s ease-out 2.8s both;
+.hero-fade-whatsapp {
+  animation: heroFadeIn 1s ease-out 2.7s both;
 }
 
 /* ══════════════════════════════════════
@@ -194,14 +190,10 @@ html.fonts-ready .hero-fade-whatsapp {
 .cta-primary {
   position: relative;
   overflow: hidden;
-  opacity: 0;
-}
-
-html.fonts-ready .cta-primary {
   animation: ctaEntrance 0.4s ease-out 1.2s both;
 }
 
-.cta-primary::before, #portfolio-cta::before {
+.cta-primary::before, #portfolio-cta::before, #pricing-cta::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -217,12 +209,12 @@ html.fonts-ready .cta-primary {
   pointer-events: none;
 }
 
-html.fonts-ready .cta-primary::before,
-html.fonts-ready #portfolio-cta::before {
+.cta-primary::before,
+#portfolio-cta::before, #pricing-cta::before {
   animation: ctaAutoShimmer 8s ease-out 1.9s infinite;
 }
 
-[dir="rtl"] .cta-primary::before, [dir="rtl"] #portfolio-cta::before {
+[dir="rtl"] .cta-primary::before, [dir="rtl"] #portfolio-cta::before, [dir="rtl"] #pricing-cta::before {
   background: linear-gradient(
     -105deg,
     transparent 35%,
@@ -234,12 +226,12 @@ html.fonts-ready #portfolio-cta::before {
   translate: 110% 0;
 }
 
-html.fonts-ready[dir="rtl"] .cta-primary::before,
-html.fonts-ready[dir="rtl"] #portfolio-cta::before {
+[dir="rtl"] .cta-primary::before,
+[dir="rtl"] #portfolio-cta::before, [dir="rtl"] #pricing-cta::before {
   animation: ctaAutoShimmerRtl 8s ease-out 1.9s infinite;
 }
 
-.cta-primary::after, #portfolio-cta::after {
+.cta-primary::after, #portfolio-cta::after, #pricing-cta::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -261,7 +253,7 @@ html.fonts-ready[dir="rtl"] #portfolio-cta::before {
 }
 
 /* CTA shimmer — RTL */
-[dir="rtl"] .cta-primary::after, [dir="rtl"] #portfolio-cta::after {
+[dir="rtl"] .cta-primary::after, [dir="rtl"] #portfolio-cta::after, [dir="rtl"] #pricing-cta::after {
   background: linear-gradient(
     -105deg,
     transparent 35%,
@@ -278,10 +270,10 @@ html.fonts-ready[dir="rtl"] #portfolio-cta::before {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .cta-primary:hover::after, #portfolio-cta:hover::after {
+  .cta-primary:hover::after, #portfolio-cta:hover::after, #pricing-cta:hover::after {
     animation: shimmer-sweep 0.4s ease-out forwards;
   }
-  [dir="rtl"] .cta-primary:hover::after, [dir="rtl"] #portfolio-cta:hover::after {
+  [dir="rtl"] .cta-primary:hover::after, [dir="rtl"] #portfolio-cta:hover::after, [dir="rtl"] #pricing-cta:hover::after {
     animation: shimmer-sweep-rtl 0.4s ease-out forwards;
   }
 }

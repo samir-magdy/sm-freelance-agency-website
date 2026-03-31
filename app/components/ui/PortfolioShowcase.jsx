@@ -132,7 +132,7 @@ export default function PortfolioShowcase({ lang }) {
 
           {/* "View Live Site" CTA — desktop only (mobile CTA is below the phone) */}
           <a
-            id="portfolio-cta"
+            id="pricing-cta"
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
