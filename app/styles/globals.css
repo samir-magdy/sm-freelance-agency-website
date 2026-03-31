@@ -90,24 +90,25 @@ html {
   }
 }
 
-.hero-fade-hook-1 {
-  animation: heroFadeIn 0.3s ease-out 0.5s both;
+/* All hero elements start invisible */
+.hero-fade-hook-1,
+.hero-fade-hook-2,
+.hero-fade-hook-3,
+.hero-fade-nav,
+.hero-fade-secondary-cta,
+.hero-fade-whatsapp,
+.cta-primary {
+  opacity: 0;
 }
-.hero-fade-hook-2 {
-  animation: heroFadeIn 0.3s ease-out 1s both;
-}
-.hero-fade-hook-3 {
-  animation: heroFadeIn 0.3s ease-out 1.5s both;
-}
-.hero-fade-nav {
-  animation: heroFadeIn 0.5s ease-out 2s both;
-}
-.hero-fade-secondary-cta {
-  animation: heroFadeIn 0.5s ease-out 2.5s both;
-}
-.hero-fade-whatsapp {
-  animation: heroFadeIn 0.8s ease-out 3.5s both;
-}
+
+/* Animations only fire once JS confirms the page is painted */
+.hero-go .hero-fade-hook-1 { animation: heroFadeIn 0.3s ease-out 0s both; }
+.hero-go .hero-fade-hook-2 { animation: heroFadeIn 0.3s ease-out 0.5s both; }
+.hero-go .hero-fade-hook-3 { animation: heroFadeIn 0.3s ease-out 1.0s both; }
+.hero-go .hero-fade-nav    { animation: heroFadeIn 0.3s ease-out 1.5s both; }
+.hero-go .cta-primary      { animation: ctaEntrance 0.4s ease-out 1.6s both; }
+.hero-go .hero-fade-secondary-cta { animation: heroFadeIn 0.5s ease-out 2.0s both; }
+.hero-go .hero-fade-whatsapp      { animation: heroFadeIn 0.8s ease-out 3.0s both; }
 
 /* ══════════════════════════════════════
    4. Nav Link — Underline Hover Effect
