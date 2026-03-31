@@ -1,5 +1,4 @@
 import translations from "@/app/data/translations";
-import  HeroAnimTrigger from "../../components/ui/AnimationGate.jsx";
 
 export default function HeroSection({ lang }) {
   const t = translations;
@@ -7,7 +6,6 @@ export default function HeroSection({ lang }) {
 
   return (
     <>
-      <HeroAnimTrigger />
       <section
         id="SMWebStudioEG"
         className="h-[100dvh] flex items-center justify-center relative"
