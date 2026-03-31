@@ -105,10 +105,10 @@ html {
 .hero-go .hero-fade-hook-1 { animation: heroFadeIn 0.3s ease-out 0s both; }
 .hero-go .hero-fade-hook-2 { animation: heroFadeIn 0.3s ease-out 0.5s both; }
 .hero-go .hero-fade-hook-3 { animation: heroFadeIn 0.3s ease-out 1.0s both; }
-.hero-go .hero-fade-nav    { animation: heroFadeIn 0.3s ease-out 1.4s both; }
+.hero-go .hero-fade-nav    { animation: heroFadeIn 0.3s ease-out 1.5s both; }
 .hero-go .cta-primary      { animation: ctaEntrance 0.3s ease-out 1.5s both; }
 .hero-go .hero-fade-secondary-cta { animation: heroFadeIn 0.3s ease-out 1.6s both; }
-.hero-go .hero-fade-whatsapp      { animation: heroFadeIn 0.8s ease-out 2.5s both; }
+.hero-go .hero-fade-whatsapp      { animation: heroFadeIn 0.8s ease-out 3s both; }
 
 /* ══════════════════════════════════════
    4. Nav Link — Underline Hover Effect
