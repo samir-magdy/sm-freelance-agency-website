@@ -38,7 +38,7 @@ const form = {
     en: "Something went wrong. Please try again.",
     ar: "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
   },
-  chatInstead: { en: "Chat instead", ar: "تواصل عبر واتساب" },
+  chatInstead: { en: "Reach Us Directly", ar: "تواصل عبر واتساب" },
 };
 
 export default form;
