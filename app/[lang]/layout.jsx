@@ -11,7 +11,7 @@ import translations from "../data/translations";
 const cairo = Cairo({
   variable: "--font-cairo",
   subsets: ["arabic", "latin"],
-  display: "block",
+  display: "swap",
 });
 
 // ─────────────────────────────────────────────
