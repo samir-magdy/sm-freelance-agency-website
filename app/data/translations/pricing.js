@@ -15,7 +15,7 @@ const pricingSection = {
     {
       name: { en: "Essential Web Design", ar: "الأساسية" },
       seoName: { en: "Affordable Website Design Package", ar: "باقة تصميم المواقع الأساسية" },
-      price: "5,800",
+      price: "6,500",
       tagline: {
         en: "Get online with the core essentials.",
         ar: "ابدأ تواجدك الرقمي بالأساسيات.",
@@ -47,7 +47,7 @@ const pricingSection = {
     {
       name: { en: "Premium Web Design", ar: "المتاكاملة" },
       seoName: { en: "Recommended Website Design Package", ar: "باقة تصميم المواقع الاحترافية" },
-      price: "9,800",
+      price: "9,900",
       tagline: {
         en: "Stand out with a feature-rich website.",
         ar: "تميز بموقع غني بالمميزات.",

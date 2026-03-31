@@ -103,9 +103,9 @@ html {
 }
 
 /* 1. Fast, snappy entrance for text hooks */
-.hero-go .hero-fade-hook-1 { animation: heroFadeIn 0.4s ease-out 0s both; }
-.hero-go .hero-fade-hook-2 { animation: heroFadeIn 0.4s ease-out 0.4s both; }
-.hero-go .hero-fade-hook-3 { animation: heroFadeIn 0.4s ease-out 0.8s both; }
+.hero-go .hero-fade-hook-1 { animation: heroFadeIn 0.3s ease-out 0s both; }
+.hero-go .hero-fade-hook-2 { animation: heroFadeIn 0.3s ease-out 0.4s both; }
+.hero-go .hero-fade-hook-3 { animation: heroFadeIn 0.3s ease-out 0.8s both; }
 
 /* 2. Smoother, longer entrance for layout components */
 .hero-go .hero-fade-nav { 
@@ -114,17 +114,13 @@ html {
 
 /* 3. Staggered CTA entrance */
 .hero-go .cta-primary { 
-  animation: ctaEntrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 1.5s both; 
+  animation: ctaEntrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s both; 
 }
 
 .hero-go .hero-fade-secondary-cta { 
-  animation: heroFadeIn 0.6s ease-out 1.8s both; 
+  animation: heroFadeIn 0.3s ease-out 1.45s both; 
 }
 
-/* 4. Delayed entrance for support/contact widgets */
-.hero-go .hero-fade-whatsapp { 
-  animation: heroFadeIn 1s ease-out 2.5s both; 
-}
 /* ══════════════════════════════════════
    4. Nav Link — Underline Hover Effect
    ══════════════════════════════════════ */
@@ -180,7 +176,7 @@ html {
 @keyframes ctaEntrance {
   from { 
     opacity: 0;
-    transform: translateY(50);
+    transform: translateY(50px);
   }
   to { 
     opacity: 1;
@@ -206,7 +202,6 @@ html {
 .cta-primary {
   position: relative;
   overflow: hidden;
-  animation: ctaEntrance 2s ease-out 2s both;
 }
 
 .cta-primary::before, #portfolio-cta::before, #pricing-cta::before {
@@ -394,7 +389,7 @@ html {
   from { opacity: 0; transform: translateY(-10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-Fpulse
+
 .portfolio-info-enter { animation: portfolioInfoIn 0.3s ease-out both; }
 
 @keyframes phonePulse {

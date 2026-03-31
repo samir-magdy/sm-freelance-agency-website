@@ -4,7 +4,6 @@ import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Footer from "../components/ui/Footer";
 import HeroNav from "../components/ui/HeroNav";
-import FloatingWhatsApp from "../components/ui/FloatingWhatsApp";
 import { SITE_URL } from "../data/translations/lang";
 import translations from "../data/translations";
 
@@ -332,9 +331,6 @@ export default async function LangLayout({ children, params }) {
         {/* ── Main content ── */}
         <main id="main-content">{children}</main>
         <Footer />
-
-        {/* ── Floating WhatsApp button ── */}
-        <FloatingWhatsApp />
 
         <Analytics />
       </body>

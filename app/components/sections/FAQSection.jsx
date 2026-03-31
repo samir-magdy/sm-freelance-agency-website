@@ -1,5 +1,4 @@
 import translations from "@/app/data/translations";
-import FAQSearch from "@/app/components/ui/FAQSearch";
 
 export default function FAQSection({ lang }) {
   const t = translations.faqSection;
@@ -16,13 +15,11 @@ export default function FAQSection({ lang }) {
             {t.heading[lang]}
           </h2>
         </div>
-
-        <FAQSearch lang={lang}>
+          <article className="w-full">
           {t.items.map((item, i) => (
             <details
               key={i}
               name="faq"
-              data-search={`${item.question[lang]} ${item.answer[lang]}`.toLowerCase()}
               className="border-b border-border-subtle first:border-t-none px-2"
             >
               <summary
@@ -48,8 +45,9 @@ export default function FAQSection({ lang }) {
                 </p>
               </div>
             </details>
+            
           ))}
-        </FAQSearch>
+          </article>
       </div>
     </section>
   );
