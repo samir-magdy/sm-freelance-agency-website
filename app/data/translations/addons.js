@@ -1,7 +1,7 @@
 const addOnsSection = {
   heading: {
     en: "Add-ons For Your Website",
-    ar: "إضافات للمواقع",
+    ar: "خصائص إضافاية للمواقع",
   },
 
   items: [

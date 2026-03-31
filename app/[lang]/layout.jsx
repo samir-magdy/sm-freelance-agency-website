@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Footer from "../components/ui/Footer";
 import HeroNav from "../components/ui/HeroNav";
+import FloatingWhatsApp from "../components/ui/FloatingWhatsApp";
 import { SITE_URL } from "../data/translations/lang";
 import translations from "../data/translations";
 
@@ -333,20 +334,7 @@ export default async function LangLayout({ children, params }) {
         <Footer />
 
         {/* ── Floating WhatsApp button ── */}
-        <a
-          href="https://wa.me/201274613331"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Chat on WhatsApp"
-          className="hero-fade hero-fade-whatsapp fixed bottom-3 right-3 sm:bottom-6 sm:right-6 rtl:right-auto rtl:left-3 z-[5] size-14 rounded-full shadow-lg transition-transform hover:scale-110"
-        >
-          <img
-            src="/whatsapp.svg"
-            alt="Whatsapp Contact Widget"
-         
-            className="w-10 h-10"
-          />
-        </a>
+        <FloatingWhatsApp />
 
         <Analytics />
       </body>

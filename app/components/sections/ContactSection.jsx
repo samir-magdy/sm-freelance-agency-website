@@ -33,6 +33,7 @@ export default function ContactSection({ lang }) {
     errorRateLimit: t.form.errorRateLimit[lang],
     errorGeneric: t.form.errorGeneric[lang],
     contactFormA11y: t.a11y.contactForm[lang],
+    chatInstead: t.form.chatInstead[lang],
   };
 
   return (

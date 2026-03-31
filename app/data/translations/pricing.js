@@ -8,7 +8,7 @@ const pricingSection = {
     ar: "الأكثر طلباً",
   },
   cta: {
-    en: "Get this",
+    en: "Get Started",
     ar: "تواصل معنا",
   },
   tiers: [
