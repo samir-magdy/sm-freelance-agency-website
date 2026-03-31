@@ -23,7 +23,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
 
       {/* Navbar row — always visible and interactive, clicking it also closes the menu */}
       <div
-        className="absolute top-0 left-0 right-0 z-10 backdrop-blur-xl pointer-events-auto"
+        className="absolute top-0 left-0 right-0 z-10 py-2 backdrop-blur-xl pointer-events-auto"
         dir="ltr"
       >
         <div className="flex justify-between items-center px-3">
@@ -31,8 +31,8 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             <Image
               src="/brand.svg"
               alt="SM Web Studio – Website Design Company in Egypt"
-              width={80}
-              height={80}
+              width={60}
+              height={60}
               priority
             />
           </a>
