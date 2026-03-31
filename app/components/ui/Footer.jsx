@@ -43,7 +43,7 @@ export default function Footer() {
         {/* Copyright */}
         <small className="text-content-muted/80 text-sm inline-flex items-center gap-1">
             <Copyright size={12}/>
-           2026 SM Web Studio &middot; Samir Magdy
+           2026 SM Web Studio &middot; By Samir Magdy
         </small>
       </div>
     </footer>

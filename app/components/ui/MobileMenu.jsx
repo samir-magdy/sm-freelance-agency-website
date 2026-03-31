@@ -68,11 +68,11 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
       <div
         className={`absolute inset-0 flex flex-col items-center justify-center transition-[opacity,visibility] duration-[250ms] ease-out ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"}`}
       >
-        <ul className="flex flex-col items-center gap-4 pb-6">
+        <ul className="flex flex-col items-center gap-6">
           <li>
             <a
               href="#features"
-              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+              className="font-semibold text-content-body text-[1.5rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav.features}
             </a>
@@ -80,7 +80,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           <li>
             <a
               href="#services"
-              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+              className="font-semibold text-content-body text-[1.5rem]  tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav.services}
             </a>
@@ -88,7 +88,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           <li>
             <a
               href="#portfolio"
-              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+              className="font-semibold text-content-body text-[1.5rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav.portfolio}
             </a>
@@ -96,7 +96,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           <li>
             <a
               href="#pricing"
-              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+              className="font-semibold text-content-body text-[1.5rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav.pricing}
             </a>
@@ -104,7 +104,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           <li>
             <a
               href="#process"
-              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+              className="font-semibold text-content-body text-[1.5rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav.process}
             </a>
@@ -112,7 +112,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           <li>
             <a
               href="#FAQs"
-              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+              className="font-semibold text-content-body text-[1.5rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav.FAQs}
             </a>
@@ -120,16 +120,16 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           <li>
             <a
               href="#contact"
-              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+              className="font-semibold text-content-body text-[1.5rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav.contact}
             </a>
           </li>
-        </ul>
-        <div className="flex flex-col absolute bottom-8 items-center gap-5">
-          <div className="flex flex-col items-center gap-4">
+          {/* <li className="pt-2">
           <SocialIcons />
-          </div>
+          </li> */}
+        </ul>
+        <div className="flex flex-col absolute bottom-12 items-center gap-8">
           <LanguageToggle lang={lang} label={langToggleLabel} />
         </div>
       </div>

@@ -5,7 +5,7 @@ const contactSection = {
   },
   subtitle: {
     en: "Share a few details and we'll reach out.",
-    ar: "شاركنا بعض التفاصيل وسنتواصل معك لتقديم استشارة.",
+    ar: "شاركنا بعض التفاصيل وسنتواصل معك.",
   },
 };
 
