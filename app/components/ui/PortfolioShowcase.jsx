@@ -192,7 +192,7 @@ export default function PortfolioShowcase({ lang }) {
                           className="w-full h-auto block"
                           sizes="(min-width:1024px) 320px, 280px"
                           placeholder="blur"
-                          loading={i === 0 ? "eager" : "lazy"}
+                          loading="eager"
                         />
                       </div>
                     </div>
