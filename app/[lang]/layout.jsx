@@ -6,6 +6,7 @@ import Footer from "../components/ui/Footer";
 import HeroNav from "../components/ui/HeroNav";
 import { SITE_URL } from "../data/translations/lang";
 import translations from "../data/translations";
+import Script from "next/script";
 
 const cairo = Cairo({
   variable: "--font-cairo",
@@ -33,7 +34,7 @@ const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/SMWebStudioEG",
   x: "https://x.com/SMWebStudioEG",
   youtube: "https://www.youtube.com/@SMWebStudioEG",
-  linkedin: "https://www.linkedin.com/in/SMWebStudioEG"
+  linkedin: "https://www.linkedin.com/in/SMWebStudioEG",
 };
 
 // ─────────────────────────────────────────────
@@ -42,7 +43,7 @@ const SOCIAL_LINKS = {
 
 const meta = {
   en: {
-    title: `Affordable Web Design & Ecommerce | ${SITE_NAME}`,
+    title: `${SITE_NAME} |`,
     description: META_DESCRIPTION.en,
     ogLocale: "en_US",
     altLocale: "ar_EG",
@@ -67,9 +68,7 @@ const meta = {
 // Single source of truth so canonical, OG url, and structured data never drift apart.
 
 function getCanonicalUrl(lang) {
-  return lang === "en"
-    ? SITE_URL
-    : `${SITE_URL}/${lang}`;
+  return lang === "en" ? SITE_URL : `${SITE_URL}/${lang}`;
 }
 
 export async function generateMetadata({ params }) {
@@ -81,7 +80,7 @@ export async function generateMetadata({ params }) {
     metadataBase: new URL(SITE_URL),
     icons: {
       icon: [
-         {
+        {
           url: "/favicon.png",
           type: "image/png",
           sizes: "96x96",
@@ -94,7 +93,7 @@ export async function generateMetadata({ params }) {
         {
           url: "/favicon-light.svg",
           type: "image/svg+xml",
-          sizes: "any"
+          sizes: "any",
         },
         {
           url: "/favicon-dark.svg",
@@ -213,7 +212,13 @@ function buildStructuredData(lang) {
         priceCurrency: "EGP",
       })),
     },
-    sameAs: [SOCIAL_LINKS.facebook, SOCIAL_LINKS.instagram, SOCIAL_LINKS.x, SOCIAL_LINKS.youtube, SOCIAL_LINKS.linkedin],
+    sameAs: [
+      SOCIAL_LINKS.facebook,
+      SOCIAL_LINKS.instagram,
+      SOCIAL_LINKS.x,
+      SOCIAL_LINKS.youtube,
+      SOCIAL_LINKS.linkedin,
+    ],
     founder: { "@id": `${SITE_URL}/#founder` },
     knowsLanguage: ["en", "ar"],
     openingHoursSpecification: [
@@ -282,7 +287,13 @@ function buildStructuredData(lang) {
 
   return {
     "@context": "https://schema.org",
-    "@graph": [businessSchema, websiteSchema, webPageSchema, founderSchema, faqSchema],
+    "@graph": [
+      businessSchema,
+      websiteSchema,
+      webPageSchema,
+      founderSchema,
+      faqSchema,
+    ],
   };
 }
 
@@ -342,7 +353,8 @@ export default async function LangLayout({ children, params }) {
         <Analytics />
 
         {/* Reset will-change after all hero entrance animations complete (~3.4s) */}
-        <script
+        <Script
+          id="reset-will-change"
           dangerouslySetInnerHTML={{
             __html: `setTimeout(function(){document.querySelectorAll('.hero-fade-hook-1,.hero-fade-hook-2,.hero-fade-hook-3,.hero-fade-nav,.hero-fade-secondary-cta,.cta-primary').forEach(function(el){el.style.willChange='auto'})},3500)`,
           }}

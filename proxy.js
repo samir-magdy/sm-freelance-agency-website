@@ -24,11 +24,11 @@ export function proxy(request) {
     return NextResponse.next();
   }
 
-  // Only bare root → rewrite to /en
+  // Only bare root → redirect to /en
   if (pathname === "/") {
     const url = request.nextUrl.clone();
     url.pathname = "/en";
-    return NextResponse.rewrite(url);
+    return NextResponse.redirect(url);
   }
 
   return NextResponse.next();

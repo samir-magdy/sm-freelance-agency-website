@@ -1,7 +1,9 @@
+import Link from 'next/link';
+
 export default function LanguageToggle({ lang, label }) {
   const nextLang = lang === "ar" ? "en" : "ar";
   return (
-    <a
+    <Link
       id="language-toggler"
       href={`/${nextLang}`}
       aria-label={`Switch to ${lang === "ar" ? "English" : "Arabic"}`}
@@ -25,6 +27,6 @@ export default function LanguageToggle({ lang, label }) {
         <path d="M2 12h20" />
       </svg>
       {label}
-    </a>
+    </Link>
   );
 }
