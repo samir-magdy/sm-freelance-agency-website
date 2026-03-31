@@ -333,6 +333,13 @@ export default async function LangLayout({ children, params }) {
         <Footer />
 
         <Analytics />
+
+        {/* Reset will-change after hero entrance animations complete (~1.9s) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `setTimeout(function(){document.querySelectorAll('.hero-fade-hook-1,.hero-fade-hook-2,.hero-fade-hook-3,.hero-fade-nav,.hero-fade-secondary-cta,.hero-fade-whatsapp,.cta-primary').forEach(function(el){el.style.willChange='auto'})},2000)`,
+          }}
+        />
       </body>
     </html>
   );

@@ -163,9 +163,8 @@ html {
 /* ══════════════════════════════════════
    5. Primary CTA — Shimmer Effect + Conversion Animations
    ══════════════════════════════════════
-   ::after  → hover shimmer (existing)
-   ::before → auto-shimmer loop (fires every 6s, sweeps in 0.72s)
-   nudge    → one-time scale pulse on the button itself when it appears
+   ::before → one-time initial shimmer sweep on hero CTA (fires at 2.2s)
+   ::after  → hover shimmer
    ══════════════════════════════════════ */
 
 /* Entrance: shimmer leads a clip-path wipe — the button draws itself
@@ -185,18 +184,14 @@ html {
 }
 
 
-@keyframes ctaAutoShimmer {
-  0%    { translate: -110% 0; }
-  12%   { translate:  110% 0; }
-  12.1% { translate: -110% 0; }
-  100%  { translate: -110% 0; }
+@keyframes ctaInitialShimmer {
+  from { translate: -110% 0; }
+  to   { translate:  110% 0; }
 }
 
-@keyframes ctaAutoShimmerRtl {
-  0%    { translate:  110% 0; }
-  12%   { translate: -110% 0; }
-  12.1% { translate:  110% 0; }
-  100%  { translate:  110% 0; }
+@keyframes ctaInitialShimmerRtl {
+  from { translate:  110% 0; }
+  to   { translate: -110% 0; }
 }
 
 .cta-primary {
@@ -204,7 +199,7 @@ html {
   overflow: hidden;
 }
 
-.cta-primary::before, #portfolio-cta::before, #pricing-cta::before {
+.cta-primary::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -218,14 +213,10 @@ html {
   );
   translate: -110% 0;
   pointer-events: none;
+  animation: ctaInitialShimmer 0.6s ease-out 2.2s forwards;
 }
 
-.cta-primary::before,
-#portfolio-cta::before, #pricing-cta::before {
-  animation: ctaAutoShimmer 8s ease-out 2.2s infinite;
-}
-
-[dir="rtl"] .cta-primary::before, [dir="rtl"] #portfolio-cta::before, [dir="rtl"] #pricing-cta::before {
+[dir="rtl"] .cta-primary::before {
   background: linear-gradient(
     -105deg,
     transparent 35%,
@@ -235,14 +226,10 @@ html {
     transparent 65%
   );
   translate: 110% 0;
+  animation: ctaInitialShimmerRtl 0.6s ease-out 2.2s forwards;
 }
 
-[dir="rtl"] .cta-primary::before,
-[dir="rtl"] #portfolio-cta::before, [dir="rtl"] #pricing-cta::before {
-  animation: ctaAutoShimmerRtl 8s ease-out 2.2s infinite;
-}
-
-.cta-primary::after, #portfolio-cta::after, #pricing-cta::after {
+.cta-primary::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -264,7 +251,7 @@ html {
 }
 
 /* CTA shimmer — RTL */
-[dir="rtl"] .cta-primary::after, [dir="rtl"] #portfolio-cta::after, [dir="rtl"] #pricing-cta::after {
+[dir="rtl"] .cta-primary::after {
   background: linear-gradient(
     -105deg,
     transparent 35%,
@@ -281,10 +268,10 @@ html {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .cta-primary:hover::after, #portfolio-cta:hover::after, #pricing-cta:hover::after {
+  .cta-primary:hover::after {
     animation: shimmer-sweep 0.6s ease-out forwards;
   }
-  [dir="rtl"] .cta-primary:hover::after, [dir="rtl"] #portfolio-cta:hover::after, [dir="rtl"] #pricing-cta:hover::after {
+  [dir="rtl"] .cta-primary:hover::after {
     animation: shimmer-sweep-rtl 0.6s ease-out forwards;
   }
 }
@@ -312,74 +299,6 @@ html {
   animation: ctaEntrance 0.55s ease-out both;
 }
 
-/* ══════════════════════════════════════
-   6. Hero Section — Dot Grid & Radial Glow
-   ══════════════════════════════════════ */
-
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-image: radial-gradient(
-    circle,
-    hsl(var(--content-heading) / 0.12) 1px,
-    transparent 1px
-  );
-  background-size: 28px 28px;
-  mask-image: radial-gradient(
-    ellipse 60% 50% at 50% 50%,
-    black 30%,
-    transparent 100%
-  );
-  -webkit-mask-image: radial-gradient(
-    ellipse 60% 50% at 50% 50%,
-    black 30%,
-    transparent 100%
-  );
-}
-
-.hero-glow {
-  position: absolute;
-  z-index: 0;
-  width: 100%;
-  aspect-ratio: 1;
-  top: 51%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    circle,
-    hsl(var(--gold-light) / 0.025) 0%,
-    transparent 65%
-  );
-  pointer-events: none;
-}
-
-@media (max-width: 768px) {
-  .hero-grid {
-    background-size: 22px 22px;
-    mask-image: radial-gradient(
-      ellipse 80% 50% at 50% 50%,
-      black 20%,
-      transparent 100%
-    );
-    -webkit-mask-image: radial-gradient(
-      ellipse 80% 50% at 50% 50%,
-      black 20%,
-      transparent 100%
-    );
-  }
-
-  .hero-glow {
-    width: 100%;
-    aspect-ratio: auto;
-    height: 100%;
-    background: radial-gradient(
-      circle,
-      hsl(var(--gold-light) / 0.03) 0%,
-      transparent 100%
-    );
-  }
-}
 
 /* ══════════════════════════════════════
    7. Portfolio Showcase — Scroll-Snap
