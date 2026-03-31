@@ -54,7 +54,7 @@ const faqSection = {
     {
       question: {
         en: "how much does a website cost for a small business?",
-        ar: "اسعار تصميم المواقع للشركات الصغيرة كام",
+        ar: "اسعار تصميم المواقع للشركات الصغيرة كام؟",
       },
       answer: {
         en: "Pricing is determined by project scope and technical complexity, similar to how real estate valuation depends on specifications and location. See our pricing section for our ready packages.",
