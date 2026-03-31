@@ -43,7 +43,7 @@ const SOCIAL_LINKS = {
 
 const meta = {
   en: {
-    title: `Modern Web Design & Online Stores | ${SITE_NAME} Egypt`,
+    title: `Modern Website Design & Online Stores | ${SITE_NAME}`,
     description: META_DESCRIPTION.en,
     ogLocale: "en_US",
     altLocale: "ar_EG",
