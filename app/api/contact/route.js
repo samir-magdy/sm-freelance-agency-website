@@ -1,8 +1,9 @@
 import { Resend } from "resend";
 import { ipAddress } from "@vercel/functions";
 import { NextResponse } from "next/server";
-// 1. Import the Redis client utility
 import { redis } from "@/lib/redis";
+
+export const runtime = 'edge';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
