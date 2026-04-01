@@ -190,7 +190,7 @@ export default function PortfolioShowcase({ lang }) {
                           className="w-full h-auto block"
                           placeholder="blur"
                           sizes="(max-width: 640px) 60vw, (max-width: 1024px) 290px, 320px"
-                          loading={i === 0 ? "eager" : "lazy"}
+                          loading="eager"
                         />
                       </div>
                     </div>

@@ -230,6 +230,9 @@ html {
 .cta-primary {
   position: relative;
   overflow: hidden;
+  display: inline-block;
+  isolation: isolate;
+  z-index: 1;
 }
 
 .cta-primary::before {
