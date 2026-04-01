@@ -22,13 +22,13 @@ export default function PageVisibility() {
 
     // 2. Handle Initial Hard Load
     // If we reach here, the page is still loading assets.
-    window.addEventListener('load', showPage);
+    window.addEventListener('DOMContentLoaded', showPage);
     
     // Safety fallback (3s)
     const timeout = setTimeout(showPage, 3000);
 
     return () => {
-      window.removeEventListener('load', showPage);
+      window.removeEventListener('DOMContentLoaded', showPage);
       clearTimeout(timeout);
     };
   }, [pathname]);

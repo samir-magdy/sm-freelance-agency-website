@@ -4,7 +4,6 @@ import HeroNav from "../components/ui/HeroNav";
 import translations from "../data/translations";
 import PageVisibility from "../components/utils/PageVisibility";
 import Footer from "../components/ui/Footer";
-import { Analytics } from "@vercel/analytics/next";
 import { SITE_URL } from "../data/translations/lang";
 import { notFound } from "next/navigation";
 import Script from "next/script";
@@ -240,7 +239,7 @@ function buildStructuredData(lang) {
     "@id": `${SITE_URL}/#website`,
     name: SITE_NAME,
     alternateName: SITE_NAME_AR,
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
     inLanguage: ["en", "ar"],
     publisher: {
       "@id": `${SITE_URL}/#business`,
@@ -359,7 +358,6 @@ export default async function LangLayout({ children, params }) {
         <main id="main-content">{children}</main>
         <Footer />
 
-        <Analytics />
       </body>
     </html>
   );
