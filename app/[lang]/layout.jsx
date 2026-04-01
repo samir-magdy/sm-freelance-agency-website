@@ -6,10 +6,18 @@ import Footer from "../components/ui/Footer";
 import HeroNav from "../components/ui/HeroNav";
 import { SITE_URL } from "../data/translations/lang";
 import translations from "../data/translations";
+import Script from "next/script";
 
-const cairo = Cairo({
+// Define separate instances at the top
+const cairoLatin = Cairo({
   variable: "--font-cairo",
-  subsets: ["arabic", "latin"],
+  subsets: ["latin"],
+  display: "block",
+});
+
+const cairoArabic = Cairo({
+  variable: "--font-cairo",
+  subsets: ["arabic"],
   display: "block",
 });
 
@@ -137,6 +145,7 @@ export async function generateMetadata({ params }) {
       description: m.description,
       images: [`${SITE_URL}/open-graph.webp`],
       site: TWITTER_HANDLE,
+      creator: TWITTER_HANDLE,
     },
     robots: {
       index: true,
@@ -300,6 +309,7 @@ export default async function LangLayout({ children, params }) {
   const { lang: rawLang } = await params;
   if (rawLang !== "en" && rawLang !== "ar") notFound();
   const lang = rawLang;
+  const selectedFont = lang === "ar" ? cairoArabic : cairoLatin;
   const structuredData = buildStructuredData(lang);
   const skipLabel = meta[lang].skipToContent;
   const t = translations;
@@ -330,7 +340,24 @@ export default async function LangLayout({ children, params }) {
       dir={lang === "ar" ? "rtl" : "ltr"}
       suppressHydrationWarning
     >
-      <body className={`${cairo.variable} font-cairo antialiased`}>
+      <body className={`${selectedFont.variable} font-cairo antialiased js-cloak`}>
+        <Script id="page-loader-cloak" strategy="afterInteractive">
+          {`
+            (function() {
+              const showPage = () => {
+                document.body.classList.remove('js-cloak');
+                document.body.classList.add('page-loaded');
+              };
+
+              if (document.readyState === 'complete') {
+                showPage();
+              } else {
+                window.addEventListener('load', showPage);
+                setTimeout(showPage, 3000);
+              }
+            })();
+          `}
+        </Script>
         {/* ── Skip navigation ── */}
         <a
           href="#main-content"
@@ -355,7 +382,6 @@ export default async function LangLayout({ children, params }) {
         <Footer />
 
         <Analytics />
-        
       </body>
     </html>
   );

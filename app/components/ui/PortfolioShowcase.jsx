@@ -39,7 +39,7 @@ export default function PortfolioShowcase({ lang }) {
           observer.disconnect();
         }
       },
-      { threshold: 0, rootMargin: "0px 0px -25% 0px" }
+      { threshold: 0, rootMargin: "0px 0px -25% 0px" },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -74,8 +74,7 @@ export default function PortfolioShowcase({ lang }) {
   }, []);
 
   const project = projects[active];
-  const pd =
-    translations.projectData[project.id];
+  const pd = translations.projectData[project.id];
 
   const isRtl = lang === "ar";
 
@@ -88,15 +87,14 @@ export default function PortfolioShowcase({ lang }) {
     >
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsStructuredData) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(projectsStructuredData),
+        }}
       />
 
       {/* ── Section heading ── */}
       <div className="text-center relative z-[2] px-5 mb-4 sm:mb-10 lg:mb-12">
-        <h2
-          id="portfolio-heading"
-          className="font-bold text-heading"
-        >
+        <h2 id="portfolio-heading" className="font-bold text-heading">
           {t.heading[lang]}
         </h2>
       </div>
@@ -107,7 +105,6 @@ export default function PortfolioShowcase({ lang }) {
         className="pt-2 flex flex-col lg:flex-row items-center lg:gap-16 xl:gap-20 relative z-[2]"
         dir={isRtl ? "rtl" : "ltr"}
       >
-
         {/* ── Info panel (badge + title + description + CTA) ──
             Mobile: above phone, centered text, only badge visible
             Desktop: beside phone, start-aligned, all elements visible
@@ -148,10 +145,8 @@ export default function PortfolioShowcase({ lang }) {
 
         {/* ── Phone column (phone frame + dot indicators + mobile CTA) ── */}
         <div className="flex flex-col items-center gap-4">
-
           {/* Arrow ← | Phone | Arrow → row (always LTR so swipe direction is consistent) */}
           <div dir="ltr" className="flex items-center justify-center gap-6">
-
             {/* Previous arrow */}
             <NavArrow
               direction="prev"
@@ -184,15 +179,18 @@ export default function PortfolioShowcase({ lang }) {
                   dir="ltr"
                 >
                   {projects.map((proj, i) => (
-                    <div key={proj.id} className="min-w-full w-full snap-start snap-always h-full">
+                    <div
+                      key={proj.id}
+                      className="min-w-full w-full snap-start snap-always h-full"
+                    >
                       <div className="phone-scroll overflow-y-auto h-full [scrollbar-width:none]">
                         <Image
                           src={proj.screenshot}
                           alt={`${translations.a11y.screenshotOf[lang]} ${translations.projectData[proj.id].title[lang]}`}
                           className="w-full h-auto block"
-                          sizes="(min-width:1024px) 320px, 280px"
                           placeholder="blur"
-                          loading="eager"
+                          fetchPriority="low"
+                          loading="lazy"
                         />
                       </div>
                     </div>

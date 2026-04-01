@@ -31,6 +31,23 @@
      Desktop navbar: 115px logo + 2×8px py-2 = 131px (xl breakpoint). */
 }
 
+/* Initial hidden state */
+.js-cloak {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Transition to visible */
+body {
+  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+}
+
+body.page-loaded {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
 /* ══════════════════════════════════════
    2. Base & Reset
    ══════════════════════════════════════ */
