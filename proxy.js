@@ -28,7 +28,7 @@ export function proxy(request) {
   if (pathname === "/") {
     const url = request.nextUrl.clone();
     url.pathname = "/en";
-    return NextResponse.redirect(url);
+    return NextResponse.rewrite(url);
   }
 
   return NextResponse.next();
