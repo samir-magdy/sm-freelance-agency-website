@@ -9,15 +9,9 @@ import { SITE_URL } from "../data/translations/lang";
 import { notFound } from "next/navigation";
 
 // Define separate instances at the top
-const cairoLatin = Cairo({
+const fonts = Cairo({
   variable: "--font-cairo",
-  subsets: ["latin"],
-  display: "block",
-});
-
-const cairoArabic = Cairo({
-  variable: "--font-cairo",
-  subsets: ["arabic"],
+  subsets: ["latin", "arabic"],
   display: "block",
 });
 
@@ -309,7 +303,6 @@ export default async function LangLayout({ children, params }) {
   const { lang: rawLang } = await params;
   if (rawLang !== "en" && rawLang !== "ar") notFound();
   const lang = rawLang;
-  const selectedFont = lang === "ar" ? cairoArabic : cairoLatin;
   const structuredData = buildStructuredData(lang);
   const skipLabel = meta[lang].skipToContent;
   const t = translations;
@@ -340,20 +333,8 @@ export default async function LangLayout({ children, params }) {
       dir={lang === "ar" ? "rtl" : "ltr"}
       suppressHydrationWarning
     >
-      <head>
-        <link
-          rel="prefetch"
-          href="/project-screenshots/e-commerce.webp"
-          as="image"
-        />
-        <link
-          rel="prefetch"
-          href="/project-screenshots/skyway.webp"
-          as="image"
-        />
-      </head>
       <body
-        className={`${selectedFont.variable} font-cairo antialiased js-cloak`}
+        className={`${fonts.variable} font-cairo antialiased js-cloak`}
       >
         <PageVisibility />
         {/* ── Skip navigation ── */}

@@ -189,8 +189,7 @@ export default function PortfolioShowcase({ lang }) {
                           alt={`${translations.a11y.screenshotOf[lang]} ${translations.projectData[proj.id].title[lang]}`}
                           className="w-full h-auto block"
                           placeholder="blur"
-                          fetchPriority="low"
-                          loading="lazy"
+                          loading="eager"
                         />
                       </div>
                     </div>
