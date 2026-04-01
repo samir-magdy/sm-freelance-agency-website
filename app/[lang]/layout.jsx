@@ -6,12 +6,11 @@ import Footer from "../components/ui/Footer";
 import HeroNav from "../components/ui/HeroNav";
 import { SITE_URL } from "../data/translations/lang";
 import translations from "../data/translations";
-import Script from "next/script";
 
 const cairo = Cairo({
   variable: "--font-cairo",
   subsets: ["arabic", "latin"],
-  display: "swap",
+  display: "block",
 });
 
 // ─────────────────────────────────────────────
@@ -356,14 +355,7 @@ export default async function LangLayout({ children, params }) {
         <Footer />
 
         <Analytics />
-
-        {/* Reset will-change after all hero entrance animations complete (~3.4s) */}
-        <Script
-          id="reset-will-change"
-          dangerouslySetInnerHTML={{
-            __html: `setTimeout(function(){document.querySelectorAll('.hero-fade-hook-1,.hero-fade-hook-2,.hero-fade-hook-3,.hero-fade-nav,.hero-fade-secondary-cta,.cta-primary').forEach(function(el){el.style.willChange='auto'})},3500)`,
-          }}
-        />
+        
       </body>
     </html>
   );

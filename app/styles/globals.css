@@ -87,7 +87,7 @@ html {
   }
 }
 
-/* All hero elements start invisible */
+/* 1. Base State: Elements are invisible and NOT promoted to GPU yet */
 .hero-fade-hook-1,
 .hero-fade-hook-2,
 .hero-fade-hook-3,
@@ -95,33 +95,46 @@ html {
 .hero-fade-secondary-cta,
 .cta-primary {
   opacity: 0;
-  will-change: transform, opacity; /* Optimizes for GPU compositing */
 }
 
-/* Scope animation triggers to the .is-ready class */
+/* 2. Active State: browser promotes to GPU layer ONLY when .is-ready is present */
 .is-ready .hero-fade-hook-1 {
+  will-change: opacity;
+  animation: heroFadeIn 0.2s ease-out 0s both;
+}
+
+.is-ready .hero-fade-hook-2 {
+  will-change: opacity;
   animation: heroFadeIn 0.2s ease-out 0.5s both;
 }
-.is-ready .hero-fade-hook-2 {
+
+.is-ready .hero-fade-hook-3 {
+  will-change: opacity;
   animation: heroFadeIn 0.2s ease-out 1s both;
 }
-.is-ready .hero-fade-hook-3 {
-  animation: heroFadeIn 0.2s ease-out 1.5s both;
-}
+
 .is-ready .hero-fade-nav {
-  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 2s both;
+  will-change: opacity;
+  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.5s both;
 }
+
 .is-ready .cta-primary {
-  animation: ctaEntrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 2s both;
+  will-change: transform, opacity;
+  animation: ctaEntrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 1.5s both;
 }
+
 .is-ready .hero-fade-secondary-cta {
-  animation: heroFadeIn 0.3s ease-out 2.3s both;
+  will-change: opacity;
+  animation: heroFadeIn 0.3s ease-out 1.8s both;
 }
+
+/* Shimmer animations do not require will-change as they are transient pseudo-elements */
 .is-ready .cta-primary::before {
-  animation: ctaInitialShimmer 0.8s ease-out 2.6s forwards;
+  animation: ctaInitialShimmer 0.8s ease-out 2.1s forwards;
 }
+
 [dir="rtl"] .is-ready .cta-primary::before {
-  animation: ctaInitialShimmerRtl 0.8s ease-out 2.6s forwards;
+  animation: ctaInitialShimmerRtl 0.8s ease-out 2.1s forwards;
 }
 
 /* ══════════════════════════════════════

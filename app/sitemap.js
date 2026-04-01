@@ -4,11 +4,11 @@ export default function sitemap() {
   const modifyDate = new Date().toISOString();
   return [
     {
-      url: SITE_URL,
+      url: `${SITE_URL}/en`,
       lastModified: modifyDate,
       alternates: {
         languages: {
-          en: SITE_URL,
+          en: `${SITE_URL}/en`,
           ar: `${SITE_URL}/ar`,
         },
       },
@@ -18,7 +18,7 @@ export default function sitemap() {
       lastModified: modifyDate,
       alternates: {
         languages: {
-          en: SITE_URL,
+          en: `${SITE_URL}/en`,
           ar: `${SITE_URL}/ar`,
         },
       },
