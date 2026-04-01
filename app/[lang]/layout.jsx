@@ -1,12 +1,12 @@
-import { notFound } from "next/navigation";
-import { Cairo } from "next/font/google";
 import "../styles/globals.css";
-import { Analytics } from "@vercel/analytics/next";
-import Footer from "../components/ui/Footer";
+import { Cairo } from "next/font/google";
 import HeroNav from "../components/ui/HeroNav";
-import { SITE_URL } from "../data/translations/lang";
 import translations from "../data/translations";
-import Script from "next/script";
+import PageVisibility from "../components/utils/PageVisibility";
+import Footer from "../components/ui/Footer";
+import { Analytics } from "@vercel/analytics/next";
+import { SITE_URL } from "../data/translations/lang";
+import { notFound } from "next/navigation";
 
 // Define separate instances at the top
 const cairoLatin = Cairo({
@@ -340,24 +340,22 @@ export default async function LangLayout({ children, params }) {
       dir={lang === "ar" ? "rtl" : "ltr"}
       suppressHydrationWarning
     >
-      <body className={`${selectedFont.variable} font-cairo antialiased js-cloak`}>
-        <Script id="page-loader-cloak" strategy="afterInteractive">
-          {`
-            (function() {
-              const showPage = () => {
-                document.body.classList.remove('js-cloak');
-                document.body.classList.add('page-loaded');
-              };
-
-              if (document.readyState === 'complete') {
-                showPage();
-              } else {
-                window.addEventListener('load', showPage);
-                setTimeout(showPage, 3000);
-              }
-            })();
-          `}
-        </Script>
+      <head>
+        <link
+          rel="prefetch"
+          href="/project-screenshots/e-commerce.webp"
+          as="image"
+        />
+        <link
+          rel="prefetch"
+          href="/project-screenshots/skyway.webp"
+          as="image"
+        />
+      </head>
+      <body
+        className={`${selectedFont.variable} font-cairo antialiased js-cloak`}
+      >
+        <PageVisibility />
         {/* ── Skip navigation ── */}
         <a
           href="#main-content"
