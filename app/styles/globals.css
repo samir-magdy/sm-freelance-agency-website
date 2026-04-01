@@ -201,7 +201,7 @@ html {
 @keyframes ctaEntrance {
   from {
     opacity: 0;
-    transform: translateY(25px);
+    transform: translateY(35px);
   }
   to {
     opacity: 1;
@@ -371,7 +371,7 @@ html {
 }
 
 .phone-frame-pulse {
-  animation: phonePulse 1s ease-in-out 2;
+  animation: phonePulse 1.2s ease-in-out 2;
   will-change: filter;
 }
 

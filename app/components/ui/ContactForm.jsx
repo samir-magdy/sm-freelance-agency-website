@@ -98,7 +98,9 @@ export default function ContactForm({ lang, strings }) {
   }, []);
 
   useEffect(() => {
-    return () => { if (statusTimerRef.current) clearTimeout(statusTimerRef.current); };
+    return () => {
+      if (statusTimerRef.current) clearTimeout(statusTimerRef.current);
+    };
   }, []);
 
   const handleSubmit = async (e) => {
@@ -131,7 +133,7 @@ export default function ContactForm({ lang, strings }) {
         message: "",
       });
 
-      statusTimerRef.current = setTimeout(() => setStatus("idle"), 4000);
+      statusTimerRef.current = setTimeout(() => setStatus("idle"), 3000);
     } catch (error) {
       const code = error instanceof Error ? error.message : "server_error";
       const errorMsg =
@@ -177,7 +179,6 @@ export default function ContactForm({ lang, strings }) {
               </span>
             </label>
             <input
-             
               type="text"
               id="name"
               required
@@ -429,9 +430,9 @@ export default function ContactForm({ lang, strings }) {
         type="submit"
         disabled={status !== "idle"}
         aria-live="polite"
-        className={`z-20 mt-4 w-full mx-auto block tracking-wide font-bold text-base py-4 rounded-lg disabled:cursor-not-allowed transition-[background-color,border-color,color,opacity] duration-300 ${
+        className={`z-20 mt-4 w-full mx-auto block tracking-wide font-bold text-base py-4 rounded-lg disabled:cursor-not-allowed transition-all duration-300 ${
           status === "success"
-            ? "btn-success-entrance bg-success/50 text-content-heading md:text-[1.3rem]"
+            ? "bg-success/50 text-content-heading md:text-[1.3rem]"
             : status === "error"
               ? "bg-danger/50 text-base md:text-[1.3rem] text-content-heading"
               : "bg-gold hover:bg-gold-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light text-gray-900 disabled:opacity-50"

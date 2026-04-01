@@ -137,11 +137,9 @@ export async function POST(request) {
 
     return NextResponse.json({ success: true, id: data.data?.id });
   } catch (error) {
-    console.log("CONTACT ROUTE ERROR:", error);
+    console.error("CONTACT ROUTE ERROR:", error);
     return NextResponse.json(
-      {
-        error: error instanceof Error ? error.message : "Failed to send email",
-      },
+      { error: "An unexpected error occurred. Please try again later." },
       { status: 500 },
     );
   }
