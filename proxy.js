@@ -24,10 +24,16 @@ export function proxy(request) {
     return NextResponse.next();
   }
 
+  if (pathname === "/en") {
+    const url = request.nextUrl.clone();
+    url.pathname = "/";
+    return NextResponse.redirect(url, 308);
+  }
+  
   if (pathname === "/") {
     const url = request.nextUrl.clone();
     url.pathname = "/en";
-    return NextResponse.redirect(url, 308);
+    return NextResponse.rewrite(url);
   }
 
   return NextResponse.next();

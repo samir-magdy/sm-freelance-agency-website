@@ -8,8 +8,7 @@ import WorkflowSection from "../components/sections/WorkflowSection";
 import PricingSection from "../components/sections/PricingSection";
 import FAQSection from "../components/sections/FAQSection";
 import ContactSection from "../components/sections/ContactSection";
-import AboutStrip from "../components/sections/AboutStrip";
-
+// import AboutStrip from "../components/sections/AboutStrip";
 export default async function Page({ params }) {
   const { lang: rawLang } = await params;
   if (rawLang !== "en" && rawLang !== "ar") notFound();

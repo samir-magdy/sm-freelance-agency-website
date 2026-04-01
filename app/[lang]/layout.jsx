@@ -69,8 +69,7 @@ const meta = {
 // Single source of truth so canonical, OG url, and structured data never drift apart.
 
 function getCanonicalUrl(lang) {
-  return `${SITE_URL}/${lang}`;
-}
+return lang === "en" ? `${SITE_URL}/` : `${SITE_URL}/${lang}`;}
 
 export async function generateMetadata({ params }) {
   const { lang } = await params;
@@ -111,9 +110,9 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        en: `${SITE_URL}/en`,
+        en: `${SITE_URL}`,
         ar: `${SITE_URL}/ar`,
-        "x-default": `${SITE_URL}/en`,
+        "x-default": `${SITE_URL}/`,
       },
     },
     openGraph: {
