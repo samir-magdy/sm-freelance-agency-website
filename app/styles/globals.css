@@ -40,7 +40,7 @@
 
 /* Transition to visible */
 body {
-  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
 }
 
 body.page-loaded {
@@ -116,7 +116,7 @@ html {
 
 .is-ready .hero-fade-hook-1 {
   will-change: opacity;
-  animation: heroFadeIn 0.2s ease-out 0.2s both;
+  animation: heroFadeIn 0.2s ease-out 0.3s both;
 }
 
 .is-ready .hero-fade-hook-2 {
@@ -141,15 +141,15 @@ html {
 
 .is-ready .hero-fade-secondary-cta {
   will-change: opacity;
-  animation: heroFadeIn 0.3s ease-out 2.1s both;
+  animation: heroFadeIn 0.3s ease-out 2.2s both;
 }
 
 .is-ready .cta-primary::before {
-  animation: ctaInitialShimmer 0.8s ease-out 2.4s forwards;
+  animation: ctaInitialShimmer 0.8s ease-out 2.6s forwards;
 }
 
 [dir="rtl"] .is-ready .cta-primary::before {
-  animation: ctaInitialShimmerRtl 0.8s ease-out 2.4s forwards;
+  animation: ctaInitialShimmerRtl 0.8s ease-out 2.6s forwards;
 }
 
 /* ══════════════════════════════════════
@@ -201,7 +201,7 @@ html {
 @keyframes ctaEntrance {
   from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(25px);
   }
   to {
     opacity: 1;
