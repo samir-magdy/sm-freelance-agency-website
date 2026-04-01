@@ -325,7 +325,7 @@ export default async function LangLayout({ children, params }) {
   };
 
   return (
-    <html lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
+    <html data-scroll-behavior="smooth" lang={lang} dir={lang === "ar" ? "rtl" : "ltr"} >
       <body className={`${cairo.variable} font-cairo antialiased`}>
         {/* ── Skip navigation ── */}
         <a

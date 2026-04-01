@@ -13,7 +13,7 @@ const pricingSection = {
   },
   tiers: [
     {
-      name: { en: "Essential Web Design", ar: "الأساسية" },
+      name: { en: "Essential Website Design", ar: "الأساسية" },
       seoName: { en: "Affordable Website Design Package", ar: "باقة تصميم المواقع الأساسية" },
       price: "6,500",
       tagline: {
@@ -45,7 +45,7 @@ const pricingSection = {
       delivery: { en: "5–7 days", ar: "٥–٧ أيام" },
     },
     {
-      name: { en: "Premium Web Design", ar: "المتاكاملة" },
+      name: { en: "Premium Website Design", ar: "المتاكاملة" },
       seoName: { en: "Recommended Website Design Package", ar: "باقة تصميم المواقع الاحترافية" },
       price: "9,900",
       tagline: {
@@ -78,7 +78,7 @@ const pricingSection = {
       delivery: { en: "1–2 weeks", ar: "١–٢ أسابيع" },
     },
     {
-      name: { en: "Online Store Build", ar: "متجر إلكتروني" },
+      name: { en: "E-commerce Build", ar: "التجارة الإلكترونية" },
       seoName: { en: "Affordable E-commerce Website Package", ar: "باقة تصميم متجر إلكتروني" },
       price: "12,800",
       tagline: {
