@@ -1,14 +1,24 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import translations from "@/app/data/translations";
 
 export default function HeroSection({ lang }) {
+  const [isReady, setIsReady] = useState(false);
   const t = translations;
   const hookLines = t.hero.name[lang];
+
+  useEffect(() => {
+    document.fonts.ready.then(() => {
+      setIsReady(true);
+    });
+  }, []);
 
   return (
     <>
       <section
         id="SMWebStudioEG"
-        className="h-[100dvh] flex items-center justify-center relative"
+        className={`h-[100dvh] flex items-center justify-center relative${isReady ? " is-ready" : ""}`}
       >
         <div
           id="hero-container"

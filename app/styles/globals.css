@@ -98,29 +98,30 @@ html {
   will-change: transform, opacity; /* Optimizes for GPU compositing */
 }
 
-/* 1. Fast, snappy entrance for text hooks */
-.hero-fade-hook-1 {
+/* Scope animation triggers to the .is-ready class */
+.is-ready .hero-fade-hook-1 {
   animation: heroFadeIn 0.2s ease-out 0.5s both;
 }
-.hero-fade-hook-2 {
+.is-ready .hero-fade-hook-2 {
   animation: heroFadeIn 0.2s ease-out 1s both;
 }
-.hero-fade-hook-3 {
+.is-ready .hero-fade-hook-3 {
   animation: heroFadeIn 0.2s ease-out 1.5s both;
 }
-
-/* 2. Smoother, longer entrance for layout components */
-.hero-fade-nav {
+.is-ready .hero-fade-nav {
   animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 2s both;
 }
-
-/* 3. Staggered CTA entrance */
-.cta-primary {
+.is-ready .cta-primary {
   animation: ctaEntrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 2s both;
 }
-
-.hero-fade-secondary-cta {
+.is-ready .hero-fade-secondary-cta {
   animation: heroFadeIn 0.3s ease-out 2.3s both;
+}
+.is-ready .cta-primary::before {
+  animation: ctaInitialShimmer 0.8s ease-out 2.6s forwards;
+}
+[dir="rtl"] .is-ready .cta-primary::before {
+  animation: ctaInitialShimmerRtl 0.8s ease-out 2.6s forwards;
 }
 
 /* ══════════════════════════════════════
@@ -217,7 +218,6 @@ html {
   );
   translate: -110% 0;
   pointer-events: none;
-  animation: ctaInitialShimmer 0.8s ease-out 2.6s forwards;
 }
 
 [dir="rtl"] .cta-primary::before {
@@ -230,7 +230,6 @@ html {
     transparent 65%
   );
   translate: 110% 0;
-  animation: ctaInitialShimmerRtl 0.8s ease-out 2.6s forwards;
 }
 
 .cta-primary::after {
