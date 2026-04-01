@@ -189,7 +189,8 @@ export default function PortfolioShowcase({ lang }) {
                           alt={`${translations.a11y.screenshotOf[lang]} ${translations.projectData[proj.id].title[lang]}`}
                           className="w-full h-auto block"
                           placeholder="blur"
-                          loading="eager"
+                          sizes="(max-width: 640px) 60vw, (max-width: 1024px) 290px, 320px"
+                          loading={i === 0 ? "eager" : "lazy"}
                         />
                       </div>
                     </div>

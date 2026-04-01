@@ -7,6 +7,7 @@ import Footer from "../components/ui/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SITE_URL } from "../data/translations/lang";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 
 // Define separate instances at the top
 const fonts = Cairo({
@@ -333,9 +334,7 @@ export default async function LangLayout({ children, params }) {
       dir={lang === "ar" ? "rtl" : "ltr"}
       suppressHydrationWarning
     >
-      <body
-        className={`${fonts.variable} font-cairo antialiased js-cloak`}
-      >
+      <body className={`${fonts.variable} font-cairo antialiased js-cloak`}>
         <PageVisibility />
         {/* ── Skip navigation ── */}
         <a
@@ -346,13 +345,13 @@ export default async function LangLayout({ children, params }) {
         </a>
 
         {/* ── Structured Data (JSON-LD) ── */}
-        <script
+        <Script
+          id="structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
           }}
         />
-
         {/* ── Navigation ── */}
         <HeroNav lang={lang} strings={heroNavStrings} />
 
