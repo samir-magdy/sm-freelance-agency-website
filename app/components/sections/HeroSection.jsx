@@ -20,6 +20,10 @@ export default function HeroSection({ lang }) {
         id="SMWebStudioEG"
         className={`h-[100dvh] flex items-center justify-center relative${isReady ? " is-ready" : ""}`}
       >
+          {/* Dot grid + radial glow background */}
+        <div className="hero-grid" aria-hidden="true" />
+        <div className="hero-glow" aria-hidden="true" />
+
         <div
           id="hero-container"
           className="relative z-10 flex flex-col items-center w-full justify-center pt-16 md:pt-32"

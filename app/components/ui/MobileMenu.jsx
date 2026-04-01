@@ -1,14 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react"; // Added useEffect
 import Image from "next/image";
 import LanguageToggle from "./LanguageToggle";
 
 export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Helper to close menu when a link is clicked
   const closeMenu = () => setIsMenuOpen(false);
+
+  // Prevent background scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [isMenuOpen]);
 
   return (
     <nav
@@ -17,7 +26,6 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
       aria-hidden={!isMenuOpen}
       className="xl:hidden fixed top-0 left-0 right-0 z-50 pointer-events-none"
     >
-      {/* Navbar row — always visible and anchored to the top */}
       <div
         className="absolute top-0 left-0 right-0 z-50 py-2 backdrop-blur-xl pointer-events-auto"
         dir="ltr"
@@ -48,21 +56,22 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
         </div>
       </div>
 
-      {/* Full-screen backdrop — independent fixed overlay */}
       <div
         onClick={closeMenu}
         className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-[250ms] ease-out ${
-          isMenuOpen ? "opacity-100 backdrop-blur-3xl pointer-events-auto overscroll-none touch-none" : "opacity-0 backdrop-blur-none pointer-events-none"
+          isMenuOpen ? "opacity-100 backdrop-blur-3xl pointer-events-auto" : "opacity-0 backdrop-blur-none pointer-events-none"
         }`}
       />
 
-      {/* Menu content — independent fixed overlay */}
       <div
+        onClick={closeMenu} // Added onClick here to close when clicking empty space
         className={`fixed inset-0 z-40 flex flex-col items-center justify-center transition-[opacity,visibility] duration-[250ms] ease-out ${
           isMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"
         }`}
       >
-        <ul className="flex flex-col items-center gap-6">
+        {/* Stop propagation on the UL so clicking the gap between links still closes the menu, 
+            but clicking the list container itself doesn't (optional logic depending on preference) */}
+        <ul className="flex flex-col items-center gap-6" onClick={(e) => e.stopPropagation()}>
           {['features', 'services', 'portfolio', 'pricing', 'process', 'FAQs', 'contact'].map((item) => (
             <li key={item}>
               <a
@@ -75,7 +84,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             </li>
           ))}
         </ul>
-        <div className="flex flex-col absolute bottom-12 items-center gap-8">
+        <div className="flex flex-col absolute bottom-12 items-center gap-8" onClick={(e) => e.stopPropagation()}>
           <LanguageToggle lang={lang} label={langToggleLabel} />
         </div>
       </div>

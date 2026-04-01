@@ -379,3 +379,72 @@ html {
     height: 57vh;
   }
 }
+
+/* ══════════════════════════════════════
+   6. Hero Section — Dot Grid & Radial Glow
+   ══════════════════════════════════════ */
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(
+    circle,
+    hsl(var(--content-heading) / 0.12) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+  mask-image: radial-gradient(
+    ellipse 75% 50% at 50% 50%,
+    black 30%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 75% 50% at 50% 50%,
+    black 30%,
+    transparent 100%
+  );
+}
+
+.hero-glow {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  top: 51%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    hsl(var(--gold-light) / 0.025) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .hero-grid {
+    background-size: 22px 22px;
+    mask-image: radial-gradient(
+      ellipse 70% 50% at 50% 50%,
+      black 20%,
+      transparent 100%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 70% 50% at 50% 50%,
+      black 20%,
+      transparent 100%
+    );
+  }
+
+  .hero-glow {
+    width: 100%;
+    aspect-ratio: auto;
+    height: 100%;
+    background: radial-gradient(
+      circle,
+      hsl(var(--gold) / 0.02) 0%,
+      transparent 100%
+    );
+  }
+}
