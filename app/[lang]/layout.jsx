@@ -68,7 +68,7 @@ const meta = {
 // Single source of truth so canonical, OG url, and structured data never drift apart.
 
 function getCanonicalUrl(lang) {
-  return lang === "en" ? SITE_URL : `${SITE_URL}/${lang}`;
+  return `${SITE_URL}/${lang}`;
 }
 
 export async function generateMetadata({ params }) {
@@ -110,9 +110,9 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        en: SITE_URL,
+        en: `${SITE_URL}/en`,
         ar: `${SITE_URL}/ar`,
-        "x-default": SITE_URL,
+        "x-default": `${SITE_URL}/en`,
       },
     },
     openGraph: {
@@ -325,7 +325,12 @@ export default async function LangLayout({ children, params }) {
   };
 
   return (
-    <html data-scroll-behavior="smooth" lang={lang} dir={lang === "ar" ? "rtl" : "ltr"} suppressHydrationWarning>
+    <html
+      data-scroll-behavior="smooth"
+      lang={lang}
+      dir={lang === "ar" ? "rtl" : "ltr"}
+      suppressHydrationWarning
+    >
       <body className={`${cairo.variable} font-cairo antialiased`}>
         {/* ── Skip navigation ── */}
         <a

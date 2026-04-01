@@ -24,16 +24,25 @@ export function proxy(request) {
     return NextResponse.next();
   }
 
-  // Only bare root → redirect to /en
   if (pathname === "/") {
     const url = request.nextUrl.clone();
     url.pathname = "/en";
-    return NextResponse.rewrite(url);
+    return NextResponse.redirect(url, 308);
   }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|robots.txt).*)"],
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico, favicon.png, apple-icon.png, etc. (brand assets)
+     * - robots.txt, sitemap.xml (SEO files)
+     */
+    "/((?!api|_next/static|_next/image|favicon.ico|favicon.png|apple-icon.png|brand.svg|business-logo.png|open-graph.webp|robots.txt|sitemap.xml|manifest.json|favicon-light.svg|favicon-dark.svg|project-screenshots).*)",
+  ],
 };
