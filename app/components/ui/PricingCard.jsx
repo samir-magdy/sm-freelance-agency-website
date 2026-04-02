@@ -21,14 +21,7 @@ export default function PricingCard({
           : " border-border-subtle bg-surface-card/80 hover:border-border-strong"
       }`}
     >
-      {/* Most Popular badge */}
-      {isHighlighted && (
-        <div className="absolute -top-3.5 inset-x-0 flex justify-center">
-          <span className="inline-block bg-gradient-to-r from-gold-light to-gold-dark text-gray-900 text-sm font-bold px-4 py-1 rounded-full">
-            {mostPopularLabel}
-          </span>
-        </div>
-      )}
+   
 
       {/* Tier name */}
       <h3 className="font-bold text-subheading text-content-heading mt-1">

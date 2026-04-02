@@ -3,9 +3,9 @@ const workflowSection = {
   
   steps: {
     discovery: {
-      title: { en: "Consultation", ar: "الاستشارة" },
+      title: { en: "Discovery", ar: "الاستشارة" },
       description: {
-        en: "We connect to understand everything you need from your website, then send a full proposal including timeline and pricing. Once approved, the design phase begins.",
+        en: "We connect to understand everything about your business and you need from your website, then send a full proposal including scope, timeline and pricing.",
         ar: "نتواصل معك لفهم كل ما تحتاجه من موقعك، ثم نرسل لك عرض سعر بتفاصيل بالمشروع. بعد موافقتك، تبدأ مرحلة التصميم.",
       },
     },

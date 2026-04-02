@@ -154,16 +154,16 @@ const faqSection = {
         ar: "تطلب الظهور على خرائط جوجل وجود ملف تجاري مفعل وموقع جغرافي فعلي. وبينما لا يعد الموقع الإلكتروني شرطاً مسبقاً للإدراج في الخرائط، إلا أن الموقع عالي الجودة يعزز إشارات الـ SEO المحلية، مما يحسن ترتيبك في نتائج البحث الجغرافية.",
       },
     },
-    {
-      question: {
-        en: "Can I sell products on my website?",
-        ar: "هل ينفع أبيع منتجاتي من خلال الموقع؟",
-      },
-      answer: {
-        en: "We implement a streamlined e-commerce model optimized for conversion, utilizing a 'direct-to-WhatsApp' checkout system that bypasses mandatory account registration. This approach reduces friction and development overhead while providing a dedicated administrative interface for inventory and product management.",
-        ar: "نحن نطبق نموذجاً للتجارة الإلكترونية مصمماً لزيادة معدل التحويل، باستخدام نظام طلب عبر واتساب يتجاوز إلزامية تسجيل الحساب. يقلل هذا النهج من تعقيد الاستخدام وتكاليف التطوير، مع توفير واجهة إدارية مخصصة لإدارة المخزون والمنتجات.",
-      },
-    },
+    // {
+    //   question: {
+    //     en: "Can I sell products on my website?",
+    //     ar: "هل ينفع أبيع منتجاتي من خلال الموقع؟",
+    //   },
+    //   answer: {
+    //     en: "We implement a streamlined e-commerce model optimized for conversion, utilizing a 'direct-to-WhatsApp' checkout system that bypasses mandatory account registration. While this approach means that you have to manage stock and orders manually, it also means you get a website that looks and performs better at half the price of a standard ecommerce sites.",
+    //     ar: "نحن نطبق نموذجاً للتجارة الإلكترونية مصمماً لزيادة معدل التحويل، باستخدام نظام طلب عبر واتساب يتجاوز إلزامية تسجيل الحساب. يقلل هذا النهج من تعقيد الاستخدام وتكاليف التطوير، مع توفير واجهة إدارية مخصصة لإدارة المخزون والمنتجات.",
+    //   },
+    // },
     {
       question: {
         en: "What is hosting and deployment?",

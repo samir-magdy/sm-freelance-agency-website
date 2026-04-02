@@ -4,23 +4,6 @@ import { SITE_URL } from "./translations/lang";
 
 export const projects = [
   {
-    id: "Ecommerce",
-    liveUrl: "https://ecommerce.samirmagdy.com/",
-    screenshot: ecommScnshot,
-    schemaName: "Fashion E-commerce – Egypt",
-    schemaNameAr: "متجر إلكتروني للأزياء – مصر",
-    description:
-      "A custom-built fashion e-commerce store with advanced product listings, intelligent filtering, and a smart shopping cart. Streamlined WhatsApp checkout with no account creation required.",
-    genre: "Ecommerce",
-    genreAr: "التجارة الإلكترونية للأزياء",
-    keywords: [
-      "fashion ecommerce Egypt",
-      "online fashion store Cairo",
-      "متجر أزياء إلكتروني مصر",
-      "تصميم متجر إلكتروني القاهرة",
-    ],
-  },
-  {
     id: "skyway",
     liveUrl: "https://www.skyway-travel.org",
     screenshot: skywayScreenshot,
@@ -35,6 +18,23 @@ export const projects = [
       "tour operator website Egypt",
       "موقع وكالة سياحة القاهرة",
       "تصميم موقع شركة سياحة مصر",
+    ],
+  },
+  {
+    id: "Ecommerce",
+    liveUrl: "https://ecommerce.samirmagdy.com/",
+    screenshot: ecommScnshot,
+    schemaName: "Fashion E-commerce – Egypt",
+    schemaNameAr: "متجر إلكتروني للأزياء – مصر",
+    description:
+      "A custom-built fashion e-commerce store with advanced product listings, intelligent filtering, and a smart shopping cart. Streamlined WhatsApp checkout with no account creation required.",
+    genre: "Ecommerce",
+    genreAr: "التجارة الإلكترونية للأزياء",
+    keywords: [
+      "fashion ecommerce Egypt",
+      "online fashion store Cairo",
+      "متجر أزياء إلكتروني مصر",
+      "تصميم متجر إلكتروني القاهرة",
     ],
   },
 ];

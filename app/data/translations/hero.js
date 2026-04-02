@@ -1,7 +1,7 @@
 const hero = {
   name: {
     en: ["Design Smart.", "Attract Clients.", "Boost Sales."],
-    ar: ["صمّم موقعك.", "أنشئ متجرك.", "تصدّر البحث."],
+    ar: ["صمّم موقعك.", "اكسب الثقة.", "تصدّر البحث."],
   },
   primaryCta: {
     en: "Start a Project",
@@ -12,8 +12,8 @@ const hero = {
     ar: "شاهد أعمالنا",
   },
   subheading: {
-    en: "Website design, ecommerce, and SEO for small businesses, startups and brands.",
-    ar: "تصميم مواقع، متاجر الكترونية، وتحسين محركات البحث للشركات الناشئة والأفراد.",
+    en: "Website design, development and SEO for small businesses, startups and brands.",
+    ar: "تصميم مواقع، وتحسين محركات البحث للشركات الناشئة والأفراد.",
   },
 };
 

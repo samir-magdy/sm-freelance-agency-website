@@ -26,7 +26,7 @@ const PHONE_NUMBER = "+201274613331";
 const TWITTER_HANDLE = "@SMWebStudioEG";
 
 const META_DESCRIPTION = {
-  en: "Website design, online shops, and SEO for small businesses, startups and individuals. Custom-built sites at competitive pricing.",
+  en: "Website design and SEO for small businesses, startups and brands. Custom-built, modern websites at competitive pricing.",
   ar: "تصميم مواقع احترافية و متاجر الكترونية بأسعار منافسة. نخدم الشركات الناشئة وأصحاب المشاريع في مصر والخارج.",
 };
 
@@ -44,7 +44,7 @@ const SOCIAL_LINKS = {
 
 const meta = {
   en: {
-    title: `Custom Website Design & E-commerce Solutions | ${SITE_NAME}`,
+    title: `Website Designer in Egypt | ${SITE_NAME}`,
     description: META_DESCRIPTION.en,
     ogLocale: "en_US",
     altLocale: "ar_EG",
@@ -53,7 +53,7 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: `تصميم مواقع ومتاجر إلكترونية احترافية في مصر | ${SITE_NAME}`,
+    title: `تصميم مواقع احترافية في مصر | ${SITE_NAME}`,
     description: META_DESCRIPTION.ar,
     ogLocale: "ar_EG",
     altLocale: "en_US",
