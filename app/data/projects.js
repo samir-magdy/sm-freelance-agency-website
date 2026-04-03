@@ -1,5 +1,6 @@
 import skywayScreenshot from "../../public/project-screenshots/skyway.webp";
 import ecommScnshot from "../../public/project-screenshots/e-commerce.webp";
+import gymScreenshot from "../../public/project-screenshots/gym.webp"
 import { SITE_URL } from "./translations/lang";
 
 export const projects = [
@@ -13,12 +14,17 @@ export const projects = [
       "A conversion-optimized travel agency website for Sky Way Travel, designed to attract, engage, and convert visitors into bookings by showcasing tour packages in a structured format, building trust, and guiding users effortlessly from interest to reservation.",
     genre: "Travel & Tourism",
     genreAr: "سياحة وسفر",
-    keywords: [
-      "travel agency website Cairo",
-      "tour operator website Egypt",
-      "موقع وكالة سياحة القاهرة",
-      "تصميم موقع شركة سياحة مصر",
-    ],
+  },
+    {
+    id: "gym",
+    liveUrl: "https://gyms.samirmagdy.com",
+    screenshot: gymScreenshot,
+    schemaName: "Gym Startups",
+    schemaNameAr: "سكاي واي ترافل – موقع وكالة سياحة في القاهرة",
+    description:
+      "A lead generating website built for the startup gyms. It is designed to attract, engage, and convert passive browsers into potential, loyal members.",
+    genre: "Landing Page",
+    genreAr: "صفحة هبوط",
   },
   {
     id: "Ecommerce",
@@ -30,12 +36,6 @@ export const projects = [
       "A custom-built fashion e-commerce store with advanced product listings, intelligent filtering, and a smart shopping cart. Streamlined WhatsApp checkout with no account creation required.",
     genre: "Ecommerce",
     genreAr: "التجارة الإلكترونية للأزياء",
-    keywords: [
-      "fashion ecommerce Egypt",
-      "online fashion store Cairo",
-      "متجر أزياء إلكتروني مصر",
-      "تصميم متجر إلكتروني القاهرة",
-    ],
   },
 ];
 
@@ -60,7 +60,6 @@ export const projectsStructuredData = {
       description: project.description,
       inLanguage: ["en", "ar"],
       genre: project.genre,
-      keywords: project.keywords.join(", "),
       creator: smWebStudio,
       locationCreated: {
         "@type": "City",
