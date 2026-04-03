@@ -26,8 +26,8 @@ const projectData = {
       ar: "شركة سكاي واي ترافل للسياحة",
     },
     description: {
-      en: "A custom website built for SkyWay Travel, a Cairo based Travel Agency. It showcases their package details through custom photo galleries. The result was a clear increase in direct leads.",
-      ar: "موقع إلكتروني مخصص تم تطويره لشركة سكاي واي ترافل، وهي وكالة سفر مقرها القاهرة. يعرض تفاصيل باقاتهم من خلال معارض صور مخصصة، وكانت النتيجة زيادة واضحة في العملاء المحتملين المباشرين.",
+      en: "A custom-built website for SkyWay Travel, a Cairo based Travel Agency. The site focuses on showcasing their package details through custom photo galleries. The result was a clear increase in leads after a very short period of the launch.",
+      ar: "موقع إلكتروني مخصص تم تطويره لشركة سكاي واي ترافل، وهي وكالة سفر مقرها القاهرة. يعرض تفاصيل باقاتهم من خلال معارض صور مخصصة ومنظمة، وكانت النتيجة زيادة واضحة في العملاء المحتملين المباشرين.",
     },
     cta: {
       en: "View Live Site",
