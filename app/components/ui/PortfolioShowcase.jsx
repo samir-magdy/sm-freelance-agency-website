@@ -129,7 +129,7 @@ export default function PortfolioShowcase({ lang }) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-xl font-normal tracking-wide transition-all duration-200 hidden lg:inline-flex"
+            className="relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-xl font-normal sm:font-medium tracking-wide transition-all duration-200 hidden lg:inline-flex"
             aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
           >
             {pd.cta[lang]}
@@ -183,7 +183,7 @@ export default function PortfolioShowcase({ lang }) {
                           alt={`${a11y.screenshotOf[lang]} ${projectData[proj.id].title[lang]}`}
                           className="w-full h-auto block"
                           sizes="(max-width: 640px) 60vw, (max-width: 1024px) 290px, 320px"
-                          loading={i === 0 ? "eager" : "lazy"}
+                          loading="eager"
                         />
                       </div>
                     </div>

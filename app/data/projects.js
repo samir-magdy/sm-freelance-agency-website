@@ -35,8 +35,8 @@ export const projects = [
     schemaNameAr: "سكاي واي ترافل – موقع وكالة سياحة في القاهرة",
     description:
       "A lead generating website built for the startup gyms. It is designed to attract, engage, and convert passive browsers into potential, loyal members.",
-    genre: "Landing Page",
-    genreAr: "صفحة هبوط",
+    genre: "Gym/Fitness",
+    genreAr: "مراكز اللياقة البدنية",
   },
   {
     id: "Ecommerce",
@@ -46,7 +46,7 @@ export const projects = [
     schemaNameAr: "متجر إلكتروني للأزياء – مصر",
     description:
       "A custom-built fashion e-commerce store with advanced product listings, intelligent filtering, and a smart shopping cart. Streamlined WhatsApp checkout with no account creation required.",
-    genre: "Ecommerce",
+    genre: "Fashion Ecommerce",
     genreAr: "التجارة الإلكترونية للأزياء",
   },
 ];
