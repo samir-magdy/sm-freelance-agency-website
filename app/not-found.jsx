@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Cairo } from "next/font/google";
-import "./styles/globals.css";
+import "../app/globals.css";
 
 const cairo = Cairo({
   variable: "--font-cairo",
@@ -20,7 +20,7 @@ export default function NotFound() {
           </p>
           <Link
             href="/en"
-            className="inline-block bg-gradient-to-b from-gold to-gold-dark text-gray-900 font-semibold px-8 py-3 rounded-xl"
+            className="inline-block bg-linear-to-b from-gold to-gold-dark text-gray-900 font-semibold px-8 py-3 rounded-xl"
           >
             Back to the studio
           </Link>

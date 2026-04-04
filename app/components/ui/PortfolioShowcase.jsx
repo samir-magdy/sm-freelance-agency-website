@@ -188,7 +188,6 @@ export default function PortfolioShowcase({ lang }) {
                           src={proj.screenshot}
                           alt={`${translations.a11y.screenshotOf[lang]} ${translations.projectData[proj.id].title[lang]}`}
                           className="w-full h-auto block"
-                          placeholder="blur"
                           sizes="(max-width: 640px) 60vw, (max-width: 1024px) 290px, 320px"
                           loading="eager"
                           fetchPriority="low"

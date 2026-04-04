@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../globals.css";
 import { Cairo } from "next/font/google";
 import HeroNav from "../components/ui/HeroNav";
 import translations from "../data/translations";
@@ -346,20 +346,21 @@ export default async function LangLayout({ children, params }) {
           {skipLabel}
         </a>
 
-        {/* ── Structured Data (JSON-LD) ── */}
-        <Script
-          id="structured-data"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
-          }}
-        />
         {/* ── Navigation ── */}
         <HeroNav lang={lang} strings={heroNavStrings} />
 
         {/* ── Main content ── */}
         <main id="main-content">{children}</main>
         <Footer />
+        {/* ── Structured Data (JSON-LD) ── */}
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+          }}
+        />
       </body>
     </html>
   );
