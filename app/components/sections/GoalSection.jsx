@@ -27,7 +27,7 @@ export default function GoalSection({ lang }) {
     >
       {/* Seamless gradient: transparent → surface-card → transparent */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-transparent via-surface-card/40 to-transparent"
+        className="absolute inset-0 bg-linear-to-b from-transparent via-surface-card/40 to-transparent"
         aria-hidden="true"
       />
 

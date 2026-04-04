@@ -18,7 +18,7 @@ export default function HeroSection({ lang }) {
     <>
       <section
         id="SMWebStudioEG"
-        className={`h-[100dvh] flex items-center justify-center relative${isReady ? " is-ready" : ""}`}
+        className={`h-dvh flex items-center justify-center relative${isReady ? " is-ready" : ""}`}
       >
           {/* Dot grid + radial glow background */}
         <div className="hero-grid" aria-hidden="true" />
@@ -70,7 +70,7 @@ export default function HeroSection({ lang }) {
           <div className="flex flex-col items-center justify-center gap-4">
             <a
               href="#contact"
-              className="cta-primary font-semibold md:font-normal text-center bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.1rem,1.8vw,1.6rem)] px-12 py-4 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+              className="cta-primary font-semibold md:font-normal text-center bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.1rem,1.8vw,1.6rem)] px-12 py-4 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
             >
               {t.hero.primaryCta[lang]}
             </a>
