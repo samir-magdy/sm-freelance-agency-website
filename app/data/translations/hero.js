@@ -12,7 +12,7 @@ const hero = {
     ar: "شاهد أعمالنا",
   },
   subheading: {
-    en: "Website design, development and SEO for small businesses, startups and brands.",
+    en: "Website design and SEO for small businesses, startups and brands.",
     ar: "تصميم مواقع، وتحسين محركات البحث للشركات الناشئة والأفراد.",
   },
 };

@@ -27,7 +27,7 @@ const TWITTER_HANDLE = "@SMWebStudioEG";
 
 const META_DESCRIPTION = {
   en: "Website design and SEO for small businesses, startups and brands. Custom-built, modern websites at competitive pricing.",
-  ar: "تصميم مواقع احترافية و متاجر الكترونية بأسعار منافسة. نخدم الشركات الناشئة وأصحاب المشاريع في مصر والخارج.",
+  ar: "تصميم مواقع احترافية بأسعار منافسة. نخدم الشركات الناشئة وأصحاب المشاريع في مصر والخارج.",
 };
 
 const SOCIAL_LINKS = {
