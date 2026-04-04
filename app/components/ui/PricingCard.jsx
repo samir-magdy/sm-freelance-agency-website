@@ -17,7 +17,7 @@ export default function PricingCard({
     <div
       className={`relative flex flex-col rounded-2xl border p-6 md:p-8 transition-all duration-300${
         isHighlighted
-          ? " border-gold/30 bg-surface-card shadow-[0_0_20px_-8px_hsl(var(--gold)/0.1)] lg:scale-105"
+          ? " border-gold/30 bg-surface-card shadow-[0_0_20px_-8px_color-mix(in_oklch,var(--color-gold)_10%,transparent)] lg:scale-105"
           : " border-border-subtle bg-surface-card/80 hover:border-border-strong"
       }`}
     >
