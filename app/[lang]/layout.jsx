@@ -12,7 +12,7 @@ import Script from "next/script";
 const fonts = Cairo({
   variable: "--font-cairo",
   subsets: ["latin", "arabic"],
-  display: "block",
+  display: "swap",
 });
 
 // ─────────────────────────────────────────────
@@ -69,7 +69,8 @@ const meta = {
 // Single source of truth so canonical, OG url, and structured data never drift apart.
 
 function getCanonicalUrl(lang) {
-return lang === "en" ? `${SITE_URL}/` : `${SITE_URL}/${lang}`;}
+  return lang === "en" ? `${SITE_URL}/` : `${SITE_URL}/${lang}`;
+}
 
 export async function generateMetadata({ params }) {
   const { lang } = await params;
@@ -78,6 +79,11 @@ export async function generateMetadata({ params }) {
 
   return {
     metadataBase: new URL(SITE_URL),
+    formatDetection: {
+      telephone: false,
+      date: false,
+      email: false,
+    },
     icons: {
       icon: [
         {
@@ -337,7 +343,7 @@ export default async function LangLayout({ children, params }) {
         {/* ── Skip navigation ── */}
         <a
           href="#main-content"
-          className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-4 focus-visible:left-4 focus-visible:z-[100] focus-visible:px-4 focus-visible:py-2 focus-visible:bg-white focus-visible:text-black focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+          className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-4 focus-visible:left-4 focus-visible:z-100 focus-visible:px-4 focus-visible:py-2 focus-visible:bg-white focus-visible:text-black focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
         >
           {skipLabel}
         </a>
@@ -356,7 +362,6 @@ export default async function LangLayout({ children, params }) {
         {/* ── Main content ── */}
         <main id="main-content">{children}</main>
         <Footer />
-
       </body>
     </html>
   );

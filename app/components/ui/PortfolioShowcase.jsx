@@ -135,7 +135,7 @@ export default function PortfolioShowcase({ lang }) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-xl font-normal tracking-wide transition-all duration-200 hidden lg:inline-flex"
+            className="relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-xl font-normal tracking-wide transition-all duration-200 hidden lg:inline-flex"
             aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
           >
             {pd.cta[lang]}
@@ -157,18 +157,18 @@ export default function PortfolioShowcase({ lang }) {
             {/* Phone outer shell — gradient bezel + hardware buttons */}
             <div
               ref={phoneRef}
-              className="phone-outer w-[60%] h-[54vh] sm:w-[260px] sm:h-[520px] md:w-[290px] md:h-[550px] lg:w-[320px] lg:h-[610px] rounded-[48px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-[4px] relative shrink-0"
+              className="phone-outer w-[60%] h-[54vh] sm:w-[260px] sm:h-[520px] md:w-[290px] md:h-[550px] lg:w-[320px] lg:h-[610px] rounded-[48px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               {/* Left volume buttons */}
-              <div className="absolute -left-[2.5px] top-[126px] w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-[2px]" />
-              <div className="absolute -left-[2.5px] top-[180px] w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-[2px]" />
+              <div className="absolute -left-[2.5px] top-[126px] w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
+              <div className="absolute -left-[2.5px] top-[180px] w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
               {/* Right power button */}
-              <div className="absolute -right-[3px] top-[140px] w-[3px] h-[60px] bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-r-[2px]" />
+              <div className="absolute -right-[3px] top-[140px] w-[3px] h-[60px] bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-r-xs" />
 
               {/* Phone screen area */}
               <div className="w-full h-full rounded-[43px] overflow-hidden relative bg-black">
                 <DynamicIsland />
-                <div className="absolute top-2 inset-x-0 z-[15]">
+                <div className="absolute top-2 inset-x-0 z-15">
                   <StatusBar />
                 </div>
 
@@ -191,6 +191,7 @@ export default function PortfolioShowcase({ lang }) {
                           placeholder="blur"
                           sizes="(max-width: 640px) 60vw, (max-width: 1024px) 290px, 320px"
                           loading="eager"
+                          fetchPriority="low"
                         />
                       </div>
                     </div>
