@@ -1,5 +1,4 @@
 import HeroSection from "../components/sections/HeroSection";
-import GoalSection from "../components/sections/GoalSection";
 import ServicesSection from "../components/sections/ServicesSection";
 import AddOnsSection from "../components/sections/AddOnsSection";
 import PricingSection from "../components/sections/PricingSection";
@@ -22,7 +21,6 @@ export default async function Page({ params }) {
       <HeroSection lang={lang} />
       <ServicesSection lang={lang} />
       <AddOnsSection lang={lang} />
-      <GoalSection lang={lang} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

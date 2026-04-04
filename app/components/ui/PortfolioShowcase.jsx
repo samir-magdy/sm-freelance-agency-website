@@ -183,6 +183,7 @@ export default function PortfolioShowcase({ lang }) {
                           alt={`${a11y.screenshotOf[lang]} ${projectData[proj.id].title[lang]}`}
                           className="w-full h-auto block"
                           sizes="(max-width: 640px) 60vw, (max-width: 1024px) 290px, 320px"
+                          loading={i === 0 ? "eager" : "lazy"}
                         />
                       </div>
                     </div>
