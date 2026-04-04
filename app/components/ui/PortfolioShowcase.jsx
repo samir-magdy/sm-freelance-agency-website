@@ -3,8 +3,9 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { projects, projectsStructuredData } from "@/app/data/projects";
-import translations from "@/app/data/translations";
+import { projects } from "@/app/data/projects";
+import { projectsSection, projectData } from "@/app/data/translations/projects";
+import a11y from "@/app/data/translations/a11y";
 import { StatusBar } from "@/app/components/ui/iphone/StatusBar";
 import { DynamicIsland } from "@/app/components/ui/iphone/DynamicIsland";
 import { HomeIndicator } from "@/app/components/ui/iphone/HomeIndicator";
@@ -14,7 +15,7 @@ import { NavArrow } from "@/app/components/ui/navigation/NavArrow";
    Main Component
    ───────────────────────────────────── */
 export default function PortfolioShowcase({ lang }) {
-  const t = translations.projectsSection;
+  const t = projectsSection;
   const [active, setActive] = useState(0);
   const snapRef = useRef(null);
   const phoneRef = useRef(null);
@@ -74,7 +75,7 @@ export default function PortfolioShowcase({ lang }) {
   }, []);
 
   const project = projects[active];
-  const pd = translations.projectData[project.id];
+  const pd = projectData[project.id];
 
   const isRtl = lang === "ar";
 
@@ -85,13 +86,6 @@ export default function PortfolioShowcase({ lang }) {
       className="py-20 md:pb-36 md:pt-32 flex flex-col items-center justify-center relative overflow-hidden select-none px-5"
       aria-labelledby="portfolio-heading"
     >
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(projectsStructuredData),
-        }}
-      />
-
       {/* ── Section heading ── */}
       <div className="text-center relative z-2 px-5 mb-4 sm:mb-10 lg:mb-12">
         <h2 id="portfolio-heading" className="font-bold text-heading">
@@ -186,11 +180,9 @@ export default function PortfolioShowcase({ lang }) {
                       <div className="phone-scroll overflow-y-auto h-full [scrollbar-width:none]">
                         <Image
                           src={proj.screenshot}
-                          alt={`${translations.a11y.screenshotOf[lang]} ${translations.projectData[proj.id].title[lang]}`}
+                          alt={`${a11y.screenshotOf[lang]} ${projectData[proj.id].title[lang]}`}
                           className="w-full h-auto block"
                           sizes="(max-width: 640px) 60vw, (max-width: 1024px) 290px, 320px"
-                          loading="eager"
-                          fetchPriority="low"
                         />
                       </div>
                     </div>

@@ -1,13 +1,16 @@
-import { notFound } from "next/navigation";
-import PortfolioShowcase from "../components/ui/PortfolioShowcase";
 import HeroSection from "../components/sections/HeroSection";
 import GoalSection from "../components/sections/GoalSection";
 import ServicesSection from "../components/sections/ServicesSection";
 import AddOnsSection from "../components/sections/AddOnsSection";
-import WorkflowSection from "../components/sections/WorkflowSection";
 import PricingSection from "../components/sections/PricingSection";
 import FAQSection from "../components/sections/FAQSection";
-import ContactSection from "../components/sections/ContactSection";
+import { notFound } from "next/navigation";
+import dynamic from "next/dynamic";
+import { projectsStructuredData } from "../data/projects";
+
+const PortfolioShowcase = dynamic(() => import('../components/ui/PortfolioShowcase'));
+const WorkflowSection = dynamic(() => import('../components/sections/WorkflowSection'));
+const ContactSection = dynamic(() => import("../components/sections/ContactSection"));
 
 export default async function Page({ params }) {
   const { lang: rawLang } = await params;
@@ -20,8 +23,13 @@ export default async function Page({ params }) {
       <ServicesSection lang={lang} />
       <AddOnsSection lang={lang} />
       <GoalSection lang={lang} />
-
-        <PortfolioShowcase lang={lang} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(projectsStructuredData),
+        }}
+      />
+      <PortfolioShowcase lang={lang} />
       <PricingSection lang={lang} />
       <WorkflowSection lang={lang} />
       <FAQSection lang={lang} />

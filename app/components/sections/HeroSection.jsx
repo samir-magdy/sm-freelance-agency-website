@@ -1,23 +1,13 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import translations from "@/app/data/translations";
+import hero from "@/app/data/translations/hero";
+import FontReadyWrapper from "../ui/FontReadyWrapper";
 
 export default function HeroSection({ lang }) {
-  const [isReady, setIsReady] = useState(false);
-  const t = translations;
-  const hookLines = t.hero.name[lang];
-
-  useEffect(() => {
-    document.fonts.ready.then(() => {
-      setIsReady(true);
-    });
-  }, []);
+  const hookLines = hero.name[lang];
 
   return (
-    <section
+    <FontReadyWrapper
       id="SMWebStudioEG"
-      className={`h-dvh flex items-center justify-center relative${isReady ? " is-ready" : ""}`}
+      className="h-dvh flex items-center justify-center relative"
     >
       {/* Dot grid + radial glow background */}
       <div className="hero-grid" aria-hidden="true" />
@@ -63,7 +53,7 @@ export default function HeroSection({ lang }) {
         </h1>
 
         <h2 className="my-6 hero-fade hero-fade-nav text-content-body text-[clamp(1.2rem,2vw,2rem)] rtl:text-[clamp(1.2rem,1.8vw,3rem)] rtl:leading-loose text-center px-10 sm:px-16">
-          {t.hero.subheading[lang]}
+          {hero.subheading[lang]}
         </h2>
 
         <div className="flex flex-col items-center justify-center gap-4">
@@ -71,14 +61,14 @@ export default function HeroSection({ lang }) {
             href="#contact"
             className="cta-primary font-semibold md:font-normal text-center bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.1rem,1.8vw,1.6rem)] px-12 py-4 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
-            {t.hero.primaryCta[lang]}
+            {hero.primaryCta[lang]}
           </a>
 
           <a
             href="#portfolio"
             className="ms-2 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-1 text-content-muted hover:text-content-body text-[clamp(1rem,1.3vw,1.25rem)] font-medium transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
-            {t.hero.secondaryCta[lang]}
+            {hero.secondaryCta[lang]}
             <svg
               width="16"
               height="16"
@@ -98,6 +88,6 @@ export default function HeroSection({ lang }) {
           </a>
         </div>
       </div>
-    </section>
+    </FontReadyWrapper>
   );
 }

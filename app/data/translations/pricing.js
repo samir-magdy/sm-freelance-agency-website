@@ -37,6 +37,32 @@ const pricingSection = {
       delivery: { en: "5–7 days", ar: "٥–٧ أيام" },
     },
     {
+      name: { en: "Standard", ar: "القياسية" },
+      seoName: {
+        en: "Business Website Package for Growing Brands",
+        ar: "باقة موقع الأعمال للعلامات التجارية المتنامية",
+      },
+      price: "8,500",
+      tagline: {
+        en: "A stronger business presence with more sections and better lead capture.",
+        ar: "حضور أقوى، لجذب العملاء.",
+      },
+      features: [
+        { en: "Up to 8 Main Sections", ar: "حتى 8 أقسام رئيسية" },
+        // { en: "Premium Custom Design", ar: "تصميم مخصص بمظهر احترافي مميز" },
+        
+        {
+          en: "Custom Contact Form",
+          ar: "نموذج تواصل مخصص",
+        },
+        {
+          en: "Google Business Profile Setup",
+          ar: "إعداد الملف التجاري على جوجل",
+        },
+      ],
+      delivery: { en: "7–10 days", ar: "٧–١٠ أيام" },
+    },
+    {
       name: { en: "Premium", ar: "الاحترافية" },
       seoName: {
         en: "Premium Website Package for Authority Brands",
@@ -61,32 +87,6 @@ const pricingSection = {
         { en: "Advanced SEO Research", ar: "تحسين متقدم لمحركات البحث" },
       ],
       delivery: { en: "10–14 days", ar: "١٠–١٤ يوم" },
-    },
-    {
-      name: { en: "Standard", ar: "القياسية" },
-      seoName: {
-        en: "Business Website Package for Growing Brands",
-        ar: "باقة موقع الأعمال للعلامات التجارية المتنامية",
-      },
-      price: "8,500",
-      tagline: {
-        en: "A stronger business presence with more sections and better lead capture.",
-        ar: "حضور أقوى، لجذب العملاء.",
-      },
-      features: [
-        { en: "Up to 8 Main Sections", ar: "حتى 8 أقسام رئيسية" },
-        // { en: "Premium Custom Design", ar: "تصميم مخصص بمظهر احترافي مميز" },
-
-        {
-          en: "Custom Contact Form",
-          ar: "نموذج تواصل مخصص",
-        },
-        {
-          en: "Google Business Profile Setup",
-          ar: "إعداد الملف التجاري على جوجل",
-        },
-      ],
-      delivery: { en: "7–10 days", ar: "٧–١٠ أيام" },
     },
   ],
   deliveryLabel: {

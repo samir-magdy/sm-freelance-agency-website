@@ -5,7 +5,6 @@ import translations from "../data/translations";
 import Footer from "../components/ui/Footer";
 import { SITE_URL } from "../data/translations/lang";
 import { notFound } from "next/navigation";
-import Script from "next/script";
 
 // Define separate instances at the top
 const fonts = Cairo({
@@ -261,9 +260,6 @@ function buildStructuredData(lang) {
     isPartOf: {
       "@id": `${SITE_URL}/#website`,
     },
-    about: {
-      "@id": `${SITE_URL}/#business`,
-    },
   };
 
   // 4. Person schema — ties Samir Magdy to SM Web Studio
@@ -338,6 +334,13 @@ export default async function LangLayout({ children, params }) {
       suppressHydrationWarning
     >
       <body className={`${fonts.variable} font-cairo antialiased`}>
+        {/* ── Structured Data (JSON-LD) ── */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+          }}
+        />
         {/* ── Skip navigation ── */}
         <a
           href="#main-content"
@@ -352,15 +355,6 @@ export default async function LangLayout({ children, params }) {
         {/* ── Main content ── */}
         <main id="main-content">{children}</main>
         <Footer />
-        {/* ── Structured Data (JSON-LD) ── */}
-        <Script
-          id="structured-data"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
-          }}
-        />
       </body>
     </html>
   );

@@ -1,16 +1,7 @@
-"use client";
 
-import dynamic from "next/dynamic";
+import ContactForm from "@/app/components/ui/ContactForm";
 import translations from "@/app/data/translations";
 
-// Add the configuration object as the second argument
-const ContactForm = dynamic(() => import("../ui/ContactForm"), {
-  ssr: false,
-  // Optional but recommended: prevents layout shift while the JS loads
-  loading: () => (
-    <div className="lg:min-h-[555px] w-full animate-pulse bg-surface-low rounded-lg" />
-  ),
-});
 
 export default function ContactSection({ lang }) {
   const t = translations;
