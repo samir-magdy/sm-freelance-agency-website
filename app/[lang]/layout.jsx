@@ -2,7 +2,6 @@ import "../styles/globals.css";
 import { Cairo } from "next/font/google";
 import HeroNav from "../components/ui/HeroNav";
 import translations from "../data/translations";
-import PageVisibility from "../components/utils/PageVisibility";
 import Footer from "../components/ui/Footer";
 import { SITE_URL } from "../data/translations/lang";
 import { notFound } from "next/navigation";
@@ -338,8 +337,7 @@ export default async function LangLayout({ children, params }) {
       dir={lang === "ar" ? "rtl" : "ltr"}
       suppressHydrationWarning
     >
-      <body className={`${fonts.variable} font-cairo antialiased js-cloak`}>
-        <PageVisibility />
+      <body className={`${fonts.variable} font-cairo antialiased`}>
         {/* ── Skip navigation ── */}
         <a
           href="#main-content"

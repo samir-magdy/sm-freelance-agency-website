@@ -41,26 +41,6 @@
   }
 }
 
-/* Initial hidden state */
-.js-cloak {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
-
-/* Transition to visible */
-body {
-  transition:
-    opacity 0.1s ease-in-out,
-    visibility 0.1s ease-in-out;
-}
-
-body.page-loaded {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-}
-
 /* ══════════════════════════════════════
    2. Base & Reset
    ══════════════════════════════════════ */
@@ -386,6 +366,17 @@ html {
 .phone-frame-pulse {
   animation: phonePulse 1.2s ease-in-out 2;
   will-change: filter;
+}
+
+/* spinner - might need it later */
+
+@keyframes spin-ease {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin-ease 1s ease-in-out infinite;
 }
 
 .portfolio-snap::-webkit-scrollbar {

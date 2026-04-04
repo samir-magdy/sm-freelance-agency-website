@@ -93,7 +93,7 @@ export default function PortfolioShowcase({ lang }) {
       />
 
       {/* ── Section heading ── */}
-      <div className="text-center relative z-[2] px-5 mb-4 sm:mb-10 lg:mb-12">
+      <div className="text-center relative z-2 px-5 mb-4 sm:mb-10 lg:mb-12">
         <h2 id="portfolio-heading" className="font-bold text-heading">
           {t.heading[lang]}
         </h2>
@@ -102,7 +102,7 @@ export default function PortfolioShowcase({ lang }) {
       {/* ── Main layout: column on mobile, row on desktop ──
           dir flips the row direction so info panel sits right (EN) or left (AR) */}
       <div
-        className="pt-2 flex flex-col lg:flex-row items-center lg:gap-16 xl:gap-20 relative z-[2]"
+        className="pt-2 flex flex-col lg:flex-row items-center lg:gap-16 xl:gap-20 relative z-2"
         dir={isRtl ? "rtl" : "ltr"}
       >
         {/* ── Info panel (badge + title + description + CTA) ──
@@ -115,7 +115,7 @@ export default function PortfolioShowcase({ lang }) {
           className="portfolio-info-enter text-center lg:text-start lg:max-w-lg order-first lg:order-last mb-4 lg:mb-0 flex flex-col items-center lg:items-start gap-8"
         >
           {/* Genre badge — visible on both mobile + desktop */}
-          <span className="uppercase inline-block py-1 px-3 rounded-lg bg-gold-dark/[0.1] border border-white/[0.1] text-content-heading/95 text-sm font-medium tracking-wide">
+          <span className="uppercase inline-block py-1 px-3 rounded-lg bg-gold-dark/10 border border-white/10 text-content-heading/95 text-sm font-medium tracking-wide">
             {isRtl ? project.genreAr : project.genre}
           </span>
 
@@ -157,13 +157,13 @@ export default function PortfolioShowcase({ lang }) {
             {/* Phone outer shell — gradient bezel + hardware buttons */}
             <div
               ref={phoneRef}
-              className="phone-outer w-[60%] h-[54vh] sm:w-[260px] sm:h-[520px] md:w-[290px] md:h-[550px] lg:w-[320px] lg:h-[610px] rounded-[48px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="phone-outer w-[60%] h-[54vh] sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-152.5 rounded-[48px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               {/* Left volume buttons */}
-              <div className="absolute -left-[2.5px] top-[126px] w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
-              <div className="absolute -left-[2.5px] top-[180px] w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
+              <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
+              <div className="absolute -left-[2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
               {/* Right power button */}
-              <div className="absolute -right-[3px] top-[140px] w-[3px] h-[60px] bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-r-xs" />
+              <div className="absolute -right-0.75 top-35 w-0.75 h-15 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-r-xs" />
 
               {/* Phone screen area */}
               <div className="w-full h-full rounded-[43px] overflow-hidden relative bg-black">
@@ -217,7 +217,7 @@ export default function PortfolioShowcase({ lang }) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative overflow-hidden inline-flex items-center gap-2 py-3 px-5 rounded-xl bg-gradient-to-b from-gold to-gold-dark text-gray-900 text-sm font-semibold tracking-wide transition-all duration-200 lg:hidden"
+            className="relative overflow-hidden inline-flex items-center gap-2 py-3 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-sm font-semibold tracking-wide transition-all duration-200 lg:hidden"
             aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
           >
             {pd.cta[lang]}

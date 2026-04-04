@@ -7,7 +7,7 @@ export function StatusBar({ color = "white" }) {
       className="origin-top scale-[0.85] sm:scale-100 flex justify-between items-center px-1 sm:px-4 h-5 text-xs font-semibold font-[-apple-system,'SF_Pro_Text','Helvetica_Neue',sans-serif] tracking-[0.3px]"
       style={{ color }}
     >
-      <span className="w-[54px] text-left">9:41</span>
+      <span className="w-13.5 text-left">9:41</span>
       <div className="flex-1" />
       <div className="flex gap-1">
         <svg width="16" height="10" viewBox="0 0 16 12" fill="none">
