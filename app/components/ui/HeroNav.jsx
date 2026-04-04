@@ -20,7 +20,7 @@ export default function HeroNav({ lang, strings }) {
               alt="SM Web Studio – Website Design Company in Egypt"
               width={140}
               height={140}
-              priority
+              loading="eager"
             />
           </a>
           <DesktopNavLinks nav={nav} />

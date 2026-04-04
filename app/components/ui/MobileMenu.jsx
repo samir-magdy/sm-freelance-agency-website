@@ -43,6 +43,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               alt="SM Web Studio – Website Design Company in Egypt"
               width={70}
               height={70}
+              loading="eager"
             />
           </a>
           <button
