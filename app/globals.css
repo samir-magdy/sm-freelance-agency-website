@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
   --font-cairo: var(--font-cairo), sans-serif;
@@ -28,9 +28,9 @@
   --color-gold: oklch(76.7% 0.1399 91.2);
   --color-gold-light: oklch(78.4% 0.1605 86.5);
   --color-gold-dark: oklch(52% 0.0847 92.2);
-  --color-success: #10B981;
-  --color-danger: #EF4444;
-  --color-warning: #F59E0B;
+  --color-success: #10b981;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
 }
 
 @variant hover {
@@ -40,24 +40,7 @@
     }
   }
 }
-.js-cloak {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
 
-/* Transition to visible */
-body {
-  transition:
-    opacity 0.2s ease-in-out,
-    visibility 0.2s ease-in-out;
-}
-
-body.page-loaded {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-}
 /* ══════════════════════════════════════
    2. Base & Reset
    ══════════════════════════════════════ */
@@ -388,8 +371,12 @@ html {
 /* spinner - might need it later */
 
 @keyframes spin-ease {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .spinner {
