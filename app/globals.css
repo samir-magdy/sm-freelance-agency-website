@@ -427,7 +427,7 @@ body.page-loaded {
     filter: drop-shadow(0 0 0 oklch(78.4% 0.1605 86.5 / 0));
   }
   50% {
-    filter: drop-shadow(0 0 12px oklch(78.4% 0.1605 86.5 / 0.6));
+    filter: drop-shadow(0 0 8px oklch(78.4% 0.1605 86.5 / 0.4));
   }
 }
 

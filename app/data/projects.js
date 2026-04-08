@@ -16,18 +16,7 @@ export const projects = [
     genre: "Travel & Tourism",
     genreAr: "سياحة وسفر",
   },
-  {
-    id: "wedding",
-    liveUrl: "https://weddings.samirmagdy.com",
-    screenshot: weddingShot,
-    schemaName: "Wedding Planning & Photography – Cairo",
-    schemaNameAr: "تنظيم وتصوير الزفاف – القاهرة",
-    description:
-      "A conversion-optimized travel agency website for Sky Way Travel, designed to attract, engage, and convert visitors into bookings by showcasing tour packages in a structured format, building trust, and guiding users effortlessly from interest to reservation.",
-    genre: "Photography & Events",
-    genreAr: "تنظيم وتصوير الزفاف",
-  },
-    {
+      {
     id: "gym",
     liveUrl: "https://gyms.samirmagdy.com",
     screenshot: gymScreenshot,
@@ -38,6 +27,7 @@ export const projects = [
     genre: "Gym/Fitness",
     genreAr: "مراكز اللياقة البدنية",
   },
+
   {
     id: "Ecommerce",
     liveUrl: "https://ecommerce.samirmagdy.com/",
@@ -48,6 +38,17 @@ export const projects = [
       "A custom-built fashion e-commerce store with advanced product listings, intelligent filtering, and a smart shopping cart. Streamlined WhatsApp checkout with no account creation required.",
     genre: "Fashion Ecommerce",
     genreAr: "التجارة الإلكترونية للأزياء",
+  },
+  {
+    id: "wedding",
+    liveUrl: "https://weddings.samirmagdy.com",
+    screenshot: weddingShot,
+    schemaName: "Wedding Planning & Photography – Cairo",
+    schemaNameAr: "تنظيم وتصوير الزفاف – القاهرة",
+    description:
+      "A conversion-optimized travel agency website for Sky Way Travel, designed to attract, engage, and convert visitors into bookings by showcasing tour packages in a structured format, building trust, and guiding users effortlessly from interest to reservation.",
+    genre: "Photography & Events",
+    genreAr: "تنظيم وتصوير الزفاف",
   },
 ];
 

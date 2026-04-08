@@ -43,7 +43,7 @@ const SOCIAL_LINKS = {
 
 const meta = {
   en: {
-    title: `Website Designer in Egypt | ${SITE_NAME}`,
+    title: `High-Quality Affordable Websites | ${SITE_NAME}`,
     description: META_DESCRIPTION.en,
     ogLocale: "en_US",
     altLocale: "ar_EG",
@@ -52,7 +52,7 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: `تصميم مواقع احترافية في مصر | ${SITE_NAME}`,
+    title: `تصميم مواقع بسعر منافس في مصر | ${SITE_NAME}`,
     description: META_DESCRIPTION.ar,
     ogLocale: "ar_EG",
     altLocale: "en_US",

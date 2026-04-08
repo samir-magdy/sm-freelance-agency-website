@@ -68,7 +68,7 @@ const pricingSection = {
         en: "Premium Website Package for Authority Brands",
         ar: "باقة الموقع الاحترافية للعلامات التجارية القوية",
       },
-      price: "12,500",
+      price: "15,500",
       tagline: {
         en: "For brands that want a stronger image, broader reach, and higher conversion.",
         ar: "صورة أقوى، انتشار أكبر.",
