@@ -151,7 +151,7 @@ export default function PortfolioShowcase({ lang }) {
             {/* Phone outer shell — gradient bezel + hardware buttons */}
             <div
               ref={phoneRef}
-              className="phone-outer w-[60%] h-[53vh] sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-152.5 rounded-[48px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="phone-outer w-[60%] h-[52.5vh] sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-152.5 rounded-[48px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               {/* Left volume buttons */}
               <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -202,6 +202,24 @@ export default function PortfolioShowcase({ lang }) {
               disabled={active === projects.length - 1}
               onClick={() => scrollToProject(active + 1)}
             />
+          </div>
+
+          {/* Pagination dots */}
+          <div className="flex items-center gap-2" role="tablist" aria-label="Project slides">
+            {projects.map((proj, i) => (
+              <button
+                key={proj.id}
+                role="tab"
+                aria-selected={i === active}
+                aria-label={`Go to project ${i + 1}`}
+                onClick={() => scrollToProject(i)}
+                className={`rounded-full transition-all duration-300 ${
+                  i === active
+                    ? "w-5 h-2 bg-gold"
+                    : "w-2 h-2 bg-white/30 hover:bg-white/60"
+                }`}
+              />
+            ))}
           </div>
 
           {/* "View Live Site" CTA — mobile only (desktop version is in the info panel) */}

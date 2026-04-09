@@ -18,8 +18,8 @@ export default function HeroNav({ lang, strings }) {
             <Image
               src="/brand.svg"
               alt="SM Web Studio – Website Design Company in Egypt"
-              width={140}
-              height={140}
+              width={100}
+              height={100}
               loading="eager"
             />
           </a>

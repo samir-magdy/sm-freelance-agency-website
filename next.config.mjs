@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
-  allowedDevOrigins: ["192.168.1.217"],
+  allowedDevOrigins: ["172.20.10.3"],
 
   // Replaces proxy.js middleware — resolved at Vercel's routing layer, no Edge Function invocation
   async rewrites() {

@@ -29,7 +29,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
       className="xl:hidden fixed top-0 left-0 right-0 z-50 pointer-events-none"
     >
       <div
-        className="absolute top-0 left-0 right-0 z-50 py-2 backdrop-blur-xl pointer-events-auto"
+        className="absolute top-0 left-0 right-0 py-1 z-50 backdrop-blur-xl pointer-events-auto"
         dir="ltr"
       >
         <div className="flex justify-between items-center px-3">
@@ -41,8 +41,8 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             <Image
               src="/brand.svg"
               alt="SM Web Studio – Website Design Company in Egypt"
-              width={70}
-              height={70}
+              width={50}
+              height={50}
               loading="eager"
             />
           </a>
@@ -56,15 +56,15 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
           >
-            <span className="w-10 flex flex-col gap-2">
+            <span className="w-8 flex flex-col gap-1.5">
               <span
-                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "rotate-45 translate-y-2.5" : ""}`}
+                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}
               />
               <span
                 className={`block h-0.5 bg-content-heading transition-all duration-500 ${isMenuOpen ? "opacity-0 scale-0" : ""}`}
               />
               <span
-                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "-rotate-45 -translate-y-2.5" : ""}`}
+                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
               />
             </span>
           </button>

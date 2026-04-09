@@ -47,14 +47,8 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 10px;
 }
 
-@media (min-width: 1280px) {
-  html {
-    scroll-padding-top: 20px;
-  }
-}
 @layer base {
   * {
     font-family: var(--font-cairo), sans-serif;
@@ -477,12 +471,9 @@ body.page-loaded {
 
 /* Safari-only mobile overrides for portfolio section */
 @media (max-width: 767px) {
-  #portfolio.is-safari {
-    padding-top: 6rem;
-    padding-bottom: 7rem;
-  }
   .is-safari .phone-outer {
-    height: 57vh;
+    height: 59.5vh;
+    width: 65%;
   }
 }
 
