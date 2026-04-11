@@ -203,21 +203,21 @@ function buildStructuredData(lang) {
       latitude: 30.0444,
       longitude: 31.2357,
     },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Web Design & Development Services in Egypt",
-      itemListElement: translations.pricingSection.tiers.map((tier) => ({
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: tier.seoName.en,
-          alternateName: tier.seoName.ar,
-          description: tier.tagline.en,
-        },
-        price: tier.price.replace(/,/g, ""),
-        priceCurrency: "EGP",
-      })),
-    },
+    // hasOfferCatalog: {
+    //   "@type": "OfferCatalog",
+    //   name: "Web Design & Development Services in Egypt",
+    //   itemListElement: translations.pricingSection.tiers.map((tier) => ({
+    //     "@type": "Offer",
+    //     itemOffered: {
+    //       "@type": "Service",
+    //       name: tier.seoName.en,
+    //       alternateName: tier.seoName.ar,
+    //       description: tier.tagline.en,
+    //     },
+    //     price: tier.price.replace(/,/g, ""),
+    //     priceCurrency: "EGP",
+    //   })),
+    // },
     sameAs: [
       SOCIAL_LINKS.facebook,
       SOCIAL_LINKS.instagram,
@@ -310,11 +310,12 @@ export default async function LangLayout({ children, params }) {
 
   const heroNavStrings = {
     nav: {
+      // home: t.nav.home[lang],
       portfolio: t.nav.portfolio[lang],
-      pricing: t.nav.pricing[lang],
+      // pricing: t.nav.pricing[lang],
       process: t.nav.process[lang],
       FAQs: t.nav.FAQs[lang],
-      contact: t.nav.contact[lang],
+      "Get Started": t.nav["Get Started"][lang],
     },
     a11y: {
       desktopNav: t.a11y.desktopNav[lang],

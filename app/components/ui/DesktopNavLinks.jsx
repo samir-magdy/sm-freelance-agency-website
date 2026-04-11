@@ -1,9 +1,10 @@
 const LINK_CONFIG = [
+  // { href: "#home", labelKey: "home" },
   { href: "#portfolio", labelKey: "portfolio" },
-  { href: "#pricing", labelKey: "pricing" },
+  // { href: "#pricing", labelKey: "pricing" },
   { href: "#process", labelKey: "process" },
   { href: "#FAQs", labelKey: "FAQs" },
-  { href: "#contact", labelKey: "contact" },
+  { href: "#contact", labelKey: "Get Started" },
 ];
 
 export default function DesktopNavLinks({ nav }) {

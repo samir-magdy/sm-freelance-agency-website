@@ -95,13 +95,12 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           onClick={(e) => e.stopPropagation()}
         >
           {[
-            "features",
-            "services",
+            "home",
             "portfolio",
-            "pricing",
+            // "pricing",
             "process",
             "FAQs",
-            "contact",
+            "Get Started",
           ].map((item) => (
             <li key={item}>
               <a

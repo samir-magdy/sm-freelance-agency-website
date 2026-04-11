@@ -38,7 +38,6 @@ export default function Footer() {
           <span className="text-md sm:text-lg pb-0.5">studio@samirmagdy.com</span>
         </a>
         </div>
-        {/* <span className="sm:hidden inline-block w-1 h-1 rounded-full bg-content-muted mx-3" aria-hidden="true" /> */}
 
         {/* Copyright */}
         <small className="text-content-muted/80 text-sm inline-flex items-center gap-1">

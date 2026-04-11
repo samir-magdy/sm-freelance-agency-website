@@ -6,7 +6,7 @@ export default function HeroSection({ lang }) {
 
   return (
     <FontReadyWrapper
-      id="SMWebStudioEG"
+      id="home"
       className="h-dvh flex items-center justify-center relative"
     >
       {/* Dot grid + radial glow background */}

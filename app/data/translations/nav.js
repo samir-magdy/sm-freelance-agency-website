@@ -1,9 +1,10 @@
 const nav = {
+  home: { en: "Home", ar: "الرئيسية" },
   portfolio: { en: "Portfolio", ar: "الأعمال" },
-  pricing: { en: "Pricing", ar: "الأسعار" },
+  // pricing: { en: "Pricing", ar: "الأسعار" },
   process: { en: "Process", ar: "الخطوات" },
   FAQs: { en: "FAQs", ar: "الأسئلة الشائعة" },
-  contact: { en: "Contact", ar: "تواصل معنا" },
+  "Get Started": { en: "Get Started", ar: "ابدأ الآن" },
 };
 
 export default nav;

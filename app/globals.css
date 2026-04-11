@@ -410,21 +410,6 @@ html {
   animation: phonePulse 1.2s ease-in-out 2;
 }
 
-/* spinner - might need it later */
-
-@keyframes spin-ease {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.spinner {
-  animation: spin-ease 1s ease-in-out infinite;
-}
-
 .portfolio-snap::-webkit-scrollbar {
   display: none;
 }

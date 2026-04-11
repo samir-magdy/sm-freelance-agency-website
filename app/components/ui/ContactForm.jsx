@@ -70,7 +70,6 @@ const ChevronDown = () => (
 
 
 export default function ContactForm({ lang, strings }) {
-  const [currentDate, setCurrentDate] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     industry: "",
@@ -80,7 +79,6 @@ export default function ContactForm({ lang, strings }) {
 
     message: "",
   });
-  const [dateTouched, setDateTouched] = useState(false);
   const [status, setStatus] = useState("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const statusTimerRef = useRef(null);
@@ -245,9 +243,6 @@ export default function ContactForm({ lang, strings }) {
                         ...(value === "email"
                           ? { phone: "" }
                           : { email: "" }),
-                        ...(value !== "phone-call"
-                          ? { bestDate: "", bestTime: "" }
-                          : { bestDate: prev.bestDate || currentDate }),
                       }))
                     }
                     className="sr-only"

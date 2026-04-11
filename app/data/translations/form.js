@@ -15,9 +15,6 @@ const form = {
   email: { en: "Email", ar: "الإيميل" },
   emailAddress: { en: "Email", ar: "البريد الإلكتروني" },
   emailPlaceholder: { en: "your@email.com", ar: "your@email.com" },
-  bestDate: { en: "Preferred date", ar: "التاريخ المفضل" },
-  bestTime: { en: "Best time to call", ar: "أفضل وقت للاتصال" },
-  bestTimePlaceholder: { en: "Select a time", ar: "اختر الوقت" },
   message: { en: "Message", ar: "رسالة" },
   messageOptional: { en: "optional", ar: "اختياري" },
   messagePlaceholder: {

@@ -1,13 +1,6 @@
 const faqSection = {
   heading: { en: "Frequently Asked Questions", ar: "الأسئلة الشائعة" },
-  searchBar: {
-    placeholder: { en: "Search questions...", ar: "ابحث في الأسئلة..." },
-    noResultsText: {
-      en: "No matching keywords found.",
-      ar: "لم يتم العثور على أسئلة مطابقة.",
-    },
-  },
- items: [
+  items: [
     // ===== TOP OF FUNNEL (Awareness) =====
     {
       question: {
@@ -51,56 +44,7 @@ const faqSection = {
     },
 
     // ===== MID-FUNNEL (Research) =====
-    {
-      question: {
-        en: "how much does a website cost for a small business?",
-        ar: "اسعار تصميم المواقع للشركات الصغيرة كام؟",
-      },
-      answer: {
-        en: "Pricing is determined by project scope and technical complexity, similar to how real estate valuation depends on specifications and location. See our pricing section for our ready packages.",
-        ar: "يتم تحديد السعر بناءً على نطاق المشروع والتعقيد التقني، تتراوح تكاليف التطوير من 5,000 جنيه للمواقع البسيطة إلى مبالغ ضخمة للحلول المؤسسية الضخمة التي تتطلب تكاملات مخصصة وفرق هندسية متخصصة.",
-      },
-    },
-    {
-  question: {
-    en: "What is responsive web design?",
-    ar: "يعني إيه تصميم متجاوب (Responsive)؟",
-  },
-  answer: {
-    en: "Responsive web design is an engineering approach that ensures a website adapts its layout, typography, and interactive elements to function optimally across all screen sizes — from desktop monitors to mobile devices. With mobile traffic now accounting for over 60% of global web usage, responsive design is not a feature but a structural requirement for search engine visibility and user retention.",
-    ar: "التصميم المتجاوب هو منهج هندسي يضمن تكيّف تخطيط الموقع وخطوطه وعناصره التفاعلية للعمل بشكل مثالي على جميع أحجام الشاشات — من شاشات الكمبيوتر إلى الهواتف المحمولة. مع تجاوز حركة المرور عبر الهاتف المحمول لأكثر من 60% من الاستخدام العالمي للإنترنت، لم يعد التصميم المتجاوب ميزة إضافية بل متطلب هيكلي لظهور الموقع في محركات البحث والحفاظ على الزوار.",
-  },
-},
-{
-  question: {
-    en: "What is the difference between a website and an online store?",
-    ar: "إيه الفرق بين الموقع الإلكتروني والمتجر الإلكتروني؟",
-  },
-  answer: {
-    en: "A standard website presents information about your business — services, portfolio, contact details — and is designed to generate enquiries or build brand awareness. An online store (e-commerce website) adds transactional functionality: product catalogues, inventory management, shopping carts, and payment processing. Both require professional design and SEO, but an online store involves additional infrastructure for order management and checkout workflows.",
-    ar: "الموقع الإلكتروني القياسي يعرض معلومات عن نشاطك — الخدمات، الأعمال السابقة، بيانات التواصل — وهو مصمم لجذب الاستفسارات أو بناء الوعي بالعلامة التجارية. أما المتجر الإلكتروني فيضيف وظائف تجارية: كتالوج المنتجات، إدارة المخزون، سلة المشتريات، ومعالجة الدفع. كلاهما يحتاج تصميم احترافي وتحسين محركات بحث، لكن المتجر يتطلب بنية إضافية لإدارة الطلبات وعمليات الشراء.",
-  },
-},
-    {
-      question: {
-        en: "What technologies do you use to build websites?",
-        ar: "إيه التقنيات اللي بتستخدموها في بناء المواقع؟",
-      },
-      answer: {
-        en: "We utilize the Next.js framework, a leading industry standard for high-performance web applications. This technology is employed by global enterprises such as Netflix, Nike, and Apple to ensure speed, SEO efficiency, and robust security architecture.",
-        ar: "نحن نستخدم إطار عمل Next.js، وهو معيار رائد في الصناعة لتطبيقات الويب عالية الأداء. تُستخدم هذه التقنية من قبل شركات عالمية مثل Netflix وNike وApple لضمان السرعة، وكفاءة الـ SEO، وبنية أمنية قوية.",
-      },
-    },
-    {
-      question: {
-        en: "How long does it take for a new website to rank on Google?",
-        ar: "الموقع بيحتاج وقت قد إيه عشان يظهر في نتائج بحث جوجل؟",
-      },
-      answer: {
-        en: "Search engines typically index new URLs within several days; however, achieving competitive rankings generally requires a consistent optimization period of 3 to 6 months. We implement structural SEO and performance optimization from the initial development phase to accelerate this timeline.",
-        ar: "تقوم محركات البحث عادةً بأرشفة الروابط الجديدة خلال أيام؛ ومع ذلك، فإن تحقيق ترتيب تنافسي يتطلب عادةً فترة تحسين مستمرة تتراوح من 3 إلى 6 أشهر. نحن نطبق قواعد الـ SEO الهيكلية وتحسين الأداء منذ مرحلة التطوير الأولى لتسريع هذه الدورة الزمنية.",
-      },
-    },
+
 
     // ===== DECISION STAGE (Ready to act) =====
     {
@@ -113,26 +57,6 @@ const faqSection = {
         ar: "بعد الاستشارة الأولية وجمع المتطلبات، نحتاج إلى توفير أصول العلامة التجارية الأساسية. يشمل ذلك الهوية البصرية (اللوجو)، المحتوى المكتوب النهائي لكل قسم، وأي أصول بصرية أو صور فوتوغرافية عالية الجودة مخصصة للموقع.",
       },
     },
-    {
-      question: {
-        en: "Will my business show up on Google Maps?",
-        ar: "هل شغلي هيظهر على خرائط جوجل؟",
-      },
-      answer: {
-        en: "Visibility on Google Maps requires a verified Google Business Profile and a physical operating location. While a website is not a prerequisite for a map listing, a high-quality site significantly enhances your Local SEO signals, improving your rank in localized search queries.",
-        ar: "تطلب الظهور على خرائط جوجل وجود ملف تجاري مفعل وموقع جغرافي فعلي. وبينما لا يعد الموقع الإلكتروني شرطاً مسبقاً للإدراج في الخرائط، إلا أن الموقع عالي الجودة يعزز إشارات الـ SEO المحلية، مما يحسن ترتيبك في نتائج البحث الجغرافية.",
-      },
-    },
-    // {
-    //   question: {
-    //     en: "Can I sell products on my website?",
-    //     ar: "هل ينفع أبيع منتجاتي من خلال الموقع؟",
-    //   },
-    //   answer: {
-    //     en: "We implement a streamlined e-commerce model optimized for conversion, utilizing a 'direct-to-WhatsApp' checkout system that bypasses mandatory account registration. While this approach means that you have to manage stock and orders manually, it also means you get a website that looks and performs better at half the price of a standard ecommerce sites.",
-    //     ar: "نحن نطبق نموذجاً للتجارة الإلكترونية مصمماً لزيادة معدل التحويل، باستخدام نظام طلب عبر واتساب يتجاوز إلزامية تسجيل الحساب. يقلل هذا النهج من تعقيد الاستخدام وتكاليف التطوير، مع توفير واجهة إدارية مخصصة لإدارة المخزون والمنتجات.",
-    //   },
-    // },
     {
       question: {
         en: "What is hosting and deployment?",
@@ -151,16 +75,6 @@ const faqSection = {
       answer: {
         en: "A domain is the unique alphanumeric identifier (URL) used to access your website, such as 'company.com'. Functionally, it acts as a digital address that points users toward your hosted content. We facilitate the registration and configuration process based on availability.",
         ar: "الدومين هو المعرف الفريد (URL) المستخدم للوصول إلى موقعك، مثل 'company.com'. من الناحية الوظيفية، يعمل كعنوان رقمي يوجه المستخدمين نحو محتواك المستضاف. نحن نقوم بتسهيل عملية التسجيل والإعداد بناءً على توفر الاسم.",
-      },
-    },
-    {
-      question: {
-        en: "Do you work with businesses outside Cairo?",
-        ar: "هل بتشتغلوا مع شركات بره القاهرة؟",
-      },
-      answer: {
-        en: "Yes. Our operational model is remote-first, allowing us to collaborate effectively regardless of geographic location. We maintain rigorous communication standards to ensure project alignment with clients both domestically and internationally.",
-        ar: "نعم. نموذج عملنا يعتمد على العمل عن بُعد، مما يسمح لنا بالتعاون الفعال بغض النظر عن الموقع الجغرافي. نحن نلتزم بمعايير اتصال صارمة لضمان توافق المشروع مع تطلعات عملائنا محلياً ودولياً.",
       },
     },
   ],

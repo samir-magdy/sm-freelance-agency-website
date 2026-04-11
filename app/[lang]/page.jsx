@@ -1,13 +1,11 @@
 import HeroSection from "../components/sections/HeroSection";
-import PricingSection from "../components/sections/PricingSection";
+import PortfolioShowcase from "../components/ui/PortfolioShowcase";
+// import PricingSection from "../components/sections/PricingSection";
+import WorkflowSection from "../components/sections/WorkflowSection";
 import FAQSection from "../components/sections/FAQSection";
+import ContactSection from "../components/sections/ContactSection";
 import { notFound } from "next/navigation";
-import dynamic from "next/dynamic";
 import { projectsStructuredData } from "../data/projects";
-
-const PortfolioShowcase = dynamic(() => import('../components/ui/PortfolioShowcase'));
-const WorkflowSection = dynamic(() => import('../components/sections/WorkflowSection'));
-const ContactSection = dynamic(() => import("../components/sections/ContactSection"));
 
 export default async function Page({ params }) {
   const { lang: rawLang } = await params;
@@ -25,7 +23,7 @@ export default async function Page({ params }) {
         }}
       />
       <PortfolioShowcase lang={lang} />
-      <PricingSection lang={lang} />
+      {/* <PricingSection lang={lang} /> */}
       <WorkflowSection lang={lang} />
       <FAQSection lang={lang} />
       <ContactSection lang={lang} />
