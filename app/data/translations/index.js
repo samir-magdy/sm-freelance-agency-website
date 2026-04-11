@@ -8,6 +8,7 @@ import contactSection from "./contact";
 import form from "./form";
 import a11y from "./a11y";
 import langToggle from "./lang-toggle";
+import featuresSection from "./features";
 
 const translations = {
   nav,
@@ -21,6 +22,7 @@ const translations = {
   form,
   a11y,
   langToggle,
+  featuresSection,
 };
 
 export default translations;

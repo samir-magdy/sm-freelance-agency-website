@@ -91,11 +91,11 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
         {/* Stop propagation on the UL so clicking the gap between links still closes the menu, 
             but clicking the list container itself doesn't (optional logic depending on preference) */}
         <ul
-          className="flex flex-col items-center gap-6"
+          className="flex flex-col items-center gap-8"
           onClick={(e) => e.stopPropagation()}
         >
           {[
-            "home",
+            "features",
             "portfolio",
             // "pricing",
             "process",
@@ -106,7 +106,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               <a
                 href={`#${item}`}
                 onClick={closeMenu}
-                className="font-semibold text-content-body text-[1.6rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+                className="font-semibold text-content-body text-[1.8rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
               >
                 {nav[item]}
               </a>

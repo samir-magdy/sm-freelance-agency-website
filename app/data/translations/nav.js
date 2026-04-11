@@ -1,4 +1,5 @@
 const nav = {
+  features: { en: "Features", ar: "المميزات" },
   home: { en: "Home", ar: "الرئيسية" },
   portfolio: { en: "Portfolio", ar: "الأعمال" },
   // pricing: { en: "Pricing", ar: "الأسعار" },
