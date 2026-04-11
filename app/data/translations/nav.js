@@ -1,6 +1,6 @@
 const nav = {
-  features: { en: "Features", ar: "المميزات" },
-  services: { en: "Services", ar: "الخدمات" },
+  features: { en: "Included", ar: "المميزات" },
+  services: { en: "Add-ons", ar: "الخدمات" },
   portfolio: { en: "Portfolio", ar: "الأعمال" },
   pricing: { en: "Pricing", ar: "الأسعار" },
   process: { en: "Process", ar: "الخطوات" },

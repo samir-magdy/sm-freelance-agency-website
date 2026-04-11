@@ -28,7 +28,7 @@ const form = {
   sending: { en: "Sending...", ar: "جاري الإرسال..." },
   success: {
     en: "Thank you. We have received your request.",
-    ar: "شكراً. لقد إستلمنا طلبك!",
+    ar: "شكراً. لقد استلمنا طلبك!",
   },
   errorRateLimit: {
     en: "Wait a few minutes to send another request.",

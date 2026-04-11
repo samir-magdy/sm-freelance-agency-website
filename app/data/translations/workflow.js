@@ -5,7 +5,7 @@ const workflowSection = {
     discovery: {
       title: { en: "Discovery", ar: "الاستشارة" },
       description: {
-        en: "We connect to understand everything about your business and you need from your website, then send a full proposal including scope, timeline and pricing.",
+        en: "We connect to understand everything about your business and what you need from your website, then send a full proposal including scope, timeline and pricing.",
         ar: "نتواصل معك لفهم كل ما تحتاجه من موقعك، ثم نرسل لك عرض سعر بتفاصيل بالمشروع. بعد موافقتك، تبدأ مرحلة التصميم.",
       },
     },

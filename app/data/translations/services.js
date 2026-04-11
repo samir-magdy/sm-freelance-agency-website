@@ -35,7 +35,7 @@ const servicesSection = {
       ar: "استضافة ونشر الموقع",
       desc: {
         en: "We don't just build the website. We also handle all the steps needed to keep your site live.",
-        ar: "نتولى جميع التفاصيل التقنية لأطلاق موقعك وللتأكيد انه يعمل بشكل مثالي باستمرار.",
+        ar: "نتولى جميع التفاصيل التقنية لإطلاق موقعك وللتأكيد انه يعمل بشكل مثالي باستمرار.",
       },
     },
     {
@@ -58,7 +58,7 @@ const servicesSection = {
       en: "Website Maintenance",
       ar: "تعديلات شهرية مجانية",
       desc: {
-        en: "Request up to three basic content changes a month at no charge. Text, images, contact info..",
+        en: "Request up to three basic content changes a month at no charge. Text, images, contact info.",
         ar: "يمكنك طلب ثلاث تعديلات شهرياً على المحتوى مجاناً. نصوص أو صور أو أسعار وغير ذلك.",
       },
     },

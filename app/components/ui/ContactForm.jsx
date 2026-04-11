@@ -68,12 +68,6 @@ const ChevronDown = () => (
   </svg>
 );
 
-const TIME_OPTIONS = [
-  { value: "11am-1pm", en: "11:00 AM - 01:00 PM", ar: "١١:٠٠ ص - ١:٠٠ م" },
-  { value: "1pm-3pm", en: "01:00 PM - 03:00 PM", ar: "١:٠٠ م - ٣:٠٠ م" },
-  { value: "3pm-5pm", en: "03:00 PM - 05:00 PM", ar: "٣:٠٠ م - ٥:٠٠ م" },
-  { value: "5pm-7pm", en: "05:00 PM - 07:00 PM", ar: "٥:٠٠ م - ٧:٠٠ م" },
-];
 
 export default function ContactForm({ lang, strings }) {
   const [currentDate, setCurrentDate] = useState("");
@@ -83,8 +77,7 @@ export default function ContactForm({ lang, strings }) {
     contactMethod: "",
     phone: "",
     email: "",
-    bestDate: "",
-    bestTime: "",
+
     message: "",
   });
   const [dateTouched, setDateTouched] = useState(false);
@@ -92,11 +85,7 @@ export default function ContactForm({ lang, strings }) {
   const [errorMessage, setErrorMessage] = useState("");
   const statusTimerRef = useRef(null);
 
-  useEffect(() => {
-    const today = new Date().toISOString().split("T")[0];
-    setCurrentDate(today);
-    setFormData((prev) => ({ ...prev, bestDate: today }));
-  }, []);
+
 
   useEffect(() => {
     return () => {
@@ -129,8 +118,6 @@ export default function ContactForm({ lang, strings }) {
         contactMethod: "",
         phone: "",
         email: "",
-        bestDate: currentDate,
-        bestTime: "",
         message: "",
       });
 
@@ -256,7 +243,7 @@ export default function ContactForm({ lang, strings }) {
                         ...prev,
                         contactMethod: value,
                         ...(value === "email"
-                          ? { phone: "", bestDate: "", bestTime: "" }
+                          ? { phone: "" }
                           : { email: "" }),
                         ...(value !== "phone-call"
                           ? { bestDate: "", bestTime: "" }
@@ -275,11 +262,7 @@ export default function ContactForm({ lang, strings }) {
           {(formData.contactMethod === "whatsapp" ||
             formData.contactMethod === "phone-call") && (
             <div
-              className={
-                formData.contactMethod === "whatsapp"
-                  ? "md:col-span-2"
-                  : "col-span-1"
-              }
+              className="md:col-span-2"
             >
               <label htmlFor="phone" className={labelClass}>
                 {strings.phone}{" "}
@@ -304,83 +287,7 @@ export default function ContactForm({ lang, strings }) {
             </div>
           )}
 
-          {/* Best Date + Time - Instant Toggle */}
-          {formData.contactMethod === "phone-call" && (
-            <div className="grid grid-cols-2 gap-3">
-              {/* Date */}
-              <div>
-                <label htmlFor="bestDate" className={labelClass}>
-                  {strings.bestDate}{" "}
-                  <span
-                    className="text-warning opacity-90"
-                    aria-label="required"
-                  >
-                    *
-                  </span>
-                </label>
-                <div className="relative">
-                  <input
-                    type="date"
-                    id="bestDate"
-                    required
-                    min={currentDate || undefined}
-                    className={`${selectBaseClass} ${dateTouched ? "text-content-heading" : "text-content-muted"} cursor-auto [&::-webkit-calendar-picker-indicator]:invert [&::-webkit-calendar-picker-indicator]:opacity-50 [&::-webkit-calendar-picker-indicator]:cursor-pointer`}
-                    value={formData.bestDate}
-                    onChange={(e) => {
-                      setDateTouched(true);
-                      setFormData((prev) => ({
-                        ...prev,
-                        bestDate: e.target.value,
-                      }));
-                    }}
-                  />
-                  <div
-                    className="absolute inset-y-0 end-0 w-10 cursor-pointer"
-                    onClick={() =>
-                      document.getElementById("bestDate")?.showPicker?.()
-                    }
-                    aria-hidden="true"
-                  />
-                </div>
-              </div>
-              {/* Time */}
-              <div>
-                <label htmlFor="bestTime" className={labelClass}>
-                  {strings.bestTime}{" "}
-                  <span
-                    className="text-warning opacity-90"
-                    aria-label="required"
-                  >
-                    *
-                  </span>
-                </label>
-                <div className="relative">
-                  <select
-                    id="bestTime"
-                    required
-                    className={selectClass(formData.bestTime)}
-                    value={formData.bestTime}
-                    onChange={(e) =>
-                      setFormData((prev) => ({
-                        ...prev,
-                        bestTime: e.target.value,
-                      }))
-                    }
-                  >
-                    <option value="">{strings.bestTimePlaceholder}</option>
-                    {TIME_OPTIONS.map((opt) => (
-                      <option key={opt.value} value={opt.value}>
-                        {opt[lang]}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 end-4 flex items-center text-content-muted">
-                    <ChevronDown />
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+  
 
           {/* Email - Instant Toggle */}
           {formData.contactMethod === "email" && (

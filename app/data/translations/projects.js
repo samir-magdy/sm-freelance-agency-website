@@ -27,7 +27,7 @@ const projectData = {
     },
     description: {
       en: "A bilingual website for a wedding planner in Cairo. The site features elegant design, a portfolio gallery, testimonials, and more.",
-      ar: "موقع إلكتروني مخصص لمنظم حفلات الزفاف في القاهرة. موقع ثنائي اللغة يتميز بتصميم أنيق،  ومعرض للأعمال.",
+      ar: "موقع إلكتروني مخصص لمنظم حفلات الزفاف في القاهرة. موقع ثنائي اللغة يتميز بتصميم أنيق، ومعرض للأعمال.",
     },
     cta: {
       en: "Live Demo",

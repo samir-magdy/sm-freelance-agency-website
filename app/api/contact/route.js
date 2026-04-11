@@ -20,8 +20,6 @@ export async function POST(request) {
       phone,
       industry,
       contactMethod,
-      bestDate,
-      bestTime,
       email,
       message,
     } = await request.json();
@@ -46,14 +44,6 @@ export async function POST(request) {
       );
     }
 
-    if (contactMethod === "phone-call" && (!bestTime || !bestDate)) {
-      return NextResponse.json(
-        {
-          error: "Best time and date is required for Phone Call contact method",
-        },
-        { status: 400 },
-      );
-    }
 
     if (contactMethod === "email" && !email) {
       return NextResponse.json(
@@ -62,12 +52,11 @@ export async function POST(request) {
       );
     }
 
-    // Add after existing validation, before rate limiting
     const MAX_LENGTHS = {
       name: 50,
       industry: 50,
       phone: 20,
-      email: 100, // RFC 5321 max email length
+      email: 100,
       message: 500,
     };
 
@@ -120,8 +109,6 @@ export async function POST(request) {
         `Contact Method: ${contactMethod}`,
         phone && `Phone: ${phone}`,
         email && `Email: ${email}`,
-        bestDate && `Preferred Date: ${bestDate}`,
-        bestTime && `Best Time to Call: ${bestTime}`,
         message && `Message: ${message}`,
       ]
         .filter(Boolean)

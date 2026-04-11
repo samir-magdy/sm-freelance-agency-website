@@ -6,6 +6,7 @@ import translations from "../data/translations";
 import Footer from "../components/ui/Footer";
 import { SITE_URL } from "../data/translations/lang";
 import { notFound } from "next/navigation";
+import { Analytics } from "@vercel/analytics/react";
 
 // Define separate instances at the top
 const fonts = Cairo({
@@ -357,6 +358,7 @@ export default async function LangLayout({ children, params }) {
         {/* ── Main content ── */}
         <main id="main-content">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
