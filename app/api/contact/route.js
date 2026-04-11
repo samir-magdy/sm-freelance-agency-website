@@ -101,7 +101,7 @@ export async function POST(request) {
     // Send Email via Resend
     const data = await resend.emails.send({
       from: "SM Web Studio <noreply@mail.samirmagdy.com>",
-      to: process.env.CONTACT_EMAIL,
+      to: process.env.CONTACT_EMAIL ?? "",
       subject: `Website Consultation Request`,
       text: [
         `Name: ${name}`,

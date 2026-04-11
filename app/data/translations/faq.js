@@ -81,17 +81,6 @@ const faqSection = {
     ar: "الموقع الإلكتروني القياسي يعرض معلومات عن نشاطك — الخدمات، الأعمال السابقة، بيانات التواصل — وهو مصمم لجذب الاستفسارات أو بناء الوعي بالعلامة التجارية. أما المتجر الإلكتروني فيضيف وظائف تجارية: كتالوج المنتجات، إدارة المخزون، سلة المشتريات، ومعالجة الدفع. كلاهما يحتاج تصميم احترافي وتحسين محركات بحث، لكن المتجر يتطلب بنية إضافية لإدارة الطلبات وعمليات الشراء.",
   },
 },
-
-{
-  question: {
-    en: "Will my website be optimized for mobile?",
-    ar: "الموقع هيكون متوافق مع الموبايل؟",
-  },
-  answer: {
-    en: "Every website we build follows a mobile-first development methodology. This means the interface is engineered for small screens first, then progressively enhanced for tablets and desktops. Google's indexing system prioritizes the mobile version of your site for ranking purposes, making mobile optimization a non-negotiable factor in search engine visibility.",
-    ar: "كل موقع نبنيه يتبع منهجية التطوير للموبايل أولاً. هذا يعني أن الواجهة مصممة هندسياً للشاشات الصغيرة أولاً، ثم تُحسّن تدريجياً للأجهزة اللوحية وشاشات الكمبيوتر. نظام الفهرسة في جوجل يعطي الأولوية لنسخة الموبايل من موقعك لأغراض الترتيب، مما يجعل تحسين الموبايل عاملاً أساسياً غير قابل للتفاوض في الظهور بمحركات البحث.",
-  },
-},
     {
       question: {
         en: "What technologies do you use to build websites?",
@@ -116,32 +105,12 @@ const faqSection = {
     // ===== DECISION STAGE (Ready to act) =====
     {
       question: {
-        en: "How long does it take to build a website?",
-        ar: "بناء الموقع بياخد وقت قد إيه؟",
-      },
-      answer: {
-        en: "The development timeline is contingent upon project requirements. A standard landing page is typically deployed within 1 to 2 weeks, while advanced multi-page websites involving custom functionalities generally require a 2 to 3-week development cycle.",
-        ar: "تعتمد المدة الزمنية للتطوير على متطلبات المشروع. يتم نشر صفحة الهبوط القياسية عادةً في غضون أسبوع إلى أسبوعين، بينما تتطلب المواقع المتقدمة متعددة الصفحات التي تتضمن وظائف مخصصة دورة تطوير تتراوح من أسبوعين إلى 3 أسابيع.",
-      },
-    },
-    {
-      question: {
         en: "What do I need to provide to get started?",
         ar: "إيه المطلوب مني عشان نبدأ شغل؟",
       },
       answer: {
         en: "Following the initial consultation and requirements gathering, we require the provision of core brand assets. This includes your corporate identity (logo), finalized copywriting for each section, and any high-resolution visual assets or photography intended for the site.",
         ar: "بعد الاستشارة الأولية وجمع المتطلبات، نحتاج إلى توفير أصول العلامة التجارية الأساسية. يشمل ذلك الهوية البصرية (اللوجو)، المحتوى المكتوب النهائي لكل قسم، وأي أصول بصرية أو صور فوتوغرافية عالية الجودة مخصصة للموقع.",
-      },
-    },
-    {
-      question: {
-        en: "What if I don't have a logo or brand identity yet?",
-        ar: "أعمل إيه لو لسه معنديش لوجو أو هوية بصرية؟",
-      },
-      answer: {
-        en: "We can initiate development based on your business objectives and preliminary naming. If required, we offer professional brand development and visual identity design as a separate consulting service to establish your brand guidelines before the website launch.",
-        ar: "يمكننا بدء التطوير بناءً على أهداف عملك والاسم المقترح. وإذا لزم الأمر، نقدم خدمة تطوير العلامة التجارية وتصميم الهوية البصرية كخدمة استشارية منفصلة لوضع معايير علامتك التجارية قبل إطلاق الموقع.",
       },
     },
     {

@@ -1,7 +1,5 @@
 import nav from "./nav";
 import hero from "./hero";
-import servicesSection from "./services";
-import addOnsSection from "./addons";
 import { projectsSection, projectData } from "./projects";
 import workflowSection from "./workflow";
 import pricingSection from "./pricing";
@@ -14,8 +12,6 @@ import langToggle from "./lang-toggle";
 const translations = {
   nav,
   hero,
-  servicesSection,
-  addOnsSection,
   projectsSection,
   projectData,
   pricingSection,

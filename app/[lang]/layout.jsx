@@ -1,6 +1,5 @@
 import { Cairo } from "next/font/google";
 import "../globals.css";
-import PageVisibility from "../components/ui/PageVisibility";
 import HeroNav from "../components/ui/HeroNav";
 import translations from "../data/translations";
 import Footer from "../components/ui/Footer";
@@ -311,8 +310,6 @@ export default async function LangLayout({ children, params }) {
 
   const heroNavStrings = {
     nav: {
-      features: t.nav.features[lang],
-      services: t.nav.services[lang],
       portfolio: t.nav.portfolio[lang],
       pricing: t.nav.pricing[lang],
       process: t.nav.process[lang],
@@ -335,8 +332,7 @@ export default async function LangLayout({ children, params }) {
       dir={lang === "ar" ? "rtl" : "ltr"}
       suppressHydrationWarning
     >
-      <PageVisibility />
-      <body className={`${fonts.variable} font-cairo antialiased js-cloak`}>
+      <body className={`${fonts.variable} font-cairo antialiased`}>
         {/* ── Structured Data (JSON-LD) ── */}
         <script
           type="application/ld+json"

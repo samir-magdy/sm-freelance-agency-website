@@ -15,78 +15,49 @@ const pricingSection = {
     {
       name: { en: "Essential", ar: "الأساسية" },
       seoName: {
-        en: "Starter Website Package for Small Businesses",
-        ar: "باقة الموقع الأساسية للمشاريع الصغيرة",
+        en: "Small Business Website Design in Egypt",
+        ar: "تصميم موقع إلكتروني للمشاريع الصغيرة في مصر",
       },
       price: "5,500",
       tagline: {
-        en: "A professional website to help customers find and contact you.",
-        ar: "ابدأ تواجدك الرقمي بالأساسيات.",
+        en: "A clean, professional page that puts your business on the map.",
+        ar: "صفحة احترافية تضع نشاطك على الخريطة.",
       },
       features: [
-        { en: "Up to 5 Main Sections", ar: "حتى 5 أقسام رئيسية" },
+        { en: "Up to 5 sections", ar: "حتى ٥ أقسام" },
         {
-          en: "Direct WhatsApp & Contact Links",
-          ar: "ربط بالواتساب ووسائل التواصل",
+          en: "WhatsApp & social media links",
+          ar: "ربط واتساب ووسائل التواصل",
         },
-        {
-          en: "Google Search Basics Setup",
-          ar: "تهيئة للظهور في نتائج جوجل",
-        },
+        { en: "Google search setup", ar: "إعداد الظهور على جوجل" },
       ],
       delivery: { en: "5–7 days", ar: "٥–٧ أيام" },
     },
     {
-      name: { en: "Standard", ar: "القياسية" },
+      name: { en: "Professional", ar: "الاحترافية" },
       seoName: {
-        en: "Business Website Package for Growing Brands",
-        ar: "باقة موقع الأعمال للعلامات التجارية المتنامية",
+        en: "Professional Website Design in Cairo Egypt",
+        ar: "تصميم موقع احترافي للشركات في مصر",
       },
       price: "8,500",
       tagline: {
-        en: "A stronger business presence with more sections and better lead capture.",
-        ar: "حضور أقوى، لجذب العملاء.",
-      },
-      features: [
-        { en: "Up to 8 Main Sections", ar: "حتى 8 أقسام رئيسية" },
-        // { en: "Premium Custom Design", ar: "تصميم مخصص بمظهر احترافي مميز" },
-        
-        {
-          en: "Custom Contact Form",
-          ar: "نموذج تواصل مخصص",
-        },
-        {
-          en: "Google Business Profile Setup",
-          ar: "إعداد الملف التجاري على جوجل",
-        },
-      ],
-      delivery: { en: "7–10 days", ar: "٧–١٠ أيام" },
-    },
-    {
-      name: { en: "Premium", ar: "الاحترافية" },
-      seoName: {
-        en: "Premium Website Package for Authority Brands",
-        ar: "باقة الموقع الاحترافية للعلامات التجارية القوية",
-      },
-      price: "15,500",
-      tagline: {
-        en: "For brands that want a stronger image, broader reach, and higher conversion.",
-        ar: "صورة أقوى، انتشار أكبر.",
+        en: "A website built around how your business attracts and converts customers.",
+        ar: "موقع مبني حول طريقة عملك، لتحويل الزوار إلى عملاء.",
       },
       highlighted: true,
       features: [
+        { en: "Up to 8 sections", ar: "حتى ٨ أقسام" },
         {
-          en: "Built-in Dashboard",
-          ar: "لوحة تحكم مدمجة لإدارة الموقع",
+          en: "WhatsApp & social media links",
+          ar: "ربط واتساب ووسائل التواصل",
         },
+        { en: "Google search setup", ar: "إعداد الظهور على جوجل" },
         {
-          en: "Bilingual Website (AR/EN)",
-          ar: "موقع ثنائي اللغة (عربي / إنجليزي)",
+          en: "Google Business Profile setup",
+          ar: "إعداد ملفك على جوجل للأعمال",
         },
-        { en: "Premium Custom Design", ar: "تصميم مخصص بمظهر مميز" },
-        { en: "Advanced SEO Research", ar: "تحسين متقدم لمحركات البحث" },
       ],
-      delivery: { en: "10–14 days", ar: "١٠–١٤ يوم" },
+      delivery: { en: "7–10 days", ar: "٧–١٠ أيام" },
     },
   ],
   deliveryLabel: {

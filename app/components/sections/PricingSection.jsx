@@ -24,7 +24,7 @@ export default function PricingSection({ lang }) {
         </div>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-5 max-w-5xl mx-auto lg:items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-5 max-w-5xl mx-auto lg:items-stretch">
           {t.tiers.map((tier) => (
             <PricingCard
               key={tier.name.en}

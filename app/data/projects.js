@@ -1,7 +1,6 @@
 import skywayScreenshot from "../../public/project-screenshots/skyway.webp";
 import ecommScnshot from "../../public/project-screenshots/e-commerce.webp";
 import gymScreenshot from "../../public/project-screenshots/gym.webp"
-import weddingShot from "../../public/project-screenshots/wedding.webp";
 import { SITE_URL } from "./translations/lang";
 
 export const projects = [
@@ -38,17 +37,6 @@ export const projects = [
       "A custom-built fashion e-commerce store with advanced product listings, intelligent filtering, and a smart shopping cart. Streamlined WhatsApp checkout with no account creation required.",
     genre: "Fashion Ecommerce",
     genreAr: "التجارة الإلكترونية للأزياء",
-  },
-  {
-    id: "wedding",
-    liveUrl: "https://weddings.samirmagdy.com",
-    screenshot: weddingShot,
-    schemaName: "Wedding Planning & Photography – Cairo",
-    schemaNameAr: "تنظيم وتصوير الزفاف – القاهرة",
-    description:
-      "A conversion-optimized travel agency website for Sky Way Travel, designed to attract, engage, and convert visitors into bookings by showcasing tour packages in a structured format, building trust, and guiding users effortlessly from interest to reservation.",
-    genre: "Photography & Events",
-    genreAr: "تنظيم وتصوير الزفاف",
   },
 ];
 

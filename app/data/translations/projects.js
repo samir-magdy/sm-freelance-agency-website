@@ -20,20 +20,6 @@ const projectData = {
       ar: "مشاهدة الموقع",
     },
   },
-  wedding: {
-    title: {
-      en: "Wedding Planner",
-      ar: "منظم حفلات الزفاف",
-    },
-    description: {
-      en: "A bilingual website for a wedding planner in Cairo. The site features elegant design, a portfolio gallery, testimonials, and more.",
-      ar: "موقع إلكتروني مخصص لمنظم حفلات الزفاف في القاهرة. موقع ثنائي اللغة يتميز بتصميم أنيق، ومعرض للأعمال.",
-    },
-    cta: {
-      en: "Live Demo",
-      ar: "مشاهدة الموقع",
-    },
-  },
   skyway: {
     title: {
       en: "Sky Way Travel - Travel Agency",
