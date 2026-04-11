@@ -25,7 +25,6 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
     <nav
       id="mobile-menu"
       aria-label={a11y.mobileNav}
-      aria-hidden={!isMenuOpen}
       className="xl:hidden fixed top-0 left-0 right-0 z-50 pointer-events-none"
     >
       <div
@@ -34,7 +33,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
       >
         <div className="flex justify-between items-center px-3">
           <a
-            href="#SMWebStudioEG"
+            href="#home"
             aria-label="Samir Magdy Web Studio - Home"
             onClick={closeMenu}
           >
@@ -73,6 +72,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
 
       <div
         onClick={closeMenu}
+        inert={!isMenuOpen}
         className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-250 ease-out ${
           isMenuOpen
             ? "opacity-100 backdrop-blur-3xl pointer-events-auto"
@@ -82,6 +82,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
 
       <div
         onClick={closeMenu} // Added onClick here to close when clicking empty space
+        inert={!isMenuOpen}
         className={`fixed inset-0 z-40 flex flex-col items-center justify-center transition-[opacity,visibility] duration-250ms ease-out ${
           isMenuOpen
             ? "opacity-100 visible pointer-events-auto"
@@ -95,8 +96,8 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           onClick={(e) => e.stopPropagation()}
         >
           {[
-            "features",
             "portfolio",
+            "features",
             // "pricing",
             "process",
             "FAQs",

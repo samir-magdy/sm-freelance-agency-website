@@ -1,7 +1,7 @@
 const LINK_CONFIG = [
   // { href: "#home", labelKey: "home" },
-  { href: "#features", labelKey: "features" },
   { href: "#portfolio", labelKey: "portfolio" },
+  { href: "#features", labelKey: "features" },
   // { href: "#pricing", labelKey: "pricing" },
   { href: "#process", labelKey: "process" },
   { href: "#FAQs", labelKey: "FAQs" },

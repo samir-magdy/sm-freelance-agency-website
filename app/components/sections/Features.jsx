@@ -9,15 +9,17 @@ import {
   RefreshCw,
 } from "lucide-react";
 
-const featureIcons = [
-  ShieldCheck,
-  MonitorSmartphone,
-  Zap,
-  Globe,
-  Search,
-  MessageCircle,
-  RefreshCw,
-];
+// Keyed by feature.iconKey so order/length drift between data and icons
+// can no longer crash the component. A missing key throws explicitly.
+const FEATURE_ICONS = {
+  guarantee: ShieldCheck,
+  responsive: MonitorSmartphone,
+  performance: Zap,
+  hosting: Globe,
+  seo: Search,
+  contact: MessageCircle,
+  maintenance: RefreshCw,
+};
 
 export default function FeaturesSection({ lang }) {
   const t = translations.featuresSection;
@@ -44,11 +46,16 @@ export default function FeaturesSection({ lang }) {
         {/* Every project includes */}
         <div className="relative mb-16 md:mb-20">
           <div className="relative flex flex-wrap justify-center gap-4 md:gap-6">
-            {t.sharedFeatures.map((feature, i) => {
-              const Icon = featureIcons[i];
+            {t.sharedFeatures.map((feature) => {
+              const Icon = FEATURE_ICONS[feature.iconKey];
+              if (!Icon) {
+                throw new Error(
+                  `FeaturesSection: no icon mapped for iconKey "${feature.iconKey}"`,
+                );
+              }
               return (
                 <div
-                  key={feature.en}
+                  key={feature.iconKey}
                   className={`w-full sm:w-[calc(50%-8px)] md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] text-center group bg-surface-card/80 relative overflow-hidden rounded-2xl border border-border-subtle py-6 px-4 shadow-lg hover:-translate-y-1.5 hover:border-border-strong transition-all duration-300`}
                 >
                   <div className="relative space-y-3">

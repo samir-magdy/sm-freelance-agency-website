@@ -6,6 +6,7 @@ const featuresSection = {
 
   sharedFeatures: [
     {
+      iconKey: "guarantee",
       en: "Lifetime Guarantee",
       ar: "ضمان مدى الحياة",
       desc: {
@@ -14,6 +15,7 @@ const featuresSection = {
       },
     },
     {
+      iconKey: "responsive",
       en: "Responsive Web Design",
       ar: "تصميم متجاوب",
       desc: {
@@ -22,6 +24,7 @@ const featuresSection = {
       },
     },
     {
+      iconKey: "performance",
       en: "Fast Loading Website",
       ar: "سرعة تحميل عالية",
       desc: {
@@ -30,6 +33,7 @@ const featuresSection = {
       },
     },
     {
+      iconKey: "hosting",
       en: "Hosting & Deployment",
       ar: "استضافة ونشر الموقع",
       desc: {
@@ -38,6 +42,7 @@ const featuresSection = {
       },
     },
     {
+      iconKey: "seo",
       en: "SEO Foundation",
       ar: "أسس محركات البحث",
       desc: {
@@ -46,6 +51,7 @@ const featuresSection = {
       },
     },
     {
+      iconKey: "contact",
       en: "Contact Integration",
       ar: "ربط جهات الاتصال",
       desc: {
@@ -54,6 +60,7 @@ const featuresSection = {
       },
     },
     {
+      iconKey: "maintenance",
       en: "Website Maintenance",
       ar: "تعديلات شهرية مجانية",
       desc: {

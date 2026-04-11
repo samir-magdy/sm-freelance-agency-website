@@ -20,7 +20,7 @@ export const projects = [
     liveUrl: "https://gyms.samirmagdy.com",
     screenshot: gymScreenshot,
     schemaName: "Gym Startups",
-    schemaNameAr: "سكاي واي ترافل – موقع وكالة سياحة في القاهرة",
+    schemaNameAr: "مواقع مراكز اللياقة البدنية الناشئة",
     description:
       "A lead generating website built for the startup gyms. It is designed to attract, engage, and convert passive browsers into potential, loyal members.",
     genre: "Gym/Fitness",

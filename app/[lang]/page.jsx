@@ -16,6 +16,7 @@ export default async function Page({ params }) {
   return (
     <div className="relative min-h-screen bg-background text-content-heading">
       <HeroSection lang={lang} />
+     <PortfolioShowcase lang={lang} />
      <Features lang={lang} />
       <script
         type="application/ld+json"
@@ -23,7 +24,6 @@ export default async function Page({ params }) {
           __html: JSON.stringify(projectsStructuredData),
         }}
       />
-      <PortfolioShowcase lang={lang} />
       {/* <PricingSection lang={lang} /> */}
       <WorkflowSection lang={lang} />
       <FAQSection lang={lang} />

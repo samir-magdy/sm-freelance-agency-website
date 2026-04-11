@@ -17,18 +17,20 @@ const nextConfig = {
   },
 
   async headers() {
-    return [
-      // HTML pages — CDN caches for 1 year (purged on deploy), browser revalidates every 24 hours
+    // HTML pages — CDN caches for 1 year (purged on deploy), browser revalidates every 24 hours.
+    // Listed for both the rewritten root ("/") and the direct locale paths ("/en", "/ar")
+    // because headers() matches the incoming request URL, not the rewrite destination.
+    const htmlCache = [
       {
-        source: "/:lang(en|ar)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value:
-              "public, max-age=86400, s-maxage=31536000, stale-while-revalidate=59",
-          },
-        ],
+        key: "Cache-Control",
+        value:
+          "public, max-age=86400, s-maxage=31536000, stale-while-revalidate=59",
       },
+    ];
+
+    return [
+      { source: "/", headers: htmlCache },
+      { source: "/:lang(en|ar)", headers: htmlCache },
     ];
   },
 };
