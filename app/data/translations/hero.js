@@ -4,12 +4,12 @@ const hero = {
     ar: ["صمّم موقعك.", "اكسب الثقة.", "تصدّر البحث."],
   },
   primaryCta: {
-    en: "View Pricing",
-    ar: "عرض الأسعار",
-  },
-  secondaryCta: {
     en: "See Our Work",
     ar: "شاهد أعمالنا",
+  },
+  secondaryCta: {
+    en: "View Pricing",
+    ar: "عرض الأسعار",
   },
   subheading: {
     en: "Modern, high-performing websites for businesses ready to compete online.",
