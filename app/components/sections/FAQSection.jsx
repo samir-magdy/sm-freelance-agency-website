@@ -20,7 +20,7 @@ export default function FAQSection({ lang }) {
             <details
               key={i}
               name="faq"
-              className="border-b border-border-subtle first:border-t-none px-2"
+              className="border-b border-border-subtle px-2"
             >
               <summary
                 className={`

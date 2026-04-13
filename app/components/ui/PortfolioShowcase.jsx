@@ -20,15 +20,6 @@ export default function PortfolioShowcase({ lang }) {
   const snapRef = useRef(null);
   const phoneRef = useRef(null);
   const sectionRef = useRef(null);
-
-  /* Tag section for Safari-specific styling */
-  useEffect(() => {
-    const ua = navigator.userAgent;
-    if (/Safari/.test(ua) && !/Chrome|CriOS|Chromium/.test(ua)) {
-      sectionRef.current?.classList.add("is-safari");
-    }
-  }, []);
-
   /* Pulse the phone frame once it enters the viewport */
   useEffect(() => {
     const el = phoneRef.current;

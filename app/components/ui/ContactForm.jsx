@@ -3,54 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
-const INDUSTRY_OPTIONS = [
-  {
-    value: "restaurant",
-    en: "Restaurant / Caf\u00e9",
-    ar: "\u0645\u0637\u0639\u0645 / \u0643\u0627\u0641\u064a\u0647",
-  },
-  {
-    value: "retail",
-    en: "Retail / E-commerce",
-    ar: "\u062a\u062c\u0627\u0631\u0629 / \u0645\u062a\u062c\u0631 \u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a",
-  },
-  {
-    value: "healthcare",
-    en: "Healthcare / Clinic",
-    ar: "\u0635\u062d\u0629 / \u0639\u064a\u0627\u062f\u0629",
-  },
-  {
-    value: "real-estate",
-    en: "Real Estate",
-    ar: "\u0639\u0642\u0627\u0631\u0627\u062a",
-  },
-  {
-    value: "education",
-    en: "Education / Training",
-    ar: "\u062a\u0639\u0644\u064a\u0645 / \u062a\u062f\u0631\u064a\u0628",
-  },
-  {
-    value: "travel",
-    en: "Travel / Tourism",
-    ar: "\u0633\u064a\u0627\u062d\u0629 / \u0633\u0641\u0631",
-  },
-  {
-    value: "fitness",
-    en: "Fitness / Gym",
-    ar: "\u0644\u064a\u0627\u0642\u0629 \u0628\u062f\u0646\u064a\u0629 / \u062c\u064a\u0645",
-  },
-  {
-    value: "fashion",
-    en: "Fashion / Beauty",
-    ar: "\u0623\u0632\u064a\u0627\u0621 / \u062a\u062c\u0645\u064a\u0644",
-  },
-  {
-    value: "services",
-    en: "Services / Consulting",
-    ar: "\u062e\u062f\u0645\u0627\u062a / \u0627\u0633\u062a\u0634\u0627\u0631\u0627\u062a",
-  },
-  { value: "other", en: "Other", ar: "\u0623\u062e\u0631\u0649" },
-];
 
 const ChevronDown = () => (
   <svg
@@ -72,7 +24,6 @@ const ChevronDown = () => (
 export default function ContactForm({ lang, strings }) {
   const [formData, setFormData] = useState({
     name: "",
-    industry: "",
     contactMethod: "",
     phone: "",
     email: "",
@@ -112,7 +63,6 @@ export default function ContactForm({ lang, strings }) {
       setStatus("success");
       setFormData({
         name: "",
-        industry: "",
         contactMethod: "",
         phone: "",
         email: "",
@@ -142,16 +92,16 @@ export default function ContactForm({ lang, strings }) {
 
   return (
     <form
-      className="text-start relative pb-4 md:min-h-[500px]"
+      className="text-start relative"
       onSubmit={handleSubmit}
       aria-label={strings.contactFormA11y}
     >
       <fieldset className="border-none p-0 m-0">
         <legend className="sr-only">{strings.legend}</legend>
 
-        <div className="grid md:grid-cols-3 gap-4 md:gap-x-3">
+        <div className="grid grid-cols-2 gap-4 md:gap-x-3">
           {/* Name */}
-          <div className="md:col-span-1">
+          <div className="col-span-1">
             <label htmlFor="name" className={labelClass}>
               {strings.name}
               <span className="text-warning opacity-90" aria-label="required">
@@ -169,37 +119,6 @@ export default function ContactForm({ lang, strings }) {
                 setFormData((prev) => ({ ...prev, name: e.target.value }))
               }
             />
-          </div>
-
-          {/* Industry */}
-          <div>
-            <label htmlFor="industry" className={labelClass}>
-              {strings.industry}{" "}
-              <span className="text-warning opacity-90" aria-label="required">
-                *
-              </span>
-            </label>
-            <div className="relative">
-              <select
-                id="industry"
-                required
-                className={selectClass(formData.industry)}
-                value={formData.industry}
-                onChange={(e) =>
-                  setFormData((prev) => ({ ...prev, industry: e.target.value }))
-                }
-              >
-                <option value="">{strings.industryPlaceholder}</option>
-                {INDUSTRY_OPTIONS.map((opt) => (
-                  <option key={opt.value} value={opt.value}>
-                    {opt[lang]}
-                  </option>
-                ))}
-              </select>
-              <div className="pointer-events-none absolute inset-y-0 end-4 flex items-center text-content-muted">
-                <ChevronDown />
-              </div>
-            </div>
           </div>
 
           {/* Contact method dropdown */}
@@ -242,7 +161,7 @@ export default function ContactForm({ lang, strings }) {
           {(formData.contactMethod === "whatsapp" ||
             formData.contactMethod === "phone-call") && (
             <div
-              className="md:col-span-3"
+              className="col-span-2"
             >
               <label htmlFor="phone" className={labelClass}>
                 {strings.phone}{" "}
@@ -271,7 +190,7 @@ export default function ContactForm({ lang, strings }) {
 
           {/* Email - Instant Toggle */}
           {formData.contactMethod === "email" && (
-            <div className="md:col-span-3">
+            <div className="col-span-2">
               <label htmlFor="email" className={labelClass}>
                 {strings.emailAddress}{" "}
                 <span className="text-warning opacity-90" aria-label="required">
@@ -293,7 +212,7 @@ export default function ContactForm({ lang, strings }) {
           )}
 
           {/* Optional message */}
-          <div className="md:col-span-3">
+          <div className="col-span-2">
             <label htmlFor="message" className={labelClass}>
               {strings.message}{" "}
               <span className="text-content-muted font-normal">
@@ -343,14 +262,18 @@ export default function ContactForm({ lang, strings }) {
           )}
         </span>
       </button>
-      <p className="text-content-muted text-center mt-3 font-bold">{strings.orWhatsapp}</p>
+      <div className="flex items-center gap-3 mt-4">
+        <span className="flex-1 h-px bg-border-subtle" />
+        <span className="text-content-muted text-caption font-medium">{strings.orWhatsapp}</span>
+        <span className="flex-1 h-px bg-border-subtle" />
+      </div>
       <a
         href="https://wa.me/201274613331"
         target="_blank"
         rel="noopener noreferrer"
-        className="w-fit px-6 mx-auto text-md text-content-body flex items-center justify-center gap-2 py-1 rounded-lg font-bold text-base"
+        className="mt-3.5 w-full border border-green-500/40 bg-green-500/10 hover:bg-green-500/20 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-lg font-bold text-base"
       >
-        <WhatsAppIcon className="size-6" fill="#22c55e" />
+        <WhatsAppIcon className="size-5" fill="currentColor" />
         {strings.chatInstead}
       </a>
     </form>

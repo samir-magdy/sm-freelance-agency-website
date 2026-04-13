@@ -7,14 +7,15 @@ import LanguageToggle from "./LanguageToggle";
 export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const closeMenu = () => setIsMenuOpen(false);
+  const closeMenu = () => {
+    document.body.style.overflow = "";
+    setIsMenuOpen(false);
+  };
 
   // Prevent background scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
     }
     return () => {
       document.body.style.overflow = "";

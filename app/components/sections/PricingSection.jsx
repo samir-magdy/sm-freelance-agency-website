@@ -34,20 +34,17 @@ export default function PricingSection({ lang }) {
         {/* Asymmetric cards grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-6 max-w-5xl mx-auto lg:items-stretch">
           {t.tiers.map((tier) => (
-            <div
+            <PricingCard
               key={tier.name.en}
-            >
-              <PricingCard
-                tier={tier}
-                lang={lang}
-                isHighlighted={tier.highlighted === true}
-                ctaLabel={t.cta[lang]}
-                whatsappMessage={t.whatsappMessage[lang]}
-                deliveryLabel={t.deliveryLabel[lang]}
-                currency={t.currency[lang]}
-                includesLabel={t.includesLabel[lang]}
-              />
-            </div>
+              tier={tier}
+              lang={lang}
+              isHighlighted={tier.highlighted}
+              ctaLabel={t.cta[lang]}
+              whatsappMessage={t.whatsappMessage[lang]}
+              deliveryLabel={t.deliveryLabel[lang]}
+              currency={t.currency[lang]}
+              includesLabel={t.includesLabel[lang]}
+            />
           ))}
         </div>
 

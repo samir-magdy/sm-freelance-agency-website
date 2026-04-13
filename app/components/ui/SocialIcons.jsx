@@ -14,7 +14,7 @@ export default function SocialIcons() {
           className="text-content-muted hover:text-content-heading"
         >
           <svg
-            className="w-4 h-4"
+            className="w-4 h-4 sm:w-5 sm:h-5"
             viewBox="0 0 24 24"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ export default function SocialIcons() {
           className="text-content-muted hover:text-content-heading"
         >
           <svg
-            className="w-4 h-4"
+            className="w-4 h-4 sm:w-5 sm:h-5"
             viewBox="0 0 24 24"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ export default function SocialIcons() {
           className="text-content-muted hover:text-content-heading"
         >
           <svg
-            className="w-4 h-4"
+            className="w-4 h-4 sm:w-5 sm:h-5"
             viewBox="0 0 24 24"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +71,7 @@ export default function SocialIcons() {
           className="text-content-muted hover:text-content-heading"
         >
           <svg
-            className="w-4 h-4"
+            className="w-4 h-4 sm:w-5 sm:h-5"
             viewBox="0 0 360 362"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
