@@ -39,6 +39,7 @@ const form = {
     en: "Something went wrong. Please try again.",
     ar: "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
   },
+  orWhatsapp: { en: "or", ar: "أو" },
   chatInstead: { en: "Reach Us Directly", ar: "تواصل عبر واتساب" },
 };
 

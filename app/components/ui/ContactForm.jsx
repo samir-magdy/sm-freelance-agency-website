@@ -343,11 +343,12 @@ export default function ContactForm({ lang, strings }) {
           )}
         </span>
       </button>
+      <p className="text-content-muted text-center mt-3 font-bold">{strings.orWhatsapp}</p>
       <a
         href="https://wa.me/201274613331"
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-3 w-fit px-6 mx-auto text-md text-content-body flex items-center justify-center gap-2 py-2 rounded-lg font-bold text-base"
+        className="w-fit px-6 mx-auto text-md text-content-body flex items-center justify-center gap-2 py-1 rounded-lg font-bold text-base"
       >
         <WhatsAppIcon className="size-6" fill="#22c55e" />
         {strings.chatInstead}
