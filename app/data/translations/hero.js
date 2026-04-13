@@ -4,16 +4,16 @@ const hero = {
     ar: ["صمّم موقعك.", "اكسب الثقة.", "تصدّر البحث."],
   },
   primaryCta: {
-    en: "Start a Project",
-    ar: "ابدأ مشروعك",
+    en: "View Pricing",
+    ar: "عرض الأسعار",
   },
   secondaryCta: {
     en: "See Our Work",
     ar: "شاهد أعمالنا",
   },
   subheading: {
-    en: "Website design and SEO for small businesses, startups and brands.",
-    ar: "تصميم مواقع، وتحسين محركات البحث للشركات الناشئة والأفراد.",
+    en: "Modern, high-performing websites for businesses ready to compete online.",
+    ar: "مواقع عصرية تساعد شركتك على التميز وكسب ثقة العملاء عبر الإنترنت.",
   },
 };
 

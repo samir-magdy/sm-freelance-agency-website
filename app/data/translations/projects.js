@@ -1,6 +1,6 @@
 const projectsSection = {
   heading: {
-    en: "Website Design Portfolio",
+    en: "Web Design Portfolio",
     ar: "معرض تصميم المواقع",
   },
 };
@@ -12,8 +12,8 @@ const projectData = {
       ar: "متجر إلكتروني للأزياء",
     },
     description: {
-      en: "A custom-built fashion e-commerce store featuring advanced smart product suggestions, custom filtering, and a smart shopping cart.",
-      ar: "متجر إلكتروني مخصص للأزياء، يضم اقتراحات ذكية للمنتجات، وفلترة مخصصة، وسلة تسوق ذكية.",
+      en: "An e-commerce store featuring smart product suggestions, custom filtering and sorting, and a smart shopping cart. Since each store owner has unique needs, we tailor the design and functionality to fit their specific requirements.",
+      ar: "متجر إلكتروني يتضمن اقتراحات ذكية للمنتجات، وفلترة وترتيبًا مخصصين، وسلة تسوق ذكية. وبما أن لكل صاحب متجر احتياجاته الخاصة، فإننا نخصص التصميم والوظائف بما يتناسب مع متطلباته.",
     },
     cta: {
       en: "Live Demo",
@@ -26,7 +26,7 @@ const projectData = {
       ar: "شركة سكاي واي ترافل للسياحة",
     },
     description: {
-      en: "A custom-built website for SkyWay Travel, a Cairo based Travel Agency. The site focuses on showcasing their package details through custom photo galleries. The result was a clear increase in leads after a very short period of the launch.",
+      en: "A custom-built website for SkyWay Travel, a Cairo based Travel Agency. The site focuses on showcasing their packages through custom photo galleries. The result was a clear increase in leads and bookings shortly after launch.",
       ar: "موقع إلكتروني مخصص تم تطويره لشركة سكاي واي ترافل، وهي وكالة سفر مقرها القاهرة. يعرض تفاصيل باقاتهم من خلال معارض صور مخصصة ومنظمة، وكانت النتيجة زيادة واضحة في العملاء المحتملين المباشرين.",
     },
     cta: {
@@ -40,7 +40,7 @@ const projectData = {
       ar: "مراكز اللياقة البدنية",
     },
     description: {
-      en: "A lead generating website built for fitness centers. It is designed to attract, engage, and convert passive browsers into potential, loyal members.",
+      en: "A lead generating landing page built for fitness centers and gyms that require a solid online presence. It is strategically designed to emotionally engage visitors into taking the first steps towards starting a membership.",
       ar: "موقع لتوليد العملاء المحتملين تم تطويره لمراكز اللياقة البدنية، وهو مصمم لجذب الزوار والتفاعل معهم وتحويل المتصفحين العابرين إلى أعضاء محتملين ومخلصين.",
     },
     cta: {

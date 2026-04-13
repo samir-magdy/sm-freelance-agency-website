@@ -1,16 +1,15 @@
 const LINK_CONFIG = [
-  // { href: "#home", labelKey: "home" },
   { href: "#portfolio", labelKey: "portfolio" },
   { href: "#features", labelKey: "features" },
-  // { href: "#pricing", labelKey: "pricing" },
   { href: "#process", labelKey: "process" },
+  { href: "#pricing", labelKey: "pricing" },
   { href: "#FAQs", labelKey: "FAQs" },
-  { href: "#contact", labelKey: "Get Started" },
+  { href: "#contact", labelKey: "contact" },
 ];
 
 export default function DesktopNavLinks({ nav }) {
   return (
-    <ul className="flex w-full justify-center gap-32">
+    <ul className="flex w-full justify-center gap-14 xl:gap-20">
       {LINK_CONFIG.map(({ href, labelKey }) => (
         <li key={href}>
           <a

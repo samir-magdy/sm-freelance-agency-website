@@ -19,9 +19,9 @@ export default function WorkflowSection({ lang }) {
   }));
 
   return (
-    <section id="process" aria-labelledby="process-heading" className="py-20 md:py-36">
+    <section id="process" aria-labelledby="process-heading" className="">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-8 md:mb-12 text-center">
+        <div className="mb-8 sm:mb-0 text-center">
           <h2
             id="process-heading"
             className="font-bold text-heading"

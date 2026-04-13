@@ -10,6 +10,10 @@ const form = {
     en: "Preferred contact method",
     ar: "طريقة التواصل المفضلة",
   },
+  contactMethodPlaceholder: {
+    en: "Select method",
+    ar: "اختر طريقة",
+  },
   whatsapp: { en: "WhatsApp", ar: "واتساب" },
   phoneCall: { en: "Phone Call", ar: "مكالمة" },
   email: { en: "Email", ar: "الإيميل" },

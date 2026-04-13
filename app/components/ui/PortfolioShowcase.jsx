@@ -83,7 +83,7 @@ export default function PortfolioShowcase({ lang }) {
     <section
       ref={sectionRef}
       id="portfolio"
-      className="py-20 md:pb-36 md:pt-32 flex flex-col items-center justify-center relative overflow-hidden select-none px-5"
+      className="flex flex-col items-center justify-center relative overflow-hidden select-none px-5"
       aria-labelledby="portfolio-heading"
     >
       {/* ── Section heading ── */}
@@ -129,7 +129,7 @@ export default function PortfolioShowcase({ lang }) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-xl font-normal sm:font-medium tracking-wide transition-all duration-200 hidden lg:inline-flex"
+            className="cta-primary relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-xl font-normal sm:font-medium tracking-wide transition-all duration-200 hidden lg:inline-flex"
             aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
           >
             {pd.cta[lang]}
@@ -204,7 +204,7 @@ export default function PortfolioShowcase({ lang }) {
           </div>
 
           {/* Pagination dots */}
-          <div className="flex items-center gap-2" role="tablist" aria-label="Project slides">
+          <div dir="ltr" className="flex items-center gap-2" role="tablist" aria-label="Project slides">
             {projects.map((proj, i) => (
               <button
                 key={proj.id}
@@ -226,7 +226,7 @@ export default function PortfolioShowcase({ lang }) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative overflow-hidden inline-flex items-center gap-2 py-3 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-sm font-semibold tracking-wide transition-all duration-200 lg:hidden"
+            className="cta-primary relative overflow-hidden inline-flex items-center gap-2 py-3 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-sm font-semibold tracking-wide transition-all duration-200 lg:hidden"
             aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
           >
             {pd.cta[lang]}

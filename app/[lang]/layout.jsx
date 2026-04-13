@@ -313,10 +313,10 @@ export default async function LangLayout({ children, params }) {
       // home: t.nav.home[lang],
       features: t.nav.features[lang],
       portfolio: t.nav.portfolio[lang],
-      // pricing: t.nav.pricing[lang],
+      pricing: t.nav.pricing[lang],
       process: t.nav.process[lang],
       FAQs: t.nav.FAQs[lang],
-      "Get Started": t.nav["Get Started"][lang],
+      contact: t.nav.contact[lang],
     },
     a11y: {
       desktopNav: t.a11y.desktopNav[lang],

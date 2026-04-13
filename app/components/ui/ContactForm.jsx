@@ -139,25 +139,19 @@ export default function ContactForm({ lang, strings }) {
     `${selectBaseClass} ${value ? "text-content-heading" : "text-content-muted"}`;
   const labelClass =
     "block text-caption font-bold text-content-muted mb-2 ms-1";
-  const chipClass = (selected) =>
-    `bg-surface-low hover:bg-icon/20 flex-1 flex items-center justify-center px-4 py-[0.63rem] rounded-lg border cursor-pointer text-base ${
-      selected
-        ? "border-icon text-content-heading border-2"
-        : "border-transparent text-content-muted"
-    }`;
 
   return (
     <form
-      className="text-start relative pb-4 lg:min-h-[555px]"
+      className="text-start relative pb-4 md:min-h-[500px]"
       onSubmit={handleSubmit}
       aria-label={strings.contactFormA11y}
     >
       <fieldset className="border-none p-0 m-0">
         <legend className="sr-only">{strings.legend}</legend>
 
-        <div className="grid md:grid-cols-2 gap-4 md:gap-x-3">
+        <div className="grid md:grid-cols-3 gap-4 md:gap-x-3">
           {/* Name */}
-          <div>
+          <div className="md:col-span-1">
             <label htmlFor="name" className={labelClass}>
               {strings.name}
               <span className="text-warning opacity-90" aria-label="required">
@@ -208,48 +202,39 @@ export default function ContactForm({ lang, strings }) {
             </div>
           </div>
 
-          {/* Contact method chips */}
-          <div className="md:col-span-2">
-            <p id="contact-method-label" className={labelClass}>
+          {/* Contact method dropdown */}
+          <div>
+            <label htmlFor="contactMethod" className={labelClass}>
               {strings.contactMethod}{" "}
               <span className="text-warning opacity-90" aria-label="required">
                 *
               </span>
-            </p>
-            <div
-              role="radiogroup"
-              aria-labelledby="contact-method-label"
-              className="flex flex-row gap-3"
-            >
-              {[
-                { value: "whatsapp", label: strings.whatsapp },
-                { value: "phone-call", label: strings.phoneCall },
-                { value: "email", label: strings.email },
-              ].map(({ value, label }) => (
-                <label
-                  key={value}
-                  className={chipClass(formData.contactMethod === value)}
-                >
-                  <input
-                    type="radio"
-                    name="contactMethod"
-                    value={value}
-                    required
-                    checked={formData.contactMethod === value}
-                    onChange={() =>
-                      setFormData((prev) => ({
-                        ...prev,
-                        contactMethod: value,
-                        ...(value === "email"
-                          ? { phone: "" }
-                          : { email: "" }),
-                      }))
-                    }
-                    className="sr-only"
-                  />
-                  {label}
-                </label>
-              ))}
+            </label>
+            <div className="relative">
+              <select
+                id="contactMethod"
+                required
+                className={selectClass(formData.contactMethod)}
+                value={formData.contactMethod}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  setFormData((prev) => ({
+                    ...prev,
+                    contactMethod: value,
+                    ...(value === "email"
+                      ? { phone: "" }
+                      : { email: "" }),
+                  }));
+                }}
+              >
+                <option value="">{strings.contactMethodPlaceholder}</option>
+                <option value="whatsapp">{strings.whatsapp}</option>
+                <option value="phone-call">{strings.phoneCall}</option>
+                <option value="email">{strings.email}</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 end-4 flex items-center text-content-muted">
+                <ChevronDown />
+              </div>
             </div>
           </div>
 
@@ -257,7 +242,7 @@ export default function ContactForm({ lang, strings }) {
           {(formData.contactMethod === "whatsapp" ||
             formData.contactMethod === "phone-call") && (
             <div
-              className="md:col-span-2"
+              className="md:col-span-3"
             >
               <label htmlFor="phone" className={labelClass}>
                 {strings.phone}{" "}
@@ -286,7 +271,7 @@ export default function ContactForm({ lang, strings }) {
 
           {/* Email - Instant Toggle */}
           {formData.contactMethod === "email" && (
-            <div className="md:col-span-2">
+            <div className="md:col-span-3">
               <label htmlFor="email" className={labelClass}>
                 {strings.emailAddress}{" "}
                 <span className="text-warning opacity-90" aria-label="required">
@@ -308,7 +293,7 @@ export default function ContactForm({ lang, strings }) {
           )}
 
           {/* Optional message */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-3">
             <label htmlFor="message" className={labelClass}>
               {strings.message}{" "}
               <span className="text-content-muted font-normal">
@@ -333,12 +318,12 @@ export default function ContactForm({ lang, strings }) {
         type="submit"
         disabled={status !== "idle"}
         aria-live="polite"
-        className={`z-20 mt-4 w-full mx-auto block tracking-wide font-bold text-base py-4 rounded-lg disabled:cursor-not-allowed transition-all duration-300 ${
+        className={`z-20 mt-4 w-full mx-auto block tracking-wide font-bold text-base py-4 rounded-lg disabled:cursor-not-allowed transition-all duration-300 relative overflow-hidden ${
           status === "success"
             ? "bg-success/50 text-content-heading md:text-[1.3rem]"
             : status === "error"
               ? "bg-danger/50 text-base md:text-[1.3rem] text-content-heading"
-              : "bg-gold hover:bg-gold-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light text-gray-900 disabled:opacity-50"
+              : "cta-primary cursor-pointer bg-linear-to-b from-gold to-gold-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light text-gray-900 disabled:opacity-50"
         }`}
       >
         <span

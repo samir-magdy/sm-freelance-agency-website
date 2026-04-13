@@ -1,7 +1,7 @@
 const featuresSection = {
   heading: {
-    en: "Features in Every Website",
-    ar: "مميزات تصميم المواقع",
+    en: "Included in Every Website",
+    ar: "المميزات المضمنة",
   },
 
   sharedFeatures: [
@@ -38,7 +38,7 @@ const featuresSection = {
       ar: "استضافة ونشر الموقع",
       desc: {
         en: "We don't just build the website. We also handle all the steps needed to keep your site live.",
-        ar: "نتولى جميع التفاصيل التقنية لإطلاق موقعك وللتأكيد انه يعمل بشكل مثالي باستمرار.",
+        ar: "نتولى جميع التفاصيل التقنية لإطلاق موقعك وللتأكد من أنه يعمل بشكل مثالي باستمرار.",
       },
     },
     {

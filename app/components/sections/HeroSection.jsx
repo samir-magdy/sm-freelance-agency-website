@@ -58,8 +58,8 @@ export default function HeroSection({ lang }) {
 
         <div className="flex flex-col items-center justify-center gap-4">
           <a
-            href="#contact"
-            className="cta-primary font-semibold md:font-normal text-center bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.1rem,1.8vw,1.6rem)] px-12 py-4 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+            href="#pricing"
+            className="cta-primary hero-cta-entrance font-semibold md:font-normal text-center bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.1rem,1.8vw,1.6rem)] px-12 py-4 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
             {hero.primaryCta[lang]}
           </a>

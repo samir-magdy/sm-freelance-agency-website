@@ -28,7 +28,7 @@ export default function FeaturesSection({ lang }) {
   return (
     <section
       id="features"
-      className="py-20 md:py-36 px-4"
+      className="px-4"
       aria-labelledby="features-heading"
       dir={isRtl ? "rtl" : "ltr"}
     >

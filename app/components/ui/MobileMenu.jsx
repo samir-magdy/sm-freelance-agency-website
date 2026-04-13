@@ -40,8 +40,8 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             <Image
               src="/brand.svg"
               alt="SM Web Studio – Website Design Company in Egypt"
-              width={50}
-              height={50}
+              width={60}
+              height={60}
               loading="eager"
             />
           </a>
@@ -98,10 +98,10 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           {[
             "portfolio",
             "features",
-            // "pricing",
             "process",
+            "pricing",
             "FAQs",
-            "Get Started",
+            "contact",
           ].map((item) => (
             <li key={item}>
               <a

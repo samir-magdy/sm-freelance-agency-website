@@ -5,9 +5,9 @@ export default function FAQSection({ lang }) {
   const dir = lang === "ar" ? "rtl" : "ltr";
 
   return (
-    <section id="FAQs" aria-labelledby="FAQs-heading" className="py-20 md:py-36 px-4" dir={dir}>
+    <section id="FAQs" aria-labelledby="FAQs-heading" className="px-4" dir={dir}>
       <div className="max-w-7xl mx-auto flex flex-col items-center">
-        <div className="mb-8 md:mb-12 text-center">
+        <div className="mb-6 md:mb-12 text-center">
           <h2
             id="FAQs-heading"
             className="font-bold text-heading mb-2"

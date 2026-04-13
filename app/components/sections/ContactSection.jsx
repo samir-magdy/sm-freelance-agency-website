@@ -16,6 +16,7 @@ export default function ContactSection({ lang }) {
     industry: t.form.industry[lang],
     industryPlaceholder: t.form.industryPlaceholder[lang],
     contactMethod: t.form.contactMethod[lang],
+    contactMethodPlaceholder: t.form.contactMethodPlaceholder[lang],
     whatsapp: t.form.whatsapp[lang],
     phoneCall: t.form.phoneCall[lang],
     email: t.form.email[lang],
@@ -37,19 +38,19 @@ export default function ContactSection({ lang }) {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="pt-20 pb-4 md:pt-32 md:pb-0 px-4"
+      className="pb-2 sm:pb-12 px-4"
       dir={isRtl ? "rtl" : "ltr"}
     >
-      <div className="max-w-5xl mx-auto">
-        <div className="mb-4 md:mb-8">
+      <div className="max-w-3xl mx-auto">
+        <div className="mb-4 md:mb-12">
           <h2
             id="contact-heading"
             className="font-bold text-heading text-center mb-2"
           >
             {t.contactSection.heading[lang]}
           </h2>
-          <p className="text-content-body text-center text-base md:text-subheading">
-            {t.contactSection.subtitle[lang]}
+          <p className="text-center text-content-muted">
+            {t.contactSection.subheading[lang]}
           </p>
         </div>
         <ContactForm lang={lang} strings={formStrings} />

@@ -1,10 +1,10 @@
 const contactSection = {
   heading: {
-    en: "Start Your Website",
-    ar: "ابدأ في إنشاء موقعك",
+    en: "Take the First Step",
+    ar: "اتخذ الخطوة الأولى",
   },
-  subtitle: {
-    en: "Share a few details and we'll reach out.",
+  subheading: {
+    en: "Share a few details and we’ll reach out.",
     ar: "شاركنا بعض التفاصيل وسنتواصل معك.",
   },
 };

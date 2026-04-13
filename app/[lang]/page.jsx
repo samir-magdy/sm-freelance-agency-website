@@ -1,6 +1,6 @@
 import HeroSection from "../components/sections/HeroSection";
 import PortfolioShowcase from "../components/ui/PortfolioShowcase";
-// import PricingSection from "../components/sections/PricingSection";
+import PricingSection from "../components/sections/PricingSection";
 import Features from "../components/sections/Features";
 import WorkflowSection from "../components/sections/WorkflowSection";
 import FAQSection from "../components/sections/FAQSection";
@@ -14,20 +14,20 @@ export default async function Page({ params }) {
   const lang = rawLang;
 
   return (
-    <div className="relative min-h-screen bg-background text-content-heading">
+    <div className="relative min-h-screen bg-background text-content-heading flex flex-col gap-40 md:gap-72">
       <HeroSection lang={lang} />
-     <PortfolioShowcase lang={lang} />
-     <Features lang={lang} />
+      <PortfolioShowcase lang={lang} />
+      <Features lang={lang} />
+      <WorkflowSection lang={lang} />
+      <PricingSection lang={lang} />
+      <FAQSection lang={lang} />
+      <ContactSection lang={lang} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(projectsStructuredData),
         }}
       />
-      {/* <PricingSection lang={lang} /> */}
-      <WorkflowSection lang={lang} />
-      <FAQSection lang={lang} />
-      <ContactSection lang={lang} />
     </div>
   );
 }
