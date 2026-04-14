@@ -25,8 +25,8 @@ const PHONE_NUMBER = "+201274613331";
 const TWITTER_HANDLE = "@SMWebStudioEG";
 
 const META_DESCRIPTION = {
-  en: "Website design and SEO for small businesses, startups and brands. Custom-built, modern websites at competitive pricing.",
-  ar: "تصميم مواقع احترافية بأسعار منافسة. نخدم الشركات الناشئة وأصحاب المشاريع في مصر والخارج.",
+  en: "SM Web Studio offers fast, modern websites strategically built to earn trust, attract clients, and grow sales. Explore how we can help your business succeed online.",
+  ar: "نوفر مواقع سريعة وعصرية مصممة استراتيجياً لزيادة مبيعاتك، جذب العملاء، وبناء الثقة. ابدأ رحلة نجاحك الرقمي معنا. اكتشف كيف يمكننا مساعدتك في تحقيق التميز عبر الإنترنت.",
 };
 
 const SOCIAL_LINKS = {
@@ -43,7 +43,7 @@ const SOCIAL_LINKS = {
 
 const meta = {
   en: {
-    title: `High-Quality Affordable Websites | ${SITE_NAME}`,
+    title: `Expert Website Design in Egypt | ${SITE_NAME}`,
     description: META_DESCRIPTION.en,
     ogLocale: "en_US",
     altLocale: "ar_EG",
@@ -52,7 +52,7 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: `تصميم مواقع بسعر منافس في مصر | ${SITE_NAME}`,
+    title: `أفضل شركة تصميم مواقع في مصر | جودة عالمية بسعر منافس`,
     description: META_DESCRIPTION.ar,
     ogLocale: "ar_EG",
     altLocale: "en_US",
@@ -78,11 +78,6 @@ export async function generateMetadata({ params }) {
 
   return {
     metadataBase: new URL(SITE_URL),
-    formatDetection: {
-      telephone: false,
-      date: false,
-      email: false,
-    },
     icons: {
       icon: [
         {
@@ -203,21 +198,21 @@ function buildStructuredData(lang) {
       latitude: 30.0444,
       longitude: 31.2357,
     },
-    // hasOfferCatalog: {
-    //   "@type": "OfferCatalog",
-    //   name: "Web Design & Development Services in Egypt",
-    //   itemListElement: translations.pricingSection.tiers.map((tier) => ({
-    //     "@type": "Offer",
-    //     itemOffered: {
-    //       "@type": "Service",
-    //       name: tier.seoName.en,
-    //       alternateName: tier.seoName.ar,
-    //       description: tier.tagline.en,
-    //     },
-    //     price: tier.price.replace(/,/g, ""),
-    //     priceCurrency: "EGP",
-    //   })),
-    // },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Web Design & Development Services in Egypt",
+      itemListElement: translations.pricingSection.tiers.map((tier) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: tier.seoName.en,
+          alternateName: tier.seoName.ar,
+          description: tier.tagline.en,
+        },
+        price: tier.price.replace(/,/g, ""),
+        priceCurrency: "EGP",
+      })),
+    },
     sameAs: [
       SOCIAL_LINKS.facebook,
       SOCIAL_LINKS.instagram,

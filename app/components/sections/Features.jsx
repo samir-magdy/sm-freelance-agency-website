@@ -4,7 +4,6 @@ import {
   Globe,
   Search,
   Zap,
-  MessageCircle,
   ShieldCheck,
   RefreshCw,
 } from "lucide-react";
@@ -17,7 +16,6 @@ const FEATURE_ICONS = {
   performance: Zap,
   hosting: Globe,
   seo: Search,
-  contact: MessageCircle,
   maintenance: RefreshCw,
 };
 
@@ -45,7 +43,7 @@ export default function FeaturesSection({ lang }) {
 
         {/* Every project includes */}
         <div className="relative mb-16 md:mb-20">
-          <div className="relative flex flex-wrap justify-center gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {t.sharedFeatures.map((feature) => {
               const Icon = FEATURE_ICONS[feature.iconKey];
               if (!Icon) {
@@ -56,7 +54,7 @@ export default function FeaturesSection({ lang }) {
               return (
                 <div
                   key={feature.iconKey}
-                  className={`w-full sm:w-[calc(50%-8px)] md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] text-center group bg-surface-card/80 relative overflow-hidden rounded-2xl border border-border-subtle py-6 px-4 shadow-lg hover:-translate-y-1.5 hover:border-border-strong transition-all duration-300`}
+                  className="text-center group bg-surface-card/80 relative overflow-hidden rounded-2xl border border-border-subtle py-6 px-4 shadow-lg hover:-translate-y-1.5 hover:border-border-strong transition-all duration-300"
                 >
                   <div className="relative space-y-3">
                     <div className="mx-auto flex items-center justify-center transition-all duration-300">

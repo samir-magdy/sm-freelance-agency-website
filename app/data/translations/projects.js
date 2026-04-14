@@ -1,6 +1,6 @@
 const projectsSection = {
   heading: {
-    en: "Web Design Portfolio",
+    en: "Website Design Portfolio",
     ar: "معرض تصميم المواقع",
   },
 };

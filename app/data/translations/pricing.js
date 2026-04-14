@@ -1,6 +1,6 @@
 const pricingSection = {
   heading: {
-    en: "Starter Packages",
+    en: "Website Design Packages",
     ar: "أسعار تصميم المواقع",
   },
   cta: {
