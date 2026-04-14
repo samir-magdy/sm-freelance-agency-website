@@ -71,8 +71,16 @@ section {
   }
 }
 /* ══════════════════════════════════════
-   6. Hero Section — Dot Grid & Radial Glow
+   6. Hero Section
    ══════════════════════════════════════ */
+
+/* "Cairo Hero" is a base64-inlined micro-subset that resolves instantly.
+   Scoped here so it never interferes with the full Cairo font elsewhere. */
+#home {
+  font-family: "Cairo Hero", var(--font-cairo), sans-serif;
+}
+
+/* Dot Grid & Radial Glow */
 
 .hero-grid {
   position: absolute;
