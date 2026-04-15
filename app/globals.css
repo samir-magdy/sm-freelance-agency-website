@@ -450,14 +450,3 @@ section {
     scroll-behavior: auto;
   }
 }
-
-/* Safari-only mobile overrides for portfolio section */
-@supports (-webkit-touch-callout: default) {
-  @media (max-width: 767px) {
-    .phone-outer {
-      height: 59.5vh;
-      width: 65%;
-    }
-  }
-}
-

@@ -27,7 +27,7 @@ const pricingSection = {
         },
         { en: "Basic SEO Setup", ar: "إعداد أساسي لمحركات البحث" },
       ],
-      delivery: { en: "5–7 days", ar: "٥–٧ أيام" },
+      delivery: { en: "7–10 days", ar: "٧–١٠ أيام" },
     },
     {
       name: { en: "Professional", ar: "الاحترافية" },
@@ -50,7 +50,7 @@ const pricingSection = {
         { en: "Advanced SEO Setup", ar: "إعداد متقدم لمحركات البحث" },
       ],
 
-      delivery: { en: "7–10 days", ar: "٧–١٠ أيام" },
+      delivery: { en: "10–14 days", ar: "١٠–١٤ أيام" },
     },
   ],
   deliveryLabel: {

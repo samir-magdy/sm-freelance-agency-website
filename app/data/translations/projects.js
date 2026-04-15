@@ -11,10 +11,10 @@ const projectData = {
       en: "Fashion Online Store",
       ar: "متجر إلكتروني للأزياء",
     },
-    description: {
-      en: "An e-commerce store featuring smart product suggestions, custom filtering and sorting, and a smart shopping cart. Since each store owner has unique needs, we tailor the design and functionality to fit their specific requirements.",
-      ar: "متجر إلكتروني يتضمن اقتراحات ذكية للمنتجات، وفلترة وترتيبًا مخصصين، وسلة تسوق ذكية. وبما أن لكل صاحب متجر احتياجاته الخاصة، فإننا نخصص التصميم والوظائف بما يتناسب مع متطلباته.",
-    },
+  description: {
+  en: "A e-commerce store featuring smart product suggestions, custom filtering/sorting, and a smart shopping cart. Since every store owner has unique needs, we tailor the design and functionality to fit your specific requirements.",
+  ar: "متجر إلكتروني يتميز باقتراحات ذكية للمنتجات، وخيارات مخصصة للتصفية والفرز، وعربة تسوق ذكية. ولأن لكل صاحب متجر احتياجاته الفريدة، فنحن نعمل على تخصيص التصميم والوظائف لتناسب متطلباتك الخاصة تماماً.",
+},
     cta: {
       en: "Live Demo",
       ar: "مشاهدة الموقع",

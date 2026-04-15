@@ -34,6 +34,16 @@ const faqSection = {
     },
     {
       question: {
+        en: "Will I be able to update my website content personally?",
+        ar: "هل هقدر أعدل على محتوى الموقع بنفسي بعد كدة؟",
+      },
+      answer: {
+        en: "This functionality is available as an optional add-on. While our standard projects are professionally managed to ensure maximum performance and security, we can integrate a custom Content Management System (CMS) upon request. This allows you to modify text and imagery independently without technical expertise. If you choose this add-on, we provide a full walkthrough to get you started.",
+        ar: "هذه الخاصية متاحة كميزة إضافية (Add-on) عند الطلب. فبينما نركز في مشاريعنا الأساسية على الإدارة البرمجية لضمان أعلى مستويات السرعة والأمان، يمكننا دمج نظام إدارة محتوى (CMS) يمنحك الصلاحية لتعديل النصوص والصور بنفسك بكل سهولة. وفي حال اختيارك لهذه الميزة، نوفر لك جلسة تدريبية لضمان تمكنك من إدارة محتواك باحترافية.",
+      },
+    },
+    {
+      question: {
         en: "Can I build my own website instead of hiring someone?",
         ar: "هل ينفع أعمل موقعي بنفسي بدل ما أجيب متخصص؟",
       },

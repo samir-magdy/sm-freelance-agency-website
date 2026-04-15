@@ -116,7 +116,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           ))}
         </ul>
         <div
-          className="flex flex-col absolute bottom-12 items-center gap-8"
+          className="flex flex-col absolute bottom-16 items-center gap-8"
           onClick={(e) => e.stopPropagation()}
         >
           <LanguageToggle lang={lang} label={langToggleLabel} />

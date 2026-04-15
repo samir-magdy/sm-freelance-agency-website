@@ -5,13 +5,13 @@ const form = {
   phone: { en: "Number", ar: "الهاتف" },
   phonePlaceholder: { en: "01XXXXXXXXX", ar: "01XXXXXXXXX" },
   industry: { en: "Your business", ar: "ما هو مجال عملك؟" },
-  industryPlaceholder: { en: "Your industry", ar: "اختر مجالك" },
+  industryPlaceholder: { en: "Select industry", ar: "اختر مجالك" },
   contactMethod: {
-    en: "Preferred contact method",
-    ar: "طريقة التواصل المفضلة",
+    en: "Contact method",
+    ar: "طريقة التواصل",
   },
   contactMethodPlaceholder: {
-    en: "Contact method",
+    en: "Select method",
     ar: "اختر طريقة",
   },
   whatsapp: { en: "WhatsApp", ar: "واتساب" },
