@@ -18,14 +18,13 @@ export async function POST(request) {
     const {
       name,
       phone,
-      industry,
       contactMethod,
       email,
       message,
     } = await request.json();
 
     // Basic validation
-    if (!name || !industry || !contactMethod) {
+    if (!name || !contactMethod) {
       return NextResponse.json(
         { error: "All fields are required" },
         { status: 400 },
@@ -54,7 +53,6 @@ export async function POST(request) {
 
     const MAX_LENGTHS = {
       name: 50,
-      industry: 50,
       phone: 20,
       email: 100,
       message: 500,
@@ -62,7 +60,6 @@ export async function POST(request) {
 
     if (
       name.length > MAX_LENGTHS.name ||
-      industry.length > MAX_LENGTHS.industry ||
       (phone && phone.length > MAX_LENGTHS.phone) ||
       (email && email.length > MAX_LENGTHS.email) ||
       (message && message.length > MAX_LENGTHS.message)
@@ -105,7 +102,6 @@ export async function POST(request) {
       subject: `Website Consultation Request`,
       text: [
         `Name: ${name}`,
-        `Business: ${industry}`,
         `Contact Method: ${contactMethod}`,
         phone && `Phone: ${phone}`,
         email && `Email: ${email}`,
