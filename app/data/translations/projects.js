@@ -20,20 +20,20 @@ const projectData = {
       ar: "مشاهدة الموقع",
     },
   },
-  skyway: {
-    title: {
-      en: "Sky Way Travel - Travel Agency",
-      ar: "شركة سكاي واي ترافل للسياحة",
-    },
-    description: {
-      en: "A custom-built website for SkyWay Travel, a Cairo based Travel Agency. The site focuses on showcasing their packages through custom photo galleries. The result was a clear increase in leads and bookings shortly after launch.",
-      ar: "موقع إلكتروني مخصص تم تطويره لشركة سكاي واي ترافل، وهي وكالة سفر مقرها القاهرة. يعرض تفاصيل باقاتهم من خلال معارض صور مخصصة ومنظمة، وكانت النتيجة زيادة واضحة في العملاء المحتملين المباشرين.",
-    },
-    cta: {
-      en: "Live Site",
-      ar: "مشاهدة الموقع",
-    },
-  },
+  // skyway: {
+  //   title: {
+  //     en: "Sky Way Travel - Travel Agency",
+  //     ar: "شركة سكاي واي ترافل للسياحة",
+  //   },
+  //   description: {
+  //     en: "A custom-built website for SkyWay Travel, a Cairo based Travel Agency. The site focuses on showcasing their packages through custom photo galleries. The result was a clear increase in leads and bookings shortly after launch.",
+  //     ar: "موقع إلكتروني مخصص تم تطويره لشركة سكاي واي ترافل، وهي وكالة سفر مقرها القاهرة. يعرض تفاصيل باقاتهم من خلال معارض صور مخصصة ومنظمة، وكانت النتيجة زيادة واضحة في العملاء المحتملين المباشرين.",
+  //   },
+  //   cta: {
+  //     en: "Live Site",
+  //     ar: "مشاهدة الموقع",
+  //   },
+  // },
   gym: {
     title: {
       en: "Gym/Fitness Center",

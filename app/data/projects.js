@@ -5,16 +5,17 @@ import {
     SITE_URL
 } from "./translations/lang";
 
-export const projects = [{
-        id: "skyway",
-        liveUrl: "https://www.skyway-travel.org",
-        screenshot: skywayScreenshot,
-        schemaName: "Sky Way Travel – Travel Agency Website Cairo",
-        schemaNameAr: "سكاي واي ترافل – موقع وكالة سياحة في القاهرة",
-        description: "A conversion-optimized travel agency website for Sky Way Travel, designed to attract, engage, and convert visitors into bookings by showcasing tour packages in a structured format, building trust, and guiding users effortlessly from interest to reservation.",
-        genre: "Travel & Tourism",
-        genreAr: "سياحة وسفر",
-    },
+export const projects = [
+    // {
+    //     id: "skyway",
+    //     liveUrl: "https://www.skyway-travel.org",
+    //     screenshot: skywayScreenshot,
+    //     schemaName: "Sky Way Travel – Travel Agency Website Cairo",
+    //     schemaNameAr: "سكاي واي ترافل – موقع وكالة سياحة في القاهرة",
+    //     description: "A conversion-optimized travel agency website for Sky Way Travel, designed to attract, engage, and convert visitors into bookings by showcasing tour packages in a structured format, building trust, and guiding users effortlessly from interest to reservation.",
+    //     genre: "Travel & Tourism",
+    //     genreAr: "سياحة وسفر",
+    // },
 
 
     {
