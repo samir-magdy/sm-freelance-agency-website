@@ -1,4 +1,3 @@
-import skywayScreenshot from "../../public/project-screenshots/skyway.webp";
 import ecommScnshot from "../../public/project-screenshots/e-commerce.webp";
 import gymScreenshot from "../../public/project-screenshots/gym.webp"
 import {
@@ -6,18 +5,6 @@ import {
 } from "./translations/lang";
 
 export const projects = [
-    // {
-    //     id: "skyway",
-    //     liveUrl: "https://www.skyway-travel.org",
-    //     screenshot: skywayScreenshot,
-    //     schemaName: "Sky Way Travel – Travel Agency Website Cairo",
-    //     schemaNameAr: "سكاي واي ترافل – موقع وكالة سياحة في القاهرة",
-    //     description: "A conversion-optimized travel agency website for Sky Way Travel, designed to attract, engage, and convert visitors into bookings by showcasing tour packages in a structured format, building trust, and guiding users effortlessly from interest to reservation.",
-    //     genre: "Travel & Tourism",
-    //     genreAr: "سياحة وسفر",
-    // },
-
-
     {
         id: "Ecommerce",
         liveUrl: "https://ecommerce.samirmagdy.com/",
