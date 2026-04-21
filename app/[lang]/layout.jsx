@@ -30,7 +30,6 @@ const META_DESCRIPTION = {
 };
 
 const SOCIAL_LINKS = {
-  facebook: "https://www.facebook.com/SMWebStudioEG",
   instagram: "https://www.instagram.com/SMWebStudioEG",
   x: "https://x.com/SMWebStudioEG",
   youtube: "https://www.youtube.com/@SMWebStudioEG",
@@ -214,7 +213,6 @@ function buildStructuredData(lang) {
       })),
     },
     sameAs: [
-      SOCIAL_LINKS.facebook,
       SOCIAL_LINKS.instagram,
       SOCIAL_LINKS.x,
       SOCIAL_LINKS.youtube,

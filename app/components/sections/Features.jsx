@@ -26,7 +26,7 @@ export default function FeaturesSection({ lang }) {
   return (
     <section
       id="features"
-      className="px-4"
+      className="lg:pt-6 px-4"
       aria-labelledby="features-heading"
       dir={isRtl ? "rtl" : "ltr"}
     >
@@ -52,25 +52,32 @@ export default function FeaturesSection({ lang }) {
                 );
               }
               return (
-                <div
-                  key={feature.iconKey}
-                  className="text-center group bg-surface-card/80 relative overflow-hidden rounded-2xl border border-border-subtle py-6 px-4 shadow-lg hover:-translate-y-1.5 hover:border-border-strong transition-all duration-300"
-                >
-                  <div className="relative space-y-3">
-                    <div className="mx-auto flex items-center justify-center transition-all duration-300">
-                      <Icon
-                        className="w-12 h-12 md:w-16 md:h-16 text-icon"
-                        aria-hidden="true"
-                      />
-                    </div>
-                    <h3 className="font-semibold text-subheading text-content-heading">
-                      {feature[lang]}
-                    </h3>
-                    <p className="leading-relaxed text-content-body md:text-base">
-                      {feature.desc[lang]}
-                    </p>
-                  </div>
-                </div>
+               <div
+  key={feature.iconKey}
+  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-surface-card/40 p-px transition-all duration-300 backdrop-blur-xl hover:-translate-y-1.5 hover:border-white/30 hover:shadow-2xl hover:shadow-primary/20"
+>
+  {/* Glassmorphic Spotlight Effect */}
+  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.1),transparent_70%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+  
+  <div className="relative space-y-3 rounded-[15px] bg-surface-card/80 px-4 py-6 text-center">
+    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl  transition-all duration-500 group-hover:scale-110  md:h-20 md:w-20">
+      <Icon
+        className="h-10 w-10 text-icon transition-colors duration-300 group-hover:text-primary md:h-12 md:w-12"
+        aria-hidden="true"
+      />
+      {/* Subtle Icon Glow */}
+      <div className="absolute inset-0 z-[-1] scale-50 bg-primary/20 blur-2xl transition-transform duration-500 group-hover:scale-100" />
+    </div>
+
+    <h3 className="text-subheading font-semibold text-content-heading transition-colors group-hover:text-primary">
+      {feature[lang]}
+    </h3>
+
+    <p className="text-content-body leading-relaxed md:text-base">
+      {feature.desc[lang]}
+    </p>
+  </div>
+</div>
               );
             })}
           </div>
