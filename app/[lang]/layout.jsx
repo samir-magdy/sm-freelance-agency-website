@@ -25,8 +25,8 @@ const PHONE_NUMBER = "+201274613331";
 const TWITTER_HANDLE = "@SMWebStudioEG";
 
 const META_DESCRIPTION = {
-  en: "SM Web Studio offers fast, modern websites strategically built to earn trust, attract clients, and grow sales. Explore how we can help your business succeed online.",
-  ar: "نوفر مواقع سريعة وعصرية مصممة استراتيجياً لزيادة مبيعاتك، جذب العملاء، وبناء الثقة. ابدأ رحلة نجاحك الرقمي معنا. اكتشف كيف يمكننا مساعدتك في تحقيق التميز عبر الإنترنت.",
+  en: "We offer modern websites strategically built to earn trust, attract clients, and increase sales. Discover how we can help your business grow.",
+  ar: "نوفر مواقع عصرية مصممة استراتيجياً لزيادة مبيعاتك، جذب العملاء، وبناء الثقة. اكتشف كيف يمكننا مساعدتك في تحقيق التميز الرقمى.",
 };
 
 const SOCIAL_LINKS = {
@@ -51,7 +51,7 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: `أفضل شركة تصميم مواقع في مصر | جودة عالمية بسعر منافس`,
+    title: `برمجة وتصميم مواقع إلكترونية في مصر | جودة عالية بسعر منافس`,
     description: META_DESCRIPTION.ar,
     ogLocale: "ar_EG",
     altLocale: "en_US",

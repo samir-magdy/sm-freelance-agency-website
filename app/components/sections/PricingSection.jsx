@@ -12,12 +12,12 @@ export default function PricingSection({ lang }) {
       aria-labelledby="pricing-heading"
       dir={isRtl ? "rtl" : "ltr"}
     >
-      {/* Atmospheric glow toward highlighted card */}
+      {/* Atmospheric background glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
       >
-        <div className="absolute top-1/2 right-1/4 rtl:right-auto rtl:left-1/4 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,oklch(from_var(--color-gold)_l_c_h/0.04),transparent_70%)]" />
+        <div className="absolute top-1/2 right-1/4 rtl:right-auto rtl:left-1/4 -translate-y-1/2 w-150 h-150 rounded-full bg-[radial-gradient(circle,oklch(from_var(--color-gold)_l_c_h/0.04),transparent_70%)]" />
       </div>
 
       <div className="relative max-w-7xl mx-auto">
@@ -32,13 +32,12 @@ export default function PricingSection({ lang }) {
         </div>
 
         {/* Asymmetric cards grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-6 max-w-5xl mx-auto lg:items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6 mx-auto lg:items-stretch">
           {t.tiers.map((tier) => (
             <PricingCard
               key={tier.name.en}
               tier={tier}
               lang={lang}
-              isHighlighted={tier.highlighted}
               ctaLabel={t.cta[lang]}
               whatsappMessage={t.whatsappMessage[lang]}
               deliveryLabel={t.deliveryLabel[lang]}
@@ -49,7 +48,7 @@ export default function PricingSection({ lang }) {
         </div>
 
         {/* Disclaimer */}
-        <p className="mt-8 text-center text-xs sm:text-lg text-content-muted">
+        <p className="mt-8 text-center text-xs sm:text-lg text-content-muted px-4">
           {t.disclaimer[lang]}
         </p>
       </div>
