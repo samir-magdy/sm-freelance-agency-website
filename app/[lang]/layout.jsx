@@ -25,8 +25,8 @@ const PHONE_NUMBER = "+201274613331";
 const TWITTER_HANDLE = "@SMWebStudioEG";
 
 const META_DESCRIPTION = {
-  en: "We offer modern websites strategically built to earn trust, attract clients, and increase sales. Discover how we can help your business grow.",
-  ar: "نوفر مواقع عصرية مصممة استراتيجياً لزيادة مبيعاتك، جذب العملاء، وبناء الثقة. اكتشف كيف يمكننا مساعدتك في تحقيق التميز الرقمى.",
+  en: "Custom website design & online stores in Egypt. We build high-performance websites that directly increase sales. Discover how we can help your brand grow.",
+  ar: "تصميم مواقع احترافية ومتاجر إلكترونية في مصر. نوفر حلول لزيادة مبيعاتك عبر الإنترنت. اكتشف كيف يمكننا مساعدتك في تحقيق التميز الرقمى.",
 };
 
 const SOCIAL_LINKS = {
@@ -42,7 +42,7 @@ const SOCIAL_LINKS = {
 
 const meta = {
   en: {
-    title: `Website Design Studio in Egypt | Create an online store`,
+    title: `Website Design & Online Stores Egypt | ${SITE_NAME}`,
     description: META_DESCRIPTION.en,
     ogLocale: "en_US",
     altLocale: "ar_EG",
@@ -51,7 +51,7 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: `إنشاء متجر إلكتروني | شركة تصميم مواقع في مصر`,
+    title: `تصميم مواقع ومتاجر إلكترونية في مصر | ${SITE_NAME_AR}`,
     description: META_DESCRIPTION.ar,
     ogLocale: "ar_EG",
     altLocale: "en_US",
