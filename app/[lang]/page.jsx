@@ -1,7 +1,7 @@
 import HeroSection from "../components/sections/HeroSection";
 import PortfolioShowcase from "../components/ui/PortfolioShowcase";
 import PricingSection from "../components/sections/PricingSection";
-import Features from "../components/sections/Features";
+// import Features from "../components/sections/Features";
 import WorkflowSection from "../components/sections/WorkflowSection";
 import FAQSection from "../components/sections/FAQSection";
 import ContactSection from "../components/sections/ContactSection";
@@ -17,7 +17,7 @@ export default async function Page({ params }) {
     <div className="relative min-h-screen bg-background text-content-heading flex flex-col gap-40 md:gap-72">
       <HeroSection lang={lang} />
       <PortfolioShowcase lang={lang} />
-      <Features lang={lang} />
+      {/* <Features lang={lang} /> */}
       <WorkflowSection lang={lang} />
       <PricingSection lang={lang} />
       <FAQSection lang={lang} />

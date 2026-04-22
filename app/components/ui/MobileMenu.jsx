@@ -98,7 +98,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
         >
           {[
             "portfolio",
-            "features",
+            // "features",
             "process",
             "pricing",
             "FAQs",

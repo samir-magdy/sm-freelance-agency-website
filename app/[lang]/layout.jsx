@@ -42,7 +42,7 @@ const SOCIAL_LINKS = {
 
 const meta = {
   en: {
-    title: `Expert Website Design in Egypt | ${SITE_NAME}`,
+    title: `Website Design Studio in Egypt | Create an online store`,
     description: META_DESCRIPTION.en,
     ogLocale: "en_US",
     altLocale: "ar_EG",
@@ -51,7 +51,7 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: `برمجة وتصميم مواقع إلكترونية في مصر | جودة عالية بسعر منافس`,
+    title: `إنشاء متجر إلكتروني | شركة تصميم مواقع في مصر`,
     description: META_DESCRIPTION.ar,
     ogLocale: "ar_EG",
     altLocale: "en_US",
@@ -304,7 +304,7 @@ export default async function LangLayout({ children, params }) {
   const heroNavStrings = {
     nav: {
       // home: t.nav.home[lang],
-      features: t.nav.features[lang],
+      // features: t.nav.features[lang],
       portfolio: t.nav.portfolio[lang],
       pricing: t.nav.pricing[lang],
       process: t.nav.process[lang],

@@ -1,5 +1,5 @@
 const workflowSection = {
-  heading: { en: "How It Works", ar: "خطوات التنفيذ" },
+  heading: { en: "How It Works", ar: "خطوات تنفيذ الموقع" },
   
   steps: {
     discovery: {
@@ -17,7 +17,7 @@ const workflowSection = {
       },
     },
     development: {
-      title: { en: "Build", ar: "التطوير" },
+      title: { en: "Development", ar: "التطوير" },
       description: {
         en: "We add functionality to your website based on the approved design, adding essentials like setting up proper SEO, optimising performance and more.",
         ar: "نبدأ مرحلة التطوير لتحويل التصميم إلى موقع فعلي يعمل بكفائة، بينما تركز أنت على إدارة نشاطك.",

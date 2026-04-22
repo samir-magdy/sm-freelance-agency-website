@@ -35,15 +35,14 @@ export default function HeroSection({ lang }) {
                   key={i}
                   className={`hero-fade ${fadeClass} md:inline block`}
                 >
-                  {(() => {
-                    const rest = words.slice(1).join(" ");
-                    return (
-                      <>
-                        <span className="text-gold">{words[0]}</span>{" "}
-                        {rest}{" "}
-                      </>
-                    );
-                  })()}
+                  <>
+                    {words[0]}{" "}
+                    <span className="text-gold">
+                      {words[1]?.replace(".", "")}
+                    </span>
+                    {words[1]?.endsWith(".") ? "." : ""}{" "}
+                    {words.slice(2).join(" ")}
+                  </>
                 </span>
               );
             })

@@ -1,23 +1,24 @@
 import translations from "@/app/data/translations";
 import {
-  MonitorSmartphone,
-  Globe,
-  Search,
-  Zap,
-  ShieldCheck,
-  RefreshCw,
+  MessageCircle, // For WhatsApp
+  Headset, // For Support
+  MousePointerClick, // For Easy Edit (implies "point and click" ease)
+  Search, // For Google Maps
+  Zap, // For Performance
+  ShieldCheck, // For Peace of Mind/Done-for-you
 } from "lucide-react";
 
-// Keyed by feature.iconKey so order/length drift between data and icons
-// can no longer crash the component. A missing key throws explicitly.
+// Updated mapping to match your new features.js iconKeys
 const FEATURE_ICONS = {
-  guarantee: ShieldCheck,
-  responsive: MonitorSmartphone,
+  whatsapp: MessageCircle,
+  support: Headset,
+  "easy-edit": MousePointerClick,
+  "google-maps": Search,
   performance: Zap,
-  hosting: Globe,
-  seo: Search,
-  maintenance: RefreshCw,
+  "peace-of-mind": ShieldCheck,
 };
+
+// ... rest of your component logic remains the same
 
 export default function FeaturesSection({ lang }) {
   const t = translations.featuresSection;
@@ -26,17 +27,14 @@ export default function FeaturesSection({ lang }) {
   return (
     <section
       id="features"
-      className="lg:pt-6 px-4"
+      className="lg:pt-4 px-4"
       aria-labelledby="features-heading"
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8 md:mb-12 text-center">
-          <h2
-            id="features-heading"
-            className="font-bold text-heading"
-          >
+          <h2 id="features-heading" className="font-bold text-heading">
             {t.heading[lang]}
           </h2>
         </div>
@@ -52,32 +50,32 @@ export default function FeaturesSection({ lang }) {
                 );
               }
               return (
-               <div
-  key={feature.iconKey}
-  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-surface-card/40 p-px transition-all duration-300 backdrop-blur-xl hover:-translate-y-1.5 hover:border-white/30 hover:shadow-2xl hover:shadow-primary/20"
->
-  {/* Glassmorphic Spotlight Effect */}
-  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.1),transparent_70%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-  
-  <div className="relative space-y-3 rounded-[15px] bg-surface-card/80 px-4 py-6 text-center">
-    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl  transition-all duration-500 group-hover:scale-110  md:h-20 md:w-20">
-      <Icon
-        className="h-10 w-10 text-icon transition-colors duration-300 group-hover:text-primary md:h-12 md:w-12"
-        aria-hidden="true"
-      />
-      {/* Subtle Icon Glow */}
-      <div className="absolute inset-0 z-[-1] scale-50 bg-primary/20 blur-2xl transition-transform duration-500 group-hover:scale-100" />
-    </div>
+                <div
+                  key={feature.iconKey}
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-surface-card/40 p-px transition-all duration-300 backdrop-blur-xl hover:-translate-y-1.5 hover:border-white/30 hover:shadow-2xl hover:shadow-primary/20"
+                >
+                  {/* Glassmorphic Spotlight Effect */}
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.1),transparent_70%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-    <h3 className="text-subheading font-semibold text-content-heading transition-colors group-hover:text-primary">
-      {feature[lang]}
-    </h3>
+                  <div className="relative space-y-3 rounded-[15px] bg-surface-card/80 px-4 py-6 text-center">
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl  transition-all duration-500 group-hover:scale-110  md:h-20 md:w-20">
+                      <Icon
+                        className="h-10 w-10 text-icon transition-colors duration-300 group-hover:text-primary md:h-12 md:w-12"
+                        aria-hidden="true"
+                      />
+                      {/* Subtle Icon Glow */}
+                      <div className="absolute inset-0 z-[-1] scale-50 bg-primary/20 blur-2xl transition-transform duration-500 group-hover:scale-100" />
+                    </div>
 
-    <p className="text-content-body leading-relaxed md:text-base">
-      {feature.desc[lang]}
-    </p>
-  </div>
-</div>
+                    <h3 className="text-subheading font-semibold text-content-heading transition-colors group-hover:text-primary">
+                      {feature[lang]}
+                    </h3>
+
+                    <p className="text-content-body leading-relaxed md:text-base">
+                      {feature.desc[lang]}
+                    </p>
+                  </div>
+                </div>
               );
             })}
           </div>
