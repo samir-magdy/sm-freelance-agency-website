@@ -1,6 +1,6 @@
 const hero = {
   name: {
-    en: ["Build Websites.", "Attract Clients.", "Increase Sales."],
+    en: ["Design Websites.", "Attract Clients.", "Increase Sales."],
     ar: ["أنشئ موقعك.", "أطلق متجرك.", "زد مبيعاتك." ],
   },
   primaryCta: {
@@ -12,7 +12,7 @@ const hero = {
     ar: "شاهد أعمالنا",
   },
   subheading: {
-    en: "High-performing websites for brands ready to compete online.",
+    en: "High-performing websites built for brands ready to compete online.",
     ar: "مواقع عصرية تساعد علامتك التجارية على التميز وكسب ثقة العملاء عبر الإنترنت.",
   },
 };

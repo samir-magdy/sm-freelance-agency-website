@@ -48,7 +48,7 @@ export default function PricingSection({ lang }) {
         </div>
 
         {/* Disclaimer */}
-        <p className="mt-8 text-center text-xs sm:text-lg text-content-muted px-4">
+        <p className="mt-8 sm:mt-12 text-center text-sm sm:text-lg text-content-muted px-4">
           {t.disclaimer[lang]}
         </p>
       </div>
