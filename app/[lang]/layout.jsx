@@ -19,7 +19,6 @@ const fonts = Cairo({
 // ─────────────────────────────────────────────
 
 const SITE_NAME = "SM Web Studio";
-const SITE_NAME_AR = "إس إم ويب ستوديو";
 const CONTACT_EMAIL = "studio@samirmagdy.com";
 const PHONE_NUMBER = "+201274613331";
 const TWITTER_HANDLE = "@SMWebStudioEG";
@@ -42,7 +41,7 @@ const SOCIAL_LINKS = {
 
 const meta = {
   en: {
-    title: `Website Design & Online Stores Egypt | ${SITE_NAME}`,
+    title: `${SITE_NAME} | Website Design & Online Stores Egypt`,
     description: META_DESCRIPTION.en,
     ogLocale: "en_US",
     altLocale: "ar_EG",
@@ -51,11 +50,11 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: `تصميم مواقع ومتاجر إلكترونية في مصر | ${SITE_NAME_AR}`,
+    title: `${SITE_NAME} | تصميم مواقع ومتاجر إلكترونية في مصر`,
     description: META_DESCRIPTION.ar,
     ogLocale: "ar_EG",
     altLocale: "en_US",
-    ogAlt: `شعار ${SITE_NAME_AR}`,
+    ogAlt: `${SITE_NAME} logo`,
     siteName: SITE_NAME,
     skipToContent: "تخطى إلى المحتوى",
   },
@@ -172,7 +171,6 @@ function buildStructuredData(lang) {
     "@type": "ProfessionalService",
     "@id": `${SITE_URL}/#business`,
     name: SITE_NAME,
-    alternateName: SITE_NAME_AR,
     inLanguage: "en",
     description:
       "SM Web Studio builds websites that create lasting trust. Boost your online presence with modern web design & development.",
@@ -220,14 +218,6 @@ function buildStructuredData(lang) {
     ],
     founder: { "@id": `${SITE_URL}/#founder` },
     knowsLanguage: ["en", "ar"],
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
-        opens: "11:00",
-        closes: "19:00",
-      },
-    ],
   };
 
   // 2. WebSite schema
@@ -235,7 +225,6 @@ function buildStructuredData(lang) {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     name: SITE_NAME,
-    alternateName: SITE_NAME_AR,
     url: `${SITE_URL}/`,
     inLanguage: ["en", "ar"],
     publisher: {
