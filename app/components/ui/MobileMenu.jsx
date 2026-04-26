@@ -12,6 +12,19 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
     setIsMenuOpen(false);
   };
 
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault(); 
+    closeMenu(); 
+
+    setTimeout(() => {
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: "smooth" });
+        window.history.pushState(null, "", `#${targetId}`);
+      }
+    }, 100); 
+  };
+  
   // Prevent background scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
@@ -107,7 +120,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             <li key={item}>
               <a
                 href={`#${item}`}
-                onClick={closeMenu}
+                onClick={(e) => handleNavClick(e, item)}
                 className="font-semibold text-content-body text-[1.8rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
               >
                 {nav[item]}
