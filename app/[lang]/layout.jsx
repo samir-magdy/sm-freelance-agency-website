@@ -41,7 +41,7 @@ const SOCIAL_LINKS = {
 
 const meta = {
   en: {
-    title: `${SITE_NAME} | Website Design & Online Shopify Stores`,
+    title: `${SITE_NAME} | Website Design & Online Stores`,
     description: META_DESCRIPTION.en,
     ogLocale: "en_US",
     altLocale: "ar_EG",

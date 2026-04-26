@@ -134,7 +134,7 @@ export default function PortfolioShowcase({ lang }) {
         </div>
 
         {/* ── Phone column (phone frame + dot indicators + mobile CTA) ── */}
-        <div className="flex flex-col items-center gap-4.5">
+        <div className="flex flex-col items-center gap-4">
           {/* Arrow ← | Phone | Arrow → row (always LTR so swipe direction is consistent) */}
           <div dir="ltr" className="flex items-center justify-center gap-6">
             {/* Previous arrow */}
@@ -147,7 +147,7 @@ export default function PortfolioShowcase({ lang }) {
             {/* Phone outer shell — gradient bezel + hardware buttons */}
             <div
               ref={phoneRef}
-              className="phone-outer w-[60%] h-[435px] sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-147 rounded-[48px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="phone-outer w-[60%] h-[420px] sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-147 rounded-[48px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               {/* Left volume buttons */}
               <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -202,7 +202,7 @@ export default function PortfolioShowcase({ lang }) {
           {/* Pagination dots */}
           <div
             dir="ltr"
-            className="flex items-center gap-2"
+            className="flex items-center gap-1.5 mb-4"
             role="tablist"
             aria-label="Project slides"
           >
