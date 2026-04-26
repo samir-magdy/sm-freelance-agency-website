@@ -13,21 +13,16 @@ export default function PricingSection({ lang }) {
       dir={isRtl ? "rtl" : "ltr"}
     >
       {/* Atmospheric background glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden="true"
-      >
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute top-1/2 right-1/4 rtl:right-auto rtl:left-1/4 -translate-y-1/2 w-150 h-150 rounded-full bg-[radial-gradient(circle,oklch(from_var(--color-gold)_l_c_h/0.04),transparent_70%)]" />
       </div>
 
       <div className="relative max-w-7xl mx-auto">
         {/* Heading */}
         <div className="mb-8 md:mb-16 text-center">
-          <h2
-            id="pricing-heading"
-            className="font-bold text-heading"
-          >
+          <h2 id="pricing-heading" className="font-bold text-heading">
             {t.heading[lang]}
+            <span className="sr-only">Egypt | مصر</span>
           </h2>
         </div>
 

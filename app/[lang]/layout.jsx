@@ -24,8 +24,8 @@ const PHONE_NUMBER = "+201274613331";
 const TWITTER_HANDLE = "@SMWebStudioEG";
 
 const META_DESCRIPTION = {
-  en: "Custom website design & online stores in Egypt. We build high-performance websites that directly increase sales. Discover how we can help your brand grow.",
-  ar: "تصميم مواقع احترافية ومتاجر إلكترونية في مصر. نوفر حلول لزيادة مبيعاتك عبر الإنترنت. اكتشف كيف يمكننا مساعدتك في تحقيق التميز الرقمى.",
+  en: "Custom website design & online Shopify stores in Egypt. We create websites that look good, run smoothly, and get results. Discover how we can help your brand grow.",
+  ar: "تصميم مواقع احترافية ومتاجر إلكترونية في مصر. نطوّر حلول تدعم نمو عملك وحضورك الرقمي. اكتشف كيف يمكننا مساعدتك في تحقيق التميز أونلاين.",
 };
 
 const SOCIAL_LINKS = {
@@ -41,7 +41,7 @@ const SOCIAL_LINKS = {
 
 const meta = {
   en: {
-    title: `${SITE_NAME} | Website Design & Online Stores Egypt`,
+    title: `${SITE_NAME} | Website Design & Online Stores`,
     description: META_DESCRIPTION.en,
     ogLocale: "en_US",
     altLocale: "ar_EG",
@@ -50,7 +50,7 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: `${SITE_NAME} | تصميم مواقع ومتاجر إلكترونية في مصر`,
+    title: `${SITE_NAME} | تصميم مواقع ومتاجر إلكترونية | مصر`,
     description: META_DESCRIPTION.ar,
     ogLocale: "ar_EG",
     altLocale: "en_US",
@@ -311,7 +311,6 @@ export default async function LangLayout({ children, params }) {
 
   return (
     <html
-      data-scroll-behavior="smooth"
       lang={lang}
       dir={lang === "ar" ? "rtl" : "ltr"}
       suppressHydrationWarning

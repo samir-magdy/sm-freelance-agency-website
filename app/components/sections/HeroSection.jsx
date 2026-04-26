@@ -21,7 +21,7 @@ export default function HeroSection({ lang }) {
           id="hero-hook"
           className="font-bold text-center text-content-heading px-4 block text-[clamp(2.9rem,5vw,5rem)] leading-relaxed"
         >
-          <span className="sr-only">SM Web Studio</span>
+          <span className="sr-only">SM Web Studio - Best Web Design Company Egypt</span>
           {Array.isArray(hookLines) ? (
             hookLines.map((line, i) => {
               const words = line.split(" ");
@@ -52,7 +52,7 @@ export default function HeroSection({ lang }) {
           )}
         </h1>
 
-        <h2 className="my-6 hero-fade hero-fade-nav text-content-body text-[clamp(1.2rem,2vw,2rem)] rtl:text-[clamp(1.2rem,1.8vw,3rem)] rtl:leading-loose text-center px-10 sm:px-16">
+        <h2 className="mt-6 mb-10 hero-fade hero-fade-nav text-content-body text-[clamp(1.2rem,2vw,2rem)] rtl:text-[clamp(1.2rem,1.8vw,3rem)] rtl:leading-loose text-center px-10 sm:px-16">
           {hero.subheading[lang]}
         </h2>
 

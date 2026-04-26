@@ -45,17 +45,20 @@
    2. Base & Reset
    ══════════════════════════════════════ */
 
-html {
-  scroll-behavior: smooth;
-}
-
 section {
-  scroll-margin-top: 80px;
+  scroll-margin-top: 65px;
 }
 
 @media (min-width: 1280px) {
   section {
-    scroll-margin-top: 150px;
+    scroll-margin-top: 125px;
+  }
+}
+
+/* Targets Safari only */
+@supports (-webkit-hyphens:none) {
+  #portfolio-heading {
+    margin-block-end: 2.25rem;
   }
 }
 
@@ -445,8 +448,5 @@ section {
     animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-  html {
-    scroll-behavior: auto;
   }
 }

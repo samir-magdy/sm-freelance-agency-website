@@ -26,7 +26,7 @@ export default function WorkflowSection({ lang }) {
             id="process-heading"
             className="font-bold text-heading"
           >
-            {t.heading[lang]}
+            {t.heading[lang]}<span className="sr-only">create a website - إنشاء موقع  إلكترونى مصر</span>
           </h2>
         </div>
       </div>

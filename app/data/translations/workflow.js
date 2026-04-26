@@ -1,5 +1,5 @@
 const workflowSection = {
-  heading: { en: "How It Works", ar: "خطوات تنفيذ الموقع" },
+  heading: { en: "How We Work", ar: "خطوات تنفيذ الموقع" },
   
   steps: {
     discovery: {

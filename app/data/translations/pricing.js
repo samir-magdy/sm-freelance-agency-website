@@ -1,6 +1,6 @@
 const pricingSection = {
   heading: {
-    en: "Web Design Pricing Plans",
+    en: "Website Pricing Plans",
     ar: "أسعار تصميم المواقع",
   },
   cta: {
@@ -39,7 +39,7 @@ const pricingSection = {
         ar: "تحكم أفضل. وصول أوسع. محتوى أكثر.",
       },
       features: [
-        { en: "Up to 8 Sections", ar: "حتى 8 أقسام" },
+        { en: "More Content", ar: "محتوى أكثر" },
         { en: "Built-in Control Panel", ar: "لوحة تحكم" },
 
         { en: "Advanced SEO Setup", ar: "إعداد متقدم لمحركات البحث" },
