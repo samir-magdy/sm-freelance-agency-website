@@ -20,7 +20,7 @@ const pricingSection = {
         ar: "ابدأ  بالأساسيات التي يحتاجها موقعك.",
       },
       features: [
-        { en: "Up to 5 Sections", ar: "حتى 5 أقسام" },
+        { en: "Up to 6 Sections", ar: "حتى ٦ أقسام" },
 
         { en: "Basic SEO Setup", ar: "إعداد أساسي لمحركات البحث" },
         { en: "2 Content Updates per Month", ar: "٢ تحديثات للمحتوى شهرياً" },
@@ -42,7 +42,7 @@ const pricingSection = {
         { en: "More Content", ar: "محتوى أكثر" },
         { en: "Built-in Control Panel", ar: "لوحة تحكم" },
 
-        { en: "Advanced SEO Setup", ar: "إعداد متقدم لمحركات البحث" },
+        { en: "Basic SEO Setup", ar: "إعداد أساسي لمحركات البحث" },
       ],
 
       delivery: { en: "10–14 days", ar: "١٠–١٤ أيام" },
