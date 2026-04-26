@@ -111,7 +111,7 @@ export default function PortfolioShowcase({ lang }) {
           {/* Project title — desktop only */}
           <h3 className="text-heading font-bold text-content-heading hidden lg:block">
             {pd.title[lang]}
-            <span class="sr-only">Website | موقع إلكتروني</span>
+            <span className="sr-only">Website | موقع إلكتروني</span>
           </h3>
 
           {/* Project description — desktop only */}
