@@ -1,10 +1,14 @@
+"use client"
+
 import Image from "next/image";
 import DesktopNavLinks from "./DesktopNavLinks";
 import LanguageToggle from "./LanguageToggle";
 import MobileMenu from "./MobileMenu";
+import SmoothScroll from "./utils/SmoothScroll";
 
 export default function HeroNav({ lang, strings }) {
   const { nav, a11y } = strings;
+  const handleScroll = SmoothScroll();
 
   return (
     <header>
@@ -13,8 +17,8 @@ export default function HeroNav({ lang, strings }) {
         aria-label={a11y.desktopNav}
         className="hidden xl:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl px-8 pe-10"
       >
-        <div className=" relative flex items-center w-full">
-          <a href="#home" aria-label="Samir Magdy Web Studio - Home">
+        <div className="relative flex items-center w-full">
+          <a href="#home" onClick={handleScroll} aria-label="Samir Magdy Web Studio - Home">
             <Image
               src="/brand.svg"
               alt="SM Web Studio – Website Design Company in Egypt"

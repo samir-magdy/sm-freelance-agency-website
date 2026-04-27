@@ -1,8 +1,12 @@
+"use client";
+
 import hero from "@/app/data/translations/hero";
 import FontReadyWrapper from "../ui/FontReadyWrapper";
+import SmoothScroll from "../ui/utils/SmoothScroll.js";
 
 export default function HeroSection({ lang }) {
   const hookLines = hero.name[lang];
+  const handleScroll = SmoothScroll();
 
   return (
     <FontReadyWrapper
@@ -21,7 +25,9 @@ export default function HeroSection({ lang }) {
           id="hero-hook"
           className="font-bold text-center text-content-heading px-4 block text-[clamp(2.9rem,5vw,5rem)] leading-relaxed"
         >
-          <span className="sr-only">SM Web Studio - Best Web Design Company Egypt</span>
+          <span className="sr-only">
+            SM Web Studio - Best Web Design Company Egypt
+          </span>
           {Array.isArray(hookLines) ? (
             hookLines.map((line, i) => {
               const words = line.split(" ");
@@ -59,6 +65,7 @@ export default function HeroSection({ lang }) {
         <div className="flex flex-col items-center justify-center gap-4">
           <a
             href="#contact"
+            onClick={handleScroll}
             className="cta-primary hero-cta-entrance font-semibold md:font-normal text-center bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.1rem,1.8vw,1.6rem)] px-12 py-4 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
             {hero.primaryCta[lang]}
@@ -66,6 +73,7 @@ export default function HeroSection({ lang }) {
 
           <a
             href="#portfolio"
+            onClick={handleScroll}
             className="ms-2 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-1 text-content-muted hover:text-content-body text-[clamp(1rem,1.3vw,1.25rem)] font-medium transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
             {hero.secondaryCta[lang]}
