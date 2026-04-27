@@ -23,7 +23,7 @@ export default function HeroSection({ lang }) {
       >
         <h1
           id="hero-hook"
-          className="font-bold text-center text-content-heading px-4 block text-[clamp(2.9rem,5vw,5rem)] leading-relaxed"
+          className="font-bold text-center text-content-heading px-4 block text-[clamp(2.5rem,4vw,4rem)] leading-relaxed"
         >
           <span className="sr-only">
             SM Web Studio - Best Web Design Company Egypt
