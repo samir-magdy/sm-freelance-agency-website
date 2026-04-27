@@ -202,7 +202,7 @@ export default function PortfolioShowcase({ lang }) {
           {/* Pagination dots */}
           <div
             dir="ltr"
-            className="flex items-center gap-1.5 mb-4"
+            className="flex items-center gap-1.5 mb-1.5"
             role="tablist"
             aria-label="Project slides"
           >
