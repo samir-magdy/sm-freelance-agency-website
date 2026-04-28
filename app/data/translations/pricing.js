@@ -1,7 +1,7 @@
 const pricingSection = {
   heading: {
-    en: "Website Pricing Plans",
-    ar: "أسعار تصميم المواقع",
+    en: "Website Pricing Estimator",
+    ar: "حاسبة أسعار تصميم المواقع",
   },
   cta: {
     en: "Chat",
