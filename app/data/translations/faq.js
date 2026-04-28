@@ -1,5 +1,9 @@
 const faqSection = {
   heading: { en: "FAQs", ar: "الأسئلة الشائعة" },
+    subheading: {
+    en: "Have a question? It’s likely answered here",
+    ar: "لديك استفسار؟ غالباً ستجد الإجابة هنا",
+  },
   items: [
     // ===== TOP OF FUNNEL (Awareness) =====
     {

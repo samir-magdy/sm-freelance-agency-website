@@ -10,10 +10,13 @@ export default function FAQSection({ lang }) {
         <div className="mb-6 md:mb-12 text-center">
           <h2
             id="FAQs-heading"
-            className="font-bold text-heading mb-2"
+            className="font-bold text-heading mb-2 rtl:mb-3"
           >
             {t.heading[lang]}
           </h2>
+          <p className="text-center text-content-muted sm:text-xl">
+          {t.subheading[lang]}
+        </p>
         </div>
           <article className="w-full">
           {t.items.map((item, i) => (

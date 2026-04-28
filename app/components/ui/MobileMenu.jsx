@@ -111,9 +111,8 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
         >
           {[
             "portfolio",
-            // "features",
-            "process",
             "pricing",
+            "process",
             "FAQs",
             "contact",
           ].map((item) => (

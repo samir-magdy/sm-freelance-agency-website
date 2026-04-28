@@ -82,10 +82,13 @@ export default function PortfolioShowcase({ lang }) {
         id="portfolio-heading"
         className="text-center relative z-2 px-5 mb-4 md:mb-12"
       >
-        <h2 className="font-bold text-heading">
+        <h2 className="font-bold text-heading mb-2 rtl:mb-3">
           {t.heading[lang]}
           <span className="sr-only">Egypt | مصر</span>
         </h2>
+        <p className="text-center text-content-muted sm:text-xl">
+          {t.subheading[lang]}
+        </p>
       </div>
 
       {/* ── Main layout: column on mobile, row on desktop ──

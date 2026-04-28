@@ -1,7 +1,11 @@
 const pricingSection = {
   heading: {
-    en: "Website Pricing Estimator",
-    ar: "حاسبة أسعار تصميم المواقع",
+    en: "Website Price Calculator",
+    ar: "حاسبة تصميم المواقع",
+  },
+    subheading: {
+    en: "Calculate your investment in just a few clicks",
+    ar: "اكتشف تكلفة موقعك في أقل من دقيقة",
   },
   cta: {
     en: "Chat",

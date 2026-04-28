@@ -20,10 +20,13 @@ export default function WorkflowSection({ lang }) {
         <div className="mb-8 sm:mb-0 text-center">
           <h2
             id="process-heading"
-            className="font-bold text-heading"
+            className="font-bold text-heading mb-2 rtl:mb-3"
           >
             {t.heading[lang]}<span className="sr-only">create a website - إنشاء موقع  إلكترونى مصر</span>
           </h2>
+          <p className="text-center text-content-muted sm:text-xl">
+          {t.subheading[lang]}
+        </p>
         </div>
       </div>
       <Timeline data={data} />

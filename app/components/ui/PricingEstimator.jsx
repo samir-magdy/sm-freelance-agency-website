@@ -11,10 +11,10 @@ const t = {
   scopeLabel: { en: "Amount of Content", ar: "كمية المحتوى" },
   addonsLabel: { en: "Enhancements & Add-ons", ar: "الإضافات والتحسينات" },
   estimateLabel: { en: "Estimate:", ar: "التكلفة التقديرية" },
-  cta: { en: "Claim Your Free Consultation", ar: "احصل على استشارة مجانية" },
+  cta: { en: "Request a Formal Quote", ar: "اطلب عرض سعر رسمي" },
   disclaimer: {
     en: "Final pricing is confirmed after our discovery call.",
-    ar: "التكلفة تقديرية مبدئية. يتم تأكيد السعر النهائي بعد الإستشاره.",
+    ar: "التكلفة تقديرية مبدئية. يتم التأكيد النهائي بعد الاستشارة.",
   },
   bases: [
     {
@@ -25,13 +25,13 @@ const t = {
     },
     {
       id: "business",
-      price: 9999,
+      price: 7999,
       name: { en: "Business Website", ar: "موقع تعريفي" },
       icon: Globe,
     },
     {
       id: "ecommerce",
-      price: 15500,
+      price: 14999,
       name: { en: "Online Store", ar: "متجر إلكتروني" },
       icon: Zap,
     },
@@ -199,7 +199,7 @@ Can we talk?`;
                   {isRtl ? "دولار" : "USD"}
                 </span>
               )}
-              <span className="text-5xl md:text-8xl font-bold text-content-heading tracking-tight leading-none">
+              <span className="text-5xl md:text-8xl font-bold text-white tracking-tight leading-none">
                 {displayPrice.toLocaleString()}
               </span>
               {currency === "EGP" && (
@@ -349,7 +349,7 @@ Can we talk?`;
                       {isRtl ? "دولار" : "USD"}
                     </span>
                   )}
-                  <span className="text-9xl font-bold text-content-heading tracking-tight leading-none">
+                  <span className="text-9xl font-bold text-white tracking-tight leading-none">
                     {displayPrice.toLocaleString()}
                   </span>
                   {currency === "EGP" && (
@@ -372,11 +372,11 @@ Can we talk?`;
             </div>
           </div>
         </div>
-      </div>
-
-      <small className="block w-full mt-4 md:mt-16 text-center text-sm md:text-xl lg:text-[1.562rem] font-semibold text-content-muted leading-relaxed tracking-wide">
+      <small className="block w-full md:mt-6 text-center text-[0.8rem] md:text-xl lg:text-[1.562rem] font-semibold text-content-muted leading-relaxed tracking-wide">
         * {t.disclaimer[lang]}
       </small>
+      </div>
+
     </>
   );
 }

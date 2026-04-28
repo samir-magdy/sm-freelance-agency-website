@@ -4,9 +4,8 @@ import SmoothScroll from "./utils/SmoothScroll.js";
 
 const LINK_CONFIG = [
   { href: "#portfolio", labelKey: "portfolio" },
-  // { href: "#features", labelKey: "features" },
-  { href: "#process", labelKey: "process" },
   { href: "#pricing", labelKey: "pricing" },
+  { href: "#process", labelKey: "process" },
   { href: "#FAQs", labelKey: "FAQs" },
   { href: "#contact", labelKey: "contact" },
 ];

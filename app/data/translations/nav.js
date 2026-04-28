@@ -1,7 +1,6 @@
 const nav = {
-  // features: { en: "Features", ar: "المميزات" },
-  portfolio: { en: "Portfolio", ar: "معرض الأعمال" },
-  pricing: { en: "Pricing", ar: "الأسعار" },
+  portfolio: { en: "Portfolio", ar: "أعمالنا" },
+  pricing: { en: "Pricing", ar: "التسعير" },
   process: { en: "Process", ar: "خطوات العمل" },
   FAQs: { en: "FAQs", ar: "الأسئلة الشائعة" },
   contact: { en: "Contact", ar: "تواصل معنا" },

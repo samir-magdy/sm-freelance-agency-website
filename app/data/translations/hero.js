@@ -4,8 +4,8 @@ const hero = {
     ar: ["أنشئ موقعك.", "أطلق متجرك.", "زد مبيعاتك." ],
   },
   primaryCta: {
-    en: "Get in Touch",
-    ar: "تواصل معنا",
+    en: "Get an Instant Quote",
+    ar: "عرض سعر فورى",
   },
   secondaryCta: {
     en: "See Our Work",
@@ -13,7 +13,7 @@ const hero = {
   },
   subheading: {
     en: "High-performing websites built for brands ready to compete online.",
-    ar: "مواقع عصرية تساعد علامتك التجارية على التميز وكسب ثقة العملاء عبر الإنترنت.",
+    ar: "مواقع احترافية تعزز مصداقية علامتك التجارية وتصنع تميزك الرقمي.",
   },
 };
 

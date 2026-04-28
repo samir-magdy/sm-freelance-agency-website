@@ -64,11 +64,27 @@ export default function HeroSection({ lang }) {
 
         <div className="flex flex-col items-center justify-center gap-4">
           <a
-            href="#contact"
+            href="#pricing"
             onClick={handleScroll}
-            className="cta-primary hero-cta-entrance font-semibold md:font-normal text-center bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.1rem,1.8vw,1.6rem)] px-12 py-4 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+            className="cta-primary inline-flex items-center gap-2 md:gap-4 hero-cta-entrance font-semibold md:font-normal text-center bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.1rem,1.8vw,1.6rem)] px-6 md:px-10 py-4 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
             {hero.primaryCta[lang]}
+              <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              className={`mt-0.5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`}
+              aria-hidden="true"
+            >
+              <path
+                d="M3.333 8h9.334M8.667 4l4 4-4 4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </a>
 
           <a
@@ -82,13 +98,13 @@ export default function HeroSection({ lang }) {
               height="16"
               viewBox="0 0 16 16"
               fill="none"
-              className={`md:mt-1 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`}
+              className={`md:mt-0.5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`}
               aria-hidden="true"
             >
               <path
                 d="M3.333 8h9.334M8.667 4l4 4-4 4"
                 stroke="currentColor"
-                strokeWidth="1.5"
+                strokeWidth="1"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />

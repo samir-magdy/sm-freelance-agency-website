@@ -4,8 +4,8 @@ const contactSection = {
     ar: "اتخذ الخطوة الأولى",
   },
   subheading: {
-    en: "Share a few details and we’ll reach out.",
-    ar: "شاركنا بعض التفاصيل وسنتواصل معك.",
+    en: "Share a few details and we’ll reach out",
+    ar: "شاركنا بعض التفاصيل وسنتواصل معك",
   },
 };
 

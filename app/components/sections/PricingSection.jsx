@@ -20,10 +20,12 @@ export default function PricingSection({ lang }) {
       <div className="relative max-w-7xl mx-auto">
         {/* Heading */}
         <div className="mb-6 md:mb-8 text-center">
-          <h2 id="pricing-heading" className="font-bold text-heading mb-4">
+          <h2 id="pricing-heading" className="font-bold text-heading mb-2 rtl:mb-3">
             {t.heading[lang]}
           </h2>
-      
+      <p className="text-center text-content-muted sm:text-xl">
+          {t.subheading[lang]}
+        </p>
         </div>
         <div className="md:py-8">
         <PricingEstimator lang={lang} />

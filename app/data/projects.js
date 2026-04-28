@@ -22,17 +22,7 @@ export const projects = [
     genre: "Fashion Ecommerce",
     genreAr: "التجارة الإلكترونية للأزياء",
   },
-   {
-    id: "Travel",
-    liveUrl: "https://travel.samirmagdy.com",
-    screenshot: travelImg,
-    schemaName: "Travel Agency – Egypt",
-    schemaNameAr: "شركة سياحة – مصر",
-    description:
-      "An international travel booking demo by SM Web Studio, demonstrating seamless user experiences for exploring vacation packages and curated itineraries.",
-    genre: "Travel & Tourism",
-    genreAr: "سياحة وسفر",
-  },
+
   {
     id: "Interior",
     liveUrl: "https://interior.samirmagdy.com",
@@ -112,6 +102,17 @@ export const projects = [
       "A medical management demo by SM Web Studio featuring optimized appointment booking flows and doctor profiles, highlighting our custom healthcare web solutions.",
     genre: "Medical & Clinics",
     genreAr: "العيادات والرعاية الصحية",
+  },
+     {
+    id: "Travel",
+    liveUrl: "https://travel.samirmagdy.com",
+    screenshot: travelImg,
+    schemaName: "Travel Agency – Egypt",
+    schemaNameAr: "شركة سياحة – مصر",
+    description:
+      "An international travel booking demo by SM Web Studio, demonstrating seamless user experiences for exploring vacation packages and curated itineraries.",
+    genre: "Travel & Tourism",
+    genreAr: "سياحة وسفر",
   },
 ];
 

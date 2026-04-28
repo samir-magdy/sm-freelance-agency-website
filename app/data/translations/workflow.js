@@ -1,11 +1,14 @@
 const workflowSection = {
-  heading: { en: "How We Work", ar: "خطوات تنفيذ الموقع" },
-  
+  heading: { en: "Our Process", ar: "خطوات تنفيذ موقعك" },
+  subheading: {
+  en: "From idea to launch, in 4 steps",
+  ar: "من الفكرة إلى الواقع، في ٤ خطوات",
+},
   steps: {
     discovery: {
       title: { en: "Discovery", ar: "الاستشارة" },
       description: {
-        en: "We connect to understand everything about your business and what you need from your website, then send a full proposal including scope, timeline and pricing.",
+        en: "We connect to understand everything about your business and what you need from your website, then send a full proposal.",
         ar: "نتواصل معك لفهم كل ما تحتاجه من موقعك، ثم نرسل لك عرض سعر بتفاصيل بالمشروع. بعد موافقتك، تبدأ مرحلة التصميم.",
       },
     },
