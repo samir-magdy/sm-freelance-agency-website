@@ -5,7 +5,7 @@ const projectsSection = {
   },
   subheading: {
     en: "Explore our latest projects",
-    ar: "استكشف أحدث أعمالنا",
+    ar: "تصفح أحدث أعمالنا",
   },
 };
 
