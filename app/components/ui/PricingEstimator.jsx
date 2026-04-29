@@ -39,7 +39,7 @@ const t = {
   scopes: [
     { value: 0, price: 0, name: { en: "Minimal", ar: "قليل" } },
     { value: 1, price: 2999, name: { en: "Medium", ar: "متوسط" } },
-    { value: 2, price: 5999, name: { en: "A Lot", ar: "كثير" } },
+    { value: 2, price: 4999, name: { en: "A Lot", ar: "كثير" } },
   ],
   addons: [
     {
@@ -162,7 +162,7 @@ Can we talk?`;
 
   return (
     <>
-      <div className="relative w-full max-w-7xl mx-auto px-4 py-5 pt-3 sm:px-4.5 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-subtle flex flex-col gap-4.5 sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0">
+      <div className="relative w-full max-w-7xl mx-auto px-4 py-3 sm:px-4.5 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-subtle flex flex-col gap-4.5 sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0">
         {/* ========================================= */}
         {/* MOBILE ONLY: Original Header & Price      */}
         {/* ========================================= */}
