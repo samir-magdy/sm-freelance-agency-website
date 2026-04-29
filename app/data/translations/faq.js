@@ -1,11 +1,10 @@
 const faqSection = {
   heading: { en: "FAQs", ar: "الأسئلة الشائعة" },
-    subheading: {
+  subheading: {
     en: "Have a question? It’s likely answered here",
     ar: "لديك استفسار؟ غالباً ستجد الإجابة هنا",
   },
   items: [
-    // ===== TOP OF FUNNEL (Awareness) =====
     {
       question: {
         en: "Do I need a website for my business?",
@@ -13,7 +12,7 @@ const faqSection = {
       },
       answer: {
         en: "A professional website serves as the primary infrastructure for your digital identity. It establishes credibility, centralizes brand authority, and captures organic search traffic. In a digital-first economy, the absence of a dedicated website results in a loss of market share to competitors who maintain an accessible online presence.",
-        ar: "يعد الموقع الإلكتروني الاحترافي البنية التحتية الأساسية لهويتك الرقمية، حيث يعمل على ترسيخ المصداقية ومركزية سلطة العلامة التجارية واستقطاب الزيارات من محركات البحث. في ظل الاقتصاد الرقمي الحالي، يؤدي غياب الموقع الإلكتروني إلى فقدان حصة سوقية لصالح المنافسين الذين يمتلكون حضوراً متاحاً عبر الإنترنت.",
+        ar: "يعد الموقع الإلكتروني البنية التحتية الأساسية لهويتك الرقمية، حيث يعمل على ترسيخ المصداقية ومركزية سلطة العلامة التجارية واستقطاب الزيارات من محركات البحث. في ظل الاقتصاد الرقمي الحالي، يؤدي غياب الموقع الإلكتروني إلى فقدان حصة سوقية لصالح المنافسين الذين يمتلكون حضوراً متاحاً عبر الإنترنت.",
       },
     },
     {
@@ -23,7 +22,7 @@ const faqSection = {
       },
       answer: {
         en: "SEO (Search Engine Optimization) is the technical and strategic process of improving a website's visibility within search engine results pages. By optimizing technical structure and content relevance, SEO ensures your business is discoverable by users actively searching for your specific services, thereby reducing long-term customer acquisition costs.",
-        ar: "تحسين محركات البحث (SEO) هو عملية تقنية واستراتيجية تهدف لزيادة ظهور الموقع الإلكتروني في صفحات نتائج البحث. من خلال تحسين الهيكل التقني وملاءمة المحتوى، يضمن الـ SEO إمكانية وصول المستخدمين الذين يبحثون بنشاط عن خدماتك إليك، مما يقلل تكاليف جذب العملاء على المدى الطويل.",
+        ar: "تحسين محركات البحث (SEO) هى عملية تقنية واستراتيجية تهدف لزيادة ظهور الموقع الإلكتروني في صفحات نتائج البحث. من خلال تحسين الهيكل التقني وملائمة المحتوى، يضمن الـ SEO إمكانية وصول المستخدمين الذين يبحثون عن خدماتك إليك.",
       },
     },
     {
@@ -33,7 +32,7 @@ const faqSection = {
       },
       answer: {
         en: "SEO focuses on building organic equity and sustainable traffic through long-term optimization. Paid advertising, such as Google Ads (PPC), provides immediate visibility through financial bidding on keywords. While paid ads generate instant results that cease once the budget is exhausted, SEO builds a lasting digital asset that continues to drive traffic without per-click costs.",
-        ar: "يركز الـ SEO على بناء قيمة طبيعية وزيارات مستدامة من خلال التحسين طويل الأمد. أما الإعلانات الممولة (مثل إعلانات جوجل)، فتوفر ظهوراً فورياً عبر المزايدة المالية على الكلمات المفتاحية. وبينما تحقق الإعلانات نتائج لحظية تتوقف بانتهاء الميزانية، يبني الـ SEO أصلاً رقمياً دائماً يستمر في جلب الزيارات دون تكاليف مقابل كل نقرة.",
+        ar: "يركز الـ SEO على بناء قيمة طبيعية وزيارات مستدامة من خلال التحسين طويل الأمد. أما الإعلانات الممولة (مثل إعلانات جوجل وفيسبوك)، فتوفر ظهوراً فورياً عبر المزايدة المالية على الكلمات المفتاحية. وبينما تحقق الإعلانات نتائج لحظية تتوقف بانتهاء الميزانية، يبني الـ SEO أصلاً رقمياً دائماً يستمر في جلب الزيارات دون تكاليف مقابل كل نقرة.",
       },
     },
     {
@@ -43,7 +42,7 @@ const faqSection = {
       },
       answer: {
         en: "This functionality is available as an optional add-on. While our standard projects are professionally managed to ensure maximum performance and security, we can integrate a custom Content Management System (CMS) upon request. This allows you to modify text and imagery independently without technical expertise. If you choose this add-on, we provide a full walkthrough to get you started.",
-        ar: "هذه الخاصية متاحة كميزة إضافية (Add-on) عند الطلب. فبينما نركز في مشاريعنا الأساسية على الإدارة البرمجية لضمان أعلى مستويات السرعة والأمان، يمكننا دمج نظام إدارة محتوى (CMS) يمنحك الصلاحية لتعديل النصوص والصور بنفسك بكل سهولة. وفي حال اختيارك لهذه الميزة، نوفر لك جلسة تدريبية لضمان تمكنك من إدارة محتواك باحترافية.",
+        ar: "هذه الخاصية متاحة كميزة إضافية عند الطلب. يمكننا دمج نظام إدارة محتوى (CMS) تمنحك الصلاحية لتعديل النصوص والصور بنفسك بكل سهولة. وفي حال اختيارك لهذه الميزة، نوفر لك جلسة تدريبية لضمان تمكنك من إدارة محتواك ببساطة.",
       },
     },
     {
@@ -53,22 +52,17 @@ const faqSection = {
       },
       answer: {
         en: "While automated tools allow for basic web construction, they often result in technical debt, limited scalability, and suboptimal SEO performance. Professional development ensures your site is built to modern engineering standards, providing superior performance, security, and a customized user experience that DIY platforms typically cannot match.",
-        ar: "بينما تسمح الأدوات المؤتمتة ببناء مواقع أساسية، إلا أنها غالباً ما تؤدي إلى مشاكل تقنية، محدودية في التوسع، وأداء ضعيف في محركات البحث. يضمن التطوير الاحترافي بناء موقعك وفقاً للمعايير الهندسية الحديثة، مما يوفر أداءً وتأميناً وتجربة مستخدم مخصصة لا تستطيع المنصات الجاهزة توفيرها عادةً.",
+        ar: "بينما تسمح بعض المنصات ببناء مواقع أساسية، إلا أنها غالباً تؤدي إلى مشاكل تقنية، محدودية في التوسع، وأداء ضعيف في محركات البحث. يضمن التطوير الاحترافي بناء موقعك وفقاً للمعايير الهندسية الحديثة، مما يوفر أداء وتجربة مستخدم مخصصة لا تستطيع المنصات الجاهزة توفيرها.",
       },
     },
-
-    // ===== MID-FUNNEL (Research) =====
-
-
-    // ===== DECISION STAGE (Ready to act) =====
     {
       question: {
         en: "What do I need to provide to get started?",
-        ar: "إيه المطلوب مني عشان نبدأ شغل؟",
+        ar: "إيه المطلوب مني عشان نبدأ الموقع؟",
       },
       answer: {
-        en: "Following the initial consultation and requirements gathering, we require the provision of core brand assets. This includes your corporate identity (logo), finalized copywriting for each section, and any high-resolution visual assets or photography intended for the site.",
-        ar: "بعد الاستشارة الأولية وجمع المتطلبات، نحتاج إلى توفير أصول العلامة التجارية الأساسية. يشمل ذلك الهوية البصرية (اللوجو)، المحتوى المكتوب النهائي لكل قسم، وأي أصول بصرية أو صور فوتوغرافية عالية الجودة مخصصة للموقع.",
+        en: "We will require the provision of core brand assets. This includes your logo, finalized copywriting for each section (if applicable), and any high-resolution visual assets or photography intended for the site.",
+        ar: "بعد الاستشارة الأولية وجمع المتطلبات، نحتاج إلى توفير أصول العلامة التجارية الأساسية. يشمل ذلك الهوية البصرية والشعار، المحتوى المكتوب النهائي لكل قسم (اختيارى)، وأي أصول بصرية أو صور عالية الجودة مخصصة للموقع.",
       },
     },
     {
@@ -89,6 +83,76 @@ const faqSection = {
       answer: {
         en: "A domain is the unique alphanumeric identifier (URL) used to access your website, such as 'company.com'. Functionally, it acts as a digital address that points users toward your hosted content. We facilitate the registration and configuration process based on availability.",
         ar: "الدومين هو المعرف الفريد (URL) المستخدم للوصول إلى موقعك، مثل 'company.com'. من الناحية الوظيفية، يعمل كعنوان رقمي يوجه المستخدمين نحو محتواك المستضاف. نحن نقوم بتسهيل عملية التسجيل والإعداد بناءً على توفر الاسم.",
+      },
+    },
+    {
+      question: {
+        en: "Do you work with clients outside of Egypt?",
+        ar: "إنتو شغالين في مصر بس ولا ممكن أتعامل معاكم من برا مصر؟",
+      },
+      answer: {
+        en: "Yes, we operate globally. We have successfully delivered projects for clients across the Middle East, Europe, and North America. All communication, meetings, and project management are handled seamlessly through digital tools to ensure professional delivery regardless of your location.",
+        ar: "نعم، نحن نقدم خدماتنا للعملاء على مستوى العالم. لقد قمنا بتنفيذ مشاريع ناجحة لعملاء في الشرق الأوسط، أوروبا، وأمريكا الشمالية. يتم إدارة التواصل والاجتماعات وخطوات العمل بالكامل عبر الوسائل الرقمية لضمان احترافية التنفيذ أياً كان موقعك الجغرافي.",
+      },
+    },
+    {
+      question: {
+        en: "What is the payment process? Do I pay everything upfront?",
+        ar: "نظام الدفع إيه؟ لازم أدفع المبلغ كله مرة واحدة في الأول؟",
+      },
+      answer: {
+        en: "To ensure trust and commitment, we typically split the investment into milestones: 50% as a down payment to start the project and 50% upon final approval before the website goes live. This structure keeps the project on track and protects the rights of both parties.",
+        ar: "لضمان الجدية والالتزام، نعتمد نظام دفع مقسم على مراحل: ٥٠٪ كدفعة مقدمة لبدء العمل، و٥٠٪ عند الاعتماد النهائي للمشروع وقبل إطلاق الموقع رسمياً. هذا النظام يضمن سير العمل بدقة ويحفظ حقوق الطرفين.",
+      },
+    },
+    {
+      question: {
+        en: "What payment methods do you accept for international or local clients?",
+        ar: "إيه هي طرق الدفع المتاحة؟",
+      },
+      answer: {
+        en: "We offer flexible payment options. For clients in Egypt, we accept Bank Transfers, InstaPay, and Vodafone Cash. For international clients, we facilitate payments via Wire Transfer or online payment links using credit/debit cards to make the process as smooth as possible.",
+        ar: "نوفر خيارات متنوعة لتسهيل المعاملات؛ للعملاء داخل مصر نقبل التحويلات البنكية، InstaPay، وفودافون كاش. أما للعملاء الدوليين، فنقبل التحويلات البنكية الدولية أو الدفع عبر روابط الدفع الإلكتروني باستخدام البطاقات الائتمانية.",
+      },
+    },
+    {
+      question: {
+        en: "Can you build my website in multiple languages (like English and Arabic)?",
+        ar: "هل ينفع الموقع يكون بأكثر من لغة؟ (عربي وإنجليزي مثلاً)",
+      },
+      answer: {
+        en: "Definitely. We specialize in developing high-performance multilingual websites. We ensure the design is fully responsive and optimized for both Right-to-Left (Arabic) and Left-to-Right (English/French) layouts, providing a seamless user experience for your global audience.",
+        ar: "بالتأكيد، نحن متخصصون في تطوير المواقع متعددة اللغات بأداء عالٍ. نضمن أن يكون التصميم متوافقاً تماماً مع اتجاهات الكتابة المختلفة (من اليمين لليسار للعربية، ومن اليسار لليمين للإنجليزية)، مما يوفر تجربة مستخدم سلسة لجمهورك المستهدف.",
+      },
+    },
+    {
+      question: {
+        en: "Are there any hidden or recurring fees after the website is finished?",
+        ar: "هل فيه أي مصاريف تانية مخفية أو شهرية بعد ما الموقع يخلص؟",
+      },
+      answer: {
+        en: "No hidden fees. Your quote covers the entire development and launch. The only recurring costs are for your Domain and Hosting (annually), which are standard across the web. We are fully transparent about these costs from day one so there are no surprises later.",
+        ar: "لا توجد أي تكاليف مخفية؛ عرض السعر المتفق عليه يشمل كافة مراحل التطوير والتدشين. التكاليف الوحيدة المتكررة هي رسوم الدومين والاستضافة (سنوياً)، وهي رسوم ثابتة لأي موقع على الإنترنت، ونوضح لك قيمتها بكل شفافية منذ البداية.",
+      },
+    },
+    {
+      question: {
+        en: "Do we sign a contract to guarantee my project rights?",
+        ar: "هل بيكون فيه عقد يضمن حقي في تنفيذ المشروع؟",
+      },
+      answer: {
+        en: "Yes, professionalism is at our core. For every project, we provide a formal contract that outlines the scope of work, timelines, payment terms, and ownership rights. This ensures that your investment is protected and that both parties are aligned on the final deliverables.",
+        ar: "بكل تأكيد، الاحترافية هي أساس عملنا. لكل مشروع نقوم بإصدار عقد رسمي يوضح بدقة نطاق العمل، الجداول الزمنية، شروط الدفع، وحقوق الملكية. هذا يضمن حماية استثمارك ووضوح الرؤية للطرفين بخصوص المخرجات النهائية.",
+      },
+    },
+    {
+      question: {
+        en: "Can I add new features to the website in the future?",
+        ar: "لو حبيت أزود ميزات تانية للموقع في المستقبل، هل ده متاح؟",
+      },
+      answer: {
+        en: "Our websites are built with scalability in mind. Whether you want to add a blog, an e-commerce store, or a booking system later, our clean code structure makes it easy to expand your site as your business grows without having to start from scratch.",
+        ar: "نحن نبني مواقع قابلة للتوسع؛ سواء أردت إضافة مدونة، متجر إلكتروني، أو نظام حجز في المستقبل، فإن هيكلة الكود لدينا تسمح بتطوير الموقع وزيادة خصائصه بسهولة مع نمو أعمالك، دون الحاجة للبدء من الصفر.",
       },
     },
   ],
