@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
-import { Globe, Layout, Zap, Settings, UploadCloud } from "lucide-react";
+import { Globe, Layout, Zap, Settings } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 // Built-in translations for the estimator
@@ -11,7 +11,7 @@ const t = {
   scopeLabel: { en: "Amount of Content", ar: "كمية المحتوى" },
   addonsLabel: { en: "Enhancements & Add-ons", ar: "الإضافات والتحسينات" },
   estimateLabel: { en: "Estimate:", ar: "التكلفة التقديرية" },
-  cta: { en: "Request a Formal Quote", ar: "اطلب عرض سعر رسمي" },
+  cta: { en: "Send Us Your Estimate", ar: "اطلب عرض سعر رسمي" },
   disclaimer: {
     en: "Final pricing is confirmed after our discovery call.",
     ar: "التكلفة تقديرية مبدئية. يتم التأكيد النهائي بعد الاستشارة.",
@@ -20,26 +20,26 @@ const t = {
     {
       id: "landing",
       price: 4999,
-      name: { en: "One-Page Website", ar: "موقع صفحة واحدة" },
+      name: { en: "Landing Page (Single Page Site)", ar: "صفحة هبوط (موقع صفحة واحدة)" },
       icon: Layout,
     },
     {
       id: "business",
       price: 7999,
-      name: { en: "Business Website", ar: "موقع تعريفي" },
+      name: { en: "Business Website (Multiple Pages)", ar: "موقع أعمال (متعدد الصفحات)" },
       icon: Globe,
     },
     {
       id: "ecommerce",
       price: 14999,
-      name: { en: "Online Store", ar: "متجر إلكتروني" },
+      name: { en: "Online Store (Shopify)", ar: "متجر إلكتروني (شوبيفاي)" },
       icon: Zap,
     },
   ],
   scopes: [
     { value: 0, price: 0, name: { en: "Minimal", ar: "قليل" } },
-    { value: 1, price: 2999, name: { en: "Medium", ar: "متوسط" } },
-    { value: 2, price: 4999, name: { en: "A Lot", ar: "كثير" } },
+    { value: 1, price: 1999, name: { en: "Medium", ar: "متوسط" } },
+    { value: 2, price: 3999, name: { en: "A Lot", ar: "كثير" } },
   ],
   addons: [
     {
@@ -60,7 +60,7 @@ const t = {
     {
       id: "advanced_seo",
       appliesTo: ["landing", "business", "ecommerce"],
-      price: 999,
+      price: 1499,
       name: { en: "SEO", ar: "تحسين البحث" },
       icon: Zap,
     },
@@ -74,7 +74,7 @@ export default function PricingEstimator({ lang }) {
 
   // 1. State: Primitives only
   const [baseId, setBaseId] = useState(t.bases[0].id);
-  const [scopeIndex, setScopeIndex] = useState(0); // Controlled by buttons now
+  const [scopeIndex, setScopeIndex] = useState(0); 
   const [selectedAddons, setSelectedAddons] = useState([]);
   const [currency, setCurrency] = useState("EGP");
 
@@ -162,7 +162,8 @@ Can we talk?`;
 
   return (
     <>
-      <div className="relative w-full max-w-7xl mx-auto px-4 py-3 sm:px-4.5 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-subtle flex flex-col gap-4.5 sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0">
+      <div className="relative max-w-7xl w-full mx-auto px-4 py-3 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-subtle flex flex-col gap-4.5 sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0">
+        
         {/* ========================================= */}
         {/* MOBILE ONLY: Original Header & Price      */}
         {/* ========================================= */}
@@ -211,12 +212,14 @@ Can we talk?`;
           </div>
         </div>
 
-        {/* DESKTOP SPLIT CONTAINER */}
-        <div className="flex flex-col md:flex-row md:gap-8">
+        {/* DESKTOP SPLIT CONTAINER - Fixed using Grid */}
+        <div className="flex flex-col md:grid md:grid-cols-12 md:gap-8 w-full">
+          
           {/* ========================================= */}
           {/* LEFT COLUMN: Configuration Steps          */}
           {/* ========================================= */}
-          <div className="flex-1.5 flex flex-col gap-4.5 sm:gap-8 md:bg-surface-card/50 md:shadow-xl md:shadow-black/30 md:border-2 md:border-border-subtle md:rounded-3xl md:py-6 md:px-8 md:pt-4">
+          <div className="md:col-span-7 flex flex-col gap-4.5 sm:gap-8 md:bg-surface-card/50 md:shadow-xl md:shadow-black/30 md:border-2 md:border-border-subtle md:rounded-3xl md:py-6 md:px-8 md:pt-4">
+            
             {/* Step 1: Base Type */}
             <div className="flex flex-col gap-3">
               <label className="ms-1 text-content-heading font-bold uppercase tracking-wider block lg:text-[1.25rem]">
@@ -230,14 +233,14 @@ Can we talk?`;
                     <button
                       key={base.id}
                       onClick={() => handleBaseTypeChange(base.id)}
-                      className={`cursor-pointer flex flex-row sm:flex-col items-center sm:items-center text-start p-3 sm:p-4 rounded-2xl border transition-all duration-200 w-full ${
+                      className={`cursor-pointer flex flex-row sm:flex-col items-center sm:items-center text-center p-3 sm:p-4 sm:px-6 rounded-2xl border transition-all duration-200 w-full ${
                         isSelected
                           ? "bg-black/40 text-content-heading shadow-md border-white/60 border-2"
                           : "border-2 border-border-subtle hover:border-border-strong bg-black/15"
                       }`}
                     >
                       <Icon
-                        className={`w-5 h-5 sm:w-7 sm:h-7 sm:mb-2.5 me-3 sm:me-0 shrink-0 transition-colors ${isSelected ? "text-white/80" : "text-icon"}`}
+                        className={`w-5 h-5 sm:w-7 sm:h-7 sm:mb-2.5 me-3 sm:me-0 shrink-0 transition-colors ${isSelected ? "text-content-heading" : "text-icon"}`}
                       />
                       <span
                         className={`text-sm sm:text-base lg:text-[1.25rem] font-semibold transition-colors ${isSelected ? "text-content-heading" : "text-content-body"}`}
@@ -317,8 +320,8 @@ Can we talk?`;
           {/* ========================================= */}
           {/* DESKTOP ONLY: Sticky Summary Panel        */}
           {/* ========================================= */}
-          <div className="hidden md:flex flex-1">
-            <div className="w-full md:h-full flex flex-col justify-between px-3 pt-3 pb-6 rounded-3xl border-2 border-border-subtle bg-black/35 shadow-lg shadow-black/30">
+          <div className="hidden md:block md:col-span-5">
+            <div className="h-full sticky top-24 flex flex-col justify-between px-3 pt-3 pb-6 rounded-3xl border-2 border-border-subtle bg-black/35 shadow-lg shadow-black/30">
               <div className="flex p-1 bg-black/40 rounded-2xl border border-white/5">
                 <button
                   onClick={() => setCurrency("EGP")}
@@ -349,7 +352,7 @@ Can we talk?`;
                       {isRtl ? "دولار" : "USD"}
                     </span>
                   )}
-                  <span className="text-9xl font-bold text-white tracking-tight leading-none">
+                  <span className="text-8xl font-bold text-white tracking-tight leading-none">
                     {displayPrice.toLocaleString()}
                   </span>
                   {currency === "EGP" && (
@@ -372,11 +375,11 @@ Can we talk?`;
             </div>
           </div>
         </div>
-      <small className="block w-full md:mt-6 text-center text-[0.8rem] md:text-xl lg:text-[1.562rem] font-semibold text-content-muted leading-relaxed tracking-wide">
-        * {t.disclaimer[lang]}
-      </small>
+        
+        <small className="block w-full md:mt-8 text-center text-[0.8rem] md:text-xl lg:text-[1.562rem] font-semibold text-content-muted leading-relaxed tracking-wide">
+          * {t.disclaimer[lang]}
+        </small>
       </div>
-
     </>
   );
 }

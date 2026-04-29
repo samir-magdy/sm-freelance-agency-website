@@ -24,7 +24,7 @@ export default function WorkflowSection({ lang }) {
           >
             {t.heading[lang]}<span className="sr-only">create a website - إنشاء موقع  إلكترونى مصر</span>
           </h2>
-          <p className="text-center text-content-muted sm:text-xl">
+          <p className="text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
           {t.subheading[lang]}
         </p>
         </div>

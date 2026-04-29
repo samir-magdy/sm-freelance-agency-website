@@ -4,7 +4,7 @@ const projectsSection = {
     ar: "معرض التصاميم",
   },
   subheading: {
-    en: "Explore our latest projects",
+    en: "Explore our featured projects",
     ar: "تصفح أحدث أعمالنا",
   },
 };

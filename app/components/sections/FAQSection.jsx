@@ -14,7 +14,7 @@ export default function FAQSection({ lang }) {
           >
             {t.heading[lang]}
           </h2>
-          <p className="text-center text-content-muted sm:text-xl">
+          <p className="text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
           {t.subheading[lang]}
         </p>
         </div>

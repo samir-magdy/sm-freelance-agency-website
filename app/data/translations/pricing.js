@@ -1,6 +1,6 @@
 const pricingSection = {
   heading: {
-    en: "Website Price Estimator",
+    en: "Our Price Estimator",
     ar: "أداة تقدير الأسعار",
   },
     subheading: {

@@ -80,13 +80,13 @@ export default function PortfolioShowcase({ lang }) {
       {/* ── Section heading ── */}
       <div
         id="portfolio-heading"
-        className="text-center relative z-2 px-5 mb-4 md:mb-12"
+        className="text-center relative z-2 px-5 mb-4 md:mb-8"
       >
         <h2 className="font-bold text-heading mb-2 rtl:mb-3">
           {t.heading[lang]}
           <span className="sr-only">Egypt | مصر</span>
         </h2>
-        <p className="text-center text-content-muted sm:text-xl">
+        <p className="text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
           {t.subheading[lang]}
         </p>
       </div>
@@ -94,7 +94,7 @@ export default function PortfolioShowcase({ lang }) {
       {/* ── Main layout: column on mobile, row on desktop ──
           dir flips the row direction so info panel sits right (EN) or left (AR) */}
       <div
-        className="pt-2 flex flex-col lg:flex-row items-center lg:gap-16 xl:gap-20 relative z-2"
+        className="flex flex-col lg:flex-row items-center lg:gap-16 xl:gap-20 relative z-2"
         dir={isRtl ? "rtl" : "ltr"}
       >
         {/* ── Info panel (badge + title + description + CTA) ──
@@ -104,7 +104,7 @@ export default function PortfolioShowcase({ lang }) {
             gap-8 controls uniform vertical spacing between all children */}
         <div
           key={`info-${project.id}`}
-          className="portfolio-info-enter text-center lg:text-start lg:max-w-lg order-first lg:order-last mb-4 lg:mb-0 flex flex-col items-center lg:items-start gap-6"
+          className="portfolio-info-enter text-center lg:text-start lg:max-w-lg order-first lg:order-last mb-2.5 lg:mb-0 flex flex-col items-center lg:items-start gap-6"
         >
           {/* Genre badge — visible on both mobile + desktop */}
           <span className="md:hidden uppercase inline-block py-1 px-3 rounded-lg bg-gold-dark/10 border border-white/10 text-content-heading/95 text-sm font-medium tracking-wide">
@@ -137,9 +137,9 @@ export default function PortfolioShowcase({ lang }) {
         </div>
 
         {/* ── Phone column (phone frame + dot indicators + mobile CTA) ── */}
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-2.5">
           {/* Arrow ← | Phone | Arrow → row (always LTR so swipe direction is consistent) */}
-          <div dir="ltr" className="flex items-center justify-center gap-6">
+          <div dir="ltr" className="flex items-center justify-center gap-8">
             {/* Previous arrow */}
             <NavArrow
               direction="prev"
