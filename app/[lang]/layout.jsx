@@ -11,7 +11,7 @@ import { heroFontStyleEn, heroFontStyleAr } from "../fonts/heroFontInline";
 const fonts = Cairo({
   variable: "--font-cairo",
   subsets: ["latin", "arabic"],
-  display: "swap",
+  display: "block",
 });
 
 // ─────────────────────────────────────────────
@@ -32,7 +32,7 @@ const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/SMWebStudioEG",
   x: "https://x.com/SMWebStudioEG",
   youtube: "https://www.youtube.com/@SMWebStudioEG",
-  linkedin: "https://www.linkedin.com/in/SMWebStudioEG",
+  linkedin: "https://www.linkedin.com/in/samir-magdy-",
 };
 
 // ─────────────────────────────────────────────
