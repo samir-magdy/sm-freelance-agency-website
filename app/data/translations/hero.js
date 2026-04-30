@@ -4,8 +4,8 @@ const hero = {
     ar: ["أنشئ موقعك.", "أطلق متجرك.", "زد مبيعاتك." ],
   },
   primaryCta: {
-    en: "Get an Instant Quote",
-    ar: "عرض سعر فورى",
+    en: "Get an Instant Estimate",
+    ar: "تقدير سعر فورى",
   },
   secondaryCta: {
     en: "See Our Work",

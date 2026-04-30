@@ -11,7 +11,10 @@ const t = {
   scopeLabel: { en: "Amount of Content", ar: "كمية المحتوى" },
   addonsLabel: { en: "Enhancements & Add-ons", ar: "الإضافات والتحسينات" },
   estimateLabel: { en: "Estimate:", ar: "التكلفة التقديرية" },
-  cta: { en: "Send Us Your Estimate", ar: "اطلب عرض سعر رسمي" },
+  cta: {
+    en: "Verify My Calculation",
+    ar: "تأكد من حساباتي",
+  },
   disclaimer: {
     en: "Final pricing is confirmed after our discovery call.",
     ar: "التكلفة تقديرية مبدئية. يتم التأكيد النهائي بعد الاستشارة.",
@@ -19,48 +22,88 @@ const t = {
   bases: [
     {
       id: "landing",
-      price: 4999,
-      name: { en: "Landing Page (Single Page Site)", ar: "صفحة هبوط (موقع صفحة واحدة)" },
+      price: 7900,
+      name: {
+        en: "Landing Page (Single Page Site)",
+        ar: "صفحة هبوط (صفحة واحدة)",
+      },
       icon: Layout,
     },
     {
       id: "business",
-      price: 7999,
-      name: { en: "Business Website (Multiple Pages)", ar: "موقع أعمال (متعدد الصفحات)" },
+      price: 9900,
+      name: {
+        en: "Business Website (Multiple Pages)",
+        ar: "موقع أعمال (متعدد الصفحات)",
+      },
       icon: Globe,
     },
     {
       id: "ecommerce",
-      price: 14999,
+      price: 19900,
       name: { en: "Online Store (Shopify)", ar: "متجر إلكتروني (شوبيفاي)" },
       icon: Zap,
     },
   ],
+  // #1: scope cost is now a multiplier on the base price, not a flat fee.
+  // #5: each scope has a title (tooltip) in both languages explaining what it means.
   scopes: [
-    { value: 0, price: 0, name: { en: "Minimal", ar: "قليل" } },
-    { value: 1, price: 1999, name: { en: "Medium", ar: "متوسط" } },
-    { value: 2, price: 3999, name: { en: "A Lot", ar: "كثير" } },
+    {
+      value: 0,
+      multiplier: 0,
+      name: { en: "Minimal", ar: "قليل" },
+      title: {
+        en: "1–3 sections, simple copy, no custom photography",
+        ar: "١–٣ أقسام، نصوص بسيطة، بدون تصوير مخصص",
+      },
+    },
+    {
+      value: 1,
+      multiplier: 0.15,
+      name: { en: "Medium", ar: "متوسط" },
+      title: {
+        en: "4–8 sections or pages, team bios, blog setup, provided assets",
+        ar: "٤–٨ أقسام أو صفحات، نبذة عن الفريق، مدونة، محتوى جاهز",
+      },
+    },
+    {
+      value: 2,
+      multiplier: 0.25,
+      name: { en: "A Lot", ar: "كثير" },
+      title: {
+        en: "9+ pages, custom photography/video, extensive copywriting, multiple content types",
+        ar: "٩+ صفحات، تصوير/فيديو مخصص، كتابة محتوى واسعة، أنواع محتوى متعددة",
+      },
+    },
   ],
   addons: [
     {
       id: "cms",
       appliesTo: ["landing", "business"],
-      price: 1499,
+      price: 2999,
       name: { en: "Admin Panel", ar: "لوحة تحكم" },
       icon: Settings,
     },
     {
+      // #3: bilingual multiplier is now base-aware.
+      // landing is simpler (fewer sections to translate) → 0.25
+      // business has more pages and structured content → 0.35
+      // ecommerce has product names, descriptions, checkout flows → 0.50
       id: "multilingual",
       appliesTo: ["landing", "business", "ecommerce"],
       isMultiplier: true,
-      multiplier: 0.4,
+      multiplierByBase: {
+        landing: 0.25,
+        business: 0.35,
+        ecommerce: 0.5,
+      },
       name: { en: "Bilingual", ar: "ثنائي اللغة" },
       icon: Globe,
     },
     {
       id: "advanced_seo",
       appliesTo: ["landing", "business", "ecommerce"],
-      price: 1499,
+      price: 999,
       name: { en: "SEO", ar: "تحسين البحث" },
       icon: Zap,
     },
@@ -74,7 +117,7 @@ export default function PricingEstimator({ lang }) {
 
   // 1. State: Primitives only
   const [baseId, setBaseId] = useState(t.bases[0].id);
-  const [scopeIndex, setScopeIndex] = useState(0); 
+  const [scopeIndex, setScopeIndex] = useState(0);
   const [selectedAddons, setSelectedAddons] = useState([]);
   const [currency, setCurrency] = useState("EGP");
 
@@ -110,16 +153,20 @@ export default function PricingEstimator({ lang }) {
       const addon = t.addons.find((a) => a.id === addonId);
       if (addon) {
         if (addon.isMultiplier) {
-          totalMultiplier += addon.multiplier;
+          // #3: look up the multiplier for the currently selected base type
+          const bilingualMultiplier = addon.multiplierByBase[baseId] ?? 0.4;
+          totalMultiplier += bilingualMultiplier;
         } else {
           flatAddonsCost += addon.price;
         }
       }
     });
 
-    const subTotal = baseType.price + currentScope.price + flatAddonsCost;
+    // #1: scope cost is a percentage of the base price, not a flat fee
+    const scopeCost = Math.round(baseType.price * currentScope.multiplier);
+    const subTotal = baseType.price + scopeCost + flatAddonsCost;
     return Math.round(subTotal * totalMultiplier);
-  }, [baseType.price, currentScope.price, selectedAddons]);
+  }, [baseId, baseType.price, currentScope.multiplier, selectedAddons]);
 
   const displayPrice =
     currency === "EGP" ? totalEGP : Math.round(totalEGP / USD_EXCHANGE_RATE);
@@ -136,18 +183,20 @@ export default function PricingEstimator({ lang }) {
           : "None";
 
     const message = isRtl
-      ? `مرحباً سمير، لقد استخدمت حاسبة التسعير بموقعك. 
-أنا مهتم بـ: ${baseType.name.ar}
-الحجم: ${currentScope.name.ar}
-الإضافات: ${addonNames}
-التكلفة التقديرية: ${displayPrice.toLocaleString()} ${currencySymbol}
-هل يمكننا التحدث؟`
-      : `Hi Samir, I used the estimator on your site. 
-I'm interested in: ${baseType.name.en}
-Size: ${currentScope.name.en}
-Add-ons: ${addonNames}
-Estimated Price: ${displayPrice.toLocaleString()} ${currencySymbol}
-Can we talk?`;
+      ? `مرحباً، لقد قمت بحساب تكلفة مبدئية لمشروعي عبر موقعكم وأريد التأكد من دقتها من خلال مكالمة استشارية.
+
+البيانات المحسوبة:
+- نوع الموقع: ${baseType.name.ar}
+- حجم المحتوى: ${currentScope.name.ar}
+- الإضافات: ${addonNames}
+- التكلفة التقديرية: ${displayPrice.toLocaleString()} ${currencySymbol}`
+      : `Hello, I just used the price calculator on your website and want to verify the accuracy through a consultation call.
+
+The Calculated Data:
+- Type: ${baseType.name.en}
+- Size: ${currentScope.name.en}
+- Add-ons: ${addonNames}
+- Calculated Price: ${displayPrice.toLocaleString()} ${currencySymbol}`;
 
     return `https://wa.me/201274613331?text=${encodeURIComponent(message)}`;
   }, [
@@ -163,7 +212,6 @@ Can we talk?`;
   return (
     <>
       <div className="relative max-w-7xl w-full mx-auto px-4 py-3 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-subtle flex flex-col gap-4.5 sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0">
-        
         {/* ========================================= */}
         {/* MOBILE ONLY: Original Header & Price      */}
         {/* ========================================= */}
@@ -214,12 +262,10 @@ Can we talk?`;
 
         {/* DESKTOP SPLIT CONTAINER - Fixed using Grid */}
         <div className="flex flex-col md:grid md:grid-cols-12 md:gap-8 w-full">
-          
           {/* ========================================= */}
           {/* LEFT COLUMN: Configuration Steps          */}
           {/* ========================================= */}
-          <div className="md:col-span-7 flex flex-col gap-4.5 sm:gap-8 md:bg-surface-card/50 md:shadow-xl md:shadow-black/30 md:border-2 md:border-border-subtle md:rounded-3xl md:py-6 md:px-8 md:pt-4">
-            
+          <div className="md:col-span-7 flex flex-col gap-4.5 sm:gap-8 md:bg-surface-card/50 md:shadow-xl md:shadow-black/30 md:border-2 md:border-border-subtle md:rounded-3xl md:p-6 md:pt-4">
             {/* Step 1: Base Type */}
             <div className="flex flex-col gap-3">
               <label className="ms-1 text-content-heading font-bold uppercase tracking-wider block lg:text-[1.25rem]">
@@ -265,6 +311,8 @@ Can we talk?`;
                     <button
                       key={index}
                       onClick={() => setScopeIndex(index)}
+                      // #5: title attribute explains what each scope level means
+                      // title={scope.title[lang]}
                       className={`cursor-pointer flex-1 flex md:gap-4 justify-center items-center gap-1 px-2.5 py-2 rounded-2xl border text-sm sm:text-base lg:text-[1.25rem] transition-all ${
                         isSelected
                           ? "bg-black/40 text-content-heading shadow-md border-white/60 border-2"
@@ -375,7 +423,7 @@ Can we talk?`;
             </div>
           </div>
         </div>
-        
+
         <small className="block w-full md:mt-8 text-center text-[0.8rem] md:text-xl lg:text-[1.562rem] font-semibold text-content-muted leading-relaxed tracking-wide">
           * {t.disclaimer[lang]}
         </small>
