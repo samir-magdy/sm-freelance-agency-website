@@ -16,22 +16,13 @@ export default function TermsPage({ params }) {
   const t = translations.terms;
   const dir = lang === "ar" ? "rtl" : "ltr";
 
-  // If the translation object is missing, show a visible error on screen
-  if (!t) {
-    return (
-      <main className="min-h-screen pt-32 flex justify-center text-red-500 font-bold">
-        Error: Could not find 'terms' in the translations dictionary. Check
-        index.js.
-      </main>
-    );
-  }
 
   return (
     <main
       dir={dir}
-      className="min-h-screen pt-32 pb-16 px-6 md:px-12 bg-white dark:bg-neutral-950"
+      className="min-h-screen pt-22 sm:pt-32 pb-16 px-6 bg-background"
     >
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <header className="mb-12 border-b border-gray-200 dark:border-neutral-800 pb-8 text-start">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
             {/* Added fallback to .en to guarantee text renders */}
