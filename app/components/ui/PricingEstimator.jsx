@@ -22,7 +22,7 @@ const t = {
   bases: [
     {
       id: "landing",
-      price: 7900,
+      price: 5000,
       name: {
         en: "Landing Page (Single Page Site)",
         ar: "صفحة هبوط (صفحة واحدة)",
@@ -31,7 +31,7 @@ const t = {
     },
     {
       id: "business",
-      price: 9900,
+      price: 8000,
       name: {
         en: "Business Website (Multiple Pages)",
         ar: "موقع أعمال (متعدد الصفحات)",
@@ -59,7 +59,7 @@ const t = {
     },
     {
       value: 1,
-      multiplier: 0.15,
+      multiplier: 0.1,
       name: { en: "Medium", ar: "متوسط" },
       title: {
         en: "4–8 sections or pages, team bios, blog setup, provided assets",
@@ -93,8 +93,8 @@ const t = {
       appliesTo: ["landing", "business", "ecommerce"],
       isMultiplier: true,
       multiplierByBase: {
-        landing: 0.25,
-        business: 0.35,
+        landing: 0.3,
+        business: 0.4,
         ecommerce: 0.5,
       },
       name: { en: "Bilingual", ar: "ثنائي اللغة" },
