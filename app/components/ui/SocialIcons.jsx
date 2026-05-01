@@ -2,7 +2,7 @@ export default function SocialIcons() {
   return (
     <ul
       dir="ltr"
-      className="flex items-center gap-2.5"
+      className="flex items-center gap-3 sm:gap-2.5"
       aria-label="Social media links"
     >
       <li>
@@ -14,7 +14,7 @@ export default function SocialIcons() {
           className="text-content-muted hover:text-content-heading"
         >
           <svg
-            className="w-4 h-4 sm:w-5 sm:h-5"
+            className="w-5 h-5"
             viewBox="0 0 24 24"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ export default function SocialIcons() {
           className="text-content-muted hover:text-content-heading"
         >
           <svg
-            className="w-4 h-4 sm:w-5 sm:h-5"
+            className="w-5 h-5"
             viewBox="0 0 24 24"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ export default function SocialIcons() {
           className="text-content-muted hover:text-content-heading"
         >
           <svg
-            className="w-4 h-4 sm:w-5 sm:h-5"
+            className="w-5 h-5"
             viewBox="0 0 360 362"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
