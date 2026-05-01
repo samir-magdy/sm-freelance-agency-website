@@ -59,7 +59,7 @@ section {
 /* Targets Safari only */
 @supports (-webkit-hyphens:none) {
   #portfolio-heading {
-    margin-block-end: 1.5rem;
+    margin-block-end: 2.5rem;
   }
 }
 
@@ -416,19 +416,6 @@ section {
   animation: portfolioInfoIn 0.3s ease-out both;
 }
 
-@keyframes phonePulse {
-  0%,
-  100% {
-    filter: drop-shadow(0 0 0 oklch(78.4% 0.1605 86.5 / 0));
-  }
-  50% {
-    filter: drop-shadow(0 0 8px oklch(78.4% 0.1605 86.5 / 0.4));
-  }
-}
-
-.phone-frame-pulse {
-  animation: phonePulse 1.2s ease-in-out 2;
-}
 
 .portfolio-snap::-webkit-scrollbar {
   display: none;

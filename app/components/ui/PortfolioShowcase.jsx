@@ -18,24 +18,7 @@ export default function PortfolioShowcase({ lang }) {
   const t = projectsSection;
   const [active, setActive] = useState(0);
   const snapRef = useRef(null);
-  const phoneRef = useRef(null);
   const sectionRef = useRef(null);
-  /* Pulse the phone frame once it enters the viewport */
-  useEffect(() => {
-    const el = phoneRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("phone-frame-pulse");
-          observer.disconnect();
-        }
-      },
-      { threshold: 0, rootMargin: "0px 0px -25% 0px" },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
 
   /* Sync scroll position → active state */
   useEffect(() => {
@@ -107,7 +90,7 @@ export default function PortfolioShowcase({ lang }) {
           className="portfolio-info-enter text-center lg:text-start lg:max-w-lg order-first lg:order-last mb-2.5 lg:mb-0 flex flex-col items-center lg:items-start gap-6"
         >
           {/* Genre badge — visible on both mobile + desktop */}
-          <span className="md:hidden uppercase inline-block py-1 px-3 rounded-lg bg-gold-dark/10 border border-white/10 text-content-heading/95 text-sm font-medium tracking-wide">
+          <span className="md:hidden uppercase inline-block py-1 px-3 rounded-lg bg-gold-dark/10 border border-white/10 text-content-heading/95 text-sm font-medium tracking-wide mb-2">
             {isRtl ? project.genreAr : project.genre}
           </span>
 
@@ -137,7 +120,7 @@ export default function PortfolioShowcase({ lang }) {
         </div>
 
         {/* ── Phone column (phone frame + dot indicators + mobile CTA) ── */}
-        <div className="flex flex-col items-center gap-2.5">
+        <div className="flex flex-col items-center gap-3">
           {/* Arrow ← | Phone | Arrow → row (always LTR so swipe direction is consistent) */}
           <div dir="ltr" className="flex items-center justify-center gap-8">
             {/* Previous arrow */}
@@ -149,8 +132,7 @@ export default function PortfolioShowcase({ lang }) {
 
             {/* Phone outer shell — gradient bezel + hardware buttons */}
             <div
-              ref={phoneRef}
-              className="phone-outer w-[60%] h-105 sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-146 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="phone-outer w-[53vw] h-103 sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-146 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               {/* Left volume buttons */}
               <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -181,7 +163,7 @@ export default function PortfolioShowcase({ lang }) {
                           src={proj.screenshot}
                           alt={`${a11y.screenshotOf[lang]} ${projectData[proj.id].title[lang]}`}
                           className="w-full h-auto block"
-                          sizes="(max-width: 640px) 60vw, (max-width: 768px) 252px, (max-width: 1024px) 282px, 300px"
+                          sizes="(max-width: 640px) 53vw, (max-width: 768px) 252px, (max-width: 1024px) 282px, 300px"
                           priority={i === 0}
                         />
                       </div>
