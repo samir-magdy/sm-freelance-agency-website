@@ -8,6 +8,9 @@ import contactSection from "./contact";
 import form from "./form";
 import a11y from "./a11y";
 import langToggle from "./lang-toggle";
+import privacy from "./privacy";
+import terms from "./terms";
+
 // import featuresSection from "./features";
 
 const translations = {
@@ -22,6 +25,8 @@ const translations = {
   form,
   a11y,
   langToggle,
+  privacy,
+  terms
   // featuresSection,
 };
 

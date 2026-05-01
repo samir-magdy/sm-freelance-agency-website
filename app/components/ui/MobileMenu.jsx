@@ -1,11 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react"; // Added useEffect
+import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import LanguageToggle from "./LanguageToggle";
 
 export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHome = pathname === `/${lang}` || pathname === `/${lang}/`;
 
   const closeMenu = () => {
     document.body.style.overflow = "";
@@ -13,19 +17,24 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
   };
 
   const handleNavClick = (e, targetId) => {
-    e.preventDefault(); 
-    closeMenu(); 
+    e.preventDefault();
+    closeMenu();
 
-    setTimeout(() => {
-      const targetEl = document.getElementById(targetId);
-      if (targetEl) {
-        targetEl.scrollIntoView({ behavior: "smooth" });
-        window.history.pushState(null, "", `#${targetId}`);
-      }
-    }, 100); 
+    if (isHome) {
+      // Already on home, just scroll
+      setTimeout(() => {
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: "smooth" });
+          window.history.pushState(null, "", `#${targetId}`);
+        }
+      }, 100);
+    } else {
+      // Navigate home with fragment — browser will handle the scroll
+      router.push(`/${lang}/#${targetId}`);
+    }
   };
-  
-  // Prevent background scroll when menu is open
+
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -47,7 +56,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
       >
         <div className="flex justify-between items-center px-3">
           <a
-            href="#home"
+            href={`/${lang}`}
             aria-label="Samir Magdy Web Studio - Home"
             onClick={closeMenu}
           >
@@ -70,15 +79,9 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             aria-controls="mobile-menu"
           >
             <span className="w-8 flex flex-col gap-1.5">
-              <span
-                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}
-              />
-              <span
-                className={`block h-0.5 bg-content-heading transition-all duration-500 ${isMenuOpen ? "opacity-0 scale-0" : ""}`}
-              />
-              <span
-                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-              />
+              <span className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
+              <span className={`block h-0.5 bg-content-heading transition-all duration-500 ${isMenuOpen ? "opacity-0 scale-0" : ""}`} />
+              <span className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
             </span>
           </button>
         </div>
@@ -88,43 +91,31 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
         onClick={closeMenu}
         inert={!isMenuOpen}
         className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-250 ease-out ${
-          isMenuOpen
-            ? "opacity-100 backdrop-blur-3xl pointer-events-auto"
-            : "opacity-0 backdrop-blur-none pointer-events-none"
+          isMenuOpen ? "opacity-100 backdrop-blur-3xl pointer-events-auto" : "opacity-0 backdrop-blur-none pointer-events-none"
         }`}
       />
 
       <div
-        onClick={closeMenu} // Added onClick here to close when clicking empty space
+        onClick={closeMenu}
         inert={!isMenuOpen}
         className={`fixed inset-0 z-40 flex flex-col items-center justify-center transition-[opacity,visibility] duration-250ms ease-out ${
-          isMenuOpen
-            ? "opacity-100 visible pointer-events-auto"
-            : "opacity-0 invisible pointer-events-none"
+          isMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"
         }`}
       >
-        {/* Stop propagation on the UL so clicking the gap between links still closes the menu, 
-            but clicking the list container itself doesn't (optional logic depending on preference) */}
         <ul
           className="flex flex-col items-center gap-8"
           onClick={(e) => e.stopPropagation()}
         >
-          {[
-            "portfolio",
-            "pricing",
-            "process",
-            "FAQs",
-            "contact",
-          ].map((item) => (
+          {["portfolio", "pricing", "process", "FAQs", "contact"].map((item) => (
             <li key={item}>
               <a
-                href={`#${item}`}
+                href={isHome ? `#${item}` : `/${lang}/#${item}`}
                 onClick={(e) => handleNavClick(e, item)}
                 className="font-semibold text-content-body text-[1.8rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
               >
                 {nav[item]}
               </a>
-            </li>
+        </li>
           ))}
         </ul>
         <div

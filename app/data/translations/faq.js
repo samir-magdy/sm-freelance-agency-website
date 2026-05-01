@@ -111,7 +111,7 @@ const faqSection = {
         ar: "إيه هي طرق الدفع المتاحة؟",
       },
       answer: {
-        en: "We offer flexible payment options. For clients in Egypt, we accept Bank Transfers, InstaPay, and Vodafone Cash. For international clients, we facilitate payments via Wire Transfer or online payment links using credit/debit cards to make the process as smooth as possible.",
+        en: "We offer flexible payment options. For clients in Egypt, we accept Bank Transfers, InstaPay, and Cash. For international clients, we facilitate payments mainly via Payoneer.",
         ar: "نوفر خيارات متنوعة لتسهيل المعاملات؛ للعملاء داخل مصر نقبل التحويلات البنكية، InstaPay، وفودافون كاش. أما للعملاء الدوليين، فنقبل التحويلات البنكية الدولية أو الدفع عبر روابط الدفع الإلكتروني باستخدام البطاقات الائتمانية.",
       },
     },
