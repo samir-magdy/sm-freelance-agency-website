@@ -150,7 +150,7 @@ export default function PortfolioShowcase({ lang }) {
             {/* Phone outer shell — gradient bezel + hardware buttons */}
             <div
               ref={phoneRef}
-              className="phone-outer w-[60%] h-105 sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-147 rounded-[48px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="phone-outer w-[60%] h-105 sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-146 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               {/* Left volume buttons */}
               <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -181,7 +181,8 @@ export default function PortfolioShowcase({ lang }) {
                           src={proj.screenshot}
                           alt={`${a11y.screenshotOf[lang]} ${projectData[proj.id].title[lang]}`}
                           className="w-full h-auto block"
-                          sizes="(max-width: 640px) 60vw, (max-width: 1024px) 290px, 320px"
+                          sizes="(max-width: 640px) 60vw, (max-width: 768px) 252px, (max-width: 1024px) 282px, 300px"
+                          priority={i === 0}
                         />
                       </div>
                     </div>
