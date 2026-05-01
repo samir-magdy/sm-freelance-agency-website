@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 export default function FontReadyWrapper({ children, className, ...props }) {
-  const [isReady, setIsReady] = useState(false);
+  const [isReady, setIsReady] = useState(true);
 
   useEffect(() => {
     // Only wait for Cairo to be available for hero-relevant characters
