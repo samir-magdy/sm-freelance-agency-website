@@ -5,16 +5,16 @@ const faqSection = {
     ar: "لديك استفسار؟ غالباً ستجد الإجابة هنا",
   },
   items: [
-    {
-      question: {
-        en: "Do I need a website for my business?",
-        ar: "هل يحتاج نشاطي التجاري فعلاً لموقع إلكتروني؟",
-      },
-      answer: {
-        en: "A professional website serves as the primary infrastructure for your digital identity. It establishes credibility, centralizes brand authority, and captures organic search traffic. In a digital-first economy, the absence of a dedicated website results in a loss of market share to competitors who maintain an accessible online presence.",
-        ar: "يعد الموقع الإلكتروني البنية التحتية الأساسية لهويتك الرقمية، حيث يعمل على ترسيخ المصداقية ومركزية سلطة العلامة التجارية واستقطاب الزيارات من محركات البحث. في ظل الاقتصاد الرقمي الحالي، يؤدي غياب الموقع الإلكتروني إلى فقدان حصة سوقية لصالح المنافسين الذين يمتلكون حضوراً متاحاً عبر الإنترنت.",
-      },
-    },
+    // {
+    //   question: {
+    //     en: "Do I need a website for my business?",
+    //     ar: "هل يحتاج نشاطي التجاري فعلاً لموقع إلكتروني؟",
+    //   },
+    //   answer: {
+    //     en: "A professional website serves as the primary infrastructure for your digital identity. It establishes credibility, centralizes brand authority, and captures organic search traffic. In a digital-first economy, the absence of a dedicated website results in a loss of market share to competitors who maintain an accessible online presence.",
+    //     ar: "يعد الموقع الإلكتروني البنية التحتية الأساسية لهويتك الرقمية، حيث يعمل على ترسيخ المصداقية ومركزية سلطة العلامة التجارية واستقطاب الزيارات من محركات البحث. في ظل الاقتصاد الرقمي الحالي، يؤدي غياب الموقع الإلكتروني إلى فقدان حصة سوقية لصالح المنافسين الذين يمتلكون حضوراً متاحاً عبر الإنترنت.",
+    //   },
+    // },
     {
       question: {
         en: "What is SEO and is it important for my business?",
@@ -115,16 +115,16 @@ const faqSection = {
         ar: "نوفر خيارات متنوعة لتسهيل المعاملات؛ للعملاء داخل مصر نقبل التحويلات البنكية، InstaPay، وفودافون كاش. أما للعملاء الدوليين، فنقبل التحويلات البنكية الدولية أو الدفع عبر روابط الدفع الإلكتروني باستخدام البطاقات الائتمانية.",
       },
     },
-    {
-      question: {
-        en: "Can you build my website in multiple languages (like English and Arabic)?",
-        ar: "هل ينفع الموقع يكون بأكثر من لغة؟ (عربي وإنجليزي مثلاً)",
-      },
-      answer: {
-        en: "Definitely. We specialize in developing high-performance multilingual websites. We ensure the design is fully responsive and optimized for both Right-to-Left (Arabic) and Left-to-Right (English/French) layouts, providing a seamless user experience for your global audience.",
-        ar: "بالتأكيد، نحن متخصصون في تطوير المواقع متعددة اللغات بأداء عالٍ. نضمن أن يكون التصميم متوافقاً تماماً مع اتجاهات الكتابة المختلفة (من اليمين لليسار للعربية، ومن اليسار لليمين للإنجليزية)، مما يوفر تجربة مستخدم سلسة لجمهورك المستهدف.",
-      },
-    },
+    // {
+    //   question: {
+    //     en: "Can you build my website in multiple languages (like English and Arabic)?",
+    //     ar: "هل ينفع الموقع يكون بأكثر من لغة؟ (عربي وإنجليزي مثلاً)",
+    //   },
+    //   answer: {
+    //     en: "Definitely. We specialize in developing high-performance multilingual websites. We ensure the design is fully responsive and optimized for both Right-to-Left (Arabic) and Left-to-Right (English/French) layouts, providing a seamless user experience for your global audience.",
+    //     ar: "بالتأكيد، نحن متخصصون في تطوير المواقع متعددة اللغات بأداء عالٍ. نضمن أن يكون التصميم متوافقاً تماماً مع اتجاهات الكتابة المختلفة (من اليمين لليسار للعربية، ومن اليسار لليمين للإنجليزية)، مما يوفر تجربة مستخدم سلسة لجمهورك المستهدف.",
+    //   },
+    // },
     {
       question: {
         en: "Are there any hidden or recurring fees after the website is finished?",
@@ -141,7 +141,7 @@ const faqSection = {
         ar: "هل بيكون فيه عقد يضمن حقي في تنفيذ المشروع؟",
       },
       answer: {
-        en: "Yes, professionalism is at our core. For every project, we provide a formal contract that outlines the scope of work, timelines, payment terms, and ownership rights. This ensures that your investment is protected and that both parties are aligned on the final deliverables.",
+        en: "Yes, for every project, we provide a formal contract that outlines the scope of work, timelines, payment terms, and ownership rights. This ensures that your investment is protected and that both parties are aligned on the final deliverables.",
         ar: "بكل تأكيد، الاحترافية هي أساس عملنا. لكل مشروع نقوم بإصدار عقد رسمي يوضح بدقة نطاق العمل، الجداول الزمنية، شروط الدفع، وحقوق الملكية. هذا يضمن حماية استثمارك ووضوح الرؤية للطرفين بخصوص المخرجات النهائية.",
       },
     },
