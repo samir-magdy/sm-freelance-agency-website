@@ -11,7 +11,7 @@ import { heroFontStyleEn, heroFontStyleAr } from "../fonts/heroFontInline";
 const fonts = Cairo({
   variable: "--font-cairo",
   subsets: ["latin", "arabic"],
-  display: "block",
+  display: "optional",
 });
 
 // ─────────────────────────────────────────────
