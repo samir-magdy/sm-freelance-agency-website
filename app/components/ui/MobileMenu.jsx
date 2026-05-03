@@ -9,7 +9,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
-  const isHome = pathname === `/${lang}` || pathname === `/${lang}/`;
+  const isHome = pathname === `/${lang}` || pathname === `/${lang}/` || pathname === "/";
 
   const closeMenu = () => {
     document.body.style.overflow = "";
@@ -26,9 +26,8 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
         const targetEl = document.getElementById(targetId);
         if (targetEl) {
           targetEl.scrollIntoView({ behavior: "smooth" });
-          window.history.pushState(null, "", `#${targetId}`);
         }
-      }, 100);
+      }, 200);
     } else {
       // Navigate home with fragment — browser will handle the scroll
       router.push(`/${lang}/#${targetId}`);
