@@ -57,11 +57,11 @@ section {
 }
 
 /* Targets Safari only */
-@supports (-webkit-hyphens:none) {
+/* @supports (-webkit-hyphens:none) {
   #portfolio-heading {
-    margin-block-end: 2.5rem;
+    margin-block-end: 1.5rem;
   }
-}
+} */
 
 @layer base {
   * {

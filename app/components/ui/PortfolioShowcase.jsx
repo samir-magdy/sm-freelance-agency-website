@@ -90,9 +90,9 @@ export default function PortfolioShowcase({ lang }) {
           className="portfolio-info-enter text-center lg:text-start lg:max-w-lg order-first lg:order-last mb-2.5 lg:mb-0 flex flex-col items-center lg:items-start gap-6"
         >
           {/* Genre badge — visible on both mobile + desktop */}
-          <span className="md:hidden uppercase inline-block py-1 px-3 rounded-lg bg-gold-dark/10 border border-white/10 text-content-heading/95 text-sm font-medium tracking-wide mb-2">
+          {/* <span className="md:hidden uppercase inline-block py-1 px-3 rounded-lg bg-gold-dark/10 border border-white/10 text-content-heading/95 text-sm font-medium tracking-wide mb-2">
             {isRtl ? project.genreAr : project.genre}
-          </span>
+          </span> */}
 
           {/* Project title — desktop only */}
           <h3 className="text-heading font-bold text-content-heading hidden lg:block">
@@ -132,7 +132,7 @@ export default function PortfolioShowcase({ lang }) {
 
             {/* Phone outer shell — gradient bezel + hardware buttons */}
             <div
-              className="phone-outer w-[53vw] h-103 sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-146 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="phone-outer w-[60vw] h-115 sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-146 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               {/* Left volume buttons */}
               <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
