@@ -292,11 +292,8 @@ export default async function LangLayout({ children, params }) {
 
   const heroNavStrings = {
     nav: {
-      // home: t.nav.home[lang],
-      // features: t.nav.features[lang],
       portfolio: t.nav.portfolio[lang],
       pricing: t.nav.pricing[lang],
-      process: t.nav.process[lang],
       FAQs: t.nav.FAQs[lang],
       contact: t.nav.contact[lang],
     },

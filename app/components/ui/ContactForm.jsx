@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import WhatsAppIcon from "./WhatsAppIcon";
-
+import translations from "@/app/data/translations";
 
 const ChevronDown = () => (
   <svg
@@ -20,8 +20,9 @@ const ChevronDown = () => (
   </svg>
 );
 
+export default function ContactForm({ lang }) {
+  const t = translations;
 
-export default function ContactForm({ lang, strings }) {
   const [formData, setFormData] = useState({
     name: "",
     contactMethod: "",
@@ -32,9 +33,6 @@ export default function ContactForm({ lang, strings }) {
   const [status, setStatus] = useState("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const statusTimerRef = useRef(null);
-
-
-
 
   useEffect(() => {
     return () => {
@@ -73,7 +71,9 @@ export default function ContactForm({ lang, strings }) {
     } catch (error) {
       const code = error instanceof Error ? error.message : "server_error";
       const errorMsg =
-        code === "rate_limit" ? strings.errorRateLimit : strings.errorGeneric;
+        code === "rate_limit"
+          ? t.form.errorRateLimit[lang]
+          : t.form.errorGeneric[lang];
       setStatus("error");
       setErrorMessage(errorMsg);
       statusTimerRef.current = setTimeout(() => {
@@ -94,16 +94,16 @@ export default function ContactForm({ lang, strings }) {
     <form
       className="text-start relative"
       onSubmit={handleSubmit}
-      aria-label={strings.contactFormA11y}
+      aria-label={t.a11y.contactForm[lang]}
     >
       <fieldset className="border-none p-0 m-0">
-        <legend className="sr-only">{strings.legend}</legend>
+        <legend className="sr-only">{t.form.legend[lang]}</legend>
 
         <div className="grid grid-cols-2 gap-4 md:gap-x-3">
           {/* Name */}
           <div className="col-span-1">
             <label htmlFor="name" className={labelClass}>
-              {strings.name}
+              {t.form.name[lang]}
               <span className="text-warning opacity-90" aria-label="required">
                 *
               </span>
@@ -112,7 +112,7 @@ export default function ContactForm({ lang, strings }) {
               type="text"
               id="name"
               required
-              placeholder={strings.namePlaceholder}
+              placeholder={t.form.namePlaceholder[lang]}
               className="placeholder:text-content-muted text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-strong outline-none"
               value={formData.name}
               onChange={(e) =>
@@ -124,7 +124,7 @@ export default function ContactForm({ lang, strings }) {
           {/* Contact method dropdown */}
           <div>
             <label htmlFor="contactMethod" className={labelClass}>
-              {strings.contactMethod}{" "}
+              {t.form.contactMethod[lang]}{" "}
               <span className="text-warning opacity-90" aria-label="required">
                 *
               </span>
@@ -140,16 +140,14 @@ export default function ContactForm({ lang, strings }) {
                   setFormData((prev) => ({
                     ...prev,
                     contactMethod: value,
-                    ...(value === "email"
-                      ? { phone: "" }
-                      : { email: "" }),
+                    ...(value === "email" ? { phone: "" } : { email: "" }),
                   }));
                 }}
               >
-                <option value="">{strings.contactMethodPlaceholder}</option>
-                <option value="whatsapp">{strings.whatsapp}</option>
-                <option value="phone-call">{strings.phoneCall}</option>
-                <option value="email">{strings.email}</option>
+                <option value="">{t.form.contactMethodPlaceholder[lang]}</option>
+                <option value="whatsapp">{t.form.whatsapp[lang]}</option>
+                <option value="phone-call">{t.form.phoneCall[lang]}</option>
+                <option value="email">{t.form.email[lang]}</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 end-4 flex items-center text-content-muted">
                 <ChevronDown />
@@ -157,14 +155,12 @@ export default function ContactForm({ lang, strings }) {
             </div>
           </div>
 
-          {/* Consolidated Phone Number Field - Instant Toggle */}
+          {/* Phone — shown for whatsapp / phone-call */}
           {(formData.contactMethod === "whatsapp" ||
             formData.contactMethod === "phone-call") && (
-            <div
-              className="col-span-2"
-            >
+            <div className="col-span-2">
               <label htmlFor="phone" className={labelClass}>
-                {strings.phone}{" "}
+                {t.form.phone[lang]}{" "}
                 <span className="text-warning opacity-90" aria-label="required">
                   *
                 </span>
@@ -174,10 +170,12 @@ export default function ContactForm({ lang, strings }) {
                 id="phone"
                 dir="ltr"
                 required
-                placeholder={strings.phonePlaceholder}
+                placeholder={t.form.phonePlaceholder[lang]}
                 pattern="^01[0125]\d{8}$"
                 title="Egyptian mobile number"
-                className={`placeholder:text-content-muted text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-strong outline-none ${lang === "ar" ? "text-right" : "text-left"}`}
+                className={`placeholder:text-content-muted text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-strong outline-none ${
+                  lang === "ar" ? "text-right" : "text-left"
+                }`}
                 value={formData.phone}
                 onChange={(e) =>
                   setFormData((prev) => ({ ...prev, phone: e.target.value }))
@@ -186,13 +184,11 @@ export default function ContactForm({ lang, strings }) {
             </div>
           )}
 
-  
-
-          {/* Email - Instant Toggle */}
+          {/* Email — shown for email method */}
           {formData.contactMethod === "email" && (
             <div className="col-span-2">
               <label htmlFor="email" className={labelClass}>
-                {strings.emailAddress}{" "}
+                {t.form.emailAddress[lang]}{" "}
                 <span className="text-warning opacity-90" aria-label="required">
                   *
                 </span>
@@ -201,7 +197,7 @@ export default function ContactForm({ lang, strings }) {
                 type="email"
                 id="email"
                 required
-                placeholder={strings.emailPlaceholder}
+                placeholder={t.form.emailPlaceholder[lang]}
                 className="placeholder:text-content-muted text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-strong outline-none"
                 value={formData.email}
                 onChange={(e) =>
@@ -214,15 +210,15 @@ export default function ContactForm({ lang, strings }) {
           {/* Optional message */}
           <div className="col-span-2">
             <label htmlFor="message" className={labelClass}>
-              {strings.message}{" "}
+              {t.form.message[lang]}{" "}
               <span className="text-content-muted font-normal">
-                ({strings.messageOptional})
+                ({t.form.messageOptional[lang]})
               </span>
             </label>
             <textarea
               id="message"
               rows={2}
-              placeholder={strings.messagePlaceholder}
+              placeholder={t.form.messagePlaceholder[lang]}
               className="resize-none placeholder:text-content-muted text-base w-full px-4 py-3 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-strong outline-none"
               value={formData.message}
               onChange={(e) =>
@@ -250,23 +246,27 @@ export default function ContactForm({ lang, strings }) {
           className="btn-label"
         >
           {status === "loading" ? (
-            strings.sending
+            t.form.sending[lang]
           ) : status === "success" ? (
             <span className="flex items-center justify-center gap-1">
-              {strings.success}
+              {t.form.success[lang]}
             </span>
           ) : status === "error" ? (
             errorMessage
           ) : (
-            strings.submit
+            t.form.submit[lang]
           )}
         </span>
       </button>
+
       <div className="flex items-center gap-3 mt-4">
         <span className="flex-1 h-px bg-border-subtle" />
-        <span className="text-content-muted text-caption font-medium">{strings.orWhatsapp}</span>
+        <span className="text-content-muted text-caption font-medium">
+          {t.form.orWhatsapp[lang]}
+        </span>
         <span className="flex-1 h-px bg-border-subtle" />
       </div>
+
       <a
         href="https://wa.me/201274613331"
         target="_blank"
@@ -274,7 +274,7 @@ export default function ContactForm({ lang, strings }) {
         className="mt-3.5 w-full border border-green-500/40 bg-green-500/10 hover:bg-green-500/20 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-lg font-bold text-base"
       >
         <WhatsAppIcon className="size-5" fill="currentColor" />
-        {strings.chatInstead}
+        {t.form.chatInstead[lang]}
       </a>
     </form>
   );

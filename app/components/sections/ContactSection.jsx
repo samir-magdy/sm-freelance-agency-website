@@ -7,31 +7,7 @@ export default function ContactSection({ lang }) {
   const t = translations;
   const isRtl = lang === "ar";
 
-  const formStrings = {
-    legend: t.form.legend[lang],
-    name: t.form.name[lang],
-    namePlaceholder: t.form.namePlaceholder[lang],
-    phone: t.form.phone[lang],
-    phonePlaceholder: t.form.phonePlaceholder[lang],
-    contactMethod: t.form.contactMethod[lang],
-    contactMethodPlaceholder: t.form.contactMethodPlaceholder[lang],
-    whatsapp: t.form.whatsapp[lang],
-    phoneCall: t.form.phoneCall[lang],
-    email: t.form.email[lang],
-    emailAddress: t.form.emailAddress[lang],
-    emailPlaceholder: t.form.emailPlaceholder[lang],
-    message: t.form.message[lang],
-    messageOptional: t.form.messageOptional[lang],
-    messagePlaceholder: t.form.messagePlaceholder[lang],
-    submit: t.form.submit[lang],
-    sending: t.form.sending[lang],
-    success: t.form.success[lang],
-    errorRateLimit: t.form.errorRateLimit[lang],
-    errorGeneric: t.form.errorGeneric[lang],
-    contactFormA11y: t.a11y.contactForm[lang],
-    orWhatsapp: t.form.orWhatsapp[lang],
-    chatInstead: t.form.chatInstead[lang],
-  };
+
 
   return (
     <section
@@ -52,7 +28,7 @@ export default function ContactSection({ lang }) {
             {t.contactSection.subheading[lang]}
           </p>
         </div>
-        <ContactForm lang={lang} strings={formStrings} />
+        <ContactForm lang={lang}  />
       </div>
     </section>
   );

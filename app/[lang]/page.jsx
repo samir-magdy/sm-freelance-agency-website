@@ -1,8 +1,6 @@
 import HeroSection from "../components/sections/HeroSection";
 import PortfolioShowcase from "../components/ui/PortfolioShowcase";
 import PricingSection from "../components/sections/PricingSection";
-// import Features from "../components/sections/Features";
-import WorkflowSection from "../components/sections/WorkflowSection";
 import FAQSection from "../components/sections/FAQSection";
 import ContactSection from "../components/sections/ContactSection";
 import { notFound } from "next/navigation";
@@ -18,8 +16,7 @@ export default async function Page({ params }) {
       <HeroSection lang={lang} />
       <PortfolioShowcase lang={lang} />
       <PricingSection lang={lang} />
-      <WorkflowSection lang={lang} />
-      <FAQSection lang={lang} />
+<FAQSection lang={lang} />
       <ContactSection lang={lang} />
       <script
         type="application/ld+json"

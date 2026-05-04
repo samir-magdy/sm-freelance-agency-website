@@ -5,36 +5,6 @@ const faqSection = {
     ar: "لديك استفسار؟ غالباً ستجد الإجابة هنا",
   },
   items: [
-    // {
-    //   question: {
-    //     en: "Do I need a website for my business?",
-    //     ar: "هل يحتاج نشاطي التجاري فعلاً لموقع إلكتروني؟",
-    //   },
-    //   answer: {
-    //     en: "A professional website serves as the primary infrastructure for your digital identity. It establishes credibility, centralizes brand authority, and captures organic search traffic. In a digital-first economy, the absence of a dedicated website results in a loss of market share to competitors who maintain an accessible online presence.",
-    //     ar: "يعد الموقع الإلكتروني البنية التحتية الأساسية لهويتك الرقمية، حيث يعمل على ترسيخ المصداقية ومركزية سلطة العلامة التجارية واستقطاب الزيارات من محركات البحث. في ظل الاقتصاد الرقمي الحالي، يؤدي غياب الموقع الإلكتروني إلى فقدان حصة سوقية لصالح المنافسين الذين يمتلكون حضوراً متاحاً عبر الإنترنت.",
-    //   },
-    // },
-    {
-      question: {
-        en: "What is SEO and is it important for my business?",
-        ar: "يعني إيه SEO وليه هو مهم لنشاطي التجاري؟",
-      },
-      answer: {
-        en: "SEO (Search Engine Optimization) is the technical and strategic process of improving a website's visibility within search engine results pages. By optimizing technical structure and content relevance, SEO ensures your business is discoverable by users actively searching for your specific services, thereby reducing long-term customer acquisition costs.",
-        ar: "تحسين محركات البحث (SEO) هى عملية تقنية واستراتيجية تهدف لزيادة ظهور الموقع الإلكتروني في صفحات نتائج البحث. من خلال تحسين الهيكل التقني وملائمة المحتوى، يضمن الـ SEO إمكانية وصول المستخدمين الذين يبحثون عن خدماتك إليك.",
-      },
-    },
-    {
-      question: {
-        en: "What is the difference between SEO and paid advertising?",
-        ar: "إيه الفرق بين الـ SEO والإعلانات الممولة؟",
-      },
-      answer: {
-        en: "SEO focuses on building organic equity and sustainable traffic through long-term optimization. Paid advertising, such as Google Ads (PPC), provides immediate visibility through financial bidding on keywords. While paid ads generate instant results that cease once the budget is exhausted, SEO builds a lasting digital asset that continues to drive traffic without per-click costs.",
-        ar: "يركز الـ SEO على بناء قيمة طبيعية وزيارات مستدامة من خلال التحسين طويل الأمد. أما الإعلانات الممولة (مثل إعلانات جوجل وفيسبوك)، فتوفر ظهوراً فورياً عبر المزايدة المالية على الكلمات المفتاحية. وبينما تحقق الإعلانات نتائج لحظية تتوقف بانتهاء الميزانية، يبني الـ SEO أصلاً رقمياً دائماً يستمر في جلب الزيارات دون تكاليف مقابل كل نقرة.",
-      },
-    },
     {
       question: {
         en: "Will I be able to update my website content personally?",
@@ -87,16 +57,6 @@ const faqSection = {
     },
     {
       question: {
-        en: "Do you work with clients outside of Egypt?",
-        ar: "إنتو شغالين في مصر بس ولا ممكن أتعامل معاكم من برا مصر؟",
-      },
-      answer: {
-        en: "Yes, we operate globally. We have successfully delivered projects for clients across the Middle East, Europe, and North America. All communication, meetings, and project management are handled seamlessly through digital tools to ensure professional delivery regardless of your location.",
-        ar: "نعم، نحن نقدم خدماتنا للعملاء على مستوى العالم. لقد قمنا بتنفيذ مشاريع ناجحة لعملاء في الشرق الأوسط، أوروبا، وأمريكا الشمالية. يتم إدارة التواصل والاجتماعات وخطوات العمل بالكامل عبر الوسائل الرقمية لضمان احترافية التنفيذ أياً كان موقعك الجغرافي.",
-      },
-    },
-    {
-      question: {
         en: "What is the payment process? Do I pay everything upfront?",
         ar: "نظام الدفع إيه؟ لازم أدفع المبلغ كله مرة واحدة في الأول؟",
       },
@@ -115,16 +75,6 @@ const faqSection = {
         ar: "نوفر خيارات متنوعة لتسهيل المعاملات؛ للعملاء داخل مصر نقبل التحويلات البنكية، InstaPay، وفودافون كاش. أما للعملاء الدوليين، فنقبل التحويلات البنكية الدولية أو الدفع عبر روابط الدفع الإلكتروني باستخدام البطاقات الائتمانية.",
       },
     },
-    // {
-    //   question: {
-    //     en: "Can you build my website in multiple languages (like English and Arabic)?",
-    //     ar: "هل ينفع الموقع يكون بأكثر من لغة؟ (عربي وإنجليزي مثلاً)",
-    //   },
-    //   answer: {
-    //     en: "Definitely. We specialize in developing high-performance multilingual websites. We ensure the design is fully responsive and optimized for both Right-to-Left (Arabic) and Left-to-Right (English/French) layouts, providing a seamless user experience for your global audience.",
-    //     ar: "بالتأكيد، نحن متخصصون في تطوير المواقع متعددة اللغات بأداء عالٍ. نضمن أن يكون التصميم متوافقاً تماماً مع اتجاهات الكتابة المختلفة (من اليمين لليسار للعربية، ومن اليسار لليمين للإنجليزية)، مما يوفر تجربة مستخدم سلسة لجمهورك المستهدف.",
-    //   },
-    // },
     {
       question: {
         en: "Are there any hidden or recurring fees after the website is finished?",

@@ -14,9 +14,9 @@ export default function FAQSection({ lang }) {
           >
             {t.heading[lang]}
           </h2>
-          <p className="text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
+          {/* <p className="text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
           {t.subheading[lang]}
-        </p>
+        </p> */}
         </div>
           <article className="w-full">
           {t.items.map((item, i) => (

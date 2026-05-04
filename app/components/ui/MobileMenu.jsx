@@ -5,11 +5,15 @@ import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import LanguageToggle from "./LanguageToggle";
 
+// does this line also import the nav translation object? and how does it work in the map below.
+import { navLinks } from "@/app/data/translations/nav";
+
 export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
-  const isHome = pathname === `/${lang}` || pathname === `/${lang}/` || pathname === "/";
+  const isHome =
+    pathname === `/${lang}` || pathname === `/${lang}/` || pathname === "/";
 
   const closeMenu = () => {
     document.body.style.overflow = "";
@@ -55,15 +59,15 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
       >
         <div className="flex justify-between items-center px-3">
           <a
-            href={`/${lang}`}
+            href="#home"
             aria-label="Samir Magdy Web Studio - Home"
             onClick={closeMenu}
           >
             <Image
               src="/brand.svg"
               alt="SM Web Studio – Website Design Company in Egypt"
-              width={60}
-              height={60}
+              width={75}
+              height={75}
               loading="eager"
             />
           </a>
@@ -78,9 +82,15 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             aria-controls="mobile-menu"
           >
             <span className="w-8 flex flex-col gap-1.5">
-              <span className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
-              <span className={`block h-0.5 bg-content-heading transition-all duration-500 ${isMenuOpen ? "opacity-0 scale-0" : ""}`} />
-              <span className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+              <span
+                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}
+              />
+              <span
+                className={`block h-0.5 bg-content-heading transition-all duration-500 ${isMenuOpen ? "opacity-0 scale-0" : ""}`}
+              />
+              <span
+                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+              />
             </span>
           </button>
         </div>
@@ -90,7 +100,9 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
         onClick={closeMenu}
         inert={!isMenuOpen}
         className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-250 ease-out ${
-          isMenuOpen ? "opacity-100 backdrop-blur-3xl pointer-events-auto" : "opacity-0 backdrop-blur-none pointer-events-none"
+          isMenuOpen
+            ? "opacity-100 backdrop-blur-3xl pointer-events-auto"
+            : "opacity-0 backdrop-blur-none pointer-events-none"
         }`}
       />
 
@@ -98,14 +110,16 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
         onClick={closeMenu}
         inert={!isMenuOpen}
         className={`fixed inset-0 z-40 flex flex-col items-center justify-center transition-[opacity,visibility] duration-250ms ease-out ${
-          isMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"
+          isMenuOpen
+            ? "opacity-100 visible pointer-events-auto"
+            : "opacity-0 invisible pointer-events-none"
         }`}
       >
         <ul
           className="flex flex-col items-center gap-8"
           onClick={(e) => e.stopPropagation()}
         >
-          {["portfolio", "pricing", "process", "FAQs", "contact"].map((item) => (
+          {navLinks.map((item) => (
             <li key={item}>
               <a
                 href={isHome ? `#${item}` : `/${lang}/#${item}`}
@@ -114,11 +128,11 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               >
                 {nav[item]}
               </a>
-        </li>
+            </li>
           ))}
         </ul>
         <div
-          className="flex flex-col absolute bottom-16 items-center gap-8"
+          className="flex flex-col absolute bottom-24 items-center gap-8"
           onClick={(e) => e.stopPropagation()}
         >
           <LanguageToggle lang={lang} label={langToggleLabel} />

@@ -1,7 +1,6 @@
 import nav from "./nav";
 import hero from "./hero";
 import { projectsSection, projectData } from "./projects";
-import workflowSection from "./workflow";
 import pricingSection from "./pricing";
 import faqSection from "./faq";
 import contactSection from "./contact";
@@ -11,15 +10,12 @@ import langToggle from "./lang-toggle";
 import privacy from "./privacy";
 import terms from "./terms";
 
-// import featuresSection from "./features";
-
 const translations = {
   nav,
   hero,
   projectsSection,
   projectData,
   pricingSection,
-  workflowSection,
   faqSection,
   contactSection,
   form,
@@ -27,7 +23,6 @@ const translations = {
   langToggle,
   privacy,
   terms
-  // featuresSection,
 };
 
 export default translations;
