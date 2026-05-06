@@ -6,10 +6,75 @@ import { ArrowRight } from "lucide-react";
 import { projects } from "@/app/data/projects";
 import { projectsSection, projectData } from "@/app/data/translations/projects";
 import a11y from "@/app/data/translations/a11y";
-import { StatusBar } from "@/app/components/ui/iphone/StatusBar";
-import { DynamicIsland } from "@/app/components/ui/iphone/DynamicIsland";
 import { HomeIndicator } from "@/app/components/ui/iphone/HomeIndicator";
 import { NavArrow } from "@/app/components/ui/navigation/NavArrow";
+
+/* ─────────────────────────────────────
+   Phone chrome sub-components
+   ───────────────────────────────────── */
+
+function DynamicIsland() {
+  return (
+    <div
+      aria-hidden
+      className="absolute top-[4px] sm:top-[5px] left-1/2 -translate-x-1/2 z-20
+                 w-[34%] h-[24px] sm:h-[25px] rounded-full bg-black
+                 flex items-center justify-end pr-[7px] sm:pr-[9px]"
+      style={{ boxShadow: "inset 0 0 0 0.75px rgba(255,255,255,0.07)" }}
+    >
+      <div
+        className="w-[14px] h-[14px] sm:w-[16px] sm:h-[16px] rounded-full shrink-0
+                   flex items-center justify-center"
+        style={{
+          background: "radial-gradient(circle at 38% 38%, #1c1c22, #080808)",
+          boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.04)",
+        }}
+      >
+        <div
+          className="w-[8px] h-[8px] sm:w-[9px] sm:h-[9px] rounded-full"
+          style={{
+            background: "radial-gradient(circle at 33% 33%, #20215a, #0a0b1e)",
+            boxShadow: "0 0 5px 2px rgba(50,70,210,0.22)",
+          }}
+        />
+      </div>
+    </div>
+  );
+}
+
+function StatusBar() {
+  return (
+    <div
+      dir="ltr"
+      aria-hidden
+      className="flex justify-between items-center h-full ps-4 sm:ps-6 pe-2 sm:px-5
+                 text-[11px] sm:text-xs font-semibold tracking-[0.3px] text-white"
+      style={{ fontFamily: "-apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif" }}
+    >
+      <span className="inline-block mt-0.5">9:41</span>
+      <div className="flex-1" />
+      <div className="flex gap-[2.5px] sm:gap-1.5 sm:items-center">
+        <svg width="15" height="10" viewBox="0 0 16 12" fill="none" aria-hidden>
+          <rect x="0"    y="8" width="3"   height="4"  rx="0.5" fill="white" />
+          <rect x="4.5"  y="5" width="3"   height="7"  rx="0.5" fill="white" />
+          <rect x="9"    y="2" width="3"   height="10" rx="0.5" fill="white" />
+          <rect x="13.5" y="0" width="2.5" height="12" rx="0.5" fill="white" opacity={0.35} />
+        </svg>
+        <svg width="13" height="10" viewBox="0 0 14 11" fill="none" aria-hidden>
+          <path d="M7 9.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z" fill="white" />
+          <path d="M4.17 8.17a4 4 0 015.66 0"            stroke="white" strokeWidth="1.3" strokeLinecap="round" />
+          <path d="M2.05 6.05a7 7 0 019.9 0"             stroke="white" strokeWidth="1.3" strokeLinecap="round" />
+          <path d="M0.34 3.34a10.05 10.05 0 0113.32 0"   stroke="white" strokeWidth="1.3" strokeLinecap="round" opacity={0.35} />
+        </svg>
+        <svg width="20" height="11" viewBox="0 0 26 12" fill="none" aria-hidden>
+          <rect x="0.5" y="0.5" width="22" height="11" rx="2.5" stroke="white" strokeWidth="1" opacity={0.4} />
+          <rect x="2"   y="2"   width="16" height="8"  rx="1.5" fill="white" />
+          <path d="M24 4.5v3a1.5 1.5 0 000-3z" fill="white" opacity={0.4} />
+        </svg>
+      </div>
+    </div>
+  );
+}
 
 /* ─────────────────────────────────────
    Main Component
@@ -19,6 +84,7 @@ export default function PortfolioShowcase({ lang }) {
   const [active, setActive] = useState(0);
   const snapRef = useRef(null);
   const sectionRef = useRef(null);
+  const animFrameRef = useRef(null);
 
   /* Sync scroll position → active state */
   useEffect(() => {
@@ -41,11 +107,48 @@ export default function PortfolioShowcase({ lang }) {
     return () => el.removeEventListener("scroll", onScroll);
   }, []);
 
-  /* Programmatic scroll */
+  useEffect(() => {
+    return () => { if (animFrameRef.current !== null) cancelAnimationFrame(animFrameRef.current); };
+  }, []);
+
+  /* Programmatic scroll with rAF easing */
   const scrollToProject = useCallback((idx) => {
     const el = snapRef.current;
     if (!el || idx < 0 || idx >= projects.length) return;
-    el.scrollTo({ left: idx * el.clientWidth });
+
+    if (animFrameRef.current !== null) {
+      cancelAnimationFrame(animFrameRef.current);
+      animFrameRef.current = null;
+    }
+
+    const start = el.scrollLeft;
+    const target = idx * el.clientWidth;
+    const delta = target - start;
+    if (delta === 0) return;
+
+    const duration = 300;
+    let startTime = null;
+
+    const easeInOutCubic = (t) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    el.style.scrollSnapType = "none";
+
+    const step = (now) => {
+      if (startTime === null) startTime = now;
+      const progress = Math.min((now - startTime) / duration, 1);
+      el.scrollLeft = start + delta * easeInOutCubic(progress);
+
+      if (progress < 1) {
+        animFrameRef.current = requestAnimationFrame(step);
+      } else {
+        el.scrollLeft = target;
+        el.style.scrollSnapType = "";
+        animFrameRef.current = null;
+      }
+    };
+
+    animFrameRef.current = requestAnimationFrame(step);
   }, []);
 
   const project = projects[active];
@@ -87,7 +190,7 @@ export default function PortfolioShowcase({ lang }) {
             gap-8 controls uniform vertical spacing between all children */}
         <div
           key={`info-${project.id}`}
-          className="portfolio-info-enter text-center lg:text-start lg:max-w-lg order-first lg:order-last mb-2.5 lg:mb-0 flex flex-col items-center lg:items-start gap-6"
+          className="text-center lg:text-start lg:max-w-lg order-first lg:order-last mb-2.5 lg:mb-0 flex flex-col items-center lg:items-start gap-6"
         >
           {/* Genre badge — visible on both mobile + desktop */}
           {/* <span className="md:hidden uppercase inline-block py-1 px-3 rounded-lg bg-gold-dark/10 border border-white/10 text-content-heading/95 text-sm font-medium tracking-wide mb-2">
@@ -95,13 +198,13 @@ export default function PortfolioShowcase({ lang }) {
           </span> */}
 
           {/* Project title — desktop only */}
-          <h3 className="text-heading font-bold text-content-heading hidden lg:block">
+          <h3 className="portfolio-info-enter text-heading font-bold text-content-heading hidden lg:block">
             {pd.title[lang]}
             <span className="sr-only">Website | موقع إلكتروني</span>
           </h3>
 
           {/* Project description — desktop only */}
-          <p className="text-content-body text-subheading leading-relaxed hidden lg:block mb-4">
+          <p className="portfolio-info-enter text-content-body text-subheading leading-relaxed hidden lg:block mb-4">
             {pd.description[lang]}
           </p>
 
@@ -141,16 +244,16 @@ export default function PortfolioShowcase({ lang }) {
               <div className="absolute -right-0.75 top-35 w-0.75 h-15 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-r-xs" />
 
               {/* Phone screen area */}
-              <div className="w-full h-full rounded-[43px] overflow-hidden relative bg-black">
-                <DynamicIsland />
-                <div className="absolute top-2 inset-x-0 z-15">
+              <div className="w-full h-full rounded-[43px] overflow-hidden relative bg-[#0e0e0e]">
+                <div className="absolute top-0 inset-x-0 z-15 h-8 sm:h-9 px-2.5 sm:px-1">
+                  <DynamicIsland />
                   <StatusBar />
                 </div>
 
                 {/* Horizontal snap-scroll carousel of project screenshots */}
                 <div
                   ref={snapRef}
-                  className="portfolio-snap flex overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] mt-5 w-full h-full bg-black"
+                  className="portfolio-snap flex overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] mt-8 sm:mt-9 w-full h-full bg-black"
                   dir="ltr"
                 >
                   {projects.map((proj, i) => (

@@ -16,7 +16,7 @@ export default async function Page({ params }) {
       <HeroSection lang={lang} />
       <PortfolioShowcase lang={lang} />
       <PricingSection lang={lang} />
-<FAQSection lang={lang} />
+      <FAQSection lang={lang} />
       <ContactSection lang={lang} />
       <script
         type="application/ld+json"

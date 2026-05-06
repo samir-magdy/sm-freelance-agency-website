@@ -1,0 +1,230 @@
+import IPhoneMockup from "./components/interactive-phone/IPhoneMockup";
+import MacMockup from "./components/Macmockup/MacMockup";
+import { Timeline } from "./components/timeline/Timeline";
+import type { ReactNode } from "react";
+
+const slides = [
+  { image: "/project-screenshots/sellable-blocks/github-img-mobile.webp", alt: "An interactive, scrollable iPhone frame mockup of github's website on mobile" },
+  { image: "/project-screenshots/sellable-blocks/apple-img-mobile.webp", alt: "An interactive, scrollable iPhone mockup of apple's website on mobile" },
+  { image: "/project-screenshots/sellable-blocks/linear-img-mobile.webp", alt: "An interactive, scrollable iPhone mockup of linear's website on mobile" },
+];
+
+const desktopSlides = [
+  { image: "/project-screenshots/sellable-blocks/github-img-desktop.webp", alt: "An interactive, scrollable Mac OS browser mockup of github's website on desktop" },
+  { image: "/project-screenshots/sellable-blocks/apple-img-desktop.webp", alt: "An interactive, scrollable Mac OS browser mockup of apples's website on desktop" },
+  { image: "/project-screenshots/sellable-blocks/linear-img-desktop.webp", alt: "An interactive, scrollable Mac OS browser mockup of linears's website on desktop" },
+];
+
+const steps = [
+  {
+    title: "Discovery",
+    content: (
+      <div className="rounded-xl md:border md:border-white/10 md:bg-white/5 md:p-6">
+        <p className="text-zinc-300/90 text-xl leading-relaxed">
+          We dig into your goals, your users, and your constraints. Every
+          decision from here is grounded in research, not guesswork.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "Design",
+    content: (
+      <div className="rounded-xl md:border md:border-white/10 md:bg-white/5 md:p-6">
+        <p className="text-zinc-300/90 text-xl leading-relaxed">
+          Wireframes first, pixels second. We move fast in low-fidelity so
+          there's room to challenge assumptions before anything is built.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "Development",
+    content: (
+      <div className="rounded-xl md:border md:border-white/10 md:bg-white/5 md:p-6">
+        <p className="text-zinc-300/90 text-xl leading-relaxed">
+          Clean, performant code. No bloated libraries, no shortcuts that
+          haunt you later.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "Testing",
+    content: (
+      <div className="rounded-xl md:border md:border-white/10 md:bg-white/5 md:p-6">
+        <p className="text-zinc-300/90 text-xl leading-relaxed">
+          Cross-browser checks, responsive testing, and edge cases caught
+          before they become your problem.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "Launch",
+    content: (
+      <div className="rounded-xl md:border md:border-white/10 md:bg-white/5 md:p-6">
+        <p className="text-zinc-300/90 text-xl leading-relaxed">
+          We handle deployment and handover. You get a product that works —
+          and a team that stays reachable after.
+        </p>
+      </div>
+    ),
+  },
+];
+
+const TECH_STACK = ["React", "Next.js", "TypeScript", "TailwindCSS"];
+
+function TechBadge({ label }: { label: string }) {
+  return (
+    <span className="inline-flex items-center px-3 md:px-8 py-2 md:py-3 rounded-md text-xs md:text-base font-medium bg-white/[0.04] border border-white/[0.08] text-zinc-400 tracking-wide">
+      {label}
+    </span>
+  );
+}
+
+function UsageBlock({ code }: { code: string }) {
+  return (
+    <div className="mt-12 md:mt-16 max-w-3xl mx-auto">
+      <p className="mb-4 sm:text-xl text-zinc-400 font-semibold">Usage:</p>
+      <pre className="text-left rounded-xl bg-white/[0.03] border border-white/[0.08] px-5 py-4 text-xs sm:text-base text-zinc-400 font-mono overflow-x-auto leading-relaxed">
+        <code>{code}</code>
+      </pre>
+    </div>
+  );
+}
+
+function ComponentSection({
+  id,
+  title,
+  tagline,
+  usage,
+  children,
+}: {
+  id: string;
+  title: string;
+  tagline: string;
+  usage: string;
+  children: ReactNode;
+}) {
+  return (
+    <section
+      id={id}
+      className="border-t border-white/[0.06] py-12 sm:py-20 px-5 scroll-mt-12!"
+    >
+      <div className="text-center max-w-2xl mx-auto mb-12">
+        <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight mb-4">
+          {title}
+        </h2>
+        <p className="text-zinc-400 sm:text-2xl mb-8">{tagline}</p>
+        {/* <p className="text-zinc-500 mt-4 leading-relaxed">
+            {description}
+          </p> */}
+      </div>
+      <div className="w-full flex justify-center">{children}</div>
+      <UsageBlock code={usage} />
+    </section>
+  );
+}
+
+export default function Home() {
+  return (
+    <div className="min-h-screen">
+      {/* Header */}
+      <header className="sticky top-0 z-50 border-b border-white/[0.06]  backdrop-blur-md">
+        <div className="max-w-6xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
+          <a href="#home">
+          <img
+            className="md:h-16 md:w-16"
+            src="/brand.svg"
+            alt="SM Web Studio Logo"
+          />
+          </a>
+
+          <nav className="hidden sm:flex items-center gap-8">
+            <a
+              href="#ios-mockup"
+              className="text-zinc-400 hover:text-zinc-200 transition-colors duration-200"
+            >
+              iOS Mockup
+            </a>
+            <a
+              href="#browser-mockup"
+              className="text-zinc-400 hover:text-zinc-200 transition-colors duration-200"
+            >
+              Browser Mockup
+            </a>
+            <a
+              href="#scroll-timeline"
+              className="text-zinc-400 hover:text-zinc-200 transition-colors duration-200"
+            >
+              Scroll Timeline
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section id="home" className="pt-12 pb-14 md:pt-16 md:pb-20 px-2 text-center">
+        <div className="max-w-2xl mx-auto px-6">
+          <h1 className="text-[2.4rem] sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1]">
+            Production-ready
+            <br />
+            React components.
+          </h1>
+          <p className="text-zinc-400 mt-6 text-[1.1rem] sm:text-[1.4rem] leading-relaxed max-w-xl mx-auto mb-8">
+            Save hours building complex layouts with production-ready,
+            interactive UI blocks. Fully responsive & customizable. Zero extra
+            dependencies. Drop the file in, import the component, add your data.
+            That's it!
+          </p>
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+            {TECH_STACK.map((t) => (
+              <TechBadge key={t} label={t} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* iOS Mockup */}
+      <ComponentSection
+        id="ios-mockup"
+        title="iOS Mockup"
+        tagline="An IPhone shell for mobile UI previews."
+        usage={`import IPhoneMockup from "@/components/IPhoneMockup";\n\n<IPhoneMockup\n  slides={[\n    { image: "/image-1.png", alt: "Preview" },\n    { image: "/image-2.png", alt: "Preview" }\n  ]}\n  paginationDotColor="white"\n/>`}
+      >
+        <IPhoneMockup slides={slides} />
+      </ComponentSection>
+
+      {/* Browser Mockup */}
+      <ComponentSection
+        id="browser-mockup"
+        title="Browser Mockup"
+        tagline="A macOS-style browser frame for desktop UI."
+        usage={`import MacMockup from "@/components/MacMockup";\n\n<MacMockup\n  slides={[\n    { image: "/desktop.png", alt: "Dashboard", url: "https://example.com" }\n  ]}\n  paginationDotColor="white"\n/>`}
+      >
+        <MacMockup slides={desktopSlides} />
+      </ComponentSection>
+
+      {/* Scroll Timeline */}
+      <ComponentSection
+        id="scroll-timeline"
+        title="Scroll Timeline"
+        tagline="An animated timeline perfect for workflow sections."
+        usage={`import { Timeline } from "@/components/Timeline";\n\n<Timeline\n  data={[\n    {\n      title: "Step One",\n      content: <div>Your content here</div>\n    }\n  ]}\n/>`}
+      >
+        <Timeline data={steps} />
+      </ComponentSection>
+
+      {/* Footer */}
+      <footer className="flex flex-col gap-4 border-t border-white/[0.06] py-6 sm:py-8 px-6 text-center">
+        <p className="text-zinc-500 text-xs sm:text-base font-mono">
+          Built with React · Next.js · TailwindCSS
+        </p>
+        <small className="text-zinc-600 text-xs sm:text-base font-mono">
+          &copy; SM Web Studio | By Samir Magdy
+        </small>
+      </footer>
+    </div>
+  );
+}
