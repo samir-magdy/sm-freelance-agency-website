@@ -284,7 +284,7 @@ export default function IPhoneMockup({
             Keep width and height in roughly a 9:19.5 ratio (standard iPhone) if you change them.
             rounded-[46px] is the outer corner radius; the inner screen uses rounded-[43px] to follow the same curve.
             The gradient simulates a Space Black aluminum finish — swap the hex values to try silver or gold tones. */}
-        <div className="w-[60vw] h-115 sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-146 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
+        <div className="w-[60vw] h-117 sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-146 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
 
           {/* Left volume buttons */}
           <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />

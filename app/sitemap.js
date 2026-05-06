@@ -5,7 +5,12 @@ export default function sitemap() {
 
   return [
     {
-      url: `${SITE_URL}/`, 
+      url: `${SITE_URL}/premium-react-components`,
+      lastModified: modifyDate,
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/`,
       lastModified: modifyDate,
       priority: 1.0,
       alternates: {
