@@ -10,9 +10,9 @@ const slides = [
 ];
 
 const desktopSlides = [
-  { image: "/project-screenshots/sellable-blocks/github-img-desktop.webp", alt: "An interactive, scrollable Mac OS browser mockup of github's website on desktop" },
-  { image: "/project-screenshots/sellable-blocks/apple-img-desktop.webp", alt: "An interactive, scrollable Mac OS browser mockup of apples's website on desktop" },
-  { image: "/project-screenshots/sellable-blocks/linear-img-desktop.webp", alt: "An interactive, scrollable Mac OS browser mockup of linears's website on desktop" },
+  { image: "/project-screenshots/sellable-blocks/github-img-desktop.webp", alt: "An interactive, scrollable Mac OS browser mockup of github's website on desktop", url: "github.com" },
+  { image: "/project-screenshots/sellable-blocks/apple-img-desktop.webp", alt: "An interactive, scrollable Mac OS browser mockup of apples's website on desktop", url: "apple.com" },
+  { image: "/project-screenshots/sellable-blocks/linear-img-desktop.webp", alt: "An interactive, scrollable Mac OS browser mockup of linears's website on desktop", url: "linear.app" },
 ];
 
 const steps = [
