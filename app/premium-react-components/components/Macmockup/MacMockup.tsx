@@ -251,19 +251,12 @@ export default function MacMockup({
                 className="min-w-full h-full snap-start snap-always overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
               >
                 {slide.url ? (
-                  <a
-                    href={slide.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block"
-                  >
-                    <img
-                      src={slide.image}
-                      alt={slide.alt ?? `Slide ${i + 1}`}
-                      className="w-full h-auto block"
-                      loading={i === 0 ? "eager" : "lazy"}
-                    />
-                  </a>
+                  <img
+                    src={slide.image}
+                    alt={slide.alt ?? `Slide ${i + 1}`}
+                    className="w-full h-auto block"
+                    loading={i === 0 ? "eager" : "lazy"}
+                  />
                 ) : (
                   <img
                     src={slide.image}
