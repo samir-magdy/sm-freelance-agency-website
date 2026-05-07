@@ -1,5 +1,6 @@
 import translations from "@/app/data/translations";
 import PricingEstimator from "../ui/PricingEstimator"; // <-- Import the new widget
+import { RevealSection } from "../ui/RevealSection";
 
 export default function PricingSection({ lang }) {
   const t = translations.pricingSection;
@@ -12,6 +13,7 @@ export default function PricingSection({ lang }) {
       aria-labelledby="pricing-heading"
       dir={isRtl ? "rtl" : "ltr"}
     >
+      <RevealSection>
       <div className="flex flex-col items-center w-full">
         {/* Heading */}
         <div className="mb-6 md:mb-8 text-center">
@@ -28,6 +30,7 @@ export default function PricingSection({ lang }) {
 
         <PricingEstimator lang={lang} />
       </div>
+      </RevealSection>
     </section>
   );
 }

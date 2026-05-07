@@ -16,7 +16,6 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
     pathname === `/${lang}` || pathname === `/${lang}/` || pathname === "/";
 
   const closeMenu = () => {
-    document.body.style.overflow = "";
     setIsMenuOpen(false);
   };
 
@@ -66,8 +65,8 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             <Image
               src="/brand.svg"
               alt="SM Web Studio – Website Design Company in Egypt"
-              width={75}
-              height={75}
+              width={60}
+              height={60}
               loading="eager"
             />
           </a>

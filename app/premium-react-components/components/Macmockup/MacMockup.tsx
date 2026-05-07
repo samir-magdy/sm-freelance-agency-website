@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 
 export interface Slide {
   image: string;
@@ -251,16 +252,22 @@ export default function MacMockup({
                 className="min-w-full h-full snap-start snap-always overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
               >
                 {slide.url ? (
-                  <img
+                  <Image
                     src={slide.image}
                     alt={slide.alt ?? `Slide ${i + 1}`}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
                     className="w-full h-auto block"
                     loading={i === 0 ? "eager" : "lazy"}
                   />
                 ) : (
-                  <img
+                  <Image
                     src={slide.image}
                     alt={slide.alt ?? `Slide ${i + 1}`}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
                     className="w-full h-auto block"
                     loading={i === 0 ? "eager" : "lazy"}
                   />

@@ -25,6 +25,7 @@
  */
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 
 /* ─────────────────────────────────────
    Types
@@ -315,9 +316,12 @@ export default function IPhoneMockup({
                   className="min-w-full w-full snap-start snap-always h-full"
                 >
                   <div className="iphone-scroll overflow-y-auto h-full [scrollbar-width:none]">
-                    <img
+                    <Image
                       src={slide.image}
                       alt={slide.alt ?? `Slide ${i + 1}`}
+                      width={0}
+                      height={0}
+                      sizes="100vw"
                       className="w-full h-auto block"
                       loading={i === 0 ? "eager" : "lazy"}
                     />

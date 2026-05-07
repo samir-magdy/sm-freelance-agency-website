@@ -1,3 +1,4 @@
+import Image from "next/image";
 import IPhoneMockup from "./components/interactive-phone/IPhoneMockup";
 import MacMockup from "./components/Macmockup/MacMockup";
 import { Timeline } from "./components/timeline/Timeline";
@@ -33,7 +34,7 @@ const steps = [
       <div className="rounded-xl md:border md:border-white/10 md:bg-white/5 md:p-6">
         <p className="text-zinc-300/90 text-xl leading-relaxed">
           Wireframes first, pixels second. We move fast in low-fidelity so
-          there's room to challenge assumptions before anything is built.
+          there&apos;s room to challenge assumptions before anything is built.
         </p>
       </div>
     ),
@@ -134,9 +135,11 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b border-white/[0.06]  backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
           <a href="#home">
-          <img
-            className="md:h-16 md:w-16"
+          <Image
             src="/brand.svg"
+            width={64}
+            height={64}
+            className="md:h-16 md:w-16"
             alt="SM Web Studio Logo"
           />
           </a>
@@ -176,7 +179,7 @@ export default function Home() {
             Save hours building complex layouts with production-ready,
             interactive UI blocks. Fully responsive & customizable. Zero extra
             dependencies. Drop the file in, import the component, add your data.
-            That's it!
+            That&apos;s it!
           </p>
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {TECH_STACK.map((t) => (
@@ -213,7 +216,7 @@ export default function Home() {
         tagline="An animated timeline perfect for workflow sections."
         usage={`import { Timeline } from "@/components/Timeline";\n\n<Timeline\n  data={[\n    {\n      title: "Step One",\n      content: <div>Your content here</div>\n    }\n  ]}\n/>`}
       >
-        <Timeline data={steps} />
+        <Timeline data={steps} variant="horizontal"/>
       </ComponentSection>
 
       {/* Footer */}

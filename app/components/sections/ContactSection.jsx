@@ -1,13 +1,11 @@
 
 import ContactForm from "@/app/components/ui/ContactForm";
 import translations from "@/app/data/translations";
-
+import { RevealSection } from "@/app/components/ui/RevealSection";
 
 export default function ContactSection({ lang }) {
   const t = translations;
   const isRtl = lang === "ar";
-
-
 
   return (
     <section
@@ -16,6 +14,7 @@ export default function ContactSection({ lang }) {
       className="pb-12 sm:pb-32 px-4"
       dir={isRtl ? "rtl" : "ltr"}
     >
+      <RevealSection>
       <div className="max-w-3xl mx-auto">
         <div className="mb-8 md:mb-12">
           <h2
@@ -28,8 +27,9 @@ export default function ContactSection({ lang }) {
             {t.contactSection.subheading[lang]}
           </p>
         </div>
-        <ContactForm lang={lang}  />
+        <ContactForm lang={lang} />
       </div>
+      </RevealSection>
     </section>
   );
 }

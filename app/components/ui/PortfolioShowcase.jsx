@@ -82,6 +82,7 @@ function StatusBar() {
 export default function PortfolioShowcase({ lang }) {
   const t = projectsSection;
   const [active, setActive] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
   const snapRef = useRef(null);
   const sectionRef = useRef(null);
   const animFrameRef = useRef(null);
@@ -109,6 +110,22 @@ export default function PortfolioShowcase({ lang }) {
 
   useEffect(() => {
     return () => { if (animFrameRef.current !== null) cancelAnimationFrame(animFrameRef.current); };
+  }, []);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
   }, []);
 
   /* Programmatic scroll with rAF easing */
@@ -166,7 +183,7 @@ export default function PortfolioShowcase({ lang }) {
       {/* ── Section heading ── */}
       <div
         id="portfolio-heading"
-        className="text-center relative z-2 px-5 mb-4 md:mb-8"
+        className={`text-center relative z-2 px-5 mb-4 md:mb-8 transition-opacity duration-200 ease-out ${isVisible ? "opacity-100" : "opacity-0"}`}
       >
         <h2 className="font-bold text-heading mb-2 rtl:mb-3">
           {t.heading[lang]}
@@ -189,8 +206,15 @@ export default function PortfolioShowcase({ lang }) {
             order-last puts it after the phone in DOM → right side (EN) / left side (AR)
             gap-8 controls uniform vertical spacing between all children */}
         <div
+          className="order-first lg:order-last mb-2.5 lg:mb-0 transition-[opacity,transform] duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[150ms]"
+          style={isVisible
+            ? { opacity: 1, transform: "translateX(0)" }
+            : { opacity: 0, transform: isRtl ? "translateX(-1rem)" : "translateX(1rem)" }
+          }
+        >
+        <div
           key={`info-${project.id}`}
-          className="text-center lg:text-start lg:max-w-lg order-first lg:order-last mb-2.5 lg:mb-0 flex flex-col items-center lg:items-start gap-6"
+          className="text-center lg:text-start lg:max-w-lg flex flex-col items-center lg:items-start gap-6"
         >
           {/* Genre badge — visible on both mobile + desktop */}
           {/* <span className="md:hidden uppercase inline-block py-1 px-3 rounded-lg bg-gold-dark/10 border border-white/10 text-content-heading/95 text-sm font-medium tracking-wide mb-2">
@@ -221,21 +245,24 @@ export default function PortfolioShowcase({ lang }) {
             <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
           </a>
         </div>
+        </div>
 
         {/* ── Phone column (phone frame + dot indicators + mobile CTA) ── */}
         <div className="flex flex-col items-center gap-3">
           {/* Arrow ← | Phone | Arrow → row (always LTR so swipe direction is consistent) */}
           <div dir="ltr" className="flex items-center justify-center gap-8">
             {/* Previous arrow */}
-            <NavArrow
-              direction="prev"
-              disabled={active === 0}
-              onClick={() => scrollToProject(active - 1)}
-            />
+            <div className={`transition-opacity duration-[250ms] ease-out delay-[225ms] ${isVisible ? "opacity-100" : "opacity-0"}`}>
+              <NavArrow
+                direction="prev"
+                disabled={active === 0}
+                onClick={() => scrollToProject(active - 1)}
+              />
+            </div>
 
             {/* Phone outer shell — gradient bezel + hardware buttons */}
             <div
-              className="phone-outer w-[60vw] h-115 sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-146 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className={`phone-outer w-[60vw] h-115 sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-146 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0 transition-[opacity,transform] duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[75ms] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
             >
               {/* Left volume buttons */}
               <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -281,17 +308,19 @@ export default function PortfolioShowcase({ lang }) {
             </div>
 
             {/* Next arrow */}
-            <NavArrow
-              direction="next"
-              disabled={active === projects.length - 1}
-              onClick={() => scrollToProject(active + 1)}
-            />
+            <div className={`transition-opacity duration-[250ms] ease-out delay-[225ms] ${isVisible ? "opacity-100" : "opacity-0"}`}>
+              <NavArrow
+                direction="next"
+                disabled={active === projects.length - 1}
+                onClick={() => scrollToProject(active + 1)}
+              />
+            </div>
           </div>
 
           {/* Pagination dots */}
           <div
             dir="ltr"
-            className="flex items-center gap-1.5 mb-1.5"
+            className={`flex items-center gap-1.5 mb-1.5 transition-opacity duration-200 ease-out delay-[275ms] ${isVisible ? "opacity-100" : "opacity-0"}`}
             role="tablist"
             aria-label="Project slides"
           >
@@ -316,7 +345,7 @@ export default function PortfolioShowcase({ lang }) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="cta-primary relative overflow-hidden inline-flex items-center gap-2 py-3 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-sm font-semibold tracking-wide transition-all duration-200 lg:hidden"
+            className={`cta-primary relative overflow-hidden inline-flex items-center gap-2 py-3 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-sm font-semibold tracking-wide lg:hidden transition-[opacity,transform] duration-[300ms] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[175ms] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
             aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
           >
             {pd.cta[lang]}

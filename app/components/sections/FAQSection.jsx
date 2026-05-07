@@ -1,4 +1,5 @@
 import translations from "@/app/data/translations";
+import { RevealSection } from "../ui/RevealSection";
 
 export default function FAQSection({ lang }) {
   const t = translations.faqSection;
@@ -6,6 +7,7 @@ export default function FAQSection({ lang }) {
 
   return (
     <section id="FAQs" aria-labelledby="FAQs-heading" className="px-4" dir={dir}>
+      <RevealSection>
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         <div className="mb-6 md:mb-12 text-center">
           <h2
@@ -52,6 +54,7 @@ export default function FAQSection({ lang }) {
           ))}
           </article>
       </div>
+      </RevealSection>
     </section>
   );
 }
