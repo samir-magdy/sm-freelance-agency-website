@@ -4,7 +4,7 @@ const pricingSection = {
     ar: "أداة تقدير الأسعار",
   },
     subheading: {
-    en: "Get an estimate of your investment instantly",
+    en: "Estimate your investment instantly",
     ar: "احصل على رقم تقريبي لاستثمارك فوراً",
   },
   cta: {

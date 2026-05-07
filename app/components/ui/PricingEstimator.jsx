@@ -16,13 +16,13 @@ const t = {
     ar: "تأكد من حساباتي",
   },
   disclaimer: {
-    en: "Final pricing is confirmed after our discovery call.",
-    ar: "التكلفة تقديرية مبدئية. يتم التأكيد النهائي بعد الاستشارة.",
+    en: "Note that our work is entirely custom. Therefore, the price may vary depending on specific requests not listed in this tool.",
+    ar: "يرجى العلم أن أعمالنا مخصصة بالكامل، لذا قد تختلف التكلفة النهائية بناءً على متطلبات إضافية غير مدرجة في هذه الأداة.",
   },
   bases: [
     {
       id: "landing",
-      price: 5000,
+      price: 4999,
       name: {
         en: "Landing Page (Single Page Site)",
         ar: "صفحة هبوط (صفحة واحدة)",
@@ -31,7 +31,7 @@ const t = {
     },
     {
       id: "business",
-      price: 8000,
+      price: 8999,
       name: {
         en: "Business Website (Multiple Pages)",
         ar: "موقع أعمال (متعدد الصفحات)",
@@ -40,72 +40,80 @@ const t = {
     },
     {
       id: "ecommerce",
-      price: 19900,
+      price: 19999,
       name: { en: "Online Store (Shopify)", ar: "متجر إلكتروني (شوبيفاي)" },
       icon: Zap,
     },
   ],
-  // #1: scope cost is now a multiplier on the base price, not a flat fee.
-  // #5: each scope has a title (tooltip) in both languages explaining what it means.
-  scopes: [
-    {
-      value: 0,
-      multiplier: 0,
-      name: { en: "Minimal", ar: "قليل" },
-      title: {
-        en: "1–3 sections, simple copy, no custom photography",
-        ar: "١–٣ أقسام، نصوص بسيطة، بدون تصوير مخصص",
+  // Scope options are now context-aware per base type.
+  // Landing pages get 2 options (sections), business gets 3 (pages), ecommerce gets 3 (products).
+  scopesByBase: {
+    landing: [
+      {
+        value: 0,
+        multiplier: 0,
+        name: { en: "3–5 Sections", ar: "٣–٥ أقسام" },
       },
-    },
-    {
-      value: 1,
-      multiplier: 0.1,
-      name: { en: "Medium", ar: "متوسط" },
-      title: {
-        en: "4–8 sections or pages, team bios, blog setup, provided assets",
-        ar: "٤–٨ أقسام أو صفحات، نبذة عن الفريق، مدونة، محتوى جاهز",
+      {
+        value: 1,
+        multiplier: 0.3,
+        name: { en: "6+ Sections", ar: "٦+ أقسام" },
       },
-    },
-    {
-      value: 2,
-      multiplier: 0.25,
-      name: { en: "A Lot", ar: "كثير" },
-      title: {
-        en: "9+ pages, custom photography/video, extensive copywriting, multiple content types",
-        ar: "٩+ صفحات، تصوير/فيديو مخصص، كتابة محتوى واسعة، أنواع محتوى متعددة",
+    ],
+    business: [
+      {
+        value: 0,
+        multiplier: 0,
+        name: { en: "1–3 Pages", ar: "١–٣ صفحات" },
       },
-    },
-  ],
+      {
+        value: 1,
+        multiplier: 0.15,
+        name: { en: "4–8 Pages", ar: "٤–٨ صفحات" },
+      },
+      {
+        value: 2,
+        multiplier: 0.4,
+        name: { en: "9+ Pages", ar: "٩+ صفحات" },
+      },
+    ],
+    ecommerce: [
+      {
+        value: 0,
+        multiplier: 0,
+        name: { en: "Up to 50 Products", ar: "حتى ٥٠ منتج" },
+      },
+      {
+        value: 1,
+        multiplier: 0.2,
+        name: { en: "50–200 Products", ar: "٥٠–٢٠٠ منتج" },
+      },
+      {
+        value: 2,
+        multiplier: 0.45,
+        name: { en: "200+ Products", ar: "٢٠٠+ منتج" },
+      },
+    ],
+  },
   addons: [
     {
       id: "cms",
       appliesTo: ["landing", "business"],
-      price: 2999,
+      price: 3499,
       name: { en: "Admin Panel", ar: "لوحة تحكم" },
       icon: Settings,
     },
     {
-      // #3: bilingual multiplier is now base-aware.
-      // landing is simpler (fewer sections to translate) → 0.25
-      // business has more pages and structured content → 0.35
-      // ecommerce has product names, descriptions, checkout flows → 0.50
       id: "multilingual",
       appliesTo: ["landing", "business", "ecommerce"],
       isMultiplier: true,
       multiplierByBase: {
-        landing: 0.3,
-        business: 0.4,
-        ecommerce: 0.5,
+        landing: 0.2,
+        business: 0.3,
+        ecommerce: 0.4,
       },
       name: { en: "Bilingual", ar: "ثنائي اللغة" },
       icon: Globe,
-    },
-    {
-      id: "advanced_seo",
-      appliesTo: ["landing", "business", "ecommerce"],
-      price: 999,
-      name: { en: "SEO", ar: "تحسين البحث" },
-      icon: Zap,
     },
   ],
 };
@@ -126,7 +134,14 @@ export default function PricingEstimator({ lang }) {
     () => t.bases.find((b) => b.id === baseId) || t.bases[0],
     [baseId],
   );
-  const currentScope = useMemo(() => t.scopes[scopeIndex], [scopeIndex]);
+
+  // Scopes are now looked up per base type
+  const currentScopes = useMemo(() => t.scopesByBase[baseId], [baseId]);
+  const currentScope = useMemo(
+    () => currentScopes[scopeIndex] ?? currentScopes[0],
+    [currentScopes, scopeIndex],
+  );
+
   const availableAddons = useMemo(
     () => t.addons.filter((addon) => addon.appliesTo.includes(baseId)),
     [baseId],
@@ -136,6 +151,7 @@ export default function PricingEstimator({ lang }) {
   const handleBaseTypeChange = useCallback((id) => {
     setBaseId(id);
     setSelectedAddons([]);
+    setScopeIndex(0); // reset scope when base changes
   }, []);
 
   const toggleAddon = useCallback((id) => {
@@ -153,7 +169,6 @@ export default function PricingEstimator({ lang }) {
       const addon = t.addons.find((a) => a.id === addonId);
       if (addon) {
         if (addon.isMultiplier) {
-          // #3: look up the multiplier for the currently selected base type
           const bilingualMultiplier = addon.multiplierByBase[baseId] ?? 0.4;
           totalMultiplier += bilingualMultiplier;
         } else {
@@ -162,7 +177,6 @@ export default function PricingEstimator({ lang }) {
       }
     });
 
-    // #1: scope cost is a percentage of the base price, not a flat fee
     const scopeCost = Math.round(baseType.price * currentScope.multiplier);
     const subTotal = baseType.price + scopeCost + flatAddonsCost;
     return Math.round(subTotal * totalMultiplier);
@@ -211,7 +225,7 @@ The Calculated Data:
 
   return (
     <>
-      <div className="relative max-w-7xl w-full mx-auto px-4 py-3 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-subtle flex flex-col gap-4.5 sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0">
+      <div className="relative max-w-7xl w-full mx-auto px-4 py-3 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-subtle flex flex-col gap-3.5 sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0">
         {/* ========================================= */}
         {/* MOBILE ONLY: Original Header & Price      */}
         {/* ========================================= */}
@@ -248,7 +262,7 @@ The Calculated Data:
                   {isRtl ? "دولار" : "USD"}
                 </span>
               )}
-              <span className="text-5xl md:text-8xl font-bold text-white tracking-tight leading-none">
+              <span className="text-[2.5rem] md:text-8xl font-bold text-white tracking-tight leading-none">
                 {displayPrice.toLocaleString()}
               </span>
               {currency === "EGP" && (
@@ -265,9 +279,9 @@ The Calculated Data:
           {/* ========================================= */}
           {/* LEFT COLUMN: Configuration Steps          */}
           {/* ========================================= */}
-          <div className="md:col-span-7 flex flex-col gap-4.5 sm:gap-8 md:bg-surface-card/50 md:shadow-xl md:shadow-black/30 md:border-2 md:border-border-subtle md:rounded-3xl md:p-6 md:pt-4">
+          <div className="md:col-span-7 flex flex-col gap-2.5 sm:gap-8 md:bg-surface-card/50 md:shadow-xl md:shadow-black/30 md:border-2 md:border-border-subtle md:rounded-3xl md:p-6 md:pt-4">
             {/* Step 1: Base Type */}
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2">
               <label className="ms-1 text-content-heading font-bold uppercase tracking-wider block lg:text-[1.25rem]">
                 {t.baseLabel[lang]}
               </label>
@@ -299,20 +313,18 @@ The Calculated Data:
               </div>
             </div>
 
-            {/* Step 2: Size/Scope */}
-            <div className="flex flex-col gap-3">
+            {/* Step 2: Size/Scope — now context-aware per base type */}
+            <div className="flex flex-col gap-2">
               <label className="ms-1 text-content-heading font-bold uppercase tracking-wider lg:text-[1.25rem]">
                 {t.scopeLabel[lang]}
               </label>
               <div className="flex flex-wrap gap-2 md:justify-between">
-                {t.scopes.map((scope, index) => {
+                {currentScopes.map((scope, index) => {
                   const isSelected = scopeIndex === index;
                   return (
                     <button
                       key={index}
                       onClick={() => setScopeIndex(index)}
-                      // #5: title attribute explains what each scope level means
-                      // title={scope.title[lang]}
                       className={`cursor-pointer flex-1 flex md:gap-4 justify-center items-center gap-1 px-2.5 py-2 rounded-2xl border text-sm sm:text-base lg:text-[1.25rem] transition-all ${
                         isSelected
                           ? "bg-black/40 text-content-heading shadow-md border-white/60 border-2"
@@ -327,7 +339,7 @@ The Calculated Data:
             </div>
 
             {/* Step 3: Add-ons */}
-            <div className="flex flex-col gap-3 mb-2 lg:mb-0">
+            <div className="flex flex-col gap-2 mb-2 lg:mb-0">
               <label className="ms-1 text-content-heading font-bold uppercase tracking-wider block lg:text-[1.25rem]">
                 {t.addonsLabel[lang]}
               </label>
@@ -358,7 +370,7 @@ The Calculated Data:
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-primary relative overflow-hidden inline-flex md:hidden items-center justify-center gap-3 py-3 px-5 rounded-2xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-lg font-semibold tracking-wide transition-all duration-200"
+              className="cta-primary relative overflow-hidden inline-flex md:hidden items-center justify-center gap-3 py-2.5 px-5 rounded-2xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-lg font-semibold tracking-wide transition-all duration-200"
             >
               <WhatsAppIcon className="w-5 h-5" />
               <span>{t.cta[lang]}</span>
@@ -369,7 +381,7 @@ The Calculated Data:
           {/* DESKTOP ONLY: Sticky Summary Panel        */}
           {/* ========================================= */}
           <div className="hidden md:block md:col-span-5">
-            <div className="h-full sticky top-24 flex flex-col justify-between px-3 pt-3 pb-6 rounded-3xl border-2 border-border-subtle bg-black/35 shadow-lg shadow-black/30">
+            <div className="h-full sticky top-24 flex flex-col justify-between px-3 pt-3 pb-6 rounded-3xl border-2 border-border-strong bg-black/35 shadow-lg shadow-black/30">
               <div className="flex p-1 bg-black/40 rounded-2xl border border-white/5">
                 <button
                   onClick={() => setCurrency("EGP")}
@@ -424,7 +436,7 @@ The Calculated Data:
           </div>
         </div>
 
-        <small className="block w-full md:mt-8 text-center text-[0.8rem] md:text-xl lg:text-[1.562rem] font-semibold text-content-muted leading-relaxed tracking-wide">
+        <small className="block w-full sm:mt-6 text-center text-xs sm:text-xl font-semibold text-content-muted leading-relaxed tracking-wide">
           * {t.disclaimer[lang]}
         </small>
       </div>
