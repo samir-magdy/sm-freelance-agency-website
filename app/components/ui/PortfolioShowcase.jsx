@@ -8,6 +8,7 @@ import { projectsSection, projectData } from "@/app/data/translations/projects";
 import a11y from "@/app/data/translations/a11y";
 import { HomeIndicator } from "@/app/components/ui/iphone/HomeIndicator";
 import { NavArrow } from "@/app/components/ui/navigation/NavArrow";
+import { RevealSection } from "@/app/components/ui/RevealSection";
 
 /* ─────────────────────────────────────
    Phone chrome sub-components
@@ -82,9 +83,7 @@ function StatusBar() {
 export default function PortfolioShowcase({ lang }) {
   const t = projectsSection;
   const [active, setActive] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
   const snapRef = useRef(null);
-  const sectionRef = useRef(null);
   const animFrameRef = useRef(null);
 
   /* Sync scroll position → active state */
@@ -110,22 +109,6 @@ export default function PortfolioShowcase({ lang }) {
 
   useEffect(() => {
     return () => { if (animFrameRef.current !== null) cancelAnimationFrame(animFrameRef.current); };
-  }, []);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.4 }
-    );
-    observer.observe(section);
-    return () => observer.disconnect();
   }, []);
 
   /* Programmatic scroll with rAF easing */
@@ -175,184 +158,152 @@ export default function PortfolioShowcase({ lang }) {
 
   return (
     <section
-      ref={sectionRef}
       id="portfolio"
       className="flex flex-col items-center justify-start min-h-svh relative overflow-hidden select-none px-5"
       aria-labelledby="portfolio-heading"
     >
-      {/* ── Section heading ── */}
-      <div
-        id="portfolio-heading"
-        className={`text-center relative z-2 px-5 mb-4 md:mb-8 transition-opacity duration-200 ease-out ${isVisible ? "opacity-100" : "opacity-0"}`}
-      >
-        <h2 className="font-bold text-heading mb-2 rtl:mb-3">
-          {t.heading[lang]}
-          <span className="sr-only">Egypt | مصر</span>
-        </h2>
-        <p className="text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
-          {t.subheading[lang]}
-        </p>
-      </div>
-
-      {/* ── Main layout: column on mobile, row on desktop ──
-          dir flips the row direction so info panel sits right (EN) or left (AR) */}
-      <div
-        className="flex flex-col lg:flex-row items-center lg:gap-16 xl:gap-20 relative z-2"
-        dir={isRtl ? "rtl" : "ltr"}
-      >
-        {/* ── Info panel (badge + title + description + CTA) ──
-            Mobile: above phone, centered text, only badge visible
-            Desktop: beside phone, start-aligned, all elements visible
-            order-last puts it after the phone in DOM → right side (EN) / left side (AR)
-            gap-8 controls uniform vertical spacing between all children */}
-        <div
-          className="order-first lg:order-last mb-2.5 lg:mb-0 transition-[opacity,transform] duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[150ms]"
-          style={isVisible
-            ? { opacity: 1, transform: "translateX(0)" }
-            : { opacity: 0, transform: isRtl ? "translateX(-1rem)" : "translateX(1rem)" }
-          }
-        >
-        <div
-          key={`info-${project.id}`}
-          className="text-center lg:text-start lg:max-w-lg flex flex-col items-center lg:items-start gap-6"
-        >
-          {/* Genre badge — visible on both mobile + desktop */}
-          {/* <span className="md:hidden uppercase inline-block py-1 px-3 rounded-lg bg-gold-dark/10 border border-white/10 text-content-heading/95 text-sm font-medium tracking-wide mb-2">
-            {isRtl ? project.genreAr : project.genre}
-          </span> */}
-
-          {/* Project title — desktop only */}
-          <h3 className="portfolio-info-enter text-heading font-bold text-content-heading hidden lg:block">
-            {pd.title[lang]}
-            <span className="sr-only">Website | موقع إلكتروني</span>
-          </h3>
-
-          {/* Project description — desktop only */}
-          <p className="portfolio-info-enter text-content-body text-subheading leading-relaxed hidden lg:block mb-4">
-            {pd.description[lang]}
+      <RevealSection className="flex flex-col items-center w-full">
+        {/* ── Section heading ── */}
+        <div id="portfolio-heading" className="text-center relative z-2 px-5 mb-4 md:mb-8">
+          <h2 className="font-bold text-heading mb-2 rtl:mb-3">
+            {t.heading[lang]}
+            <span className="sr-only">Egypt | مصر</span>
+          </h2>
+          <p className="text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
+            {t.subheading[lang]}
           </p>
-
-          {/* "View Live Site" CTA — desktop only (mobile CTA is below the phone) */}
-          <a
-            id="pricing-cta"
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-primary relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-xl font-normal sm:font-medium tracking-wide transition-all duration-200 hidden lg:inline-flex"
-            aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
-          >
-            {pd.cta[lang]}
-            <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
-          </a>
-        </div>
         </div>
 
-        {/* ── Phone column (phone frame + dot indicators + mobile CTA) ── */}
-        <div className="flex flex-col items-center gap-3">
-          {/* Arrow ← | Phone | Arrow → row (always LTR so swipe direction is consistent) */}
-          <div dir="ltr" className="flex items-center justify-center gap-8">
-            {/* Previous arrow */}
-            <div className={`transition-opacity duration-[250ms] ease-out delay-[225ms] ${isVisible ? "opacity-100" : "opacity-0"}`}>
+        {/* ── Main layout: column on mobile, row on desktop ── */}
+        <div
+          className="flex flex-col lg:flex-row items-center lg:gap-16 xl:gap-20 relative z-2"
+          dir={isRtl ? "rtl" : "ltr"}
+        >
+          {/* ── Info panel ── */}
+          <div className="order-first lg:order-last mb-2.5 lg:mb-0">
+            <div
+              key={`info-${project.id}`}
+              className="text-center lg:text-start lg:max-w-lg flex flex-col items-center lg:items-start gap-6"
+            >
+              <h3 className="portfolio-info-enter text-heading font-bold text-content-heading hidden lg:block">
+                {pd.title[lang]}
+                <span className="sr-only">Website | موقع إلكتروني</span>
+              </h3>
+
+              <p className="portfolio-info-enter text-content-body text-subheading leading-relaxed hidden lg:block mb-4">
+                {pd.description[lang]}
+              </p>
+
+              <a
+                id="pricing-cta"
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-primary relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-xl font-normal sm:font-medium tracking-wide transition-all duration-200 hidden lg:inline-flex"
+                aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
+              >
+                {pd.cta[lang]}
+                <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
+              </a>
+            </div>
+          </div>
+
+          {/* ── Phone column ── */}
+          <div className="flex flex-col items-center gap-3">
+            <div dir="ltr" className="flex items-center justify-center gap-8">
               <NavArrow
                 direction="prev"
                 disabled={active === 0}
                 onClick={() => scrollToProject(active - 1)}
               />
-            </div>
 
-            {/* Phone outer shell — gradient bezel + hardware buttons */}
-            <div
-              className={`phone-outer w-[60vw] h-115 sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-146 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0 transition-[opacity,transform] duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[75ms] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-            >
-              {/* Left volume buttons */}
-              <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
-              <div className="absolute -left-[2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
-              {/* Right power button */}
-              <div className="absolute -right-0.75 top-35 w-0.75 h-15 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-r-xs" />
+              {/* Phone outer shell */}
+              <div className="phone-outer w-[60vw] h-115 sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-146 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
+                {/* Left volume buttons */}
+                <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
+                <div className="absolute -left-[2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
+                {/* Right power button */}
+                <div className="absolute -right-0.75 top-35 w-0.75 h-15 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-r-xs" />
 
-              {/* Phone screen area */}
-              <div className="w-full h-full rounded-[43px] overflow-hidden relative bg-[#0e0e0e]">
-                <div className="absolute top-0 inset-x-0 z-15 h-8 sm:h-9 px-2.5 sm:px-1">
-                  <DynamicIsland />
-                  <StatusBar />
-                </div>
+                {/* Phone screen area */}
+                <div className="w-full h-full rounded-[43px] overflow-hidden relative bg-[#0e0e0e]">
+                  <div className="absolute top-0 inset-x-0 z-15 h-8 sm:h-9 px-2.5 sm:px-1">
+                    <DynamicIsland />
+                    <StatusBar />
+                  </div>
 
-                {/* Horizontal snap-scroll carousel of project screenshots */}
-                <div
-                  ref={snapRef}
-                  className="portfolio-snap flex overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] mt-8 sm:mt-9 w-full h-full bg-black"
-                  dir="ltr"
-                >
-                  {projects.map((proj, i) => (
-                    <div
-                      key={proj.id}
-                      className="min-w-full w-full snap-start snap-always h-full"
-                    >
-                      <div className="phone-scroll overflow-y-auto h-full [scrollbar-width:none]">
-                        <Image
-                          src={proj.screenshot}
-                          alt={`${a11y.screenshotOf[lang]} ${projectData[proj.id].title[lang]}`}
-                          className="w-full h-auto block"
-                          sizes="(max-width: 640px) 53vw, (max-width: 768px) 252px, (max-width: 1024px) 282px, 300px"
-                          priority={i === 0}
-                        />
+                  <div
+                    ref={snapRef}
+                    className="portfolio-snap flex overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] mt-8 sm:mt-9 w-full h-full bg-black"
+                    dir="ltr"
+                  >
+                    {projects.map((proj, i) => (
+                      <div
+                        key={proj.id}
+                        className="min-w-full w-full snap-start snap-always h-full"
+                      >
+                        <div className="phone-scroll overflow-y-auto h-full [scrollbar-width:none]">
+                          <Image
+                            src={proj.screenshot}
+                            alt={`${a11y.screenshotOf[lang]} ${projectData[proj.id].title[lang]}`}
+                            className="w-full h-auto block"
+                            sizes="(max-width: 640px) 53vw, (max-width: 768px) 252px, (max-width: 1024px) 282px, 300px"
+                            priority={i === 0}
+                          />
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+
+                  <div className="absolute bottom-0 inset-x-0 h-10 bg-[linear-gradient(transparent,rgba(0,0,0,0.5))] pointer-events-none z-10" />
+                  <HomeIndicator />
                 </div>
-
-                {/* Bottom fade-out gradient over screenshot */}
-                <div className="absolute bottom-0 inset-x-0 h-10 bg-[linear-gradient(transparent,rgba(0,0,0,0.5))] pointer-events-none z-10" />
-                <HomeIndicator />
               </div>
-            </div>
 
-            {/* Next arrow */}
-            <div className={`transition-opacity duration-[250ms] ease-out delay-[225ms] ${isVisible ? "opacity-100" : "opacity-0"}`}>
               <NavArrow
                 direction="next"
                 disabled={active === projects.length - 1}
                 onClick={() => scrollToProject(active + 1)}
               />
             </div>
-          </div>
 
-          {/* Pagination dots */}
-          <div
-            dir="ltr"
-            className={`flex items-center gap-1.5 mb-1.5 transition-opacity duration-200 ease-out delay-[275ms] ${isVisible ? "opacity-100" : "opacity-0"}`}
-            role="tablist"
-            aria-label="Project slides"
-          >
-            {projects.map((proj, i) => (
-              <button
-                key={proj.id}
-                role="tab"
-                aria-selected={i === active}
-                aria-label={`Go to project ${i + 1}`}
-                onClick={() => scrollToProject(i)}
-                className={`rounded-full transition-all duration-300 ${
-                  i === active
-                    ? "w-5 h-2 bg-gold"
-                    : "w-2 h-2 bg-white/30 hover:bg-white/60"
-                }`}
-              />
-            ))}
-          </div>
+            {/* Pagination dots */}
+            <div
+              dir="ltr"
+              className="flex items-center gap-1.5 mb-1.5"
+              role="tablist"
+              aria-label="Project slides"
+            >
+              {projects.map((proj, i) => (
+                <button
+                  key={proj.id}
+                  role="tab"
+                  aria-selected={i === active}
+                  aria-label={`Go to project ${i + 1}`}
+                  onClick={() => scrollToProject(i)}
+                  className={`rounded-full transition-all duration-300 ${
+                    i === active
+                      ? "w-5 h-2 bg-gold"
+                      : "w-2 h-2 bg-white/30 hover:bg-white/60"
+                  }`}
+                />
+              ))}
+            </div>
 
-          {/* "View Live Site" CTA — mobile only (desktop version is in the info panel) */}
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`cta-primary relative overflow-hidden inline-flex items-center gap-2 py-3 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-sm font-semibold tracking-wide lg:hidden transition-[opacity,transform] duration-[300ms] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[175ms] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
-            aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
-          >
-            {pd.cta[lang]}
-            <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
-          </a>
+            {/* "View Live Site" CTA — mobile only */}
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-primary relative overflow-hidden inline-flex items-center gap-2 py-3 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-sm font-semibold tracking-wide lg:hidden"
+              aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
+            >
+              {pd.cta[lang]}
+              <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
+            </a>
+          </div>
         </div>
-      </div>
+      </RevealSection>
     </section>
   );
 }

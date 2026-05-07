@@ -1,7 +1,7 @@
 import Image from "next/image";
 import IPhoneMockup from "./components/interactive-phone/IPhoneMockup";
 import MacMockup from "./components/Macmockup/MacMockup";
-import { Timeline } from "./components/timeline/Timeline";
+import TimelineShowcase from "./TimelineShowcase";
 import type { ReactNode } from "react";
 
 const slides = [
@@ -14,64 +14,6 @@ const desktopSlides = [
   { image: "/project-screenshots/sellable-blocks/github-img-desktop.webp", alt: "An interactive, scrollable Mac OS browser mockup of github's website on desktop", url: "github.com" },
   { image: "/project-screenshots/sellable-blocks/apple-img-desktop.webp", alt: "An interactive, scrollable Mac OS browser mockup of apples's website on desktop", url: "apple.com" },
   { image: "/project-screenshots/sellable-blocks/linear-img-desktop.webp", alt: "An interactive, scrollable Mac OS browser mockup of linears's website on desktop", url: "linear.app" },
-];
-
-const steps = [
-  {
-    title: "Discovery",
-    content: (
-      <div className="rounded-xl md:border md:border-white/10 md:bg-white/5 md:p-6">
-        <p className="text-zinc-300/90 text-xl leading-relaxed">
-          We dig into your goals, your users, and your constraints. Every
-          decision from here is grounded in research, not guesswork.
-        </p>
-      </div>
-    ),
-  },
-  {
-    title: "Design",
-    content: (
-      <div className="rounded-xl md:border md:border-white/10 md:bg-white/5 md:p-6">
-        <p className="text-zinc-300/90 text-xl leading-relaxed">
-          Wireframes first, pixels second. We move fast in low-fidelity so
-          there&apos;s room to challenge assumptions before anything is built.
-        </p>
-      </div>
-    ),
-  },
-  {
-    title: "Development",
-    content: (
-      <div className="rounded-xl md:border md:border-white/10 md:bg-white/5 md:p-6">
-        <p className="text-zinc-300/90 text-xl leading-relaxed">
-          Clean, performant code. No bloated libraries, no shortcuts that
-          haunt you later.
-        </p>
-      </div>
-    ),
-  },
-  {
-    title: "Testing",
-    content: (
-      <div className="rounded-xl md:border md:border-white/10 md:bg-white/5 md:p-6">
-        <p className="text-zinc-300/90 text-xl leading-relaxed">
-          Cross-browser checks, responsive testing, and edge cases caught
-          before they become your problem.
-        </p>
-      </div>
-    ),
-  },
-  {
-    title: "Launch",
-    content: (
-      <div className="rounded-xl md:border md:border-white/10 md:bg-white/5 md:p-6">
-        <p className="text-zinc-300/90 text-xl leading-relaxed">
-          We handle deployment and handover. You get a product that works —
-          and a team that stays reachable after.
-        </p>
-      </div>
-    ),
-  },
 ];
 
 const TECH_STACK = ["React", "Next.js", "TypeScript", "TailwindCSS"];
@@ -118,9 +60,6 @@ function ComponentSection({
           {title}
         </h2>
         <p className="text-zinc-400 sm:text-2xl mb-8">{tagline}</p>
-        {/* <p className="text-zinc-500 mt-4 leading-relaxed">
-            {description}
-          </p> */}
       </div>
       <div className="w-full flex justify-center">{children}</div>
       <UsageBlock code={usage} />
@@ -132,35 +71,26 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-white/[0.06]  backdrop-blur-md">
+      <header className="sticky top-0 z-50 border-b border-white/[0.06] backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
           <a href="#home">
-          <Image
-            src="/brand.svg"
-            width={64}
-            height={64}
-            className="md:h-16 md:w-16"
-            alt="SM Web Studio Logo"
-          />
+            <Image
+              src="/brand.svg"
+              width={64}
+              height={64}
+              className="md:h-16 md:w-16"
+              alt="SM Web Studio Logo"
+            />
           </a>
 
           <nav className="hidden sm:flex items-center gap-8">
-            <a
-              href="#ios-mockup"
-              className="text-zinc-400 hover:text-zinc-200 transition-colors duration-200"
-            >
+            <a href="#ios-mockup" className="text-zinc-400 hover:text-zinc-200 transition-colors duration-200">
               iOS Mockup
             </a>
-            <a
-              href="#browser-mockup"
-              className="text-zinc-400 hover:text-zinc-200 transition-colors duration-200"
-            >
+            <a href="#browser-mockup" className="text-zinc-400 hover:text-zinc-200 transition-colors duration-200">
               Browser Mockup
             </a>
-            <a
-              href="#scroll-timeline"
-              className="text-zinc-400 hover:text-zinc-200 transition-colors duration-200"
-            >
+            <a href="#scroll-timeline" className="text-zinc-400 hover:text-zinc-200 transition-colors duration-200">
               Scroll Timeline
             </a>
           </nav>
@@ -214,9 +144,9 @@ export default function Home() {
         id="scroll-timeline"
         title="Scroll Timeline"
         tagline="An animated timeline perfect for workflow sections."
-        usage={`import { Timeline } from "@/components/Timeline";\n\n<Timeline\n  data={[\n    {\n      title: "Step One",\n      content: <div>Your content here</div>\n    }\n  ]}\n/>`}
+        usage={`import { Timeline } from "@/components/Timeline";\n\n<Timeline\n  data={[\n    {\n      title: "Step One",\n      icon: "Rocket",\n      content: <div>Your content here</div>\n    }\n  ]}\n  variant="icon"\n/>`}
       >
-        <Timeline data={steps} variant="horizontal"/>
+        <TimelineShowcase />
       </ComponentSection>
 
       {/* Footer */}
