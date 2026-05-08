@@ -1,6 +1,6 @@
 const hero = {
   name: {
-    en: ["Design Websites.", "Attract Clients.", "Increase Sales."],
+    en: ["Lead Online.", "Attract Clients.", "Increase Sales."],
     ar: ["أنشئ موقعك.", "أطلق متجرك.", "زد مبيعاتك." ],
   },
   primaryCta: {

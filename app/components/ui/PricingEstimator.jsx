@@ -1,126 +1,15 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
-import { Globe, Layout, Zap, Settings } from "lucide-react";
+import { Globe, Layout, Zap } from "lucide-react";
+import translations from "@/app/data/translations";
 import WhatsAppIcon from "./WhatsAppIcon";
 
-// Built-in translations for the estimator
-const t = {
-  currencyToggle: { en: "Currency", ar: "العملة:" },
-  baseLabel: { en: "Type of Website", ar: "نوع الموقع المطلوب" },
-  scopeLabel: { en: "Amount of Content", ar: "كمية المحتوى" },
-  addonsLabel: { en: "Enhancements & Add-ons", ar: "الإضافات والتحسينات" },
-  estimateLabel: { en: "Estimate:", ar: "التكلفة التقديرية" },
-  cta: {
-    en: "Verify My Calculation",
-    ar: "تأكد من حساباتي",
-  },
-  disclaimer: {
-    en: "Note that our work is entirely custom. Therefore, the price may vary depending on specific requests not listed in this tool.",
-    ar: "يرجى العلم أن أعمالنا مخصصة بالكامل، لذا قد تختلف التكلفة النهائية بناءً على متطلبات إضافية غير مدرجة في هذه الأداة.",
-  },
-  bases: [
-    {
-      id: "landing",
-      price: 4999,
-      name: {
-        en: "Landing Page (Single Page Site)",
-        ar: "صفحة هبوط (صفحة واحدة)",
-      },
-      icon: Layout,
-    },
-    {
-      id: "business",
-      price: 8999,
-      name: {
-        en: "Business Website (Multiple Pages)",
-        ar: "موقع أعمال (متعدد الصفحات)",
-      },
-      icon: Globe,
-    },
-    {
-      id: "ecommerce",
-      price: 19999,
-      name: { en: "Online Store (Shopify)", ar: "متجر إلكتروني (شوبيفاي)" },
-      icon: Zap,
-    },
-  ],
-  // Scope options are now context-aware per base type.
-  // Landing pages get 2 options (sections), business gets 3 (pages), ecommerce gets 3 (products).
-  scopesByBase: {
-    landing: [
-      {
-        value: 0,
-        multiplier: 0,
-        name: { en: "3–5 Sections", ar: "٣–٥ أقسام" },
-      },
-      {
-        value: 1,
-        multiplier: 0.3,
-        name: { en: "6+ Sections", ar: "٦+ أقسام" },
-      },
-    ],
-    business: [
-      {
-        value: 0,
-        multiplier: 0,
-        name: { en: "1–3 Pages", ar: "١–٣ صفحات" },
-      },
-      {
-        value: 1,
-        multiplier: 0.15,
-        name: { en: "4–8 Pages", ar: "٤–٨ صفحات" },
-      },
-      {
-        value: 2,
-        multiplier: 0.4,
-        name: { en: "9+ Pages", ar: "٩+ صفحات" },
-      },
-    ],
-    ecommerce: [
-      {
-        value: 0,
-        multiplier: 0,
-        name: { en: "Up to 50 Products", ar: "حتى ٥٠ منتج" },
-      },
-      {
-        value: 1,
-        multiplier: 0.2,
-        name: { en: "50–200 Products", ar: "٥٠–٢٠٠ منتج" },
-      },
-      {
-        value: 2,
-        multiplier: 0.45,
-        name: { en: "200+ Products", ar: "٢٠٠+ منتج" },
-      },
-    ],
-  },
-  addons: [
-    {
-      id: "cms",
-      appliesTo: ["landing", "business"],
-      price: 3499,
-      name: { en: "Admin Panel", ar: "لوحة تحكم" },
-      icon: Settings,
-    },
-    {
-      id: "multilingual",
-      appliesTo: ["landing", "business", "ecommerce"],
-      isMultiplier: true,
-      multiplierByBase: {
-        landing: 0.2,
-        business: 0.3,
-        ecommerce: 0.4,
-      },
-      name: { en: "Bilingual", ar: "ثنائي اللغة" },
-      icon: Globe,
-    },
-  ],
-};
-
-const USD_EXCHANGE_RATE = 50;
+const BASE_ICONS = { landing: Layout, business: Globe, ecommerce: Zap };
 
 export default function PricingEstimator({ lang }) {
+  const t = translations.pricingEstimator;
+  const USD_EXCHANGE_RATE = t.usdExchangeRate;
   const isRtl = lang === "ar";
 
   // 1. State: Primitives only
@@ -262,7 +151,7 @@ The Calculated Data:
                   {isRtl ? "دولار" : "USD"}
                 </span>
               )}
-              <span className="text-[2.5rem] md:text-8xl font-bold text-white tracking-tight leading-none">
+              <span className="text-[2.5rem] font-bold text-white tracking-tight leading-none">
                 {displayPrice.toLocaleString()}
               </span>
               {currency === "EGP" && (
@@ -287,7 +176,7 @@ The Calculated Data:
               </label>
               <div className="flex flex-col sm:grid sm:grid-cols-3 gap-2.5 sm:gap-3">
                 {t.bases.map((base) => {
-                  const Icon = base.icon;
+                  const Icon = BASE_ICONS[base.id];
                   const isSelected = baseId === base.id;
                   return (
                     <button
@@ -412,7 +301,7 @@ The Calculated Data:
                       {isRtl ? "دولار" : "USD"}
                     </span>
                   )}
-                  <span className="text-8xl font-bold text-white tracking-tight leading-none">
+                  <span className="md:text-6xl lg:text-8xl font-bold text-white tracking-tight leading-none">
                     {displayPrice.toLocaleString()}
                   </span>
                   {currency === "EGP" && (

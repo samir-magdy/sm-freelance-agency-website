@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 import LanguageToggle from "./LanguageToggle";
 
-// does this line also import the nav translation object? and how does it work in the map below.
-import { navLinks } from "@/app/data/translations/nav";
+import translations from "@/app/data/translations";
+
+const { navLinks } = translations;
 
 export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,6 +16,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
   const router = useRouter();
   const isHome =
     pathname === `/${lang}` || pathname === `/${lang}/` || pathname === "/";
+  const contactItem = navLinks[navLinks.length - 1];
 
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -118,7 +121,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           className="flex flex-col items-center gap-8"
           onClick={(e) => e.stopPropagation()}
         >
-          {navLinks.map((item) => (
+          {navLinks.slice(0, -1).map((item) => (
             <li key={item}>
               <a
                 href={isHome ? `#${item}` : `/${lang}/#${item}`}
@@ -129,6 +132,24 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               </a>
             </li>
           ))}
+          <li onClick={(e) => e.stopPropagation()}>
+            <Link
+              href={`/${lang}/resources`}
+              onClick={closeMenu}
+              className="font-semibold text-content-body text-[1.8rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+            >
+              {nav["resources"]}
+            </Link>
+          </li>
+          <li key={contactItem}>
+            <a
+              href={isHome ? `#${contactItem}` : `/${lang}/#${contactItem}`}
+              onClick={(e) => handleNavClick(e, contactItem)}
+              className="font-semibold text-content-body text-[1.8rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+            >
+              {nav[contactItem]}
+            </a>
+          </li>
         </ul>
         <div
           className="flex flex-col absolute bottom-24 items-center gap-8"

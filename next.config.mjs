@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
-  allowedDevOrigins: ["192.168.1.235"],
+  allowedDevOrigins: ["192.168.1.150"],
 
   // Replaces proxy.js middleware — resolved at Vercel's routing layer, no Edge Function invocation
   async rewrites() {
@@ -31,6 +31,8 @@ const nextConfig = {
     return [
       { source: "/", headers: htmlCache },
       { source: "/:lang(en|ar)", headers: htmlCache },
+      { source: "/:lang(en|ar)/resources", headers: htmlCache },
+      { source: "/:lang(en|ar)/resources/:slug", headers: htmlCache },
     ];
   },
 };

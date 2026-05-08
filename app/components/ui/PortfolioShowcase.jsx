@@ -4,8 +4,7 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { projects } from "@/app/data/projects";
-import { projectsSection, projectData } from "@/app/data/translations/projects";
-import a11y from "@/app/data/translations/a11y";
+import translations from "@/app/data/translations";
 import { HomeIndicator } from "@/app/components/ui/iphone/HomeIndicator";
 import { NavArrow } from "@/app/components/ui/navigation/NavArrow";
 import { RevealSection } from "@/app/components/ui/RevealSection";
@@ -81,6 +80,7 @@ function StatusBar() {
    Main Component
    ───────────────────────────────────── */
 export default function PortfolioShowcase({ lang }) {
+  const { projectsSection, projectData, a11y } = translations;
   const t = projectsSection;
   const [active, setActive] = useState(0);
   const snapRef = useRef(null);
@@ -164,7 +164,7 @@ export default function PortfolioShowcase({ lang }) {
     >
       <RevealSection className="flex flex-col items-center w-full">
         {/* ── Section heading ── */}
-        <div id="portfolio-heading" className="text-center relative z-2 px-5 mb-4 md:mb-8">
+        <div id="portfolio-heading" className="text-center relative z-2 px-5 mb-4 md:mb-12">
           <h2 className="font-bold text-heading mb-2 rtl:mb-3">
             {t.heading[lang]}
             <span className="sr-only">Egypt | مصر</span>

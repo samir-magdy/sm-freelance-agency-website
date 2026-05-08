@@ -16,7 +16,7 @@ export default function PricingSection({ lang }) {
       <RevealSection>
       <div className="flex flex-col items-center w-full">
         {/* Heading */}
-        <div className="mb-6 md:mb-8 text-center">
+        <div className="mb-6 md:mb-12 text-center">
           <h2
             id="pricing-heading"
             className="font-bold text-heading mb-2 rtl:mb-3"

@@ -1,3 +1,110 @@
+export const pricingEstimator = {
+  currencyToggle: { en: "Currency", ar: "العملة:" },
+  baseLabel: { en: "Type of Website", ar: "نوع الموقع المطلوب" },
+  scopeLabel: { en: "Amount of Content", ar: "كمية المحتوى" },
+  addonsLabel: { en: "Enhancements & Add-ons", ar: "الإضافات والتحسينات" },
+  estimateLabel: { en: "Estimate:", ar: "التكلفة التقديرية" },
+  cta: {
+    en: "Verify My Calculation",
+    ar: "تأكد من حساباتي",
+  },
+  disclaimer: {
+    en: "Note that our work is entirely custom. Therefore, price may vary depending on specific requests not listed in this tool.",
+    ar: "يرجى العلم أن أعمالنا مخصصة بالكامل، لذا قد تختلف التكلفة النهائية بناءً على متطلبات غير مدرجة في هذه الأداة.",
+  },
+  usdExchangeRate: 50,
+  bases: [
+    {
+      id: "landing",
+      price: 4999,
+      name: {
+        en: "Landing Page (Single Page Site)",
+        ar: "صفحة هبوط (صفحة واحدة)",
+      },
+    },
+    {
+      id: "business",
+      price: 8999,
+      name: {
+        en: "Business Website (Multiple Pages)",
+        ar: "موقع أعمال (متعدد الصفحات)",
+      },
+    },
+    {
+      id: "ecommerce",
+      price: 19999,
+      name: { en: "Online Store (Shopify)", ar: "متجر إلكتروني (شوبيفاي)" },
+    },
+  ],
+  scopesByBase: {
+    landing: [
+      {
+        value: 0,
+        multiplier: 0,
+        name: { en: "3–5 Sections", ar: "٣–٥ أقسام" },
+      },
+      {
+        value: 1,
+        multiplier: 0.3,
+        name: { en: "6+ Sections", ar: "٦+ أقسام" },
+      },
+    ],
+    business: [
+      {
+        value: 0,
+        multiplier: 0,
+        name: { en: "1–3 Pages", ar: "١–٣ صفحات" },
+      },
+      {
+        value: 1,
+        multiplier: 0.15,
+        name: { en: "4–8 Pages", ar: "٤–٨ صفحات" },
+      },
+      {
+        value: 2,
+        multiplier: 0.4,
+        name: { en: "9+ Pages", ar: "٩+ صفحات" },
+      },
+    ],
+    ecommerce: [
+      {
+        value: 0,
+        multiplier: 0,
+        name: { en: "Up to 50 Products", ar: "حتى ٥٠ منتج" },
+      },
+      {
+        value: 1,
+        multiplier: 0.2,
+        name: { en: "50–200 Products", ar: "٥٠–٢٠٠ منتج" },
+      },
+      {
+        value: 2,
+        multiplier: 0.45,
+        name: { en: "200+ Products", ar: "٢٠٠+ منتج" },
+      },
+    ],
+  },
+  addons: [
+    {
+      id: "cms",
+      appliesTo: ["landing", "business"],
+      price: 3499,
+      name: { en: "Admin Panel", ar: "لوحة تحكم" },
+    },
+    {
+      id: "multilingual",
+      appliesTo: ["landing", "business", "ecommerce"],
+      isMultiplier: true,
+      multiplierByBase: {
+        landing: 0.2,
+        business: 0.3,
+        ecommerce: 0.4,
+      },
+      name: { en: "Bilingual", ar: "ثنائي اللغة" },
+    },
+  ],
+};
+
 const pricingSection = {
   heading: {
     en: "Our Price Estimator",

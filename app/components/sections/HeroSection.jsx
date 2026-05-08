@@ -1,10 +1,11 @@
 "use client";
 
-import hero from "@/app/data/translations/hero";
+import translations from "@/app/data/translations";
 import FontReadyWrapper from "../ui/FontReadyWrapper";
 import SmoothScroll from "../ui/utils/SmoothScroll.js";
 
 export default function HeroSection({ lang }) {
+  const hero = translations.hero;
   const hookLines = hero.name[lang];
   const handleScroll = SmoothScroll();
 
@@ -66,10 +67,10 @@ export default function HeroSection({ lang }) {
           <a
             href="#portfolio"
             onClick={handleScroll}
-            className="cta-primary inline-flex items-center gap-2 md:gap-4 hero-cta-entrance font-semibold md:font-normal text-center bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.1rem,1.8vw,1.6rem)] px-6 md:px-10 py-4 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+            className="cta-primary inline-flex items-center gap-2 md:gap-4 hero-cta-entrance font-semibold md:font-normal text-center bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.1rem,1.8vw,1.6rem)] px-6 md:px-9 py-3 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
             {hero.primaryCta[lang]}
-              <svg
+              {/* <svg
               width="16"
               height="16"
               viewBox="0 0 16 16"
@@ -84,7 +85,7 @@ export default function HeroSection({ lang }) {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-            </svg>
+            </svg> */}
           </a>
 
           <a
