@@ -6,10 +6,10 @@ import whatMakesAHighConvertingWebsite from "./what-makes-a-high-converting-webs
 
 const resources = [
   whyYourBusinessNeedsAWebsite,
-  seoBasicsForSmallBusinesses,
-  howMuchDoesAWebsiteCost,
   webDesignVsWebsiteBuilder,
+  howMuchDoesAWebsiteCost,
   whatMakesAHighConvertingWebsite,
+  seoBasicsForSmallBusinesses,
 ];
 
 export default resources;

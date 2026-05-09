@@ -1,12 +1,12 @@
 const resource = {
   slug: "what-makes-a-high-converting-website",
   title: {
-    en: "What Makes a High-Converting Website: The Elements That Turn Visitors Into Clients",
+    en: "What Makes a Website Effective: Factors That Turn Visitors Into Clients",
     ar: "إزاي موقعك يتحول لـ 'ماكينة مبيعات'؟ أسرار تحويل الزوار لعملاء",
   },
   excerpt: {
-    en: "Getting traffic to your website is only half the battle. The other half is making sure visitors actually contact you, fill out a form, or make a purchase. This guide covers the specific design and content decisions that separate websites that generate business from ones that just take up space.",
-    ar: "إنك تجيب ناس لموقعك ده نص المشوار بس، النص التاني هو إنك تخليهم يكلموك فعلاً أو يشتروا منك. الدليل ده بيشرح لك إيه اللي بيفرق بين موقع 'ديكور' وموقع 'بيجيب شغل' حقيقي.",
+    en: "Getting traffic is only half the battle. The other half is converting visitors into clients. This guide covers the exact design and content decisions that separate websites that generate real business from ones that just look good.",
+    ar: "إنك تجيب زيارات لموقعك ده نص المشوار بس. النص التاني هو تحويل الزوار لعملاء. الدليل ده بيغطي قرارات التصميم والمحتوى اللي بتفرق بين مواقع بتجيب شغل حقيقي ومواقع بتبان حلوة بس.",
   },
   content: {
     en: `<p>Most business owners think about their website in terms of design — does it look good? does it reflect the brand? But the more important question is: does it work? A website that attracts ten thousand visitors per month but generates zero inquiries is not a business asset. A website that attracts five hundred visitors per month but converts twenty percent of them into qualified leads is worth far more. Understanding what separates these two outcomes is one of the most valuable things you can learn about digital marketing.</p>
@@ -58,10 +58,10 @@ const resource = {
 <p>التحويل هو أي فعل إنت عايز الزائر يعمله: يملأ بياناته، يتصل بيك، يبعت رسالة واتساب، أو يشتري منتج. المواقع الناجحة هي اللي متصممة عشان تخلي الأفعال دي سهلة وبديهية. كل كلمة وكل زرار في الموقع لازم يكون محطوط بهدف واحد، وهو إنه يحول الزائر لعميل.</p>
 
 <h2>1. اشرح إنت بتعمل إيه في ثواني</h2>
-<p>أول ما العميل يفتح موقعك، لازم يجاوب على 3 أسئلة في أول 5 ثواني: إنت بتعمل إيه؟ بتخدم مين؟ وليه أختارك إنت بالذات؟ بلاش الجمل الغامضة زي "شريكك في النجاح"، دي مش بتقول حاجة. استخدم جمل واضحة زي "بنصمم مواقع لشركات المقاولات في مصر بتزود مبيعاتهم". الوضوح بيجيب شغل، لكن الكلام المعقد بيطفش الناس.</p>
+<p>أول ما العميل يفتح موقعك، لازم يجاوب على 3 أسئلة في أول 5 ثواني: إنت بتعمل إيه؟ بتخدم مين؟ وليه أختارك إنت بالذات؟ بلاش الجمل الغامضة زي "شريكك في النجاح"، دي مش بتقول حاجة. استخدم جمل واضحة زي "بنصمم مواقع لشركات المقاولات في مصر بتزود مبيعاتهم".</p>
 
 <h2>2. السرعة.. مفيش وقت للانتظار</h2>
-<p>الأبحاث بتقول إن لو الموقع خد أكتر من 3 ثواني عشان يفتح، العميل بيقفله ويمشي. في مصر، أغلب الناس بتستخدم الموبايل بإنترنت قد لا يكون الأسرع، فلو موقعك تقيل، إنت بتخسر فلوس كل ثانية. السرعة مش رفاهية، دي أساس عشان العميل يشوف عرضك أصلاً.</p>
+<p>الأبحاث بتقول إن لو الموقع خد أكتر من 3 ثواني عشان يفتح، العميل بيقفله. في مصر، أغلب الناس بتستخدم الموبايل بإنترنت قد لا يكون الأسرع، فلو موقعك تقيل، إنت بتخسر فلوس كل ثانية. السرعة مش رفاهية، دي أساس عشان العميل يشوف عرضك أصلاً.</p>
 
 <h2>3. ابني الثقة من غير كلام كتير</h2>
 <p>محدش هيديك بياناته أو فلوسه لو مش واثق فيك. عشان كدة لازم موقعك يكون فيه "إشارات ثقة" واضحة، زي:</p>
@@ -76,7 +76,7 @@ const resource = {
 <p>لازم توجه العميل يعمل إيه. بلاش جملة "اتصل بنا" التقليدية المستخبية. استخدم زراير واضحة زي "احجز استشارتك المجانية" أو "اطلب عرض سعر دلوقتي". لازم الزرار يكون لونه بارز وموجود في كذا مكان في الصفحة، عشان العميل ميضطرش يدور عليه لما يقرر يكلمك.</p>
 
 <h2>5. الموبايل هو الأساس</h2>
-<p>في مصر، أكتر من 75% من الزوار بيفتحوا من الموبايل. لو موقعك شكله حلو على الكمبيوتر بس بايظ على الموبايل، إنت كدة برا السوق. لازم الزراير تكون كبيرة وسهلة الدوس، والخط واضح من غير ما العميل يضطر يعمل Zoom.</p>
+<p>في مصر، أكتر من 75% من الزوار بيفتحوا من الموبايل. لو موقعك شكله حلو على الكمبيوتر بس غير متوافق على الموبايل، إنت كدة برا السوق. لازم الزراير تكون كبيرة وسهلة الدوس، والخط واضح من غير ما العميل يضطر يعمل Zoom.</p>
 
 <h2>6. اتكلم عن "حل المشاكل" مش عن نفسك</h2>
 <p>العميل داخل موقعك عشان عنده مشكلة وعايز يحلها. بلاش كلام كتير عن تاريخ الشركة وعن إنجازاتك الشخصية. اتكلم عن "إزاي هتحل مشكلته هو". جاوب على الأسئلة اللي بتدور في باله قبل ما يرفع سماعة التليفون. كل ما حس إنك فاهمه، كل ما زادت رغبته إنه يشتغل معاك.</p>

@@ -20,15 +20,20 @@ export default function HeroSection({ lang }) {
 
       <div
         id="hero-container"
-        className="relative z-10 flex flex-col items-center w-full justify-center pt-16 md:pt-32"
+        className="relative z-10 flex flex-col items-center w-full justify-center pt-12 md:pt-24"
       >
+        <div dir="ltr" className="hero-fade hero-fade-eyebrow mb-8 flex items-center gap-4">
+          <div className="eyebrow-rule-left" />
+          <span className="text-[0.65rem] rtl:text-xs sm:rtl:text-base sm:text-sm uppercase tracking-[0.18em] font-semibold text-content-body whitespace-nowrap">
+            {hero.eyebrow[lang]}
+          </span>
+          <div className="eyebrow-rule-right" />
+        </div>
+
         <h1
           id="hero-hook"
           className="font-bold text-center text-content-heading px-4 block text-[clamp(2.5rem,4vw,4rem)] leading-relaxed"
         >
-          <span className="sr-only">
-            SM Web Studio - Best Web Design Company Egypt
-          </span>
           {Array.isArray(hookLines) ? (
             hookLines.map((line, i) => {
               const words = line.split(" ");
@@ -59,7 +64,7 @@ export default function HeroSection({ lang }) {
           )}
         </h1>
 
-        <h2 className="mt-6 mb-10 hero-fade hero-fade-nav text-content-body text-[clamp(1.2rem,2vw,2rem)] rtl:text-[clamp(1.2rem,1.8vw,3rem)] rtl:leading-loose text-center px-10 sm:px-16">
+        <h2 className="mt-6 mb-10 hero-fade hero-fade-nav text-content-body text-[clamp(1.2rem,2vw,2rem)] rtl:text-[clamp(1.1rem,1.8vw,2rem)] rtl:leading-loose text-center px-10 sm:px-16">
           {hero.subheading[lang]}
         </h2>
 
@@ -91,7 +96,7 @@ export default function HeroSection({ lang }) {
           <a
             href="#contact"
             onClick={handleScroll}
-            className="ms-2 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-1 text-content-muted hover:text-content-body text-[clamp(1rem,1.3vw,1.25rem)] font-medium transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+            className="ms-2.5 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-2 text-content-muted hover:text-content-body text-[clamp(1rem,1.3vw,1.25rem)] font-medium transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
             {hero.secondaryCta[lang]}
             <svg

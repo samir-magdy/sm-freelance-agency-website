@@ -16,8 +16,8 @@ const projectData = {
       ar: "متجر إلكتروني للأزياء",
     },
     description: {
-      en: "A premium e-commerce experience featuring smart product suggestions, custom filtering, and a streamlined shopping cart. Designed to reduce friction and turn casual browsers into loyal customers.",
-      ar: "تجربة تجارة إلكترونية متميزة تتميز باقتراحات ذكية للمنتجات، وتصنيفات مخصصة، وعربة تسوق سلسة. صُمم لتقليل العقبات وتحويل المتصفحين العاديين إلى عملاء مخلصين.",
+      en: "In the crowded fashion market, a slow or generic site loses sales to big brands. This platform gives you the edge with a premium shopping experience that rivals industry giants. By utilizing smart product suggestions and a frictionless checkout, you won't just compete—you’ll become the preferred choice for shoppers who value style and ease, ensuring they return to you instead of browsing your competitors' sites.",
+      ar: "في قطاع الأزياء، مظهر متجرك هو هويتك. توفر لك هذه المنصة واجهة احترافية تعكس جودة منتجاتك، مع تجربة تسوق سلسة تجعل العميل يثق في اختيارك وتكرار الشراء منك بدلاً من البحث في أماكن أخرى.",
     },
     cta: {
       en: "View Live Site",
@@ -30,8 +30,8 @@ const projectData = {
       ar: "متجر قطع غيار السيارات",
     },
     description: {
-      en: "A robust inventory-driven platform built for speed and accuracy. It allows customers to find specific vehicle components quickly, building trust through organized data and easy contact options.",
-      ar: "منصة قوية تعتمد على إدارة المخزون، صُممت من أجل السرعة والدقة. تتيح للعملاء العثور على قطع الغيار المحددة بسرعة، مما يبني الثقة من خلال البيانات المنظمة وسهولة التواصل.",
+      en: "Searching for auto parts is often frustrating for customers. While your competitors rely on outdated catalogs, this high-speed, inventory-driven platform builds immediate authority. By providing a precise, organized search experience, you position your business as the most reliable expert in the automotive niche, making it the only place customers trust when they need parts fast.",
+      ar: "غالباً ما يواجه العملاء صعوبة في البحث عن قطع الغيار بدقة. توفر لك هذه المنصة نظاماً منظماً لعرض المخزون يساعد في بناء هوية موثوقة لمشروعك، مما يرفع من فرص اعتماد العملاء عليك كخبير في هذا المجال بدلاً من اللجوء للمصادر التقليدية.",
     },
     cta: {
       en: "View Live Site",
@@ -44,8 +44,8 @@ const projectData = {
       ar: "عيادات طبية ومتخصصة",
     },
     description: {
-      en: "A professional medical portal focused on patient trust. It features clear service breakdowns and an optimized appointment booking flow to increase patient acquisition and streamline scheduling.",
-      ar: "بوابة طبية احترافية تركز على كسب ثقة المرضى. تتميز بعرض واضح للخدمات ومسار حجز مواعيد محسّن لزيادة عدد المرضى وتسهيل عملية الجدولة.",
+      en: "Patients choose providers based on trust and accessibility. This professional portal sets you apart from clinics with hard-to-navigate sites. By offering a streamlined booking flow and clear service transparency, you eliminate patient anxiety. You will naturally be chosen over local competitors because you provide the professional, digital-first experience modern patients now demand.",
+      ar: "يعتمد اختيار المرضى لمقدم الخدمة على سهولة الوصول والموثوقية. يساعدك هذا الموقع في تقديم صورة احترافية عبر نظام حجز ميسر ووضوح في عرض الخدمات، مما يساهم في طمأنة المريض وزيادة احتمالية اختياره لعيادتك مقارنة بالمنافسين.",
     },
     cta: {
       en: "View Live Site",
@@ -58,8 +58,8 @@ const projectData = {
       ar: "مراكز اللياقة البدنية",
     },
     description: {
-      en: "A lead-generating landing page built for fitness centers that require a solid online presence. It is strategically designed to emotionally engage visitors into starting their fitness journey today.",
-      ar: "موقع لتوليد العملاء المحتملين تم تطويره لمراكز اللياقة البدنية، وهو مصمم استراتيجياً لجذب الزوار عاطفياً وتحفيزهم على بدء رحلتهم الرياضية اليوم.",
+      en: "Most gym websites are just static brochures, but yours will be a lead-generation engine. This site is strategically designed to trigger the emotional 'start today' response. While other fitness centers leave potential members scrolling, your site converts interest into action immediately, ensuring that when someone decides to get fit, they sign up with you before ever seeing the gym down the street.",
+      ar: "يساعدك هذا الموقع في تحويل التصفح العادي إلى خطوات اشتراك فعلية. عبر تصميم يهدف لتحفيز الزوار، تزيد المنصة من فرص جذب المشتركين الجدد وتعزز من تواجدك الرقمي بشكل يجعل علامتك هي الخيار الأقرب لمن يبحث عن بداية رياضية.",
     },
     cta: {
       en: "View Live Site",
@@ -72,8 +72,8 @@ const projectData = {
       ar: "تصميم داخلي وديكور",
     },
     description: {
-      en: "A visually stunning portfolio designed to showcase aesthetic mastery. It uses high-impact imagery and minimalist design to attract high-end clients looking for exceptional design services.",
-      ar: "معرض أعمال بصري مذهل صُمم لاستعراض البراعة الجمالية. يستخدم صوراً عالية التأثير وتصميماً بسيطاً لجذب العملاء الباحثين عن خدمات تصميم استثنائية.",
+      en: "In interior design, your website is your first handshake. A mediocre site suggests mediocre work. This visually stunning portfolio signals luxury and mastery from the first click. By showcasing your projects with high-impact imagery and minimalist elegance, you justify premium pricing and attract high-end clients who will skip over your competitors for your superior aesthetic authority.",
+      ar: "في مجال التصميم، يعبر موقعك عن جودة تنفيذك. يساهم هذا المعرض البصري في إبراز مشاريعك بأسلوب راقٍ، مما يساعدك في استقطاب شريحة العملاء التي تبحث عن التميز ويدعم موقفك المهني عند تقديم خدماتك بأسعار متميزة.",
     },
     cta: {
       en: "View Live Site",
@@ -86,8 +86,8 @@ const projectData = {
       ar: "رعاية الحيوانات الأليفة",
     },
     description: {
-      en: "A friendly and reassuring platform for pet owners. It highlights expert care and essential services, making it easy for users to trust your expertise and book a visit for their companions.",
-      ar: "منصة ودودة ومطمئنة لأصحاب الحيوانات الأليفة. تسلط الضوء على الرعاية المتخصصة والخدمات الأساسية، مما يسهل على المستخدمين الثقة في خبرتك وحجز زيارة لمرافقيهم.",
+      en: "Pet owners only want the best for their companions. A professional, reassuring website is the deciding factor between a visit and a skip. This platform highlights your expertise and care in a way that generic local listings cannot. By making booking effortless and information clear, you establish a level of trust that makes competitors look second-rate in comparison.",
+      ar: "يبحث أصحاب الحيوانات الأليفة دائماً عن المصداقية والاهتمام. توفر هذه المنصة واجهة احترافية تبرز خبرتك وتسهل التواصل، مما يعزز من ثقة العميل في خدماتك ويزيد من فرص اختياره لك بدلاً من المنافسين التقليديين.",
     },
     cta: {
       en: "View Live Site",
@@ -100,8 +100,8 @@ const projectData = {
       ar: "منصة العقارات والوسطاء",
     },
     description: {
-      en: "A high-conversion real estate engine designed to showcase properties in their best light. Includes advanced filtering and clear calls-to-action to turn property seekers into qualified leads.",
-      ar: "محرك عقاري عالي التحويل صُمم لعرض العقارات في أفضل صورة. يتضمن تصفية متقدمة ودعوات واضحة لاتخاذ إجراء لتحويل الباحثين عن عقارات إلى عملاء محتملين.",
+      en: "The most successful freelance brokers are those who control their own lead flow. This high-conversion showcase puts your portfolio in the spotlight, giving your listings the premium edge needed to stand out. By presenting properties with absolute clarity and direct pathways to reach you, you capture qualified buyers and keep them focused on your expertise—not a crowded mass-market site.",
+      ar: "كوسيط مستقل، نجاحك يعتمد على كيفية تقديم نفسك وعروضك. تمنحك هذه المنصة واجهة احترافية تضع عقاراتك في الصدارة وتبرز هويتك المهنية. من خلال عرض الوحدات بوضوح تام مع وسائل تواصل مباشرة، ستتمكن من جذب العملاء الجادين وضمان تركيزهم على ما تقدمه، بعيداً عن ضجيج المواقع العقارية المزدحمة.",
     },
     cta: {
       en: "View Live Site",
@@ -111,11 +111,11 @@ const projectData = {
   Travel: {
     title: {
       en: "Travel & Tourism",
-      ar: "شركة سياحة",
+      ar: "السياحة والرحلات",
     },
     description: {
-      en: "An inspiring booking platform for global destinations. It focuses on beautiful imagery and structured itineraries to simplify the complex travel planning process for your customers.",
-      ar: "منصة حجز ملهمة للوجهات العالمية. تركز على الصور الجميلة والبرامج السياحية المنظمة لتبسيط عملية تخطيط السفر المعقدة لعملائك.",
+      en: "Travelers are looking for an escape, not a headache. While other agencies provide cluttered info, your site offers inspiration and structured itineraries that simplify the dream. By combining beautiful imagery with a logical booking flow, you become the stress-free choice for global travelers, ensuring they book their next adventure through you rather than a generic booking engine.",
+      ar: "يبحث المسافر عن الوضوح والسهولة في التخطيط. يوفر موقعك برامج سياحية منظمة تساعد في تبسيط خيارات السفر للعملاء، مما يزيد من فرص اعتمادهم على شركتك لتنظيم رحلاتهم القادمة بدلاً من البحث في المواقع المشتتة.",
     },
     cta: {
       en: "View Live Site",
@@ -128,8 +128,8 @@ const projectData = {
       ar: "السياحة والرحلات",
     },
     description: {
-      en: "A dynamic portal for local tourism and activities. Built to capture the excitement of travel, it highlights unique experiences and makes the booking process fast and effortless.",
-      ar: "بوابة ديناميكية للسياحة والأنشطة المحلية. صُممت لنقل حماس السفر، وتسلط الضوء على التجارب الفريدة وتجعل عملية الحجز سريعة وسهلة.",
+      en: "Local tourism is about capturing excitement in the moment. This dynamic portal is built to turn curiosity into confirmed bookings instantly. While competitors rely on phone calls and slow responses, your platform offers a fast, effortless digital experience that modern tourists prefer, making you the undisputed leader for local activities and unique experiences.",
+      ar: "تعتمد الأنشطة السياحية على سهولة وسرعة التفاعل. صُممت هذه البوابة لتسهيل عملية الحجز وتوفير تجربة رقمية سريعة يفضلها السائح المعاصر، مما يساهم في رفع نسب الإقبال على تجاربك السياحية الفريدة مقارنة بالوسائل التقليدية.",
     },
     cta: {
       en: "View Live Site",
@@ -137,5 +137,4 @@ const projectData = {
     },
   },
 };
-
 export { projectsSection, projectData };

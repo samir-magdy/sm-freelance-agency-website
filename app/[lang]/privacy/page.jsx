@@ -7,6 +7,7 @@ export async function generateMetadata({ params }) {
 
   return {
     title: t?.heading?.[lang] || t?.heading?.en || "Privacy Policy",
+    robots: { index: false, follow: true },
   };
 }
 

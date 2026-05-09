@@ -31,11 +31,20 @@ export async function generateMetadata({ params }) {
       description: t.metaDescription[lang],
       url: canonical,
       type: "website",
+      images: [
+        {
+          url: `${SITE_URL}/open-graph.webp`,
+          width: 1200,
+          height: 630,
+          alt: "SM Web Studio – Web Design Agency in Egypt",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: t.metaTitle[lang],
       description: t.metaDescription[lang],
+      images: [`${SITE_URL}/open-graph.webp`],
     },
     robots: { index: true, follow: true },
   };
@@ -48,22 +57,45 @@ export default function ResourcesPage({ params }) {
   const canonical =
     lang === "en" ? `${SITE_URL}/resources` : `${SITE_URL}/${lang}/resources`;
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "@id": `${SITE_URL}/resources#webpage`,
-    name: t.pageTitle.en,
-    description: t.metaDescription.en,
-    url: `${SITE_URL}/resources`,
-    inLanguage: lang,
-    isPartOf: { "@id": `${SITE_URL}/#website` },
-    publisher: { "@id": `${SITE_URL}/#business` },
-  };
+  const homeUrl = lang === "en" ? `${SITE_URL}/` : `${SITE_URL}/ar`;
+
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": `${canonical}#webpage`,
+      name: t.pageTitle[lang],
+      description: t.metaDescription[lang],
+      url: canonical,
+      inLanguage: lang,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      publisher: { "@id": `${SITE_URL}/#business` },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": `${canonical}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: lang === "ar" ? "الرئيسية" : "Home",
+          item: homeUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: t.pageTitle[lang],
+          item: canonical,
+        },
+      ],
+    },
+  ];
 
   return (
     <main
       dir={dir}
-      className="bg-background pt-16 sm:pt-32 pb-20 px-5"
+      className="bg-background pt-16 sm:pt-32 pb-20 px-5 md:px-48"
     >
       <script
         type="application/ld+json"

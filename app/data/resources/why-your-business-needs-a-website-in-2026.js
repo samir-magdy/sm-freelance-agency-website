@@ -1,12 +1,12 @@
 const resource = {
   slug: "why-your-business-needs-a-website-in-2026",
   title: {
-    en: "Why Your Business Needs a Website in 2026",
-    ar: "ليه شركتك محتاجة موقع إلكتروني في 2026؟",
+    en: "Why You Need a Website: Difference between being found and being trusted.",
+    ar: "ليه محتاج موقع إلكتروني: الفرق بين إن الناس تلاقيك، وإنها تثق فيك",
   },
   excerpt: {
-    en: "In 2026, the first thing someone does when they hear about your business is Google it. What they find in those first five seconds determines whether they contact you or move on. Egyptian businesses that invest in professional web presence are pulling ahead — here's why.",
-    ar: "في 2026، أول حاجة العميل بيعملها لما يسمع عن شركتك هي إنه يبحث عنها على جوجل. اللي هيشوفه في أول ثواني هو اللي هيخليه يقرر يكلمك أو يروح لمنافس. الشركات المصرية اللي عندها موقع احترافي بتسبق غيرها، والسبب في المقال ده.",
+    en: "In 2026, the first thing someone does when they hear about your business is Google it. What they find in those first seconds determines whether they reach out or move on to a competitor — here is why it matters.",
+    ar: "في 2026، أول حاجة العميل بيعملها لما يسمع عن شركتك هي إنه يبحث عنها على جوجل. اللي هيشوفه في أول ثواني هو اللي بيحدد هل هيتواصل معاك أو يروح لمنافس — وده بالظبط اللي بيخلي الأمر مهم.",
   },
   content: {
     en: `<p>If someone hears about your business today, the first thing they do is Google it. They are not asking around or visiting a physical location — they are opening their phone and searching your name or what you do. What they find in the next five seconds determines whether they contact you or move on to a competitor. That moment of digital judgment happens millions of times every day across Egypt, and yet many businesses still have no answer for it.</p>

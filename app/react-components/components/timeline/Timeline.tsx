@@ -134,15 +134,15 @@ export function Timeline({ data, variant = "vertical", accentColor = "white" }: 
                   >
                     {large ? (
                       <div
-                        className="h-10 w-10 rounded-full border flex items-center justify-center transition-all duration-500"
+                        className="h-10 w-10 flex items-center justify-center transition-all duration-500"
                         style={
                           active
-                            ? { borderColor: accentColor, filter: `drop-shadow(0 0 8px ${accentColor})`, background: "rgba(255,255,255,0.05)" }
+                            ? { borderColor: accentColor, filter: `drop-shadow(0 0 2px ${accentColor})` }
                             : { borderColor: "rgba(255,255,255,0.15)", background: "transparent" }
                         }
                       >
                         {variant === "icon" && Icon ? (
-                          <Icon size={18} style={{ color: active ? accentColor : "rgba(255,255,255,0.35)" }} />
+                          <Icon size={25} style={{ color: active ? accentColor : "rgba(255,255,255,0.35)" }} />
                         ) : (
                           <span
                             className={`font-bold ${variant === "numbered" ? "text-sm" : "text-xs"}`}

@@ -16,9 +16,9 @@ export default function FAQSection({ lang }) {
           >
             {t.heading[lang]}
           </h2>
-          {/* <p className="text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
+          <p className="text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
           {t.subheading[lang]}
-        </p> */}
+        </p>
         </div>
           <article className="w-full">
           {t.items.map((item, i) => (
@@ -45,9 +45,9 @@ export default function FAQSection({ lang }) {
               </summary>
 
               <div className="pb-6 md:pb-7 ps-10">
-                <p className="text-base text-content-muted leading-relaxed">
-                  {item.answer[lang]}
-                </p>
+                <p className="html-content text-base text-content-muted leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: item.answer[lang] }}
+                />
               </div>
             </details>
             

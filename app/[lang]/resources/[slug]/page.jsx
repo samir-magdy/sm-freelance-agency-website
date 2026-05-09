@@ -40,11 +40,20 @@ export async function generateMetadata({ params }) {
       description: article.metaDescription[lang],
       url: canonical,
       type: "article",
+      images: [
+        {
+          url: `${SITE_URL}/open-graph.webp`,
+          width: 1200,
+          height: 630,
+          alt: "SM Web Studio – Web Design Agency in Egypt",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: article.title[lang],
       description: article.metaDescription[lang],
+      images: [`${SITE_URL}/open-graph.webp`],
     },
     robots: { index: true, follow: true },
   };
@@ -68,18 +77,49 @@ export default function ArticlePage({ params }) {
     { year: "numeric", month: "long", day: "numeric" },
   ).format(new Date(article.publishedAt));
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: article.title.en,
-    description: article.metaDescription.en,
-    datePublished: article.publishedAt,
-    inLanguage: lang,
-    url: canonical,
-    author: { "@id": `${SITE_URL}/#founder` },
-    publisher: { "@id": `${SITE_URL}/#business` },
-    isPartOf: { "@id": `${SITE_URL}/#website` },
-  };
+  const homeUrl = lang === "en" ? `${SITE_URL}/` : `${SITE_URL}/ar`;
+  const resourcesUrl =
+    lang === "en" ? `${SITE_URL}/resources` : `${SITE_URL}/ar/resources`;
+
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: article.title[lang],
+      description: article.metaDescription[lang],
+      datePublished: article.publishedAt,
+      inLanguage: lang,
+      url: canonical,
+      author: { "@id": `${SITE_URL}/#founder` },
+      publisher: { "@id": `${SITE_URL}/#business` },
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": `${canonical}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: lang === "ar" ? "الرئيسية" : "Home",
+          item: homeUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: lang === "ar" ? "الموارد" : "Resources",
+          item: resourcesUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: article.title[lang],
+          item: canonical,
+        },
+      ],
+    },
+  ];
 
   return (
     <main
@@ -108,7 +148,7 @@ export default function ArticlePage({ params }) {
 
           {/* Article header */}
           <header className="flex flex-col gap-4 rtl:gap-8">
-            <h1 className="text-[clamp(2.2rem,5vw,3.5rem)] font-bold text-content-heading leading-tight">
+            <h1 className="text-[clamp(2rem,5vw,2.8rem)] font-bold text-content-heading leading-tight">
               {article.title[lang]}
             </h1>
           </header>
@@ -117,7 +157,7 @@ export default function ArticlePage({ params }) {
           <article
             dir={dir}
             className="
-            [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-content-heading [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:leading-snug
+            [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-content-heading/95 [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:leading-snug
             [&_h3]:text-2xl [&_h3]:font-semibold [&_h3]:text-content-heading [&_h3]:mt-8 [&_h3]:mb-4 [&_h3]:leading-snug
             [&_p]:text-content-body [&_p]:text-xl [&_p]:leading-relaxed [&_p]:mb-6
             [&_ul]:list-disc [&_ul]:ps-7 [&_ul]:mb-6 [&_ul]:space-y-3
@@ -128,7 +168,7 @@ export default function ArticlePage({ params }) {
           />
         <Link
             href={`/${lang}/resources`}
-            className="border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2 text-content-muted hover:text-black hover:bg-icon text-[clamp(0.8rem,1.3vw,1.1rem)] font-medium transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+            className="border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.8rem,1.3vw,1.1rem)] font-medium transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
             <ArrowLeft
               className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}

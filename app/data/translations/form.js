@@ -4,9 +4,7 @@ const form = {
   namePlaceholder: { en: "Your name", ar: "اسمك" },
   phone: { en: "Number", ar: "الهاتف" },
   phonePlaceholder: { en: "01XXXXXXXXX", ar: "01XXXXXXXXX" },
-  industry: { en: "Your business", ar: "ما هو مجال عملك؟" },
-  industryPlaceholder: { en: "Select industry", ar: "اختر مجالك" },
-  contactMethod: {
+contactMethod: {
     en: "Contact method",
     ar: "طريقة التواصل",
   },

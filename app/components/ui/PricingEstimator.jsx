@@ -60,6 +60,8 @@ export default function PricingEstimator({ lang }) {
         if (addon.isMultiplier) {
           const bilingualMultiplier = addon.multiplierByBase[baseId] ?? 0.4;
           totalMultiplier += bilingualMultiplier;
+        } else if (addon.scalesWithScope) {
+          flatAddonsCost += Math.round(addon.price * (1 + currentScope.multiplier));
         } else {
           flatAddonsCost += addon.price;
         }
@@ -67,8 +69,8 @@ export default function PricingEstimator({ lang }) {
     });
 
     const scopeCost = Math.round(baseType.price * currentScope.multiplier);
-    const subTotal = baseType.price + scopeCost + flatAddonsCost;
-    return Math.round(subTotal * totalMultiplier);
+    const subTotal = baseType.price + scopeCost;
+    return Math.round(subTotal * totalMultiplier) + flatAddonsCost;
   }, [baseId, baseType.price, currentScope.multiplier, selectedAddons]);
 
   const displayPrice =
@@ -114,7 +116,7 @@ The Calculated Data:
 
   return (
     <>
-      <div className="relative max-w-7xl w-full mx-auto px-4 py-3 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-subtle flex flex-col gap-3.5 sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0">
+      <div className="relative max-w-[90rem] w-full mx-auto px-4 py-3 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-strong flex flex-col gap-3.5 sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0">
         {/* ========================================= */}
         {/* MOBILE ONLY: Original Header & Price      */}
         {/* ========================================= */}
@@ -144,14 +146,17 @@ The Calculated Data:
             </div>
           </div>
 
-          <div className="flex gap-1 me-3">
+          <div className="flex items-end gap-1">
+            <span className="text-xs inline-block mb-1 font-semibold tracking-wider text-content-muted">
+              {t.estimateLabel[lang]}
+            </span>
             <div className="flex items-baseline gap-0.5">
               {currency === "USD" && (
                 <span className="text-sm order-1 sm:text-base text-content-muted font-medium ms-1">
                   {isRtl ? "دولار" : "USD"}
                 </span>
               )}
-              <span className="text-[2.5rem] font-bold text-white tracking-tight leading-none">
+              <span className="text-[2rem] font-bold text-white tracking-tight leading-none">
                 {displayPrice.toLocaleString()}
               </span>
               {currency === "EGP" && (
@@ -168,13 +173,13 @@ The Calculated Data:
           {/* ========================================= */}
           {/* LEFT COLUMN: Configuration Steps          */}
           {/* ========================================= */}
-          <div className="md:col-span-7 flex flex-col gap-2.5 sm:gap-8 md:bg-surface-card/50 md:shadow-xl md:shadow-black/30 md:border-2 md:border-border-subtle md:rounded-3xl md:p-6 md:pt-4">
+          <div className="md:col-span-7 flex flex-col gap-2.5 sm:gap-3.5 md:bg-surface-card/50 md:shadow-xl md:shadow-black/30 md:border-2 md:border-border-strong md:rounded-3xl md:p-6 md:pt-4">
             {/* Step 1: Base Type */}
             <div className="flex flex-col gap-2">
-              <label className="ms-1 text-content-heading font-bold uppercase tracking-wider block lg:text-[1.25rem]">
+              <label className="ms-1 rtl:mb-1 sm:mb-2 text-content-heading font-bold text-base lg:text-[1.2rem] block">
                 {t.baseLabel[lang]}
               </label>
-              <div className="flex flex-col sm:grid sm:grid-cols-3 gap-2.5 sm:gap-3">
+              <div className="flex flex-col sm:grid sm:grid-cols-3 gap-2.5 sm:justify-between items-center">
                 {t.bases.map((base) => {
                   const Icon = BASE_ICONS[base.id];
                   const isSelected = baseId === base.id;
@@ -182,45 +187,53 @@ The Calculated Data:
                     <button
                       key={base.id}
                       onClick={() => handleBaseTypeChange(base.id)}
-                      className={`cursor-pointer flex flex-row sm:flex-col items-center sm:items-center text-center p-3 sm:p-4 sm:px-6 rounded-2xl border transition-all duration-200 w-full ${
+                      className={`cursor-pointer flex flex-row sm:flex-col items-center sm:items-start text-start p-3 sm:p-4 rounded-2xl border transition-all duration-200 w-full gap-3 sm:gap-2 ${
                         isSelected
-                          ? "bg-black/40 text-content-heading shadow-md border-white/60 border-2"
+                          ? "bg-black/40 shadow-md border-white/60 border-2"
                           : "border-2 border-border-subtle hover:border-border-strong bg-black/15"
                       }`}
                     >
                       <Icon
-                        className={`w-5 h-5 sm:w-7 sm:h-7 sm:mb-2.5 me-3 sm:me-0 shrink-0 transition-colors ${isSelected ? "text-content-heading" : "text-icon"}`}
+                        className={`w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 shrink-0 transition-colors ${isSelected ? "text-content-heading" : "text-icon"}`}
                       />
-                      <span
-                        className={`text-sm sm:text-base lg:text-[1.25rem] font-semibold transition-colors ${isSelected ? "text-content-heading" : "text-content-body"}`}
-                      >
-                        {base.name[lang]}
-                      </span>
+                      <div className="flex flex-col gap-1.5">
+                        <span className={`text-sm sm:text-base font-semibold leading-tight transition-colors ${isSelected ? "text-content-heading" : "text-content-heading/95"}`}>
+                          {base.name[lang]}
+                        </span>
+                        <span className="text-xs lg:text-[1.2rem] text-content-muted/90 leading-snug">
+                          {base.description[lang]}
+                        </span>
+                      </div>
                     </button>
                   );
                 })}
               </div>
             </div>
 
-            {/* Step 2: Size/Scope — now context-aware per base type */}
+            {/* Step 2: Size/Scope */}
             <div className="flex flex-col gap-2">
-              <label className="ms-1 text-content-heading font-bold uppercase tracking-wider lg:text-[1.25rem]">
+              <label className="ms-1 rtl:mb-1 sm:mb-2 text-content-heading font-bold text-base lg:text-[1.2rem] block">
                 {t.scopeLabel[lang]}
               </label>
-              <div className="flex flex-wrap gap-2 md:justify-between">
+              <div className="flex flex-wrap gap-2 ">
                 {currentScopes.map((scope, index) => {
                   const isSelected = scopeIndex === index;
                   return (
                     <button
                       key={index}
                       onClick={() => setScopeIndex(index)}
-                      className={`cursor-pointer flex-1 flex md:gap-4 justify-center items-center gap-1 px-2.5 py-2 rounded-2xl border text-sm sm:text-base lg:text-[1.25rem] transition-all ${
+                      className={`cursor-pointer flex-1 flex flex-col items-center justify-around gap-1.5 md:gap-0 px-3 py-2.5 rounded-2xl border text-sm transition-all ${
                         isSelected
-                          ? "bg-black/40 text-content-heading shadow-md border-white/60 border-2"
+                          ? "bg-black/40 shadow-md border-white/60 border-2"
                           : "border-2 border-border-subtle hover:border-border-strong bg-black/15"
                       }`}
                     >
-                      <span>{scope.name[lang]}</span>
+                      <span className={`font-semibold text-sm sm:text-base lg:text-xl py-0.5 leading-tight ${isSelected ? "text-content-heading" : "text-content-body"}`}>
+                        {scope.name[lang]}
+                      </span>
+                      {/* <span className="text-xs lg:text-[1.12rem] text-content-muted/90 leading-snug">
+                        {scope.description[lang]}
+                      </span> */}
                     </button>
                   );
                 })}
@@ -229,23 +242,28 @@ The Calculated Data:
 
             {/* Step 3: Add-ons */}
             <div className="flex flex-col gap-2 mb-2 lg:mb-0">
-              <label className="ms-1 text-content-heading font-bold uppercase tracking-wider block lg:text-[1.25rem]">
+              <label className="ms-1 rtl:mb-1 sm:mb-2 text-content-heading font-bold text-base lg:text-[1.2rem] block">
                 {t.addonsLabel[lang]}
               </label>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 md:min-h-20">
                 {availableAddons.map((addon) => {
                   const isSelected = selectedAddons.includes(addon.id);
                   return (
                     <button
                       key={addon.id}
                       onClick={() => toggleAddon(addon.id)}
-                      className={`cursor-pointer flex flex-1 md:gap-4 justify-center items-center gap-1 px-2.5 py-2 rounded-2xl border text-sm sm:text-base lg:text-[1.25rem] transition-all ${
+                      className={`cursor-pointer flex flex-1 flex-col items-center justify-center gap-1.5 px-3 py-2.5 rounded-2xl border text-sm transition-all ${
                         isSelected
-                          ? "bg-black/40 text-content-heading shadow-md border-white/60 border-2"
+                          ? "bg-black/40 shadow-md border-white/60 border-2"
                           : "border-2 border-border-subtle hover:border-border-strong bg-black/15"
                       }`}
                     >
-                      <span>{addon.name[lang]}</span>
+                      <span className={`font-semibold text-sm sm:text-base lg:text-xl leading-tight ${isSelected ? "text-content-heading" : "text-content-body"}`}>
+                        {addon.name[lang]}
+                      </span>
+                      <span className="text-xs lg:text-[1.2rem] text-content-muted/90 leading-snug">
+                        {addon.description[lang]}
+                      </span>
                     </button>
                   );
                 })}
@@ -255,6 +273,7 @@ The Calculated Data:
             {/* ========================================= */}
             {/* MOBILE ONLY: Original CTA Button          */}
             {/* ========================================= */}
+            
             <a
               href={whatsappUrl}
               target="_blank"
@@ -295,13 +314,16 @@ The Calculated Data:
               </div>
 
               <div className="flex flex-col gap-1 items-center text-center py-4">
+                <span className="text-xs lg:text-2xl font-semibold uppercase tracking-wider text-content-muted mb-1">
+                  {t.estimateLabel[lang]}
+                </span>
                 <div className="flex items-baseline justify-center gap-2">
                   {currency === "USD" && (
                     <span className="text-xl order-1 text-content-muted font-medium">
                       {isRtl ? "دولار" : "USD"}
                     </span>
                   )}
-                  <span className="md:text-6xl lg:text-8xl font-bold text-white tracking-tight leading-none">
+                  <span className="md:text-5xl lg:text-7xl font-bold text-white tracking-tight leading-none">
                     {displayPrice.toLocaleString()}
                   </span>
                   {currency === "EGP" && (
@@ -311,7 +333,7 @@ The Calculated Data:
                   )}
                 </div>
               </div>
-
+                  
               <a
                 href={whatsappUrl}
                 target="_blank"

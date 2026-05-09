@@ -1,12 +1,12 @@
 const resource = {
   slug: "seo-basics-for-small-businesses-egypt",
   title: {
-    en: "SEO Basics for Small Businesses in Egypt: What It Is, Why It Matters, and How to Start",
-    ar: "أساسيات الـ SEO للشركات الصغيرة في مصر: إيه هو، وليه مهم، وتبدأ إزاي؟",
+    en: "SEO Basics for Small Businesses in Egypt: What It Is, Why It Matters, How to Start",
+    ar: "أساسيات الـ SEO : إيه هو، وليه مهم، وتبدأ إزاي؟",
   },
   excerpt: {
-    en: "SEO — Search Engine Optimization — is how your business shows up when Egyptians search for what you offer. This guide breaks down the fundamentals in plain language, with practical first steps any business owner can take today.",
-    ar: "الـ SEO أو تحسين محركات البحث هو اللي بيخلي شركتك تظهر لما المصريين يبحثوا عن اللي بتقدمه على جوجل. الدليل ده بيشرح لك الأساسيات ببساطة، مع خطوات عملية تقدر تبدأ فيها من النهاردة.",
+    en: "SEO is how your business shows up when potential customers search for what you offer on Google. This guide breaks down the fundamentals in plain language, with practical first steps any Egyptian business owner can act on today.",
+    ar: "الـ SEO هو اللي بيخلي شركتك تظهر لما العملاء المحتملين يبحثوا على جوجل عن اللي بتقدمه. الدليل ده بيشرح الأساسيات ببساطة مع خطوات عملية يقدر أي صاحب شغل في مصر يبدأ بيها من النهاردة.",
   },
   content: {
     en: `<p>Every day, thousands of Egyptians type queries into Google: "interior designer Cairo," "accountant near me Alexandria," "best coffee shop Maadi," "IT support for small business Egypt." These are not passive browsers — these are potential customers who have already decided they want what you offer. They are just looking for the right provider. Search Engine Optimization, or SEO, is what determines whether they find you or your competitor.</p>

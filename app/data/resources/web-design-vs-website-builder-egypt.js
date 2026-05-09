@@ -2,17 +2,17 @@ const resource = {
   slug: "diy-vs-professional-web-design-egypt",
   title: {
     en: "DIY vs. Professional Web Design: Which is Right for Your Business?",
-    ar: "تصميم الموقع بنفسك أم الاستعانة بشركة محترفة؟ أيهما أفضل لعملك؟",
+    ar: "تصميم الموقع بنفسك أم الاستعانة بمحترف؟ أيهما أفضل؟",
   },
   excerpt: {
-    en: "Should you build your website yourself or hire a professional? We compare the true costs, risks, and benefits of DIY builders versus custom professional design for Egyptian businesses in 2026.",
-    ar: "تبني موقعك بنفسك ولا توظف متخصص؟ بنقارن بين التكاليف الحقيقية والمميزات والعيوب لكل اختيار عشان تعرف إيه الأنسب لشركتك في مصر عام 2026.",
+    en: "Should you build your website yourself or hire a professional? We break down the real costs, risks, and long-term value of DIY builders versus custom professional design, so you can make the right call for your business.",
+    ar: "هتبني موقعك بنفسك ولا توظف متخصص؟ بنقارن التكاليف الحقيقية والمخاطر والقيمة على المدى البعيد لأدوات البناء الجاهزة مقابل التصميم الاحترافي المخصص.",
   },
   content: {
     en: `<p>In 2026, building a website has never been easier—or more complicated. With tools like Wix and Squarespace, anyone can launch a page in an afternoon. But for a growing business in Egypt’s competitive market, is a DIY site enough? Let's break down the real differences between doing it yourself and hiring a professional studio.</p>
 
 <h2>1. The Cost Illusion</h2>
-<p><strong>DIY:</strong> The biggest draw is the low entry price. You pay a monthly subscription and do the work yourself. However, your time has a value. The hours you spend troubleshooting layouts are hours you aren't spending running your business.</p>
+<p><strong>DIY:</strong> The biggest draw is the low entry price. You pay a monthly subscription and do the work yourself. However, your time has value. The hours you spend troubleshooting layouts are hours you aren't spending running your business.</p>
 <p><strong>Professional:</strong> Higher upfront cost, but it's an investment in an asset. A professional site is built to convert visitors into customers, meaning it pays for itself much faster than a generic DIY page that people leave quickly.</p>
 
 <h2>2. Speed and Performance (SEO)</h2>

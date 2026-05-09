@@ -7,6 +7,7 @@ export async function generateMetadata({ params }) {
 
   return {
     title: t?.heading?.[lang] || t?.heading?.en || "Terms of Service",
+    robots: { index: false, follow: true },
   };
 }
 
@@ -24,7 +25,7 @@ export default function TermsPage({ params }) {
     >
       <div className="max-w-6xl mx-auto">
         <header className="mb-12 border-b border-neutral-800 pb-8 text-start">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-content-heading mb-4">
             {/* Added fallback to .en to guarantee text renders */}
             {t.heading?.[lang] || t.heading?.en}
           </h1>
@@ -36,7 +37,7 @@ export default function TermsPage({ params }) {
         <article className="space-y-10">
           {t.items?.map((item, index) => (
             <section key={index} className="scroll-mt-24 text-start">
-              <h2 className="text-2xl font-bold text-white mb-3">
+              <h2 className="text-2xl font-bold text-content-heading mb-3">
                 {item.title?.[lang] || item.title?.en}
               </h2>
               <p className="text-base text-gray-300 leading-relaxed whitespace-pre-line">

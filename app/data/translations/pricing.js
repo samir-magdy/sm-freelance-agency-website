@@ -1,39 +1,47 @@
 export const pricingEstimator = {
-  currencyToggle: { en: "Currency", ar: "العملة:" },
-  baseLabel: { en: "Type of Website", ar: "نوع الموقع المطلوب" },
-  scopeLabel: { en: "Amount of Content", ar: "كمية المحتوى" },
-  addonsLabel: { en: "Enhancements & Add-ons", ar: "الإضافات والتحسينات" },
-  estimateLabel: { en: "Estimate:", ar: "التكلفة التقديرية" },
+  estimateLabel: { en: "Estimate:", ar: "التكلفة التقديرية:" },
+  baseLabel: {
+    en: "What kind of website do you need?",
+    ar: "ما نوع الموقع الذي تحتاجه؟",
+  },
+  scopeLabel: { en: "How large is your site?", ar: "ما حجم الموقع المطلوب؟" },
+  addonsLabel: { en: "Anything extra?", ar: "هل تحتاج إضافات؟" },
   cta: {
-    en: "Verify My Calculation",
-    ar: "تأكد من حساباتي",
+    en: "Discuss My Quote",
+    ar: "ناقش عرض السعر",
   },
   disclaimer: {
-    en: "Note that our work is entirely custom. Therefore, price may vary depending on specific requests not listed in this tool.",
-    ar: "يرجى العلم أن أعمالنا مخصصة بالكامل، لذا قد تختلف التكلفة النهائية بناءً على متطلبات غير مدرجة في هذه الأداة.",
+    en: "The price displayed by this tool is an estimate for your reference. Final pricing is confirmed after our consultation.",
+    ar: "السعر الظاهر في هذه الأداة هو تقدير استرشادي فقط. يتم تأكيد السعر النهائي بعد الاستشارة.",
   },
   usdExchangeRate: 50,
   bases: [
     {
       id: "landing",
-      price: 4999,
-      name: {
-        en: "Landing Page (Single Page Site)",
-        ar: "صفحة هبوط (صفحة واحدة)",
+      price: 5999,
+      name: { en: "Landing Page", ar: "صفحة هبوط" },
+      description: {
+        en: "One-page site optimized for maximum ROI",
+        ar: "موقع احترافي في صفحة واحدة",
       },
     },
     {
       id: "business",
       price: 8999,
-      name: {
-        en: "Business Website (Multiple Pages)",
-        ar: "موقع أعمال (متعدد الصفحات)",
+      name: { en: "Business Website", ar: "موقع أعمال" },
+      description: {
+        en: "Expanded pages to cover your full range of services",
+        ar: "صفحات إضافية تغطي كافة خدماتك بشكل شامل",
       },
     },
     {
       id: "ecommerce",
-      price: 19999,
-      name: { en: "Online Store (Shopify)", ar: "متجر إلكتروني (شوبيفاي)" },
+      price: 16999,
+      name: { en: "Online Store", ar: "متجر إلكتروني" },
+      description: {
+        en: "A full Shopify store to sell your products online",
+        ar: "متجر شوبيفاي احترافي لبيع منتجاتك أونلاين",
+      },
     },
   ],
   scopesByBase: {
@@ -42,28 +50,48 @@ export const pricingEstimator = {
         value: 0,
         multiplier: 0,
         name: { en: "3–5 Sections", ar: "٣–٥ أقسام" },
+        description: {
+          en: "Concise & conversion-focused",
+          ar: "مختصر وعالي التحويل",
+        },
       },
       {
         value: 1,
-        multiplier: 0.3,
-        name: { en: "6+ Sections", ar: "٦+ أقسام" },
+        multiplier: 0.25,
+        name: { en: "6–8 Sections", ar: "٦–٨ أقسام" },
+        description: {
+          en: "More detail, testimonials & proof",
+          ar: "تفاصيل أكثر وشهادات العملاء",
+        },
       },
     ],
     business: [
       {
         value: 0,
         multiplier: 0,
-        name: { en: "1–3 Pages", ar: "١–٣ صفحات" },
+        name: { en: "5 Pages", ar: "٥ صفحات" },
+        description: {
+          en: "Home, About, Services, Portfolio & Contact",
+          ar: "الرئيسية، من نحن، الخدمات، الأعمال، تواصل",
+        },
       },
       {
         value: 1,
-        multiplier: 0.15,
-        name: { en: "4–8 Pages", ar: "٤–٨ صفحات" },
+        multiplier: 0.25,
+        name: { en: "6–10 Pages", ar: "٦–١٠ صفحات" },
+        description: {
+          en: "Adds a Blog, Team page, extra service pages…",
+          ar: "يضيف مدونة وصفحة الفريق وصفحات خدمات إضافية",
+        },
       },
       {
         value: 2,
-        multiplier: 0.4,
-        name: { en: "9+ Pages", ar: "٩+ صفحات" },
+        multiplier: 0.35,
+        name: { en: "11+ Pages", ar: "١١+ صفحة" },
+        description: {
+          en: "Large site with many sections, pages & sub-pages",
+          ar: "موقع ضخم بأقسام رئيسية وفرعية متعددة",
+        },
       },
     ],
     ecommerce: [
@@ -71,16 +99,28 @@ export const pricingEstimator = {
         value: 0,
         multiplier: 0,
         name: { en: "Up to 50 Products", ar: "حتى ٥٠ منتج" },
+        description: {
+          en: "Perfect for a focused boutique",
+          ar: "مثالي للمتاجر الصغيرة المتخصصة",
+        },
       },
       {
         value: 1,
         multiplier: 0.2,
         name: { en: "50–200 Products", ar: "٥٠–٢٠٠ منتج" },
+        description: {
+          en: "A growing catalog with categories",
+          ar: "كتالوج متنامٍ مع تصنيفات",
+        },
       },
       {
         value: 2,
         multiplier: 0.45,
         name: { en: "200+ Products", ar: "٢٠٠+ منتج" },
+        description: {
+          en: "Large inventory, advanced filtering",
+          ar: "مخزون كبير مع فلترة متقدمة",
+        },
       },
     ],
   },
@@ -88,39 +128,39 @@ export const pricingEstimator = {
     {
       id: "cms",
       appliesTo: ["landing", "business"],
-      price: 3499,
+      price: 2999,
+      scalesWithScope: true,
       name: { en: "Admin Panel", ar: "لوحة تحكم" },
+      description: {
+        en: "Edit content yourself",
+        ar: "عدّل محتوى موقعك بنفسك",
+      },
     },
     {
       id: "multilingual",
       appliesTo: ["landing", "business", "ecommerce"],
       isMultiplier: true,
-      multiplierByBase: {
-        landing: 0.2,
-        business: 0.3,
-        ecommerce: 0.4,
-      },
+      multiplierByBase: { landing: 0.25, business: 0.35, ecommerce: 0.4 },
       name: { en: "Bilingual", ar: "ثنائي اللغة" },
+      description: {
+        en: "Arabic & English versions",
+        ar: "نسختان - عربي وإنجليزي",
+      },
     },
   ],
 };
 
 const pricingSection = {
   heading: {
-    en: "Our Price Estimator",
-    ar: "أداة تقدير الأسعار",
+    en: "Get an Instant Quote",
+    ar: "تقدير فوري لتكلفة الموقع",
   },
-    subheading: {
-    en: "Estimate your investment instantly",
-    ar: "احصل على رقم تقريبي لاستثمارك فوراً",
-  },
-  cta: {
-    en: "Chat",
-    ar: "تواصل معنا",
+  subheading: {
+    en: "A tool built for your convenience",
+    ar: "أداة صُممت خصيصاً لاختصار وقتك",
   },
   tiers: [
     {
-      name: { en: "Essential", ar: "الأساسية" },
       seoName: {
         en: "Small Business Website Design in Egypt",
         ar: "تصميم موقع إلكتروني للمشاريع الصغيرة في مصر",
@@ -128,18 +168,10 @@ const pricingSection = {
       price: "7,500",
       tagline: {
         en: "Get online with the core essentials.",
-        ar: "ابدأ  بالأساسيات التي يحتاجها موقعك.",
+        ar: "ابدأ بالأساسيات التي يحتاجها موقعك.",
       },
-      features: [
-        { en: "Up to 6 Sections", ar: "حتى ٦ أقسام" },
-
-        { en: "Basic SEO Setup", ar: "إعداد أساسي لمحركات البحث" },
-        { en: "2 Content Updates per Month", ar: "٢ تحديثات للمحتوى شهرياً" },
-      ],
-      delivery: { en: "7–10 days", ar: "٧–١٠ أيام" },
     },
     {
-      name: { en: "Professional", ar: "الاحترافية" },
       seoName: {
         en: "Professional Website Design in Cairo Egypt",
         ar: "تصميم موقع احترافي للشركات في مصر",
@@ -149,17 +181,8 @@ const pricingSection = {
         en: "Greater Control. Wider Reach. More Content.",
         ar: "تحكم أفضل. وصول أوسع. محتوى أكثر.",
       },
-      features: [
-        { en: "More Content", ar: "محتوى أكثر" },
-        { en: "Built-in Control Panel", ar: "لوحة تحكم" },
-
-        { en: "Basic SEO Setup", ar: "إعداد أساسي لمحركات البحث" },
-      ],
-
-      delivery: { en: "10–14 days", ar: "١٠–١٤ أيام" },
     },
     {
-      name: { en: "E-commerce", ar: "متجر إلكتروني" },
       seoName: {
         en: "Shopify Ecommerce Website Design Egypt",
         ar: "تصميم متجر إلكتروني Shopify في مصر",
@@ -169,38 +192,8 @@ const pricingSection = {
         en: "Sell your products online using Shopify.",
         ar: "ابدأ البيع أونلاين مع متجر Shopify احترافي.",
       },
-      features: [
-        { en: "Product & Collection Setup", ar: "إعداد المنتجات والتصنيفات" },
-        // { en: "Payment & Shipping Integration", ar: "دمج وسائل الدفع والشحن" },
-        {
-          en: "Basic SEO",
-          ar: "إعداد أساسي لمحركات البحث",
-        },
-        { en: "Training & Support", ar: "تدريب ودعم فني" },
-      ],
-      delivery: { en: "14–21 days", ar: "١٤–٢١ يوم" },
     },
   ],
-  deliveryLabel: {
-    en: "Delivery",
-    ar: "مدة التنفيذ",
-  },
-  currency: {
-    en: "EGP",
-    ar: "ج.م",
-  },
-  includesLabel: {
-    en: "Includes:",
-    ar: "تشمل:",
-  },
-  disclaimer: {
-    en: "Think of our packages as a conversation starter. Since every project is unique, we’ll work with you to determine the final pricing to match your exact requirements.",
-    ar: "الأسعار المذكورة هي مجرد بداية لتسهيل الأمر عليك. لأن كل مشروع فريد من نوعه، نقوم بتسعير مشروعك بما يتناسب تماماً مع احتياجاتك.",
-  },
-  whatsappMessage: {
-    en: "Hello, I'm interested in the {{package}} package for my brand.",
-    ar: "مرحباً، أنا مهتم بباقة {{package}} لمشروعي.",
-  },
 };
 
 export default pricingSection;

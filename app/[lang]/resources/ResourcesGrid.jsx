@@ -2,20 +2,21 @@ import Link from "next/link";
 
 export default function ResourcesGrid({ resources, lang, t }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-6">
       {resources.map((article) => (
         <article
           key={article.slug}
-          className="flex flex-col gap-4 p-7 rounded-2xl border-2 border-border-subtle bg-surface-card/50 hover:border-border-strong transition-colors duration-200"
+          className="flex flex-col justify-between gap-4 p-7 rounded-2xl border-2 border-border-subtle bg-surface-card/50 hover:border-border-strong transition-colors duration-200"
         >
-          <h2 className="text-content-heading font-bold text-2xl leading-snug">
+          <h2 className="text-content-heading font-bold text-xl md:text-2xl leading-snug">
             {article.title[lang]}
           </h2>
-     
 
-          <p className="text-content-muted text-lg leading-relaxed flex-1">
-            {article.excerpt[lang]}
-          </p>
+          <div className="flex items-center md:py-4">
+            <p className="text-content-muted text-lg leading-relaxed">
+              {article.excerpt[lang]}
+            </p>
+          </div>
 
           <Link
             href={`/${lang}/resources/${article.slug}`}

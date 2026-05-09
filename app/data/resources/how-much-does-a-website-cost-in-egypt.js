@@ -5,8 +5,8 @@ const resource = {
     ar: "تكلفة تصميم موقع إلكتروني في مصر: دليل شامل وواضح",
   },
   excerpt: {
-    en: "Website pricing in Egypt ranges from a few thousand to tens of thousands of pounds, and the variation is not random. This guide explains exactly what drives website costs, what ranges to expect for different project types, and how to avoid overpaying or underpaying.",
-    ar: "أسعار المواقع في مصر بتبدأ من بضعة آلاف وبتوصل لعشرات الآلاف، والفرق ده مش عشوائي. الدليل ده بيشرح لك إيه اللي بيتحكم في السعر، وإيه التكلفة المتوقعة لكل نوع مشروع، وإزاي تدفع السعر العادل بدون زيادة أو نقصان.",
+    en: "Website pricing in Egypt varies widely, and the variation is never random. This guide explains exactly what drives costs, what price ranges to expect for each project type, and how to avoid overpaying or underpaying for your site.",
+    ar: "أسعار المواقع في مصر بتتفاوت بشكل كبير. الدليل ده بيشرح بالظبط إيه اللي ممكن يأثر على التكلفة، النطاق السعري المتوقع لكل نوع موقع، وإزاي تتجنب دفع أكتر أو أقل من اللازم.",
   },
   content: {
     en: `<p>Website pricing in Egypt is one of the most confusing topics in digital services. You can find offers ranging from 500 EGP to 200,000 EGP for what are described as website design services. This variation is not random, and understanding what drives the difference will help you make a better decision for your business — whether you are about to hire a designer or just trying to budget for a future project.</p>
