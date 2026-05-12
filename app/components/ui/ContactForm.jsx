@@ -271,7 +271,7 @@ export default function ContactForm({ lang }) {
         href="https://wa.me/201274613331"
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-3.5 w-full border border-green-500/40 bg-green-500/10 hover:bg-green-500/20 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-lg font-bold text-base"
+        className="mt-3.5 w-full border border-green-500/40 bg-green-500/20 hover:bg-green-500/40 transition-colors duration-200 py-4 px-6 text-content-body flex items-center justify-center gap-2 rounded-lg font-bold text-base"
       >
         <WhatsAppIcon className="size-5" fill="currentColor" />
         {t.form.chatInstead[lang]}

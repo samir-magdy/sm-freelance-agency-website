@@ -95,7 +95,7 @@ export default function ResourcesPage({ params }) {
   return (
     <main
       dir={dir}
-      className="bg-background pt-16 sm:pt-32 pb-20 px-5 md:px-48"
+      className="bg-background pt-16 sm:pt-30 pb-20 px-5"
     >
       <script
         type="application/ld+json"
@@ -104,13 +104,13 @@ export default function ResourcesPage({ params }) {
         }}
       />
       <RevealSection>
-        <div className="max-w-6xl mx-auto flex flex-col gap-8 sm:gap-12">
+        <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:gap-8">
           {/* Hero */}
           <header className="text-center flex flex-col gap-3">
             <h1 className="text-heading font-bold text-content-heading">
               {t.pageTitle[lang]}
             </h1>
-            <p className="text-content-muted text-[clamp(1.1rem,2vw,1.5rem)]  mx-auto leading-relaxed">
+            <p className="text-content-muted text-[clamp(1.1rem,2vw,1.5rem)] mx-auto leading-relaxed">
               {t.pageSubtitle[lang]}
             </p>
           </header>

@@ -190,7 +190,7 @@ export default function PortfolioShowcase({ lang }) {
                 <span className="sr-only">Website | موقع إلكتروني</span>
               </h3>
 
-              <p className="portfolio-info-enter text-content-body text-subheading leading-relaxed hidden lg:block mb-4">
+              <p className="portfolio-info-enter text-content-body text-[1.4rem] leading-relaxed hidden lg:block mb-4">
                 {pd.description[lang]}
               </p>
 

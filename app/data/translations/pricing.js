@@ -7,8 +7,8 @@ export const pricingEstimator = {
   scopeLabel: { en: "How large is your site?", ar: "ما حجم الموقع المطلوب؟" },
   addonsLabel: { en: "Anything extra?", ar: "هل تحتاج إضافات؟" },
   cta: {
-    en: "Discuss My Quote",
-    ar: "ناقش عرض السعر",
+    en: "Discuss My Project",
+    ar: "ناقش تفاصيل مشروعي",
   },
   disclaimer: {
     en: "The price displayed by this tool is an estimate for your reference. Final pricing is confirmed after our consultation.",
@@ -19,19 +19,25 @@ export const pricingEstimator = {
     {
       id: "landing",
       price: 5999,
-      name: { en: "Landing Page", ar: "صفحة هبوط" },
+      name: {
+        en: "Landing Page",
+        ar: "صفحة هبوط",
+      },
       description: {
-        en: "One-page site optimized for maximum ROI",
-        ar: "موقع احترافي في صفحة واحدة",
+        en: "A single-page site - ideal for services & startups",
+        ar: "موقع صفحة واحدة - مثالي للخدمات والشركات الناشئة",
       },
     },
     {
       id: "business",
       price: 8999,
-      name: { en: "Business Website", ar: "موقع أعمال" },
+      name: {
+        en: "Business Website",
+        ar: "موقع أعمال",
+      },
       description: {
-        en: "Expanded pages to cover your full range of services",
-        ar: "صفحات إضافية تغطي كافة خدماتك بشكل شامل",
+        en: "Ideal for businesses that have more to tell",
+        ar: "صفحات متعددة - للشركات التي لديها الكثير لترويه",
       },
     },
     {

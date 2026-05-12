@@ -35,50 +35,15 @@ export const projects = [
     genreAr: "التصميم الداخلي والديكور",
   },
   {
-    id: "RealEstate",
-    liveUrl: "https://realestate.samirmagdy.com",
-    screenshot: realestateImg,
-    schemaName: "Real Estate Listing Platform – Egypt",
-    schemaNameAr: "تسويق عقاري – مصر",
+    id: "Clinic",
+    liveUrl: "https://clinic.samirmagdy.com",
+    screenshot: clinicImg,
+    schemaName: "Medical Clinic Website Services – Egypt",
+    schemaNameAr: "منصة إدارة العيادات الطبية – مصر",
     description:
-      "A comprehensive real estate platform demo created by SM Web Studio, featuring advanced property filtering by location and price to showcase our directory solutions.",
-    genre: "Real Estate & Brokers",
-    genreAr: "سويق عقاري ووسطاء",
-  },
-  {
-    id: "Gym",
-    liveUrl: "https://gym.samirmagdy.com",
-    screenshot: gymImg,
-    schemaName: "Fitness Center & Gym Landing Page – Egypt",
-    schemaNameAr: "موقع صالة ألعاب رياضية (جيم) – مصر",
-    description:
-      "A high-conversion fitness landing page demo from SM Web Studio, showcasing membership management and trainer profile layouts optimized for lead generation.",
-    genre: "Fitness & Wellness",
-    genreAr: "اللياقة البدنية والصحة",
-  },
- 
-  {
-    id: "AutoParts",
-    liveUrl: "https://autoparts.samirmagdy.com",
-    screenshot: autopartsImg,
-    schemaName: "Automotive Parts Marketplace – Egypt",
-    schemaNameAr: "متجر قطع غيار السيارات – مصر",
-    description:
-      "A specialized automotive marketplace demo created by SM Web Studio to demonstrate robust search engine capabilities and categorized inventory management for spare parts.",
-    genre: "Automotive & Parts",
-    genreAr: "تجارة قطع غيار السيارات",
-  },
-
-  {
-    id: "Tourism",
-    liveUrl: "https://tourism.samirmagdy.com",
-    screenshot: tourismImg,
-    schemaName: "Local Tourism & Excursions – Egypt",
-    schemaNameAr: "السياحة والرحلات – مصر",
-    description:
-      "A tourism-focused website demo by SM Web Studio, optimized for booking local excursions and providing essential travel information for domestic and international visitors.",
-    genre: "Travel & Tourism",
-    genreAr: "سياحة وسفر",
+      "A medical management demo by SM Web Studio featuring optimized appointment booking flows and doctor profiles, highlighting our custom healthcare web solutions.",
+    genre: "Medical & Clinics",
+    genreAr: "العيادات والرعاية الصحية",
   },
 
   {
@@ -92,18 +57,8 @@ export const projects = [
     genre: "Pet Care Services",
     genreAr: "خدمات الحيوانات الأليفة",
   },
+
   {
-    id: "Clinic",
-    liveUrl: "https://clinic.samirmagdy.com",
-    screenshot: clinicImg,
-    schemaName: "Medical Clinic Website Services – Egypt",
-    schemaNameAr: "منصة إدارة العيادات الطبية – مصر",
-    description:
-      "A medical management demo by SM Web Studio featuring optimized appointment booking flows and doctor profiles, highlighting our custom healthcare web solutions.",
-    genre: "Medical & Clinics",
-    genreAr: "العيادات والرعاية الصحية",
-  },
-     {
     id: "Travel",
     liveUrl: "https://travel.samirmagdy.com",
     screenshot: travelImg,
@@ -113,6 +68,50 @@ export const projects = [
       "An international travel booking demo by SM Web Studio, demonstrating seamless user experiences for exploring vacation packages and curated itineraries.",
     genre: "Travel & Tourism",
     genreAr: "سياحة وسفر",
+  },
+  {
+    id: "Gym",
+    liveUrl: "https://gym.samirmagdy.com",
+    screenshot: gymImg,
+    schemaName: "Fitness Center & Gym Landing Page – Egypt",
+    schemaNameAr: "موقع صالة ألعاب رياضية (جيم) – مصر",
+    description:
+      "A high-conversion fitness landing page demo from SM Web Studio, showcasing membership management and trainer profile layouts optimized for lead generation.",
+    genre: "Fitness & Wellness",
+    genreAr: "اللياقة البدنية والصحة",
+  },
+  {
+    id: "Tourism",
+    liveUrl: "https://tourism.samirmagdy.com",
+    screenshot: tourismImg,
+    schemaName: "Local Tourism & Excursions – Egypt",
+    schemaNameAr: "السياحة والرحلات – مصر",
+    description:
+      "A tourism-focused website demo by SM Web Studio, optimized for booking local excursions and providing essential travel information for domestic and international visitors.",
+    genre: "Travel & Tourism",
+    genreAr: "سياحة وسفر",
+  },
+  {
+    id: "AutoParts",
+    liveUrl: "https://autoparts.samirmagdy.com",
+    screenshot: autopartsImg,
+    schemaName: "Automotive Parts Marketplace – Egypt",
+    schemaNameAr: "متجر قطع غيار السيارات – مصر",
+    description:
+      "A specialized automotive marketplace demo created by SM Web Studio to demonstrate robust search engine capabilities and categorized inventory management for spare parts.",
+    genre: "Automotive & Parts",
+    genreAr: "تجارة قطع غيار السيارات",
+  },
+  {
+    id: "RealEstate",
+    liveUrl: "https://realestate.samirmagdy.com",
+    screenshot: realestateImg,
+    schemaName: "Real Estate Listing Platform – Egypt",
+    schemaNameAr: "تسويق عقاري – مصر",
+    description:
+      "A comprehensive real estate platform demo created by SM Web Studio, featuring advanced property filtering by location and price to showcase our directory solutions.",
+    genre: "Real Estate & Brokers",
+    genreAr: "سويق عقاري ووسطاء",
   },
 ];
 

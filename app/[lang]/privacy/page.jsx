@@ -22,7 +22,7 @@ export default function PrivacyPage({ params }) {
       className="min-h-screen pt-22 sm:pt-32 pb-16 px-6 bg-background"
     >
       <div className="max-w-6xl mx-auto">
-        <header className="mb-12 border-b border-gray-200 mb pb-8 text-start">
+        <header className="mb-12 border-b border-neutral-800 mb pb-8 text-start">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-content-heading mb-4">
             {/* Added fallback to .en to guarantee text renders */}
             {t.heading?.[lang] || t.heading?.en}

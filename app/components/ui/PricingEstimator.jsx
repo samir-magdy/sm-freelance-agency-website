@@ -61,7 +61,9 @@ export default function PricingEstimator({ lang }) {
           const bilingualMultiplier = addon.multiplierByBase[baseId] ?? 0.4;
           totalMultiplier += bilingualMultiplier;
         } else if (addon.scalesWithScope) {
-          flatAddonsCost += Math.round(addon.price * (1 + currentScope.multiplier));
+          flatAddonsCost += Math.round(
+            addon.price * (1 + currentScope.multiplier),
+          );
         } else {
           flatAddonsCost += addon.price;
         }
@@ -88,14 +90,14 @@ export default function PricingEstimator({ lang }) {
           : "None";
 
     const message = isRtl
-      ? `مرحباً، لقد قمت بحساب تكلفة مبدئية لمشروعي عبر موقعكم وأريد التأكد من دقتها من خلال مكالمة استشارية.
+      ? `أنا استخدمت حاسبة الأسعار من خلال موقعكم و حابب اعرف تفاصيل أكتر.
 
 البيانات المحسوبة:
 - نوع الموقع: ${baseType.name.ar}
 - حجم المحتوى: ${currentScope.name.ar}
 - الإضافات: ${addonNames}
 - التكلفة التقديرية: ${displayPrice.toLocaleString()} ${currencySymbol}`
-      : `Hello, I just used the price calculator on your website and want to verify the accuracy through a consultation call.
+      : `Hello, I just used the price calculator on your website.
 
 The Calculated Data:
 - Type: ${baseType.name.en}
@@ -150,17 +152,17 @@ The Calculated Data:
             <span className="text-xs inline-block mb-1 font-semibold tracking-wider text-content-muted">
               {t.estimateLabel[lang]}
             </span>
-            <div className="flex items-baseline gap-0.5">
+            <div className="flex items-baseline">
               {currency === "USD" && (
-                <span className="text-sm order-1 sm:text-base text-content-muted font-medium ms-1">
+                <span className="text-sm order-1 sm:text-base text-content-muted font-medium ms-0.5">
                   {isRtl ? "دولار" : "USD"}
                 </span>
               )}
-              <span className="text-[2rem] font-bold text-white tracking-tight leading-none">
+              <span className="text-[1.8rem] font-bold text-white tracking-tight leading-none">
                 {displayPrice.toLocaleString()}
               </span>
               {currency === "EGP" && (
-                <span className="text-md text-content-muted font-medium ms-1">
+                <span className="text-md text-content-muted font-medium ms-0.5">
                   {currencySymbol}
                 </span>
               )}
@@ -197,7 +199,9 @@ The Calculated Data:
                         className={`w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 shrink-0 transition-colors ${isSelected ? "text-content-heading" : "text-icon"}`}
                       />
                       <div className="flex flex-col gap-1.5">
-                        <span className={`text-sm sm:text-base font-semibold leading-tight transition-colors ${isSelected ? "text-content-heading" : "text-content-heading/95"}`}>
+                        <span
+                          className={`text-sm sm:text-base font-semibold leading-tight transition-colors ${isSelected ? "text-content-heading" : "text-content-heading/95"}`}
+                        >
                           {base.name[lang]}
                         </span>
                         <span className="text-xs lg:text-[1.2rem] text-content-muted/90 leading-snug">
@@ -228,7 +232,9 @@ The Calculated Data:
                           : "border-2 border-border-subtle hover:border-border-strong bg-black/15"
                       }`}
                     >
-                      <span className={`font-semibold text-sm sm:text-base lg:text-xl py-0.5 leading-tight ${isSelected ? "text-content-heading" : "text-content-body"}`}>
+                      <span
+                        className={`font-semibold text-sm sm:text-base lg:text-xl py-0.5 leading-tight ${isSelected ? "text-content-heading" : "text-content-body"}`}
+                      >
                         {scope.name[lang]}
                       </span>
                       {/* <span className="text-xs lg:text-[1.12rem] text-content-muted/90 leading-snug">
@@ -258,7 +264,9 @@ The Calculated Data:
                           : "border-2 border-border-subtle hover:border-border-strong bg-black/15"
                       }`}
                     >
-                      <span className={`font-semibold text-sm sm:text-base lg:text-xl leading-tight ${isSelected ? "text-content-heading" : "text-content-body"}`}>
+                      <span
+                        className={`font-semibold text-sm sm:text-base lg:text-xl leading-tight ${isSelected ? "text-content-heading" : "text-content-body"}`}
+                      >
                         {addon.name[lang]}
                       </span>
                       <span className="text-xs lg:text-[1.2rem] text-content-muted/90 leading-snug">
@@ -273,12 +281,12 @@ The Calculated Data:
             {/* ========================================= */}
             {/* MOBILE ONLY: Original CTA Button          */}
             {/* ========================================= */}
-            
+
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-primary relative overflow-hidden inline-flex md:hidden items-center justify-center gap-3 py-2.5 px-5 rounded-2xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-lg font-semibold tracking-wide transition-all duration-200"
+        className="sm:hidden mt-3.5 w-[98%] mx-auto border border-green-500/40 bg-green-500/20 hover:bg-green-500/40 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-2xl font-bold text-base"
             >
               <WhatsAppIcon className="w-5 h-5" />
               <span>{t.cta[lang]}</span>
@@ -313,17 +321,17 @@ The Calculated Data:
                 </button>
               </div>
 
-              <div className="flex flex-col gap-1 items-center text-center py-4">
-                <span className="text-xs lg:text-2xl font-semibold uppercase tracking-wider text-content-muted mb-1">
+              <div className="flex gap-4 items-end justify-center">
+                <span className="inline-block lg:text-2xl font-semibold uppercase tracking-wider text-content-body/95 mb-0.5">
                   {t.estimateLabel[lang]}
                 </span>
-                <div className="flex items-baseline justify-center gap-2">
+                <div className="flex items-baseline gap-2">
                   {currency === "USD" && (
                     <span className="text-xl order-1 text-content-muted font-medium">
                       {isRtl ? "دولار" : "USD"}
                     </span>
                   )}
-                  <span className="md:text-5xl lg:text-7xl font-bold text-white tracking-tight leading-none">
+                  <span className="md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-none">
                     {displayPrice.toLocaleString()}
                   </span>
                   {currency === "EGP" && (
@@ -333,12 +341,12 @@ The Calculated Data:
                   )}
                 </div>
               </div>
-                  
+
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta-primary relative w-full md:w-[96%] mx-auto overflow-hidden inline-flex items-center justify-center gap-3 py-4 rounded-2xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-lg font-bold tracking-wide transition-all"
+                className="mt-3.5 w-[95%] mx-auto border border-green-500/40 bg-green-500/20 hover:bg-green-500/40 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-2xl font-bold text-base"
               >
                 <WhatsAppIcon className="w-6 h-6" />
                 <span>{t.cta[lang]}</span>

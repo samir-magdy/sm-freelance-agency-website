@@ -39,7 +39,7 @@ export default function FAQSection({ lang }) {
                   <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-3 rounded-full bg-icon [details[open]_&]:h-0 [details[open]_&]:opacity-0" />
                 </div>
 
-                <h3 className="text-content-body font-normal tracking-wide text-subheading">
+                <h3 className="text-content-body font-normal tracking-wide text-[1rem] sm:text-subheading">
                   {item.question[lang]}
                 </h3>
               </summary>

@@ -6,6 +6,6 @@ const nav = {
   contact: { en: "Contact", ar: "تواصل معنا" },
 };
 
-export const navLinks = ["portfolio", "pricing", "FAQs", "contact"];
+export const navLinks = ["portfolio", "FAQs", "pricing", "contact"];
 
 export default nav;

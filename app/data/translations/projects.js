@@ -16,7 +16,7 @@ const projectData = {
       ar: "متجر إلكتروني للأزياء",
     },
     description: {
-      en: "In the crowded fashion market, a slow or generic site loses sales to big brands. This platform gives you the edge with a premium shopping experience that rivals industry giants. By utilizing smart product suggestions and a frictionless checkout, you won't just compete—you’ll become the preferred choice for shoppers who value style and ease, ensuring they return to you instead of browsing your competitors' sites.",
+      en: "In the crowded fashion market, a slow or generic site loses sales to big brands. This design gives you the edge with a premium shopping experience that rivals industry giants. By utilizing smart product suggestions and a frictionless checkout, you won't just compete—you’ll become the preferred choice for shoppers who value style and ease, ensuring they return to you instead of browsing your competitors' sites.",
       ar: "في قطاع الأزياء، مظهر متجرك هو هويتك. توفر لك هذه المنصة واجهة احترافية تعكس جودة منتجاتك، مع تجربة تسوق سلسة تجعل العميل يثق في اختيارك وتكرار الشراء منك بدلاً من البحث في أماكن أخرى.",
     },
     cta: {

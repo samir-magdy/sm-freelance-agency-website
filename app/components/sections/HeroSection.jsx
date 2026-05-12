@@ -20,20 +20,20 @@ export default function HeroSection({ lang }) {
 
       <div
         id="hero-container"
-        className="relative z-10 flex flex-col items-center w-full justify-center pt-12 md:pt-24"
+        className="relative z-10 flex flex-col items-center w-full justify-center pt-12 md:pt-20"
       >
-        <div dir="ltr" className="hero-fade hero-fade-eyebrow mb-8 flex items-center gap-4">
-          <div className="eyebrow-rule-left" />
-          <span className="text-[0.65rem] rtl:text-xs sm:rtl:text-base sm:text-sm uppercase tracking-[0.18em] font-semibold text-content-body whitespace-nowrap">
-            {hero.eyebrow[lang]}
-          </span>
-          <div className="eyebrow-rule-right" />
-        </div>
 
         <h1
           id="hero-hook"
-          className="font-bold text-center text-content-heading px-4 block text-[clamp(2.5rem,4vw,4rem)] leading-relaxed"
+          className="font-bold sm:rtl:py-6 text-center text-content-heading px-4 block text-[clamp(2.8rem,4vw,5rem)] leading-relaxed rtl:leading-18"
         >
+        <span dir="ltr" className="hero-fade hero-fade-eyebrow mb-7 sm:mb-6 rtl:sm:mb-12 flex items-center justify-center gap-4">
+          <span className="eyebrow-rule-left" aria-hidden="true"/>
+          <span className="text-xs rtl:text-sm sm:rtl:text-xl sm:text-[1rem] uppercase tracking-[0.18em] font-semibold text-content-body whitespace-nowrap">
+            {hero.eyebrow[lang]}
+          </span>
+          <span className="eyebrow-rule-right" aria-hidden="true"/>
+        </span>
           {Array.isArray(hookLines) ? (
             hookLines.map((line, i) => {
               const words = line.split(" ");
@@ -64,15 +64,15 @@ export default function HeroSection({ lang }) {
           )}
         </h1>
 
-        <h2 className="mt-6 mb-10 hero-fade hero-fade-nav text-content-body text-[clamp(1.2rem,2vw,2rem)] rtl:text-[clamp(1.1rem,1.8vw,2rem)] rtl:leading-loose text-center px-10 sm:px-16">
+        <h2 className="mt-6 sm:mt-4 rtl:sm:mt-6 mb-8 hero-fade hero-fade-nav text-content-body text-[clamp(1.2rem,2vw,2rem)] rtl:text-[clamp(1.1rem,1.8vw,2rem)] rtl:leading-loose text-center px-10 sm:px-16">
           {hero.subheading[lang]}
         </h2>
 
         <div className="flex flex-col items-center justify-center gap-4">
           <a
-            href="#portfolio"
+            href="#contact"
             onClick={handleScroll}
-            className="cta-primary inline-flex items-center gap-2 md:gap-4 hero-cta-entrance font-semibold md:font-normal text-center bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.1rem,1.8vw,1.6rem)] px-6 md:px-9 py-3 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+            className="cta-primary inline-flex items-center gap-2 md:gap-4 hero-cta-entrance font-semibold text-center bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.2rem,1.8vw,1.6rem)] rtl:text-[clamp(1.2rem,1.8vw,1.6rem)] px-7 md:px-9 py-3 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
             {hero.primaryCta[lang]}
               {/* <svg
@@ -94,7 +94,7 @@ export default function HeroSection({ lang }) {
           </a>
 
           <a
-            href="#contact"
+            href="#FAQs"
             onClick={handleScroll}
             className="ms-2.5 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-2 text-content-muted hover:text-content-body text-[clamp(1rem,1.3vw,1.25rem)] font-medium transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >

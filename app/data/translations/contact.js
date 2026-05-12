@@ -1,7 +1,7 @@
 const contactSection = {
   heading: {
-    en: "Take the First Step",
-    ar: "اتخذ الخطوة الأولى",
+    en: "Got a Project in Mind?",
+    ar: "موقعك يبدأ هنا",
   },
   subheading: {
     en: "Share a few details and we’ll reach out",
