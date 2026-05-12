@@ -7,6 +7,7 @@ import { SITE_URL } from "../data/translations/lang";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";
 import { heroFontStyleEn, heroFontStyleAr } from "../fonts/heroFontInline";
+import Script from "next/script";
 
 const fonts = Cairo({
   variable: "--font-cairo",
@@ -321,7 +322,8 @@ export default async function LangLayout({ children, params }) {
           }}
         />
         {/* ── Structured Data (JSON-LD) ── */}
-        <script
+        <Script
+          id="structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),

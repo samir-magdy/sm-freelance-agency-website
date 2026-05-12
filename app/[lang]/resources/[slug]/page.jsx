@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { use } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -124,9 +125,10 @@ export default function ArticlePage({ params }) {
   return (
     <main
       dir={dir}
-      className="min-h-screen bg-background pt-22 sm:pt-36 pb-14 sm:pb-20 px-5"
+      className="min-h-screen bg-background pt-22 sm:pt-36 pb-14 sm:pb-20 px-5 overflow-x-hidden"
     >
-      <script
+      <Script
+        id="resources-seo"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
@@ -145,7 +147,6 @@ export default function ArticlePage({ params }) {
             />
             {t.backToResources[lang]}
           </Link> */}
-
           {/* Article header */}
           <header className="flex flex-col gap-4 rtl:gap-6">
             <h1 className="text-[clamp(2rem,5vw,2.8rem)] font-bold text-content-heading leading-tight">
@@ -154,17 +155,20 @@ export default function ArticlePage({ params }) {
             <div className="flex flex-wrap items-center gap-2 pt-2">
               <span className="flex items-center gap-1.5 border border-border-subtle rounded-2xl px-4 py-2 text-sm text-content-muted">
                 <CalendarDays className="size-3.5 shrink-0" aria-hidden />
-                <span className="text-content-heading font-medium">{lang === "ar" ? "نُشر:" : "Published on:"}</span>
+                <span className="text-content-heading font-medium">
+                  {lang === "ar" ? "نُشر:" : "Published on:"}
+                </span>
                 {formattedDate}
               </span>
               <span className="flex items-center gap-1.5 border border-border-subtle rounded-2xl px-4 py-2 text-sm text-content-muted">
                 <User className="size-3.5 shrink-0" aria-hidden />
-                <span className="text-content-heading font-medium">{lang === "ar" ? "الكاتب:" : "Author:"}</span>
+                <span className="text-content-heading font-medium">
+                  {lang === "ar" ? "الكاتب:" : "Author:"}
+                </span>
                 {lang === "ar" ? "سمير مجدي" : "Samir Magdy"}
               </span>
             </div>
           </header>
-
           {/* Article body */}
           <article
             dir={dir}
@@ -179,68 +183,72 @@ export default function ArticlePage({ params }) {
           "
             dangerouslySetInnerHTML={{ __html: article.content[lang] }}
           />
-          <script dangerouslySetInnerHTML={{ __html: `
-            (() => {
-              const TOOLTIP_MAX_W = 280;
-              const EDGE_GAP = 12;
-              const TOOLTIP_GAP = 12;
-              const heightCache = new Map();
+          <Script id="article-tooltips" strategy="afterInteractive">
+            {`
+    (() => {
+      const TOOLTIP_MAX_W = 280;
+      const EDGE_GAP = 12;
+      const TOOLTIP_GAP = 12;
+      const heightCache = new Map();
 
-              const measureTooltipHeight = (text) => {
-                if (heightCache.has(text)) return heightCache.get(text);
-                const el = document.createElement('div');
-                el.style.cssText = 'position:fixed;visibility:hidden;pointer-events:none;top:-9999px;width:min(280px,calc(100vw - 24px));padding:0.55rem 0.85rem;font-size:1.1rem;line-height:1.5;white-space:normal;';
-                el.textContent = text;
-                document.body.appendChild(el);
-                const h = el.offsetHeight;
-                document.body.removeChild(el);
-                heightCache.set(text, h);
-                return h;
-              };
+      const measureTooltipHeight = (text) => {
+        if (heightCache.has(text)) return heightCache.get(text);
+        const el = document.createElement('div');
+        el.style.cssText = 'position:fixed;visibility:hidden;pointer-events:none;top:-9999px;width:min(280px,calc(100vw - 24px));padding:0.55rem 0.85rem;font-size:1.1rem;line-height:1.5;white-space:normal;';
+        el.textContent = text;
+        document.body.appendChild(el);
+        const h = el.offsetHeight;
+        document.body.removeChild(el);
+        heightCache.set(text, h);
+        return h;
+      };
 
-              const adjustTooltip = (abbr) => {
-                const { left, top, width } = abbr.getBoundingClientRect();
-                const vw = window.innerWidth;
+      const adjustTooltip = (abbr) => {
+        if (!abbr) return;
+        const { left, top, width } = abbr.getBoundingClientRect();
+        const vw = window.innerWidth;
 
-                // X-axis: clamp so tooltip doesn't overflow left or right
-                const tipW = Math.min(TOOLTIP_MAX_W, vw - 24);
-                const tipLeft = left + width / 2 - tipW / 2;
-                const tipRight = tipLeft + tipW;
-                let offset = 0;
-                if (tipLeft < EDGE_GAP) {
-                  offset = EDGE_GAP - tipLeft;
-                } else if (tipRight > vw - EDGE_GAP) {
-                  offset = vw - EDGE_GAP - tipRight;
-                }
-                abbr.style.setProperty('--tooltip-offset', offset + 'px');
+        const tipW = Math.min(TOOLTIP_MAX_W, vw - 24);
+        const tipLeft = left + width / 2 - tipW / 2;
+        const tipRight = tipLeft + tipW;
+        let offset = 0;
+        if (tipLeft < EDGE_GAP) {
+          offset = EDGE_GAP - tipLeft;
+        } else if (tipRight > vw - EDGE_GAP) {
+          offset = vw - EDGE_GAP - tipRight;
+        }
+        abbr.style.setProperty('--tooltip-offset', offset + 'px');
 
-                // Y-axis: flip below if tooltip would clip the fixed header
-                const navH = document.querySelector('header')?.offsetHeight ?? 0;
-                const tipH = measureTooltipHeight(abbr.dataset.tooltip);
-                if (top - navH - TOOLTIP_GAP < tipH) {
-                  abbr.classList.add('tooltip-below');
-                } else {
-                  abbr.classList.remove('tooltip-below');
-                }
-              };
+        const navH = document.querySelector('header')?.offsetHeight ?? 0;
+        const tipH = measureTooltipHeight(abbr.dataset.tooltip);
+        if (top - navH - TOOLTIP_GAP < tipH) {
+          abbr.classList.add('tooltip-below');
+        } else {
+          abbr.classList.remove('tooltip-below');
+        }
+      };
 
-              document.addEventListener('click', (e) => {
-                const abbr = e.target.closest('abbr[data-tooltip]');
-                document.querySelectorAll('abbr[data-tooltip].is-active').forEach((el) => {
-                  if (el !== abbr) el.classList.remove('is-active');
-                });
-                if (abbr) {
-                  if (!abbr.classList.contains('is-active')) adjustTooltip(abbr);
-                  abbr.classList.toggle('is-active');
-                }
-              });
+      // Click listener (using event delegation)
+      document.addEventListener('click', (e) => {
+        const abbr = e.target.closest('abbr[data-tooltip]');
+        document.querySelectorAll('abbr[data-tooltip].is-active').forEach((el) => {
+          if (el !== abbr) el.classList.remove('is-active');
+        });
+        if (abbr) {
+          if (!abbr.classList.contains('is-active')) adjustTooltip(abbr);
+          abbr.classList.toggle('is-active');
+        }
+      });
 
-              document.querySelectorAll('abbr[data-tooltip]').forEach((abbr) => {
-                abbr.addEventListener('mouseenter', () => adjustTooltip(abbr));
-              });
-            })();
-          ` }} />
-        <Link
+      // Hover listener (using event delegation so it works with dynamic content)
+      document.addEventListener('mouseover', (e) => {
+        const abbr = e.target.closest('abbr[data-tooltip]');
+        if (abbr) adjustTooltip(abbr);
+      });
+    })();
+  `}
+          </Script>
+          <Link
             href={`/${lang}/resources`}
             className="border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.8rem,1.3vw,1.1rem)] font-medium transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >

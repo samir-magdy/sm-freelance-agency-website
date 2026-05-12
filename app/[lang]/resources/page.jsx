@@ -4,6 +4,7 @@ import resources from "@/app/data/resources";
 import resourcesTranslations from "@/app/data/translations/resources";
 import ResourcesGrid from "./ResourcesGrid";
 import { RevealSection } from "../../components/ui/RevealSection";
+import Script from "next/script";
 
 export function generateStaticParams() {
   return [{ lang: "en" }, { lang: "ar" }];
@@ -93,11 +94,9 @@ export default function ResourcesPage({ params }) {
   ];
 
   return (
-    <main
-      dir={dir}
-      className="bg-background pt-16 sm:pt-30 pb-20 px-5"
-    >
-      <script
+    <main dir={dir} className="bg-background pt-16 sm:pt-30 pb-20 px-5">
+      <Script
+        id="articles-grid-seo"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),

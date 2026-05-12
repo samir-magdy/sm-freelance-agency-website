@@ -5,6 +5,8 @@ import FAQSection from "../components/sections/FAQSection";
 import ContactSection from "../components/sections/ContactSection";
 import { notFound } from "next/navigation";
 import { projectsStructuredData } from "../data/projects";
+import Script from "next/script";
+
 
 export default async function Page({ params }) {
   const { lang: rawLang } = await params;
@@ -18,7 +20,8 @@ export default async function Page({ params }) {
       <FAQSection lang={lang} />
       <PricingSection lang={lang} />
       <ContactSection lang={lang} />
-      <script
+      <Script
+        id="projects-seo"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(projectsStructuredData),

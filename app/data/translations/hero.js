@@ -9,7 +9,7 @@ const hero = {
   },
   primaryCta: {
     en: "Start a Project",
-    ar: "ابدأ موقعك",
+    ar: "استشارة مجانية",
   },
   secondaryCta: {
     en: "Not Sure Yet?",

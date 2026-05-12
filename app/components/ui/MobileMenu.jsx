@@ -53,10 +53,10 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
     <nav
       id="mobile-menu"
       aria-label={a11y.mobileNav}
-      className="xl:hidden fixed top-0 left-0 right-0 z-50 pointer-events-none"
+      className="xl:hidden fixed top-0 inset-x-0 z-50 pointer-events-none"
     >
       <div
-        className="absolute top-0 left-0 right-0 py-1 z-50 backdrop-blur-xl pointer-events-auto"
+        className="absolute top-0 inset-x-0 w-full py-1 z-50 backdrop-blur-xl pointer-events-auto"
         dir="ltr"
       >
         <div className="flex justify-between items-center px-3">
