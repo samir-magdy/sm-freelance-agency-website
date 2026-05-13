@@ -286,7 +286,7 @@ The Calculated Data:
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-        className="sm:hidden mt-0.5 w-[98%] mx-auto border border-green-500/40 bg-green-500/20 hover:bg-green-500/40 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-2xl font-bold text-base"
+              className="sm:hidden mt-0.5 w-[98%] mx-auto border border-green-500/40 bg-green-500/20 hover:bg-green-500/40 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-2xl font-bold text-base"
             >
               <WhatsAppIcon className="w-5 h-5" />
               <span>{t.cta[lang]}</span>

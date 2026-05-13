@@ -1,18 +1,29 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import translations from "@/app/data/translations";
-import SmoothScroll from "../ui/utils/SmoothScroll.js";
 
 export default function HeroSection({ lang }) {
   const hero = translations.hero;
   const hookLines = hero.name[lang];
-  const handleScroll = SmoothScroll();
+
+  useLayoutEffect(() => {
+    if (sessionStorage.getItem("heroAnimationPlayed")) {
+      document.documentElement.classList.add("hero-played");
+    }
+  }, []);
 
   useEffect(() => {
+    let active = true;
     document.fonts.ready.then(() => {
+      if (!active) return;
       document.documentElement.classList.add("fonts-ready");
+      sessionStorage.setItem("heroAnimationPlayed", "true");
     });
+    return () => {
+      active = false;
+      document.documentElement.classList.remove("fonts-ready", "hero-played");
+    };
   }, []);
 
   return (
@@ -53,7 +64,6 @@ export default function HeroSection({ lang }) {
         <div className="flex flex-col items-center justify-center gap-4">
           <a
             href="#contact"
-            onClick={handleScroll}
             className="cta-primary inline-flex items-center gap-2 md:gap-4 hero-cta-entrance font-semibold text-center bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.2rem,1.8vw,1.6rem)] rtl:text-[clamp(1.2rem,1.8vw,1.6rem)] px-7 md:px-9 py-3 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
             {hero.primaryCta[lang]}
@@ -77,7 +87,6 @@ export default function HeroSection({ lang }) {
 
           <a
             href="#FAQs"
-            onClick={handleScroll}
             className="ms-2.5 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-2 text-content-muted hover:text-content-body text-[clamp(1rem,1.3vw,1.25rem)] font-medium transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
             {hero.secondaryCta[lang]}

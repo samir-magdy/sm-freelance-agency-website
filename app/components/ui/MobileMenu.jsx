@@ -24,10 +24,9 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
-    closeMenu();
 
     if (isHome) {
-      // Already on home, just scroll
+      closeMenu();
       setTimeout(() => {
         const targetEl = document.getElementById(targetId);
         if (targetEl) {
@@ -35,10 +34,15 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
         }
       }, 200);
     } else {
-      // Navigate home with fragment — browser will handle the scroll
       router.push(`/${lang}/#${targetId}`);
     }
   };
+
+  // Close menu after pathname changes so navigation renders first, preventing
+  // the overlay fade from briefly exposing the previous page (production flicker).
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -74,29 +78,35 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             />
           </a>
           {/* UTILITY GROUP: Language + Hamburger grouped on the right */}
-        <div className="flex items-center gap-3">
-          <div className={isMenuOpen ? "hidden" : ""}>
-          <LanguageToggle lang={lang} label={langToggleLabel} />
+          <div className="flex items-center gap-3">
+            <div className={isMenuOpen ? "hidden" : ""}>
+              <LanguageToggle lang={lang} label={langToggleLabel} />
+            </div>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsMenuOpen(!isMenuOpen);
+              }}
+              className="block p-4"
+              aria-label={isMenuOpen ? a11y.closeMenu : a11y.openMenu}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+            >
+              <span className="w-8 flex flex-col gap-1.5">
+                <span
+                  className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}
+                />
+                <span
+                  className={`block h-0.5 bg-content-heading transition-all duration-500 ${isMenuOpen ? "opacity-0 scale-0" : ""}`}
+                />
+                <span
+                  className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+                />
+              </span>
+            </button>
           </div>
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              setIsMenuOpen(!isMenuOpen);
-            }}
-            className="block p-4"
-            aria-label={isMenuOpen ? a11y.closeMenu : a11y.openMenu}
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-menu"
-          >
-            <span className="w-8 flex flex-col gap-1.5">
-              <span className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
-              <span className={`block h-0.5 bg-content-heading transition-all duration-500 ${isMenuOpen ? "opacity-0 scale-0" : ""}`} />
-              <span className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
-            </span>
-          </button>
         </div>
       </div>
-    </div>
 
       <div
         onClick={closeMenu}
@@ -135,7 +145,6 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           <li onClick={(e) => e.stopPropagation()}>
             <Link
               href={`/${lang}/resources`}
-              onClick={closeMenu}
               className="font-semibold text-content-body text-[1.8rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
             >
               {nav["resources"]}

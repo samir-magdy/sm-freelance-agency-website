@@ -21,11 +21,11 @@ export interface TimelineItem {
 
 export interface TimelineProps {
   data: TimelineItem[];
-  variant?: "vertical" | "icon" | "numbered";
+  variant?: "bullet" | "icon" | "numbered";
   accentColor?: string;
 }
 
-function useVerticalBeam(accentColor: string) {
+function useBulletBeam(accentColor: string) {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const beamRef = useRef<HTMLDivElement>(null);
@@ -104,11 +104,11 @@ function useVerticalBeam(accentColor: string) {
   };
 }
 
-export function Timeline({ data, variant = "vertical", accentColor = "white" }: TimelineProps) {
+export function Timeline({ data, variant = "bullet", accentColor = "white" }: TimelineProps) {
   const { ref, containerRef, beamRef, height, trackTop, activeIndex, itemRefs, beamGradient } =
-    useVerticalBeam(accentColor);
+    useBulletBeam(accentColor);
 
-  const large = variant !== "vertical";
+  const large = variant !== "bullet";
 
   return (
     <div className="w-full" ref={containerRef}>
@@ -134,18 +134,14 @@ export function Timeline({ data, variant = "vertical", accentColor = "white" }: 
                   >
                     {large ? (
                       <div
-                        className="h-10 w-10 flex items-center justify-center transition-all duration-500"
-                        style={
-                          active
-                            ? { borderColor: accentColor, filter: `drop-shadow(0 0 2px ${accentColor})` }
-                            : { borderColor: "rgba(255,255,255,0.15)", background: "transparent" }
-                        }
+                        className="h-20 w-20 ps-2 flex items-center justify-center transition-all duration-500"
+                    
                       >
                         {variant === "icon" && Icon ? (
-                          <Icon size={25} style={{ color: active ? accentColor : "rgba(255,255,255,0.35)" }} />
+                          <Icon size={30} style={{ color: active ? accentColor : "rgba(255,255,255,0.35)" }} />
                         ) : (
                           <span
-                            className={`font-bold ${variant === "numbered" ? "text-sm" : "text-xs"}`}
+                            className={`font-bold ${variant === "numbered" ? "text-5xl" : "text-xs"}`}
                             style={{ color: active ? accentColor : "rgba(255,255,255,0.35)" }}
                           >
                             {index + 1}

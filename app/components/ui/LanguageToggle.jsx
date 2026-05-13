@@ -1,11 +1,18 @@
+"use client";
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function LanguageToggle({ lang, label }) {
   const nextLang = lang === "ar" ? "en" : "ar";
+  const pathname = usePathname();
+  const segments = pathname.split('/');
+  segments[1] = nextLang;
+  const nextPath = segments.join('/');
   return (
     <Link
       id="language-toggler"
-      href={`/${nextLang}`}
+      href={nextPath}
       aria-label={`Switch to ${lang === "ar" ? "English" : "Arabic"}`}
       className="flex items-center px-2 md:p-0 gap-1.5 text-base md:text-[1.2rem] font-bold font-cairo text-content-muted hover:text-content-heading text-center"
     >

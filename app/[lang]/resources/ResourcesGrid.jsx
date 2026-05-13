@@ -35,7 +35,7 @@ export default function ResourcesGrid({ resources, lang, t }) {
             width="calc(100% - 2px)"
             height="calc(100% - 2px)"
             rx="16"
-            stroke="oklch(52% 0.0847 92.2 / 0.4)"
+            stroke="oklch(55% 0.0847 92.2 / 0.7)"
             strokeWidth="3"
             strokeDasharray="8 6"
             style={{ animation: "dash-march 2s linear infinite" }}

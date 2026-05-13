@@ -68,10 +68,10 @@ const steps = [
 ];
 
 type Variant = NonNullable<TimelineProps["variant"]>;
-const VARIANTS: Variant[] = ["vertical", "icon", "numbered"];
+const VARIANTS: Variant[] = ["bullet", "icon", "numbered"];
 
 export default function TimelineShowcase() {
-  const [variant, setVariant] = useState<Variant>("vertical");
+  const [variant, setVariant] = useState<Variant>("bullet");
 
   return (
     <div className="w-full">

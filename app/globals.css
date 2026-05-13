@@ -205,6 +205,17 @@ html:not(.fonts-ready) .hero-fade-secondary-cta {
   animation-play-state: paused;
 }
 
+html.hero-played .hero-fade-eyebrow,
+html.hero-played .eyebrow-rule-left,
+html.hero-played .eyebrow-rule-right,
+html.hero-played .hero-fade-hook,
+html.hero-played .hero-fade-nav,
+html.hero-played .hero-cta-entrance,
+html.hero-played .hero-cta-entrance::before,
+html.hero-played .hero-fade-secondary-cta {
+  animation: none;
+}
+
 .hero-cta-entrance::before {
   animation: ctaInitialShimmer 0.8s ease-out 7s forwards;
 }
