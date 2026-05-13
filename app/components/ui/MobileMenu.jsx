@@ -160,7 +160,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               {nav[contactItem]}
             </a>
           </li>
-          <li onClick={(e) => e.stopPropagation()} className="pt-2 [&_svg]:block [&_a]:text-[1.2rem]">
+          <li onClick={(e) => e.stopPropagation()} className="pt-4 [&_svg]:block [&_a]:text-[1.2rem]">
             <LanguageToggle lang={lang} label={langToggleLabel} />
           </li>
         </ul>
