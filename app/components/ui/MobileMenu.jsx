@@ -73,6 +73,11 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               loading="eager"
             />
           </a>
+          {/* UTILITY GROUP: Language + Hamburger grouped on the right */}
+        <div className="flex items-center gap-3">
+          <div className={isMenuOpen ? "hidden" : ""}>
+          <LanguageToggle lang={lang} label={langToggleLabel} />
+          </div>
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -84,19 +89,14 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             aria-controls="mobile-menu"
           >
             <span className="w-8 flex flex-col gap-1.5">
-              <span
-                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}
-              />
-              <span
-                className={`block h-0.5 bg-content-heading transition-all duration-500 ${isMenuOpen ? "opacity-0 scale-0" : ""}`}
-              />
-              <span
-                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-              />
+              <span className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
+              <span className={`block h-0.5 bg-content-heading transition-all duration-500 ${isMenuOpen ? "opacity-0 scale-0" : ""}`} />
+              <span className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
             </span>
           </button>
         </div>
       </div>
+    </div>
 
       <div
         onClick={closeMenu}
@@ -136,7 +136,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             <Link
               href={`/${lang}/resources`}
               onClick={closeMenu}
-              className="font-semibold text-content-body text-[1.8rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+              className="font-semibold text-content-body text-[1.8rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
             >
               {nav["resources"]}
             </Link>
@@ -151,12 +151,6 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             </a>
           </li>
         </ul>
-        <div
-          className="flex flex-col absolute bottom-24 items-center gap-8"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <LanguageToggle lang={lang} label={langToggleLabel} />
-        </div>
       </div>
     </nav>
   );

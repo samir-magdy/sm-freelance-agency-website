@@ -195,6 +195,16 @@ section {
   animation: heroFadeIn 0.4s ease-out 1.75s both;
 }
 
+html:not(.fonts-ready) .hero-fade-eyebrow,
+html:not(.fonts-ready) .eyebrow-rule-left,
+html:not(.fonts-ready) .eyebrow-rule-right,
+html:not(.fonts-ready) .hero-fade-hook,
+html:not(.fonts-ready) .hero-fade-nav,
+html:not(.fonts-ready) .hero-cta-entrance,
+html:not(.fonts-ready) .hero-fade-secondary-cta {
+  animation-play-state: paused;
+}
+
 .hero-cta-entrance::before {
   animation: ctaInitialShimmer 0.8s ease-out 7s forwards;
 }

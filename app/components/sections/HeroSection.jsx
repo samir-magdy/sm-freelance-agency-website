@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import translations from "@/app/data/translations";
 import SmoothScroll from "../ui/utils/SmoothScroll.js";
 
@@ -7,6 +8,12 @@ export default function HeroSection({ lang }) {
   const hero = translations.hero;
   const hookLines = hero.name[lang];
   const handleScroll = SmoothScroll();
+
+  useEffect(() => {
+    document.fonts.ready.then(() => {
+      document.documentElement.classList.add("fonts-ready");
+    });
+  }, []);
 
   return (
     <section

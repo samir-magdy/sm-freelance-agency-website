@@ -118,16 +118,16 @@ The Calculated Data:
 
   return (
     <>
-      <div className="relative max-w-[90rem] w-full mx-auto px-4 py-3 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-strong flex flex-col gap-3.5 sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0">
+      <div className="relative max-w-[90rem] w-full mx-auto px-4 py-3 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-strong flex flex-col gap-2.5 sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0">
         {/* ========================================= */}
         {/* MOBILE ONLY: Original Header & Price      */}
         {/* ========================================= */}
         <div className="flex justify-between items-center relative z-10 md:hidden">
-          <div className="flex flex-col gap-2 sm:gap-3 md:pt-4">
-            <div className="flex p-1 bg-black/40 rounded-2xl border border-white/5 w-fit">
+          <div className="flex flex-col">
+            <div className="flex p-1 bg-black/40 rounded-xl border border-white/5 w-fit">
               <button
                 onClick={() => setCurrency("EGP")}
-                className={`cursor-pointer px-4 py-1 rounded-lg font-bold transition-all duration-200  ${
+                className={`px-2.5 py-0.5 rounded-lg text-sm font-bold transition-all duration-200  ${
                   currency === "EGP"
                     ? "bg-white text-black"
                     : "text-content-muted hover:text-white"
@@ -137,7 +137,7 @@ The Calculated Data:
               </button>
               <button
                 onClick={() => setCurrency("USD")}
-                className={`cursor-pointer px-4 py-1 rounded-lg font-bold transition-all duration-200 ${
+                className={`text-sm px-2.5 py-0.5 rounded-lg font-bold transition-all duration-200 ${
                   currency === "USD"
                     ? "bg-white text-black"
                     : "text-content-muted hover:text-white"
@@ -148,21 +148,21 @@ The Calculated Data:
             </div>
           </div>
 
-          <div className="flex items-end gap-1">
-            <span className="text-xs inline-block mb-1 font-semibold tracking-wider text-content-muted">
+          <div className="flex items-end gap-1.5">
+            <span className="text-sm inline-block mb-0.5 font-semibold tracking-wider text-content-body">
               {t.estimateLabel[lang]}
             </span>
             <div className="flex items-baseline">
               {currency === "USD" && (
-                <span className="text-sm order-1 sm:text-base text-content-muted font-medium ms-0.5">
+                <span className="text-sm order-1 sm:text-base text-content-body font-medium ms-1">
                   {isRtl ? "دولار" : "USD"}
                 </span>
               )}
-              <span className="text-[1.8rem] font-bold text-white tracking-tight leading-none">
+              <span className="text-[2rem] font-bold text-white tracking-tight leading-none">
                 {displayPrice.toLocaleString()}
               </span>
               {currency === "EGP" && (
-                <span className="text-md text-content-muted font-medium ms-0.5">
+                <span className="text-md text-content-body font-medium ms-1">
                   {currencySymbol}
                 </span>
               )}
@@ -286,7 +286,7 @@ The Calculated Data:
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-        className="sm:hidden mt-3.5 w-[98%] mx-auto border border-green-500/40 bg-green-500/20 hover:bg-green-500/40 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-2xl font-bold text-base"
+        className="sm:hidden mt-0.5 w-[98%] mx-auto border border-green-500/40 bg-green-500/20 hover:bg-green-500/40 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-2xl font-bold text-base"
             >
               <WhatsAppIcon className="w-5 h-5" />
               <span>{t.cta[lang]}</span>
