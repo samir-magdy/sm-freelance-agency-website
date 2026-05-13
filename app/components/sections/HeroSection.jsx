@@ -1,7 +1,6 @@
 "use client";
 
 import translations from "@/app/data/translations";
-import FontReadyWrapper from "../ui/FontReadyWrapper";
 import SmoothScroll from "../ui/utils/SmoothScroll.js";
 
 export default function HeroSection({ lang }) {
@@ -10,7 +9,7 @@ export default function HeroSection({ lang }) {
   const handleScroll = SmoothScroll();
 
   return (
-    <FontReadyWrapper
+    <section
       id="home"
       className="h-dvh flex items-center justify-center relative"
     >
@@ -29,39 +28,15 @@ export default function HeroSection({ lang }) {
         >
         <span dir="ltr" className="hero-fade hero-fade-eyebrow mb-7 sm:mb-6 rtl:sm:mb-12 flex items-center justify-center gap-4">
           <span className="eyebrow-rule-left" aria-hidden="true"/>
-          <span className="text-xs rtl:text-sm sm:rtl:text-xl sm:text-[1rem] uppercase tracking-[0.18em] font-semibold text-content-body whitespace-nowrap">
+          <span className="text-[0.7rem] rtl:text-sm sm:rtl:text-xl sm:text-[1rem] uppercase tracking-[0.18em] font-semibold text-content-body whitespace-nowrap">
             {hero.eyebrow[lang]}
           </span>
           <span className="eyebrow-rule-right" aria-hidden="true"/>
         </span>
-          {Array.isArray(hookLines) ? (
-            hookLines.map((line, i) => {
-              const words = line.split(" ");
-              const fadeClass =
-                i === 0
-                  ? "hero-fade-hook-1"
-                  : i === 1
-                    ? "hero-fade-hook-2"
-                    : "hero-fade-hook-3";
-              return (
-                <span
-                  key={i}
-                  className={`hero-fade ${fadeClass} md:inline block`}
-                >
-                  <>
-                    {words[0]}{" "}
-                    <span className="text-gold">
-                      {words[1]?.replace(".", "")}
-                    </span>
-                    {words[1]?.endsWith(".") ? "." : ""}{" "}
-                    {words.slice(2).join(" ")}
-                  </>
-                </span>
-              );
-            })
-          ) : (
-            <span className="hero-fade hero-fade-hook-1">{hookLines}</span>
-          )}
+          <span
+            className="hero-fade hero-fade-hook block"
+            dangerouslySetInnerHTML={{ __html: hookLines }}
+          />
         </h1>
 
         <h2 className="mt-6 sm:mt-4 rtl:sm:mt-6 mb-8 hero-fade hero-fade-nav text-content-body text-[clamp(1.2rem,2vw,2rem)] rtl:text-[clamp(1.1rem,1.8vw,2rem)] rtl:leading-loose text-center px-10 sm:px-16">
@@ -118,6 +93,6 @@ export default function HeroSection({ lang }) {
           </a>
         </div>
       </div>
-    </FontReadyWrapper>
+    </section>
   );
 }

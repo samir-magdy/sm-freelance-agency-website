@@ -27,26 +27,28 @@ export default function ResourcesGrid({ resources, lang, t }) {
         </article>
       ))}
       <div
-        className="relative group flex flex-col items-center justify-center gap-4 p-8 rounded-2xl border-2 border-dashed border-border-subtle bg-surface-card/20 transition-all duration-500 hover:border-gold/40 hover:bg-surface-card/40 min-h-[350px] text-center overflow-hidden"
+        className="relative group flex flex-col items-center justify-center gap-4 p-8 rounded-2xl bg-surface-card/20 transition-all duration-500 hover:bg-surface-card/40 min-h-[350px] text-center overflow-hidden"
       >
-        {/* Subtle Background Glow - Made it permanently visible but faint, intensifying on hover */}
-        <div className="absolute inset-0 bg-radial-gradient from-gold/5 to-transparent group-hover:opacity-100 transition-opacity duration-700" />
-
-        {/* Decorative Icon Element */}
-        <div className="relative">
-          <div className="absolute -inset-1 bg-gold/20 rounded-full blur-md opacity-25 group-hover:opacity-100 transition duration-500"></div>
-          <div className="relative p-2 w-20 h-20 rounded-full border border-border-subtle bg-surface-card flex items-center justify-center shadow-inner">
-            <img className="w-full" src="/brand.svg" alt="Logo" />
-          </div>
-        </div>
+        <svg className="absolute inset-0 w-full h-full pointer-events-none" fill="none" aria-hidden="true">
+          <rect
+            x="1" y="1"
+            width="calc(100% - 2px)"
+            height="calc(100% - 2px)"
+            rx="16"
+            stroke="oklch(52% 0.0847 92.2 / 0.4)"
+            strokeWidth="3"
+            strokeDasharray="8 6"
+            style={{ animation: "dash-march 2s linear infinite" }}
+          />
+        </svg>
 
         {/* Text Content */}
         <div className="space-y-2 relative z-10">
-          <h3 className="text-content-heading font-bold text-2xl tracking-tight">
+          <h3 className="text-content-heading font-bold text-4xl tracking-tight">
             {lang === "ar" ? "ترقب المزيد" : "Stay Tuned"}
           </h3>
           <p
-            className={`text-content-muted text-base max-w-[250px] mx-auto leading-relaxed ${lang === "ar" ? "font-arabic" : ""}`}
+            className={`text-content-muted text-xl sm:text-2xl max-w-[250px] mx-auto leading-relaxed ${lang === "ar" ? "font-arabic" : ""}`}
             dir={lang === "ar" ? "rtl" : "ltr"}
           >
             {lang === "ar"
@@ -57,9 +59,9 @@ export default function ResourcesGrid({ resources, lang, t }) {
 
         {/* Permanent Animated Progress Indicator */}
         <div className="flex gap-2 mt-2">
-          <span className="w-2 h-2 rounded-full bg-gold/60 animate-pulse [animation-delay:-0.3s]"></span>
-          <span className="w-2 h-2 rounded-full bg-gold/60 animate-pulse [animation-delay:-0.15s]"></span>
-          <span className="w-2 h-2 rounded-full bg-gold/60 animate-pulse"></span>
+          <span className="w-3 h-3 rounded-full bg-gold/80 animate-pulse [animation-delay:-0.3s]"></span>
+          <span className="w-3 h-3 rounded-full bg-gold/80 animate-pulse [animation-delay:-0.15s]"></span>
+          <span className="w-3 h-3 rounded-full bg-gold/80 animate-pulse"></span>
         </div>
       </div>
     </div>

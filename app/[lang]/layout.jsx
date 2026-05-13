@@ -6,7 +6,6 @@ import Footer from "../components/ui/Footer";
 import { SITE_URL } from "../data/translations/lang";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";
-import { heroFontStyleEn, heroFontStyleAr } from "../fonts/heroFontInline";
 import Script from "next/script";
 
 const fonts = Cairo({
@@ -315,12 +314,6 @@ export default async function LangLayout({ children, params }) {
       suppressHydrationWarning
     >
       <body className={`${fonts.variable} font-cairo antialiased`}>
-        {/* ── Inline hero font (base64, zero network wait) ── */}
-        <style
-          dangerouslySetInnerHTML={{
-            __html: lang === "ar" ? heroFontStyleAr : heroFontStyleEn,
-          }}
-        />
         {/* ── Structured Data (JSON-LD) ── */}
         <Script
           id="structured-data"
