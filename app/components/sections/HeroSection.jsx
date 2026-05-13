@@ -11,6 +11,9 @@ export default function HeroSection({ lang }) {
     if (sessionStorage.getItem("heroAnimationPlayed")) {
       document.documentElement.classList.add("hero-played");
     }
+    return () => {
+      document.documentElement.classList.remove("hero-played");
+    };
   }, []);
 
   useEffect(() => {
@@ -22,7 +25,7 @@ export default function HeroSection({ lang }) {
     });
     return () => {
       active = false;
-      document.documentElement.classList.remove("fonts-ready", "hero-played");
+      document.documentElement.classList.remove("fonts-ready");
     };
   }, []);
 

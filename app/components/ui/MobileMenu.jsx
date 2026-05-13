@@ -145,6 +145,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           <li onClick={(e) => e.stopPropagation()}>
             <Link
               href={`/${lang}/resources`}
+              onClick={pathname === `/${lang}/resources` ? closeMenu : null}
               className="font-semibold text-content-body text-[1.8rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
             >
               {nav["resources"]}
@@ -158,6 +159,9 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             >
               {nav[contactItem]}
             </a>
+          </li>
+          <li onClick={(e) => e.stopPropagation()} className="pt-2 [&_svg]:block [&_a]:text-[1.2rem]">
+            <LanguageToggle lang={lang} label={langToggleLabel} />
           </li>
         </ul>
       </div>
