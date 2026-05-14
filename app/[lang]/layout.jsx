@@ -198,15 +198,15 @@ function buildStructuredData(lang) {
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Web Design & Development Services in Egypt",
-      itemListElement: translations.pricingSection.tiers.map((tier) => ({
+      itemListElement: translations.pricingCards.cards.map((card) => ({
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: tier.seoName.en,
-          alternateName: tier.seoName.ar,
-          description: tier.tagline.en,
+          name: card.name.en,
+          alternateName: card.name.ar,
+          description: card.tagline.en,
         },
-        price: tier.price.replace(/,/g, ""),
+        price: card.price.replace(/,/g, ""),
         priceCurrency: "EGP",
       })),
     },
@@ -265,7 +265,7 @@ function buildStructuredData(lang) {
       name: item.question[lang],
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.answer[lang],
+        text: item.answer[lang].replace(/href=(['"])\//g, `href=$1${SITE_URL}/`),
       },
     })),
   };

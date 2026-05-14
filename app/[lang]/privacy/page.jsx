@@ -17,7 +17,7 @@ export default function PrivacyPage({ params }) {
   const dir = lang === "ar" ? "rtl" : "ltr";
 
   return (
-    <main
+    <div
       dir={dir}
       className="min-h-screen pt-22 sm:pt-32 pb-16 px-6 bg-background"
     >
@@ -45,6 +45,6 @@ export default function PrivacyPage({ params }) {
           ))}
         </article>
       </div>
-    </main>
+    </div>
   );
 }

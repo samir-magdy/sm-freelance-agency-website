@@ -19,7 +19,7 @@ export default function TermsPage({ params }) {
 
 
   return (
-    <main
+    <div
       dir={dir}
       className="min-h-screen pt-22 sm:pt-32 pb-16 px-6 bg-background"
     >
@@ -47,6 +47,6 @@ export default function TermsPage({ params }) {
           ))}
         </article>
       </div>
-    </main>
+    </div>
   );
 }

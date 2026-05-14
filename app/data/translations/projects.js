@@ -16,7 +16,7 @@ const projectData = {
       ar: "متجر إلكتروني للأزياء",
     },
     description: {
-      en: "In the crowded fashion market, a slow or generic site loses sales to big brands. This design gives you the edge with a premium shopping experience that rivals industry giants. By utilizing smart product suggestions and a frictionless checkout, you won't just compete—you’ll become the preferred choice for shoppers who value style and ease, ensuring they return to you instead of browsing your competitors' sites.",
+      en: "In the crowded fashion market, a generic site loses sales to bigger brands with better websites. By utilizing smart product suggestions and a frictionless checkout, you’ll become the preferred choice for shoppers who value style and ease, ensuring they return to you instead of browsing your competitors' sites.",
       ar: "في قطاع الأزياء، مظهر متجرك هو هويتك. توفر لك هذه المنصة واجهة احترافية تعكس جودة منتجاتك، مع تجربة تسوق سلسة تجعل العميل يثق في اختيارك وتكرار الشراء منك بدلاً من البحث في أماكن أخرى.",
     },
     cta: {
@@ -44,8 +44,8 @@ const projectData = {
       ar: "عيادات طبية ومتخصصة",
     },
     description: {
-      en: "Patients choose providers based on trust and accessibility. This professional portal sets you apart from clinics with hard-to-navigate sites. By offering a streamlined booking flow and clear service transparency, you eliminate patient anxiety. You will naturally be chosen over local competitors because you provide the professional, digital-first experience modern patients now demand.",
-      ar: "يعتمد اختيار المرضى لمقدم الخدمة على سهولة الوصول والموثوقية. يساعدك هذا الموقع في تقديم صورة احترافية عبر نظام حجز ميسر ووضوح في عرض الخدمات، مما يساهم في طمأنة المريض وزيادة احتمالية اختياره لعيادتك مقارنة بالمنافسين.",
+      en: "Patients choose providers based on trust and accessibility. This web design sets you apart from other clinics with hard-to-navigate, or no sites. By offering a streamlined booking flow and clear service transparency, you eliminate patient anxiety. and build the credibility needed for patients to make choosing you the obvious choice.",
+      ar: "يعتمد اختيار المرضى لمقدم الخدمة على سهولة الوصول والموثوقية. يساعدك هذا الموقع في تقديم صورة احترافية عبر نظام حجز ميسر ووضوح في عرض الخدمات، مما يساهم في طمأنينة المريض وزيادة احتمالية اختياره لعيادتك مقارنة بالمنافسين.",
     },
     cta: {
       en: "View Live Site",
@@ -58,7 +58,7 @@ const projectData = {
       ar: "مراكز اللياقة البدنية",
     },
     description: {
-      en: "Most gym websites are just static brochures, but yours will be a lead-generation engine. This site is strategically designed to trigger the emotional 'start today' response. While other fitness centers leave potential members scrolling, your site converts interest into action immediately, ensuring that when someone decides to get fit, they sign up with you before ever seeing the gym down the street.",
+      en: "This site is strategically designed to trigger the emotional 'start today' response. While other fitness centers leave potential members scrolling, your site converts interest into action immediately, ensuring that when someone decides to get fit, they sign up with you before ever seeing the gym down the street.",
       ar: "يساعدك هذا الموقع في تحويل التصفح العادي إلى خطوات اشتراك فعلية. عبر تصميم يهدف لتحفيز الزوار، تزيد المنصة من فرص جذب المشتركين الجدد وتعزز من تواجدك الرقمي بشكل يجعل علامتك هي الخيار الأقرب لمن يبحث عن بداية رياضية.",
     },
     cta: {
@@ -73,7 +73,7 @@ const projectData = {
     },
     description: {
       en: "In interior design, your website is your first handshake. A mediocre site suggests mediocre work. This visually stunning portfolio signals luxury and mastery from the first click. By showcasing your projects with high-impact imagery and minimalist elegance, you justify premium pricing and attract high-end clients who will skip over your competitors for your superior aesthetic authority.",
-      ar: "في مجال التصميم، يعبر موقعك عن جودة تنفيذك. يساهم هذا المعرض البصري في إبراز مشاريعك بأسلوب راقٍ، مما يساعدك في استقطاب شريحة العملاء التي تبحث عن التميز ويدعم موقفك المهني عند تقديم خدماتك بأسعار متميزة.",
+      ar: "في مجال التصميم، يعبر موقعك عن جودة تنفيذك. يساهم هذا المعرض البصري في إبراز مشاريعك بأسلوب راقٍ، مما يساعدك في جذب شريحة العملاء التي تبحث عن التميز ويدعم موقفك المهني عند تقديم خدماتك بأسعار متميزة.",
     },
     cta: {
       en: "View Live Site",
@@ -86,7 +86,7 @@ const projectData = {
       ar: "رعاية الحيوانات الأليفة",
     },
     description: {
-      en: "Pet owners only want the best for their companions. A professional, reassuring website is the deciding factor between a visit and a skip. This platform highlights your expertise and care in a way that generic local listings cannot. By making booking effortless and information clear, you establish a level of trust that makes competitors look second-rate in comparison.",
+      en: "Pet owners only want the best for their companions. A professional, reassuring website is the deciding factor between a visit and a skip. This platform highlights your expertise and care in a way that generic local listings cannot. By making booking effortless and information clear, you establish a level of trust that makes pet owners choose you over your competitors.",
       ar: "يبحث أصحاب الحيوانات الأليفة دائماً عن المصداقية والاهتمام. توفر هذه المنصة واجهة احترافية تبرز خبرتك وتسهل التواصل، مما يعزز من ثقة العميل في خدماتك ويزيد من فرص اختياره لك بدلاً من المنافسين التقليديين.",
     },
     cta: {
@@ -101,7 +101,7 @@ const projectData = {
     },
     description: {
       en: "The most successful freelance brokers are those who control their own lead flow. This high-conversion showcase puts your portfolio in the spotlight, giving your listings the premium edge needed to stand out. By presenting properties with absolute clarity and direct pathways to reach you, you capture qualified buyers and keep them focused on your expertise—not a crowded mass-market site.",
-      ar: "كوسيط مستقل، نجاحك يعتمد على كيفية تقديم نفسك وعروضك. تمنحك هذه المنصة واجهة احترافية تضع عقاراتك في الصدارة وتبرز هويتك المهنية. من خلال عرض الوحدات بوضوح تام مع وسائل تواصل مباشرة، ستتمكن من جذب العملاء الجادين وضمان تركيزهم على ما تقدمه، بعيداً عن ضجيج المواقع العقارية المزدحمة.",
+      ar: "كوسيط مستقل، نجاحك يعتمد على كيفية تقديم نفسك وعروضك. تمنحك هذه المنصة واجهة احترافية تضع عقاراتك في الصدارة وتبرز هويتك المهنية. من خلال عرض الوحدات بوضوح تام مع وسائل تواصل مباشرة، ستتمكن من جذب العملاء الجادين وضمان تركيزهم على ما تقدمه.",
     },
     cta: {
       en: "View Live Site",

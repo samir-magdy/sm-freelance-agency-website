@@ -23,6 +23,7 @@ export interface TimelineProps {
   data: TimelineItem[];
   variant?: "bullet" | "icon" | "numbered";
   accentColor?: string;
+  markerColor?: string;
 }
 
 function useBulletBeam(accentColor: string) {
@@ -104,11 +105,26 @@ function useBulletBeam(accentColor: string) {
   };
 }
 
-export function Timeline({ data, variant = "bullet", accentColor = "white" }: TimelineProps) {
+export function Timeline({ data, variant = "bullet", accentColor = "white", markerColor }: TimelineProps) {
   const { ref, containerRef, beamRef, height, trackTop, activeIndex, itemRefs, beamGradient } =
     useBulletBeam(accentColor);
+  const activeMarkerColor = markerColor ?? accentColor;
 
-  const large = variant !== "bullet";
+  const [displayedVariant, setDisplayedVariant] = useState(variant);
+  const [markerOpacity, setMarkerOpacity] = useState(1);
+  const mounted = useRef(false);
+
+  useEffect(() => {
+    if (!mounted.current) { mounted.current = true; return; }
+    setMarkerOpacity(0);
+    const t = setTimeout(() => {
+      setDisplayedVariant(variant);
+      setMarkerOpacity(1);
+    }, 150);
+    return () => clearTimeout(t);
+  }, [variant]);
+
+  const large = displayedVariant !== "bullet";
 
   return (
     <div className="w-full" ref={containerRef}>
@@ -131,18 +147,18 @@ export function Timeline({ data, variant = "bullet", accentColor = "white" }: Ti
                         ? "h-14 w-12 inset-s-0 sm:inset-s-1"
                         : "h-12 md:h-14 w-10 inset-s-0 sm:inset-s-3"
                     }`}
+                    style={{ opacity: markerOpacity, transition: "opacity 150ms ease" }}
                   >
                     {large ? (
                       <div
-                        className="h-20 w-20 ps-2 flex items-center justify-center transition-all duration-500"
-                    
+                        className="h-20 w-20 ps-2 flex items-center justify-center"
                       >
-                        {variant === "icon" && Icon ? (
-                          <Icon size={30} style={{ color: active ? accentColor : "rgba(255,255,255,0.35)" }} />
+                        {displayedVariant === "icon" && Icon ? (
+                          <Icon size={30} className="transition-colors duration-500" style={{ color: active ? activeMarkerColor : "rgba(255,255,255,0.35)" }} />
                         ) : (
                           <span
-                            className={`font-bold ${variant === "numbered" ? "text-5xl" : "text-xs"}`}
-                            style={{ color: active ? accentColor : "rgba(255,255,255,0.35)" }}
+                            className={`font-bold transition-colors duration-500 ${displayedVariant === "numbered" ? "text-5xl" : "text-xs"}`}
+                            style={{ color: active ? activeMarkerColor : "rgba(255,255,255,0.35)" }}
                           >
                             {index + 1}
                           </span>
@@ -151,7 +167,7 @@ export function Timeline({ data, variant = "bullet", accentColor = "white" }: Ti
                     ) : (
                       <div
                         className={`h-4 w-4 rounded-full border transition-colors duration-500 ${active ? "" : "bg-zinc-900 border-zinc-700"}`}
-                        style={active ? { background: accentColor, borderColor: accentColor, filter: `drop-shadow(0 0 6px ${accentColor})` } : undefined}
+                        style={active ? { background: activeMarkerColor, borderColor: activeMarkerColor, filter: `drop-shadow(0 0 6px ${activeMarkerColor})` } : undefined}
                       />
                     )}
                   </div>

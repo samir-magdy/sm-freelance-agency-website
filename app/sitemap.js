@@ -35,7 +35,7 @@ export default function sitemap() {
   const resourceEntries = resources.flatMap((resource) =>
     langs.map((lang) => ({
       url: pageUrl(lang, `/resources/${resource.slug}`),
-      lastModified: new Date(resource.publishedAt).toISOString(),
+      lastModified: now,
       priority: 0.7,
       alternates: alternates(
         pageUrl("en", `/resources/${resource.slug}`),
@@ -44,22 +44,8 @@ export default function sitemap() {
     }))
   );
 
-  const privacyEntries = langs.map((lang) => ({
-    url: pageUrl(lang, "/privacy"),
-    lastModified: now,
-    priority: 0.3,
-    alternates: alternates(pageUrl("en", "/privacy"), pageUrl("ar", "/privacy")),
-  }));
-
-  const termsEntries = langs.map((lang) => ({
-    url: pageUrl(lang, "/terms"),
-    lastModified: now,
-    priority: 0.3,
-    alternates: alternates(pageUrl("en", "/terms"), pageUrl("ar", "/terms")),
-  }));
-
   const premiumComponentsEntry = {
-    url: `${SITE_URL}/premium-react-components`,
+    url: `${SITE_URL}/react-components`,
     lastModified: now,
     priority: 0.5,
   };
@@ -68,8 +54,6 @@ export default function sitemap() {
     ...homeEntries,
     ...resourcesListingEntries,
     ...resourceEntries,
-    ...privacyEntries,
-    ...termsEntries,
     premiumComponentsEntry,
   ];
 }

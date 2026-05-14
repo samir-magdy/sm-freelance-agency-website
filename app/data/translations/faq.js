@@ -7,32 +7,32 @@ const faqSection = {
  items: [
     {
       question: {
-        en: "Is having a website for my business important?",
+        en: "Is having a website really that important?",
         ar: "هل فعلاً البيزنس بتاعي محتاج موقع إلكتروني؟",
       },
       answer: {
-        en: "In today’s market, a website is the ultimate trust signal. When potential clients search for your services and find only a social media profile, it can often raise doubts about your professionalism. In fact, most customers will choose a competitor simply because they have a professional website that makes them look established and credible. Having a website isn’t just about being found, it’s about proving you’re the right choice over everyone else. To dive deeper into this topic you can read our article: <a href='/en/resources/why-your-business-needs-a-website-in-2026' target='_blank' rel='noopener noreferrer'>Why Your Business Needs a Website</a>.",
-        ar: "في وقتنا الحالي، موقعك هو الدليل الأول على احترافية ومصداقية شغلك. لما العملاء بيدوروا عليك وما بيلاقوش غير صفحة سوشيال ميديا، ده فالأغلب بيدي انطباع إن البيزنس لسه مش مستقر أو غير رسمي. الحقيقة إن أغلب الناس بتفضل تروح للمنافس اللي عنده موقع احترافي لأنه بيدي شعور بالأمان والثقة في التعامل. الموضوع مش بس إن الناس تلاقيك، الفكرة إنهم يختاروك أنت بدل غيرك. علشان تفهم أكتر لى البزنس بتاعك محتاج لموقع إلكتروني إحترافي، اقرأ مقالنا <a href='/ar/resources/why-your-business-needs-a-website-in-2026' target='_blank' rel='noopener noreferrer'>ليه شركتك محتاجة موقع إلكتروني</a>",
+        en: "When potential clients search for you and find only a social media profile, it can often raise doubts about your professionalism. In fact, most customers will choose a competitor simply because they have a professional website that makes them look established and credible. Having a website isn’t just about being found, it’s about proving you’re the right choice over everyone else. To dive deeper into this topic and find out more about what benefits a professional website brings to your business, read our full guide: <a href='/en/resources/why-your-business-needs-a-website-in-2026' target='_blank' rel='noopener noreferrer'>Why Your Business Needs a Website: The Difference Between Being Found and Being Trusted</a>.",
+        ar: "في وقتنا الحالي، موقعك هو الدليل الأول على احترافية ومصداقية شغلك. لما العملاء بيدوروا عليك وما بيلاقوش غير صفحة سوشيال ميديا، ده فالأغلب بيدي انطباع إن البيزنس لسه مش مستقر أو غير رسمي. الحقيقة إن أغلب الناس بتفضل تروح للمنافس اللي عنده موقع احترافي لأنه بيدي شعور بالأمان والثقة في التعامل. الموضوع مش بس إن الناس تلاقيك، الفكرة إنهم يختاروك أنت بدل غيرك. اقرأ دليلنا <a href='/ar/resources/why-your-business-needs-a-website-in-2026' target='_blank' rel='noopener noreferrer'>أهمية الموقع الإلكتروني: الفرق بين إن الناس تلاقيك، وإنها تثق فيك</a> لتفاصيل أكثر.",
       },
     },
     {
       question: {
-        en: "How much does it cost to make a website?",
-        ar: "كم تكلفة تصميم موقع إلكتروني في مصر؟",
+        en: "How much does it cost to make a website in Egypt?",
+        ar: "كام تكلفة تصميم موقع إلكتروني في مصر؟",
       },
       answer: {
-        en: "The cost depends entirely on what you need the site to do. Whether it’s a single page to showcase your work or a more complex system with custom features, the scope has a significant effect on cost. Since the answer to this question varies greatly, we recommend you read our detailed breakdown of what goes into the pricing of a professional website: <a href='/en/resources/how-much-does-a-website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>How Much Does a Website Cost in Egypt? An Honest Breakdown</a>. You can also use our <a href='#pricing'>Price Estimator</a> to get a rough estimate of your investment based on the factors that affect pricing the most.",
-        ar: "التكلفة بتعتمد بشكل أساسي على الوظائف اللي محتاجها في الموقع، سواء كان صفحة لعرض أعمالك أو نظام أذكى بمواصفات خاصة. إحنا بنتعامل مع كل موقع كاستثمار مخصص للبيزنس بتاعك وبنحدد التكلفة بناءً على أهدافك وميزانيتك. علشان تعرف أكتر عن العوامل اللي بتحدد السعر، اقرأ مقالنا <a href='/ar/resources/how-much-does-a-website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>تكلفة تصميم موقع إلكتروني في مصر: دليل شامل وواضح</a>. كمان تقدر تستخدم <a href='#pricing'>حاسبة الأسعار</a> علشان تاخد فكرة تقريبية عن تكلفة استثمارك بناءً على بعض العوامل اللي بتحدد السعر عندنا.",
+        en: "The cost depends entirely on what you need the site to do. Whether it’s a single page to showcase your work or a more complex system with custom features, the scope has a significant effect on cost. Since the answer to this question varies greatly, we recommend you read our detailed breakdown of what factors go into the pricing of a professional website: <a href='/en/resources/how-much-does-a-website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>How Much Does a Website Cost in Egypt? An Honest Breakdown</a>.",
+        ar: "التكلفة بتعتمد بشكل أساسي على الوظائف اللي محتاجها في الموقع، سواء كان صفحة لعرض أعمالك أو نظام أذكى بمواصفات خاصة. إحنا بنتعامل مع كل موقع كاستثمار مخصص للبيزنس بتاعك وبنحدد التكلفة بناءً على أهدافك وميزانيتك. علشان تعرف أكتر عن العوامل اللي بتحدد السعر، اقرأ دليلنا <a href='/ar/resources/how-much-does-a-website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>تكلفة تصميم موقع إلكتروني في مصر: دليل شامل وواضح</a>.",
       },
     },
     {
       question: {
         en: "Can I build my own website instead of hiring someone?",
-        ar: "هل ينفع أعمل موقعي بنفسي بدل ما أجيب متخصص؟",
+        ar: "ينفع أعمل موقعي بنفسي بدل ما أجيب متخصص؟",
       },
       answer: {
-        en: "Nowadays, there are so many DIY tools. And for a basic website, these tools can 'get the job done'. On the other hand, if you want a truly valuable asset that has much higher chances of increasing your reach and revenue, professional development is without a doubt the obvious path. For a more detailed dive on this topic, read our article: <a href='/en/resources/diy-vs-professional-web-design-egypt' target='_blank' rel='noopener noreferrer'>DIY vs. Professional Web Design: Which is Right for Your Business?</a>.",
-        ar: "دلوقتي في أدوات كتير تخليك تعمل موقعك بنفسك، وللمواقع البسيطة جداً الأدوات دي ممكن 'تقضي الغرض'. لكن لو هدفك يكون عندك أصل حقيقي للبيزنس بتاعك يساعدك تزود وصولك وأرباحك، فالتطوير الاحترافي هو الاختيار الصح من غير شك. علشان تعرف تفاصيل أكتر عن المقارنة دي، اقرأ مقالنا: <a href='/ar/resources/diy-vs-professional-web-design-egypt' target='_blank' rel='noopener noreferrer'>تصميم الموقع بنفسك أم الاستعانة بمحترف؟ أيهما أفضل؟</a>.",
+        en: "Nowadays, there are so many DIY tools. And for a basic website, these tools can 'get the job done'. On the other hand, if you want a truly valuable asset that has much higher chances of increasing your reach and revenue, professional development is without a doubt the obvious path. For a more detailed dive on this topic, read our guide: <a href='/en/resources/diy-vs-professional-web-design-egypt' target='_blank' rel='noopener noreferrer'>DIY vs. Professional Web Design: Which is Right for Your Business?</a>.",
+        ar: "دلوقتي في أدوات كتير تخليك تعمل موقعك بنفسك، وللمواقع البسيطة جداً الأدوات دي ممكن 'تقضي الغرض'. لكن لو هدفك يكون عندك أصل حقيقي للبيزنس بتاعك يساعدك تزود وصولك وأرباحك، فالتطوير الاحترافي هو الاختيار الصح من غير شك. علشان تعرف تفاصيل أكتر عن المقارنة دي، اقرأ دليلنا: <a href='/ar/resources/diy-vs-professional-web-design-egypt' target='_blank' rel='noopener noreferrer'>تصميم الموقع بنفسك أم الاستعانة بمحترف؟ أيهما أفضل؟</a>.",
       },
     },
   
@@ -42,8 +42,8 @@ const faqSection = {
         ar: "هل هقدر أعدل على محتوى الموقع بنفسي بعد كدة؟",
       },
       answer: {
-        en: "That depends on whether we build your site with an admin panel. An admin panel is essentially an extra, hidden page that only you are allowed to access. This page lets you edit text and photos yourself without needing any technical knowledge. If you need to make changes to your website's content every week, an admin panel is the way to go. On the other hand, if you will rarely need to change content, a less complex site without an admin panel is the more cost-effective and logical choice (we can handle updates for you).",
-        ar: "ده بيعتمد على لو محتاج نضيف 'لوحة تحكم' للموقع ولا لأ. لوحة التحكم دي بتكون صفحة سرية وخاصة بيك، تقدر من خلالها تعدل الصور والنصوص بسهولة ومن غير أي خبرة تقنية. لو شغلك بيحتاج تحديثات كل أسبوع مثلاً، فلوحة التحكم هتكون مهمة جداً. أما لو كنت هتحتاج تعديلات بسيطة على فترات بعيدة، فالأفضل والموفر أكتر ليك هو بناء موقع بسيط من غير لوحة تحكم، وإحنا بنقوم بكل التعديلات دي بدالك وقت ما تحتاج.",
+        en: "Yes, and to do that we need to build your website with an admin panel. An admin panel is essentially an extra, hidden page that only you are allowed to access. This page lets you edit text and photos yourself without needing any technical knowledge. If you need to make changes to your website's content every week, an admin panel is the way to go. On the other hand, if you will rarely need to change content, a less complex site without an admin panel is the more cost-effective and logical choice (we can handle occasional updates for you).",
+        ar: "ده بيعتمد على لو محتاج نضيف 'لوحة تحكم' للموقع ولا لأ. لوحة التحكم دي بتكون صفحة سرية وخاصة بيك، تقدر من خلالها تعدل الصور والنصوص بسهولة ومن غير أي خبرة تقنية. لو شغلك بيحتاج تحديثات كل أسبوع مثلاً، فلوحة التحكم هتكون مهمة جداً. أما لو كنت هتحتاج تعديلات بسيطة على فترات بعيدة، فالأفضل والموفر أكتر هو بناء موقع من غير لوحة تحكم، وإحنا ممكن نقوم بالتعديلات دي بدالك.",
       },
     },
     {
@@ -82,8 +82,8 @@ const faqSection = {
         ar: "إيه هو الـ SEO؟",
       },
       answer: {
-        en: "SEO stands for Search Engine Optimization. To explain what SEO is, consider the following scenario: You have the most beautiful website in the world, but when people search for your services online, they don’t find it. What good is a beautiful website if it’s never found? That’s where SEO comes in, SEO is the process of optimizing your site so search engines recognize you and rank you higher, placing you right in front of customers exactly when they are looking for what you offer. It’s the difference between chasing leads and having the leads find you. To dive deeper, check out our guide: <a href='/en/resources/seo-basics-for-small-businesses-egypt' target='_blank' rel='noopener noreferrer'>SEO Basics for Small Businesses in Egypt: What It Is, Why It Matters, and How to Start</a>",
-        ar: "ببساطة، الـ SEO هو اللي بيخلي موقعك يظهر للناس اللي بتدور على خدماتك. هو مجموعة خطوات بنعملها علشان نخلي محركات البحث تفهم إن موقعك هو الأفضل والأنسب للعميل، وده بيضمن لك ظهور دايم وزيارات من عملاء مهتمين من غير ما تدفع مبالغ ضخمة في الإعلانات. علشان تعرف أكتر، إقرأ مقالنا: <a href='/ar/resources/seo-basics-for-small-businesses-egypt' target='_blank' rel='noopener noreferrer'>أساسيات الـ SEO للشركات الصغيرة في مصر: إيه هو، وليه مهم، وتبدأ إزاي؟</a>",
+        en: "SEO stands for Search Engine Optimization. To explain what SEO is, consider the following scenario: You have the most beautiful website in the world, but when people search for your services online, they don’t find it. What good is a beautiful website if it’s never found? That’s where SEO comes in, SEO is the process of optimizing your site so search engines recognize you and rank you higher, placing you right in front of customers exactly when they are looking for what you offer. It’s the difference between chasing leads and having the leads find you. To learn more about SEO, check read our guide: <a href='/en/resources/seo-basics-for-small-businesses-egypt' target='_blank' rel='noopener noreferrer'>SEO Basics for Small Businesses in Egypt: What It Is, Why It Matters, and How to Start</a>",
+        ar: "ببساطة، الـ SEO هو اللي بيخلي موقعك يظهر للناس اللي بتدور على خدماتك. هو مجموعة خطوات بنعملها علشان نخلي محركات البحث تفهم إن موقعك هو الأفضل والأنسب للعميل، وده بيضمن لك ظهور دايم وزيارات من عملاء مهتمين من غير ما تدفع مبالغ ضخمة في الإعلانات. علشان تعرف أكتر، إقرأ دليلنا: <a href='/ar/resources/seo-basics-for-small-businesses-egypt' target='_blank' rel='noopener noreferrer'>أساسيات الـ SEO للشركات الصغيرة في مصر: إيه هو، وليه مهم، وتبدأ إزاي؟</a>",
       },
     },
     {

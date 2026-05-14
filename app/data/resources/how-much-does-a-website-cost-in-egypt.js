@@ -6,7 +6,7 @@ const resource = {
   },
   excerpt: {
     en: "Website pricing in Egypt varies widely, and the variation is never random. This guide explains exactly what drives costs, what price ranges to expect for each project type, and how to avoid overpaying or underpaying for web design & development services.",
-    ar: "أسعار المواقع في مصر بتتفاوت بشكل كبير. الدليل ده بيشرح بالظبط إيه اللي ممكن يأثر على التكلفة، نطاق السعر المتوقع لكل نوع موقع، وإزاي تتجنب دفع أكثر أو أقل من اللازم.",
+    ar: "أسعار المواقع في مصر بتتفاوت بشكل كبير. الدليل ده بيشرح إيه اللي ممكن يأثر على التكلفة، نطاق السعر المتوقع لكل نوع موقع، وإزاي تتجنب دفع أكثر أو أقل من اللازم.",
   },
   content: {
     en: `<p>Website pricing can be extremely confusing if you don't have a technical background in web development, you can find offers ranging from 500 EGP to 200,000 EGP for what are equally described as 'website design services'. These massive differences in pricing are not random, and understanding what factors directly affect cost will help you make a better decision when investing in your website.</p>
@@ -40,7 +40,7 @@ const resource = {
 <p>The relevant question is not "what is the cheapest website I can get?" but "what is the minimum investment that will generate a positive return for my specific business?" For most businesses with serious growth ambitions, that answer points toward professional design with solid technical foundations.</p>
 
 <h2>What Is Included at SM Web Studio</h2>
-<p>Every website we build includes professional design created specifically for your brand, performance optimization for fast loading, mobile-first development, basic SEO setup, and a revision process that ensures you are happy with the result. We are transparent about pricing before any project starts, so you know exactly what you are getting and what it costs. Our goal is not to sell you the most expensive option, it is to help you understand what level of investment makes sense for your goals and build accordingly. To get a rough idea of how much your project might cost, try our <a href='/en/#pricing' target='_blank' rel='noopener noreferrer'>Pricing Estimator</a>. If you'd rather get a formal quote instead, you can do that <a href="/en/#contact">Here</a>.</p>`,
+<p>Every website we build includes professional design created specifically for your brand, performance optimization for fast loading, mobile-first development, basic SEO setup, and a revision process that ensures you are happy with the result. We are transparent about pricing before any project starts, so you know exactly what you are getting and what it costs. Our goal is not to sell you the most expensive option, it is to help you understand what level of investment makes sense for your goals and build accordingly. If you'd like a formal quote, you can request one <a href="/en/#contact">here</a>.</p>`,
     ar: `<p>أسعار المواقع الإلكترونية في مصر تعتبر من أكتر الحاجات اللي بتسبب ارتباك لأصحاب الأعمال. ممكن تلاقي عروض بـ ٥٠٠ جنيه وعروض تانية بتوصل لـ ٢٠٠,٠٠٠ جنيه، والاتنين بيتقال عليهم "تصميم مواقع". الفرق الكبير ده مش بالصدفة، وفهم الأسباب اللي بتغير السعر هيساعدك تاخد القرار الصح لشركتك، سواء كنت هتبدأ مشروع دلوقتي أو بتخطط للمستقبل.</p>
 
 <h2>إنت بتدفع فلوسك في إيه بالظبط؟</h2>
@@ -72,15 +72,12 @@ const resource = {
 <p>الموقع الرخيص غالباً بيبقى بطيء جداً، وده بيخلي العملاء يقفلوه ومبيظهرش في جوجل. كمان التصميم بيبقى مكرر ومش احترافي، ومبيشتغلش كويس على الموبايل. في الآخر هتضطر تدفع فلوس تانية علشان تصلح المشاكل دي، ده غير الشغل اللي ضاع منك بسبب إن الموقع مكانش شغال صح.</p>
 
 <h2>إيه اللي بنقدمه في SM Web Studio؟</h2>
-<p>كل موقع بنبنيه بيشمل تصميم مخصص لبراندك، وسرعة تحميل عالية، وتوافق تام مع الموبايل، مع تجهيز أساسيات الـ SEO. إحنا واضحين جداً في أسعارنا من قبل ما نبدأ؛ هدفنا مش إننا نبيع لك أغلى حاجة، هدفنا نساعدك تختار الاستثمار اللي هيجيب لك عائد فعلي لشركتك. علشان تاخد فكرة تقريبية عن تكلفة مشروعك، جرب <a href='/ar/#pricing' target='_blank' rel='noopener noreferrer'>حاسبة الأسعار</a> الخاصة بنا. ولو حابب نبعتلك عرض سعر رسمي، تقدر تعمل ده من <a href="/ar/#contact">هنا</a>.</p>`,
+<p>كل موقع بنبنيه بيشمل تصميم مخصص لبراندك، وسرعة تحميل عالية، وتوافق تام مع الموبايل، مع تجهيز أساسيات الـ SEO. إحنا واضحين جداً في أسعارنا من قبل ما نبدأ؛ هدفنا مش إننا نبيع لك أغلى حاجة، هدفنا نساعدك تختار الاستثمار اللي هيجيب لك عائد فعلي لشركتك. ولو حابب نبعتلك عرض سعر رسمي، تقدر تطلبه من <a href="/ar/#contact">هنا</a>.</p>`,
   },
   metaDescription: {
     en: "An honest breakdown of website costs in Egypt — what drives pricing, what to expect for landing pages, business sites, and online stores, and how to budget wisely.",
     ar: "اعرف تكاليف تصميم المواقع في مصر لعام ٢٠٢٦. شرح واضح لأسعار صفحات الهبوط، مواقع الشركات، والمتاجر الإلكترونية، وإزاي تختار اللي يناسب ميزانيتك.",
   },
-  category: { en: "Business", ar: "أعمال" },
-  publishedAt: "2026-02-26",
-  readTimeMinutes: 7,
 };
 
 export default resource;

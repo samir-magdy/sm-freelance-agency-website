@@ -38,7 +38,6 @@ const resource = {
 <p>The right choice depends entirely on your needs. With this framework, you can choose the entity that fits you best. Once that is decided, the steps listed below apply to everyone: freelancers, studios, and companies alike.</p>
 
 <h2>1. Analyze Their Own Website Carefully</h2>
-<p>When I was conducting market research on the web design industry in Egypt, what I found was shocking: entities claiming to be "companies" that were actually run by a single amateur <abbr data-tooltip="A popular website builder — easier than custom coding but often results in slower, generic-looking websites">WordPress</abbr> developer, web design providers with terrible websites (or none at all); and prices that were absurdly unreasonable. These are just some of the things that were found, believe or not, there is more.</p>
 <p>The most important factor in choosing a provider is checking their own website. Is it well-designed? Is it clear? Does it answer your questions? Is it user-friendly, fast, and functional? I've seen contact forms that are just "for show" and don't actually work, terrible color contrast that makes text hard to read, and broken links leading to <abbr data-tooltip="An error code meaning 'page not found' — the link points to a page that no longer exists">404</abbr> pages. Many of these issues were found on the sites of companies actively advertising on social media. The market is messy, and without the right knowledge, you may fall victim to these providers.</p>
 <p>The conclusion: never trust a social media account alone. Always inspect their website thoroughly. If a web design service provider has a poor website, what does that say about their work? If they can't meet minimum standards for themselves, they won't meet them for you.</p>
 
@@ -49,7 +48,7 @@ const resource = {
 <li><strong>Guarantees that sound too good to be true:</strong> Promises like "first page of Google in two weeks" or "unlimited revisions" are misleading and unrealistic.</li>
 <li><strong>Vague pricing with no itemization:</strong> A professional provider can explain exactly what you are paying for. Evasiveness about costs is a major warning sign.</li>
 <li><strong>No questions about your business:</strong> A company that quotes a price without asking about your goals, audience, and competitors is just filling a template, not building a solution.</li>
-<li><strong>Extremely low (or high) prices:</strong> Unusually cheap design almost always means templates and poor technical foundations, costing more in the long run. Conversely, extreme prices can be scams. I’ve seen companies in Egypt charging 50,000 EGP for a simple WordPress site, this is absurd. For more detailed information on professional web design pricing, read our article <a href='/en/resources/how-much-does-a-website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>How Much Does a Website Cost in Egypt? An Honest Breakdown.</a>.</li>
+<li><strong>Extremely low (or high) prices:</strong> Unusually cheap design almost always means templates and poor technical foundations, costing more in the long run. Conversely, extreme prices can be scams. I’ve seen companies in Egypt charging 50,000 EGP for a simple WordPress site, this is absurd. For more detailed information on professional web design pricing, read our guide <a href='/en/resources/how-much-does-a-website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>How Much Does a Website Cost in Egypt? An Honest Breakdown.</a>.</li>
 </ul>
 
 <h2>3. Look for Business Understanding, Not Just Design Skill</h2>
@@ -119,9 +118,6 @@ const resource = {
     en: "How to choose the right web design company for your business. Learn what questions to ask, what red flags to avoid, and what separates genuinely capable agencies from the rest.",
     ar: "دليل عملي لاختيار شركة تصميم مواقع مناسبة لشركتك. اعرف الأسئلة الصح، العلامات التحذيرية، والمعايير الحقيقية اللي بتفرق بين الشركة المحترفة وغيرها.",
   },
-  category: { en: "Web Design", ar: "تصميم مواقع" },
-  publishedAt: "2026-05-11",
-  readTimeMinutes: 8,
 };
 
 export default resource;

@@ -159,7 +159,7 @@ export default function PortfolioShowcase({ lang }) {
   return (
     <section
       id="portfolio"
-      className="flex flex-col items-center justify-start min-h-svh relative overflow-hidden select-none px-5"
+      className="flex flex-col items-center justify-start min-h-svh py-4 relative overflow-hidden select-none px-5"
       aria-labelledby="portfolio-heading"
     >
       <RevealSection className="flex flex-col items-center w-full">
@@ -210,6 +210,14 @@ export default function PortfolioShowcase({ lang }) {
 
           {/* ── Phone column ── */}
           <div className="flex flex-col items-center gap-3">
+            {/* Genre badge — mobile only */}
+            <h4
+              key={`genre-${project.id}`}
+              className="lg:hidden inline-flex items-center px-4 py-1.5 rounded-full text-[0.8rem] font-semibold uppercase tracking-[0.12em] border border-border-subtle text-content-muted bg-surface-card"
+            >
+              {isRtl ? project.genreAr : project.genre}
+            </h4>
+
             <div dir="ltr" className="flex items-center justify-center gap-8">
               <NavArrow
                 direction="prev"
@@ -218,7 +226,7 @@ export default function PortfolioShowcase({ lang }) {
               />
 
               {/* Phone outer shell */}
-              <div className="phone-outer w-[60vw] h-115 sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-146 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
+              <div className="phone-outer w-[60vw] h-[63svh] sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-146 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
                 {/* Left volume buttons */}
                 <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
                 <div className="absolute -left-[2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -270,7 +278,7 @@ export default function PortfolioShowcase({ lang }) {
             {/* Pagination dots */}
             <div
               dir="ltr"
-              className="flex items-center gap-1.5 mb-1.5"
+              className="flex items-center gap-1.5 mb-0.5"
               role="tablist"
               aria-label="Project slides"
             >

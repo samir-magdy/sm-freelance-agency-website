@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "@/app/globals.css";
 import { SITE_URL } from "@/app/data/translations/lang";
 
-const PAGE_URL = `${SITE_URL}/premium-react-components`;
+const PAGE_URL = `${SITE_URL}/react-components`;
 const SITE_NAME = "SM Web Studio";
 const TWITTER_HANDLE = "@SMWebStudioEG";
 

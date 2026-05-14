@@ -1,7 +1,7 @@
 import nav, { navLinks } from "./nav";
 import hero from "./hero";
 import { projectsSection, projectData } from "./projects";
-import pricingSection, { pricingEstimator } from "./pricing";
+import { pricingCards } from "./pricing";
 import faqSection from "./faq";
 import contactSection from "./contact";
 import form from "./form";
@@ -17,8 +17,7 @@ const translations = {
   hero,
   projectsSection,
   projectData,
-  pricingSection,
-  pricingEstimator,
+  pricingCards,
   faqSection,
   contactSection,
   form,

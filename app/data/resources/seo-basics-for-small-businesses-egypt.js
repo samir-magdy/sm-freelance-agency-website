@@ -93,9 +93,6 @@ const resource = {
     en: "A plain-language guide to SEO for small businesses in Egypt. Learn what it is, why it matters for your local visibility, and the first steps to rank higher on Google.",
     ar: "دليل بسيط عن أساسيات الـ SEO للشركات في مصر. اعرف إيه هو الـ SEO، وليه مهم لشغلك، وإزاي تبدأ تظهر في نتايج جوجل الأولى.",
   },
-  category: { en: "SEO", ar: "تحسين محركات البحث" },
-  publishedAt: "2026-02-03",
-  readTimeMinutes: 8,
 };
 
 export default resource;

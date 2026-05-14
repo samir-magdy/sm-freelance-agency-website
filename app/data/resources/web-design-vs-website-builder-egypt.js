@@ -5,27 +5,28 @@ const resource = {
     ar: "تصميم الموقع بنفسك أم الاستعانة بمحترف؟ أيهما أفضل؟",
   },
   excerpt: {
-    en: "Should you build your website yourself or hire a professional? We break down the real costs, risks, and long-term value of DIY builders versus custom professional design, so you can make the right call for your business.",
-    ar: "بنقارن التكاليف والمخاطر والقيمة على المدى البعيد لأدوات البناء الجاهزة مقابل التصميم الاحترافي. من خلال التعمق في هذه المقارنة، ستكتسب المعرفة اللازمة لإتخاذ القرار الصحيح لعملك.",
+    en: "There are many tools today that allow a non-technical person to make a basic website. Should you build your website yourself or hire a professional? We break down the real costs, risks, and long-term value of DIY builders versus custom professional design, so you can make the right call for your business.",
+    ar: "بنقارن التكاليف والمخاطر والقيمة على المدى البعيد لأدوات البناء الجاهزة مقابل التصميم الاحترافي. من خلال التعمق في المقارنة، هتكتسب المعرفة اللازمة لإتخاذ القرار الصحيح لشغلك.",
   },
   content: {
-    en: `<p>In 2026, building a website has never been easier. Many platforms now exist that allow non-technical users to build a website without needing to know how to code. If you know how to use a computer, you can launch a one-page website in an afternoon. But for a growing business in a competitive market, is a <abbr data-tooltip="Do-It-Yourself — building your own website using tools like Wix or Squarespace without hiring a developer">DIY</abbr> site enough? Let's break down the real differences between doing it yourself and hiring a professional.</p>
-
-<h2>1. Ownership and Scalability</h2>
-<p><strong>DIY:</strong> You don’t own a DIY site; you rent it. If you stop paying the subscription, your site disappears. Moving your content to a different platform later is often impossible.</p>
-<p><strong>Professional:</strong> You own your files and your data. As your business grows, a professional site can be expanded with new, custom features that DIY builders simply can’t handle.</p>
-
-<h2>2. The Cost Illusion</h2>
+    en: `<p>In 2026, building a website has never been easier and yet it's never been more complicated. Many platforms now exist that allow non-technical users to build a website without needing to know how to code. If you know how to use a computer, you can launch a one-page website in an afternoon. But for a growing business in a competitive market, is a <abbr data-tooltip="Do-It-Yourself — building your own website using tools like Wix or Squarespace without hiring a developer">DIY</abbr> site enough? Let's break down the real differences between doing it yourself and hiring a professional.</p>
+<h2>1. The Cost Illusion</h2>
 <p><strong>DIY:</strong> The most common reason people pick DIY tools is the low entry price. You pay a monthly subscription and do the work yourself. However, your time has value. The hours you spend fixing layouts and troubleshooting issues are hours you aren’t spending running your business.</p>
-<p><strong>Professional:</strong> Higher upfront cost, but it’s an investment in an asset. A professional site is built to convert visitors into customers, meaning it pays for itself much faster than a generic DIY page that people leave quickly.</p>
+<p>
+  <strong>Professional:</strong> While there is a higher upfront cost, a professional website is a long-term investment in a business asset. Unlike generic DIY pages that users often abandon, a professional site is strategically designed to boost your online visibility through proper optimizations, and is strategically designed to turn visitors into customers by implementing proven <abbr data-tooltip="User Interface (the visual design) and User Experience (the overall ease of use)">UI/UX</abbr> principles.
+</p>
 
-<h2>3. Brand Identity and Credibility</h2>
+
+<h2>2. Brand Identity and Credibility</h2>
 <p><strong>DIY:</strong> You are limited to templates. There’s a high chance your competitor is using the exact same design. To a customer, this can look cheap or temporary.</p>
 <p><strong>Professional:</strong> You get a unique design that reflects your specific brand. In a market where trust is everything, a professional site signals that you are an established, serious business.</p>
 
-<h2>4. Speed and Performance</h2>
+<h2>3. Speed and Performance</h2>
 <p><strong>DIY:</strong> By design, DIY platforms are not the technically optimal choice for building a website. The trade off you make to use them is that they can often lead to slow loading speeds and poor performance. Search engines like Google can penalize slow sites, negatively affecting <abbr data-tooltip="Search Engine Optimization — the set of factors that determine how high your website ranks on Google search results.">SEO</abbr> and making it harder for customers to find you.</p>
 <p><strong>Professional:</strong> Custom sites are optimized for speed. They are built with <abbr data-tooltip="Efficient, structured code that makes the website perform well, meaning everything loads fast and runs smoothly">clean code</abbr>, ensuring you rank higher and provide a smooth experience for users on that might be on a slower 4G mobile connection.</p>
+<h2>4. Scalability</h2>
+<p><strong>DIY:</strong> DIY tools are quite limited in what they offer in terms of customization. If your business grows and you decide you need to add custom features on your website, moving your content to a different platform later is often impossible.</p>
+<p><strong>Professional:</strong> A professional site can be expanded with new, custom features that DIY builders simply can’t handle.</p>
 
 <h2>The Verdict</h2>
 <p>DIY is great for hobbyists or tiny startups testing an idea. But if you are serious about your business, a professional website is the foundation you need to compete and win in 2026.</p>`,
@@ -55,9 +56,6 @@ const resource = {
     en: "Choosing between DIY website builders and professional design in Egypt. Learn about SEO, costs, and performance differences to make the best choice for your brand.",
     ar: "مقارنة بين تصميم الموقع بنفسك والاستعانة بشركة محترفة في مصر. اعرف الفرق في السرعة، التكلفة، والظهور على جوجل علشان تاخد القرار الصح لشركتك.",
   },
-  category: { en: "Web Design", ar: "تصميم مواقع" },
-  publishedAt: "2026-03-10",
-  readTimeMinutes: 6,
 };
 
 export default resource;

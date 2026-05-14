@@ -2,7 +2,7 @@ import Script from "next/script";
 import { use } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, CalendarDays, User } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { SITE_URL } from "@/app/data/translations/lang";
 import resources from "@/app/data/resources";
 import resourcesTranslations from "@/app/data/translations/resources";
@@ -17,28 +17,25 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { lang, slug } = await params;
-  const article = resources.find((r) => r.slug === slug);
-  if (!article) return {};
+  const guide = resources.find((r) => r.slug === slug);
+  if (!guide) return {};
 
-  const canonical =
-    lang === "en"
-      ? `${SITE_URL}/resources/${slug}`
-      : `${SITE_URL}/${lang}/resources/${slug}`;
+  const canonical = `${SITE_URL}/${lang}/resources/${slug}`;
 
   return {
-    title: article.title[lang],
-    description: article.metaDescription[lang],
+    title: guide.title[lang],
+    description: guide.metaDescription[lang],
     alternates: {
       canonical,
       languages: {
-        en: `${SITE_URL}/resources/${slug}`,
+        en: `${SITE_URL}/en/resources/${slug}`,
         ar: `${SITE_URL}/ar/resources/${slug}`,
-        "x-default": `${SITE_URL}/resources/${slug}`,
+        "x-default": `${SITE_URL}/en/resources/${slug}`,
       },
     },
     openGraph: {
-      title: article.title[lang],
-      description: article.metaDescription[lang],
+      title: guide.title[lang],
+      description: guide.metaDescription[lang],
       url: canonical,
       type: "article",
       images: [
@@ -52,43 +49,33 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: article.title[lang],
-      description: article.metaDescription[lang],
+      title: guide.title[lang],
+      description: guide.metaDescription[lang],
       images: [`${SITE_URL}/open-graph.webp`],
     },
     robots: { index: true, follow: true },
   };
 }
 
-export default function ArticlePage({ params }) {
+export default function GuidePage({ params }) {
   const { lang, slug } = use(params);
-  const article = resources.find((r) => r.slug === slug);
-  if (!article) notFound();
+  const guide = resources.find((r) => r.slug === slug);
+  if (!guide) notFound();
 
   const t = resourcesTranslations;
   const dir = lang === "ar" ? "rtl" : "ltr";
 
-  const canonical =
-    lang === "en"
-      ? `${SITE_URL}/resources/${slug}`
-      : `${SITE_URL}/${lang}/resources/${slug}`;
-
-  const formattedDate = new Intl.DateTimeFormat(
-    lang === "ar" ? "ar-EG" : "en-US",
-    { year: "numeric", month: "long", day: "numeric" },
-  ).format(new Date(article.publishedAt));
+  const canonical = `${SITE_URL}/${lang}/resources/${slug}`;
 
   const homeUrl = lang === "en" ? `${SITE_URL}/` : `${SITE_URL}/ar`;
-  const resourcesUrl =
-    lang === "en" ? `${SITE_URL}/resources` : `${SITE_URL}/ar/resources`;
+  const resourcesUrl = `${SITE_URL}/${lang}/resources`;
 
   const jsonLd = [
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      headline: article.title[lang],
-      description: article.metaDescription[lang],
-      datePublished: article.publishedAt,
+      headline: guide.title[lang],
+      description: guide.metaDescription[lang],
       inLanguage: lang,
       url: canonical,
       author: { "@id": `${SITE_URL}/#founder` },
@@ -115,7 +102,7 @@ export default function ArticlePage({ params }) {
         {
           "@type": "ListItem",
           position: 3,
-          name: article.title[lang],
+          name: guide.title[lang],
           item: canonical,
         },
       ],
@@ -123,7 +110,7 @@ export default function ArticlePage({ params }) {
   ];
 
   return (
-    <main
+    <div
       dir={dir}
       className="min-h-screen bg-background pt-22 sm:pt-36 pb-14 sm:pb-20 px-5 overflow-x-hidden"
     >
@@ -147,29 +134,13 @@ export default function ArticlePage({ params }) {
             />
             {t.backToResources[lang]}
           </Link> */}
-          {/* Article header */}
-          <header className="flex flex-col gap-4 rtl:gap-6">
+          {/* Guide header */}
+          <header>
             <h1 className="text-[clamp(2rem,5vw,2.8rem)] font-bold text-content-heading leading-tight">
-              {article.title[lang]}
+              {guide.title[lang]}
             </h1>
-            <div className="flex flex-wrap items-center gap-2 pt-2">
-              <span className="flex items-center gap-1.5 border border-border-subtle rounded-2xl px-4 py-2 text-sm text-content-muted">
-                <CalendarDays className="size-3.5 shrink-0" aria-hidden />
-                <span className="text-content-heading font-medium">
-                  {lang === "ar" ? "نُشر:" : "Published on:"}
-                </span>
-                {formattedDate}
-              </span>
-              <span className="flex items-center gap-1.5 border border-border-subtle rounded-2xl px-4 py-2 text-sm text-content-muted">
-                <User className="size-3.5 shrink-0" aria-hidden />
-                <span className="text-content-heading font-medium">
-                  {lang === "ar" ? "الكاتب:" : "Author:"}
-                </span>
-                {lang === "ar" ? "سمير مجدي" : "Samir Magdy"}
-              </span>
-            </div>
           </header>
-          {/* Article body */}
+          {/* Guide body */}
           <article
             dir={dir}
             className="
@@ -179,11 +150,11 @@ export default function ArticlePage({ params }) {
             [&_p]:text-content-body [&_p]:text-xl [&_p]:leading-relaxed [&_p]:mb-6
             [&_ul]:list-disc [&_ul]:ps-7 [&_ul]:mb-6 [&_ul]:space-y-3
             [&_li]:text-content-body [&_li]:text-xl [&_li]:leading-relaxed
-            [&_strong]:text-content-heading [&_strong]:font-semibold
+            [&_strong]:text-content-heading [&_strong]:font-semibold [&[dir=rtl]_*]:leading-loose
           "
-            dangerouslySetInnerHTML={{ __html: article.content[lang] }}
+            dangerouslySetInnerHTML={{ __html: guide.content[lang] }}
           />
-          <Script id="article-tooltips" strategy="afterInteractive">
+          <Script id="guide-tooltips" strategy="afterInteractive">
             {`
     (() => {
       const TOOLTIP_MAX_W = 280;
@@ -260,6 +231,6 @@ export default function ArticlePage({ params }) {
           </Link>
         </div>
       </RevealSection>
-    </main>
+    </div>
   );
 }

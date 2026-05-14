@@ -13,8 +13,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { lang } = await params;
   const t = resourcesTranslations;
-  const canonical =
-    lang === "en" ? `${SITE_URL}/resources` : `${SITE_URL}/${lang}/resources`;
+  const canonical = `${SITE_URL}/${lang}/resources`;
 
   return {
     title: t.metaTitle[lang],
@@ -22,9 +21,9 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical,
       languages: {
-        en: `${SITE_URL}/resources`,
+        en: `${SITE_URL}/en/resources`,
         ar: `${SITE_URL}/ar/resources`,
-        "x-default": `${SITE_URL}/resources`,
+        "x-default": `${SITE_URL}/en/resources`,
       },
     },
     openGraph: {
@@ -55,8 +54,7 @@ export default function ResourcesPage({ params }) {
   const { lang } = use(params);
   const t = resourcesTranslations;
   const dir = lang === "ar" ? "rtl" : "ltr";
-  const canonical =
-    lang === "en" ? `${SITE_URL}/resources` : `${SITE_URL}/${lang}/resources`;
+  const canonical = `${SITE_URL}/${lang}/resources`;
 
   const homeUrl = lang === "en" ? `${SITE_URL}/` : `${SITE_URL}/ar`;
 
@@ -94,9 +92,9 @@ export default function ResourcesPage({ params }) {
   ];
 
   return (
-    <main dir={dir} className="bg-background pt-16 sm:pt-30 pb-20 px-5">
+    <div dir={dir} className="bg-background pt-16 sm:pt-30 pb-20 px-5">
       <Script
-        id="articles-grid-seo"
+        id="guides-grid-seo"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
@@ -105,11 +103,11 @@ export default function ResourcesPage({ params }) {
       <RevealSection>
         <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:gap-8">
           {/* Hero */}
-          <header className="text-center flex flex-col gap-3">
-            <h1 className="text-heading font-bold text-content-heading">
+          <header className="text-center flex flex-col">
+            <h1 className="text-heading font-bold text-content-heading mb-2 rtl:mb-3">
               {t.pageTitle[lang]}
             </h1>
-            <p className="text-content-muted text-[clamp(1.1rem,2vw,1.5rem)] mx-auto leading-relaxed">
+            <p className="text-content-muted text-[clamp(1.2rem,2vw,1.6rem)] mx-auto leading-relaxed">
               {t.pageSubtitle[lang]}
             </p>
           </header>
@@ -118,6 +116,6 @@ export default function ResourcesPage({ params }) {
           <ResourcesGrid resources={resources} lang={lang} t={t} />
         </div>
       </RevealSection>
-    </main>
+    </div>
   );
 }

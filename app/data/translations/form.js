@@ -20,7 +20,7 @@ contactMethod: {
   message: { en: "Message", ar: "رسالة" },
   messageOptional: { en: "optional", ar: "اختياري" },
   messagePlaceholder: {
-    en: "Describe what you need from your website..",
+    en: "Describe what you need your website to do..",
     ar: "أخبرنا ما تحتاجه من موقعك..",
   },
   submit: { en: "Send My Request", ar: "أرسل طلبي" },

@@ -39,13 +39,13 @@ export default function FAQSection({ lang }) {
                   <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-3 rounded-full bg-icon [details[open]_&]:h-0 [details[open]_&]:opacity-0" />
                 </div>
 
-                <h3 className="text-content-body font-normal tracking-wide text-[1rem] sm:text-subheading">
+                <h3 className="text-content-body font-normal tracking-wide text-[1.1rem] sm:text-subheading">
                   {item.question[lang]}
                 </h3>
               </summary>
 
               <div className="pb-6 md:pb-7 ps-10">
-                <p className="html-content text-base text-content-muted leading-relaxed"
+                <p className="html-content text-base text-content-muted/95 leading-relaxed"
                   dangerouslySetInnerHTML={{ __html: item.answer[lang] }}
                 />
               </div>

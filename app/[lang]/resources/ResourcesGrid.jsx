@@ -3,28 +3,28 @@ import Link from "next/link";
 export default function ResourcesGrid({ resources, lang, t }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-      {resources.map((article) => (
-        <article
-          key={article.slug}
+      {resources.map((guide) => (
+        <guide
+          key={guide.slug}
           className="flex flex-col justify-between gap-4 p-5.5 rounded-2xl border-2 border-border-subtle bg-surface-card/50 hover:border-border-strong transition-colors duration-200"
         >
-          <h2 className="text-content-heading font-bold text-xl md:text-2xl leading-snug">
-            {article.title[lang]}
+          <h2 className="text-content-heading font-bold text-xl md:text-2xl leading-snug rtl:leading-relaxed">
+            {guide.title[lang]}
           </h2>
 
           <div className="flex items-center sm:pb-2">
-            <p className="text-content-muted text-lg leading-relaxed">
-              {article.excerpt[lang]}
+            <p className="text-content-muted text-lg leading-relaxed rtl:md:py-2 rtl:leading-loose">
+              {guide.excerpt[lang]}
             </p>
           </div>
 
           <Link
-            href={`/${lang}/resources/${article.slug}`}
+            href={`/${lang}/resources/${guide.slug}`}
             className="relative overflow-hidden inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-lg font-semibold tracking-wide transition-all duration-200"
           >
             {t.readMore[lang]}
           </Link>
-        </article>
+        </guide>
       ))}
       <div
         className="relative group flex flex-col items-center justify-center gap-4 p-8 rounded-2xl bg-surface-card/20 transition-all duration-500 hover:bg-surface-card/40 min-h-[350px] text-center overflow-hidden"
@@ -44,11 +44,11 @@ export default function ResourcesGrid({ resources, lang, t }) {
 
         {/* Text Content */}
         <div className="space-y-2 relative z-10">
-          <h3 className="text-content-heading font-bold text-4xl tracking-tight">
+          <h3 className="text-content-heading font-bold text-4xl tracking-tight mb-4">
             {lang === "ar" ? "ترقب المزيد" : "Stay Tuned"}
           </h3>
           <p
-            className={`text-content-muted text-xl sm:text-2xl max-w-[250px] mx-auto leading-relaxed ${lang === "ar" ? "font-arabic" : ""}`}
+            className={`text-content-muted text-xl sm:text-2xl max-w-[300px] mx-auto leading-relaxed ${lang === "ar" ? "font-arabic" : ""}`}
             dir={lang === "ar" ? "rtl" : "ltr"}
           >
             {lang === "ar"
