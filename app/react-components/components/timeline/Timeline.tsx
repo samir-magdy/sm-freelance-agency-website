@@ -21,7 +21,7 @@ export interface TimelineItem {
 
 export interface TimelineProps {
   data: TimelineItem[];
-  variant?: "bullet" | "icon" | "numbered";
+  variant?: "bullet" | "icon";
   accentColor?: string;
   markerColor?: string;
 }
@@ -151,13 +151,13 @@ export function Timeline({ data, variant = "bullet", accentColor = "white", mark
                   >
                     {large ? (
                       <div
-                        className="h-20 w-20 ps-2 flex items-center justify-center"
+                        className="h-20 w-20 sm:ps-2 flex items-center justify-center"
                       >
                         {displayedVariant === "icon" && Icon ? (
-                          <Icon size={30} className="transition-colors duration-500" style={{ color: active ? activeMarkerColor : "rgba(255,255,255,0.35)" }} />
+                          <Icon size={30} className="transition-colors duration-500 sm:pe-0 pe-1.5" style={{ color: active ? activeMarkerColor : "rgba(255,255,255,0.35)" }} />
                         ) : (
                           <span
-                            className={`font-bold transition-colors duration-500 ${displayedVariant === "numbered" ? "text-3xl" : "text-xs"}`}
+                            className="font-bold border rounded-full p-4 transition-colors duration-500 sm:pe-0 pe-1.5 text-3xl"
                             style={{ color: active ? activeMarkerColor : "rgba(255,255,255,0.35)" }}
                           >
                             {index + 1}

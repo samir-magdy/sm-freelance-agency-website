@@ -28,7 +28,9 @@ If you use the `icon` variant, install lucide-react:
 npm install lucide-react
 ```
 
-If you only use `bullet` or `numbered`, lucide-react is never imported at runtime and you can skip this.
+(Or you can directly use an inline svg)
+
+If you only use `bullet`, lucide-react is never imported at runtime and you can skip this.
 
 ---
 
@@ -121,7 +123,7 @@ export default function Page() {
 | Prop | Type | Default | Required | Description |
 |---|---|---|---|---|
 | `data` | `TimelineItem[]` | — | ✅ | Array of timeline steps. |
-| `variant` | `"bullet" \| "icon" \| "numbered"` | `"bullet"` | — | Controls what renders in the marker beside each step. |
+| `variant` | `"bullet" \| "icon"` | `"bullet"` | — | Controls what renders in the marker beside each step. |
 | `accentColor` | `string` | `"white"` | — | Color of the scrolling beam. Any valid CSS color. |
 | `markerColor` | `string` | same as `accentColor` | — | Color of the active dot / icon / number. Defaults to `accentColor` when omitted. |
 
@@ -149,7 +151,6 @@ These map to the corresponding [Lucide](https://lucide.dev) icons. To add more, 
 |---|---|
 | `"bullet"` | Small filled dot (default) |
 | `"icon"` | Lucide icon from the `icon` field |
-| `"numbered"` | Step number (1, 2, 3…) |
 
 When switching variants the markers fade out and back in over 150 ms to avoid a jarring swap.
 

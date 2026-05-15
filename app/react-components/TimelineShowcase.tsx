@@ -68,7 +68,7 @@ const steps = [
 ];
 
 type Variant = NonNullable<TimelineProps["variant"]>;
-const VARIANTS: Variant[] = ["bullet", "icon", "numbered"];
+const VARIANTS: Variant[] = ["bullet", "icon"];
 
 function ColorControl({
   label,
@@ -93,8 +93,8 @@ function ColorControl({
   };
 
   return (
-    <div className="flex items-center gap-3">
-      <span className="text-[10px] font-medium tracking-widest text-zinc-500 uppercase w-12 shrink-0">
+    <div className="flex items-center gap-3 md:gap-4">
+      <span className="text-[10px] md:text-xs font-medium tracking-widest text-zinc-500 uppercase w-12 shrink-0">
         {label}
       </span>
       <label className="relative cursor-pointer shrink-0">
@@ -115,7 +115,7 @@ function ColorControl({
         onChange={(e) => setDraft(e.target.value)}
         onBlur={(e) => commit(e.target.value)}
         onKeyDown={(e) => e.key === "Enter" && commit(e.currentTarget.value)}
-        className="w-[4.5rem] bg-white/5 border border-white/[0.08] rounded-md px-2 py-1 text-xs text-zinc-300 font-mono focus:outline-none focus:border-white/25 transition-colors"
+        className="w-[4.5rem] md:w-20 bg-white/5 border border-white/[0.08] rounded-md px-2 py-1 text-xs md:text-sm text-zinc-300 font-mono focus:outline-none focus:border-white/25 transition-colors"
         maxLength={7}
         spellCheck={false}
       />
@@ -131,18 +131,18 @@ export default function TimelineShowcase() {
   return (
     <div className="w-full">
       <div className="flex justify-center mb-12">
-        <div className="inline-flex flex-col sm:flex-row items-start sm:items-stretch gap-5 sm:gap-0 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 sm:divide-x divide-white/10">
+        <div className="flex items-stretch gap-0 rounded-2xl border border-white/10 bg-white/[0.03] px-5 md:px-7 py-4 md:py-5 divide-x divide-white/10">
 
-          <div className="flex flex-col gap-4 sm:pe-6">
-            <span className="text-[10px] font-medium tracking-widest text-zinc-600 uppercase">
+          <div className="flex flex-col gap-5 pe-6 md:pe-8">
+            <span className="text-xs font-medium tracking-widest text-zinc-400 uppercase">
               Variant
             </span>
-            <div className="flex rounded-lg bg-white/5 border border-white/[0.08] p-0.5 gap-0.5">
+            <div className="flex rounded-lg bg-white/5 border border-white/[0.08] p-0.5 gap-1">
               {VARIANTS.map((v) => (
                 <button
                   key={v}
                   onClick={() => setVariant(v)}
-                  className={`px-3 py-1.5 rounded-md text-sm font-medium capitalize transition-all duration-200 cursor-pointer ${
+                  className={`px-3 md:px-4 py-1.5 md:py-2 rounded-md text-sm md:text-base font-medium capitalize transition-all duration-200 cursor-pointer ${
                     variant === v
                       ? "bg-white/15 text-white"
                       : "text-zinc-500 hover:text-zinc-300"
@@ -154,11 +154,11 @@ export default function TimelineShowcase() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2.5 sm:ps-6">
-            <span className="text-[10px] font-medium tracking-widest text-zinc-600 uppercase">
+          <div className="flex flex-col gap-2.5 md:gap-3.5 ps-6 md:ps-8">
+            <span className="text-xs font-medium tracking-widest text-zinc-400 uppercase">
               Colors
             </span>
-            <div className="flex flex-col gap-2.5">
+            <div className="flex flex-col gap-2.5 md:gap-3.5">
               <ColorControl label="Beam" value={beamColor} onChange={setBeamColor} />
               <ColorControl label="Marker" value={markerColor} onChange={setMarkerColor} />
             </div>
