@@ -157,7 +157,7 @@ export function Timeline({ data, variant = "bullet", accentColor = "white", mark
                           <Icon size={30} className="transition-colors duration-500" style={{ color: active ? activeMarkerColor : "rgba(255,255,255,0.35)" }} />
                         ) : (
                           <span
-                            className={`font-bold transition-colors duration-500 ${displayedVariant === "numbered" ? "text-5xl" : "text-xs"}`}
+                            className={`font-bold transition-colors duration-500 ${displayedVariant === "numbered" ? "text-3xl" : "text-xs"}`}
                             style={{ color: active ? activeMarkerColor : "rgba(255,255,255,0.35)" }}
                           >
                             {index + 1}

@@ -133,7 +133,7 @@ export default function TimelineShowcase() {
       <div className="flex justify-center mb-12">
         <div className="inline-flex flex-col sm:flex-row items-start sm:items-stretch gap-5 sm:gap-0 rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 sm:divide-x divide-white/10">
 
-          <div className="flex flex-col gap-2.5 sm:pe-6">
+          <div className="flex flex-col gap-4 sm:pe-6">
             <span className="text-[10px] font-medium tracking-widest text-zinc-600 uppercase">
               Variant
             </span>

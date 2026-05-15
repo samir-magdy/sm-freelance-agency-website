@@ -72,7 +72,7 @@ export default function MyPage() {
 |---|---|---|---|
 | `image` | `string` | ✅ | Path or URL to the screenshot image. |
 | `alt` | `string` | — | Alt text for accessibility. Recommended. |
-| `url` | `string` | — | If provided: the screenshot becomes a clickable link and the domain is shown in the browser chrome address bar. |
+| `url` | `string` | — | Full URL (e.g. `"https://myproject.com"`). The domain is extracted and shown in the browser chrome address bar as the user navigates. If omitted, the address bar shows `yourwebsite.com`. |
 
 ---
 
@@ -96,8 +96,12 @@ Screenshots should be **landscape / wide-format**. A viewport width of at least 
 
 ## Notes
 
-- The `"use client"` directive at the top is for **Next.js App Router**. If you're using Vite, CRA, or any other setup, remove that line.
+- **Next.js App Router:** The `"use client"` directive and the `next/image` import are already set up. No action needed.
+- **Other setups (Vite, CRA, etc.):** Remove the `"use client"` line **and** replace `import Image from "next/image"` with a plain `<img>` tag. Swap every `<Image ... />` instance in the file with:
+  ```tsx
+  <img src={slide.image} alt={slide.alt ?? `Slide ${i + 1}`} className="w-full h-auto block" loading={i === 0 ? "eager" : "lazy"} />
+  ```
 - Screenshots should be **landscape / wide-format** (16:9 or 16:10 ratio) for best results. Portrait or square images will work but may look unusual inside a laptop frame.
-- The address bar automatically extracts and displays the domain from each slide's `url`, updating as the user navigates. If no `url` is provided, it falls back to `yourwebsite.com`.
+- The address bar automatically extracts and displays the domain from each slide's `url`, updating as the user navigates. If no `url` is provided for a slide, it falls back to `yourwebsite.com`.
 - The component is **fully responsive** — scales down gracefully on mobile. Navigation arrows are hidden below the `sm` breakpoint.
 - Use alongside `IPhoneMockup` to showcase both mobile and desktop versions of your projects side by side.

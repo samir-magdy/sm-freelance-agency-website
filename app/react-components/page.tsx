@@ -144,7 +144,7 @@ export default function Home() {
         id="scroll-timeline"
         title="Scroll Timeline"
         tagline="An animated timeline perfect for workflow sections."
-        usage={`import { Timeline } from "@/components/Timeline";\n\n<Timeline\n  data={[\n    {\n      title: "Step One",\n      icon: "Rocket",\n      content: <div>Your content here</div>\n    }\n  ]}\n  variant="icon"\n/>`}
+        usage={`import { Timeline } from "@/components/Timeline";\n\n<Timeline\n  data={[\n    {\n      title: "Step One",\n      icon: "Rocket",\n      content: <div>Your content here</div>\n    }\n  ]}\n  variant="icon"\n  accentColor="white"\n  markerColor="white"\n/>`}
       >
         <TimelineShowcase />
       </ComponentSection>

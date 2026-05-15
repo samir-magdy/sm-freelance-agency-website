@@ -84,7 +84,11 @@ Screenshots should be **390px wide** (iPhone 14 logical width) for a perfect fit
 
 ## Notes
 
-- The `"use client"` directive at the top is for **Next.js App Router**. If you're using Vite, CRA, or any other setup, remove that line.
+- **Next.js App Router:** The `"use client"` directive and the `next/image` import are already set up. No action needed.
+- **Other setups (Vite, CRA, etc.):** Remove the `"use client"` line **and** replace `import Image from "next/image"` with a plain `<img>` tag. Swap every `<Image ... />` instance in the file with:
+  ```tsx
+  <img src={slide.image} alt={slide.alt ?? `Slide ${i + 1}`} className="w-full h-auto block" loading={i === 0 ? "eager" : "lazy"} />
+  ```
 - Screenshots should match the full width of the phone screen for best results. A width of **390px** (iPhone 14 logical width) is ideal.
 - The component is **fully responsive** — scales down gracefully on mobile. Navigation arrows are hidden below the `sm` breakpoint; users swipe natively on touch screens.
 - Use alongside `MacMockup` to showcase both mobile and desktop versions of your projects side by side.

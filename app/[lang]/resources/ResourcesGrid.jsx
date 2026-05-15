@@ -4,11 +4,11 @@ export default function ResourcesGrid({ resources, lang, t }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
       {resources.map((guide) => (
-        <guide
+        <article
           key={guide.slug}
           className="flex flex-col justify-between gap-4 p-5.5 rounded-2xl border-2 border-border-subtle bg-surface-card/50 hover:border-border-strong transition-colors duration-200"
         >
-          <h2 className="text-content-heading font-bold text-xl md:text-2xl leading-snug rtl:leading-relaxed">
+          <h2 className="text-content-heading font-bold text-xl md:text-2xl leading-snug rtl:leading-loose">
             {guide.title[lang]}
           </h2>
 
@@ -24,7 +24,7 @@ export default function ResourcesGrid({ resources, lang, t }) {
           >
             {t.readMore[lang]}
           </Link>
-        </guide>
+        </article>
       ))}
       <div
         className="relative group flex flex-col items-center justify-center gap-4 p-8 rounded-2xl bg-surface-card/20 transition-all duration-500 hover:bg-surface-card/40 min-h-[350px] text-center overflow-hidden"
