@@ -6,9 +6,9 @@ const PAGE_URL = `${SITE_URL}/react-components`;
 const SITE_NAME = "SM Web Design Studio";
 const TWITTER_HANDLE = "@SMWebDesignCo";
 
-const TITLE = "Interactive React Blocks | Mockups | Sections";
+const TITLE = "React Components | Interactive UI Blocks for Your Projects";
 const DESCRIPTION =
-  "Premium React UI blocks. Fully responsive & customizable. Drop the file in & add your data. That's it!";
+  "Fully responsive & customizable. Drop the file in & add your data. That's it!";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

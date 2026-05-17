@@ -229,10 +229,13 @@ export default function ContactForm({ lang }) {
         </div>
       </fieldset>
 
+      <span role="status" aria-live="polite" className="sr-only">
+        {status === "loading" ? t.form.sending[lang] : status === "success" ? t.form.success[lang] : status === "error" ? errorMessage : ""}
+      </span>
+
       <button
         type="submit"
         disabled={status !== "idle"}
-        aria-live="polite"
         className={`z-20 mt-4 w-full mx-auto block tracking-wide font-bold text-base py-4 rounded-lg disabled:cursor-not-allowed transition-all duration-300 relative overflow-hidden ${
           status === "success"
             ? "mt-3.5 w-full border border-green-500/40 bg-green-500/20 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-lg font-bold text-base"

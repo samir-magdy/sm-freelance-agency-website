@@ -3,10 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 
 export function RevealSection({ children, className = "" }) {
+  const [mounted, setMounted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => {
+    setMounted(true);
     const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(
@@ -16,7 +18,7 @@ export function RevealSection({ children, className = "" }) {
           observer.disconnect();
         }
       },
-      { threshold: 0.05 }
+      { threshold: 0.1 }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -25,8 +27,8 @@ export function RevealSection({ children, className = "" }) {
   return (
     <div
       ref={ref}
-      className={`transition-[opacity,transform] duration-700 ease-out ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      className={`transition-opacity duration-1000 ease-out ${
+        !mounted || isVisible ? "opacity-100" : "opacity-0"
       } ${className}`}
     >
       {children}

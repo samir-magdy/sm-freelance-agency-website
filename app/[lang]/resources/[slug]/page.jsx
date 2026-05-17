@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
   const canonical = `${SITE_URL}/${lang}/resources/${slug}`;
 
   return {
-    title: guide.title[lang],
+    title: (guide.metaTitle ?? guide.title)[lang],
     description: guide.metaDescription[lang],
     alternates: {
       canonical,
@@ -38,6 +38,14 @@ export async function generateMetadata({ params }) {
       description: guide.metaDescription[lang],
       url: canonical,
       type: "article",
+      siteName: "SM Web Design Studio",
+      locale: lang === "en" ? "en_US" : "ar_EG",
+      alternateLocale: lang === "en" ? "ar_EG" : "en_US",
+      article: {
+        publishedTime: guide.datePublished,
+        modifiedTime: guide.dateModified,
+        authors: [`${SITE_URL}/#founder`],
+      },
       images: [
         {
           url: `${SITE_URL}/open-graph.webp`,
@@ -52,8 +60,20 @@ export async function generateMetadata({ params }) {
       title: guide.title[lang],
       description: guide.metaDescription[lang],
       images: [`${SITE_URL}/open-graph.webp`],
+      site: "@SMWebDesignCo",
+      creator: "@SMWebDesignCo",
     },
-    robots: { index: true, follow: true },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
   };
 }
 
@@ -74,13 +94,17 @@ export default function GuidePage({ params }) {
     {
       "@context": "https://schema.org",
       "@type": "Article",
+      "@id": `${canonical}#article`,
       headline: guide.title[lang],
       description: guide.metaDescription[lang],
       inLanguage: lang,
       url: canonical,
+      datePublished: guide.datePublished,
+      dateModified: guide.dateModified,
       author: { "@id": `${SITE_URL}/#founder` },
       publisher: { "@id": `${SITE_URL}/#business` },
       isPartOf: { "@id": `${SITE_URL}/#website` },
+      mainEntityOfPage: { "@id": `${canonical}#webpage` },
     },
     {
       "@context": "https://schema.org",

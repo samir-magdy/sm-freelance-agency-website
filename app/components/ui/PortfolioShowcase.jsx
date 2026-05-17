@@ -172,20 +172,33 @@ export default function PortfolioShowcase({ lang }) {
   return (
     <section
       id="portfolio"
-      className="flex flex-col items-center justify-start min-h-svh py-4 relative overflow-hidden select-none px-5"
+      className="flex flex-col items-center justify-start min-h-svh py-2 relative overflow-hidden select-none px-5"
       aria-labelledby="portfolio-heading"
     >
       <RevealSection className="flex flex-col items-center w-full">
         {/* ── Section heading ── */}
-        <div id="portfolio-heading" className="text-center relative z-2 px-5 mb-4 md:mb-12">
-          <h2 className="font-bold text-heading mb-2 rtl:mb-3">
+        <div className="text-center relative z-2 px-5 mb-4 md:mb-12">
+          <h2 id="portfolio-heading" className="font-bold text-heading mb-2 rtl:mb-3">
             {t.heading[lang]}
-            <span className="sr-only">Egypt | مصر</span>
           </h2>
           <p className="text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
             {t.subheading[lang]}
           </p>
         </div>
+
+        {/* Static project index for crawlers and screen readers */}
+        <ul className="sr-only">
+          {projects.map((proj) => {
+            const pd = projectData[proj.id];
+            return (
+              <li key={proj.id}>
+                <h3>{isRtl ? proj.genreAr : proj.genre}</h3>
+                <h4>{pd.title[lang]}</h4>
+                <p>{pd.description[lang]}</p>
+              </li>
+            );
+          })}
+        </ul>
 
         {/* ── Main layout: column on mobile, row on desktop ── */}
         <div
@@ -198,9 +211,8 @@ export default function PortfolioShowcase({ lang }) {
               key={`info-${project.id}`}
               className="text-center lg:text-start lg:max-w-lg flex flex-col items-center lg:items-start gap-6"
             >
-              <h3 className="portfolio-info-enter text-heading font-bold text-content-heading hidden lg:block">
+              <h3 aria-hidden="true" className="portfolio-info-enter text-heading font-bold text-content-heading hidden lg:block">
                 {pd.title[lang]}
-                <span className="sr-only">Website | موقع إلكتروني</span>
               </h3>
 
               <p className="portfolio-info-enter text-content-body text-[1.4rem] leading-relaxed hidden lg:block mb-4">
@@ -225,12 +237,13 @@ export default function PortfolioShowcase({ lang }) {
           {/* ── Phone column ── */}
           <div className="flex flex-col items-center gap-3">
             {/* Genre badge — mobile only */}
-            <h4
+            <h3
+              aria-hidden="true"
               key={`genre-${project.id}`}
               className="lg:hidden inline-flex items-center px-4 py-1.5 rounded-full text-[0.8rem] font-semibold uppercase tracking-[0.12em] border border-border-subtle text-content-muted bg-surface-card"
             >
               {isRtl ? project.genreAr : project.genre}
-            </h4>
+            </h3>
 
             <div dir="ltr" className="flex items-center justify-center gap-8">
               <NavArrow

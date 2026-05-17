@@ -31,12 +31,15 @@ export async function generateMetadata({ params }) {
       description: t.metaDescription[lang],
       url: canonical,
       type: "website",
+      siteName: "SM Web Design Studio",
+      locale: lang === "en" ? "en_US" : "ar_EG",
+      alternateLocale: lang === "en" ? "ar_EG" : "en_US",
       images: [
         {
           url: `${SITE_URL}/open-graph.webp`,
           width: 1200,
           height: 630,
-          alt: "SM Web Design Studio – Web Design Agency in Egypt",
+          alt: "SM Web Design Studio – Web Design Company in Egypt",
         },
       ],
     },
@@ -45,8 +48,20 @@ export async function generateMetadata({ params }) {
       title: t.metaTitle[lang],
       description: t.metaDescription[lang],
       images: [`${SITE_URL}/open-graph.webp`],
+      site: "@SMWebDesignCo",
+      creator: "@SMWebDesignCo",
     },
-    robots: { index: true, follow: true },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
   };
 }
 

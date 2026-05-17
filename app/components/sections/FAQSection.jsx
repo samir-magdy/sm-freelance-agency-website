@@ -20,7 +20,7 @@ export default function FAQSection({ lang }) {
           {t.subheading[lang]}
         </p>
         </div>
-          <article className="w-full">
+          <div className="w-full">
           {t.items.map((item, i) => (
             <details
               key={i}
@@ -39,9 +39,9 @@ export default function FAQSection({ lang }) {
                   <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-3 rounded-full bg-icon [details[open]_&]:h-0 [details[open]_&]:opacity-0" />
                 </div>
 
-                <h3 className="text-content-body font-normal tracking-wide text-[1.1rem] sm:text-subheading">
+                <span className="text-content-body font-normal tracking-wide text-[1.1rem] sm:text-subheading">
                   {item.question[lang]}
-                </h3>
+                </span>
               </summary>
 
               <div className="pb-6 md:pb-7 ps-10">
@@ -52,7 +52,7 @@ export default function FAQSection({ lang }) {
             </details>
             
           ))}
-          </article>
+          </div>
       </div>
       </RevealSection>
     </section>

@@ -1,11 +1,11 @@
 export const pricingCards = {
   heading: {
-    en: "Explore Your Options",
-    ar: "استكشف خياراتك",
+    en: "Website Design Pricing",
+    ar: "أسعار تصميم المواقع",
   },
   subheading: {
-    en: "Pick what best suits your business",
-    ar: "اختر ما يناسب أعمالك",
+    en: "Pick what best suits your needs",
+    ar: "اختر ما يناسب احتياجاتك",
   },
   startsAt: {
     en: "Starts at",
@@ -39,8 +39,8 @@ export const pricingCards = {
         ar: "موقع أعمال",
       },
       tagline: {
-        en: "A multi-page site that goes into more detail about your company and the products or services you offer. <em>Ideal for established businesses that have more to say.</em>",
-        ar: "موقع متعدد الصفحات يقدم تفاصيل أكثر دقة حول شركتك والمنتجات أو الخدمات التي تقدمها. <em>مثالي للشركات القائمة التي لديها الكثير لترويه.</em>",
+        en: "A multi-page website that presents your company and the products or services you offer in full detail. <em>Ideal for established businesses ready to build a credible online presence.</em>",
+        ar: "موقع تعريفي متعدد الصفحات يعرض شركتك والمنتجات أو الخدمات التي تقدمها بالتفصيل. <em>مثالي للشركات القائمة التي تريد حضوراً رقمياً موثوقاً.</em>",
       },
       price: "9,000",
     },
@@ -51,8 +51,8 @@ export const pricingCards = {
         ar: "متجر إلكتروني",
       },
       tagline: {
-        en: "An online store that handles inventory, and can also automate payments and shipping in one place. <em>Ideal for anyone who wants to sell goods and services online.</em>",
-        ar: "متجر شوبيفاي يدير المخزون، ويمكنه أيضاً إدارة عمليات الدفع والشحن في مكان واحد. <em>مثالي لكل من يرغب في بيع السلع والخدمات عبر الإنترنت.</em>",
+        en: "A complete Shopify store setup that handles inventory, payments, and shipping in one place. <em>Ideal for anyone who wants to sell goods and services online.</em>",
+        ar: "انشاء متجر إلكتروني متكامل على شوبيفاي لإدارة المخزون والدفع والشحن في مكان واحد. <em>مثالي لكل من يرغب في بيع السلع والخدمات عبر الإنترنت.</em>",
       },
       price: "15,000",
     },

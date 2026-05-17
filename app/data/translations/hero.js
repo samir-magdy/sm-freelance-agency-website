@@ -1,11 +1,11 @@
 const hero = {
   eyebrow: {
-    en: "SM Web Design Studio · Egypt",
-    ar: "استوديو تصميم مواقع · مصر",
+    en: "Website Design Company · Egypt",
+    ar: "شركة تصميم مواقع · مصر",
   },
   name: {
-    en: '<span class="md:inline block">Reach <span class="text-gold">Clients</span>.</span> <span class="md:inline block">Build <span class="text-gold">Trust</span>.</span> <span class="md:inline block">Drive <span class="text-gold">Profits</span>.</span>',
-    ar: '<span class="md:inline block">أنشئ <span class="text-gold">موقعك</span>.</span> <span class="md:inline block">أطلق <span class="text-gold">متجرك</span>.</span> <span class="md:inline block">زد <span class="text-gold">مبيعاتك</span>.</span>',
+    en: '<span class="md:inline block">Custom <span class="text-gold">Websites</span>.</span> <span class="md:inline block">Shopify <span class="text-gold">Stores</span>.</span> <span class="md:inline block">Real <span class="text-gold">Results</span>.</span>',
+    ar: '<span class="md:inline block">مواقع <span class="text-gold">مخصصة</span>.</span> <span class="md:inline block">متاجر <span class="text-gold">إلكترونية</span>.</span> <span class="md:inline block">نتائج <span class="text-gold">حقيقية</span>.</span>',
   },
   primaryCta: {
     en: "Start a Project",
@@ -16,8 +16,8 @@ const hero = {
     ar: "اعرف التفاصيل",
   },
   subheading: {
-    en: "Custom website design for brands & businesses ready to stand out online.",
-    ar: "مواقع إلكترونية احترافية تعزز مصداقية علامتك التجارية وتصنع تميزك الرقمي.",
+    en: "Professional website design for brands & businesses ready to stand out online.",
+    ar: "تصميم مواقع إلكترونية احترافية تعزز مصداقية علامتك التجارية وتصنع تميزك الرقمي.",
   },
 };
 

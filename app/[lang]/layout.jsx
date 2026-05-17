@@ -18,21 +18,19 @@ const fonts = Cairo({
 // SITE-WIDE CONSTANTS
 // ─────────────────────────────────────────────
 
-const SITE_NAME = "SM Web Studio";
+const SITE_NAME = "SM Web Design Studio";
 const CONTACT_EMAIL = "studio@samirmagdy.com";
 const PHONE_NUMBER = "+201274613331";
-const TWITTER_HANDLE = "@SMWebStudioEG";
+const TWITTER_HANDLE = "@SMWebDesignCo";
 
 const META_DESCRIPTION = {
-  en: "Custom website design & online Shopify stores in Egypt. We create websites that look good, run smoothly, and get results. Discover how we can help your brand grow.",
+  en: "Professional website & Shopify development in Egypt. Discover how we can help you grow.",
   ar: "تصميم مواقع احترافية ومتاجر إلكترونية في مصر. نطوّر حلول تدعم نمو عملك وحضورك الرقمي. اكتشف كيف يمكننا مساعدتك في تحقيق التميز أونلاين.",
 };
 
 const SOCIAL_LINKS = {
-  instagram: "https://www.instagram.com/SMWebStudioEG",
-  x: "https://x.com/SMWebStudioEG",
-  youtube: "https://www.youtube.com/@SMWebStudioEG",
-  linkedin: "https://www.linkedin.com/in/samir-magdy-",
+  instagram: "https://www.instagram.com/smwebdesign.studio",
+  facebook: "https://www.facebook.com/SMWebDesignStudio",
 };
 
 // ─────────────────────────────────────────────
@@ -41,20 +39,20 @@ const SOCIAL_LINKS = {
 
 const meta = {
   en: {
-    title: `Expert Web Design Agency | Egypt | ${SITE_NAME}`,
+    title: `${SITE_NAME} | Egypt`,
     description: META_DESCRIPTION.en,
     ogLocale: "en_US",
     altLocale: "ar_EG",
-    ogAlt: `${SITE_NAME} logo`,
+    ogAlt: "SM Web Design Studio – Web Design Company in Egypt",
     siteName: SITE_NAME,
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: `${SITE_NAME} | تصميم مواقع ومتاجر إلكترونية | مصر`,
+    title: `شركة تصميم مواقع ومتاجر إلكترونية في مصر | ${SITE_NAME}`,
     description: META_DESCRIPTION.ar,
     ogLocale: "ar_EG",
     altLocale: "en_US",
-    ogAlt: `${SITE_NAME} logo`,
+    ogAlt: "SM Web Design Studio – Web Design Company in Egypt",
     siteName: SITE_NAME,
     skipToContent: "تخطى إلى المحتوى",
   },
@@ -102,7 +100,7 @@ export async function generateMetadata({ params }) {
       ],
       apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
     },
-    title: m.title,
+    title: { template: `%s | ${SITE_NAME}`, default: m.title },
     description: m.description,
     authors: [{ name: "Samir Magdy", url: SITE_URL }],
     alternates: {
@@ -173,7 +171,7 @@ function buildStructuredData(lang) {
     name: SITE_NAME,
     inLanguage: "en",
     description:
-      "SM Web Studio builds websites that create lasting trust. Boost your online presence with modern web design & development.",
+      "SM Web Design Studio is a professional web design company in Egypt specializing in custom website design, Shopify e-commerce stores, and SEO-optimized web development for businesses in Cairo, Alexandria, and across Egypt.",
     url: SITE_URL,
     telephone: PHONE_NUMBER,
     email: CONTACT_EMAIL,
@@ -212,9 +210,7 @@ function buildStructuredData(lang) {
     },
     sameAs: [
       SOCIAL_LINKS.instagram,
-      SOCIAL_LINKS.x,
-      SOCIAL_LINKS.youtube,
-      SOCIAL_LINKS.linkedin,
+      SOCIAL_LINKS.facebook,
     ],
     founder: { "@id": `${SITE_URL}/#founder` },
     knowsLanguage: ["en", "ar"],

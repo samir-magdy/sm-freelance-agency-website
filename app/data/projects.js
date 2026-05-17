@@ -120,7 +120,7 @@ export const projects = [
     description:
       "A comprehensive real estate platform demo created by SM Web Design Studio, featuring advanced property filtering by location and price to showcase our directory solutions.",
     genre: "Real Estate & Brokers",
-    genreAr: "سويق عقاري ووسطاء",
+    genreAr: "تسويق عقاري ووسطاء",
   },
 ];
 
@@ -143,7 +143,7 @@ export const projectsStructuredData = {
       "@type": "WebSite",
       name: project.schemaName,
       alternateName: project.schemaNameAr,
-      url: project.liveUrl,
+      url: project.liveUrl.startsWith("http") ? project.liveUrl : `${SITE_URL}${project.liveUrl}`,
       description: project.description,
       inLanguage: ["en", "ar"],
       genre: project.genre,

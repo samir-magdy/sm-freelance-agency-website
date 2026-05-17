@@ -55,13 +55,6 @@ section {
   }
 }
 
-/* Targets Safari only */
-/* @supports (-webkit-hyphens:none) {
-  #portfolio-heading {
-    margin-block-end: 1.5rem;
-  }
-} */
-
 @layer base {
   * {
     font-family: var(--font-cairo), sans-serif;

@@ -43,26 +43,27 @@ export default function HeroSection({ lang }) {
         className="relative z-10 flex flex-col items-center w-full justify-center pt-12 md:pt-20"
       >
 
-        <h1
-          id="hero-hook"
-          className="font-bold sm:rtl:py-6 text-center text-content-heading px-4 block text-[clamp(2.8rem,4vw,5rem)] leading-relaxed rtl:leading-18"
-        >
-        <span dir="ltr" className="hero-fade hero-fade-eyebrow mb-7 sm:mb-6 rtl:sm:mb-12 flex items-center justify-center gap-4">
+        <h1 dir="ltr" className="hero-fade hero-fade-eyebrow mb-7 sm:mb-6 rtl:sm:mb-12 flex items-center justify-center gap-4">
           <span className="eyebrow-rule-left" aria-hidden="true"/>
           <span className="text-[0.7rem] rtl:text-sm sm:rtl:text-xl sm:text-[1rem] uppercase tracking-[0.18em] font-semibold text-content-body whitespace-nowrap">
             {hero.eyebrow[lang]}
           </span>
           <span className="eyebrow-rule-right" aria-hidden="true"/>
-        </span>
+        </h1>
+
+        <h2
+          id="hero-hook"
+          className="font-bold sm:rtl:py-6 text-center text-content-heading px-4 block text-[clamp(2.8rem,4vw,5rem)] leading-relaxed rtl:leading-18"
+        >
           <span
             className="hero-fade hero-fade-hook block"
             dangerouslySetInnerHTML={{ __html: hookLines }}
           />
-        </h1>
-
-        <h2 className="mt-6 sm:mt-4 rtl:sm:mt-6 mb-8 hero-fade hero-fade-nav text-content-body text-[clamp(1.2rem,2vw,2rem)] rtl:text-[clamp(1.1rem,1.8vw,2rem)] rtl:leading-loose text-center px-10 sm:px-16">
-          {hero.subheading[lang]}
         </h2>
+
+        <p className="mt-6 sm:mt-4 rtl:sm:mt-6 mb-8 hero-fade hero-fade-nav text-content-body text-[clamp(1.2rem,2vw,2rem)] rtl:text-[clamp(1.1rem,1.8vw,2rem)] rtl:leading-loose text-center px-10 sm:px-16">
+          {hero.subheading[lang]}
+        </p>
 
         <div className="flex flex-col items-center justify-center gap-4">
           <a

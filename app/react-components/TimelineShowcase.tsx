@@ -134,6 +134,7 @@ export default function TimelineShowcase() {
       </div>
 
       <Timeline
+        key={variant}
         data={steps}
         variant={variant}
         accentColor={beamColor}
