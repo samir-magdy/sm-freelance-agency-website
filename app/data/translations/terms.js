@@ -24,8 +24,8 @@ const termsOfService = {
         ar: "2. الخدمات المقدمة",
       },
       content: {
-        en: "SM Web Studio provides digital services including, but not limited to, web design, development, and branding for various industries. The specific scope, deliverables, timeline, and cost of any project will be outlined in a separate, mutually agreed-upon formal proposal or contract.",
-        ar: "تقدم SM Web Studio خدمات رقمية تشمل، على سبيل المثال لا الحصر، تصميم وتطوير مواقع الويب، وبناء العلامات التجارية لمختلف الصناعات. سيتم تحديد النطاق الدقيق والمخرجات والجدول الزمني والتكلفة الخاصة بأي مشروع في اقتراح أو عقد رسمي منفصل متفق عليه بين الطرفين.",
+        en: "SM Web Design Studio provides digital services including, but not limited to, web design, development, and branding for various industries. The specific scope, deliverables, timeline, and cost of any project will be outlined in a separate, mutually agreed-upon formal proposal or contract.",
+        ar: "تقدم SM Web Design Studio خدمات رقمية تشمل، على سبيل المثال لا الحصر، تصميم وتطوير مواقع الويب، وبناء العلامات التجارية لمختلف الصناعات. سيتم تحديد النطاق الدقيق والمخرجات والجدول الزمني والتكلفة الخاصة بأي مشروع في اقتراح أو عقد رسمي منفصل متفق عليه بين الطرفين.",
       },
     },
     {
@@ -44,8 +44,8 @@ const termsOfService = {
         ar: "4. الملكية الفكرية وحقوق معرض الأعمال",
       },
       content: {
-        en: "Upon full payment for our services, you will own the final digital products and deliverables as outlined in your project contract. However, SM Web Studio is proud of the work we do. Unless a Non-Disclosure Agreement (NDA) is explicitly signed before the commencement of a project, we reserve the right to feature completed projects, screenshots, and case studies in our website's portfolio and marketing materials.",
-        ar: "عند دفع كامل رسوم خدماتنا، ستمتلك المنتجات الرقمية النهائية والمخرجات كما هو موضح في عقد مشروعك. ومع ذلك، تفتخر SM Web Studio بالعمل الذي نقوم به. ما لم يتم توقيع اتفاقية عدم إفشاء (NDA) صراحةً قبل بدء المشروع، فإننا نحتفظ بالحق في عرض المشاريع المكتملة، ولقطات الشاشة، ودراسات الحالة في معرض أعمال موقعنا والمواد التسويقية.",
+        en: "Upon full payment for our services, you will own the final digital products and deliverables as outlined in your project contract. However, SM Web Design Studio is proud of the work we do. Unless a Non-Disclosure Agreement (NDA) is explicitly signed before the commencement of a project, we reserve the right to feature completed projects, screenshots, and case studies in our website's portfolio and marketing materials.",
+        ar: "عند دفع كامل رسوم خدماتنا، ستمتلك المنتجات الرقمية النهائية والمخرجات كما هو موضح في عقد مشروعك. ومع ذلك، تفتخر SM Web Design Studio بالعمل الذي نقوم به. ما لم يتم توقيع اتفاقية عدم إفشاء (NDA) صراحةً قبل بدء المشروع، فإننا نحتفظ بالحق في عرض المشاريع المكتملة، ولقطات الشاشة، ودراسات الحالة في معرض أعمال موقعنا والمواد التسويقية.",
       },
     },
     {
@@ -64,8 +64,8 @@ const termsOfService = {
         ar: "6. حدود المسؤولية",
       },
       content: {
-        en: "In no event will SM Web Studio, or our directors, employees, or agents, be liable to you or any third party for any direct, indirect, consequential, exemplary, incidental, special, or punitive damages arising from your use of the site or our services, even if we have been advised of the possibility of such damages.",
-        ar: "لن تتحمل SM Web Studio بأي حال من الأحوال، ولا مديرونا أو موظفونا أو وكلاؤنا، المسؤولية تجاهك أو تجاه أي طرف ثالث عن أي أضرار مباشرة أو غير مباشرة أو تبعية أو تأديبية أو عرضية أو خاصة أو جزائية تنشأ عن استخدامك للموقع أو خدماتنا، حتى لو تم إبلاغنا باحتمالية حدوث مثل هذه الأضرار.",
+        en: "In no event will SM Web Design Studio, or our directors, employees, or agents, be liable to you or any third party for any direct, indirect, consequential, exemplary, incidental, special, or punitive damages arising from your use of the site or our services, even if we have been advised of the possibility of such damages.",
+        ar: "لن تتحمل SM Web Design Studio بأي حال من الأحوال، ولا مديرونا أو موظفونا أو وكلاؤنا، المسؤولية تجاهك أو تجاه أي طرف ثالث عن أي أضرار مباشرة أو غير مباشرة أو تبعية أو تأديبية أو عرضية أو خاصة أو جزائية تنشأ عن استخدامك للموقع أو خدماتنا، حتى لو تم إبلاغنا باحتمالية حدوث مثل هذه الأضرار.",
       },
     },
     {

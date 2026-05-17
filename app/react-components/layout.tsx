@@ -3,8 +3,8 @@ import "@/app/globals.css";
 import { SITE_URL } from "@/app/data/translations/lang";
 
 const PAGE_URL = `${SITE_URL}/react-components`;
-const SITE_NAME = "SM Web Studio";
-const TWITTER_HANDLE = "@SMWebStudioEG";
+const SITE_NAME = "SM Web Design Studio";
+const TWITTER_HANDLE = "@SMWebDesignCo";
 
 const TITLE = "Interactive React Blocks | Mockups | Sections";
 const DESCRIPTION =

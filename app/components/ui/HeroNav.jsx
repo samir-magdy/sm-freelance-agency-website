@@ -21,7 +21,7 @@ export default function HeroNav({ lang, strings }) {
           <a href={`/${lang}/#home`} onClick={handleScroll} aria-label="Samir Magdy Web Studio - Home">
             <Image
               src="/brand.svg"
-              alt="SM Web Studio – Website Design Company in Egypt"
+              alt="SM Web Design Studio – Website Design Company in Egypt"
               width={120}
               height={120}
               priority

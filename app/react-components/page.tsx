@@ -79,7 +79,7 @@ export default function Home() {
               width={64}
               height={64}
               className="md:h-16 md:w-16"
-              alt="SM Web Studio Logo"
+              alt="SM Web Design Studio Logo"
             />
           </a>
 
@@ -144,7 +144,7 @@ export default function Home() {
         id="scroll-timeline"
         title="Scroll Timeline"
         tagline="An animated timeline for workflow sections."
-        usage={`import { Timeline } from "@/components/Timeline";\n\n<Timeline\n  data={[\n    {\n      title: "Step One",\n      icon: "Rocket",\n      content: <div>Your content here</div>\n    }\n  ]}\n  variant="icon"\n  accentColor="white"\n  markerColor="white"\n/>`}
+        usage={`import { Timeline } from "@/components/Timeline";\n\n<Timeline\n  data={[\n    {\n      title: "Step One",\n      icon: "Rocket",  // Ommit if using the bullet variant\n      // Style the text content as you wish:\n      content: <div>Your content here</div>\n    }\n  ]}\n  variant="icon" // Ommit if using the bullet variant\n  accentColor="white" // The color of the beam\n  markerColor="white" // The color of the bullts or icons\n/>`}
       >
         <TimelineShowcase />
       </ComponentSection>
@@ -155,7 +155,7 @@ export default function Home() {
           Built with React · Next.js · TailwindCSS
         </p>
         <small className="text-zinc-600 text-xs sm:text-base font-mono">
-          &copy; SM Web Studio | By Samir Magdy
+          &copy; SM Web Design Studio | By Samir Magdy
         </small>
       </footer>
     </div>

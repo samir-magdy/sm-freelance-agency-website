@@ -1,5 +1,6 @@
 import { SITE_URL } from "./data/translations/lang";
 import resources from "./data/resources";
+import { projects } from "./data/projects";
 
 const langs = ["en", "ar"];
 
@@ -44,6 +45,14 @@ export default function sitemap() {
     }))
   );
 
+  const portfolioEntries = projects
+    .filter((project) => project.liveUrl.startsWith("/"))
+    .map((project) => ({
+      url: `${SITE_URL}/portfolio/${project.slug}`,
+      lastModified: now,
+      priority: 0.8,
+    }));
+
   const premiumComponentsEntry = {
     url: `${SITE_URL}/react-components`,
     lastModified: now,
@@ -54,6 +63,7 @@ export default function sitemap() {
     ...homeEntries,
     ...resourcesListingEntries,
     ...resourceEntries,
+    ...portfolioEntries,
     premiumComponentsEntry,
   ];
 }

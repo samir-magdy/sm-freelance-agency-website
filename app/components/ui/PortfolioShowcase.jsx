@@ -82,10 +82,15 @@ function StatusBar() {
 export default function PortfolioShowcase({ lang }) {
   const { projectsSection, projectData, a11y } = translations;
   const t = projectsSection;
+  const [mounted, setMounted] = useState(false);
   const [active, setActive] = useState(0);
   const snapRef = useRef(null);
   const animFrameRef = useRef(null);
-
+  useEffect(() => {
+    const el = snapRef.current;
+    if (el) el.scrollLeft = 0;
+    setMounted(true);
+  }, []);
   /* Sync scroll position → active state */
   useEffect(() => {
     const el = snapRef.current;
@@ -110,6 +115,14 @@ export default function PortfolioShowcase({ lang }) {
   useEffect(() => {
     return () => { if (animFrameRef.current !== null) cancelAnimationFrame(animFrameRef.current); };
   }, []);
+
+  const handleDemoClick = useCallback((e) => {
+    e.preventDefault();
+    const url = new URL(projects[active].liveUrl, window.location.origin);
+    url.searchParams.set("ref", "smws");
+    url.searchParams.set("lang", lang);
+    window.open(url.toString(), "_blank", "noopener");
+  }, [active, lang]);
 
   /* Programmatic scroll with rAF easing */
   const scrollToProject = useCallback((idx) => {
@@ -197,8 +210,9 @@ export default function PortfolioShowcase({ lang }) {
               <a
                 id="pricing-cta"
                 href={project.liveUrl}
+                onClick={handleDemoClick}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="cta-primary relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-xl font-normal sm:font-medium tracking-wide transition-all duration-200 hidden lg:inline-flex"
                 aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
               >
@@ -221,7 +235,7 @@ export default function PortfolioShowcase({ lang }) {
             <div dir="ltr" className="flex items-center justify-center gap-8">
               <NavArrow
                 direction="prev"
-                disabled={active === 0}
+                disabled={mounted && active === 0}
                 onClick={() => scrollToProject(active - 1)}
               />
 
@@ -270,7 +284,7 @@ export default function PortfolioShowcase({ lang }) {
 
               <NavArrow
                 direction="next"
-                disabled={active === projects.length - 1}
+                disabled={mounted && active === projects.length - 1}
                 onClick={() => scrollToProject(active + 1)}
               />
             </div>
@@ -301,8 +315,9 @@ export default function PortfolioShowcase({ lang }) {
             {/* "View Live Site" CTA — mobile only */}
             <a
               href={project.liveUrl}
+              onClick={handleDemoClick}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="cta-primary relative overflow-hidden inline-flex items-center gap-2 py-3 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-sm font-semibold tracking-wide lg:hidden"
               aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
             >

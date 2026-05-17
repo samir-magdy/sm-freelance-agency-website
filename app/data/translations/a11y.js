@@ -5,8 +5,8 @@ const a11y = {
   mobileNav: { en: "Mobile navigation", ar: "قائمة الهاتف" },
   contactForm: { en: "Contact form", ar: "نموذج التواصل" },
   screenshotOf: {
-    en: "Website design by SM Web Studio –",
-    ar: "تصميم موقع من SM Web Studio –",
+    en: "Website design by SM Web Design Studio –",
+    ar: "تصميم موقع من SM Web Design Studio –",
   },
 };
 

@@ -48,7 +48,7 @@ const resource = {
 <p>Effective SEO is a sustained investment. Most businesses see meaningful results in three to six months, with substantial progress over one to two years. The businesses that commit to it consistently are the ones that eventually own their market's search results.</p>
 
 <h2>The Connection Between SEO and Your Website</h2>
-<p>SEO and web design are inseparable. A beautifully designed website that loads slowly, has poor content structure, and is not mobile-optimized will not rank well no matter how much time you invest in other SEO activities. This is why SM Web Studio builds every website with SEO foundations included.</p>`,
+<p>SEO and web design are inseparable. A beautifully designed website that loads slowly, has poor content structure, and is not mobile-optimized will not rank well no matter how much time you invest in other SEO activities. This is why SM Web Design Studio builds every website with SEO foundations included.</p>`,
 
     ar: `<p>كل يوم، آلاف المصريين بيكتبوا في جوجل جمل زي: "مصمم ديكور في القاهرة"، "محاسب قانوني في الإسكندرية"، "أفضل كافيه في المعادي"، "شركة برمجة في مصر". دول مش مجرد ناس بتتصفح النت، دول عملاء محتملين قرروا فعلاً إنهم محتاجين الخدمة دي وبيدوروا على أنسب حد ينفذها. الـ SEO هو اللي بيحدد هل هيلاقوك إنت ولا هيلاقوا منافسك.</p>
 
@@ -87,7 +87,7 @@ const resource = {
 <p>الـ SEO مش حاجة بتتعمل مرة واحدة وتنساها، ومش هيجيب نتايج بين يوم وليلة. أي حد يوعدك إنك هتطلع النتيجة الأولى في أسبوعين هو بيضحك عليك. الـ SEO بيحتاج وقت، وأغلب الشركات بتبدأ تشوف نتايج حقيقية بعد ٣ لـ ٦ شهور، لكن النتايج دي بتكون مستقرة ومستمرة معاك.</p>
 
 <h2>علاقة التصميم بالـ SEO</h2>
-<p>التصميم والـ SEO وجهين لعملة واحدة. موقع شكله حلو بس بطيء أو كوده قديم مش هيظهر في جوجل أبداً. علشان كدة في SM Web Studio بنبني كل المواقع بأساسيات SEO قوية من أول يوم؛ كود نظيف، سرعة خيالية، وتوافق تام مع الموبايل، علشان موقعك يكون جاهز للمنافسة فوراً.</p>`,
+<p>التصميم والـ SEO وجهين لعملة واحدة. موقع شكله حلو بس بطيء أو كوده قديم مش هيظهر في جوجل أبداً. علشان كدة في SM Web Design Studio بنبني كل المواقع بأساسيات SEO قوية من أول يوم؛ كود نظيف، سرعة خيالية، وتوافق تام مع الموبايل، علشان موقعك يكون جاهز للمنافسة فوراً.</p>`,
   },
   metaDescription: {
     en: "A plain-language guide to SEO for small businesses in Egypt. Learn what it is, why it matters for your local visibility, and the first steps to rank higher on Google.",

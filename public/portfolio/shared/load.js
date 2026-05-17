@@ -1,0 +1,1 @@
+window.addEventListener("load",()=>{const e=document.getElementById("loading-gate"),t=document.getElementById("main-content");gsap.to(e,{opacity:0,duration:.5,ease:"power2.inOut",onComplete:()=>{e.style.display="none"}}),gsap.to(t,{opacity:1,duration:.5,ease:"power2.out"})});

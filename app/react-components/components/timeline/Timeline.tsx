@@ -1,22 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import type { ReactNode } from "react";
-import {
-  Search, Paintbrush, Code2, FlaskConical, Rocket,
-  Star, Zap, Globe, Lock, Settings, Mail, Bell, Heart,
-  type LucideIcon,
-} from "lucide-react";
-
-const ICON_MAP: Record<string, LucideIcon> = {
-  Search, Paintbrush, Code2, FlaskConical, Rocket,
-  Star, Zap, Globe, Lock, Settings, Mail, Bell, Heart,
-};
+import React, { useEffect, useRef, useState } from "react";
 
 export interface TimelineItem {
   title: string;
-  content: ReactNode;
-  icon?: string;
+  content: string;
+  icon?: React.ComponentType<{ size?: number; className?: string; style?: React.CSSProperties }>;
 }
 
 export interface TimelineProps {
@@ -33,9 +22,11 @@ function useBulletBeam(accentColor: string) {
   const [height, setHeight] = useState(0);
   const [trackTop, setTrackTop] = useState(0);
   const [activeIndex, setActiveIndex] = useState(-1);
+  const [initialized, setInitialized] = useState(false);
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
   const trackTopRef = useRef(0);
   const activeIndexRef = useRef(-1);
+  const initializedRef = useRef(false);
 
   useEffect(() => {
     const container = ref.current;
@@ -72,8 +63,9 @@ function useBulletBeam(accentColor: string) {
       const rect = container.getBoundingClientRect();
       const containerDocTop = rect.top + window.scrollY;
       const startY = containerDocTop + trackTopRef.current - wh * 0.5;
-      const endY = containerDocTop + trackTopRef.current + height - wh;
-      const progress = Math.max(0, Math.min(1, (window.scrollY - startY) / (endY - startY)));
+      const naturalEnd = containerDocTop + trackTopRef.current + height - wh;
+      const scrollRange = (naturalEnd - startY) / 0.8;
+      const progress = Math.max(0, Math.min(1, (window.scrollY - startY) / scrollRange));
       const beamHeight = progress * height;
       beam.style.height = `${beamHeight}px`;
       beam.style.opacity = `${Math.min(1, progress / 0.1)}`;
@@ -83,11 +75,16 @@ function useBulletBeam(accentColor: string) {
       for (let i = 0; i < itemRefs.current.length; i++) {
         const el = itemRefs.current[i];
         if (!el) continue;
-        if (beamHeight >= el.getBoundingClientRect().top - containerTop + 20) newActive = i;
+        const pt = parseFloat(getComputedStyle(el).paddingTop) || 0;
+        if (beamHeight > 0 && beamHeight >= el.getBoundingClientRect().top - containerTop + pt) newActive = i;
       }
       if (newActive !== activeIndexRef.current) {
         activeIndexRef.current = newActive;
         setActiveIndex(newActive);
+      }
+      if (!initializedRef.current) {
+        initializedRef.current = true;
+        setInitialized(true);
       }
     };
     const onScroll = () => { if (!rafId) rafId = requestAnimationFrame(update); };
@@ -100,15 +97,17 @@ function useBulletBeam(accentColor: string) {
   }, [height]);
 
   return {
-    ref, containerRef, beamRef, height, trackTop, activeIndex, itemRefs,
+    ref, containerRef, beamRef, height, trackTop, activeIndex, initialized, itemRefs,
     beamGradient: `linear-gradient(to top, transparent 0%, ${accentColor} 15%, transparent 100%)`,
   };
 }
 
 export function Timeline({ data, variant = "bullet", accentColor = "white", markerColor }: TimelineProps) {
-  const { ref, containerRef, beamRef, height, trackTop, activeIndex, itemRefs, beamGradient } =
+  const { ref, containerRef, beamRef, height, trackTop, activeIndex, initialized, itemRefs, beamGradient } =
     useBulletBeam(accentColor);
   const activeMarkerColor = markerColor ?? accentColor;
+
+  const everActiveRef = useRef<Set<number>>(new Set());
 
   const [displayedVariant, setDisplayedVariant] = useState(variant);
   const [markerOpacity, setMarkerOpacity] = useState(1);
@@ -132,20 +131,31 @@ export function Timeline({ data, variant = "bullet", accentColor = "white", mark
         <ol className="list-none">
           {data.map((item, index) => {
             const active = index <= activeIndex;
-            const Icon = item.icon ? ICON_MAP[item.icon] : undefined;
+            const Icon = item.icon;
+
+            if (initialized && active) everActiveRef.current.add(index);
+            const revealed = everActiveRef.current.has(index);
+            {/* You can control the entrance animation for the content here */}
+            const fadeStyle: React.CSSProperties | undefined = initialized ? {
+              opacity: revealed ? 1 : 0,
+              transform: revealed ? "translateX(0)" : "translateX(30px)",
+              transition: "opacity 600ms ease 200ms, transform 600ms ease 200ms",
+            } : undefined;
 
             return (
               <li
                 key={index}
                 ref={(el) => { itemRefs.current[index] = el; }}
-                className="flex min-h-80 md:min-h-0 md:py-28"
+                className="flex min-h-70 md:min-h-0 md:py-40"
               >
                 <div className="sticky flex flex-col justify-between md:flex-row z-1 items-center md:w-full">
                   <div
                     className={`absolute rounded-full bg-background flex items-center justify-center ${
-                      large
+                      displayedVariant === "icon"
+                        ? "h-20 w-12 inset-s-0 sm:inset-s-1"
+                        : large
                         ? "h-14 w-12 inset-s-0 sm:inset-s-1"
-                        : "h-12 md:h-14 w-10 inset-s-0 sm:inset-s-3"
+                        : "h-12 w-10 inset-s-0 sm:inset-s-3"
                     }`}
                     style={{ opacity: markerOpacity, transition: "opacity 150ms ease" }}
                   >
@@ -154,7 +164,7 @@ export function Timeline({ data, variant = "bullet", accentColor = "white", mark
                         className="h-20 w-20 sm:ps-2 flex items-center justify-center"
                       >
                         {displayedVariant === "icon" && Icon ? (
-                          <Icon size={30} className="transition-colors duration-500 sm:pe-0 pe-1.5" style={{ color: active ? activeMarkerColor : "rgba(255,255,255,0.35)" }} />
+                          <Icon size={40} className="transition-colors duration-500 sm:pe-0 pe-1.5" style={{ color: active ? activeMarkerColor : "rgba(255,255,255,0.35)" }} />
                         ) : (
                           <span
                             className="font-bold border rounded-full p-4 transition-colors duration-500 sm:pe-0 pe-1.5 text-3xl"
@@ -177,11 +187,11 @@ export function Timeline({ data, variant = "bullet", accentColor = "white", mark
                 </div>
 
                 <div className={`relative md:ps-0 w-full flex flex-col md:block pt-1.5 md:pt-0 ${large ? "ps-16" : "ps-14"}`}>
-                  <h3 className="md:hidden text-3xl block text-start font-semibold text-zinc-200">
+                  <h3 className={`md:hidden text-3xl block text-start font-semibold text-zinc-200 ${displayedVariant === "icon" ? "pt-4" : "" }`}>
                     {item.title}
                   </h3>
-                  <div className="flex-1 flex items-center md:block md:max-w-[90%]">
-                    {item.content}
+                  <div className="flex-1 flex items-center md:block md:max-w-[90%]" style={fadeStyle}>
+                      <p className="text-zinc-300/90 text-xl md:text-2xl leading-relaxed">{item.content}</p>
                   </div>
                 </div>
               </li>

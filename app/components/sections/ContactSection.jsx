@@ -15,7 +15,7 @@ export default function ContactSection({ lang }) {
       dir={isRtl ? "rtl" : "ltr"}
     >
       <RevealSection>
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <div className="mb-8 md:mb-12">
           <h2
             id="contact-heading"

@@ -39,7 +39,7 @@ const resource = {
 <p>The 500 EGP website offer exists, but for a business that is serious about its online presence, cheap websites will cause more harm than good. Poor technical foundations result in slow loading, which hurts both user experience and search rankings. Generic template designs make it difficult to stand out from competitors. The absence of mobile optimization drives away the majority of your visitors. When these issues need to be fixed, you often end up spending more than if you had built correctly from the start.</p>
 <p>The relevant question is not "what is the cheapest website I can get?" but "what is the minimum investment that will generate a positive return for my specific business?" For most businesses with serious growth ambitions, that answer points toward professional design with solid technical foundations.</p>
 
-<h2>What Is Included at SM Web Studio</h2>
+<h2>What Is Included at SM Web Design Studio</h2>
 <p>Every website we build includes professional design created specifically for your brand, performance optimization for fast loading, mobile-first development, basic SEO setup, and a revision process that ensures you are happy with the result. We are transparent about pricing before any project starts, so you know exactly what you are getting and what it costs. Our goal is not to sell you the most expensive option, it is to help you understand what level of investment makes sense for your goals and build accordingly. If you'd like a formal quote, you can request one <a href="/en/#contact">here</a>.</p>`,
     ar: `<p>أسعار المواقع الإلكترونية في مصر تعتبر من أكتر الحاجات اللي بتسبب ارتباك لأصحاب الأعمال. ممكن تلاقي عروض بـ ٥٠٠ جنيه وعروض تانية بتوصل لـ ٢٠٠,٠٠٠ جنيه، والاتنين بيتقال عليهم "تصميم مواقع". الفرق الكبير ده مش بالصدفة، وفهم الأسباب اللي بتغير السعر هيساعدك تاخد القرار الصح لشركتك، سواء كنت هتبدأ مشروع دلوقتي أو بتخطط للمستقبل.</p>
 
@@ -71,7 +71,7 @@ const resource = {
 <p>ممكن تقابل عروض بـ ٥٠٠ جنيه، وممكن تنفع في حالات بسيطة جداً. لكن لو شركتك بتعتمد على الموقع علشان تجيب شغل، الموقع الرخيص بيبقى فيه "تكاليف مستخبية".</p>
 <p>الموقع الرخيص غالباً بيبقى بطيء جداً، وده بيخلي العملاء يقفلوه ومبيظهرش في جوجل. كمان التصميم بيبقى مكرر ومش احترافي، ومبيشتغلش كويس على الموبايل. في الآخر هتضطر تدفع فلوس تانية علشان تصلح المشاكل دي، ده غير الشغل اللي ضاع منك بسبب إن الموقع مكانش شغال صح.</p>
 
-<h2>إيه اللي بنقدمه في SM Web Studio؟</h2>
+<h2>إيه اللي بنقدمه في SM Web Design Studio؟</h2>
 <p>كل موقع بنبنيه بيشمل تصميم مخصص لبراندك، وسرعة تحميل عالية، وتوافق تام مع الموبايل، مع تجهيز أساسيات الـ SEO. إحنا واضحين جداً في أسعارنا من قبل ما نبدأ؛ هدفنا مش إننا نبيع لك أغلى حاجة، هدفنا نساعدك تختار الاستثمار اللي هيجيب لك عائد فعلي لشركتك. ولو حابب نبعتلك عرض سعر رسمي، تقدر تطلبه من <a href="/ar/#contact">هنا</a>.</p>`,
   },
   metaDescription: {

@@ -274,11 +274,11 @@ export default function IPhoneMockup({
       {/* ── Arrow ← | Phone | Arrow → ── */}
       <div className="flex items-center justify-center gap-8">
 
-        <NavArrow
+        {slides.length > 1 && <NavArrow
           direction="prev"
           disabled={active === 0}
           onClick={() => scrollToSlide(active - 1)}
-        />
+        />}
 
         {/* ── Phone outer shell — gradient bezel + hardware buttons ── */}
         {/* Responsive phone size — the w/h pairs at each breakpoint control the phone's proportions.
@@ -338,16 +338,16 @@ export default function IPhoneMockup({
           </div>
         </div>
 
-        <NavArrow
+        {slides.length > 1 && <NavArrow
           direction="next"
           disabled={active === slides.length - 1}
           onClick={() => scrollToSlide(active + 1)}
-        />
+        />}
 
       </div>
 
       {/* ── Pagination dots ── */}
-      <div
+      {slides.length > 1 && <div
         className="flex items-center gap-1.5 mb-1.5"
         role="tablist"
         aria-label="Slides"
@@ -369,7 +369,7 @@ export default function IPhoneMockup({
             }
           />
         ))}
-      </div>
+      </div>}
 
     </div>
   );

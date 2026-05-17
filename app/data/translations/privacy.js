@@ -4,8 +4,8 @@ const privacyPolicy = {
     ar: "سياسة الخصوصية" 
   },
   subheading: {
-    en: "Last Updated: May 1st 2026. Welcome to SM Web Studio. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website and use our services.",
-    ar: "آخر تحديث: 1 مايو 2026. مرحبًا بك في SM Web Studio. نحن ملتزمون بحماية معلوماتك الشخصية وحقك في الخصوصية. تشرح سياسة الخصوصية هذه كيف نقوم بجمع واستخدام وحماية معلوماتك عند زيارة موقعنا واستخدام خدماتنا.",
+    en: "Last Updated: May 1st 2026. Welcome to SM Web Design Studio. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website and use our services.",
+    ar: "آخر تحديث: 1 مايو 2026. مرحبًا بك في SM Web Design Studio. نحن ملتزمون بحماية معلوماتك الشخصية وحقك في الخصوصية. تشرح سياسة الخصوصية هذه كيف نقوم بجمع واستخدام وحماية معلوماتك عند زيارة موقعنا واستخدام خدماتنا.",
   },
   items: [
     {

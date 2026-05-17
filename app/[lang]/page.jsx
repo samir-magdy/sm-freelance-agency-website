@@ -16,7 +16,7 @@ export default async function Page({ params }) {
   return (
     <div className="relative min-h-screen bg-background text-content-heading flex flex-col gap-40 md:gap-72">
       <HeroSection lang={lang} />
-      <PortfolioShowcase lang={lang} />
+      <PortfolioShowcase key={lang} lang={lang} />
       <FAQSection lang={lang} />
 
       <PricingCardsSection lang={lang} />

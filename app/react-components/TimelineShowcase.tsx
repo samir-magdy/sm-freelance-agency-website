@@ -1,69 +1,35 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Code2, Settings, Paintbrush, Zap, Rocket } from "lucide-react";
 import { Timeline } from "./components/timeline/Timeline";
 import type { TimelineProps } from "./components/timeline/Timeline";
 
 const steps = [
   {
-    title: "Discovery",
-    icon: "Search",
-    content: (
-      <div className="rounded-xl md:border md:border-white/10 md:bg-white/5 md:p-6">
-        <p className="text-zinc-300/90 text-xl leading-relaxed">
-          We dig into your goals, your users, and your constraints. Every
-          decision from here is grounded in research, not guesswork.
-        </p>
-      </div>
-    ),
+    title: "Add the file",
+    icon: Code2,
+    content: "Drop Timeline.tsx into your project and import it where needed.",
   },
   {
-    title: "Design",
-    icon: "Paintbrush",
-    content: (
-      <div className="rounded-xl md:border md:border-white/10 md:bg-white/5 md:p-6">
-        <p className="text-zinc-300/90 text-xl leading-relaxed">
-          Wireframes first, pixels second. We move fast in low-fidelity so
-          there&apos;s room to challenge assumptions before anything is built.
-        </p>
-      </div>
-    ),
+    title: "Set up your data",
+    icon: Settings,
+    content: "Create an array of steps, each step is an object that needs a 'title' and a 'content' property.",
   },
   {
-    title: "Development",
-    icon: "Code2",
-    content: (
-      <div className="rounded-xl md:border md:border-white/10 md:bg-white/5 md:p-6">
-        <p className="text-zinc-300/90 text-xl leading-relaxed">
-          Clean, performant code. No bloated libraries, no shortcuts that
-          haunt you later.
-        </p>
-      </div>
-    ),
+    title: "Choose a style",
+    icon: Paintbrush,
+    content: "Use variant=\"icon\" to display icons at each step or ommit the variant prop to use the standard bullets.",
   },
   {
-    title: "Testing",
-    icon: "FlaskConical",
-    content: (
-      <div className="rounded-xl md:border md:border-white/10 md:bg-white/5 md:p-6">
-        <p className="text-zinc-300/90 text-xl leading-relaxed">
-          Cross-browser checks, responsive testing, and edge cases caught
-          before they become your problem.
-        </p>
-      </div>
-    ),
+    title: "Pick your colors",
+    icon: Zap,
+    content: "Pass accentColor='color' for the beam and markerColor='color' for the active marker. Any valid CSS color works.",
   },
   {
-    title: "Launch",
-    icon: "Rocket",
-    content: (
-      <div className="rounded-xl md:border md:border-white/10 md:bg-white/5 md:p-6">
-        <p className="text-zinc-300/90 text-xl leading-relaxed">
-          We handle deployment and handover. You get a product that works —
-          and a team that stays reachable after.
-        </p>
-      </div>
-    ),
+    title: "You're all set",
+    icon: Rocket,
+    content: "That's it! If you need further customization check the README.md guide.",
   },
 ];
 
@@ -125,8 +91,8 @@ function ColorControl({
 
 export default function TimelineShowcase() {
   const [variant, setVariant] = useState<Variant>("bullet");
-  const [beamColor, setBeamColor] = useState("#ffffff");
-  const [markerColor, setMarkerColor] = useState("#ffffff");
+  const [beamColor, setBeamColor] = useState("#c8c4bb");
+  const [markerColor, setMarkerColor] = useState("#c9a43d");
 
   return (
     <div className="w-full">
@@ -142,7 +108,7 @@ export default function TimelineShowcase() {
                 <button
                   key={v}
                   onClick={() => setVariant(v)}
-                  className={`px-3 md:px-4 py-1.5 md:py-2 rounded-md text-sm md:text-base font-medium capitalize transition-all duration-200 cursor-pointer ${
+                  className={`px-3 md:px-4 py-1.5 md:py-1.5 rounded-md text-sm md:text-base font-medium capitalize transition-all duration-200 cursor-pointer ${
                     variant === v
                       ? "bg-white/15 text-white"
                       : "text-zinc-500 hover:text-zinc-300"

@@ -218,11 +218,11 @@ export default function MacMockup({
   return (
     <div className="flex flex-col items-center gap-3 select-none">
       <div className="flex items-center justify-center gap-8">
-        <NavArrow
+        {slides.length > 1 &&<NavArrow
           direction="prev"
           disabled={active === 0}
           onClick={() => scrollToSlide(active - 1)}
-        />
+        />}
 
         {/* Browser window */}
         <div
@@ -277,15 +277,15 @@ export default function MacMockup({
           </div>
         </div>
 
-        <NavArrow
+        {slides.length > 1 &&<NavArrow
           direction="next"
           disabled={active === slides.length - 1}
           onClick={() => scrollToSlide(active + 1)}
-        />
+        />}
       </div>
 
       {/* Pagination dots */}
-      <div
+      {slides.length > 1 &&<div
         className="flex items-center gap-1.5"
         role="tablist"
         aria-label="Slides"
@@ -315,7 +315,7 @@ export default function MacMockup({
             }
           />
         ))}
-      </div>
+      </div>}
     </div>
   );
 }

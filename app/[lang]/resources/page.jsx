@@ -36,7 +36,7 @@ export async function generateMetadata({ params }) {
           url: `${SITE_URL}/open-graph.webp`,
           width: 1200,
           height: 630,
-          alt: "SM Web Studio – Web Design Agency in Egypt",
+          alt: "SM Web Design Studio – Web Design Agency in Egypt",
         },
       ],
     },

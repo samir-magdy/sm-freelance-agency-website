@@ -61,7 +61,7 @@ const resource = {
 <p>A professional website is an asset, not an expense. The relevant question isn't "who is cheapest?" but "who is most likely to generate ongoing value?" A website that converts visitors into clients pays for itself. A cheap website that looks generic and ranks nowhere on Google is simply a loss.</p>
 
 <h2>Making the Right Call</h2>
-<p>The right provider will have a portfolio of live sites, ask deep questions about your goals, be transparent about pricing, and communicate clearly about who is doing the work. At SM Web Studio, these are the standards we hold ourselves to. If you want a direct conversation about your project, we are happy to help. You can request a free consultation <a href="/en/#contact">Here</a>.</p>`,
+<p>The right provider will have a portfolio of live sites, ask deep questions about your goals, be transparent about pricing, and communicate clearly about who is doing the work. At SM Web Design Studio, these are the standards we hold ourselves to. If you want a direct conversation about your project, we are happy to help. You can request a free consultation <a href="/en/#contact">Here</a>.</p>`,
 
     ar: `<p>اختيار الجهة اللي هتبني لك موقعك هو واحد من أهم القرارات لنجاح مشروعك وتجنب المشاكل. للأسف، السوق مليان بوعود غير واقعية وكلام تسويقي كتير، لكن التنفيذ الفعلي غالباً بيكون مخيب للأمل. هل تختار شركة؟ ولا فريلانسر؟ وإيه الفرق بينهم؟ الدليل ده هيديك الخلاصة عشان تختار صح.</p>
 
@@ -112,7 +112,7 @@ const resource = {
 <p>الموقع المحترف هو أصل لشركتك. السؤال الصح مش "مين الأرخص؟" لكن "مين اللي هيعمل لي حاجة تجيب نتايج؟". الموقع اللي بيحول الزوار لعملاء بيدفع تمنه بنفسه. لكن الموقع الرخيص اللي شكله بدائي ومحدش بيلاقيه على جوجل هو مجرد خسارة لفلوسك.</p>
 
 <h2>الخلاصة</h2>
-<p>الشركة الصح هي اللي عندها سابقة أعمال حقيقية، بتسأل أسئلة ذكية عن أهدافك، شفافة في أسعارها، وواضحة في تواصلها. في <strong>SM Web Studio</strong>، دي المعايير اللي بنمشي عليها. لو محتاج استشارة حقيقية لمشروعك، يسعدنا ندردش معاك. تقدر تطلب استشارة مجانية <a href="/ar/#contact">من هنا</a>.</p>`,
+<p>الشركة الصح هي اللي عندها سابقة أعمال حقيقية، بتسأل أسئلة ذكية عن أهدافك، شفافة في أسعارها، وواضحة في تواصلها. في <strong>SM Web Design Studio</strong>، دي المعايير اللي بنمشي عليها. لو محتاج استشارة حقيقية لمشروعك، يسعدنا ندردش معاك. تقدر تطلب استشارة مجانية <a href="/ar/#contact">من هنا</a>.</p>`,
   },
   metaDescription: {
     en: "How to choose the right web design company for your business. Learn what questions to ask, what red flags to avoid, and what separates genuinely capable agencies from the rest.",

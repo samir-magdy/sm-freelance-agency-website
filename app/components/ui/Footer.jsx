@@ -51,7 +51,7 @@ export default function Footer() {
         <div className="flex divide-x divide-content-muted/40 mx-auto">
           <small className="flex px-1.5 sm:pr-3 items-center text-xs sm:text-sm text-content-muted/80 divide-x divide-content-muted/40">
             <Copyright size={12} />
-            &nbsp;{new Date().getFullYear()} SM Web Studio
+            &nbsp;{new Date().getFullYear()} SM Web Design Studio
           </small>
           {/* Legal Links */}
           <nav
