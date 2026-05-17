@@ -25,7 +25,7 @@ const TWITTER_HANDLE = "@SMWebDesignCo";
 
 const META_DESCRIPTION = {
   en: "Professional website & Shopify development in Egypt. Discover how we can help you grow.",
-  ar: "تصميم مواقع احترافية ومتاجر إلكترونية في مصر. نطوّر حلول تدعم نمو عملك وحضورك الرقمي. اكتشف كيف يمكننا مساعدتك في تحقيق التميز أونلاين.",
+  ar: "تصميم مواقع احترافية ومتاجر إلكترونية في مصر. اكتشف كيف يمكننا مساعدتك في تحقيق التميز أونلاين.",
 };
 
 const SOCIAL_LINKS = {
@@ -39,7 +39,7 @@ const SOCIAL_LINKS = {
 
 const meta = {
   en: {
-    title: `${SITE_NAME} | Egypt`,
+    title: `Professional Websites in Egypt | ${SITE_NAME}`,
     description: META_DESCRIPTION.en,
     ogLocale: "en_US",
     altLocale: "ar_EG",
@@ -48,7 +48,7 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: `شركة تصميم مواقع ومتاجر إلكترونية في مصر | ${SITE_NAME}`,
+    title: `انشاء موقع الكتروني في مصر | ${SITE_NAME}`,
     description: META_DESCRIPTION.ar,
     ogLocale: "ar_EG",
     altLocale: "en_US",
