@@ -16,7 +16,7 @@ const hero = {
     ar: "اعرف التفاصيل",
   },
   subheading: {
-    en: "Professional website design for brands & businesses ready to stand out online.",
+    en: "Expert website design for brands & businesses ready to stand out online.",
     ar: "تصميم مواقع إلكترونية احترافية تعزز مصداقية علامتك التجارية وتصنع تميزك الرقمي.",
   },
 };

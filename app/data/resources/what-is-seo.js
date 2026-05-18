@@ -1,14 +1,14 @@
 const resource = {
-  slug: "seo-basics-for-small-businesses-egypt",
+  slug: "what-is-seo",
   datePublished: "2026-04-05",
   dateModified: "2026-05-17",
   title: {
-    en: "SEO Basics for Small Businesses in Egypt: What It Is, Why It Matters, and How to Start",
-    ar: "أساسيات الـ SEO للشركات الصغيرة في مصر: إيه هو، وليه مهم، وتبدأ إزاي؟",
+    en: "SEO Basics for Beginners: What It Is, Why It Matters, and How to Start",
+    ar: "أساسيات تحسين محركات البحث: دليل شامل للمبتدئين",
   },
   metaTitle: {
-    en: "SEO Basics for Small Businesses in Egypt",
-    ar: "أساسيات السيو للشركات الصغيرة في مصر",
+    en: "What Is SEO and How Does It Work?",
+    ar: "ما هو تحسين محركات البحث؟ دليل شامل",
   },
   excerpt: {
     en: "Search Engine Optimization (SEO) is the process of improving your rank on Google so that when potential customers search for what you offer, they have a higher chance of finding you instead of your competitor. This guide breaks down the basics in plain language, with practical first steps any business owner can act on today.",

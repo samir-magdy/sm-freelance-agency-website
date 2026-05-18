@@ -1,14 +1,14 @@
 const resource = {
-  slug: "how-to-pick-the-right-web-design-company",
+  slug: "choose-web-design-company-egypt",
   datePublished: "2026-04-15",
   dateModified: "2026-05-17",
   title: {
-    en: "Web Design Company Egypt: What to Ask and What to Avoid Before You Hire",
-    ar: "شركة تصميم مواقع في مصر: إزاي تختار الصح وتتجنب الغلط؟",
+    en: "Choosing a Web Design Company in Egypt: How to Get It Right",
+    ar: "شركات تصميم المواقع في مصر: كيف تختار الشريك المناسب لعملك؟",
   },
   metaTitle: {
-    en: "How to Choose a Web Design Company in Egypt",
-    ar: "كيف تختار شركة تصميم مواقع في مصر؟",
+    en: "Choosing the Right Web Design Company in Egypt",
+    ar: "كيف تختار أفضل شركة تصميم مواقع لعملك في مصر؟",
   },
   excerpt: {
     en: "Choosing the wrong web design company is one of the most costly mistakes a business can make. This guide gives you the exact questions to ask, the red flags to watch for, and the criteria that separate genuinely capable entities from ones that will waste your time and money.",
@@ -54,7 +54,7 @@ const resource = {
 <li><strong>Guarantees that sound too good to be true:</strong> Promises like "first page of Google in two weeks" or "unlimited revisions" are misleading and unrealistic.</li>
 <li><strong>Vague pricing with no itemization:</strong> A professional provider can explain exactly what you are paying for. Evasiveness about costs is a major warning sign.</li>
 <li><strong>No questions about your business:</strong> A company that quotes a price without asking about your goals, audience, and competitors is just filling a template, not building a solution.</li>
-<li><strong>Extremely low (or high) prices:</strong> Unusually cheap design almost always means templates and poor technical foundations, costing more in the long run. Conversely, extreme prices can be scams. I’ve seen companies in Egypt charging 50,000 EGP for a simple WordPress site, this is absurd. For more detailed information on professional web design pricing, read our guide <a href='/en/resources/how-much-does-a-website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>How Much Does a Website Cost in Egypt? An Honest Breakdown.</a>.</li>
+<li><strong>Extremely low (or high) prices:</strong> Unusually cheap design almost always means templates and poor technical foundations, costing more in the long run. Conversely, extreme prices can be scams. I’ve seen companies in Egypt charging 50,000 EGP for a simple WordPress site, this is absurd. For more detailed information on professional web design pricing, read our guide <a href='/en/resources/website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>How Much Does a Website Cost in Egypt? An Honest Breakdown.</a>.</li>
 </ul>
 
 <h2>3. Web Design Skill vs. Business Understanding: What to Prioritize</h2>
@@ -105,7 +105,7 @@ const resource = {
 <li><strong>وعود خيالية:</strong> زي "هخليك رقم 1 في جوجل في أسبوع" أو "تعديلات غير محدودة". الكلام ده غير واقعي ومجرد تسويق رخيص.</li>
 <li><strong>أسعار غامضة وغير مفصلة:</strong> المحترف هيقدر يشرحلك كل جنيه هتدفعه رايح فين. التهرب من كتابة التفاصيل علامة خطر.</li>
 <li><strong>مش مهتمين يعرفوا حاجة عن مشروعك:</strong> لو الشركة إدتك سعر من غير ما تسألك عن أهدافك، جمهورك، ومنافسيك، يبقوا بيبيعوا لك "قالب" جاهز مش حل لمشكلتك.</li>
-<li><strong>أسعار مبالغ فيها (رخيصة أو غالية):</strong> السعر الرخيص زيادة معناه شغل قوالب وأساس تقني ضعيف. والأسعار الخرافية ممكن تكون استغلال؛ شفت شركات في مصر بتطلب 50,000 جنيه في موقع ووردبريس بسيط، وده رقم غير منطقي. عشان تعرف أكتر عن الأسعار، اقرأ مقالنا: <a href='/ar/resources/how-much-does-a-website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>تكلُفة إنشاء موقع إلكتروني في مصر: تحليل حقيقي للأسعار.</a></li>
+<li><strong>أسعار مبالغ فيها (رخيصة أو غالية):</strong> السعر الرخيص زيادة معناه شغل قوالب وأساس تقني ضعيف. والأسعار الخرافية ممكن تكون استغلال؛ شفت شركات في مصر بتطلب 50,000 جنيه في موقع ووردبريس بسيط، وده رقم غير منطقي. عشان تعرف أكتر عن الأسعار، اقرأ مقالنا: <a href='/ar/resources/website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>تكلُفة إنشاء موقع إلكتروني في مصر: تحليل حقيقي للأسعار.</a></li>
 </ul>
 
 <h2>3. مصمم مواقع أم شريك نجاح: الفرق اللي بيحدد النتيجة</h2>

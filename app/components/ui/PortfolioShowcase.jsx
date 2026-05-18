@@ -240,7 +240,7 @@ export default function PortfolioShowcase({ lang }) {
             <h3
               aria-hidden="true"
               key={`genre-${project.id}`}
-              className="lg:hidden inline-flex items-center px-4 py-1.5 rounded-full text-[0.8rem] font-semibold uppercase tracking-[0.12em] border border-border-subtle text-content-muted bg-surface-card"
+              className="lg:hidden inline-flex items-center px-4 py-1.5 rounded-full text-[0.9rem] font-semibold uppercase tracking-[0.12em] border border-border-subtle text-content-body bg-surface-card"
             >
               {isRtl ? project.genreAr : project.genre}
             </h3>
@@ -253,7 +253,7 @@ export default function PortfolioShowcase({ lang }) {
               />
 
               {/* Phone outer shell */}
-              <div className="phone-outer w-[60vw] h-[63svh] sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-146 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
+              <div className="phone-outer w-[60vw] h-[61svh] sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-146 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
                 {/* Left volume buttons */}
                 <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
                 <div className="absolute -left-[2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />

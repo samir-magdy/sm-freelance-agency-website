@@ -1,11 +1,11 @@
 const projectsSection = {
   heading: {
-    en: "Web Design Showcase",
+    en: "Our Web Design Portfolio",
     ar: "معرض تصميم المواقع",
   },
   subheading: {
-    en: "Explore our featured designs",
-    ar: "تصفح أحدث أعالنا",
+    en: "Explore our featured projects",
+    ar: "تصفح أحدث أعمالنا",
   },
 };
 

@@ -3,12 +3,12 @@ const resource = {
   datePublished: "2026-03-10",
   dateModified: "2026-05-17",
   title: {
-    en: "Professional Website in Egypt: Being Found vs. Being Trusted",
-    ar: "الموقع الإلكتروني الاحترافي في مصر: الفرق بين إن الناس تلاقيك وإنها تثق فيك",
+    en: "Why Your Business Needs a Website: Being Found vs. Being Trusted",
+    ar: "الموقع الإلكتروني الاحترافي: الفرق بين إن الناس تلاقيك وإنها تثق فيك",
   },
   metaTitle: {
-    en: "Why Your Business Needs a Website in Egypt",
-    ar: "لماذا تحتاج شركتك موقعاً احترافياً في مصر؟",
+    en: "Why Your Business Needs a Website",
+    ar: "أهمية الموقع الإلكتروني لعملك",
   },
   excerpt: {
     en: "In 2026, the first thing someone does when they hear about your business is Google it. The search results they see usually determine whether they reach out to you or move on to a competitor. In this guide we dive deep into the real benefits of having a professional website for your business.",
@@ -27,7 +27,7 @@ const resource = {
 
 <h2>Your Competitors Are Already Online</h2>
 <p>Here is a test you can run right now: open Google and search for the type of business you run in your city. You will find competitors who have professional websites with clear service descriptions, contact forms, pricing information, and customer reviews. Every time a potential customer sees their listing instead of yours, that is a potential lead lost.</p>
-<p>A professional website does not just help you compete, it helps you rank in search results & Google Maps when customers are actively looking for what you offer. Due to how <abbr data-tooltip="Search Engine Optimization — the process of improving your website so it ranks higher in Google results">SEO</abbr> works, the businesses that built their websites two or three years ago are now ranking above the ones that waited. Every month without a website is a month of SEO progress you are missing out on. If you are unsure about what SEO is, read our <a href='/en/resources/seo-basics-for-small-businesses-egypt' target='_blank' rel='noopener noreferrer'>Guide on SEO</a>.</p>
+<p>A professional website does not just help you compete, it helps you rank in search results & Google Maps when customers are actively looking for what you offer. Due to how <abbr data-tooltip="Search Engine Optimization — the process of improving your website so it ranks higher in Google results">SEO</abbr> works, the businesses that built their websites two or three years ago are now ranking above the ones that waited. Every month without a website is a month of SEO progress you are missing out on. If you are unsure about what SEO is, read our <a href='/en/resources/what-is-seo' target='_blank' rel='noopener noreferrer'>Guide on SEO</a>.</p>
 
 <h2>Professional Website ROI: Why It Pays for Itself</h2>
 <p>Professional web development is not an expense, it is an investment. While it does involve minor recurring costs for maintenance, the primary build is a one-time investment that works 24/7. Compare it to paid social ads, which cost much more than maintaining a website, and stop working the moment you stop paying. A well-optimized website generates organic search traffic that compounds over time with minimal long term costs. This is why professional web development is the most efficient customer acquisition investment available to most small and medium businesses today.</p>
@@ -43,7 +43,7 @@ const resource = {
 
 <h2>منافسيك عندهم مواقع إلكترونية احترافية</h2>
 <p>لو جربت تبحث دلوقتي على جوجل عن نوع شغلك في مدينتك، هتلاقي منافسين ليك عندهم مواقع واضحة فيها خدماتهم وطرق التواصل معاهم. كل مرة عميل بيشوف موقعهم وما بيشوفش شركتك، دي فرصة شغل ضاعت منك وراحت ليهم.</p>
-<p>الموقع بيساعدك تظهر في نتائج البحث وكمان على خرائط جوجل (Google Maps) لما الناس تدور على حاجة محتاجاها. وبسبب نظام الـ <abbr data-tooltip="Search Engine Optimization — عملية تحسين موقعك علشان يظهر في نتائج بحث جوجل الأولى">SEO</abbr>، الشركات اللي عملت مواقعها من فترة بتظهر دلوقتي في الأول. كل شهر بتأخر فيه عمل موقعك، بتخسر مكانك في نتائج البحث لصالح حد تاني. لو مش متأكد يعني إيه سيو، تقدر تقرأ <a href='/ar/resources/seo-basics-for-small-businesses-egypt' target='_blank' rel='noopener noreferrer'>دليلنا عن أساسيات السيو</a>.</p>
+<p>الموقع بيساعدك تظهر في نتائج البحث وكمان على خرائط جوجل (Google Maps) لما الناس تدور على حاجة محتاجاها. وبسبب نظام الـ <abbr data-tooltip="Search Engine Optimization — عملية تحسين موقعك علشان يظهر في نتائج بحث جوجل الأولى">SEO</abbr>، الشركات اللي عملت مواقعها من فترة بتظهر دلوقتي في الأول. كل شهر بتأخر فيه عمل موقعك، بتخسر مكانك في نتائج البحث لصالح حد تاني. لو مش متأكد يعني إيه سيو، تقدر تقرأ <a href='/ar/resources/what-is-seo' target='_blank' rel='noopener noreferrer'>دليلنا عن أساسيات السيو</a>.</p>
 
 <h2>الموقع الإلكتروني الاحترافي: كيف يبني المصداقية التي لا توفرها السوشيال ميديا</h2>
 <p>العميل في مصر بقى بيخاف من الصفحات الوهمية أو غير الموثوقة. لما يكون عندك موقع رسمي باسم شركتك وفيه شرح واضح لخدماتك وعناوينك، ده بيدي رسالة إنك شركة حقيقية وموجودة فعلاً. السوشيال ميديا سهلة وأي حد يعملها، لكن الموقع بيحتاج استثمار وجدية، وده اللي بيبني الثقة عند العميل، خصوصاً في الخدمات الغالية أو التعاملات بين الشركات.</p>

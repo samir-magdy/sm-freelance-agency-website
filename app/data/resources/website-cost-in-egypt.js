@@ -1,14 +1,14 @@
 const resource = {
-  slug: "how-much-does-a-website-cost-in-egypt",
+  slug: "website-cost-in-egypt",
   datePublished: "2026-03-18",
   dateModified: "2026-05-17",
   title: {
     en: "How Much Does a Website Cost in Egypt? An Honest Breakdown.",
-    ar: "تكلفة تصميم موقع إلكتروني في مصر: دليل شامل وواضح",
+    ar: "كم تكلفة تصميم موقع إلكتروني في مصر؟ دليل شامل وواضح",
   },
   metaTitle: {
-    en: "How Much Does a Website Cost in Egypt?",
-    ar: "تكلفة تصميم موقع إلكتروني في مصر",
+    en: "How Much Does a Website Cost in Egypt? (2026)",
+    ar: "أسعار تصميم المواقع في مصر لعام 2026",
   },
   excerpt: {
     en: "Website pricing in Egypt varies widely, and the variation is never random. This guide explains exactly what drives costs, what price ranges to expect for each project type, and how to avoid overpaying or underpaying for web design & development services.",

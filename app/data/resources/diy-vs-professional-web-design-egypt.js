@@ -3,12 +3,12 @@ const resource = {
   datePublished: "2026-03-25",
   dateModified: "2026-05-17",
   title: {
-    en: "DIY vs. Professional Web Design in Egypt: Which Is Right for Your Business?",
-    ar: "شركة تصميم مواقع احترافية أم بنفسك؟ أيهما الأفضل لشركتك في مصر؟",
+    en: "Professional Web Design vs DIY: Which Is Right for Your Business?",
+    ar: "تصميم موقعك بنفسك أم الاستعانة بمحترف؟ أيهما أفضل لعملك؟",
   },
   metaTitle: {
-    en: "DIY vs. Professional Web Design in Egypt",
-    ar: "بناء موقع بنفسك أم شركة تصميم مواقع؟",
+    en: "Should You Build Your Own Website or Hire a Pro?",
+    ar: "إنشاء موقع إلكتروني بنفسك أم الاستعانة بمحترف؟",
   },
   excerpt: {
     en: "There are many tools today that allow a non-technical person to make a basic website. Should you build your website yourself or hire a professional web design company? We break down the real costs, risks, and long-term value of DIY builders versus custom professional web design, so you can make the right call for your business.",

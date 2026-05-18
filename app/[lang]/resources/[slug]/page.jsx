@@ -148,19 +148,19 @@ export default function GuidePage({ params }) {
       <RevealSection>
         <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:gap-8">
           {/* Back link */}
-          {/* <Link
+         <Link
             href={`/${lang}/resources`}
-            className="border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2 text-content-muted hover:text-black hover:bg-icon text-[clamp(0.8rem,1.3vw,1.1rem)] font-medium transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+            className="border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.8rem,1.3vw,1.1rem)] font-medium transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
             <ArrowLeft
               className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}
               aria-hidden
             />
             {t.backToResources[lang]}
-          </Link> */}
+          </Link>
           {/* Guide header */}
           <header>
-            <h1 className="text-[clamp(2rem,5vw,2.8rem)] font-bold text-content-heading leading-tight">
+            <h1 className="text-[clamp(1.5rem,5vw,2.8rem)] font-bold text-content-heading leading-tight rtl:leading-loose">
               {guide.title[lang]}
             </h1>
           </header>
@@ -169,8 +169,8 @@ export default function GuidePage({ params }) {
             dir={dir}
             className="
             html-content
-            [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-content-heading/95 [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:leading-snug
-            [&_h3]:text-2xl [&_h3]:font-semibold [&_h3]:text-content-heading [&_h3]:mt-8 [&_h3]:mb-4 [&_h3]:leading-snug
+            [&_h2]:text-[clamp(1.25rem,5vw,2.5rem)] [&_h2]:font-bold [&_h2]:text-content-heading/95 [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:leading-snug
+            [&_h3]:text-[clamp(1.15rem,5vw,2.25rem)] [&_h3]:font-semibold [&_h3]:text-content-heading [&_h3]:mt-8 [&_h3]:mb-4 [&_h3]:leading-snug
             [&_p]:text-content-body [&_p]:text-xl [&_p]:leading-relaxed [&_p]:mb-6
             [&_ul]:list-disc [&_ul]:ps-7 [&_ul]:mb-6 [&_ul]:space-y-3
             [&_li]:text-content-body [&_li]:text-xl [&_li]:leading-relaxed

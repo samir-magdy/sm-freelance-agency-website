@@ -24,8 +24,8 @@ const PHONE_NUMBER = "+201274613331";
 const TWITTER_HANDLE = "@SMWebDesignCo";
 
 const META_DESCRIPTION = {
-  en: "Professional website & Shopify development in Egypt. Discover how we can help you grow.",
-  ar: "تصميم مواقع احترافية ومتاجر إلكترونية في مصر. اكتشف كيف يمكننا مساعدتك في تحقيق التميز أونلاين.",
+  en: "Professional website & Shopify development in Egypt. Discover how we can help your business grow.",
+  ar: "تصميم مواقع احترافية ومتاجر شوبيفاي في مصر. اكتشف كيف يمكننا مساعدتك في تنمية حضورك الرقمي.",
 };
 
 const SOCIAL_LINKS = {
@@ -39,7 +39,7 @@ const SOCIAL_LINKS = {
 
 const meta = {
   en: {
-    title: `Professional Websites in Egypt | ${SITE_NAME}`,
+    title: `Get a Website for Your Business in Egypt | ${SITE_NAME}`,
     description: META_DESCRIPTION.en,
     ogLocale: "en_US",
     altLocale: "ar_EG",
@@ -48,7 +48,7 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: `انشاء موقع الكتروني في مصر | ${SITE_NAME}`,
+    title: `خدمات تصميم وإنشاء مواقع إلكترونية في مصر | ${SITE_NAME}`,
     description: META_DESCRIPTION.ar,
     ogLocale: "ar_EG",
     altLocale: "en_US",
@@ -208,10 +208,7 @@ function buildStructuredData(lang) {
         priceCurrency: "EGP",
       })),
     },
-    sameAs: [
-      SOCIAL_LINKS.instagram,
-      SOCIAL_LINKS.facebook,
-    ],
+    sameAs: [SOCIAL_LINKS.instagram, SOCIAL_LINKS.facebook],
     founder: { "@id": `${SITE_URL}/#founder` },
     knowsLanguage: ["en", "ar"],
   };
@@ -261,7 +258,10 @@ function buildStructuredData(lang) {
       name: item.question[lang],
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.answer[lang].replace(/href=(['"])\//g, `href=$1${SITE_URL}/`),
+        text: item.answer[lang].replace(
+          /href=(['"])\//g,
+          `href=$1${SITE_URL}/`,
+        ),
       },
     })),
   };
