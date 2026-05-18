@@ -1,5 +1,4 @@
 import translations from "@/app/data/translations";
-import { RevealSection } from "../ui/RevealSection";
 
 export default function FAQSection({ lang }) {
   const t = translations.faqSection;
@@ -7,7 +6,7 @@ export default function FAQSection({ lang }) {
 
   return (
     <section id="FAQs" aria-labelledby="FAQs-heading" className="px-4" dir={dir}>
-      <RevealSection>
+      <div className="reveal">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         <div className="mb-6 md:mb-12 text-center">
           <h2
@@ -39,7 +38,7 @@ export default function FAQSection({ lang }) {
                   <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-3 rounded-full bg-icon [details[open]_&]:h-0 [details[open]_&]:opacity-0" />
                 </div>
 
-                <span className="text-content-body font-normal tracking-wide text-[1.1rem] sm:text-subheading">
+                <span className="text-content-body font-normal tracking-wide text-base sm:text-subheading">
                   {item.question[lang]}
                 </span>
               </summary>
@@ -54,7 +53,7 @@ export default function FAQSection({ lang }) {
           ))}
           </div>
       </div>
-      </RevealSection>
+      </div>
     </section>
   );
 }

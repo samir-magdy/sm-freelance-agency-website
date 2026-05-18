@@ -43,9 +43,9 @@ export default function HeroSection({ lang }) {
         className="relative z-10 flex flex-col items-center w-full justify-center pt-12 md:pt-20"
       >
 
-        <h1 dir="ltr" className="hero-fade hero-fade-eyebrow mb-7 sm:mb-6 rtl:sm:mb-12 flex items-center justify-center gap-4">
+        <h1 dir="ltr" className="hero-fade hero-fade-eyebrow mb-7 sm:mb-6 rtl:sm:mb-12 flex items-center justify-center gap-2.5 sm:gap-4">
           <span className="eyebrow-rule-left" aria-hidden="true"/>
-          <span className="text-[0.7rem] rtl:text-sm sm:rtl:text-xl sm:text-[1rem] uppercase tracking-[0.18em] font-semibold text-content-body whitespace-nowrap">
+          <span className="text-[clamp(0.6rem,1vw,3rem)] sm:text-base uppercase tracking-[0.18em] font-semibold text-content-body whitespace-nowrap">
             {hero.eyebrow[lang]}
           </span>
           <span className="eyebrow-rule-right" aria-hidden="true"/>
@@ -53,7 +53,7 @@ export default function HeroSection({ lang }) {
 
         <h2
           id="hero-hook"
-          className="font-bold sm:rtl:py-6 text-center text-content-heading px-4 block text-[clamp(2.8rem,4vw,5rem)] leading-relaxed rtl:leading-18"
+          className="font-bold sm:rtl:py-6 text-center text-content-heading px-4 block text-[clamp(2.2rem,10vw,4.2rem)] sm:text-[clamp(2.2rem,3.5vw,4.2rem)] leading-relaxed rtl:leading-18"
         >
           <span
             className="hero-fade hero-fade-hook block"
@@ -61,32 +61,17 @@ export default function HeroSection({ lang }) {
           />
         </h2>
 
-        <p className="mt-6 sm:mt-4 rtl:sm:mt-6 mb-8 hero-fade hero-fade-nav text-content-body text-[clamp(1.2rem,2vw,2rem)] rtl:text-[clamp(1.1rem,1.8vw,2rem)] rtl:leading-loose text-center px-10 sm:px-16">
+        <p className="mt-6 sm:mt-4 rtl:sm:mt-6 mb-8 hero-fade hero-fade-nav text-content-body text-[clamp(1rem,4.5vw,2rem)] rtl:text-[clamp(1.1rem,1.8vw,2rem)] rtl:leading-loose text-center px-10 sm:px-16">
           {hero.subheading[lang]}
         </p>
 
-        <div className="flex flex-col items-center justify-center gap-4">
+        <div className="flex flex-col items-center gap-4">
           <a
             href="#contact"
-            className="cta-primary inline-flex items-center gap-2 md:gap-4 hero-cta-entrance font-semibold text-center bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.2rem,1.8vw,1.6rem)] rtl:text-[clamp(1.2rem,1.8vw,1.6rem)] px-7 md:px-9 py-3 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+            className="cta-primary hero-cta-entrance font-semibold sm:font-normal bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.2rem,3vw,1.8rem)] rtl:text-[clamp(1.2rem,1.8vw,1.6rem)] px-8 py-3 rounded-xl"
           >
             {hero.primaryCta[lang]}
-              {/* <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              className={`mt-0.5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`}
-              aria-hidden="true"
-            >
-              <path
-                d="M3.333 8h9.334M8.667 4l4 4-4 4"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg> */}
+             
           </a>
 
           <a

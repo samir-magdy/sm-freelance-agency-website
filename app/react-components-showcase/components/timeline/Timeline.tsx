@@ -167,7 +167,7 @@ export function Timeline({ data, variant = "bullet", accentColor = "white", mark
                           <Icon size={40} className="transition-colors duration-500 sm:pe-0 pe-1.5" style={{ color: active ? activeMarkerColor : "rgba(255,255,255,0.35)" }} />
                         ) : (
                           <span
-                            className="font-bold border rounded-full p-4 transition-colors duration-500 sm:pe-0 pe-1.5 text-3xl"
+                            className="font-bold border rounded-full p-4 transition-colors duration-500 sm:pe-0 pe-1.5 text-heading"
                             style={{ color: active ? activeMarkerColor : "rgba(255,255,255,0.35)" }}
                           >
                             {index + 1}
@@ -181,17 +181,17 @@ export function Timeline({ data, variant = "bullet", accentColor = "white", mark
                       />
                     )}
                   </div>
-                  <h3 className={`hidden md:block text-4xl font-bold text-zinc-200 ${large ? "md:ps-20" : "md:ps-18"}`}>
+                  <h3 className={`hidden md:block text-heading font-bold text-zinc-200 ${large ? "md:ps-20" : "md:ps-18"}`}>
                     {item.title}
                   </h3>
                 </div>
 
                 <div className={`relative md:ps-0 w-full flex flex-col md:block pt-1.5 md:pt-0 ${large ? "ps-16" : "ps-14"}`}>
-                  <h3 className={`md:hidden text-3xl block text-start font-semibold text-zinc-200 ${displayedVariant === "icon" ? "pt-4" : "" }`}>
+                  <h3 className={`md:hidden text-heading block text-start font-semibold text-zinc-200 ${displayedVariant === "icon" ? "pt-4" : "" }`}>
                     {item.title}
                   </h3>
                   <div className="flex-1 flex items-center md:block md:max-w-[90%]" style={fadeStyle}>
-                      <p className="text-zinc-300/90 text-xl md:text-2xl leading-relaxed">{item.content}</p>
+                      <p className="text-zinc-300/90 text-subheading leading-relaxed">{item.content}</p>
                   </div>
                 </div>
               </li>

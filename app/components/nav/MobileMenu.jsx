@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import LanguageToggle from "./LanguageToggle";
+import LanguageToggle from "../ui/LanguageToggle";
 
 import translations from "@/app/data/translations";
 
@@ -136,7 +136,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               <a
                 href={isHome ? `#${item}` : `/${lang}/#${item}`}
                 onClick={(e) => handleNavClick(e, item)}
-                className="font-semibold text-content-body text-[1.8rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+                className="font-semibold text-content-body text-heading tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
               >
                 {nav[item]}
               </a>
@@ -146,7 +146,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             <Link
               href={`/${lang}/resources`}
               onClick={pathname === `/${lang}/resources` ? closeMenu : null}
-              className="font-semibold text-content-body text-[1.8rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+              className="font-semibold text-content-body text-heading tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
             >
               {nav["resources"]}
             </Link>
@@ -155,12 +155,12 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             <a
               href={isHome ? `#${contactItem}` : `/${lang}/#${contactItem}`}
               onClick={(e) => handleNavClick(e, contactItem)}
-              className="font-semibold text-content-body text-[1.8rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+              className="font-semibold text-content-body text-heading tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav[contactItem]}
             </a>
           </li>
-          <li onClick={(e) => e.stopPropagation()} className="pt-4 [&_svg]:block [&_a]:text-[1.2rem]">
+          <li onClick={(e) => e.stopPropagation()} className="pt-4 [&_svg]:block [&_a]:text-subheading">
             <LanguageToggle lang={lang} label={langToggleLabel} />
           </li>
         </ul>

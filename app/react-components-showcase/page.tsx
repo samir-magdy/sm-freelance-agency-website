@@ -20,7 +20,7 @@ const TECH_STACK = ["React", "Next.js", "TypeScript", "TailwindCSS"];
 
 function TechBadge({ label }: { label: string }) {
   return (
-    <span className="inline-flex items-center px-3 md:px-8 py-2 md:py-3 rounded-md text-xs md:text-base font-medium bg-white/[0.04] border border-white/[0.08] text-zinc-400 tracking-wide">
+    <span className="inline-flex items-center px-3 md:px-8 py-2 md:py-3 rounded-md text-caption md:text-base font-medium bg-white/[0.04] border border-white/[0.08] text-zinc-400 tracking-wide">
       {label}
     </span>
   );
@@ -29,8 +29,8 @@ function TechBadge({ label }: { label: string }) {
 function UsageBlock({ code }: { code: string }) {
   return (
     <div className="mt-12 md:mt-16 max-w-3xl mx-auto">
-      <p className="mb-4 sm:text-xl text-zinc-400 font-semibold">Usage:</p>
-      <pre className="text-left rounded-xl bg-white/[0.03] border border-white/[0.08] px-5 py-4 text-xs sm:text-base text-zinc-400 font-mono overflow-x-auto leading-relaxed">
+      <p className="mb-4 sm:text-subheading text-zinc-400 font-semibold">Usage:</p>
+      <pre className="text-left rounded-xl bg-white/[0.03] border border-white/[0.08] px-5 py-4 text-caption sm:text-base text-zinc-400 font-mono overflow-x-auto leading-relaxed">
         <code>{code}</code>
       </pre>
     </div>
@@ -56,10 +56,10 @@ function ComponentSection({
       className="border-t border-white/[0.06] py-12 sm:py-20 px-5 scroll-mt-12!"
     >
       <div className="text-center max-w-2xl mx-auto mb-12">
-        <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight mb-4">
+        <h2 className="text-heading font-bold text-white tracking-tight mb-4">
           {title}
         </h2>
-        <p className="text-zinc-400 sm:text-2xl mb-8">{tagline}</p>
+        <p className="text-zinc-400 sm:text-subheading mb-8">{tagline}</p>
       </div>
       <div className="w-full flex justify-center">{children}</div>
       <UsageBlock code={usage} />
@@ -100,12 +100,12 @@ export default function Home() {
       {/* Hero */}
       <section id="home" className="pt-12 pb-14 md:pt-16 md:pb-20 px-2 text-center">
         <div className="max-w-2xl mx-auto px-6">
-          <h1 className="text-[2.4rem] sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1]">
+          <h1 className="text-heading font-bold text-white tracking-tight leading-[1.1]">
             Production-ready
             <br />
             React components.
           </h1>
-          <p className="text-zinc-400 mt-6 text-[1.1rem] sm:text-[1.4rem] leading-relaxed max-w-xl mx-auto mb-8">
+          <p className="text-zinc-400 mt-6 text-base sm:text-subheading leading-relaxed max-w-xl mx-auto mb-8">
             Save hours building complex layouts with production-ready,
             interactive UI blocks. Fully responsive & customizable. Zero extra
             dependencies. Drop the file in, import the component, add your data.
@@ -151,7 +151,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="flex flex-col gap-4 border-t border-white/[0.06] py-6 sm:py-8 px-6 text-center">
-        <p className="text-zinc-500 text-xs sm:text-base font-mono">
+        <p className="text-zinc-500 text-caption sm:text-base font-mono">
           Built with React · Next.js · TailwindCSS
         </p>
         <small className="text-zinc-600 text-xs sm:text-base font-mono">

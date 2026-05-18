@@ -96,7 +96,7 @@ function StatusBar() {
     <div
       aria-hidden
       className="flex justify-between items-center h-full ps-4 sm:ps-6 pe-2 sm:px-5
-                 text-[11px] sm:text-xs font-semibold tracking-[0.3px] text-white"
+                 text-caption font-semibold tracking-[0.3px] text-white"
       style={{ fontFamily: "-apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif" }}
     >
       {/* 9:41 is the classic Apple demo time */}

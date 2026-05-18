@@ -1,8 +1,8 @@
 import { Cairo } from "next/font/google";
 import "../globals.css";
-import HeroNav from "../components/ui/HeroNav";
+import HeroNav from "../components/nav/HeroNav";
 import translations from "../data/translations";
-import Footer from "../components/ui/Footer";
+import Footer from "../components/sections/Footer";
 import { SITE_URL } from "../data/translations/lang";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";

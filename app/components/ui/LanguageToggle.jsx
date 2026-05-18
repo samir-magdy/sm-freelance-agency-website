@@ -14,7 +14,7 @@ export default function LanguageToggle({ lang, label }) {
       id="language-toggler"
       href={nextPath}
       aria-label={`Switch to ${lang === "ar" ? "English" : "Arabic"}`}
-      className="flex items-center px-2 md:p-0 gap-1.5 text-base md:text-[1.2rem] font-bold font-cairo text-content-muted hover:text-content-heading text-center"
+      className="flex items-center px-2 md:p-0 gap-1.5 text-base md:text-subheading font-bold font-cairo text-content-muted hover:text-content-heading text-center"
     >
       <svg
         className="order-1 hidden sm:block w-5.5 h-5.5"

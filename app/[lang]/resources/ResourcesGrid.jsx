@@ -8,19 +8,19 @@ export default function ResourcesGrid({ resources, lang, t }) {
           key={guide.slug}
           className="flex flex-col justify-between gap-4 p-5.5 rounded-2xl border-2 border-border-subtle bg-surface-card/50 hover:border-border-strong transition-colors duration-200"
         >
-          <h2 className="text-content-heading font-bold text-xl md:text-2xl leading-snug rtl:leading-loose">
+          <h2 className="text-content-heading font-bold text-subheading leading-snug rtl:leading-loose">
             {guide.title[lang]}
           </h2>
 
           <div className="flex items-center sm:pb-2">
-            <p className="text-content-muted text-lg leading-relaxed rtl:md:py-2 rtl:leading-loose">
+            <p className="text-content-muted text-base leading-relaxed rtl:md:py-2 rtl:leading-loose">
               {guide.excerpt[lang]}
             </p>
           </div>
 
           <Link
             href={`/${lang}/resources/${guide.slug}`}
-            className="relative overflow-hidden inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-lg font-semibold tracking-wide transition-all duration-200"
+            className="relative overflow-hidden inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-base font-semibold tracking-wide transition-all duration-200"
           >
             {t.readMore[lang]}
           </Link>
@@ -44,11 +44,11 @@ export default function ResourcesGrid({ resources, lang, t }) {
 
         {/* Text Content */}
         <div className="space-y-2 relative z-10">
-          <h3 className="text-content-heading font-bold text-4xl tracking-tight mb-4">
+          <h3 className="text-content-heading font-bold text-heading tracking-tight mb-4">
             {lang === "ar" ? "ترقب المزيد" : "Stay Tuned"}
           </h3>
           <p
-            className={`text-content-muted text-xl sm:text-2xl max-w-[300px] mx-auto leading-relaxed ${lang === "ar" ? "font-arabic" : ""}`}
+            className={`text-content-muted text-subheading max-w-[300px] mx-auto leading-relaxed ${lang === "ar" ? "font-arabic" : ""}`}
             dir={lang === "ar" ? "rtl" : "ltr"}
           >
             {lang === "ar"

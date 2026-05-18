@@ -6,7 +6,6 @@ import { ArrowLeft } from "lucide-react";
 import { SITE_URL } from "@/app/data/translations/lang";
 import resources from "@/app/data/resources";
 import resourcesTranslations from "@/app/data/translations/resources";
-import { RevealSection } from "../../../components/ui/RevealSection";
 
 export function generateStaticParams() {
   return resources.flatMap((r) => [
@@ -145,8 +144,7 @@ export default function GuidePage({ params }) {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <RevealSection>
-        <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:gap-8">
+      <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:gap-8">
           {/* Back link */}
          <Link
             href={`/${lang}/resources`}
@@ -171,9 +169,9 @@ export default function GuidePage({ params }) {
             html-content
             [&_h2]:text-[clamp(1.25rem,5vw,2.5rem)] [&_h2]:font-bold [&_h2]:text-content-heading/95 [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:leading-snug
             [&_h3]:text-[clamp(1.15rem,5vw,2.25rem)] [&_h3]:font-semibold [&_h3]:text-content-heading [&_h3]:mt-8 [&_h3]:mb-4 [&_h3]:leading-snug
-            [&_p]:text-content-body [&_p]:text-xl [&_p]:leading-relaxed [&_p]:mb-6
+            [&_p]:text-content-body [&_p]:text-subheading [&_p]:leading-relaxed [&_p]:mb-6
             [&_ul]:list-disc [&_ul]:ps-7 [&_ul]:mb-6 [&_ul]:space-y-3
-            [&_li]:text-content-body [&_li]:text-xl [&_li]:leading-relaxed
+            [&_li]:text-content-body [&_li]:text-subheading [&_li]:leading-relaxed
             [&_strong]:text-content-heading [&_strong]:font-semibold [&[dir=rtl]_*]:leading-loose
           "
             dangerouslySetInnerHTML={{ __html: guide.content[lang] }}
@@ -254,7 +252,6 @@ export default function GuidePage({ params }) {
             {t.backToResources[lang]}
           </Link>
         </div>
-      </RevealSection>
     </div>
   );
 }

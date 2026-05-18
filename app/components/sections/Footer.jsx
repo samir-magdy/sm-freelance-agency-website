@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import SocialIcons from "./SocialIcons";
+import SocialIcons from "../ui/SocialIcons";
 import { Copyright } from "lucide-react";
 import Link from "next/link";
 
@@ -44,25 +44,25 @@ export default function Footer() {
                 d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
               />
             </svg>
-            <span className="text-lg pb-0.5">studio@samirmagdy.com</span>
+            <span className="text-base pb-0.5">studio@samirmagdy.com</span>
           </a>
         </div>
 
         <div className="flex divide-x divide-content-muted/40 mx-auto">
-          <small className="flex px-1.5 sm:pr-3 items-center text-xs sm:text-sm text-content-muted/80 divide-x divide-content-muted/40">
+          <small className="flex px-1.5 sm:pr-3 items-center text-caption text-content-muted/80 divide-x divide-content-muted/40">
             <Copyright size={12} />
             &nbsp;{new Date().getFullYear()} SM Web Studio
           </small>
           {/* Legal Links */}
           <nav
-            className="flex items-center text-xs sm:text-sm divide-x divide-content-muted/40"
+            className="flex items-center text-caption divide-x divide-content-muted/40"
             aria-label="Legal"
           >
             {footerLinks.map((link) => (
               <Link
                 key={link.href}
                 href={`/${lang}${link.href}`}
-                className="px-1.5 sm:px-3  text-xs sm:text-sm  text-content-muted/80 hover:text-content-heading transition-colors underline-offset-2 hover:underline"
+                className="px-1.5 sm:px-3  text-caption  text-content-muted/80 hover:text-content-heading transition-colors underline-offset-2 hover:underline"
               >
                 {link[lang] || link.en}
               </Link>

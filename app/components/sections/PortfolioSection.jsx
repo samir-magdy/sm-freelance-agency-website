@@ -2,12 +2,27 @@
 
 import { useState, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { projects } from "@/app/data/projects";
 import translations from "@/app/data/translations";
-import { HomeIndicator } from "@/app/components/ui/iphone/HomeIndicator";
-import { NavArrow } from "@/app/components/ui/navigation/NavArrow";
-import { RevealSection } from "@/app/components/ui/RevealSection";
+
+function NavArrow({ direction, disabled, onClick }) {
+  const Icon = direction === "prev" ? ArrowLeft : ArrowRight;
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      aria-label={direction === "prev" ? "Previous project" : "Next project"}
+      className={`hidden group sm:flex items-center justify-center w-11 h-11 rounded-full shrink-0 p-0 transition-all duration-300 ease-out border ${
+        disabled
+          ? "bg-transparent border-white/[0.06] text-content-muted/40 cursor-default"
+          : "bg-white/[0.1] border-white/[0.12] text-content-heading cursor-pointer hover:border-white/30"
+      }`}
+    >
+      <Icon size={18} strokeWidth={2.5} className="transition-transform duration-100 ease-out" />
+    </button>
+  );
+}
 
 /* ─────────────────────────────────────
    Phone chrome sub-components
@@ -48,7 +63,7 @@ function StatusBar() {
       dir="ltr"
       aria-hidden
       className="flex justify-between items-center h-full ps-4 sm:ps-6 pe-2 sm:px-5
-                 text-[11px] sm:text-xs font-semibold tracking-[0.3px] text-white"
+                 text-caption font-semibold tracking-[0.3px] text-white"
       style={{ fontFamily: "-apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif" }}
     >
       <span className="inline-block mt-0.5">9:41</span>
@@ -172,10 +187,10 @@ export default function PortfolioShowcase({ lang }) {
   return (
     <section
       id="portfolio"
-      className="flex flex-col items-center justify-start min-h-svh py-2 relative overflow-hidden select-none px-5"
+      className="flex flex-col items-center justify-start min-h-svh py-2 relative overflow-clip select-none px-5"
       aria-labelledby="portfolio-heading"
     >
-      <RevealSection className="flex flex-col items-center w-full">
+      <div className="reveal">
         {/* ── Section heading ── */}
         <div className="text-center relative z-2 px-5 mb-4 md:mb-12">
           <h2 id="portfolio-heading" className="font-bold text-heading mb-2 rtl:mb-3">
@@ -215,7 +230,7 @@ export default function PortfolioShowcase({ lang }) {
                 {pd.title[lang]}
               </h3>
 
-              <p className="portfolio-info-enter text-content-body text-[1.4rem] leading-relaxed hidden lg:block mb-4">
+              <p className="portfolio-info-enter text-content-body text-[clamp(1rem,2.5vw,1.3rem)] leading-relaxed hidden lg:block mb-4">
                 {pd.description[lang]}
               </p>
 
@@ -225,7 +240,7 @@ export default function PortfolioShowcase({ lang }) {
                 onClick={handleDemoClick}
                 target="_blank"
                 rel="noopener"
-                className="cta-primary relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-xl font-normal sm:font-medium tracking-wide transition-all duration-200 hidden lg:inline-flex"
+                className="cta-primary relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-subheading font-normal sm:font-medium tracking-wide transition-all duration-200 hidden lg:inline-flex"
                 aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
               >
                 {pd.cta[lang]}
@@ -240,7 +255,7 @@ export default function PortfolioShowcase({ lang }) {
             <h3
               aria-hidden="true"
               key={`genre-${project.id}`}
-              className="lg:hidden inline-flex items-center px-4 py-1.5 rounded-full text-[0.9rem] font-semibold uppercase tracking-[0.12em] border border-border-subtle text-content-body bg-surface-card"
+              className="lg:hidden inline-flex items-center px-4 py-1.5 rounded-full text-caption font-semibold uppercase tracking-[0.12em] border border-border-subtle text-content-body bg-surface-card"
             >
               {isRtl ? project.genreAr : project.genre}
             </h3>
@@ -253,7 +268,7 @@ export default function PortfolioShowcase({ lang }) {
               />
 
               {/* Phone outer shell */}
-              <div className="phone-outer w-[60vw] h-[61svh] sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-146 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
+              <div className="phone-outer w-[60vw] h-[61svh] sm:w-[16.4vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
                 {/* Left volume buttons */}
                 <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
                 <div className="absolute -left-[2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -291,7 +306,6 @@ export default function PortfolioShowcase({ lang }) {
                   </div>
 
                   <div className="absolute bottom-0 inset-x-0 h-10 bg-[linear-gradient(transparent,rgba(0,0,0,0.5))] pointer-events-none z-10" />
-                  <HomeIndicator />
                 </div>
               </div>
 
@@ -331,7 +345,7 @@ export default function PortfolioShowcase({ lang }) {
               onClick={handleDemoClick}
               target="_blank"
               rel="noopener"
-              className="cta-primary relative overflow-hidden inline-flex items-center gap-2 py-3 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-sm font-semibold tracking-wide lg:hidden"
+              className="cta-primary relative overflow-hidden inline-flex items-center gap-2 py-3 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-caption font-semibold tracking-wide lg:hidden"
               aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
             >
               {pd.cta[lang]}
@@ -339,7 +353,7 @@ export default function PortfolioShowcase({ lang }) {
             </a>
           </div>
         </div>
-      </RevealSection>
+      </div>
     </section>
   );
 }

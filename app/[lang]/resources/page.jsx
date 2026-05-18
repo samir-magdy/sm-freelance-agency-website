@@ -3,7 +3,6 @@ import { SITE_URL } from "@/app/data/translations/lang";
 import resources from "@/app/data/resources";
 import resourcesTranslations from "@/app/data/translations/resources";
 import ResourcesGrid from "./ResourcesGrid";
-import { RevealSection } from "../../components/ui/RevealSection";
 import Script from "next/script";
 
 export function generateStaticParams() {
@@ -115,8 +114,7 @@ export default function ResourcesPage({ params }) {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <RevealSection>
-        <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:gap-8">
+      <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:gap-8">
           {/* Hero */}
           <header className="text-center flex flex-col">
             <h1 className="text-heading font-bold text-content-heading mb-2 rtl:mb-3">
@@ -130,7 +128,6 @@ export default function ResourcesPage({ params }) {
           {/* Grid with category filter (client component) */}
           <ResourcesGrid resources={resources} lang={lang} t={t} />
         </div>
-      </RevealSection>
     </div>
   );
 }
