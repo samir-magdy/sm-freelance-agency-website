@@ -561,7 +561,7 @@ html.hero-played .hero-fade-secondary-cta {
     animation: reveal-in ease-out both;
     animation-duration: auto;
     animation-timeline: view();
-    animation-range: entry 0% cover 60%;
+    animation-range: entry 0% cover 50%;
   }
 
   .reveal-element {
