@@ -27,7 +27,7 @@ export default function ResourcesGrid({ resources, lang, t }) {
         </article>
       ))}
       <div
-        className="relative group flex flex-col items-center justify-center gap-4 p-8 rounded-2xl bg-surface-card/20 transition-all duration-500 hover:bg-surface-card/40 min-h-[350px] text-center overflow-hidden"
+        className="relative group flex flex-col items-center justify-center gap-4 p-8 rounded-2xl bg-surface-card/20 transition-all duration-50 min-h-[350px] text-center overflow-hidden"
       >
         <svg className="absolute inset-0 w-full h-full pointer-events-none" fill="none" aria-hidden="true">
           <rect
@@ -35,7 +35,7 @@ export default function ResourcesGrid({ resources, lang, t }) {
             width="calc(100% - 2px)"
             height="calc(100% - 2px)"
             rx="16"
-            stroke="oklch(55% 0.0847 92.2 / 0.7)"
+            stroke="gray"
             strokeWidth="3"
             strokeDasharray="8 6"
             style={{ animation: "dash-march 2s linear infinite" }}
@@ -59,9 +59,9 @@ export default function ResourcesGrid({ resources, lang, t }) {
 
         {/* Permanent Animated Progress Indicator */}
         <div className="flex gap-2 mt-2">
-          <span className="w-3 h-3 rounded-full bg-gold/80 animate-pulse [animation-delay:-0.3s]"></span>
-          <span className="w-3 h-3 rounded-full bg-gold/80 animate-pulse [animation-delay:-0.15s]"></span>
-          <span className="w-3 h-3 rounded-full bg-gold/80 animate-pulse"></span>
+          <span className="w-3 h-3 rounded-full bg-gold-light/80 animate-pulse [animation-delay:-0.3s]"></span>
+          <span className="w-3 h-3 rounded-full bg-gold-light/80 animate-pulse [animation-delay:-0.20s]"></span>
+          <span className="w-3 h-3 rounded-full bg-gold-light/80 animate-pulse"></span>
         </div>
       </div>
     </div>

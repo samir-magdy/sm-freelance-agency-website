@@ -187,12 +187,12 @@ export default function PortfolioShowcase({ lang }) {
   return (
     <section
       id="portfolio"
-      className="flex flex-col items-center justify-start min-h-svh py-2 relative overflow-clip select-none px-5"
+      className="flex flex-col items-center justify-start min-h-svh py-4 relative overflow-clip select-none px-5"
       aria-labelledby="portfolio-heading"
     >
       <div className="reveal">
         {/* ── Section heading ── */}
-        <div className="text-center relative z-2 px-5 mb-4 md:mb-12">
+        <div className="text-center relative z-2 px-5 mb-2 md:mb-12">
           <h2 id="portfolio-heading" className="font-bold text-heading mb-2 rtl:mb-3">
             {t.heading[lang]}
           </h2>
@@ -255,7 +255,7 @@ export default function PortfolioShowcase({ lang }) {
             <h3
               aria-hidden="true"
               key={`genre-${project.id}`}
-              className="lg:hidden inline-flex items-center px-4 py-1.5 rounded-full text-caption font-semibold uppercase tracking-[0.12em] border border-border-subtle text-content-body bg-surface-card"
+              className="lg:hidden inline-flex items-center px-4 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-[0.1em] border border-border-subtle text-content-heading bg-surface-card"
             >
               {isRtl ? project.genreAr : project.genre}
             </h3>

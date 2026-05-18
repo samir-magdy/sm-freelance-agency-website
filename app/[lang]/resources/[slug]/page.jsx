@@ -135,7 +135,7 @@ export default function GuidePage({ params }) {
   return (
     <div
       dir={dir}
-      className="min-h-screen bg-background pt-22 sm:pt-36 pb-14 sm:pb-20 px-5 overflow-x-hidden"
+      className="min-h-screen bg-background pt-22 sm:pt-28 pb-14 sm:pb-20 px-5 overflow-x-hidden"
     >
       <Script
         id="resources-seo"
@@ -148,7 +148,7 @@ export default function GuidePage({ params }) {
           {/* Back link */}
          <Link
             href={`/${lang}/resources`}
-            className="border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.8rem,1.3vw,1.1rem)] font-medium transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+            className="hover:bg-white/80 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.8rem,1.3vw,1.1rem)] font-medium transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
             <ArrowLeft
               className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}
@@ -243,7 +243,7 @@ export default function GuidePage({ params }) {
           </Script>
           <Link
             href={`/${lang}/resources`}
-            className="border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.8rem,1.3vw,1.1rem)] font-medium transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+            className="hover:bg-white/80 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.8rem,1.3vw,1.1rem)] font-medium transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
             <ArrowLeft
               className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}

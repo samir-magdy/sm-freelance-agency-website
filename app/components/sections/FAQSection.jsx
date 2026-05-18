@@ -5,10 +5,9 @@ export default function FAQSection({ lang }) {
   const dir = lang === "ar" ? "rtl" : "ltr";
 
   return (
-    <section id="FAQs" aria-labelledby="FAQs-heading" className="px-4" dir={dir}>
-      <div className="reveal">
+    <section id="FAQs" aria-labelledby="FAQs-heading" className="py-4 px-4" dir={dir}>
       <div className="max-w-7xl mx-auto flex flex-col items-center">
-        <div className="mb-6 md:mb-12 text-center">
+        <div className="reveal-element mb-6 md:mb-12 text-center">
           <h2
             id="FAQs-heading"
             className="font-bold text-heading mb-2 rtl:mb-3"
@@ -24,7 +23,7 @@ export default function FAQSection({ lang }) {
             <details
               key={i}
               name="faq"
-              className="border-b border-border-subtle px-2"
+              className="reveal-element border-b border-border-subtle px-2"
             >
               <summary
                 className={`
@@ -52,7 +51,6 @@ export default function FAQSection({ lang }) {
             
           ))}
           </div>
-      </div>
       </div>
     </section>
   );

@@ -153,7 +153,7 @@ section {
 
 .eyebrow-rule-left {
   height: 1px;
-  width: 2.5rem;
+  width: 1.75rem;
   background: linear-gradient(
     to left,
     oklch(73.8% 0.0173 267.3 / 0.55),
@@ -164,7 +164,7 @@ section {
 
 .eyebrow-rule-right {
   height: 1px;
-  width: 2.5rem;
+  width: 1.75rem;
   background: linear-gradient(
     to right,
     oklch(73.8% 0.0173 267.3 / 0.55),
@@ -544,8 +544,8 @@ html.hero-played .hero-fade-secondary-cta {
 @keyframes reveal-in {
   from {
     opacity: 0;
-    filter: blur(12px);
-    scale: 0.50;
+    filter: blur(3px);
+    scale: 0.9;
     translate: 0 2rem;
   }
   to {
@@ -561,7 +561,14 @@ html.hero-played .hero-fade-secondary-cta {
     animation: reveal-in ease-out both;
     animation-duration: auto;
     animation-timeline: view();
-    animation-range: entry 20% entry 60%;
+    animation-range: entry 0% cover 60%;
+  }
+
+  .reveal-element {
+    animation: reveal-in ease-out both;
+    animation-duration: auto;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
   }
 }
 

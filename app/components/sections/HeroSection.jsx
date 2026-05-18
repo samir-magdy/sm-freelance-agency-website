@@ -32,7 +32,7 @@ export default function HeroSection({ lang }) {
   return (
     <section
       id="home"
-      className="h-dvh flex items-center justify-center relative"
+      className="py-4 h-dvh flex items-center justify-center relative"
     >
       {/* Dot grid + radial glow background */}
       <div className="hero-grid" aria-hidden="true" />
@@ -43,9 +43,9 @@ export default function HeroSection({ lang }) {
         className="relative z-10 flex flex-col items-center w-full justify-center pt-12 md:pt-20"
       >
 
-        <h1 dir="ltr" className="hero-fade hero-fade-eyebrow mb-7 sm:mb-6 rtl:sm:mb-12 flex items-center justify-center gap-2.5 sm:gap-4">
+        <h1 dir="ltr" className="hero-fade hero-fade-eyebrow mb-7 sm:mb-6 rtl:sm:mb-12 flex items-center justify-center gap-3 sm:gap-4">
           <span className="eyebrow-rule-left" aria-hidden="true"/>
-          <span className="text-[clamp(0.6rem,1vw,3rem)] sm:text-base uppercase tracking-[0.18em] font-semibold text-content-body whitespace-nowrap">
+          <span className="text-[10px] sm:text-sm uppercase tracking-[0.18em] font-semibold text-content-body whitespace-nowrap">
             {hero.eyebrow[lang]}
           </span>
           <span className="eyebrow-rule-right" aria-hidden="true"/>
