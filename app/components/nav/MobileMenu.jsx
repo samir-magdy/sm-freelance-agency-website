@@ -136,7 +136,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               <a
                 href={isHome ? `#${item}` : `/${lang}/#${item}`}
                 onClick={(e) => handleNavClick(e, item)}
-                className="font-semibold text-content-body text-[1.8rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+                className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
               >
                 {nav[item]}
               </a>
@@ -144,18 +144,18 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           ))}
           <li onClick={(e) => e.stopPropagation()}>
             <Link
-              href={`/${lang}/resources`}
-              onClick={pathname === `/${lang}/resources` ? closeMenu : null}
-              className="font-semibold text-content-body text-[1.8rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+              href={`/${lang}/guides`}
+              onClick={pathname === `/${lang}/guides` ? closeMenu : null}
+              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
             >
-              {nav["resources"]}
+              {nav["guides"]}
             </Link>
           </li>
           <li key={contactItem}>
             <a
               href={isHome ? `#${contactItem}` : `/${lang}/#${contactItem}`}
               onClick={(e) => handleNavClick(e, contactItem)}
-              className="font-semibold text-content-body text-[1.8rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
             >
               {nav[contactItem]}
             </a>

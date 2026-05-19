@@ -49,20 +49,20 @@ export default function Footer() {
         </div>
 
         <div className="flex divide-x divide-content-muted/40 mx-auto">
-          <small className="flex px-1.5 sm:pr-3 items-center text-caption text-content-muted/80 divide-x divide-content-muted/40">
+          <small className="flex px-1.5 sm:pr-3 items-center text-xs sm:text-sm text-content-muted/80 divide-x divide-content-muted/40">
             <Copyright size={12} />
             &nbsp;{new Date().getFullYear()} SM Web Studio
           </small>
           {/* Legal Links */}
           <nav
-            className="flex items-center text-caption divide-x divide-content-muted/40"
+            className="flex items-center divide-x divide-content-muted/40"
             aria-label="Legal"
           >
             {footerLinks.map((link) => (
               <Link
                 key={link.href}
                 href={`/${lang}${link.href}`}
-                className="px-1.5 sm:px-3  text-caption  text-content-muted/80 hover:text-content-heading transition-colors underline-offset-2 hover:underline"
+                className="px-1.5 sm:px-3 text-xs sm:text-sm text-content-muted/80 hover:text-content-heading transition-colors underline-offset-2 hover:underline"
               >
                 {link[lang] || link.en}
               </Link>

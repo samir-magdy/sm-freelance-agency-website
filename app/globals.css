@@ -544,8 +544,8 @@ html.hero-played .hero-fade-secondary-cta {
 @keyframes reveal-in {
   from {
     opacity: 0;
-    filter: blur(3px);
-    scale: 0.9;
+    filter: blur(2px);
+    scale: 0.95;
     translate: 0 2rem;
   }
   to {
@@ -568,7 +568,7 @@ html.hero-played .hero-fade-secondary-cta {
     animation: reveal-in ease-out both;
     animation-duration: auto;
     animation-timeline: view();
-    animation-range: entry 0% cover 30%;
+    animation-range: entry 0% cover 25%;
   }
 }
 

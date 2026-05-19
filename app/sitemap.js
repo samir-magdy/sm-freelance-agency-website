@@ -1,5 +1,5 @@
 import { SITE_URL } from "./data/translations/lang";
-import resources from "./data/resources";
+import guides from "./data/guides";
 import { projects } from "./data/projects";
 
 const langs = ["en", "ar"];
@@ -26,21 +26,21 @@ export default function sitemap() {
     alternates: alternates(homeUrl("en"), homeUrl("ar")),
   }));
 
-  const resourcesListingEntries = langs.map((lang) => ({
-    url: pageUrl(lang, "/resources"),
+  const guidesListingEntries = langs.map((lang) => ({
+    url: pageUrl(lang, "/guides"),
     lastModified: now,
     priority: 0.8,
-    alternates: alternates(pageUrl("en", "/resources"), pageUrl("ar", "/resources")),
+    alternates: alternates(pageUrl("en", "/guides"), pageUrl("ar", "/guides")),
   }));
 
-  const resourceEntries = resources.flatMap((resource) =>
+  const guideEntries = guides.flatMap((resource) =>
     langs.map((lang) => ({
-      url: pageUrl(lang, `/resources/${resource.slug}`),
+      url: pageUrl(lang, `/guides/${resource.slug}`),
       lastModified: now,
       priority: 0.7,
       alternates: alternates(
-        pageUrl("en", `/resources/${resource.slug}`),
-        pageUrl("ar", `/resources/${resource.slug}`)
+        pageUrl("en", `/guides/${resource.slug}`),
+        pageUrl("ar", `/guides/${resource.slug}`)
       ),
     }))
   );
@@ -61,8 +61,8 @@ export default function sitemap() {
 
   return [
     ...homeEntries,
-    ...resourcesListingEntries,
-    ...resourceEntries,
+    ...guidesListingEntries,
+    ...guideEntries,
     ...portfolioEntries,
     premiumComponentsEntry,
   ];

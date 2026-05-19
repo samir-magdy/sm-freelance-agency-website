@@ -45,7 +45,7 @@ export default function HeroSection({ lang }) {
 
         <h1 dir="ltr" className="hero-fade hero-fade-eyebrow mb-7 sm:mb-6 rtl:sm:mb-8 flex items-center justify-center gap-3 sm:gap-4">
           <span className="eyebrow-rule-left" aria-hidden="true"/>
-          <span className="text-[10px] rtl:text-[15px] sm:text-sm uppercase tracking-[0.18em] font-semibold text-content-body whitespace-nowrap">
+          <span className="text-[10px] rtl:text-[15px] sm:text-[0.95rem] rtl:sm:text-[1.2rem] uppercase tracking-[0.18em] font-semibold text-content-body whitespace-nowrap">
             {hero.eyebrow[lang]}
           </span>
           <span className="eyebrow-rule-right" aria-hidden="true"/>
@@ -68,7 +68,7 @@ export default function HeroSection({ lang }) {
         <div className="flex flex-col items-center gap-4">
           <a
             href="#contact"
-            className="cta-primary hero-cta-entrance font-semibold sm:font-normal bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.2rem,3vw,1.8rem)] rtl:text-[clamp(1.2rem,1.8vw,1.6rem)] px-8 py-3 rounded-xl"
+            className="cta-primary pb-4 hero-cta-entrance font-semibold sm:font-normal bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1.2rem,3vw,1.8rem)] rtl:text-[clamp(1.2rem,1.8vw,1.6rem)] px-8 pt-3 rounded-2xl"
           >
             {hero.primaryCta[lang]}
              

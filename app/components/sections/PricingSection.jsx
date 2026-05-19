@@ -37,7 +37,7 @@ export default function PricingCardsSection({ lang }) {
                 onClick={handleScroll}
                 href="#contact"
                 /* Trimmed internal padding slightly for mobile/scaled views */
-                className="reveal-element group flex flex-col p-6 sm:p-8 lg:p-10 rounded-[2rem] border border-border-subtle bg-surface-card hover:border-gold/40 hover:bg-surface-low hover:shadow-2xl hover:shadow-gold/5 transition-all duration-500 ease-out hover:-translate-y-1.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+                className="reveal-element group flex flex-col p-6 sm:p-8 lg:p-10 rounded-[2rem] border border-border-subtle bg-surface-card hover:border-gold/40 hover:bg-surface-low hover:shadow-2xl hover:shadow-gold/5 transition-all duration-500 ease-out hover:-translate-y-1.5"
               >
                 {/* Top Half: Title & Tagline */}
                 {/* Reduced mb-10 to mb-6 to stop vertical bloating */}

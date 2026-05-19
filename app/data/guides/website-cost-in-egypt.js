@@ -33,12 +33,12 @@ const resource = {
 
 <h2>Website Design Pricing: Key Factors That Drive the Cost</h2>
 <ul>
-<li><strong>The Technology Used</strong> — Basic page builder like WordPress, Wix, and others cost less and are faster to get the product finished but often result in a slow website that looks like every other average website on the internet. A custom-coded solution requires more expertise and time, which increases the price but delivers a superior, unique product.</li>
+<li><strong>The Technology Used</strong> — Basic page builder like WordPress, Wix, and others cost less and are faster to get the product finished but often result in a slow website that looks like every other average website on the internet. A custom-coded solution requires more expertise and time, which increases the price but delivers a superior, unique product. For a full comparison of what each approach means for your business beyond cost, read our guide on <a href='/en/guides/diy-vs-professional-web-design-egypt' target='_blank' rel='noopener noreferrer'>DIY vs. professional web design</a>.</li>
 <li><strong>Scope of content</strong> — More pages, more sections, and more content types mean more design and development work.</li>
 <li><strong>Admin panel / <abbr data-tooltip="Content Management System — a built-in control panel that lets you edit your website's text and images yourself without touching any code">CMS</abbr></strong> — If you want to update your own content without contacting a developer every time, a content management system needs to be built and configured. This adds cost but gives you long-term independence.</li>
 <li><strong>Bilingual support</strong> — Arabic/English bilingual websites require additional development work, particularly for <abbr data-tooltip="Right-to-Left — the text direction used in Arabic, which requires specific development work to ensure layouts display correctly">RTL</abbr> layouts and ensuring the design works correctly in both languages.</li>
 <li><strong>Integrations</strong> — Connecting your website to third-party tools, booking systems, <abbr data-tooltip="Customer Relationship Management software — tools that help you track leads, clients, and sales activity, like HubSpot or Zoho">CRMs</abbr>, payment gateways or analytics platforms requires additional development time.</li>
-<li><strong>Performance and SEO</strong> — Basic SEO setup is often included in professional web design packages, but advanced SEO services are usually separate.</li>
+<li><strong>Performance and SEO</strong> — Basic SEO setup is often included in professional web design packages, but advanced SEO services are usually separate. If you want to understand what SEO involves and why it matters for your site's long-term visibility, read our <a href='/en/guides/what-is-seo' target='_blank' rel='noopener noreferrer'>SEO guide for Egyptian businesses</a>.</li>
 </ul>
 
 <h2>Cheap Websites: Why They Often Cost More in the Long Run</h2>
@@ -46,7 +46,7 @@ const resource = {
 <p>The relevant question is not "what is the cheapest website I can get?" but "what is the minimum investment that will generate a positive return for my specific business?" For most businesses with serious growth ambitions, that answer points toward professional design with solid technical foundations.</p>
 
 <h2>SM Web Design Studio: What's Included in Every Website</h2>
-<p>Every website we build includes professional design created specifically for your brand, performance optimization for fast loading, mobile-first development, basic SEO setup, and a revision process that ensures you are happy with the result. We are transparent about pricing before any project starts, so you know exactly what you are getting and what it costs. Our goal is not to sell you the most expensive option, it is to help you understand what level of investment makes sense for your goals and build accordingly. If you'd like a formal quote, you can request one <a href="/en/#contact">here</a>.</p>`,
+<p>Every website we build includes professional design created specifically for your brand, performance optimization for fast loading, mobile-first development, basic SEO setup, and a revision process that ensures you are happy with the result. We are transparent about pricing before any project starts, so you know exactly what you are getting and what it costs. Our goal is not to sell you the most expensive option, it is to help you understand what level of investment makes sense for your goals and build accordingly. If you'd like a formal quote, you can request one <a href="/en/#contact">here</a>. If you are still evaluating your options, our guide on <a href='/en/guides/choose-web-design-company-egypt' target='_blank' rel='noopener noreferrer'>how to choose the right web design company in Egypt</a> covers exactly what to look for before you commit.</p>`,
     ar: `<p>أسعار المواقع الإلكترونية في مصر تعتبر من أكتر الحاجات اللي بتسبب ارتباك لأصحاب الأعمال. ممكن تلاقي عروض بـ ٥٠٠ جنيه وعروض تانية بتوصل لـ ٢٠٠,٠٠٠ جنيه، والاتنين بيتقال عليهم "تصميم مواقع". الفرق الكبير ده مش بالصدفة، وفهم الأسباب اللي بتغير السعر هيساعدك تاخد القرار الصح لشركتك، سواء كنت هتبدأ مشروع دلوقتي أو بتخطط للمستقبل.</p>
 
 <h2>تصميم المواقع: إيه اللي بتدفع تمنه بالظبط؟</h2>
@@ -65,12 +65,12 @@ const resource = {
 
 <h2>تكلفة تصميم الموقع: العوامل الأساسية</h2>
 <ul>
-<li><strong>التكنولوجيا المستخدمة:</strong> استخدام أدوات بناء المواقع البسيطة زي <abbr data-tooltip="أشهر نظام لإدارة المحتوى (CMS) في العالم، بيستخدم لبناء كل أنواع المواقع سواء بقوالب جاهزة أو كود مخصص">WordPress</abbr> أو <abbr data-tooltip="أداة سهلة لبناء المواقع بتعتمد على سحب العناصر (Drag and Drop)، مناسبة للمشاريع البسيطة بس فيها قيود في التحكم الكامل بالكود">Wix</abbr> بيكون أرخص وأسرع، بس غالباً بيطلع موقع بطيء وشبه باقي المواقع الموجودة على الإنترنت. الكود الخاص بيحتاج خبرة ووقت أكبر وده بيزود السعر بس بيطلع منتج فريد وممتاز.</li>
+<li><strong>التكنولوجيا المستخدمة:</strong> استخدام أدوات بناء المواقع البسيطة زي <abbr data-tooltip="أشهر نظام لإدارة المحتوى (CMS) في العالم، بيستخدم لبناء كل أنواع المواقع سواء بقوالب جاهزة أو كود مخصص">WordPress</abbr> أو <abbr data-tooltip="أداة سهلة لبناء المواقع بتعتمد على سحب العناصر (Drag and Drop)، مناسبة للمشاريع البسيطة بس فيها قيود في التحكم الكامل بالكود">Wix</abbr> بيكون أرخص وأسرع، بس غالباً بيطلع موقع بطيء وشبه باقي المواقع الموجودة على الإنترنت. الكود الخاص بيحتاج خبرة ووقت أكبر وده بيزود السعر بس بيطلع منتج فريد وممتاز. للمقارنة الكاملة بين الخيارين وتأثيرهم على شغلك، اقرأ دليلنا عن <a href='/ar/guides/diy-vs-professional-web-design-egypt' target='_blank' rel='noopener noreferrer'>تصميم الموقع بنفسك مقابل التصميم الاحترافي</a>.</li>
 <li><strong>حجم المحتوى:</strong> كل ما زاد عدد الصفحات والأقسام، زاد مجهود التصميم والبرمجة.</li>
 <li><strong>لوحة التحكم (<abbr data-tooltip="Content Management System — لوحة تحكم داخلية بتخليك تعدل محتوى الموقع بنفسك من غير ما تلمس الكود">CMS</abbr>):</strong> لو عايز تعدل شغلك بنفسك من غير ما ترجع للمبرمج، ده بيحتاج بناء لوحة تحكم وبيضيف للتكلفة بس بيديك استقلالية على المدى البعيد.</li>
 <li><strong>اللغات:</strong> المواقع اللي بالعربي والإنجليزي مع بعض بتحتاج مجهود أكبر في البرمجة وتنسيق اتجاهات الـ <abbr data-tooltip="Right-to-Left — اتجاه الكتابة من اليمين للشمال في العربي، وده بيحتاج شغل برمجي خاص لضمان إن التصميم يظهر صح">RTL</abbr>.</li>
 <li><strong>الربط مع خدمات تانية:</strong> زي ربط الموقع بنظام حجز، أو أنظمة الـ <abbr data-tooltip="Customer Relationship Management — برامج بتساعدك تتابع العملاء والمبيعات زي HubSpot أو Zoho">CRMs</abbr>، أو بوابة دفع إلكتروني.</li>
-<li><strong>الأداء والـ SEO:</strong> تجهيز الموقع علشان يظهر في نتائج البحث (جوجل) ويفتح بسرعة.</li>
+<li><strong>الأداء والـ SEO:</strong> تجهيز الموقع علشان يظهر في نتائج البحث (جوجل) ويفتح بسرعة. لو حابب تفهم أكتر إيه هو الـ SEO وليه بيأثر على نجاح موقعك، اقرأ <a href='/ar/guides/what-is-seo' target='_blank' rel='noopener noreferrer'>دليلنا عن أساسيات الـ SEO للمبتدئين</a>.</li>
 </ul>
 
 <h2>الموقع الرخيص: ليه ممكن يكلفك أكتر في الآخر؟</h2>
@@ -78,7 +78,7 @@ const resource = {
 <p>الموقع الرخيص غالباً بيبقى بطيء جداً، وده بيخلي العملاء يقفلوه ومبيظهرش في جوجل. كمان التصميم بيبقى مكرر ومش احترافي، ومبيشتغلش كويس على الموبايل. في الآخر هتضطر تدفع فلوس تانية علشان تصلح المشاكل دي، ده غير الشغل اللي ضاع منك بسبب إن الموقع مكانش شغال صح.</p>
 
 <h2>SM Web Design Studio: إيه اللي بيشمله كل موقع؟</h2>
-<p>كل موقع بنبنيه بيشمل تصميم مخصص لبراندك، وسرعة تحميل عالية، وتوافق تام مع الموبايل، مع تجهيز أساسيات الـ SEO. إحنا واضحين جداً في أسعارنا من قبل ما نبدأ؛ هدفنا مش إننا نبيع لك أغلى حاجة، هدفنا نساعدك تختار الاستثمار اللي هيجيب لك عائد فعلي لشركتك. ولو حابب نبعتلك عرض سعر رسمي، تقدر تطلبه من <a href="/ar/#contact">هنا</a>.</p>`,
+<p>كل موقع بنبنيه بيشمل تصميم مخصص لبراندك، وسرعة تحميل عالية، وتوافق تام مع الموبايل، مع تجهيز أساسيات الـ SEO. إحنا واضحين جداً في أسعارنا من قبل ما نبدأ؛ هدفنا مش إننا نبيع لك أغلى حاجة، هدفنا نساعدك تختار الاستثمار اللي هيجيب لك عائد فعلي لشركتك. ولو حابب نبعتلك عرض سعر رسمي، تقدر تطلبه من <a href="/ar/#contact">هنا</a>. ولو لسه بتقيّم خياراتك، دليلنا عن <a href='/ar/guides/choose-web-design-company-egypt' target='_blank' rel='noopener noreferrer'>إزاي تختار شركة تصميم المواقع الصح</a> هيساعدك تاخد القرار الصح.</p>`,
   },
   metaDescription: {
     en: "An honest breakdown of website costs in Egypt — what drives pricing, what to expect for landing pages, business sites, and online stores, and how to budget wisely.",

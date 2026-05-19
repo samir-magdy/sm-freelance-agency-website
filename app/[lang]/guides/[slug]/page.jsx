@@ -4,11 +4,11 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { SITE_URL } from "@/app/data/translations/lang";
-import resources from "@/app/data/resources";
-import resourcesTranslations from "@/app/data/translations/resources";
+import guides from "@/app/data/guides";
+import guidesTranslations from "@/app/data/translations/guides";
 
 export function generateStaticParams() {
-  return resources.flatMap((r) => [
+  return guides.flatMap((r) => [
     { lang: "en", slug: r.slug },
     { lang: "ar", slug: r.slug },
   ]);
@@ -16,10 +16,10 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { lang, slug } = await params;
-  const guide = resources.find((r) => r.slug === slug);
+  const guide = guides.find((r) => r.slug === slug);
   if (!guide) return {};
 
-  const canonical = `${SITE_URL}/${lang}/resources/${slug}`;
+  const canonical = `${SITE_URL}/${lang}/guides/${slug}`;
 
   return {
     title: (guide.metaTitle ?? guide.title)[lang],
@@ -27,9 +27,9 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical,
       languages: {
-        en: `${SITE_URL}/en/resources/${slug}`,
-        ar: `${SITE_URL}/ar/resources/${slug}`,
-        "x-default": `${SITE_URL}/en/resources/${slug}`,
+        en: `${SITE_URL}/en/guides/${slug}`,
+        ar: `${SITE_URL}/ar/guides/${slug}`,
+        "x-default": `${SITE_URL}/en/guides/${slug}`,
       },
     },
     openGraph: {
@@ -78,16 +78,16 @@ export async function generateMetadata({ params }) {
 
 export default function GuidePage({ params }) {
   const { lang, slug } = use(params);
-  const guide = resources.find((r) => r.slug === slug);
+  const guide = guides.find((r) => r.slug === slug);
   if (!guide) notFound();
 
-  const t = resourcesTranslations;
+  const t = guidesTranslations;
   const dir = lang === "ar" ? "rtl" : "ltr";
 
-  const canonical = `${SITE_URL}/${lang}/resources/${slug}`;
+  const canonical = `${SITE_URL}/${lang}/guides/${slug}`;
 
   const homeUrl = lang === "en" ? `${SITE_URL}/` : `${SITE_URL}/ar`;
-  const resourcesUrl = `${SITE_URL}/${lang}/resources`;
+  const guidesUrl = `${SITE_URL}/${lang}/guides`;
 
   const jsonLd = [
     {
@@ -119,8 +119,8 @@ export default function GuidePage({ params }) {
         {
           "@type": "ListItem",
           position: 2,
-          name: lang === "ar" ? "الموارد" : "Resources",
-          item: resourcesUrl,
+          name: lang === "ar" ? "الأدلة" : "Guides",
+          item: guidesUrl,
         },
         {
           "@type": "ListItem",
@@ -138,7 +138,7 @@ export default function GuidePage({ params }) {
       className="min-h-screen bg-background pt-22 sm:pt-28 pb-14 sm:pb-20 px-5 overflow-x-hidden"
     >
       <Script
-        id="resources-seo"
+        id="guides-seo"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
@@ -147,14 +147,14 @@ export default function GuidePage({ params }) {
       <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:gap-8">
           {/* Back link */}
          <Link
-            href={`/${lang}/resources`}
-            className="hover:bg-white/80 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.8rem,1.3vw,1.1rem)] font-medium transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+            href={`/${lang}/guides`}
+            className="hover:bg-white/90 hover:border-white/90 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.8rem,1.3vw,1.1rem)] font-medium transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
             <ArrowLeft
               className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}
               aria-hidden
             />
-            {t.backToResources[lang]}
+            {t.backToGuides[lang]}
           </Link>
           {/* Guide header */}
           <header>
@@ -242,14 +242,14 @@ export default function GuidePage({ params }) {
   `}
           </Script>
           <Link
-            href={`/${lang}/resources`}
-            className="hover:bg-white/80 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.8rem,1.3vw,1.1rem)] font-medium transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+            href={`/${lang}/guides`}
+            className="hover:bg-white/90 hover:border-white/90 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.8rem,1.3vw,1.1rem)] font-medium transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
           >
             <ArrowLeft
               className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}
               aria-hidden
             />
-            {t.backToResources[lang]}
+            {t.backToGuides[lang]}
           </Link>
         </div>
     </div>

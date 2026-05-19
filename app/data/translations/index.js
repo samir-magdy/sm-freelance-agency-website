@@ -9,7 +9,7 @@ import a11y from "./a11y";
 import langToggle from "./lang-toggle";
 import privacy from "./privacy";
 import terms from "./terms";
-import resourcesTranslations from "./resources";
+import guidesTranslations from "./guides";
 
 const translations = {
   nav,
@@ -25,7 +25,7 @@ const translations = {
   langToggle,
   privacy,
   terms,
-  resourcesTranslations,
+  guidesTranslations,
 };
 
 export default translations;

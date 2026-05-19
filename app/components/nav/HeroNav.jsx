@@ -43,10 +43,10 @@ function DesktopNavLinks({ nav }) {
       })}
       <li>
         <Link
-          href={`/${lang}/resources`}
+          href={`/${lang}/guides`}
           className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
         >
-          {nav.resources}
+          {nav.guides}
         </Link>
       </li>
       <li>

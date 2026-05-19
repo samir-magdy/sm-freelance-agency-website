@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function ResourcesGrid({ resources, lang, t }) {
+export default function GuidesGrid({ resources, lang, t }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
       {resources.map((guide) => (
@@ -19,7 +19,7 @@ export default function ResourcesGrid({ resources, lang, t }) {
           </div>
 
           <Link
-            href={`/${lang}/resources/${guide.slug}`}
+            href={`/${lang}/guides/${guide.slug}`}
             className="relative overflow-hidden inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-base font-semibold tracking-wide transition-all duration-200"
           >
             {t.readMore[lang]}
@@ -52,8 +52,8 @@ export default function ResourcesGrid({ resources, lang, t }) {
             dir={lang === "ar" ? "rtl" : "ltr"}
           >
             {lang === "ar"
-              ? "نعمل على إعداد المزيد من الموارد المميزة من أجلك."
-              : "We are working on more useful resources for you."}
+              ? "نعمل على إعداد المزيد من الأدلة المميزة من أجلك."
+              : "We are working on more useful guides for you."}
           </p>
         </div>
 

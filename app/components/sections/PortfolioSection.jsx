@@ -187,7 +187,7 @@ export default function PortfolioShowcase({ lang }) {
   return (
     <section
       id="portfolio"
-      className="flex flex-col items-center justify-start min-h-svh py-4 relative overflow-clip select-none px-5"
+      className="flex flex-col items-center justify-start min-h-svh pt-6 relative overflow-clip select-none px-5"
       aria-labelledby="portfolio-heading"
     >
       <div className="reveal">
@@ -196,7 +196,7 @@ export default function PortfolioShowcase({ lang }) {
           <h2 id="portfolio-heading" className="font-bold text-heading mb-2 rtl:mb-3">
             {t.heading[lang]}
           </h2>
-          <p className="text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
+          <p className="hidden sm:block text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
             {t.subheading[lang]}
           </p>
         </div>
@@ -226,11 +226,11 @@ export default function PortfolioShowcase({ lang }) {
               key={`info-${project.id}`}
               className="text-center lg:text-start lg:max-w-lg flex flex-col items-center lg:items-start gap-6"
             >
-              <h3 aria-hidden="true" className="portfolio-info-enter text-heading font-bold text-content-heading hidden lg:block">
+              <h3 aria-hidden="true" className="portfolio-info-enter text-[clamp(1.8rem,1.5vw,3rem)] font-bold text-content-heading hidden lg:block">
                 {pd.title[lang]}
               </h3>
 
-              <p className="portfolio-info-enter text-content-body text-[clamp(1rem,2.5vw,1.3rem)] leading-relaxed hidden lg:block mb-4">
+              <p className="portfolio-info-enter text-content-body text-[clamp(1.2rem,2.5vw,1.5rem)] rtl:text-[clamp(1.5rem,2.5vw,1.3rem)] leading-relaxed rtl:leading-loose hidden lg:block mb-4">
                 {pd.description[lang]}
               </p>
 
@@ -240,7 +240,7 @@ export default function PortfolioShowcase({ lang }) {
                 onClick={handleDemoClick}
                 target="_blank"
                 rel="noopener"
-                className="cta-primary relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-subheading font-normal sm:font-medium tracking-wide transition-all duration-200 hidden lg:inline-flex"
+                className="cta-primary relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-subheading font-normal sm:font-semibold tracking-wide transition-all duration-200 hidden lg:inline-flex"
                 aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
               >
                 {pd.cta[lang]}

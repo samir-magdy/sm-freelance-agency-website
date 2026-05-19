@@ -1,8 +1,8 @@
 import { use } from "react";
 import { SITE_URL } from "@/app/data/translations/lang";
-import resources from "@/app/data/resources";
-import resourcesTranslations from "@/app/data/translations/resources";
-import ResourcesGrid from "./ResourcesGrid";
+import guides from "@/app/data/guides";
+import guidesTranslations from "@/app/data/translations/guides";
+import GuidesGrid from "./GuidesGrid";
 import Script from "next/script";
 
 export function generateStaticParams() {
@@ -11,8 +11,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { lang } = await params;
-  const t = resourcesTranslations;
-  const canonical = `${SITE_URL}/${lang}/resources`;
+  const t = guidesTranslations;
+  const canonical = `${SITE_URL}/${lang}/guides`;
 
   return {
     title: t.metaTitle[lang],
@@ -20,9 +20,9 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical,
       languages: {
-        en: `${SITE_URL}/en/resources`,
-        ar: `${SITE_URL}/ar/resources`,
-        "x-default": `${SITE_URL}/en/resources`,
+        en: `${SITE_URL}/en/guides`,
+        ar: `${SITE_URL}/ar/guides`,
+        "x-default": `${SITE_URL}/en/guides`,
       },
     },
     openGraph: {
@@ -64,11 +64,11 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function ResourcesPage({ params }) {
+export default function GuidesPage({ params }) {
   const { lang } = use(params);
-  const t = resourcesTranslations;
+  const t = guidesTranslations;
   const dir = lang === "ar" ? "rtl" : "ltr";
-  const canonical = `${SITE_URL}/${lang}/resources`;
+  const canonical = `${SITE_URL}/${lang}/guides`;
 
   const homeUrl = lang === "en" ? `${SITE_URL}/` : `${SITE_URL}/ar`;
 
@@ -126,7 +126,7 @@ export default function ResourcesPage({ params }) {
           </header>
 
           {/* Grid with category filter (client component) */}
-          <ResourcesGrid resources={resources} lang={lang} t={t} />
+          <GuidesGrid resources={guides} lang={lang} t={t} />
         </div>
     </div>
   );

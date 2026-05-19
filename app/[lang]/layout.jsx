@@ -292,7 +292,7 @@ export default async function LangLayout({ children, params }) {
       pricing: t.nav.pricing[lang],
       FAQs: t.nav.FAQs[lang],
       contact: t.nav.contact[lang],
-      resources: t.nav.resources[lang],
+      guides: t.nav.guides[lang],
     },
     a11y: {
       desktopNav: t.a11y.desktopNav[lang],

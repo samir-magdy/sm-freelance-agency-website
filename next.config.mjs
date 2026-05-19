@@ -35,8 +35,8 @@ const nextConfig = {
     return [
       { source: "/", headers: htmlCache },
       { source: "/:lang(en|ar)", headers: htmlCache },
-      { source: "/:lang(en|ar)/resources", headers: htmlCache },
-      { source: "/:lang(en|ar)/resources/:slug", headers: htmlCache },
+      { source: "/:lang(en|ar)/guides", headers: htmlCache },
+      { source: "/:lang(en|ar)/guides/:slug", headers: htmlCache },
     ];
   },
 };
