@@ -24,20 +24,7 @@ const projectData = {
       ar: "مشاهدة الموقع",
     },
   },
-  AutoParts: {
-    title: {
-      en: "Automotive & Parts",
-      ar: "متجر قطع غيار السيارات",
-    },
-    description: {
-      en: "Searching for auto parts is often frustrating for customers. While your competitors rely on outdated catalogs, this high-speed, inventory-driven ecommerce website builds immediate authority. By providing a precise, organized search experience, you position your business as the most reliable expert in the automotive niche, making it the only place customers trust when they need parts fast.",
-      ar: "غالباً ما يواجه العملاء صعوبة في البحث عن قطع الغيار بدقة. يوفر لك هذا المتجر الإلكتروني نظاماً منظماً لعرض المخزون يساعد في بناء هوية موثوقة لمشروعك، مما يرفع من فرص اعتماد العملاء عليك كخبير في هذا المجال بدلاً من اللجوء للمصادر التقليدية.",
-    },
-    cta: {
-      en: "View Live Site",
-      ar: "مشاهدة الموقع",
-    },
-  },
+
   Clinic: {
     title: {
       en: "Medical & Health Clinic",
@@ -108,20 +95,7 @@ const projectData = {
       ar: "مشاهدة الموقع",
     },
   },
-  Travel: {
-    title: {
-      en: "Travel Agency",
-      ar: "وكالة سفر وسياحة",
-    },
-    description: {
-      en: "Travelers are looking for an escape, not a headache. While other agencies provide cluttered info, your site offers inspiration and structured itineraries that simplify the dream. By combining beautiful imagery with a logical booking flow, you become the stress-free choice for global travelers, ensuring they book their next adventure through you rather than a generic booking engine.",
-      ar: "يبحث المسافر عن الوضوح والسهولة في التخطيط. يوفر موقعك برامج سياحية منظمة تساعد في تبسيط خيارات السفر للعملاء، مما يزيد من فرص اعتمادهم على شركتك لتنظيم رحلاتهم القادمة بدلاً من البحث في المواقع المشتتة.",
-    },
-    cta: {
-      en: "View Live Site",
-      ar: "مشاهدة الموقع",
-    },
-  },
+
   Tourism: {
     title: {
       en: "Local Tourism & Excursions",

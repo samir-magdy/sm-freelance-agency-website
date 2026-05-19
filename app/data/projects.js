@@ -63,18 +63,6 @@ export const projects = [
   },
 
   {
-    id: "Travel",
-    slug: "travel-agency-website",
-    liveUrl: "/portfolio/travel-agency-website",
-    screenshot: travelImg,
-    schemaName: "Travel Agency – Egypt",
-    schemaNameAr: "شركة سياحة – مصر",
-    description:
-      "An international travel booking demo by SM Web Design Studio, demonstrating seamless user experiences for exploring vacation packages and curated itineraries.",
-    genre: "Travel & Tourism",
-    genreAr: "سياحة وسفر",
-  },
-  {
     id: "Gym",
     slug: "gym-fitness-website",
     liveUrl: "/portfolio/gym-fitness-website",
@@ -98,18 +86,7 @@ export const projects = [
     genre: "Travel & Tourism",
     genreAr: "سياحة وسفر",
   },
-  {
-    id: "AutoParts",
-    slug: "auto-parts-store-website",
-    liveUrl: "/portfolio/auto-parts-store-website",
-    screenshot: autopartsImg,
-    schemaName: "Automotive Parts Marketplace – Egypt",
-    schemaNameAr: "متجر قطع غيار السيارات – مصر",
-    description:
-      "A specialized automotive marketplace demo created by SM Web Design Studio to demonstrate robust search engine capabilities and categorized inventory management for spare parts.",
-    genre: "Automotive & Parts",
-    genreAr: "تجارة قطع غيار السيارات",
-  },
+
   {
     id: "RealEstate",
     slug: "real-estate-website",
@@ -143,7 +120,9 @@ export const projectsStructuredData = {
       "@type": "WebSite",
       name: project.schemaName,
       alternateName: project.schemaNameAr,
-      url: project.liveUrl.startsWith("http") ? project.liveUrl : `${SITE_URL}${project.liveUrl}`,
+      url: project.liveUrl.startsWith("http")
+        ? project.liveUrl
+        : `${SITE_URL}${project.liveUrl}`,
       description: project.description,
       inLanguage: ["en", "ar"],
       genre: project.genre,
