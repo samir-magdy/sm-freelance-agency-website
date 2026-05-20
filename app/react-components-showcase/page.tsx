@@ -77,8 +77,7 @@ export default function Home() {
             <Image
               src="/brand.svg"
               width={64}
-              height={64}
-              className="md:h-16 md:w-16"
+              height={53}
               alt="SM Web Design Studio Logo"
             />
           </a>

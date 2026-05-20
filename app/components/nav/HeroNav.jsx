@@ -83,7 +83,7 @@ export default function HeroNav({ lang, strings }) {
               src="/brand.svg"
               alt="SM Web Design Studio – Website Design Company in Egypt"
               width={80}
-              height={80}
+              height={66}
               priority
             />
           </a>
