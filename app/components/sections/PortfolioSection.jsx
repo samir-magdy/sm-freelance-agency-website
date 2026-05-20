@@ -7,17 +7,14 @@ import { projects } from "@/app/data/projects";
 import translations from "@/app/data/translations";
 
 function NavArrow({ direction, disabled, onClick }) {
+  if (disabled) return <div className="hidden sm:block w-11 h-11 shrink-0" />;
+
   const Icon = direction === "prev" ? ArrowLeft : ArrowRight;
   return (
     <button
       onClick={onClick}
-      disabled={disabled}
       aria-label={direction === "prev" ? "Previous project" : "Next project"}
-      className={`hidden group sm:flex items-center justify-center w-11 h-11 rounded-full shrink-0 p-0 transition-all duration-300 ease-out border ${
-        disabled
-          ? "bg-transparent border-white/[0.06] text-content-muted/40 cursor-default"
-          : "bg-white/[0.1] border-white/[0.12] text-content-heading cursor-pointer hover:border-white/30"
-      }`}
+      className="hidden group sm:flex items-center justify-center w-11 h-11 rounded-full shrink-0 p-0 transition-all duration-300 ease-out border bg-white/[0.1] border-white/[0.12] text-content-heading cursor-pointer hover:border-white/20"
     >
       <Icon size={18} strokeWidth={2.5} className="transition-transform duration-100 ease-out" />
     </button>
@@ -268,7 +265,7 @@ export default function PortfolioShowcase({ lang }) {
               />
 
               {/* Phone outer shell */}
-              <div className="phone-outer w-[60vw] h-[61svh] sm:w-[16.4vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
+              <div className="phone-outer w-[59vw] h-[58svh] sm:w-[16.4vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
                 {/* Left volume buttons */}
                 <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
                 <div className="absolute -left-[2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />

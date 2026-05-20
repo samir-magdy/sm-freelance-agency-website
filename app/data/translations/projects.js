@@ -25,6 +25,21 @@ const projectData = {
     },
   },
 
+  Travel: {
+    title: {
+      en: "Travel Agency",
+      ar: "شركات السياحة والسفر",
+    },
+    description: {
+      en: "Travelers make booking decisions based on trust and visual inspiration. A professional travel agency website positions you above local competitors still relying on WhatsApp and phone calls alone. By showcasing your destinations, hotels, and trips with high-impact visuals and a seamless browsing experience, you become the first choice for travelers ready to book—before they ever scroll to a competitor.",
+      ar: "يتخذ المسافرون قرار الحجز بناءً على الثقة والإلهام البصري. يمنحك موقع شركة السياحة الاحترافي ميزة تنافسية على من يعتمدون على واتساب والمكالمات الهاتفية فقط. من خلال عرض وجهاتك وفنادقك ورحلاتك بصور عالية الجودة وتجربة تصفح سلسة، تصبح الخيار الأول للمسافرين المستعدين للحجز.",
+    },
+    cta: {
+      en: "View Live Site",
+      ar: "مشاهدة الموقع",
+    },
+  },
+
   Clinic: {
     title: {
       en: "Medical & Health Clinic",
@@ -89,21 +104,6 @@ const projectData = {
     description: {
       en: "The most successful freelance brokers are those who control their own lead flow. This high-conversion real estate website puts your portfolio in the spotlight, giving your listings the premium edge needed to stand out. By presenting properties with absolute clarity and direct pathways to reach you, you capture qualified buyers and keep them focused on your expertise—not a crowded mass-market site.",
       ar: "كوسيط مستقل، نجاحك يعتمد على كيفية تقديم نفسك وعروضك. يمنحك هذا الموقع العقاري واجهة احترافية تضع عقاراتك في الصدارة وتبرز هويتك المهنية. من خلال عرض الوحدات بوضوح تام مع وسائل تواصل مباشرة، ستتمكن من جذب العملاء الجادين وضمان تركيزهم على ما تقدمه.",
-    },
-    cta: {
-      en: "View Live Site",
-      ar: "مشاهدة الموقع",
-    },
-  },
-
-  Tourism: {
-    title: {
-      en: "Local Tourism & Excursions",
-      ar: "رحلات سياحية محلية",
-    },
-    description: {
-      en: "Local tourism is about capturing excitement in the moment. This dynamic portal is built to turn curiosity into confirmed bookings instantly. While competitors rely on phone calls and slow responses, your platform offers a fast, effortless digital experience that modern tourists prefer, making you the undisputed leader for local activities and unique experiences.",
-      ar: "تعتمد الأنشطة السياحية على سهولة وسرعة التفاعل. صُمم هذا الموقع السياحي لتسهيل عملية الحجز وتوفير تجربة رقمية سريعة يفضلها السائح المعاصر، مما يساهم في رفع نسب الإقبال على تجاربك السياحية الفريدة مقارنة بالوسائل التقليدية.",
     },
     cta: {
       en: "View Live Site",

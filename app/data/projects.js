@@ -6,7 +6,6 @@ import autopartsImg from "../../public/project-screenshots/autoparts.webp";
 import clinicImg from "../../public/project-screenshots/clinic.webp";
 import petcareImg from "../../public/project-screenshots/petcare.webp";
 import interiorImg from "../../public/project-screenshots/interior.webp";
-import tourismImg from "../../public/project-screenshots/tourism.webp";
 
 import { SITE_URL } from "./translations/lang";
 
@@ -22,6 +21,19 @@ export const projects = [
       "A fashion e-commerce demo by SM Web Design Studio showcasing advanced product listings and a streamlined WhatsApp checkout system designed for retail scalability.",
     genre: "Fashion Ecommerce",
     genreAr: "التجارة الإلكترونية للأزياء",
+  },
+
+  {
+    id: "Travel",
+    slug: "travel-agency-website",
+    liveUrl: "/portfolio/travel-agency-website",
+    screenshot: travelImg,
+    schemaName: "Travel Agency Website – Egypt",
+    schemaNameAr: "موقع شركة سياحة – مصر",
+    description:
+      "A travel agency demo by SM Web Design Studio showcasing destination-focused hotel listings, trip packages, and a polished browsing experience built to turn visitors into confirmed travelers.",
+    genre: "Travel Agency",
+    genreAr: "شركات السياحة والسفر",
   },
 
   {
@@ -73,31 +85,6 @@ export const projects = [
       "A high-conversion fitness landing page demo from SM Web Design Studio, showcasing membership management and trainer profile layouts optimized for lead generation.",
     genre: "Fitness & Wellness",
     genreAr: "اللياقة البدنية والصحة",
-  },
-  {
-    id: "Tourism",
-    slug: "local-tourism-website",
-    liveUrl: "/portfolio/local-tourism-website",
-    screenshot: tourismImg,
-    schemaName: "Local Tourism & Excursions – Egypt",
-    schemaNameAr: "السياحة والرحلات – مصر",
-    description:
-      "A tourism-focused website demo by SM Web Design Studio, optimized for booking local excursions and providing essential travel information for domestic and international visitors.",
-    genre: "Travel & Tourism",
-    genreAr: "سياحة وسفر",
-  },
-
-  {
-    id: "RealEstate",
-    slug: "real-estate-website",
-    liveUrl: "/portfolio/real-estate-website",
-    screenshot: realestateImg,
-    schemaName: "Real Estate Listing Platform – Egypt",
-    schemaNameAr: "تسويق عقاري – مصر",
-    description:
-      "A comprehensive real estate platform demo created by SM Web Design Studio, featuring advanced property filtering by location and price to showcase our directory solutions.",
-    genre: "Real Estate & Brokers",
-    genreAr: "تسويق عقاري ووسطاء",
   },
 ];
 

@@ -45,7 +45,7 @@ export default function HeroSection({ lang }) {
 
         <h1 dir="ltr" className="hero-fade hero-fade-eyebrow flex items-center justify-center gap-3 sm:gap-4">
           <span className="eyebrow-rule-left" aria-hidden="true"/>
-          <span className="text-[10px] rtl:text-[15px] sm:text-[0.95rem] rtl:sm:text-[1.2rem] uppercase tracking-[0.18em] font-semibold text-content-body whitespace-nowrap">
+          <span className="text-[10px] rtl:text-[15px] sm:text-[0.9rem] rtl:sm:text-[1.2rem] uppercase tracking-[0.18em] font-semibold text-content-body whitespace-nowrap">
             {hero.eyebrow[lang]}
           </span>
           <span className="eyebrow-rule-right" aria-hidden="true"/>
