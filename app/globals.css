@@ -278,6 +278,19 @@ html.hero-played .hero-fade-secondary-cta {
   );
 }
 
+/* safari only style */
+ @supports (-webkit-hyphens: none) {
+  @media (max-width: 680px) {
+    [dir="rtl"] #hero-hook {
+      line-height: 2;
+    }
+
+  }
+    #cta-main{
+      font-size: clamp(20px,4vw,26px);
+      padding: 0.6rem 1.5rem;
+    }
+  }
 /* ══════════════════════════════════════
    5. Inline HTML Content — Link Styling
    ══════════════════════════════════════ */

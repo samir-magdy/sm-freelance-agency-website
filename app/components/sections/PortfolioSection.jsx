@@ -230,7 +230,7 @@ export default function PortfolioShowcase({ lang }) {
                 {pd.title[lang]}
               </h3>
 
-              <p className="portfolio-info-enter text-content-body text-[clamp(1.2rem,2.5vw,1.5rem)] rtl:text-[clamp(1.5rem,2.5vw,1.3rem)] leading-relaxed rtl:leading-loose hidden lg:block mb-4">
+              <p className="portfolio-info-enter text-content-body text-[clamp(1.2rem,2.5vw,1.4rem)] rtl:text-[clamp(1.5rem,2.5vw,1.3rem)] leading-relaxed rtl:leading-loose hidden lg:block mb-4">
                 {pd.description[lang]}
               </p>
 
@@ -332,7 +332,7 @@ export default function PortfolioShowcase({ lang }) {
                   onClick={() => scrollToProject(i)}
                   className={`rounded-full transition-all duration-300 ${
                     i === active
-                      ? "w-5 h-2 bg-gold"
+                      ? "w-5 h-2 bg-gold/75"
                       : "w-2 h-2 bg-white/30 hover:bg-white/60"
                   }`}
                 />
@@ -345,7 +345,7 @@ export default function PortfolioShowcase({ lang }) {
               onClick={handleDemoClick}
               target="_blank"
               rel="noopener"
-              className="cta-primary relative overflow-hidden inline-flex items-center gap-2 py-3 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-caption font-semibold tracking-wide lg:hidden"
+              className="cta-primary relative overflow-hidden inline-flex items-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[3.5vw] font-semibold tracking-wide lg:hidden"
               aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
             >
               {pd.cta[lang]}

@@ -25,7 +25,19 @@ const faqSection = {
     },
 
     // ── MOFU: Consideration — options & services ──────────────────────────────
+    {
+      question: {
+        en: "How much does a website cost in Egypt? (2026)",
 
+        ar: "كم تكلفة إنشاء موقع إلكتروني في مصر؟ (2026)",
+      },
+
+      answer: {
+        en: "Whether it's a single-page portfolio or a more complex system with multiple pages and extra features, the prices vary greatly. To see exactly how pricing is determined in the current market, we highly recommend reading our detailed guide on <a href='/en/guides/website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>How Website Prices are Determined in Egypt</a>. Alternatively, if you want an exact cost for your investment, you can request an official quote <a href='#contact'>Here</a>.",
+
+        ar: "التكلفة تعتمد تماماً على الميزات التي تحتاجها في موقعك. سواء كان صفحة واحدة لعرض أعمالك أو نظاماً معقداً ومتعدد الصفحات بخواص إضافية، فإن الأسعار تتفاوت بشكل كبير. لكي تعرف العوامل التي تحدد السعر في السوق الحالي، ننصحك بقراءة دليلنا المفصل عن <a href='/ar/guides/website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>تكلفة إنشاء موقع إلكتروني في مصر لعام 2026</a>. إذا كنت تريد سعراً دقيقاً لموقعك، يمكنك طلب عرض سعر رسمي <a href='#contact'>من هنا</a>.",
+      },
+    },
     {
       question: {
         en: "Should I use a website builder or hire a professional web designer?",
@@ -41,20 +53,6 @@ const faqSection = {
     },
 
     // ── MOFU: Consideration — pricing & costs ─────────────────────────────────
-
-    {
-      question: {
-        en: "How much does a website cost in Egypt? (2026)",
-
-        ar: "كم تكلفة إنشاء موقع إلكتروني في مصر؟ (2026)",
-      },
-
-      answer: {
-        en: "Whether it's a single-page portfolio or a more complex system with multiple pages and extra features, the prices vary greatly. To see exactly how pricing is determined in the current market, we highly recommend reading our detailed guide on <a href='/en/guides/website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>How Website Prices are Determined in Egypt</a>. Alternatively, if you want an exact cost for your investment, you can request an official quote <a href='#contact'>Here</a>.",
-
-        ar: "التكلفة تعتمد تماماً على الميزات التي تحتاجها في موقعك. سواء كان صفحة واحدة لعرض أعمالك أو نظاماً معقداً ومتعدد الصفحات بخواص إضافية، فإن الأسعار تتفاوت بشكل كبير. لكي تعرف العوامل التي تحدد السعر في السوق الحالي، ننصحك بقراءة دليلنا المفصل عن <a href='/ar/guides/website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>تكلفة إنشاء موقع إلكتروني في مصر لعام 2026</a>. إذا كنت تريد سعراً دقيقاً لموقعك، يمكنك طلب عرض سعر رسمي <a href='#contact'>من هنا</a>.",
-      },
-    },
 
     {
       question: {
