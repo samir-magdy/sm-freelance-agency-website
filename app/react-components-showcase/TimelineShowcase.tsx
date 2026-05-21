@@ -59,11 +59,11 @@ function ColorControl({
   };
 
   return (
-    <div className="flex items-center gap-3 md:gap-4">
+    <div className="flex items-center gap-3 md:gap-6">
       <span className="text-caption font-medium tracking-widest text-zinc-500 uppercase w-12 shrink-0">
         {label}
       </span>
-      <label className="relative cursor-pointer shrink-0">
+      <label className="ms-4 relative cursor-pointer shrink-0">
         <span
           className="h-5 w-5 rounded-full border border-white/20 block"
           style={{ background: value }}
@@ -81,7 +81,7 @@ function ColorControl({
         onChange={(e) => setDraft(e.target.value)}
         onBlur={(e) => commit(e.target.value)}
         onKeyDown={(e) => e.key === "Enter" && commit(e.currentTarget.value)}
-        className="w-[4.5rem] md:w-20 bg-white/5 border border-white/[0.08] rounded-md px-2 py-1 text-caption text-zinc-300 font-mono focus:outline-none focus:border-white/25 transition-colors"
+        className="w-[4.5rem] md:w-24 bg-white/5 border border-white/[0.08] rounded-md px-2 py-1 text-caption text-zinc-300 font-mono focus:outline-none focus:border-white/25 transition-colors"
         maxLength={7}
         spellCheck={false}
       />
