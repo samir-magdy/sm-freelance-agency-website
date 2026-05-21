@@ -24,7 +24,7 @@ const PHONE_NUMBER = "+201274613331";
 const TWITTER_HANDLE = "@SMWebDesignCo";
 
 const META_DESCRIPTION = {
-  en: "Expert web design & development development in Egypt. Discover how we can help your business grow.",
+  en: "Expert web design & development in Egypt. Discover how we can help your business grow.",
   ar: "تصميم مواقع احترافية ومتاجر شوبيفاي في مصر. اكتشف كيف يمكننا مساعدتك في تنمية حضورك الرقمي.",
 };
 
@@ -39,7 +39,7 @@ const SOCIAL_LINKS = {
 
 const meta = {
   en: {
-    title: `Get a Website for Your Business in Egypt | ${SITE_NAME}`,
+    title: `Create a Website in Egypt | ${SITE_NAME}`,
     description: META_DESCRIPTION.en,
     ogLocale: "en_US",
     altLocale: "ar_EG",
@@ -48,7 +48,7 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: `خدمات تصميم وإنشاء مواقع إلكترونية في مصر | ${SITE_NAME}`,
+    title: `إنشاء موقع إلكتروني | مصر | ${SITE_NAME}`,
     description: META_DESCRIPTION.ar,
     ogLocale: "ar_EG",
     altLocale: "en_US",
