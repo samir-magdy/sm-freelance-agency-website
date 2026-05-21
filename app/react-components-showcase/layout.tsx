@@ -6,7 +6,7 @@ const PAGE_URL = `${SITE_URL}/react-components`;
 const SITE_NAME = "SM Web Design Studio";
 const TWITTER_HANDLE = "@SMWebDesignCo";
 
-const TITLE = "React Components | Interactive UI Blocks for Your Projects";
+const TITLE = "React UI Components | Interactive UI Blocks for Your Projects";
 const DESCRIPTION =
   "Fully responsive & customizable. Drop the file in & add your data. That's it!";
 

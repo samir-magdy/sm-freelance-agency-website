@@ -1,64 +1,23 @@
 "use client";
-// ^ Next.js App Router directive. Safe to remove if you're using Vite / CRA / any other React setup.
-
-/**
- * ╔══════════════════════════════════════════════════════╗
- * ║              IPhoneMockup Component                  ║
- * ║       Interactive iPhone carousel phone mockup       ║
- * ╚══════════════════════════════════════════════════════╝
- *
- * DEPENDENCIES
- *   - React 18+
- *   - Tailwind CSS v4
- *
- * USAGE
- *   import IPhoneMockup from "@/components/IPhoneMockup";
- *
- *   <IPhoneMockup
- *     slides={[
- *       { image: "/screenshots/screen1.png", alt: "Home screen" },
- *       { image: "/screenshots/screen2.png", alt: "Dashboard" },
- *       { image: "/screenshots/screen3.png", alt: "Settings" },
- *     ]}
- *     paginationDotColor="white"
- *   />
- */
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
-/* ─────────────────────────────────────
-   Types
-   ───────────────────────────────────── */
-
+// Slide data passed into the carousel
 export interface Slide {
-  /** Path or URL to the screenshot image */
   image: string;
-  /** Alt text for the image — recommended for accessibility */
   alt?: string;
 }
 
+// Props accepted by the main IPhoneMockup component
 export interface IPhoneMockupProps {
-  /** Array of slides to display inside the phone carousel */
   slides: Slide[];
-  /**
-   * Color of the active pagination dot.
-   * Accepts any valid CSS color string.
-   * @default "white"
-   */
   paginationDotColor?: string;
 }
 
-/* ─────────────────────────────────────
-   Sub-components (internal)
-   ───────────────────────────────────── */
+// Sub-components — phone chrome UI
 
-/**
- * Dynamic Island pill — centered at the top of the screen.
- * Width is a percentage of the screen so it scales with every phone size.
- * The camera housing uses a radial gradient + inset shadow to simulate depth;
- * the lens gets a blue tint glow that reads as a real sensor under ambient light.
- */
+// Pill-shaped notch at the top of the screen with a decorative camera lens inside
 function DynamicIsland() {
   return (
     <div
@@ -68,7 +27,7 @@ function DynamicIsland() {
                  flex items-center justify-end pr-[7px] sm:pr-[9px]"
       style={{ boxShadow: "inset 0 0 0 0.75px rgba(255,255,255,0.07)" }}
     >
-      {/* Camera housing — slightly recessed dark circle */}
+      {/* Camera housing — dark recessed circle behind the lens */}
       <div
         className="w-[14px] h-[14px] sm:w-[16px] sm:h-[16px] rounded-full shrink-0
                    flex items-center justify-center"
@@ -77,7 +36,7 @@ function DynamicIsland() {
           boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.04)",
         }}
       >
-        {/* Lens — blue-tinted gradient + glow simulates the camera sensor */}
+        {/* Lens — blue-tinted gradient with glow */}
         <div
           className="w-[8px] h-[8px] sm:w-[9px] sm:h-[9px] rounded-full"
           style={{
@@ -90,24 +49,24 @@ function DynamicIsland() {
   );
 }
 
-/** iPhone-style status bar — time left, icons right, flanking the Dynamic Island */
+// iOS-style status bar — time on the left, signal/wifi/battery icons on the right
 function StatusBar() {
   return (
     <div
       aria-hidden
-      className="flex justify-between items-center h-full ps-4 sm:ps-6 pe-2 sm:px-5
-                 text-caption font-semibold tracking-[0.3px] text-white"
+      className="flex justify-between items-center h-full ps-3 sm:ps-6 pe-2 sm:px-5
+                 text-xs font-semibold tracking-[0.3px] text-white"
       style={{ fontFamily: "-apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif" }}
     >
-      {/* 9:41 is the classic Apple demo time */}
+      {/* Time — 9:41 is the classic Apple marketing timestamp */}
       <span className="inline-block mt-0.5">9:41</span>
 
-      {/* Spacer — the Dynamic Island sits absolutely on top of this gap */}
       <div className="flex-1" />
 
-      <div className="flex gap-[2.5px] sm:gap-1.5 sm:items-center">
+      {/* Status icons — signal, wifi, battery */}
+      <div className="flex gap-[1.5px] sm:gap-1 sm:items-center">
 
-        {/* Signal bars */}
+        {/* Signal */}
         <svg width="15" height="10" viewBox="0 0 16 12" fill="none" aria-hidden>
           <rect x="0"    y="8" width="3"   height="4"  rx="0.5" fill="white" />
           <rect x="4.5"  y="5" width="3"   height="7"  rx="0.5" fill="white" />
@@ -135,7 +94,7 @@ function StatusBar() {
   );
 }
 
-/** The thin swipe-home bar at the bottom of the screen */
+// Thin swipe-home bar pinned to the bottom of the screen
 function HomeIndicator() {
   return (
     <div
@@ -146,31 +105,24 @@ function HomeIndicator() {
   );
 }
 
+// Left / right arrow buttons flanking the phone — hidden (not just disabled) when at the first or last slide
 interface NavArrowProps {
   direction: "prev" | "next";
   disabled: boolean;
   onClick: () => void;
 }
 
-/** Left / right carousel navigation arrows flanking the phone */
 function NavArrow({ direction, disabled, onClick }: NavArrowProps) {
+  if (disabled) return <div className="hidden sm:block w-11 h-11 shrink-0" />;
+
   const leftPath = <path d="m15 18-6-6 6-6" />;
   const rightPath = <path d="m9 18 6-6-6-6" />;
 
   return (
     <button
       onClick={onClick}
-      disabled={disabled}
       aria-label={direction === "prev" ? "Previous slide" : "Next slide"}
-      className={`
-        hidden sm:flex items-center justify-center
-        w-11 h-11 rounded-full shrink-0 p-0
-        transition-all duration-300 ease-out border
-        ${disabled
-          ? "bg-transparent border-white/[0.06] text-white/40 cursor-default"
-          : "bg-white/[0.1] border-white/[0.12] text-white cursor-pointer hover:border-white/30"
-        }
-      `}
+      className="hidden sm:flex items-center justify-center w-11 h-11 rounded-full shrink-0 p-0 transition-all duration-300 ease-out border bg-white/[0.1] border-white/[0.12] text-white cursor-pointer hover:border-white/30"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -188,10 +140,9 @@ function NavArrow({ direction, disabled, onClick }: NavArrowProps) {
     </button>
   );
 }
-
-/* ─────────────────────────────────────
-   Main Export
-   ───────────────────────────────────── */
+//==========================================================================
+// MAIN COMPONENT — renders the phone shell, carousel, and pagination dots
+//==========================================================================
 
 export default function IPhoneMockup({
   slides,
@@ -201,7 +152,6 @@ export default function IPhoneMockup({
   const snapRef = useRef<HTMLDivElement>(null);
   const animFrameRef = useRef<number | null>(null);
 
-  /* ── Sync native scroll position → active index ── */
   useEffect(() => {
     const el = snapRef.current;
     if (!el) return;
@@ -226,7 +176,6 @@ export default function IPhoneMockup({
     return () => { if (animFrameRef.current !== null) cancelAnimationFrame(animFrameRef.current); };
   }, []);
 
-  /* ── Programmatic scroll to a slide by index ── */
   const scrollToSlide = (idx: number) => {
     const el = snapRef.current;
     if (!el || idx < 0 || idx >= slides.length) return;
@@ -241,14 +190,12 @@ export default function IPhoneMockup({
     const delta = target - start;
     if (delta === 0) return;
 
-    // Slide transition duration in milliseconds — lower is snappier, higher is more gradual.
     const duration = 420;
     let startTime: number | null = null;
 
     const easeInOutCubic = (t: number) =>
       t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
-    // Disable snap during animation — prevents end-of-scroll snap correction jitter
     el.style.scrollSnapType = "none";
 
     const step = (now: number) => {
@@ -271,7 +218,7 @@ export default function IPhoneMockup({
   return (
     <div className="flex flex-col items-center gap-3 select-none">
 
-      {/* ── Arrow ← | Phone | Arrow → ── */}
+      {/* Row containing the prev/next arrows and the phone shell */}
       <div className="flex items-center justify-center gap-8">
 
         {slides.length > 1 && <NavArrow
@@ -280,32 +227,25 @@ export default function IPhoneMockup({
           onClick={() => scrollToSlide(active - 1)}
         />}
 
-        {/* ── Phone outer shell — gradient bezel + hardware buttons ── */}
-        {/* Responsive phone size — the w/h pairs at each breakpoint control the phone's proportions.
-            Keep width and height in roughly a 9:19.5 ratio (standard iPhone) if you change them.
-            rounded-[46px] is the outer corner radius; the inner screen uses rounded-[43px] to follow the same curve.
-            The gradient simulates a Space Black aluminum finish — swap the hex values to try silver or gold tones. */}
+        {/* Phone outer shell — gradient aluminum bezel with hardware buttons */}
         <div className="w-[60vw] h-117 sm:w-65 sm:h-130 md:w-72.5 md:h-137.5 lg:w-[320px] lg:h-146 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
 
-          {/* Left volume buttons */}
+          {/* Left side — two volume buttons */}
           <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
           <div className="absolute -left-[2.5px] top-45    w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
-          {/* Right power button */}
+          {/* Right side — power button */}
           <div className="absolute -right-0.75 top-35 w-0.75 h-15 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-r-xs" />
 
-          {/* ── Phone screen ── */}
+          {/* Screen — clipped rounded rectangle containing all screen UI */}
           <div className="w-full h-full rounded-[43px] overflow-hidden relative ">
 
-            {/* ── Top chrome: Dynamic Island + status bar ──
-                h-11 (44px) matches real iOS status bar proportions at this scale.
-                DynamicIsland is absolutely centred inside; StatusBar spans full width
-                with the time on the left and icons on the right, flanking the pill. */}
+            {/* Status chrome — fixed bar at the top holding the Dynamic Island and status bar */}
             <div className="absolute top-0 inset-x-0 z-15 px-2.5 sm:px-1 h-8 sm:h-9 bg-[#0e0e0e]">
               <DynamicIsland />
               <StatusBar />
             </div>
 
-            {/* ── Horizontal snap-scroll carousel ── */}
+            {/* Horizontally scrollable snap carousel — one slide per full screen width */}
             <div
               ref={snapRef}
               className="iphone-snap flex overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] mt-8 w-full h-full"
@@ -330,8 +270,7 @@ export default function IPhoneMockup({
               ))}
             </div>
 
-            {/* Bottom fade gradient — softens the edge where the screenshot meets the home indicator.
-                Change h-10 to increase or decrease the fade height. Remove this div entirely for a hard edge. */}
+            {/* Fade gradient — softens the bottom edge of the screenshot into the bezel */}
             <div className="absolute bottom-0 inset-x-0 h-10 bg-[linear-gradient(transparent,rgba(0,0,0,0.5))] pointer-events-none z-10" />
 
             <HomeIndicator />
@@ -346,7 +285,7 @@ export default function IPhoneMockup({
 
       </div>
 
-      {/* ── Pagination dots ── */}
+      {/* Pagination dots — active slide shown as a wider pill, others as small circles */}
       {slides.length > 1 && <div
         className="flex items-center gap-1.5 mb-1.5"
         role="tablist"
@@ -360,8 +299,6 @@ export default function IPhoneMockup({
             aria-label={`Go to slide ${i + 1}`}
             onClick={() => scrollToSlide(i)}
             className="rounded-full transition-all duration-300 cursor-pointer"
-            // Active dot: pill shape (1.25rem wide × 0.5rem tall), filled with paginationDotColor.
-            // Inactive dot: circle (0.5rem × 0.5rem) — change rgba(255,255,255,0.3) to adjust inactive dot color/opacity.
             style={
               i === active
                 ? { width: "1.25rem", height: "0.5rem", background: paginationDotColor }

@@ -9,7 +9,61 @@ const faqSection = {
 
   items: [
     // ── TOFU: Awareness ───────────────────────────────────────────────────────
+  // ── BOFU: Conversion ──────────────────────────────────────────────────────
 
+    {
+      question: {
+        en: "What does the process for acquiring my website look like?",
+
+        ar: "كيف تبدو عملية الحصول على موقعي الإلكتروني؟",
+      },
+
+      answer: {
+        en: "We can communicate through whichever channel works best for you to understand your business and the vision you have for website. From there, we create design mockups for your review. Once approved, we move into development. After a final review, your website goes live. We can communicate through whichever channel works best for you, though a proper meeting (physical or online) before starting the project consistently delivers the best results.",
+
+        ar: "نبدأ باجتماع استكشافي لفهم طبيعة عملك، أهدافك، ورؤيتك. ومن هنا، نقوم ببناء نماذج التصميم المبدئية لمراجعتها والموافقة عليها. بمجرد الاعتماد، ننتقل مباشرة إلى مرحلة التطوير والبرمجة. وبعد المراجعة النهائية وإجراء أي تعديلات أخيرة، ينطلق موقعك رسمياً على الإنترنت. يمكننا التواصل عبر أي وسيلة تناسبك، مع العلم أن عقد اجتماع منسق (أونلاين أو حضورياً) قبل بدء المشروع يضمن دائماً تحقيق أفضل النتائج.",
+      },
+    },
+
+    {
+      question: {
+        en: "How long does it take to build a website?",
+
+        ar: "كم من الوقت يستغرق بناء الموقع؟",
+      },
+
+      answer: {
+        en: "The timeline depends on the project type and the techonlogy used to build it. With custom code, Landing pages are typically completed within a week, business websites can take 1 to 3 weeks depending on the amount of content and features required, and Shopify stores take around 3 weeks. The timeline for your website will be stated before starting the process.",
+
+        ar: "الجدول الزمني يعتمد تماماً على نوع المشروع والتقنيات المستخدمة في بنائه. من خلال البرمجة الخاصة، يتم الانتهاء من صفحات الهبوط عادةً في غضون أسبوع واحد، بينما تستغرق مواقع الشركات من أسبوع إلى 3 أسابيع حسب حجم المحتوى والميزات المطلوبة، وتستغرق متاجر شوبيفاي حوالي 3 أسابيع. سيتم تحديد الجدول الزمني الخاص بموقعك بوضوح قبل البدء في التنفيذ.",
+      },
+    },
+    {
+      question: {
+        en: "What do I need to provide to get started?",
+
+        ar: "ما الذي أحتاج إلى تقديمه للبدء؟",
+      },
+
+      answer: {
+        en: "We'll need your basic brand materials. This mainly includes your logo, the text content you want for each section, and any high-quality photos or videos you'd like to showcase on the site.",
+
+        ar: "سنحتاج منك المواد الأساسية الخاصة بهوية شركتك. هذا يشمل بشكل رئيسي الشعار (اللوجو)، النصوص التي تود كتابتها في كل قسم، بالإضافة إلى أي صور أو فيديوهات عالية الجودة ترغب في عرضها على الموقع.",
+      },
+    },
+    {
+      question: {
+        en: "Do you work with clients outside of Egypt?",
+
+        ar: "هل تقدمون خدماتكم للعملاء خارج مصر؟",
+      },
+
+      answer: {
+        en: "Yes. We work with clients worldwide, remotely. We accept international payments via PayPal and Payoneer.",
+
+        ar: "نعم، نحن نعمل مع عملاء من جميع أنحاء العالم عن بُعد بشكل كامل، ونقبل المدفوعات الدولية عبر PayPal و Payoneer.",
+      },
+    },
     {
       question: {
         en: "Is having a website really that important?",
@@ -108,61 +162,7 @@ const faqSection = {
       },
     },
 
-    // ── BOFU: Conversion ──────────────────────────────────────────────────────
-
-    {
-      question: {
-        en: "What does the process for acquiring my website look like?",
-
-        ar: "كيف تبدو عملية الحصول على موقعي الإلكتروني؟",
-      },
-
-      answer: {
-        en: "We start with a discovery meeting to understand your business, goals, and vision. From there, we build design mockups for your review and approval. Once approved, we move into development. After a final review and any last adjustments, your website goes live. We can communicate through whichever channel works best for you, though a proper meeting (physical or online) before starting the project consistently delivers the best results.",
-
-        ar: "نبدأ باجتماع استكشافي لفهم طبيعة عملك، أهدافك، ورؤيتك. ومن هنا، نقوم ببناء نماذج التصميم المبدئية لمراجعتها والموافقة عليها. بمجرد الاعتماد، ننتقل مباشرة إلى مرحلة التطوير والبرمجة. وبعد المراجعة النهائية وإجراء أي تعديلات أخيرة، ينطلق موقعك رسمياً على الإنترنت. يمكننا التواصل عبر أي وسيلة تناسبك، مع العلم أن عقد اجتماع منسق (أونلاين أو حضورياً) قبل بدء المشروع يضمن دائماً تحقيق أفضل النتائج.",
-      },
-    },
-
-    {
-      question: {
-        en: "How long does it take to build a website?",
-
-        ar: "كم من الوقت يستغرق بناء الموقع؟",
-      },
-
-      answer: {
-        en: "The timeline depends on the project type and the techonlogy used to build it. With custom code, Landing pages are typically completed within a week, business websites can take 1 to 3 weeks depending on the amount of content and features required, and Shopify stores take around 3 weeks. The timeline for your website will be stated before starting the process.",
-
-        ar: "الجدول الزمني يعتمد تماماً على نوع المشروع والتقنيات المستخدمة في بنائه. من خلال البرمجة الخاصة، يتم الانتهاء من صفحات الهبوط عادةً في غضون أسبوع واحد، بينما تستغرق مواقع الشركات من أسبوع إلى 3 أسابيع حسب حجم المحتوى والميزات المطلوبة، وتستغرق متاجر شوبيفاي حوالي 3 أسابيع. سيتم تحديد الجدول الزمني الخاص بموقعك بوضوح قبل البدء في التنفيذ.",
-      },
-    },
-    {
-      question: {
-        en: "What do I need to provide to get started?",
-
-        ar: "ما الذي أحتاج إلى تقديمه للبدء؟",
-      },
-
-      answer: {
-        en: "We'll need your basic brand materials. This mainly includes your logo, the text content you want for each section, and any high-quality photos or videos you'd like to showcase on the site.",
-
-        ar: "سنحتاج منك المواد الأساسية الخاصة بهوية شركتك. هذا يشمل بشكل رئيسي الشعار (اللوجو)، النصوص التي تود كتابتها في كل قسم، بالإضافة إلى أي صور أو فيديوهات عالية الجودة ترغب في عرضها على الموقع.",
-      },
-    },
-    {
-      question: {
-        en: "Do you work with clients outside of Egypt?",
-
-        ar: "هل تقدمون خدماتكم للعملاء خارج مصر؟",
-      },
-
-      answer: {
-        en: "Yes. We work with clients worldwide, remotely. We accept international payments via PayPal and Payoneer.",
-
-        ar: "نعم، نحن نعمل مع عملاء من جميع أنحاء العالم عن بُعد بشكل كامل، ونقبل المدفوعات الدولية عبر PayPal و Payoneer.",
-      },
-    },
+  
   ],
 };
 
