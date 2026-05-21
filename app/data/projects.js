@@ -1,9 +1,5 @@
 import ecommerceImg from "../../public/project-screenshots/e-commerce.webp";
 import travelImg from "../../public/project-screenshots/travel.webp";
-import gymImg from "../../public/project-screenshots/gym.webp";
-import clinicImg from "../../public/project-screenshots/clinic.webp";
-import petcareImg from "../../public/project-screenshots/petcare.webp";
-import interiorImg from "../../public/project-screenshots/interior.webp";
 
 import { SITE_URL } from "./translations/lang";
 
@@ -34,56 +30,6 @@ export const projects = [
     genreAr: "شركات السياحة والسفر",
   },
 
-  {
-    id: "Interior",
-    slug: "interior-design-website",
-    liveUrl: "/portfolio/interior-design-website",
-    screenshot: interiorImg,
-    schemaName: "Interior Design Portfolio – Egypt",
-    schemaNameAr: "معرض أعمال التصميم الداخلي – مصر",
-    description:
-      "An elegant portfolio demo by SM Web Design Studio designed for creative professionals, featuring high-resolution galleries and layouts tailored for interior design expertise.",
-    genre: "Interior Design & Decor",
-    genreAr: "التصميم الداخلي والديكور",
-  },
-  {
-    id: "Clinic",
-    slug: "medical-clinic-website",
-    liveUrl: "/portfolio/medical-clinic-website",
-    screenshot: clinicImg,
-    schemaName: "Medical Clinic Website Services – Egypt",
-    schemaNameAr: "منصة إدارة العيادات الطبية – مصر",
-    description:
-      "A medical management demo by SM Web Design Studio featuring optimized appointment booking flows and doctor profiles, highlighting our custom healthcare web solutions.",
-    genre: "Medical & Clinics",
-    genreAr: "العيادات والرعاية الصحية",
-  },
-
-  {
-    id: "PetCare",
-    slug: "pet-care-veterinary-website",
-    liveUrl: "/portfolio/pet-care-veterinary-website",
-    screenshot: petcareImg,
-    schemaName: "Pet Care & Veterinary Services – Egypt",
-    schemaNameAr: "خدمات رعاية الحيوانات الأليفة – مصر",
-    description:
-      "A service-based website demo by SM Web Design Studio for pet care businesses, illustrating clean UI and easy contact methods for veterinary and grooming services.",
-    genre: "Pet Care Services",
-    genreAr: "خدمات الحيوانات الأليفة",
-  },
-
-  {
-    id: "Gym",
-    slug: "gym-fitness-website",
-    liveUrl: "/portfolio/gym-fitness-website",
-    screenshot: gymImg,
-    schemaName: "Fitness Center & Gym Landing Page – Egypt",
-    schemaNameAr: "موقع صالة ألعاب رياضية (جيم) – مصر",
-    description:
-      "A high-conversion fitness landing page demo from SM Web Design Studio, showcasing membership management and trainer profile layouts optimized for lead generation.",
-    genre: "Fitness & Wellness",
-    genreAr: "اللياقة البدنية والصحة",
-  },
 ];
 
 // Reference the canonical ProfessionalService defined in layout.tsx JSON-LD graph

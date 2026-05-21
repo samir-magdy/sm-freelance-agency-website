@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import LanguageToggle from "../ui/LanguageToggle";
 import MobileMenu from "./MobileMenu";
-import SmoothScroll from "../utils/SmoothScroll";
+import useSmoothScroll from "../utils/SmoothScroll";
 import translations from "@/app/data/translations";
 
 const { navLinks } = translations;
@@ -16,7 +16,7 @@ function DesktopNavLinks({ nav }) {
   const lang = segments[0] || "en";
   const isHome = segments.length <= 1;
 
-  const handleScroll = SmoothScroll();
+  const handleScroll = useSmoothScroll();
   const contactItem = navLinks[navLinks.length - 1];
   const contactDestination = isHome ? `#${contactItem}` : `/${lang}/#${contactItem}`;
 
@@ -68,7 +68,7 @@ function DesktopNavLinks({ nav }) {
 
 export default function HeroNav({ lang, strings }) {
   const { nav, a11y } = strings;
-  const handleScroll = SmoothScroll();
+  const handleScroll = useSmoothScroll();
 
   return (
     <header>

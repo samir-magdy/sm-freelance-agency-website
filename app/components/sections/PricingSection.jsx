@@ -3,7 +3,7 @@
 import translations from "@/app/data/translations";
 import useSmoothScroll from "../utils/SmoothScroll";
 
-export default function PricingCardsSection({ lang }) {
+export default function PricingSection({ lang }) {
   const t = translations.pricingCards;
   const isRtl = lang === "ar";
   const handleScroll = useSmoothScroll();
