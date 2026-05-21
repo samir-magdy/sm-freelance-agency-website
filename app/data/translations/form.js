@@ -2,7 +2,7 @@ const form = {
   legend: { en: "Contact information", ar: "معلومات التواصل" },
   name: { en: "Name", ar: "الاسم" },
   namePlaceholder: { en: "Your name", ar: "اسمك" },
-  phone: { en: "Number", ar: "الهاتف" },
+  phone: { en: "Mobile Number", ar: "الهاتف" },
   phonePlaceholder: { en: "01XXXXXXXXX", ar: "01XXXXXXXXX" },
 contactMethod: {
     en: "Contact method",

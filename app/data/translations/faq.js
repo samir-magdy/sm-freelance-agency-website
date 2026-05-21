@@ -19,7 +19,7 @@ const faqSection = {
       },
 
       answer: {
-        en: "We can communicate through whichever channel works best for you to understand your business and the vision you have for website. From there, we create design mockups for your review. Once approved, we move into development. After a final review, your website goes live. We can communicate through whichever channel works best for you, though a proper meeting (physical or online) before starting the project consistently delivers the best results.",
+        en: "We first communicate through whichever channel you prefer to understand exactly what you need from your website. From there, we create design mockups for your review, once approved, we move into development. Finally after a final review, your website goes live!",
 
         ar: "نبدأ باجتماع استكشافي لفهم طبيعة عملك، أهدافك، ورؤيتك. ومن هنا، نقوم ببناء نماذج التصميم المبدئية لمراجعتها والموافقة عليها. بمجرد الاعتماد، ننتقل مباشرة إلى مرحلة التطوير والبرمجة. وبعد المراجعة النهائية وإجراء أي تعديلات أخيرة، ينطلق موقعك رسمياً على الإنترنت. يمكننا التواصل عبر أي وسيلة تناسبك، مع العلم أن عقد اجتماع منسق (أونلاين أو حضورياً) قبل بدء المشروع يضمن دائماً تحقيق أفضل النتائج.",
       },

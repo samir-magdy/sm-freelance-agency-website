@@ -149,7 +149,6 @@ export default function MacMockup({
 }: MacMockupProps) {
   const [active, setActive] = useState(0);
   const snapRef = useRef<HTMLDivElement>(null);
-  const animFrameRef = useRef<number | null>(null);
 
   useEffect(() => {
     const el = snapRef.current;
@@ -168,50 +167,10 @@ export default function MacMockup({
     return () => el.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    return () => {
-      if (animFrameRef.current !== null)
-        cancelAnimationFrame(animFrameRef.current);
-    };
-  }, []);
-
   const scrollToSlide = (idx: number) => {
     const el = snapRef.current;
     if (!el || idx < 0 || idx >= slides.length) return;
-
-    if (animFrameRef.current !== null) {
-      cancelAnimationFrame(animFrameRef.current);
-      animFrameRef.current = null;
-    }
-
-    const start = el.scrollLeft;
-    const target = idx * el.clientWidth;
-    const delta = target - start;
-    if (delta === 0) return;
-
-    const duration = 420;
-    let startTime: number | null = null;
-
-    const easeInOutCubic = (t: number) =>
-      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-
-    el.style.scrollSnapType = "none";
-
-    const step = (now: number) => {
-      if (startTime === null) startTime = now;
-      const progress = Math.min((now - startTime) / duration, 1);
-      el.scrollLeft = start + delta * easeInOutCubic(progress);
-
-      if (progress < 1) {
-        animFrameRef.current = requestAnimationFrame(step);
-      } else {
-        el.scrollLeft = target;
-        el.style.scrollSnapType = "";
-        animFrameRef.current = null;
-      }
-    };
-
-    animFrameRef.current = requestAnimationFrame(step);
+    el.scrollTo({ left: idx * el.clientWidth, behavior: "smooth" });
   };
 
   const activeSlide = slides[active];

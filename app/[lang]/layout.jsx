@@ -48,7 +48,7 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: `إنشاء موقع إلكتروني | مصر | ${SITE_NAME}`,
+    title: `إنشاء موقع إلكتروني في مصر | ${SITE_NAME}`,
     description: META_DESCRIPTION.ar,
     ogLocale: "ar_EG",
     altLocale: "en_US",

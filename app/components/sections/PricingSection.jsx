@@ -1,17 +1,16 @@
 "use client";
 
 import translations from "@/app/data/translations";
-import useSmoothScroll from "../utils/SmoothScroll";
+import smoothScroll from "../utils/SmoothScroll";
 
 export default function PricingSection({ lang }) {
   const t = translations.pricingCards;
   const isRtl = lang === "ar";
-  const handleScroll = useSmoothScroll();
 
   return (
   <section
   id="pricing"
-  className="relative py-4 px-4 md:px-6"
+  className="relative flex py-4 px-4 md:px-6 min-h-screen items-start"
   aria-labelledby="pricing-cards-heading"
   dir={isRtl ? "rtl" : "ltr"}
 >
@@ -30,14 +29,14 @@ export default function PricingSection({ lang }) {
           </div>
 
           {/* Cards Grid - Added md:grid-cols-2 to handle scaled screens gracefully */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6 lg:gap-8 w-full items-stretch">
+          <div className="grid grid-cols-1 gap-6 lg:gap-8">
             {t.cards.map((card) => (
               <a
                 key={card.id}
-                onClick={handleScroll}
+                onClick={smoothScroll}
                 href="#contact"
                 /* Trimmed internal padding slightly for mobile/scaled views */
-                className="reveal-element group flex flex-col p-6 sm:p-8 lg:p-10 rounded-[2rem] border border-border-subtle bg-surface-card hover:border-gold/40 hover:bg-surface-low hover:shadow-2xl hover:shadow-gold/5 transition-all duration-500 ease-out hover:-translate-y-1.5"
+                className="max-w-4xl reveal-element group flex flex-col p-6 sm:p-8 lg:p-10 rounded-[2rem] border border-border-subtle bg-surface-card hover:border-gold/40 hover:bg-surface-low hover:shadow-2xl hover:shadow-gold/5 transition-all duration-500 ease-out hover:-translate-y-1.5"
               >
                 {/* Top Half: Title & Tagline */}
                 {/* Reduced mb-10 to mb-6 to stop vertical bloating */}
@@ -46,7 +45,7 @@ export default function PricingSection({ lang }) {
                     {card.name[lang]}
                   </h3>
                   <p
-                    className="text-content-muted text-caption md:text-xl leading-relaxed [&_em]:font-medium"
+                    className="text-content-muted text-base md:text-xl leading-relaxed [&_em]:font-medium"
                     dangerouslySetInnerHTML={{ __html: card.tagline[lang] }}
                   />
                 </div>
@@ -54,8 +53,8 @@ export default function PricingSection({ lang }) {
                 {/* Bottom Half: Price & CTA */}
                 <div className="mt-auto pt-4 border-t border-border-subtle/50">
                   {/* Reduced mb-8 to mb-6 */}
-                  <div className="flex flex-col gap-1 mb-6">
-                    <span className="text-caption font-bold uppercase tracking-[0.2em] text-content-muted/70 leading-none">
+                  <div className="flex flex-col gap-1">
+                    <span className="text-[0.55rem] sm:text-xs font-bold uppercase tracking-[0.2em] text-content-muted/70 leading-none">
                       {t.startsAt[lang]}
                     </span>
                     <div className="flex items-baseline gap-1.5">
@@ -65,10 +64,7 @@ export default function PricingSection({ lang }) {
                       <span className="text-caption font-medium text-content-muted">
                         {t.currency[lang]}
                       </span>
-                    </div>
-                  </div>
-
-                  <span className="inline-flex items-center gap-2 text-caption md:text-base font-semibold text-content-body group-hover:text-gold transition-colors duration-300">
+                  <span className="ms-auto inline-flex items-center gap-2 text-text-base font-semibold text-content-body group-hover:text-gold transition-colors duration-300">
                     {t.cta[lang]}
                     <svg
                       width="16"
@@ -91,6 +87,9 @@ export default function PricingSection({ lang }) {
                       />
                     </svg>
                   </span>
+                    </div>
+                  </div>
+
                 </div>
               </a>
             ))}

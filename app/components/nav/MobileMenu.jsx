@@ -72,8 +72,8 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             <Image
               src="/brand.svg"
               alt="SM Web Design Studio – Website Design Company in Egypt"
-              width={50}
-              height={50}
+              width={55}
+              height={55}
               loading="eager"
             />
           </a>

@@ -97,7 +97,6 @@ export default function PortfolioShowcase({ lang }) {
   const [mounted, setMounted] = useState(false);
   const [active, setActive] = useState(0);
   const snapRef = useRef(null);
-  const animFrameRef = useRef(null);
   useEffect(() => {
     const el = snapRef.current;
     if (el) el.scrollLeft = 0;
@@ -124,10 +123,6 @@ export default function PortfolioShowcase({ lang }) {
     return () => el.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    return () => { if (animFrameRef.current !== null) cancelAnimationFrame(animFrameRef.current); };
-  }, []);
-
   const handleDemoClick = useCallback((e) => {
     e.preventDefault();
     const url = new URL(projects[active].liveUrl, window.location.origin);
@@ -136,44 +131,10 @@ export default function PortfolioShowcase({ lang }) {
     window.open(url.toString(), "_blank", "noopener");
   }, [active, lang]);
 
-  /* Programmatic scroll with rAF easing */
   const scrollToProject = useCallback((idx) => {
     const el = snapRef.current;
     if (!el || idx < 0 || idx >= projects.length) return;
-
-    if (animFrameRef.current !== null) {
-      cancelAnimationFrame(animFrameRef.current);
-      animFrameRef.current = null;
-    }
-
-    const start = el.scrollLeft;
-    const target = idx * el.clientWidth;
-    const delta = target - start;
-    if (delta === 0) return;
-
-    const duration = 300;
-    let startTime = null;
-
-    const easeInOutCubic = (t) =>
-      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-
-    el.style.scrollSnapType = "none";
-
-    const step = (now) => {
-      if (startTime === null) startTime = now;
-      const progress = Math.min((now - startTime) / duration, 1);
-      el.scrollLeft = start + delta * easeInOutCubic(progress);
-
-      if (progress < 1) {
-        animFrameRef.current = requestAnimationFrame(step);
-      } else {
-        el.scrollLeft = target;
-        el.style.scrollSnapType = "";
-        animFrameRef.current = null;
-      }
-    };
-
-    animFrameRef.current = requestAnimationFrame(step);
+    el.scrollTo({ left: idx * el.clientWidth, behavior: "smooth" });
   }, []);
 
   const project = projects[active];
@@ -184,7 +145,7 @@ export default function PortfolioShowcase({ lang }) {
   return (
     <section
       id="portfolio"
-      className="flex flex-col items-center justify-start min-h-svh pt-6 relative overflow-clip select-none px-5"
+      className="flex flex-col items-center justify-start pt-8 sm:pt-12 min-h-screen relative overflow-clip select-none px-5"
       aria-labelledby="portfolio-heading"
     >
       <div className="reveal">
@@ -265,7 +226,7 @@ export default function PortfolioShowcase({ lang }) {
               />
 
               {/* Phone outer shell */}
-              <div className="phone-outer w-[59vw] h-[60.1svh] sm:w-[16.4vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
+              <div id="mobile-mockup" className="phone-outer w-[59vw] h-[58svh] sm:w-[16.4vw] md:h-137.5 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
                 {/* Left volume buttons */}
                 <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
                 <div className="absolute -left-[2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />

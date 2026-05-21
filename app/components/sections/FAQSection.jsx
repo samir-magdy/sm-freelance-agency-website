@@ -6,7 +6,7 @@ export default function FAQSection({ lang }) {
 
   return (
     <section id="FAQs" aria-labelledby="FAQs-heading" className="py-4 px-4" dir={dir}>
-      <div className="max-w-7xl mx-auto flex flex-col items-center">
+      <div className="max-w-5xl mx-auto flex flex-col items-center">
         <div className="reveal-element mb-6 md:mb-12 text-center">
           <h2
             id="FAQs-heading"

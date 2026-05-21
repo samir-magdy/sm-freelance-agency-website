@@ -6,7 +6,6 @@ import translations from "@/app/data/translations";
 export default function HeroSection({ lang }) {
   const hero = translations.hero;
   const hookLines = hero.name[lang];
-
   useLayoutEffect(() => {
     if (sessionStorage.getItem("heroAnimationPlayed")) {
       document.documentElement.classList.add("hero-played");

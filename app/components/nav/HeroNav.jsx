@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import LanguageToggle from "../ui/LanguageToggle";
 import MobileMenu from "./MobileMenu";
-import useSmoothScroll from "../utils/SmoothScroll";
+import smoothScroll from "../utils/SmoothScroll";
 import translations from "@/app/data/translations";
 
 const { navLinks } = translations;
@@ -16,7 +16,6 @@ function DesktopNavLinks({ nav }) {
   const lang = segments[0] || "en";
   const isHome = segments.length <= 1;
 
-  const handleScroll = useSmoothScroll();
   const contactItem = navLinks[navLinks.length - 1];
   const contactDestination = isHome ? `#${contactItem}` : `/${lang}/#${contactItem}`;
 
@@ -31,7 +30,7 @@ function DesktopNavLinks({ nav }) {
               href={destination}
               onClick={(e) => {
                 if (isHome) {
-                  handleScroll(e);
+                  smoothScroll(e);
                 }
               }}
               className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
@@ -54,7 +53,7 @@ function DesktopNavLinks({ nav }) {
           href={contactDestination}
           onClick={(e) => {
             if (isHome) {
-              handleScroll(e);
+              smoothScroll(e);
             }
           }}
           className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
@@ -68,8 +67,6 @@ function DesktopNavLinks({ nav }) {
 
 export default function HeroNav({ lang, strings }) {
   const { nav, a11y } = strings;
-  const handleScroll = useSmoothScroll();
-
   return (
     <header>
       {/* Fixed Top Navbar for Desktop — fully static, server-rendered */}
@@ -78,7 +75,7 @@ export default function HeroNav({ lang, strings }) {
         className="hidden xl:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl px-8 pe-10"
       >
         <div className="relative flex items-center w-full">
-          <a href={`/${lang}/#home`} onClick={handleScroll} aria-label="Samir Magdy Web Studio - Home">
+          <a href={`/${lang}/#home`} onClick={smoothScroll} aria-label="Samir Magdy Web Studio - Home">
             <Image
               src="/brand.svg"
               alt="SM Web Design Studio – Website Design Company in Egypt"
