@@ -75,15 +75,15 @@ export default function HeroNav({ lang, strings }) {
       {/* Fixed Top Navbar for Desktop — fully static, server-rendered */}
       <nav
         aria-label={a11y.desktopNav}
-        className="hidden xl:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl px-8 pe-10 py-4"
+        className="hidden xl:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl px-8 pe-10"
       >
         <div className="relative flex items-center w-full">
           <a href={`/${lang}/#home`} onClick={handleScroll} aria-label="Samir Magdy Web Studio - Home">
             <Image
               src="/brand.svg"
               alt="SM Web Design Studio – Website Design Company in Egypt"
-              width={80}
-              height={66}
+              width={95}
+              height={95}
               priority
             />
           </a>

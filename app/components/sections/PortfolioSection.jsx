@@ -65,7 +65,7 @@ function StatusBar() {
     >
       <span className="inline-block mt-0.5">9:41</span>
       <div className="flex-1" />
-      <div className="flex gap-[2.5px] sm:gap-1.5 sm:items-center">
+      <div className="flex gap-[2px] sm:gap-1 sm:items-center">
         <svg width="15" height="10" viewBox="0 0 16 12" fill="none" aria-hidden>
           <rect x="0"    y="8" width="3"   height="4"  rx="0.5" fill="white" />
           <rect x="4.5"  y="5" width="3"   height="7"  rx="0.5" fill="white" />
@@ -265,7 +265,7 @@ export default function PortfolioShowcase({ lang }) {
               />
 
               {/* Phone outer shell */}
-              <div className="phone-outer w-[59vw] h-[58svh] sm:w-[16.4vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
+              <div className="phone-outer w-[59vw] h-[60.1svh] sm:w-[16.4vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
                 {/* Left volume buttons */}
                 <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
                 <div className="absolute -left-[2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -329,7 +329,7 @@ export default function PortfolioShowcase({ lang }) {
                   onClick={() => scrollToProject(i)}
                   className={`rounded-full transition-all duration-300 ${
                     i === active
-                      ? "w-5 h-2 bg-gold/75"
+                      ? "w-5 h-2 bg-gold/85"
                       : "w-2 h-2 bg-white/30 hover:bg-white/60"
                   }`}
                 />
