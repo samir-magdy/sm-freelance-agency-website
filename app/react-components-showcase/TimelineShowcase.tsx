@@ -14,13 +14,9 @@ const steps = [
   {
     title: "Set up your data",
     icon: Settings,
-    content: "Create an array of steps. Each step needs a 'title' and 'content' property. When using the icon variant, add an optional 'icon' property too.",
+    content: "Create an array of steps. Each step needs a 'title' and 'content' property. When using the icon variant, add an 'icon' property too.",
   },
-  {
-    title: "Choose a style",
-    icon: Paintbrush,
-    content: "Pick a variant: \"bullet\" (default) for dot markers or \"icon\" to render an icon at each step.",
-  },
+
   {
     title: "Pick your colors",
     icon: Zap,
