@@ -119,7 +119,7 @@ export default function Home() {
       </section>
       
 
-      {/* Scroll Timeline */}
+      {/* Scroll Timeline. */}
       <ComponentSection
         id="scroll-timeline"
         title="Scroll Timeline"
