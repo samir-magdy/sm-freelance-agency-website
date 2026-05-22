@@ -143,7 +143,7 @@ export default function Home() {
         id="scroll-timeline"
         title="Scroll Timeline"
         tagline="An animated timeline for workflow sections."
-        usage={`import { Timeline } from "@/components/Timeline";\nimport { Search, Paintbrush, Rocket } from "lucide-react";\n\n// icon is optional (only used with variant="icon")\nconst steps = [\n  { title: "Discovery", icon: Search,     content: <p>Research phase.</p> },\n  { title: "Design",    icon: Paintbrush, content: <p>Wireframes first.</p> },\n  { title: "Launch",    icon: Rocket,     content: <p>Ship it.</p> },\n];\n\nexport default function Page() {\n  return (\n    <Timeline\n      data={steps}\n      variant="icon"\n      accentColor="#a78bfa"\n      className="py-24 px-4"\n    />\n  );\n}`}
+        usage={`import { Timeline } from "@/components/Timeline";\nimport { Search, Paintbrush, Rocket } from "lucide-react";\n\n// icon is optional (only used with variant="icon")\nconst steps = [\n  { title: "Discovery", icon: Search,     content: <p>Research phase.</p> },\n  { title: "Design",    icon: Paintbrush, content: <p>Wireframes first.</p> },\n  { title: "Launch",    icon: Rocket,     content: <p>Ship it.</p> },\n];\n\nexport default function Page() {\n  return (\n    <Timeline\n      data={steps}\n      variant="icon"\n      accentColor="#a78bfa"\n      markerColor="#c9a43d"\n      className="py-24 px-4"\n    />\n  );\n}`}
       >
         <TimelineShowcase />
       </ComponentSection>
