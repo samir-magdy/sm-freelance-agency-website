@@ -24,7 +24,7 @@ If you use the `icon` variant, install lucide-react:
 npm install lucide-react
 ```
 
-If you only use `bullet` or `number`, lucide-react is never imported and you can skip this.
+If you only use `bullet`, lucide-react is never imported and you can skip this.
 
 ---
 
@@ -48,12 +48,6 @@ export default function Page() {
     </section>
   );
 }
-```
-
-### Number variant
-
-```tsx
-<Timeline data={steps} variant="number" accentColor="#6366f1" />
 ```
 
 ### Icon variant
@@ -86,7 +80,7 @@ export default function Page() {
 |---|---|---|---|
 | `data` | `TimelineItem[]` | — | **Required.** Array of timeline steps. |
 | `className` | `string` | — | Classes applied to the outer wrapper. |
-| `variant` | `"bullet" \| "number" \| "icon"` | `"bullet"` | Controls what renders in the marker beside each step. |
+| `variant` | `"bullet" \| "icon"` | `"bullet"` | Controls what renders in the marker beside each step. |
 | `accentColor` | `string` | `"white"` | Color of the scrolling beam. Any valid CSS color. |
 | `markerColor` | `string` | same as `accentColor` | Color of the active marker. Defaults to `accentColor` when omitted. |
 
@@ -105,8 +99,7 @@ export default function Page() {
 | Value | Marker |
 |---|---|
 | `"bullet"` | Small filled dot |
-| `"number"` | Numbered circle (1, 2, 3…) |
-| `"icon"` | Icon from the `icon` field — falls back to a number if no icon is provided on an item |
+| `"icon"` | Icon from the `icon` field — falls back to the step index if no icon is provided on an item |
 
 When switching variants the markers fade out and back in over 150 ms to avoid a jarring swap.
 

@@ -14,17 +14,17 @@ const steps = [
   {
     title: "Set up your data",
     icon: Settings,
-    content: "Create an array of steps, each step is an object that needs a 'title' and a 'content' property.",
+    content: "Create an array of steps. Each step needs a 'title' and 'content' property. When using the icon variant, add an optional 'icon' property too.",
   },
   {
     title: "Choose a style",
     icon: Paintbrush,
-    content: "Use variant=\"icon\" to display icons at each step or ommit the variant prop to use the standard bullets.",
+    content: "Pick a variant: \"bullet\" (default) for dot markers or \"icon\" to render an icon at each step.",
   },
   {
     title: "Pick your colors",
     icon: Zap,
-    content: "Pass accentColor='color' for the beam and markerColor='color' for the active marker. Any valid CSS color works.",
+    content: "Pass colors via accentColor (beam + fallback marker) and markerColor props.",
   },
   {
     title: "You're all set",

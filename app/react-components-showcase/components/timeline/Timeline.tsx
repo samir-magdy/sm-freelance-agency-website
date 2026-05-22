@@ -11,7 +11,7 @@ export interface TimelineItem {
 export interface TimelineProps {
   data: TimelineItem[];
   className?: string;
-  variant?: "bullet" | "number" | "icon";
+  variant?: "bullet" | "icon";
   accentColor?: string;
   markerColor?: string;
 }
