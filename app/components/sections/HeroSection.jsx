@@ -68,7 +68,7 @@ export default function HeroSection({ lang }) {
           <a
           id="cta-main"
             href="#contact"
-            className="cta-primary hero-cta-entrance font-semibold bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(16px,3vw,24px)] rtl:text-[clamp(16px,1.8vw,26px)] px-6 sm:px-8 py-2.5 rounded-2xl"
+            className="cta-primary hero-cta-entrance font-semibold bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(16px,3vw,24px)] rtl:text-[clamp(16px,1.8vw,26px)] px-6 sm:px-10 py-2.5 rounded-2xl"
           >
             {hero.primaryCta[lang]}
              

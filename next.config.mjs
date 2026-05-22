@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
-  allowedDevOrigins: ["192.168.1.132"],
+  allowedDevOrigins: ["192.168.1.209"],
 
   async redirects() {
     return [

@@ -132,7 +132,7 @@ export function Timeline({ data, variant = "bullet", accentColor = "white", mark
 
   return (
     <div className="w-full" ref={containerRef}>
-      <div ref={ref} className="relative max-w-5xl mx-auto">
+      <div ref={ref} className="relative max-w-5xl mx-auto overflow-x-hidden">
 
         {/* List of timeline entries */}
         <ol className="list-none">

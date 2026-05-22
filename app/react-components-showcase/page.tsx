@@ -99,7 +99,7 @@ export default function Home() {
       {/* Hero */}
       <section id="home" className="pt-12 pb-14 md:pt-16 md:pb-20 px-2 text-center">
         <div className="max-w-2xl mx-auto px-6">
-          <h1 className="text-heading font-bold text-white tracking-tight leading-[1.1]">
+          <h1 className="text-[clamp(2rem,8vw,4rem)] font-bold text-white tracking-tight leading-[1.1]">
             Production-ready
             <br />
             React components.

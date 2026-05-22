@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "@/app/globals.css";
 import { SITE_URL } from "@/app/data/translations/lang";
 
-const PAGE_URL = `${SITE_URL}/react-components`;
+const PAGE_URL = `${SITE_URL}/react-components-showcase`;
 const SITE_NAME = "SM Web Design Studio";
 const TWITTER_HANDLE = "@SMWebDesignCo";
 
-const TITLE = "React UI Components | Interactive UI Blocks for Your Projects";
+const TITLE = `Ready-to-Use React UI Components | ${SITE_NAME}`;
 const DESCRIPTION =
   "Fully responsive & customizable. Drop the file in & add your data. That's it!";
 

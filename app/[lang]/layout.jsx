@@ -24,8 +24,8 @@ const PHONE_NUMBER = "+201274613331";
 const TWITTER_HANDLE = "@SMWebDesignCo";
 
 const META_DESCRIPTION = {
-  en: "Expert web design & development in Egypt. Discover how we can help your business grow.",
-  ar: "تصميم مواقع احترافية ومتاجر شوبيفاي في مصر. اكتشف كيف يمكننا مساعدتك في تنمية حضورك الرقمي.",
+  en: "Expert web design & development in Egypt. Discover how we can grow your online presence.",
+  ar: "تصميم مواقع احترافية ومتاجر شوبيفاي في مصر. اكتشف كيف يمكننا تنمية حضورك الرقمي.",
 };
 
 const SOCIAL_LINKS = {

@@ -59,11 +59,18 @@ export default function sitemap() {
     priority: 0.5,
   };
 
+  const showcaseEntry = {
+    url: `${SITE_URL}/react-components-showcase`,
+    lastModified: now,
+    priority: 0.5,
+  };
+
   return [
     ...homeEntries,
     ...guidesListingEntries,
     ...guideEntries,
     ...portfolioEntries,
     premiumComponentsEntry,
+    showcaseEntry,
   ];
 }

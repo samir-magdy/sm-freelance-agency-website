@@ -63,7 +63,7 @@ function ColorControl({
       <span className="text-caption font-medium tracking-widest text-zinc-500 uppercase w-12 shrink-0">
         {label}
       </span>
-      <label className="ms-4 relative cursor-pointer shrink-0">
+      <label className="ms-2 sm:ms-4 relative cursor-pointer shrink-0">
         <span
           className="h-5 w-5 rounded-full border border-white/20 block"
           style={{ background: value }}
@@ -97,9 +97,9 @@ export default function TimelineShowcase() {
   return (
     <div className="w-full">
       <div className="flex justify-center mb-12">
-        <div className="flex items-stretch gap-0 rounded-2xl border border-white/10 bg-white/[0.03] px-5 md:px-7 py-4 md:py-5 divide-x divide-white/10">
+        <div className="flex items-stretch gap-0 rounded-2xl border border-white/10 bg-white/[0.03] px-4 md:px-7 py-4 md:py-5 divide-x divide-white/10">
 
-          <div className="flex flex-col gap-5 pe-6 md:pe-8">
+          <div className="flex flex-col gap-5 pe-4 md:pe-8">
             <span className="text-caption font-medium tracking-widest text-zinc-400 uppercase">
               Variant
             </span>
@@ -120,7 +120,7 @@ export default function TimelineShowcase() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2.5 md:gap-3.5 ps-6 md:ps-8">
+          <div className="flex flex-col gap-2 md:gap-3.5 ps-4 md:ps-8">
             <span className="text-caption font-medium tracking-widest text-zinc-400 uppercase">
               Colors
             </span>
@@ -134,7 +134,6 @@ export default function TimelineShowcase() {
       </div>
 
       <Timeline
-        key={variant}
         data={steps}
         variant={variant}
         accentColor={beamColor}

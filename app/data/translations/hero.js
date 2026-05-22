@@ -8,8 +8,8 @@ const hero = {
     ar: '<span class="md:inline block">مواقع <span class="text-gold">مخصصة</span>.</span> <span class="md:inline block">متاجر <span class="text-gold">إلكترونية</span>.</span> <span class="md:inline block">نتائج <span class="text-gold">حقيقية</span>.</span>',
   },
   primaryCta: {
-    en: "Start a Project",
-    ar: "ابدأ مشروعك",
+    en: "Get Started",
+    ar: "اتصل بنا",
   },
   secondaryCta: {
     en: "Not Sure Yet?",
