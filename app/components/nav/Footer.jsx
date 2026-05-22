@@ -17,7 +17,7 @@ export default function Footer() {
     <footer
       id="contact-footer"
       dir="ltr"
-      className="bg-background/10 border-t border-border-subtle py-5"
+      className="bg-background/10 border-t border-border-subtle py-4"
     >
       <div className="flex flex-col items-center justify-center gap-4 text-content-muted">
         <div className="flex items-center">

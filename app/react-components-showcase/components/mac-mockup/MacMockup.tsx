@@ -1,24 +1,21 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
 
-// Slide data passed into the carousel
 export interface Slide {
   image: string;
   alt?: string;
   url?: string;
 }
 
-// Props accepted by the main MacMockup component
 export interface MacMockupProps {
   slides: Slide[];
+  className?: string;
   paginationDotColor?: string;
+  inactiveDotColor?: string;
 }
 
-// Sub-components — browser chrome UI
-
-// Extracts the bare hostname from a slide URL for the address bar — falls back to a placeholder
+// Pulls the domain name out of a URL for the address bar
 function extractDomain(url?: string): string {
   if (!url) return "yourwebsite.com";
   try {
@@ -28,7 +25,7 @@ function extractDomain(url?: string): string {
   }
 }
 
-// Three colored circles in the top-left corner of the browser chrome
+// The red / yellow / green circles in the top-left of the browser bar
 function TrafficLights() {
   return (
     <div className="flex items-center gap-[7px] shrink-0">
@@ -39,7 +36,7 @@ function TrafficLights() {
   );
 }
 
-// Padlock icon shown to the left of the domain in the address bar
+// Padlock icon inside the address bar
 function LockIcon() {
   return (
     <svg
@@ -69,19 +66,17 @@ function LockIcon() {
   );
 }
 
-// macOS-style dark browser toolbar with traffic lights, address bar, and lock icon
+// The dark top bar with traffic lights and address bar
 function BrowserChrome({ url }: { url?: string }) {
   const domain = extractDomain(url);
   return (
     <div
       className="flex items-center gap-3 px-4 h-10 shrink-0 border-b border-black/40"
-      style={{
-        background: "linear-gradient(180deg, #272729 0%, #222224 100%)",
-      }}
+      style={{ background: "linear-gradient(180deg, #272729 0%, #222224 100%)" }}
     >
       <TrafficLights />
       <div className="flex-1 flex justify-center">
-        {/* Address bar — centered pill showing the lock icon and current slide domain */}
+        {/* Address bar */}
         <div
           className="flex items-center gap-1.5 h-[26px] w-full max-w-[260px] rounded-[6px] px-2.5"
           style={{ background: "rgba(255,255,255,0.07)" }}
@@ -91,8 +86,7 @@ function BrowserChrome({ url }: { url?: string }) {
             className="text-[#8e8e93] truncate"
             style={{
               fontSize: "11.5px",
-              fontFamily:
-                "-apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif",
+              fontFamily: "-apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif",
               fontWeight: 400,
               letterSpacing: "0.1px",
             }}
@@ -107,7 +101,7 @@ function BrowserChrome({ url }: { url?: string }) {
   );
 }
 
-// Left / right arrow buttons flanking the mockup — hidden (not just disabled) when at the first or last slide
+// Left / right navigation arrows shown on desktop
 interface NavArrowProps {
   direction: "prev" | "next";
   disabled: boolean;
@@ -142,10 +136,11 @@ function NavArrow({ direction, disabled, onClick }: NavArrowProps) {
   );
 }
 
-// Main component — renders the browser shell, carousel, and pagination dots
 export default function MacMockup({
   slides,
+  className,
   paginationDotColor = "white",
+  inactiveDotColor = "rgba(255,255,255,0.3)",
 }: MacMockupProps) {
   const [active, setActive] = useState(0);
   const snapRef = useRef<HTMLDivElement>(null);
@@ -176,9 +171,9 @@ export default function MacMockup({
   const activeSlide = slides[active];
 
   return (
-    <div className="flex flex-col items-center gap-3 select-none">
+    <div className={`flex flex-col items-center gap-3 select-none${className ? ` ${className}` : ""}`}>
 
-      {/* Row containing the prev/next arrows and the browser window */}
+      {/* Arrows + browser window */}
       <div className="flex items-center justify-center gap-8">
         {slides.length > 1 && <NavArrow
           direction="prev"
@@ -186,7 +181,7 @@ export default function MacMockup({
           onClick={() => scrollToSlide(active - 1)}
         />}
 
-        {/* Browser window — macOS dark chrome with a scrollable screenshot area below */}
+        {/* Browser window */}
         <div
           className="w-[88vw] sm:w-[460px] md:w-[560px] lg:w-[660px] overflow-hidden flex flex-col aspect-[13/10] md:aspect-[15/10]"
           style={{
@@ -198,7 +193,7 @@ export default function MacMockup({
         >
           <BrowserChrome url={activeSlide?.url} />
 
-          {/* Horizontally scrollable snap carousel — one slide per full window width */}
+          {/* Slide carousel */}
           <div
             ref={snapRef}
             className="mac-snap flex flex-1 min-h-0 overflow-x-auto snap-x snap-mandatory [scrollbar-width:none]"
@@ -209,12 +204,9 @@ export default function MacMockup({
                 key={i}
                 className="min-w-full h-full snap-start snap-always overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
               >
-                <Image
+                <img
                   src={slide.image}
                   alt={slide.alt ?? `Slide ${i + 1}`}
-                  width={0}
-                  height={0}
-                  sizes="100vw"
                   className="w-full h-auto block"
                   loading={i === 0 ? "eager" : "lazy"}
                 />
@@ -230,7 +222,7 @@ export default function MacMockup({
         />}
       </div>
 
-      {/* Pagination dots — active slide shown as a wider pill, others as small circles */}
+      {/* Pagination dots */}
       {slides.length > 1 && <div
         className="flex items-center gap-1.5"
         role="tablist"
@@ -246,16 +238,8 @@ export default function MacMockup({
             className="rounded-full transition-all duration-300 cursor-pointer"
             style={
               i === active
-                ? {
-                    width: "1.25rem",
-                    height: "0.5rem",
-                    background: paginationDotColor,
-                  }
-                : {
-                    width: "0.5rem",
-                    height: "0.5rem",
-                    background: "rgba(255,255,255,0.3)",
-                  }
+                ? { width: "1.25rem", height: "0.5rem", background: paginationDotColor }
+                : { width: "0.5rem",  height: "0.5rem", background: inactiveDotColor }
             }
           />
         ))}

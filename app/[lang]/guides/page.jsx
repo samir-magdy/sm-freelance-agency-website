@@ -120,7 +120,7 @@ export default function GuidesPage({ params }) {
             <h1 className="text-heading font-bold text-content-heading mb-2 rtl:mb-3">
               {t.pageTitle[lang]}
             </h1>
-            <p className="text-content-muted text-[clamp(1.2rem,2vw,1.6rem)] mx-auto leading-relaxed">
+            <p className="text-content-muted text-[clamp(1.1rem,2vw,1.6rem)] mx-auto leading-relaxed">
               {t.pageSubtitle[lang]}
             </p>
           </header>

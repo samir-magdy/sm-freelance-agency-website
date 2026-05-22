@@ -36,10 +36,20 @@ export default function MyPage() {
         { image: "/screenshots/screen2.png", alt: "Dashboard" },
         { image: "/screenshots/screen3.png", alt: "Settings" },
       ]}
-      paginationDotColor="white"
     />
   );
 }
+```
+
+With all optional props:
+
+```tsx
+<IPhoneMockup
+  slides={[...]}
+  className="mx-auto my-12"
+  paginationDotColor="#6366f1"
+  inactiveDotColor="rgba(99,102,241,0.3)"
+/>
 ```
 
 ---
@@ -51,7 +61,9 @@ export default function MyPage() {
 | Prop | Type | Default | Description |
 |---|---|---|---|
 | `slides` | `Slide[]` | — | **Required.** Array of slides to display. |
+| `className` | `string` | — | Classes applied to the outer wrapper. Use for layout, positioning, or margin. |
 | `paginationDotColor` | `string` | `"white"` | Color of the active pagination dot. Any valid CSS color — hex, hsl, rgb, or a named color. |
+| `inactiveDotColor` | `string` | `"rgba(255,255,255,0.3)"` | Color of inactive pagination dots. Any valid CSS color. Override when using the component on a light background. |
 
 ### `Slide`
 
@@ -59,6 +71,8 @@ export default function MyPage() {
 |---|---|---|---|
 | `image` | `string` | ✅ | Path or URL to the screenshot image. |
 | `alt` | `string` | — | Alt text for accessibility. Recommended. |
+
+> **Single slide:** pass one item and the navigation arrows and pagination dots are hidden automatically.
 
 ---
 
@@ -84,11 +98,6 @@ Screenshots should be **390px wide** (iPhone 14 logical width) for a perfect fit
 
 ## Notes
 
-- **Next.js App Router:** The `"use client"` directive and the `next/image` import are already set up. No action needed.
-- **Other setups (Vite, CRA, etc.):** Remove the `"use client"` line **and** replace `import Image from "next/image"` with a plain `<img>` tag. Swap every `<Image ... />` instance in the file with:
-  ```tsx
-  <img src={slide.image} alt={slide.alt ?? `Slide ${i + 1}`} className="w-full h-auto block" loading={i === 0 ? "eager" : "lazy"} />
-  ```
-- Screenshots should match the full width of the phone screen for best results. A width of **390px** (iPhone 14 logical width) is ideal.
+- **Next.js App Router:** The `"use client"` directive is already set up. No action needed.
+- **Other setups (Vite, CRA, etc.):** Remove the `"use client"` line at the top of the file. That's it.
 - The component is **fully responsive** — scales down gracefully on mobile. Navigation arrows are hidden below the `sm` breakpoint; users swipe natively on touch screens.
-- Use alongside `MacMockup` to showcase both mobile and desktop versions of your projects side by side.

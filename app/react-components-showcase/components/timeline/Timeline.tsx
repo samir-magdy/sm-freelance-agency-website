@@ -2,22 +2,21 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-// Data shape for a single timeline entry
 export interface TimelineItem {
   title: string;
-  content: string;
+  content: React.ReactNode;
   icon?: React.ComponentType<{ size?: number; className?: string; style?: React.CSSProperties }>;
 }
 
-// Props accepted by the Timeline component
 export interface TimelineProps {
   data: TimelineItem[];
-  variant?: "bullet" | "icon";
+  className?: string;
+  variant?: "bullet" | "number" | "icon";
   accentColor?: string;
   markerColor?: string;
 }
 
-// Scroll-driven hook — measures the track, grows the beam as the user scrolls, and tracks which items are active
+// Measures the track height and drives the beam + active index as the user scrolls
 function useBulletBeam(accentColor: string) {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,6 +30,7 @@ function useBulletBeam(accentColor: string) {
   const activeIndexRef = useRef(-1);
   const initializedRef = useRef(false);
 
+  // Measures the track from the first to last item and watches for resize
   useEffect(() => {
     const container = ref.current;
     if (!container) return;
@@ -55,6 +55,7 @@ function useBulletBeam(accentColor: string) {
     return () => ro.disconnect();
   }, []);
 
+  // Updates the beam height and active item on every scroll frame
   useEffect(() => {
     const container = containerRef.current;
     const beam = beamRef.current;
@@ -105,36 +106,20 @@ function useBulletBeam(accentColor: string) {
   };
 }
 
-// Main component — renders a vertical timeline with a scroll-animated beam and per-item markers
-export function Timeline({ data, variant = "bullet", accentColor = "white", markerColor }: TimelineProps) {
+export function Timeline({ data, className, variant = "bullet", accentColor = "white", markerColor }: TimelineProps) {
   const { ref, containerRef, beamRef, height, trackTop, activeIndex, initialized, itemRefs, beamGradient } =
     useBulletBeam(accentColor);
   const activeMarkerColor = markerColor ?? accentColor;
 
   const everActiveRef = useRef<Set<number>>(new Set());
 
-  // Variant switch — fades markers out and back in when the variant prop changes
-  const [displayedVariant, setDisplayedVariant] = useState(variant);
-  const [markerOpacity, setMarkerOpacity] = useState(1);
-  const mounted = useRef(false);
-
-  useEffect(() => {
-    if (!mounted.current) { mounted.current = true; return; }
-    setMarkerOpacity(0);
-    const t = setTimeout(() => {
-      setDisplayedVariant(variant);
-      setMarkerOpacity(1);
-    }, 150);
-    return () => clearTimeout(t);
-  }, [variant]);
-
-  const large = displayedVariant !== "bullet";
+  const large = variant !== "bullet";
 
   return (
-    <div className="w-full" ref={containerRef}>
-      <div ref={ref} className="relative max-w-5xl mx-auto overflow-x-hidden">
+    <div className={`w-full${className ? ` ${className}` : ""}`} ref={containerRef}>
+      <div ref={ref} className="relative max-w-5xl mx-auto">
 
-        {/* List of timeline entries */}
+        {/* List of steps */}
         <ol className="list-none">
           {data.map((item, index) => {
             const active = index <= activeIndex;
@@ -143,7 +128,7 @@ export function Timeline({ data, variant = "bullet", accentColor = "white", mark
             if (initialized && active) everActiveRef.current.add(index);
             const revealed = everActiveRef.current.has(index);
 
-            // Entrance animation — slides and fades in from the right when the beam reaches this item
+            // Slides and fades in from the right when the beam reaches this item
             const fadeStyle: React.CSSProperties | undefined = initialized ? {
               opacity: revealed ? 1 : 0,
               transform: revealed ? "translateX(0)" : "translateX(30px)",
@@ -156,27 +141,28 @@ export function Timeline({ data, variant = "bullet", accentColor = "white", mark
                 ref={(el) => { itemRefs.current[index] = el; }}
                 className="flex min-h-70 md:min-h-0 md:py-40"
               >
-                {/* Left column — sticky marker and desktop title */}
+                {/* Left column — marker and title (desktop) */}
                 <div className="sticky flex flex-col justify-between md:flex-row z-1 items-center md:w-full">
 
-                  {/* Marker — bullet dot, numbered circle, or icon depending on variant */}
+                  {/* Marker — dot, number, or icon */}
                   <div
                     className={`absolute rounded-full bg-background flex items-center justify-center ${
-                      displayedVariant === "icon"
+                      variant === "icon"
                         ? "h-20 w-12 inset-s-0 sm:inset-s-1"
                         : large
                         ? "h-14 w-12 inset-s-0 sm:inset-s-1"
                         : "h-12 w-10 inset-s-0 sm:inset-s-3"
                     }`}
-                    style={{ opacity: markerOpacity, transition: "opacity 150ms ease" }}
                   >
                     {large ? (
                       <div className="h-20 w-20 sm:ps-2 flex items-center justify-center">
-                        {displayedVariant === "icon" && Icon ? (
+                        {variant === "icon" && Icon ? (
+                          // Light theme: replace rgba(255,255,255,0.35) with a dark inactive color e.g. rgba(0,0,0,0.25)
                           <Icon size={40} className="transition-colors duration-500 sm:pe-0 pe-1.5" style={{ color: active ? activeMarkerColor : "rgba(255,255,255,0.35)" }} />
                         ) : (
                           <span
                             className="font-bold border rounded-full p-4 transition-colors duration-500 sm:pe-0 pe-1.5 text-heading"
+                            // Light theme: replace rgba(255,255,255,0.35) with a dark inactive color e.g. rgba(0,0,0,0.25)
                             style={{ color: active ? activeMarkerColor : "rgba(255,255,255,0.35)" }}
                           >
                             {index + 1}
@@ -191,23 +177,26 @@ export function Timeline({ data, variant = "bullet", accentColor = "white", mark
                     )}
                   </div>
 
-                  {/* Title — desktop only, sits inline with the marker */}
+                  {/* Title — desktop only */}
+                  {/* Light theme: replace text-zinc-200 with a dark color e.g. text-zinc-800 */}
                   <h3 className={`hidden md:block text-heading font-bold text-zinc-200 ${large ? "md:ps-20" : "md:ps-18"}`}>
                     {item.title}
                   </h3>
                 </div>
 
-                {/* Right column — mobile title and content paragraph */}
+                {/* Right column — title (mobile) + content */}
                 <div className={`relative md:ps-0 w-full flex flex-col md:block pt-1.5 md:pt-0 ${large ? "ps-16" : "ps-14"}`}>
 
                   {/* Title — mobile only */}
-                  <h3 className={`md:hidden text-heading block text-start font-semibold text-zinc-200 ${displayedVariant === "icon" ? "pt-4" : "" }`}>
+                  {/* Light theme: replace text-zinc-200 with a dark color e.g. text-zinc-800 */}
+                  <h3 className={`md:hidden text-heading block text-start font-semibold text-zinc-200 ${variant === "icon" ? "pt-4" : "" }`}>
                     {item.title}
                   </h3>
 
-                  {/* Content — fades and slides in when activated by the beam */}
-                  <div className="flex-1 flex items-center md:block md:max-w-[90%]" style={fadeStyle}>
-                    <p className="text-zinc-300/90 text-subheading leading-relaxed">{item.content}</p>
+                  {/* Content */}
+                  {/* Light theme: replace text-white/90 with a dark color e.g. text-zinc-700 */}
+                  <div className="flex-1 flex text-white/90 text-lg sm:text-2xl items-center md:block md:max-w-[90%]" style={fadeStyle}>
+                    {item.content}
                   </div>
                 </div>
               </li>
@@ -215,7 +204,8 @@ export function Timeline({ data, variant = "bullet", accentColor = "white", mark
           })}
         </ol>
 
-        {/* Track — the static vertical line running the full height of the list */}
+        {/* Static vertical track line */}
+        {/* Light theme: replace rgba(255,255,255,0.15) with a dark color e.g. rgba(0,0,0,0.12) */}
         <div
           className="absolute md:inset-s-8 inset-s-5 overflow-hidden w-0.5"
           style={{
@@ -226,7 +216,7 @@ export function Timeline({ data, variant = "bullet", accentColor = "white", mark
             WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)",
           }}
         >
-          {/* Beam — glowing fill that grows downward as the user scrolls */}
+          {/* Glowing beam that fills as the user scrolls */}
           <div
             ref={beamRef}
             className="absolute inset-x-0 top-0 w-0.5 h-0 opacity-0 rounded-full"

@@ -1,8 +1,6 @@
 # MacMockup — Interactive MacBook Desktop Carousel Mockup
 
-A plug-and-play React component that renders a realistic Space Gray MacBook frame with a browser chrome bar and scrollable screenshot carousel inside. The faithful desktop companion to `IPhoneMockup`.
-
-Built with TypeScript and Tailwind CSS v4.
+A plug-and-play React component that renders a realistic Space Gray MacBook frame with a browser chrome bar and scrollable screenshot carousel inside. Built with TypeScript and Tailwind CSS v4.
 
 ---
 
@@ -34,25 +32,24 @@ export default function MyPage() {
   return (
     <MacMockup
       slides={[
-        {
-          image: "/screenshots/project1.png",
-          alt: "Project 1 — E-commerce store",
-          url: "https://myproject1.com",
-        },
-        {
-          image: "/screenshots/project2.png",
-          alt: "Project 2 — SaaS dashboard",
-          url: "https://myproject2.com",
-        },
-        {
-          image: "/screenshots/project3.png",
-          alt: "Project 3 — Portfolio site",
-        },
+        { image: "/screenshots/project1.png", alt: "E-commerce store", url: "https://myproject1.com" },
+        { image: "/screenshots/project2.png", alt: "SaaS dashboard",   url: "https://myproject2.com" },
+        { image: "/screenshots/project3.png", alt: "Portfolio site" },
       ]}
-      paginationDotColor="white"
     />
   );
 }
+```
+
+With all optional props:
+
+```tsx
+<MacMockup
+  slides={[...]}
+  className="mx-auto my-12"
+  paginationDotColor="#6366f1"
+  inactiveDotColor="rgba(99,102,241,0.3)"
+/>
 ```
 
 ---
@@ -64,7 +61,9 @@ export default function MyPage() {
 | Prop | Type | Default | Description |
 |---|---|---|---|
 | `slides` | `Slide[]` | — | **Required.** Array of slides to display. |
+| `className` | `string` | — | Classes applied to the outer wrapper. Use for layout, positioning, or margin. |
 | `paginationDotColor` | `string` | `"white"` | Color of the active pagination dot. Any valid CSS color — hex, hsl, rgb, or a named color. |
+| `inactiveDotColor` | `string` | `"rgba(255,255,255,0.3)"` | Color of inactive pagination dots. Any valid CSS color. Override when using the component on a light background. |
 
 ### `Slide`
 
@@ -72,7 +71,9 @@ export default function MyPage() {
 |---|---|---|---|
 | `image` | `string` | ✅ | Path or URL to the screenshot image. |
 | `alt` | `string` | — | Alt text for accessibility. Recommended. |
-| `url` | `string` | — | Full URL (e.g. `"https://myproject.com"`). The domain is extracted and shown in the browser chrome address bar as the user navigates. If omitted, the address bar shows `yourwebsite.com`. |
+| `url` | `string` | — | Full URL (e.g. `"https://myproject.com"`). The domain is extracted and shown in the address bar as the user navigates. Falls back to `yourwebsite.com` if omitted. |
+
+> **Single slide:** pass one item and the navigation arrows and pagination dots are hidden automatically.
 
 ---
 
@@ -96,12 +97,7 @@ Screenshots should be **landscape / wide-format**. A viewport width of at least 
 
 ## Notes
 
-- **Next.js App Router:** The `"use client"` directive and the `next/image` import are already set up. No action needed.
-- **Other setups (Vite, CRA, etc.):** Remove the `"use client"` line **and** replace `import Image from "next/image"` with a plain `<img>` tag. Swap every `<Image ... />` instance in the file with:
-  ```tsx
-  <img src={slide.image} alt={slide.alt ?? `Slide ${i + 1}`} className="w-full h-auto block" loading={i === 0 ? "eager" : "lazy"} />
-  ```
-- Screenshots should be **landscape / wide-format** (16:9 or 16:10 ratio) for best results. Portrait or square images will work but may look unusual inside a laptop frame.
-- The address bar automatically extracts and displays the domain from each slide's `url`, updating as the user navigates. If no `url` is provided for a slide, it falls back to `yourwebsite.com`.
+- **Next.js App Router:** The `"use client"` directive is already set up. No action needed.
+- **Other setups (Vite, CRA, etc.):** Remove the `"use client"` line at the top of the file. That's it.
+- Screenshots should be **landscape / wide-format** (16:9 or 16:10 ratio) for best results. Portrait or square images will work but may look unusual inside a browser frame.
 - The component is **fully responsive** — scales down gracefully on mobile. Navigation arrows are hidden below the `sm` breakpoint.
-- Use alongside `IPhoneMockup` to showcase both mobile and desktop versions of your projects side by side.

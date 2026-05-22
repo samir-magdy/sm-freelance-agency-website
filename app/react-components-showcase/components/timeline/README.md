@@ -1,8 +1,6 @@
 # Timeline
 
-**UI Blocks** — Scroll-driven animated vertical timeline component.
-
-A vertical timeline where a glowing beam fills as the user scrolls, activating each step's dot as it passes. Drop it in, pass your steps as data, done.
+A scroll-driven animated vertical timeline. A glowing beam fills as the user scrolls, activating each step's marker as it passes.
 
 ---
 
@@ -14,13 +12,11 @@ A vertical timeline where a glowing beam fills as the user scrolls, activating e
 | Tailwind CSS | **v4 only** |
 | lucide-react | any (only needed for the `icon` variant) |
 
-> **Tailwind v3?** This component uses v4 utility syntax and will not work on v3.
-
 ---
 
-## Setup
+## Installation
 
-Copy `Timeline.tsx` into your project (e.g. `src/components/Timeline.tsx`). No CSS changes, no config changes, no extra files.
+Copy `Timeline.tsx` into your project (e.g. `src/components/Timeline.tsx`).
 
 If you use the `icon` variant, install lucide-react:
 
@@ -28,44 +24,21 @@ If you use the `icon` variant, install lucide-react:
 npm install lucide-react
 ```
 
-(Or you can directly use an inline svg)
-
-If you only use `bullet`, lucide-react is never imported at runtime and you can skip this.
+If you only use `bullet` or `number`, lucide-react is never imported and you can skip this.
 
 ---
 
 ## Usage
 
-### Minimal — bullet variant (default)
+### Bullet variant (default)
 
 ```tsx
 import { Timeline } from "@/components/Timeline";
 
 const steps = [
-  {
-    title: "Discovery",
-    content: (
-      <p className="text-zinc-400 text-lg px-2">
-        We dig into your goals, your users, and your constraints.
-      </p>
-    ),
-  },
-  {
-    title: "Design",
-    content: (
-      <p className="text-zinc-400 text-lg px-2">
-        Wireframes first, pixels second.
-      </p>
-    ),
-  },
-  {
-    title: "Launch",
-    content: (
-      <p className="text-zinc-400 text-lg px-2">
-        We handle deployment and handover.
-      </p>
-    ),
-  },
+  { title: "Discovery", content: <p className="text-zinc-400 text-lg">Research phase.</p> },
+  { title: "Design",    content: <p className="text-zinc-400 text-lg">Wireframes first.</p> },
+  { title: "Launch",    content: <p className="text-zinc-400 text-lg">Ship it.</p> },
 ];
 
 export default function Page() {
@@ -77,38 +50,27 @@ export default function Page() {
 }
 ```
 
-### Icon variant with custom colors
+### Number variant
 
 ```tsx
-import { Timeline } from "@/components/Timeline";
+<Timeline data={steps} variant="number" accentColor="#6366f1" />
+```
+
+### Icon variant
+
+```tsx
+import { Search, Paintbrush, Rocket } from "lucide-react";
 
 const steps = [
-  {
-    title: "Discovery",
-    icon: "Search",
-    content: <p className="text-zinc-400 text-lg px-2">Research phase.</p>,
-  },
-  {
-    title: "Design",
-    icon: "Paintbrush",
-    content: <p className="text-zinc-400 text-lg px-2">Design phase.</p>,
-  },
-  {
-    title: "Launch",
-    icon: "Rocket",
-    content: <p className="text-zinc-400 text-lg px-2">Ship it.</p>,
-  },
+  { title: "Discovery", icon: Search,     content: <p className="text-zinc-400 text-lg">Research phase.</p> },
+  { title: "Design",    icon: Paintbrush, content: <p className="text-zinc-400 text-lg">Wireframes first.</p> },
+  { title: "Launch",    icon: Rocket,     content: <p className="text-zinc-400 text-lg">Ship it.</p> },
 ];
 
 export default function Page() {
   return (
     <section className="py-24 px-4">
-      <Timeline
-        data={steps}
-        variant="icon"
-        accentColor="#a78bfa"
-        markerColor="#a78bfa"
-      />
+      <Timeline data={steps} variant="icon" accentColor="#a78bfa" />
     </section>
   );
 }
@@ -120,28 +82,21 @@ export default function Page() {
 
 ### `Timeline`
 
-| Prop | Type | Default | Required | Description |
-|---|---|---|---|---|
-| `data` | `TimelineItem[]` | — | ✅ | Array of timeline steps. |
-| `variant` | `"bullet" \| "icon"` | `"bullet"` | — | Controls what renders in the marker beside each step. |
-| `accentColor` | `string` | `"white"` | — | Color of the scrolling beam. Any valid CSS color. |
-| `markerColor` | `string` | same as `accentColor` | — | Color of the active dot / icon / number. Defaults to `accentColor` when omitted. |
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `data` | `TimelineItem[]` | — | **Required.** Array of timeline steps. |
+| `className` | `string` | — | Classes applied to the outer wrapper. |
+| `variant` | `"bullet" \| "number" \| "icon"` | `"bullet"` | Controls what renders in the marker beside each step. |
+| `accentColor` | `string` | `"white"` | Color of the scrolling beam. Any valid CSS color. |
+| `markerColor` | `string` | same as `accentColor` | Color of the active marker. Defaults to `accentColor` when omitted. |
 
 ### `TimelineItem`
 
 | Field | Type | Required | Description |
 |---|---|---|---|
 | `title` | `string` | ✅ | Step heading — shown beside the marker on desktop, above the content on mobile. |
-| `content` | `ReactNode` | ✅ | Any React content — paragraph, card, image, custom component. You control the styling entirely. |
-| `icon` | `string` | — | Icon name from the supported set below. Only used when `variant="icon"`. Ignored for other variants. |
-
-### Supported icon names
-
-The following strings are valid for the `icon` field:
-
-`Search` `Paintbrush` `Code2` `FlaskConical` `Rocket` `Star` `Zap` `Globe` `Lock` `Settings` `Mail` `Bell` `Heart`
-
-These map to the corresponding [Lucide](https://lucide.dev) icons. To add more, extend the `ICON_MAP` object at the top of `Timeline.tsx`.
+| `content` | `ReactNode` | ✅ | The step body. You control all styling — the component renders it as-is with no wrapper styles applied. |
+| `icon` | `ComponentType` | — | A React component to render as the marker. Pass the component itself (e.g. `Search` from lucide-react), not a string. Only used when `variant="icon"`. |
 
 ---
 
@@ -149,8 +104,9 @@ These map to the corresponding [Lucide](https://lucide.dev) icons. To add more, 
 
 | Value | Marker |
 |---|---|
-| `"bullet"` | Small filled dot (default) |
-| `"icon"` | Lucide icon from the `icon` field |
+| `"bullet"` | Small filled dot |
+| `"number"` | Numbered circle (1, 2, 3…) |
+| `"icon"` | Icon from the `icon` field — falls back to a number if no icon is provided on an item |
 
 When switching variants the markers fade out and back in over 150 ms to avoid a jarring swap.
 
@@ -169,5 +125,9 @@ When switching variants the markers fade out and back in over 150 ms to avoid a 
 
 - **Next.js App Router:** The `"use client"` directive is already at the top of the file. No action needed.
 - **Other setups (Vite, CRA, etc.):** Remove the `"use client"` line — the component works identically.
-- **Content styling:** The `content` field accepts any `ReactNode`. You are fully responsible for styling it — font size, color, spacing. The component applies no styles to your content.
 - **Step titles** render as `<h3>` elements. Wrap the Timeline in a section with an `<h2>` heading for a correct document outline.
+- **Light backgrounds:** The component has four hardcoded dark-theme values. Search for the `Light theme:` comments in `Timeline.tsx` — each one tells you exactly what to replace and suggests a dark equivalent:
+  - Track line color (`rgba(255,255,255,0.15)`)
+  - Inactive icon / number marker color (`rgba(255,255,255,0.35)`)
+  - Title text class (`text-zinc-200`)
+  - Content text class (`text-white/90`)

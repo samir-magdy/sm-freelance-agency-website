@@ -145,7 +145,7 @@ export default function PortfolioShowcase({ lang }) {
   return (
     <section
       id="portfolio"
-      className="flex flex-col items-center justify-start pt-8 sm:pt-12 min-h-screen relative overflow-clip select-none px-5"
+      className="flex flex-col items-center justify-start pt-8 sm:pt-10 min-h-screen relative overflow-clip select-none px-5"
       aria-labelledby="portfolio-heading"
     >
       <div className="reveal">
@@ -198,7 +198,7 @@ export default function PortfolioShowcase({ lang }) {
                 onClick={handleDemoClick}
                 target="_blank"
                 rel="noopener"
-                className="cta-primary relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-subheading font-normal sm:font-semibold tracking-wide transition-all duration-200 hidden lg:inline-flex"
+                className="cta-primary relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(0.7rem,1.5vw,1.2rem)] font-normal sm:font-semibold tracking-wide transition-all duration-200 hidden lg:inline-flex"
                 aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
               >
                 {pd.cta[lang]}
@@ -226,7 +226,7 @@ export default function PortfolioShowcase({ lang }) {
               />
 
               {/* Phone outer shell */}
-              <div id="mobile-mockup" className="phone-outer w-[59vw] h-[58svh] sm:w-[16.4vw] md:h-137.5 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
+              <div id="mobile-mockup" className="phone-outer w-[59vw] h-[58svh] sm:w-[16.4vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
                 {/* Left volume buttons */}
                 <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
                 <div className="absolute -left-[2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />

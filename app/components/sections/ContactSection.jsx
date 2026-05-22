@@ -113,7 +113,7 @@ export default function ContactSection({ lang }) {
           </div>
 
           <form
-            className="text-start relative sm:min-h-[550px]"
+            className="text-start relative sm:min-h-[540px]"
             onSubmit={handleSubmit}
             aria-label={t.a11y.contactForm[lang]}
           >
