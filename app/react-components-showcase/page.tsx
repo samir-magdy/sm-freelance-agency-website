@@ -117,6 +117,17 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+
+      {/* Scroll Timeline */}
+      <ComponentSection
+        id="scroll-timeline"
+        title="Scroll Timeline"
+        tagline="An animated timeline for workflow sections."
+        usage={`import { Timeline } from "@/components/Timeline";\nimport { Search, Paintbrush, Rocket } from "lucide-react";\n\n// icon is optional (only used with variant="icon")\nconst steps = [\n  { title: "Discovery", icon: Search,     content: <p>Research phase.</p> },\n  { title: "Design",    icon: Paintbrush, content: <p>Wireframes first.</p> },\n  { title: "Launch",    icon: Rocket,     content: <p>Ship it.</p> },\n];\n\nexport default function Page() {\n  return (\n    <Timeline\n      data={steps}\n      variant="icon"\n      accentColor="#a78bfa"\n      markerColor="#c9a43d"\n      className="py-24 px-4"\n    />\n  );\n}`}
+      >
+        <TimelineShowcase />
+      </ComponentSection>
 
       {/* iOS Mockup */}
       <ComponentSection
@@ -136,16 +147,6 @@ export default function Home() {
         usage={`import MacMockup from "@/components/MacMockup";\n\nexport default function MyPage() {\n  return (\n    <MacMockup\n      slides={[\n        { image: "/screenshots/project1.png", alt: "E-commerce store", url: "https://myproject1.com" },\n        { image: "/screenshots/project2.png", alt: "SaaS dashboard",   url: "https://myproject2.com" },\n        { image: "/screenshots/project3.png", alt: "Portfolio site" },\n      ]}\n      className="mx-auto my-12"\n      paginationDotColor="#6366f1"\n      inactiveDotColor="rgba(99,102,241,0.3)"\n    />\n  );\n}`}
       >
         <MacMockup slides={desktopSlides} />
-      </ComponentSection>
-
-      {/* Scroll Timeline */}
-      <ComponentSection
-        id="scroll-timeline"
-        title="Scroll Timeline"
-        tagline="An animated timeline for workflow sections."
-        usage={`import { Timeline } from "@/components/Timeline";\nimport { Search, Paintbrush, Rocket } from "lucide-react";\n\n// icon is optional (only used with variant="icon")\nconst steps = [\n  { title: "Discovery", icon: Search,     content: <p>Research phase.</p> },\n  { title: "Design",    icon: Paintbrush, content: <p>Wireframes first.</p> },\n  { title: "Launch",    icon: Rocket,     content: <p>Ship it.</p> },\n];\n\nexport default function Page() {\n  return (\n    <Timeline\n      data={steps}\n      variant="icon"\n      accentColor="#a78bfa"\n      markerColor="#c9a43d"\n      className="py-24 px-4"\n    />\n  );\n}`}
-      >
-        <TimelineShowcase />
       </ComponentSection>
 
       {/* Footer */}
