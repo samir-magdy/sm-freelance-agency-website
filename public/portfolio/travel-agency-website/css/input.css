@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #ea8c22;
+  --color-ocean: #1e6ea1;
+  --color-ink-1: #1f1a14;
+  --color-ink-2: #2d251d;
+  --color-dark: #313041;
+  --color-gray: #787780;
+  --color-gray-light: #a9a8b6;
+  --font-body: "DM Sans", sans-serif;
+  --max-width-container: 1200px;
+  --radius: 8px;
+}
+
+@layer base {
+  @media (min-width: 1024px) {
+    html {
+      scroll-padding-top: 1.5rem;
+    }
+  }
+}
