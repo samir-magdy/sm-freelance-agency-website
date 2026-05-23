@@ -29,7 +29,7 @@ function TechBadge({ label }: { label: string }) {
 function UsageBlock({ code }: { code: string }) {
   return (
     <div className="mt-12 md:mt-16 max-w-3xl mx-auto">
-      <p className="mb-4 sm:text-subheading text-zinc-400 font-semibold">Usage:</p>
+      <p className="mb-4 sm:text-subheading text-zinc-400 font-semibold">Example Usage:</p>
       <pre className="text-left rounded-xl bg-white/[0.03] border border-white/[0.08] px-5 py-4 text-caption sm:text-base text-zinc-400 font-mono overflow-x-auto leading-relaxed">
         <code>{code}</code>
       </pre>
@@ -124,7 +124,7 @@ export default function Home() {
         id="scroll-timeline"
         title="Scroll Timeline"
         tagline="An animated timeline for workflow sections."
-        usage={`import { Timeline } from "@/components/Timeline";\nimport { Search, Paintbrush, Rocket } from "lucide-react";\n\n// icon is optional (only used with variant="icon")\nconst steps = [\n  { title: "Discovery", icon: Search,     content: <p>Research phase.</p> },\n  { title: "Design",    icon: Paintbrush, content: <p>Wireframes first.</p> },\n  { title: "Launch",    icon: Rocket,     content: <p>Ship it.</p> },\n];\n\nexport default function Page() {\n  return (\n    <Timeline\n      data={steps}\n      variant="icon"\n      accentColor="#a78bfa"\n      markerColor="#c9a43d"\n      className="py-24 px-4"\n    />\n  );\n}`}
+        usage={`import { Timeline } from "@/components/Timeline";\n\nconst steps = [\n  { title: "Discovery", content: <p>Research phase.</p> },\n  { title: "Design", content: <p>Wireframes first.</p> },\n  { title: "Launch", content: <p>Ship it.</p> },\n];\n\nexport default function MyPage() {\n  return (\n    <Timeline\n      data={steps}\n      accentColor="#a78bfa"\n      markerColor="#c9a43d"\n      className="py-24 px-4"\n    />\n  );\n}`}
       >
         <TimelineShowcase />
       </ComponentSection>
@@ -134,7 +134,7 @@ export default function Home() {
         id="ios-mockup"
         title="iOS Mockup"
         tagline="An IPhone shell for mobile UI previews."
-        usage={`import IPhoneMockup from "@/components/IPhoneMockup";\n\nexport default function MyPage() {\n  return (\n    <IPhoneMockup\n      slides={[\n        { image: "/screenshots/screen1.png", alt: "Home screen" },\n        { image: "/screenshots/screen2.png", alt: "Dashboard" },\n        { image: "/screenshots/screen3.png", alt: "Settings" },\n      ]}\n      className="mx-auto my-12"\n      paginationDotColor="#6366f1"\n      inactiveDotColor="rgba(99,102,241,0.3)"\n    />\n  );\n}`}
+        usage={`import IPhoneMockup from "@/components/IPhoneMockup";\n\nexport default function MyPage() {\n  return (\n    <IPhoneMockup\n      slides={[\n        { image: "/screen1.png", alt: "alt text" },\n        { image: "/screen2.png", alt: "alt text" },\n        { image: "/screen3.png", alt: "alt text" },\n      ]}\n      className="mx-auto my-12"\n      paginationDotColor="#6366f1"\n      inactiveDotColor="rgba(99,102,241,0.3)"\n    />\n  );\n}`}
       >
         <IPhoneMockup slides={slides} />
       </ComponentSection>
@@ -144,7 +144,7 @@ export default function Home() {
         id="browser-mockup"
         title="Browser Mockup"
         tagline="A macOS-style browser frame for desktop UI."
-        usage={`import MacMockup from "@/components/MacMockup";\n\nexport default function MyPage() {\n  return (\n    <MacMockup\n      slides={[\n        { image: "/screenshots/project1.png", alt: "E-commerce store", url: "https://myproject1.com" },\n        { image: "/screenshots/project2.png", alt: "SaaS dashboard",   url: "https://myproject2.com" },\n        { image: "/screenshots/project3.png", alt: "Portfolio site" },\n      ]}\n      className="mx-auto my-12"\n      paginationDotColor="#6366f1"\n      inactiveDotColor="rgba(99,102,241,0.3)"\n    />\n  );\n}`}
+        usage={`import MacMockup from "@/components/MacMockup";\n\nexport default function MyPage() {\n  return (\n    <MacMockup\n      slides={[\n        { image: "/screen1.png", alt: "alt text", url: "yoursite.com" },\n        { image: "/screen2.png", alt: "alt text", url: "yoursite.com" },\n        { image: "/screen3.png", alt: "alt text", url: "yoursite.com" },\n      ]}\n      className="mx-auto my-12"\n      paginationDotColor="#6366f1"\n      inactiveDotColor="rgba(99,102,241,0.3)"\n    />\n  );\n}`}
       >
         <MacMockup slides={desktopSlides} />
       </ComponentSection>

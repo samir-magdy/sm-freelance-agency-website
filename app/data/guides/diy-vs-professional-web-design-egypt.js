@@ -3,7 +3,7 @@ const resource = {
   datePublished: "2026-03-25",
   dateModified: "2026-05-17",
   title: {
-    en: "Professional Web Design vs DIY: Which Is Right for Your Business?",
+    en: "Professional Web Design vs DIY: Which Is Right for You?",
     ar: "تصميم موقعك بنفسك أم الاستعانة بمحترف؟ أيهما أفضل لعملك؟",
   },
   metaTitle: {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Code2, Settings, Paintbrush, Zap, Rocket } from "lucide-react";
+import { Code2, Settings, Zap, Rocket } from "lucide-react";
 import { Timeline } from "./components/timeline/Timeline";
 import type { TimelineProps } from "./components/timeline/Timeline";
 

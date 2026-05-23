@@ -44,7 +44,7 @@ export default function HeroSection({ lang }) {
 
         <h1 dir="ltr" className="hero-fade hero-fade-eyebrow flex items-center justify-center gap-3 sm:gap-4">
           <span className="eyebrow-rule-left" aria-hidden="true"/>
-          <span className="text-[10px] rtl:text-[15px] sm:text-[0.9rem] rtl:sm:text-[1.2rem] uppercase tracking-[0.18em] font-semibold text-content-body whitespace-nowrap">
+          <span className="text-[10px] rtl:text-[15px] sm:text-[0.9rem] rtl:sm:text-[1.2rem] uppercase tracking-[0.11em] font-semibold text-content-body whitespace-nowrap">
             {hero.eyebrow[lang]}
           </span>
           <span className="eyebrow-rule-right" aria-hidden="true"/>
@@ -52,7 +52,7 @@ export default function HeroSection({ lang }) {
 
         <h2
           id="hero-hook"
-          className="py-6 rtl:py-4 sm:pb-4 rtl:sm:py-8 font-bold text-center text-content-heading px-4 block text-[clamp(2.2rem,10vw,4.2rem)] sm:text-[clamp(2.2rem,3.5vw,4.2rem)] leading-relaxed rtl:leading-16"
+          className="py-6 rtl:py-4 sm:py-4 rtl:sm:py-10 font-bold text-center text-content-heading px-4 block text-[clamp(2.2rem,10vw,4.2rem)] sm:text-[clamp(2.2rem,3vw,4.2rem)] leading-relaxed rtl:leading-16"
         >
           <span
             className="hero-fade hero-fade-hook block"
@@ -76,7 +76,7 @@ export default function HeroSection({ lang }) {
 
           <a
             href="#FAQs"
-            className="ms-2.5 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-2 text-content-muted hover:text-content-body text-[clamp(0.9rem,1.2vw,1.25rem)] font-medium transition-colors duration-300"
+            className="ms-2.5 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-2 text-content-muted hover:text-content-body text-[clamp(0.9rem,1.2vw,1.2rem)] font-medium transition-colors duration-300"
           >
             {hero.secondaryCta[lang]}
             <svg

@@ -27,7 +27,7 @@ export const pricingCards = {
         ar: "صفحة هبوط",
       },
       tagline: {
-        en: "A single-scrollable page designed to funnel visitors into taking one specific action, like filling out a form or a WhatsApp message. <em>Ideal for startups and service providers.</em>",
+        en: "A single-page website designed to guide visitors toward taking one action, like filling out a form or clicking a 'Chat with us' button. <em>Ideal for startups, smaller businesses and service providers.</em>",
         ar: "صفحة واحدة مصممة لتوجيه الزوار لاتخاذ إجراء محدد، مثل تعبئة نموذج أو إرسال رسالة عبر واتساب. <em>مثالية للشركات الناشئة ومزودي الخدمات.</em>",
       },
       price: "5,000",
@@ -39,7 +39,7 @@ export const pricingCards = {
         ar: "موقع أعمال",
       },
       tagline: {
-        en: "A multi-page website that presents your company and the products or services you offer in full detail. <em>Ideal for established businesses ready to build a credible online presence.</em>",
+        en: "A multi-page website that presents your company and the products/services you offer in detail. <em>Ideal for established businesses that need to build a credible online presence.</em>",
         ar: "موقع تعريفي متعدد الصفحات يعرض شركتك ومنتجاتك أو خدماتك بالتفصيل. <em>مثالي للشركات القائمة التي تريد حضوراً رقمياً موثوقاً.</em>",
       },
       price: "9,000",
@@ -51,7 +51,7 @@ export const pricingCards = {
         ar: "متجر إلكتروني",
       },
       tagline: {
-        en: "A complete Shopify store setup that handles inventory, payments, and shipping in one place. <em>Ideal for anyone who wants to sell goods and services online.</em>",
+        en: "An e-commerce online shop built on Shopify that handles inventory, payments, and shipping. <em>Ideal for anyone who wants to manage and sell their products online.</em>",
         ar: "متجر إلكتروني متكامل على شوبيفاي لإدارة المخزون والدفع والشحن في مكان واحد. <em>مثالي لكل من يرغب في بيع السلع والخدمات عبر الإنترنت.</em>",
       },
       price: "15,000",

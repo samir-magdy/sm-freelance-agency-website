@@ -13,10 +13,10 @@ const hero = {
   },
   secondaryCta: {
     en: "Not Sure Yet?",
-    ar: "اعرف التفاصيل",
+    ar: "التفاصيل",
   },
   subheading: {
-    en: "Expert web design for businesses that are ready to stand out online.",
+    en: "Expert Web design & development for brands ready to stand out online.",
     ar: "تصميم مواقع احترافية تعزز مصداقية علامتك التجارية وتصنع تميزك الرقمي.",
   },
 };

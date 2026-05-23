@@ -13,7 +13,7 @@ export const projects = [
     schemaNameAr: "متجر إلكتروني للأزياء – مصر",
     description:
       "A fashion e-commerce demo by SM Web Design Studio showcasing advanced product listings and a streamlined WhatsApp checkout system designed for retail scalability.",
-    genre: "Fashion Ecommerce",
+    genre: "Fashion E-commerce",
     genreAr: "التجارة الإلكترونية للأزياء",
   },
 
@@ -26,8 +26,8 @@ export const projects = [
     schemaNameAr: "موقع شركة سياحة – مصر",
     description:
       "A travel agency demo by SM Web Design Studio showcasing destination-focused hotel listings, trip packages, and a polished browsing experience built to turn visitors into confirmed travelers.",
-    genre: "Travel Agency",
-    genreAr: "شركات السياحة والسفر",
+    genre: "Travel & Tourism",
+    genreAr: "سياحة وسفر",
   },
 
 ];

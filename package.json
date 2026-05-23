@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:travel": "npx @tailwindcss/cli -i public/portfolio/travel-agency-website/css/input.css -o public/portfolio/travel-agency-website/css/tailwind.css --minify",
     "start": "next start",
     "lint": "eslint ."
   },

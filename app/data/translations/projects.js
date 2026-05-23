@@ -1,6 +1,6 @@
 const projectsSection = {
   heading: {
-    en: "Our Web Design Portfolio",
+    en: "Web Design Portfolio",
     ar: "معرض تصميم المواقع",
   },
   subheading: {
@@ -16,26 +16,26 @@ const projectData = {
       ar: "متجر إلكتروني للأزياء",
     },
     description: {
-      en: "In the crowded fashion market, a generic ecommerce website loses sales to bigger brands with better online stores. By utilizing smart product suggestions and a frictionless checkout, you’ll become the preferred choice for shoppers who value style and ease.",
+      en: "In the crowded fashion market, generic websites lose sales to bigger brands with better sites. Our web design provides the the optimal user experience you need to become the preferred choice for shoppers.",
       ar: "في قطاع الأزياء، مظهر متجرك هو هويتك. يوفر لك هذا المتجر الإلكتروني واجهة احترافية تعكس جودة منتجاتك، مع تجربة تسوق سلسة تجعل العميل يثق في اختيارك وتكرار الشراء منك بدلاً من البحث في أماكن أخرى.",
     },
     cta: {
-      en: "View Live Site",
+      en: "View Fashion Store",
       ar: "مشاهدة الموقع",
     },
   },
 
   Travel: {
     title: {
-      en: "Travel Agency",
+      en: "Travel & Tourism",
       ar: "شركات السياحة والسفر",
     },
     description: {
-      en: "Travelers make booking decisions based on trust and visual inspiration. A professional travel agency website positions you above local competitors still relying on WhatsApp and phone calls alone.",
-      ar: "يتخذ المسافرون قرار الحجز بناءً على الثقة والإلهام البصري. يمنحك موقع شركة السياحة الاحترافي ميزة تنافسية على من يعتمدون على واتساب والمكالمات الهاتفية فقط. من خلال عرض وجهاتك وفنادقك ورحلاتك بصور عالية الجودة وتجربة تصفح سلسة، تصبح الخيار الأول للمسافرين المستعدين للحجز.",
+      en: "Travelers choose agencies that look credible and inspiring. This design showcases your tours and destinations with stunning visuals that give visitors the confidence to book the trip with your agency.",
+      ar: "يختار المسافرون الوكالة التي تبدو موثوقة ومُلهِمة، لا من يروّج رحلاته عبر واتساب فحسب. يعرض هذا التصميم فنادقك ومخيماتك ووجهاتك بصور احترافية ومراجعات حقيقية تحوّل الزائر إلى حجز مؤكّد.",
     },
     cta: {
-      en: "View Live Site",
+      en: "View Tourism Site",
       ar: "مشاهدة الموقع",
     },
   },
