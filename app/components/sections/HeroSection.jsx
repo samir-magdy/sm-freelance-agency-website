@@ -76,7 +76,7 @@ export default function HeroSection({ lang }) {
 
           <a
             href="#FAQs"
-            className="ms-2.5 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-2 text-content-muted hover:text-content-body text-[clamp(0.9rem,1.2vw,1.2rem)] font-medium transition-colors duration-300"
+            className="ms-3.5 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-2 text-content-muted hover:text-content-body text-[clamp(0.9rem,1.2vw,1.2rem)] font-medium transition-colors duration-300"
           >
             {hero.secondaryCta[lang]}
             <svg

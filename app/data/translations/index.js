@@ -1,12 +1,10 @@
-import nav, { navLinks } from "./nav";
-import hero from "./hero";
-import { projectsSection, projectData } from "./projects";
-import { pricingCards } from "./pricing";
-import faqSection from "./faq";
-import contactSection from "./contact";
-import form from "./form";
+import nav, { navLinks, langToggle } from "./nav";
+import hero from "./heroSection";
+import { projectsSection, projectData } from "./portfolioSection";
+import { pricingCards } from "./pricingSection";
+import faqSection from "./faqSection";
+import { contactSection, form } from "./contactSection";
 import a11y from "./a11y";
-import langToggle from "./lang-toggle";
 import privacy from "./privacy";
 import terms from "./terms";
 const translations = {

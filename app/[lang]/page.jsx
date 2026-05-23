@@ -4,7 +4,7 @@ import PricingSection from "../components/sections/PricingSection";
 import FAQSection from "../components/sections/FAQSection";
 import ContactSection from "../components/sections/ContactSection";
 import { notFound } from "next/navigation";
-import { projectsStructuredData } from "../data/projects";
+import { projectsStructuredData } from "../data/portfolio";
 import Script from "next/script";
 
 

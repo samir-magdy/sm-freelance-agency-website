@@ -1,5 +1,5 @@
 import { use } from "react";
-import { SITE_URL } from "@/app/data/translations/lang";
+import { SITE_URL } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guides";
 import GuidesGrid from "./GuidesGrid";

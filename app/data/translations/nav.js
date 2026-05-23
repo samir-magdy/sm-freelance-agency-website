@@ -8,4 +8,6 @@ const nav = {
 
 export const navLinks = ["portfolio", "FAQs", "pricing", "contact"];
 
+export const langToggle = { en: "EN", ar: "عربي" };
+
 export default nav;

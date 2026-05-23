@@ -1,7 +1,7 @@
 import ecommerceImg from "../../public/project-screenshots/e-commerce.webp";
 import travelImg from "../../public/project-screenshots/travel.webp";
 
-import { SITE_URL } from "./translations/lang";
+import { SITE_URL } from "../constants";
 
 export const projects = [
   {

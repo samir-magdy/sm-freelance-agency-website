@@ -3,7 +3,7 @@ import { use } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { SITE_URL } from "@/app/data/translations/lang";
+import { SITE_URL } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guides";
 
@@ -159,7 +159,18 @@ export default function GuidePage({ params }) {
           {/* Guide header */}
           <header>
             <h1 className="text-[clamp(1.5rem,5vw,2.8rem)] font-bold text-content-heading leading-tight rtl:leading-loose">
-              {guide.title[lang]}
+              {(() => {
+                const colonIndex = guide.title[lang].indexOf(":");
+                if (colonIndex === -1) return guide.title[lang];
+                return (
+                  <>
+                    {guide.title[lang].slice(0, colonIndex + 1)}
+                    <span className="font-semibold text-content-heading/95">
+                      {guide.title[lang].slice(colonIndex + 1)}
+                    </span>
+                  </>
+                );
+              })()}
             </h1>
           </header>
           {/* Guide body */}

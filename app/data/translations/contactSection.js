@@ -1,10 +1,21 @@
-const form = {
+export const contactSection = {
+  heading: {
+    en: "Got a Project in Mind?",
+    ar: "مشروعك يبدأ هنا",
+  },
+  subheading: {
+    en: "Share a few details and we'll reach out",
+    ar: "شاركنا بعض التفاصيل وسنتواصل معك",
+  },
+};
+
+export const form = {
   legend: { en: "Contact information", ar: "معلومات التواصل" },
   name: { en: "Name", ar: "الاسم" },
   namePlaceholder: { en: "Your name", ar: "اسمك" },
   phone: { en: "Mobile Number", ar: "الهاتف" },
   phonePlaceholder: { en: "01XXXXXXXXX", ar: "01XXXXXXXXX" },
-contactMethod: {
+  contactMethod: {
     en: "Contact method",
     ar: "طريقة التواصل",
   },
@@ -40,5 +51,3 @@ contactMethod: {
   orWhatsapp: { en: "OR", ar: "أو" },
   chatInstead: { en: "Reach Us Directly", ar: "تواصل عبر واتساب" },
 };
-
-export default form;

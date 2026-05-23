@@ -11,6 +11,7 @@ export interface Slide {
 export interface MacMockupProps {
   slides: Slide[];
   className?: string;
+  frameClassName?: string;
   paginationDotColor?: string;
   inactiveDotColor?: string;
 }
@@ -139,6 +140,7 @@ function NavArrow({ direction, disabled, onClick }: NavArrowProps) {
 export default function MacMockup({
   slides,
   className,
+  frameClassName,
   paginationDotColor = "white",
   inactiveDotColor = "rgba(255,255,255,0.3)",
 }: MacMockupProps) {
@@ -183,7 +185,7 @@ export default function MacMockup({
 
         {/* Browser window */}
         <div
-          className="w-[88vw] sm:w-[460px] md:w-[560px] lg:w-[660px] overflow-hidden flex flex-col aspect-[13/10] md:aspect-[15/10]"
+          className={`${frameClassName ?? "w-[88vw] sm:w-[460px] md:w-[560px] lg:w-[660px] aspect-[13/10] md:aspect-[15/10]"} overflow-hidden flex flex-col`}
           style={{
             borderRadius: "10px",
             background: "#000",

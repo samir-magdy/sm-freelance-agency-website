@@ -9,7 +9,18 @@ export default function GuidesGrid({ resources, lang, t }) {
           className="flex flex-col justify-between gap-4 p-5.5 rounded-2xl border-2 border-border-subtle bg-surface-card/50 hover:border-border-strong transition-colors duration-200"
         >
           <h2 className="text-content-heading font-bold text-subheading leading-snug rtl:leading-loose">
-            {guide.title[lang]}
+            {(() => {
+              const colonIndex = guide.title[lang].indexOf(":");
+              if (colonIndex === -1) return guide.title[lang];
+              return (
+                <>
+                  {guide.title[lang].slice(0, colonIndex + 1)}
+                  <span className="font-semibold text-content-heading/95">
+                    {guide.title[lang].slice(colonIndex + 1)}
+                  </span>
+                </>
+              );
+            })()}
           </h2>
 
           <div className="flex items-center sm:pb-2">

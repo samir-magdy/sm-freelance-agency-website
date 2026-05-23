@@ -3,7 +3,7 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { projects } from "@/app/data/projects";
+import { projects } from "@/app/data/portfolio";
 import translations from "@/app/data/translations";
 
 function NavArrow({ direction, disabled, onClick }) {

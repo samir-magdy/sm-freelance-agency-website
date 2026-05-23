@@ -15,16 +15,16 @@ const resource = {
     ar: "بنقارن التكاليف والمخاطر والقيمة على المدى البعيد لأدوات البناء الجاهزة مقابل التصميم الاحترافي. من خلال التعمق في المقارنة، هتكتسب المعرفة اللازمة لإتخاذ القرار الصحيح لشغلك.",
   },
   content: {
-    en: `<p>In 2026, building a website has never been easier and yet it's never been more complicated. Many platforms now exist that allow non-technical users to build a website without needing to know how to code. If you know how to use a computer, you can launch a one-page website in an afternoon. But for a growing business in a competitive market, is a <abbr data-tooltip="Do-It-Yourself — building your own website using tools like Wix or Squarespace without hiring a developer">DIY</abbr> site enough? If you are still asking yourself whether you need a website at all, read <a href='/en/guides/why-your-business-needs-a-website-in-2026' target='_blank' rel='noopener noreferrer'>why having a professional website matters for your business</a> before continuing. Let's break down the real differences between doing it yourself and hiring a professional.</p>
-<h2>1. DIY Web Design Cost: The Real Picture</h2>
+    en: `<p>In 2026, building a simple site has never been easier. Many platforms now exist that allow non-technical users to build a website without needing to know how to code. But is a <abbr data-tooltip="Do-It-Yourself">DIY</abbr> site enough? Let's break down the real differences between doing it yourself and hiring a professional.</p>
+<h2>1. The Cost Illusion</h2>
 <p><strong>DIY:</strong> The most common reason people pick DIY tools is the low entry price. You pay a monthly subscription and do the work yourself. However, your time has value. The hours you spend fixing layouts and troubleshooting issues are hours you aren’t spending running your business.</p>
 <p>
-  <strong>Professional:</strong> While there is a higher upfront cost, a professional website is a long-term investment in a business asset. Unlike generic DIY pages that users often abandon, a professional site is strategically designed to boost your online visibility through proper optimizations, and is strategically designed to turn visitors into customers by implementing proven <abbr data-tooltip="User Interface (the visual design) and User Experience (the overall ease of use)">UI/UX</abbr> principles.
+  <strong>Professional:</strong> While there is a higher upfront cost, a professional website is a long-term investment in a business asset. Unlike generic DIY pages, a professional site is is strategically designed to turn visitors into customers by implementing proven <abbr data-tooltip="User Interface/User Experience">UI/UX</abbr> principles.
 </p>
 
 
-<h2>2. Professional Web Design: Brand Identity and Credibility</h2>
-<p><strong>DIY:</strong> You are limited to templates. There’s a high chance your competitor is using the exact same design. To a customer, this can look cheap or temporary.</p>
+<h2>2. Brand Identity and Credibility</h2>
+<p><strong>DIY:</strong> You are limited to pre-built templates that thousands of other websites use. There’s a high chance your competitor is using the exact same design. To a customer, this can look cheap or temporary.</p>
 <p><strong>Professional:</strong> You get a unique design that reflects your specific brand. In a market where trust is everything, a professional site signals that you are an established, serious business.</p>
 
 <h2>3. Website Speed, Performance, and SEO</h2>
@@ -34,8 +34,8 @@ const resource = {
 <p><strong>DIY:</strong> DIY tools are quite limited in what they offer in terms of customization. If your business grows and you decide you need to add custom features on your website, moving your content to a different platform later is often impossible.</p>
 <p><strong>Professional:</strong> A professional site can be expanded with new, custom features that DIY builders simply can’t handle.</p>
 
-<h2>Professional Web Design vs. DIY: The Verdict</h2>
-<p>DIY is great for hobbyists or tiny startups testing an idea. But if you are serious about your business, professional web design is the foundation you need to compete and win in 2026. To understand what professional web design actually costs in Egypt, read our <a href='/en/guides/website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>honest breakdown of website pricing</a>. And when you are ready to find the right partner, our guide on <a href='/en/guides/choose-web-design-company-egypt' target='_blank' rel='noopener noreferrer'>choosing a web design company in Egypt</a> covers exactly what to look for.</p>`,
+<h2>The Conclusion</h2>
+<p>DIY is great for hobbyists or tiny startups testing an idea. But if you are serious about your business, professional web design is the foundation you need to compete and win in 2026. To understand what professional web design actually costs in Egypt, read our <a href='/en/guides/website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>honest breakdown of website pricing</a>. And when you are ready to find the right partner, our guide on <a href='/en/guides/choose-web-design-company-egypt' target='_blank' rel='noopener noreferrer'>choosing a web design company in Egypt</a> covers exactly what to look for. If you are ready to get started you can <a href='/en/#contact' target='_blank' rel='noopener noreferrer'>request an offical quote</a> for your website.</p>`,
 
     ar: `<p>في ٢٠٢٦، بناء موقع إلكتروني بقى أسهل بكتير من زمان، لكنه بقى محتاج ذكاء أكتر. بوجود المنصات الجاهزة، أي حد بيعرف يستعمل كمبويتر بقى ممكن يعمل موقع بسيط فى وقت قصير. لكن السؤال المهم لأي صاحب شغل في مصر هو "هل الموقع اللي هتعمله بنفسك كفاية إنه يكبر بزنس؟" لو لسه مش متأكد إنك محتاج موقع إلكتروني أصلاً، اقرأ أولاً <a href='/ar/guides/why-your-business-needs-a-website-in-2026' target='_blank' rel='noopener noreferrer'>ليه شركتك محتاجة موقع إلكتروني احترافي</a>. خلينا نقارن بين إنك تعمل الموقع بنفسك وبين إنك توظف محترف.</p>
 

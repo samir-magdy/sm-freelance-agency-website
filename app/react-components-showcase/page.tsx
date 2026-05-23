@@ -134,7 +134,7 @@ export default function Home() {
         id="ios-mockup"
         title="iOS Mockup"
         tagline="An IPhone shell for mobile UI previews."
-        usage={`import IPhoneMockup from "@/components/IPhoneMockup";\n\nexport default function MyPage() {\n  return (\n    <IPhoneMockup\n      slides={[\n        { image: "/screen1.png", alt: "alt text" },\n        { image: "/screen2.png", alt: "alt text" },\n        { image: "/screen3.png", alt: "alt text" },\n      ]}\n      className="mx-auto my-12"\n      paginationDotColor="#6366f1"\n      inactiveDotColor="rgba(99,102,241,0.3)"\n    />\n  );\n}`}
+        usage={`import IPhoneMockup from "@/components/IPhoneMockup";\n\nexport default function MyPage() {\n  return (\n    <IPhoneMockup\n      slides={[\n        { image: "/screen1.png", alt: "alt text" },\n        { image: "/screen2.png", alt: "alt text" },\n        { image: "/screen3.png", alt: "alt text" },\n      ]}\n      className="mx-auto my-12"\n      frameClassName="w-64 h-96"\n      paginationDotColor="#6366f1"\n      inactiveDotColor="rgba(99,102,241,0.3)"\n    />\n  );\n}`}
       >
         <IPhoneMockup slides={slides} />
       </ComponentSection>
@@ -144,7 +144,7 @@ export default function Home() {
         id="browser-mockup"
         title="Browser Mockup"
         tagline="A macOS-style browser frame for desktop UI."
-        usage={`import MacMockup from "@/components/MacMockup";\n\nexport default function MyPage() {\n  return (\n    <MacMockup\n      slides={[\n        { image: "/screen1.png", alt: "alt text", url: "yoursite.com" },\n        { image: "/screen2.png", alt: "alt text", url: "yoursite.com" },\n        { image: "/screen3.png", alt: "alt text", url: "yoursite.com" },\n      ]}\n      className="mx-auto my-12"\n      paginationDotColor="#6366f1"\n      inactiveDotColor="rgba(99,102,241,0.3)"\n    />\n  );\n}`}
+        usage={`import MacMockup from "@/components/MacMockup";\n\nexport default function MyPage() {\n  return (\n    <MacMockup\n      slides={[\n        { image: "/screen1.png", alt: "alt text", url: "yoursite.com" },\n        { image: "/screen2.png", alt: "alt text", url: "yoursite.com" },\n        { image: "/screen3.png", alt: "alt text", url: "yoursite.com" },\n      ]}\n      className="mx-auto my-12"\n      frameClassName="w-96 h-64"\n      paginationDotColor="#6366f1"\n      inactiveDotColor="rgba(99,102,241,0.3)"\n    />\n  );\n}`}
       >
         <MacMockup slides={desktopSlides} />
       </ComponentSection>

@@ -1,6 +1,6 @@
-import { SITE_URL } from "./data/translations/lang";
+import { SITE_URL } from "./constants";
 import guides from "./data/guides";
-import { projects } from "./data/projects";
+import { projects } from "./data/portfolio";
 
 const langs = ["en", "ar"];
 

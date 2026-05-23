@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
-import { SITE_URL } from "@/app/data/translations/lang";
+import { SITE_URL } from "@/app/constants";
 
 const PAGE_URL = `${SITE_URL}/react-components-showcase`;
 const SITE_NAME = "SM Web Design Studio";

@@ -10,6 +10,7 @@ export interface Slide {
 export interface IPhoneMockupProps {
   slides: Slide[];
   className?: string;
+  frameClassName?: string;
   paginationDotColor?: string;
   inactiveDotColor?: string;
 }
@@ -141,6 +142,7 @@ function NavArrow({ direction, disabled, onClick }: NavArrowProps) {
 export default function IPhoneMockup({
   slides,
   className,
+  frameClassName,
   paginationDotColor = "white",
   inactiveDotColor = "rgba(255,255,255,0.3)",
 }: IPhoneMockupProps) {
@@ -186,7 +188,7 @@ export default function IPhoneMockup({
         />}
 
         {/* Phone shell */}
-        <div className="w-[59vw] h-[58svh] sm:w-[16.4vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
+        <div className={`${frameClassName ?? "w-[59vw] h-[58svh] sm:w-[16.4vw]"} rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0`}>
 
           {/* Volume buttons (left) */}
           <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
