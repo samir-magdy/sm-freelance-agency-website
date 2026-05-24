@@ -47,13 +47,14 @@ const resource = {
 
 <h2>SM Web Design Studio: What's Included in Every Website</h2>
 <p>Every website we build includes professional design created specifically for your brand, performance optimization for fast loading, mobile-first development, basic SEO setup, and a revision process that ensures you are happy with the result. We are transparent about pricing before any project starts, so you know exactly what you are getting and what it costs. Our goal is not to sell you the most expensive option, it is to help you understand what level of investment makes sense for your goals and build accordingly. If you'd like a formal quote, you can request one <a href="/en/#contact">here</a>. If you are still evaluating your options, our guide on <a href='/en/guides/choose-web-design-company-egypt' target='_blank' rel='noopener noreferrer'>how to choose the right web design company in Egypt</a> covers exactly what to look for before you commit.</p>`,
+
     ar: `<p>أسعار المواقع الإلكترونية في مصر تعتبر من أكتر الحاجات اللي بتسبب ارتباك لأصحاب الأعمال. ممكن تلاقي عروض بـ ٥٠٠ جنيه وعروض تانية بتوصل لـ ٢٠٠,٠٠٠ جنيه، والاتنين بيتقال عليهم "تصميم مواقع". الفرق الكبير ده مش بالصدفة، وفهم الأسباب اللي بتغير السعر هيساعدك تاخد القرار الصح لشركتك، سواء كنت هتبدأ مشروع دلوقتي أو بتخطط للمستقبل.</p>
 
 <h2>تصميم المواقع: إيه اللي بتدفع تمنه بالظبط؟</h2>
 <p>الموقع مش مجرد ملف بتستلمه، هو عبارة عن مجهود في كذا حاجة مع بعض: شكل التصميم، البرمجة والكود، كتابة المحتوى، تجهيز السيرفر، والصيانة. لما بتشوف فرق كبير في السعر، ده معناه إن جودة الحاجات دي مختلفة، أو فيه حاجات منها مش موجودة أصلاً في العرض الرخيص.</p>
 <p>العروض الرخيصة عادةً بتعتمد على <abbr data-tooltip="تصميمات جاهزة بيتم استخدامها لسرعة التنفيذ لكنها مش فريدة لشركتك وممكن منافسك يستخدمها">قوالب جاهزة</abbr> بتعديلات بسيطة جداً. أما العروض الغالية فبتكون عبارة عن تصميم خاص لبراندك من الصفر، وبرمجة مميزات معقدة، ودعم فني مستمر. مش لازم تختار الأغلى ولا الأرخص، المهم تختار اللي يناسب أهدافك وميزانيتك.</p>
 
-<h2>اسعار تصميم المواقع في مصر: المتوسطات المتوقعة</h2>
+<h2>أسعار تصميم المواقع في مصر: المتوسطات المتوقعة</h2>
 <h3>١. صفحات الهبوط (Landing Pages): من ٥,٠٠٠ إلى ١٥,٠٠٠ جنيه</h3>
 <p>دي بتكون صفحة واحدة بس، هدفها إن العميل ياخد قرار واحد (زي إنه يتصل بيك أو يملأ بياناته). مناسبة جداً للعمل الحر (Freelancers)، أو للشركات اللي عندها خدمة واحدة أو حملة إعلانية محددة. السعر القليل بيكون تصميم جاهز، والسعر العالي بيكون تصميم مخصوص وكتابة محتوى احترافي.</p>
 

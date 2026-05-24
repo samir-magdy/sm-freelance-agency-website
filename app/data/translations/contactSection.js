@@ -1,19 +1,19 @@
 export const contactSection = {
   heading: {
     en: "Got a Project in Mind?",
-    ar: "مشروعك يبدأ هنا",
+    ar: "عندك مشروع جديد؟",
   },
   subheading: {
     en: "Share a few details and we'll reach out",
-    ar: "شاركنا بعض التفاصيل وسنتواصل معك",
+    ar: "شاركنا تفاصيل مشروعك وهنتواصل معاك",
   },
 };
 
 export const form = {
-  legend: { en: "Contact information", ar: "معلومات التواصل" },
+  legend: { en: "Contact information", ar: "بيانات التواصل" },
   name: { en: "Name", ar: "الاسم" },
-  namePlaceholder: { en: "Your name", ar: "اسمك" },
-  phone: { en: "Mobile Number", ar: "الهاتف" },
+  namePlaceholder: { en: "Your name", ar: "اكتب اسمك هنا" },
+  phone: { en: "Mobile Number", ar: "رقم الموبايل" },
   phonePlaceholder: { en: "01XXXXXXXXX", ar: "01XXXXXXXXX" },
   contactMethod: {
     en: "Contact method",
@@ -21,33 +21,33 @@ export const form = {
   },
   contactMethodPlaceholder: {
     en: "Select method",
-    ar: "اختر طريقة",
+    ar: "اختار الطريقة",
   },
   whatsapp: { en: "WhatsApp", ar: "واتساب" },
-  phoneCall: { en: "Phone Call", ar: "مكالمة" },
+  phoneCall: { en: "Phone Call", ar: "مكالمة تليفونية" },
   email: { en: "Email", ar: "الإيميل" },
   emailAddress: { en: "Email", ar: "البريد الإلكتروني" },
   emailPlaceholder: { en: "your@email.com", ar: "your@email.com" },
-  message: { en: "Message", ar: "رسالة" },
+  message: { en: "Message", ar: "تفاصيل المشروع" },
   messageOptional: { en: "optional", ar: "اختياري" },
   messagePlaceholder: {
     en: "Describe what you need your website to do..",
-    ar: "أخبرنا ما تحتاجه من موقعك..",
+    ar: "إيه اللي محتاجه من موقعك؟ احكيلنا فكرتك..",
   },
-  submit: { en: "Send My Request", ar: "أرسل طلبي" },
+  submit: { en: "Send My Request", ar: "أرسل الطلب" },
   sending: { en: "Sending...", ar: "جاري الإرسال..." },
   success: {
     en: "Thank you. We have received your request.",
-    ar: "شكراً. لقد استلمنا طلبك!",
+    ar: "شكراً ليك! استلمنا طلبك وهنكلمك قريب.",
   },
   errorRateLimit: {
     en: "Wait a few minutes to send another request.",
-    ar: "يرجى الانتظار بضع دقائق قبل إرسال رسالة أخرى.",
+    ar: "ممكن تستنى دقايق قبل ما تبعت طلب تاني.",
   },
   errorGeneric: {
     en: "Something went wrong. Please try again.",
-    ar: "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+    ar: "حصل خطأ، ياريت تحاول مرة تانية.",
   },
   orWhatsapp: { en: "OR", ar: "أو" },
-  chatInstead: { en: "Reach Us Directly", ar: "تواصل عبر واتساب" },
+  chatInstead: { en: "Reach Us Directly", ar: "تواصل مباشرة على واتساب" },
 };

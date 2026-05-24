@@ -84,37 +84,20 @@ section {
   );
   background-size: 28px 28px;
   mask-image: radial-gradient(
-    ellipse 75% 50% at 50% 50%,
+    ellipse 65% 50% at 50% 55%,
     black 30%,
     transparent 100%
   );
   -webkit-mask-image: radial-gradient(
-    ellipse 75% 50% at 50% 50%,
+    ellipse 65% 50% at 50% 55%,
     black 30%,
     transparent 100%
   );
 }
 
-.hero-glow {
-  position: absolute;
-  z-index: 0;
-  width: 100%;
-  aspect-ratio: 1;
-  top: 51%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    circle,
-    oklch(from var(--color-gold-light) l c h / 0.025) 0%,
-    transparent 65%
-  );
-  pointer-events: none;
-}
-
-
 @media (max-width: 768px) {
   .hero-grid {
-    background-size: 22px 22px;
+    background-size: 15px 15px;
     mask-image: radial-gradient(
       ellipse 70% 50% at 50% 50%,
       black 20%,
@@ -126,17 +109,6 @@ section {
       transparent 100%
     );
   }
-
-  .hero-glow {
-    width: 100%;
-    aspect-ratio: auto;
-    height: 100%;
-    background: radial-gradient(
-      circle,
-      oklch(from var(--color-gold) l c h / 0.02) 0%,
-      transparent 100%
-    );
-  }
 }
 
 .hero-fade-eyebrow {
@@ -144,8 +116,12 @@ section {
 }
 
 @keyframes heroFadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .eyebrow-rule-left {
@@ -171,13 +147,19 @@ section {
 }
 
 @keyframes eyebrowRuleIn {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
 
 .eyebrow-rule-left,
 .eyebrow-rule-right {
-  animation: eyebrowRuleIn 0.3s cubic-bezier(0.25, 0, 0, 1) 0.2s both;
+  animation: eyebrowRuleIn 0.3s cubic-bezier(0.25, 0, 0, 1) 0.1s both;
 }
 
 @keyframes heroRiseIn {
@@ -191,8 +173,21 @@ section {
   }
 }
 
+@keyframes heroRiseInBlur {
+  from {
+    opacity: 0;
+    translate: 0 10px;
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    filter: blur(0px);
+  }
+}
+
 .hero-fade-hook {
-  animation: heroRiseIn 0.6s cubic-bezier(0.25, 0, 0, 1) 0.3s both;
+  animation: heroRiseInBlur 0.75s cubic-bezier(0.25, 0, 0, 1) 0.3s both;
 }
 
 .hero-fade-nav {
@@ -200,7 +195,9 @@ section {
 }
 
 .hero-cta-entrance {
-  animation: heroRiseIn 0.6s cubic-bezier(0.25, 0, 0, 1) 0.7s both;
+  animation:
+    heroRiseIn 0.6s cubic-bezier(0.25, 0, 0, 1) 0.7s both,
+    ctaGlowPulse 3.5s ease-in-out 2s infinite;
 }
 
 .hero-fade-secondary-cta {
@@ -222,30 +219,50 @@ html.hero-played .eyebrow-rule-left,
 html.hero-played .eyebrow-rule-right,
 html.hero-played .hero-fade-hook,
 html.hero-played .hero-fade-nav,
-html.hero-played .hero-cta-entrance,
 html.hero-played .hero-cta-entrance::before,
 html.hero-played .hero-fade-secondary-cta {
   animation: none;
 }
 
+html.hero-played .hero-cta-entrance {
+  animation: ctaGlowPulse 3.5s ease-in-out 0.5s infinite;
+}
+
 .hero-cta-entrance::before {
-  animation: ctaInitialShimmer 0.9s ease-out 2.5s forwards;
+  animation: ctaInitialShimmer 0.8s ease-out 1.8s forwards;
 }
 
 [dir="rtl"] .hero-cta-entrance::before {
-  animation: ctaInitialShimmerRtl 0.9s ease-out 2.5s forwards;
+  animation: ctaInitialShimmerRtl 0.8s ease-out 1.8s forwards;
 }
 
 @keyframes ctaInitialShimmer {
-  from { translate: -110% 0; }
-  to   { translate:  110% 0; }
+  from {
+    translate: -110% 0;
+  }
+  to {
+    translate: 110% 0;
+  }
 }
 
 @keyframes ctaInitialShimmerRtl {
-  from { translate:  110% 0; }
-  to   { translate: -110% 0; }
+  from {
+    translate: 110% 0;
+  }
+  to {
+    translate: -110% 0;
+  }
 }
 
+@keyframes ctaGlowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 oklch(76.7% 0.1399 91.2 / 0);
+  }
+  50% {
+    box-shadow: 0 0 25px 5px oklch(76.7% 0.1399 91.2 / 0.05);
+  }
+}
 
 /* ══════════════════════════════════════
    3. RTL — Global Adjustments
@@ -294,20 +311,26 @@ html.hero-played .hero-fade-secondary-cta {
 }
 
 /* safari only style */
- @supports (-webkit-hyphens: none) {
+@supports (-webkit-hyphens: none) {
   @media (max-width: 680px) {
     [dir="rtl"] #hero-hook {
-      line-height: 2;
+      line-height: 1.9;
     }
-    #mobile-mockup{
+    #mobile-mockup {
       min-height: 59.8svh;
     }
-  }
-    #cta-main{
-      font-size: clamp(20px,4vw,26px);
-      padding: 0.6rem 1.5rem;
+    #hero-hook {
+      font-size: clamp(2.2rem, 10vw, 4rem);
+    }
+    #cta-main {
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+      padding: 0.75rem 1.75rem;
+    }
+    #cta-secondary {
+      font-size: clamp(0.95rem, 3.5vw, 1.2rem);
     }
   }
+}
 /* ══════════════════════════════════════
    5. Inline HTML Content — Link Styling
    ══════════════════════════════════════ */
@@ -398,11 +421,9 @@ html.hero-played .hero-fade-secondary-cta {
    ::after  → hover shimmer (re-fires each hover via animation reset)
    ══════════════════════════════════════ */
 
-
 .cta-primary {
   position: relative;
   overflow: hidden;
-  isolation: isolate;
 }
 
 .cta-primary::before {
@@ -500,7 +521,6 @@ html.hero-played .hero-fade-secondary-cta {
 .btn-label {
   animation: btnLabelIn 0.18s ease-out both;
 }
-
 
 /* ══════════════════════════════════════
    7. Portfolio Showcase — Scroll-Snap

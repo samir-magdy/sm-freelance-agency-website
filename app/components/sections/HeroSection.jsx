@@ -31,7 +31,7 @@ export default function HeroSection({ lang }) {
   return (
     <section
       id="home"
-      className="h-dvh flex items-center justify-center relative"
+      className="h-dvh flex items-center justify-center relative overflow-hidden"
     >
       {/* Dot grid + radial glow background */}
       <div className="hero-grid" aria-hidden="true" />
@@ -39,20 +39,22 @@ export default function HeroSection({ lang }) {
 
       <div
         id="hero-container"
-        className="relative z-10 flex flex-col items-center w-full justify-center pt-10 md:pt-18"
+        className="relative flex flex-col items-center sm:pt-20"
       >
-
-        <h1 dir="ltr" className="hero-fade hero-fade-eyebrow flex items-center justify-center gap-3 sm:gap-4">
-          <span className="eyebrow-rule-left" aria-hidden="true"/>
-          <span className="text-[10px] rtl:text-[15px] sm:text-[0.9rem] rtl:sm:text-[1.2rem] uppercase tracking-[0.11em] font-semibold text-content-body whitespace-nowrap">
+        <h1
+          dir="ltr"
+          className="hero-fade hero-fade-eyebrow flex items-center gap-3 sm:gap-4"
+        >
+          <span className="eyebrow-rule-left" aria-hidden="true" />
+          <span className="text-[clamp(0.5rem,2.8vw,1rem)] rtl:text-[clamp(0.75rem,3.5vw,1.25rem)] uppercase tracking-widest font-semibold text-content-muted">
             {hero.eyebrow[lang]}
           </span>
-          <span className="eyebrow-rule-right" aria-hidden="true"/>
+          <span className="eyebrow-rule-right" aria-hidden="true" />
         </h1>
 
         <h2
           id="hero-hook"
-          className="py-6 rtl:py-4 sm:py-4 rtl:sm:py-10 font-bold text-center text-content-heading px-4 block text-[clamp(2.2rem,10vw,4.2rem)] sm:text-[clamp(2.2rem,3vw,4.2rem)] leading-relaxed rtl:leading-16"
+          className="py-4 font-bold text-center text-content-heading text-[clamp(2.2rem,9.5vw,4.2rem)] sm:text-[clamp(2.2rem,4vw,6rem)] leading-relaxed rtl:leading-17 sm:rtl:leading-normal"
         >
           <span
             className="hero-fade hero-fade-hook block"
@@ -60,23 +62,26 @@ export default function HeroSection({ lang }) {
           />
         </h2>
 
-        <p id="subheading" className="mb-8 hero-fade hero-fade-nav text-content-body text-[clamp(1rem,4.5vw,1.8rem)] sm:rtl:text-[clamp(1.1rem,1.8vw,2rem)] rtl:leading-loose text-center px-12 sm:px-16">
+        <p
+          id="subheading"
+          className="mb-8 hero-fade hero-fade-nav text-content-body text-[clamp(1rem,4.5vw,2rem)] sm:text-[clamp(1rem,2vw,2.2rem)] sm:rtl:text-[clamp(1.1rem,1.8vw,2rem)] rtl:leading-loose text-center px-12 sm:px-16"
+        >
           {hero.subheading[lang]}
         </p>
 
         <div className="flex flex-col items-center gap-4">
           <a
-          id="cta-main"
+            id="cta-main"
             href="#contact"
-            className="cta-primary hero-cta-entrance font-semibold bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(16px,3vw,24px)] rtl:text-[clamp(16px,1.8vw,26px)] px-6 sm:px-10 py-2.5 rounded-2xl"
+            className="cta-primary hero-cta-entrance font-semibold bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1rem,2vw,1.7rem)] rtl:text-[clamp(16px,1.8vw,26px)] px-6 sm:px-10 py-2.5 rounded-2xl"
           >
             {hero.primaryCta[lang]}
-             
           </a>
 
           <a
+            id="cta-secondary"
             href="#FAQs"
-            className="ms-3.5 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-2 text-content-muted hover:text-content-body text-[clamp(0.9rem,1.2vw,1.2rem)] font-medium transition-colors duration-300"
+            className="ms-3.5 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-2 text-content-muted hover:text-content-body text-[clamp(0.8rem,1.5vw,1.25rem)] font-medium transition-colors duration-300"
           >
             {hero.secondaryCta[lang]}
             <svg
