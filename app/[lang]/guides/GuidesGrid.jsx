@@ -38,7 +38,7 @@ export default function GuidesGrid({ resources, lang, t }) {
         </article>
       ))}
       <div
-        className="relative group flex flex-col items-center justify-center gap-4 p-8 rounded-2xl bg-surface-card/20 transition-all duration-50 min-h-[350px] text-center overflow-hidden"
+        className="relative flex flex-col items-center justify-center gap-4 p-8 rounded-2xl bg-surface-card/20 transition-all duration-50 min-h-[350px] text-center overflow-hidden col-span-full sm:max-w-[calc(50%-0.75rem)] sm:w-full mx-auto"
       >
         <svg className="absolute inset-0 w-full h-full pointer-events-none" fill="none" aria-hidden="true">
           <rect

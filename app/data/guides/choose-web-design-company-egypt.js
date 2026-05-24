@@ -58,7 +58,7 @@ const resource = {
 </ul>
 
 <h2>3. Web Design Skill vs. Business Understanding: What to Prioritize</h2>
-<p>The best web design companies don't just see themselves as designers, they are business partners. Notice if they ask about your target customers, your sales process, and how you define success. Ask them directly about their approach to SEO — a capable company treats it as foundational, not an afterthought. If you want to know what good SEO looks like so you can evaluate their answer, read our <a href='/en/guides/what-is-seo' target='_blank' rel='noopener noreferrer'>SEO basics guide for Egyptian businesses</a>. A company that asks insightful questions about your business is far more likely to build a tool that actually works.</p>
+<p>The best web design companies don't just see themselves as designers, they are business partners. Notice if they ask about your target customers, your sales process, and how you define success. Ask them directly about their approach to SEO — a capable company treats it as foundational, not an afterthought. A company that asks insightful questions about your business is far more likely to build a tool that actually works.</p>
 
 <h2>4. Communication: How to Evaluate a Web Design Company</h2>
 <p>The quality of a company's communication during the sales process is a reliable predictor of the project's future. Do they respond promptly? Do they demonstrate that they understood your requirements? A provider who is difficult to reach now will not become easier to work with after you've paid them.</p>
@@ -110,7 +110,7 @@ const resource = {
 </ul>
 
 <h2>3. مصمم مواقع أم شريك نجاح؟</h2>
-<p>أفضل شركات تصميم المواقع هي اللي بتتعامل كشركاء لنجاحك. لاحظ هل بيسألوا عن عملائك، طريقة مبيعاتك، وإزاي هتقيس نجاح الموقع؟ اسألهم بشكل مباشر عن نهجهم في الـ SEO — الشركة المحترفة بتتعامل معاه كأساس مش إضافة. لو حابب تعرف إيه اللي المفروض يسألوا عنه، اقرأ <a href='/ar/guides/what-is-seo' target='_blank' rel='noopener noreferrer'>دليلنا عن أساسيات الـ SEO</a> الأول. الشركة اللي بتسأل أسئلة عميقة عن البيزنس بتاعك هي اللي هتبني لك أداة بتجيب فلوس فعلاً.</p>
+<p>أفضل شركات تصميم المواقع هي اللي بتتعامل كشركاء لنجاحك. لاحظ هل بيسألوا عن عملائك، طريقة مبيعاتك، وإزاي هتقيس نجاح الموقع؟ اسألهم بشكل مباشر عن نهجهم في الـ SEO — الشركة المحترفة بتتعامل معاه كأساس مش إضافة. الشركة اللي بتسأل أسئلة عميقة عن البيزنس بتاعك هي اللي هتبني لك أداة بتجيب فلوس فعلاً.</p>
 
 <h2>4. التواصل مع شركة التصميم: إزاي تقيمه</h2>
 <p>طريقة تعامل الشركة معاك في مرحلة الاتفاق هي أكبر مؤشر للي هيحصل بعدين. هل بيردوا بسرعة؟ هل فاهمين طلباتك؟ اللي تلاقيه صعب الوصول ليه دلوقتي، هيبقى مستحيل توصله بعد ما تدفع الفلوس.</p>

@@ -103,16 +103,6 @@ const faqSection = {
         ar: "أكيد طبعاً، سواء عايز تضيف صفحات جديدة، أو أقسام تانية، أو حتى لوحة تحكم لإدارة المحتوى، نقدر نوسع ونطور الموقع في أي وقت ومن غير ما نضطر نبدأ من الصفر.",
       },
     },
-    {
-      question: {
-        en: "What is SEO and what does it mean?",
-        ar: "يعني إيه SEO؟",
-      },
-      answer: {
-        en: "<abbr data-tooltip='Search Engine Optimization'>SEO</abbr> stands for Search Engine Optimization. It is the process of optimizing your website so that search engines like Google and Bing rank you higher when people search for what you offer. It’s the difference between constantly chasing leads (potential customers) through methods like paid advertising and having them find you naturally. To learn how SEO works and how you can start today, read our guide on the <a href='/en/guides/what-is-seo' target='_blank' rel='noopener noreferrer'>basics of SEO for beginners</a>.",
-        ar: "الـ <abbr data-tooltip='تحسين محركات البحث'>SEO</abbr> هو اختصار لـ (Search Engine Optimization)، ومعناه ببساطة تجهيز موقعك عشان يظهر في نتائج متقدمة على جوجل لما العملاء يبحثوا عن الخدمات اللي بتقدمها. ده بيخليك بدل ما تعتمد بس على الإعلانات المدفوعة، تلاقي العملاء بيوصلولك لوحدهم بشكل طبيعي. عشان تفهم الموضوع ده كويس، اقرأ دليلنا عن <a href='/ar/guides/what-is-seo' target='_blank' rel='noopener noreferrer'>أساسيات السيو للمبتدئين</a>.",
-      },
-    },
   ],
 };
 

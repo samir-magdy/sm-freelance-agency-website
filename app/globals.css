@@ -319,9 +319,6 @@ html.hero-played .hero-cta-entrance {
     #mobile-mockup {
       min-height: 59.8svh;
     }
-    #hero-hook {
-      font-size: clamp(2.2rem, 10vw, 4rem);
-    }
     #cta-main {
       font-size: clamp(1.2rem, 4vw, 1.5rem);
       padding: 0.75rem 1.75rem;

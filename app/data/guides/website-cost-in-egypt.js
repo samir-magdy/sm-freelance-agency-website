@@ -38,7 +38,7 @@ const resource = {
 <li><strong>Admin panel / <abbr data-tooltip="Content Management System — a built-in control panel that lets you edit your website's text and images yourself without touching any code">CMS</abbr></strong> — If you want to update your own content without contacting a developer every time, a content management system needs to be built and configured. This adds cost but gives you long-term independence.</li>
 <li><strong>Bilingual support</strong> — Arabic/English bilingual websites require additional development work, particularly for <abbr data-tooltip="Right-to-Left — the text direction used in Arabic, which requires specific development work to ensure layouts display correctly">RTL</abbr> layouts and ensuring the design works correctly in both languages.</li>
 <li><strong>Integrations</strong> — Connecting your website to third-party tools, booking systems, <abbr data-tooltip="Customer Relationship Management software — tools that help you track leads, clients, and sales activity, like HubSpot or Zoho">CRMs</abbr>, payment gateways or analytics platforms requires additional development time.</li>
-<li><strong>Performance and SEO</strong> — Basic SEO setup is often included in professional web design packages, but advanced SEO services are usually separate. If you want to understand what SEO involves and why it matters for your site's long-term visibility, read our <a href='/en/guides/what-is-seo' target='_blank' rel='noopener noreferrer'>SEO guide for Egyptian businesses</a>.</li>
+<li><strong>Performance and SEO</strong> — Basic SEO setup is often included in professional web design packages, but advanced SEO services are usually separate.</li>
 </ul>
 
 <h2>Cheap Websites: Why They Often Cost More in the Long Run</h2>
@@ -71,7 +71,7 @@ const resource = {
 <li><strong>لوحة التحكم (<abbr data-tooltip="Content Management System — لوحة تحكم داخلية بتخليك تعدل محتوى الموقع بنفسك من غير ما تلمس الكود">CMS</abbr>):</strong> لو عايز تعدل شغلك بنفسك من غير ما ترجع للمبرمج، ده بيحتاج بناء لوحة تحكم وبيضيف للتكلفة بس بيديك استقلالية على المدى البعيد.</li>
 <li><strong>اللغات:</strong> المواقع اللي بالعربي والإنجليزي مع بعض بتحتاج مجهود أكبر في البرمجة وتنسيق اتجاهات الـ <abbr data-tooltip="Right-to-Left — اتجاه الكتابة من اليمين للشمال في العربي، وده بيحتاج شغل برمجي خاص لضمان إن التصميم يظهر صح">RTL</abbr>.</li>
 <li><strong>الربط مع خدمات تانية:</strong> زي ربط الموقع بنظام حجز، أو أنظمة الـ <abbr data-tooltip="Customer Relationship Management — برامج بتساعدك تتابع العملاء والمبيعات زي HubSpot أو Zoho">CRMs</abbr>، أو بوابة دفع إلكتروني.</li>
-<li><strong>الأداء والـ SEO:</strong> تجهيز الموقع علشان يظهر في نتائج البحث (جوجل) ويفتح بسرعة. لو حابب تفهم أكتر إيه هو الـ SEO وليه بيأثر على نجاح موقعك، اقرأ <a href='/ar/guides/what-is-seo' target='_blank' rel='noopener noreferrer'>دليلنا عن أساسيات الـ SEO للمبتدئين</a>.</li>
+<li><strong>الأداء والـ SEO:</strong> تجهيز الموقع علشان يظهر في نتائج البحث (جوجل) ويفتح بسرعة.</li>
 </ul>
 
 <h2>الموقع الرخيص: ليه ممكن يكلفك أكتر في الآخر؟</h2>

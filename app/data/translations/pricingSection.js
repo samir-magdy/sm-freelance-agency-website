@@ -30,7 +30,7 @@ export const pricingCards = {
         en: "A single-page website designed to guide visitors toward taking one action, like filling out a form or clicking a 'Chat with us' button. <em>Ideal for startups, smaller businesses and service providers.</em>",
         ar: "صفحة واحدة مركزة، هدفها تخلي العميل ياخد قرار سريع زي إنه يملأ بياناته أو يكلمك واتساب. <em>اختيار ممتاز للشركات الناشئة ومقدمي الخدمات.</em>",
       },
-      price: "5,000",
+      price: "7,500",
     },
     {
       id: "business",
@@ -42,7 +42,7 @@ export const pricingCards = {
         en: "A multi-page website that presents your company and the products/services you offer in detail. <em>Ideal for established businesses that need to build a credible online presence.</em>",
         ar: "موقع متكامل بعدة صفحات، بيعرض شركتك وخدماتك وتفاصيل شغلك بشكل احترافي. <em>مناسب للشركات اللي عايزة تبني ثقة قوية عند عملائها.</em>",
       },
-      price: "9,000",
+      price: "12,500",
     },
     {
       id: "shopify",
@@ -54,7 +54,7 @@ export const pricingCards = {
         en: "An e-commerce online shop built on Shopify that handles inventory, payments, and shipping. <em>Ideal for anyone who wants to manage and sell their products online.</em>",
         ar: "متجر إلكتروني متكامل على شوبيفاي، بيسهل عليك إدارة مخزونك وعمليات الدفع والشحن. <em>الحل الأمثل لو بتبيع منتجات وعايز تدير متجرك بسهولة.</em>",
       },
-      price: "15,000",
+      price: "15,500",
     },
   ],
 };
