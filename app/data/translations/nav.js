@@ -3,6 +3,7 @@ const nav = {
   pricing: { en: "Pricing", ar: "الأسعار" },
   FAQs: { en: "FAQs", ar: "الأسئلة الشائعة" },
   guides: { en: "Guides", ar: "الأدلة" },
+  about: { en: "About", ar: "من نحن" },
   contact: { en: "Contact", ar: "تواصل معنا" },
 };
 

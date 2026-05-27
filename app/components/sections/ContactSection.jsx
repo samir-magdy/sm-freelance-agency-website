@@ -262,7 +262,7 @@ export default function ContactSection({ lang }) {
                   ? "mt-3.5 w-full border border-green-500/40 bg-green-500/20 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-lg font-bold text-base"
                   : status === "error"
                     ? "mt-3.5 w-full border border-danger/40 bg-danger/20 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-lg font-bold text-base"
-                    : "cta-primary cursor-pointer bg-linear-to-b from-gold to-gold-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light text-gray-900 disabled:opacity-50"
+                    : "cta-primary cursor-pointer bg-linear-to-b from-gold to-gold-dark text-gray-900 disabled:opacity-50"
               }`}
             >
               <span

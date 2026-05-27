@@ -18,7 +18,7 @@ const fonts = Cairo({
 // SITE-WIDE CONSTANTS
 // ─────────────────────────────────────────────
 
-const SITE_NAME = "SM Web Design Studio";
+const SITE_NAME = "SM Web Studio";
 const CONTACT_EMAIL = "studio@samirmagdy.com";
 const PHONE_NUMBER = "+201274613331";
 const TWITTER_HANDLE = "@SMWebDesignCo";
@@ -246,6 +246,7 @@ function buildStructuredData(lang) {
     alternateName: "سمير مجدي",
     jobTitle: "Founder, Web Designer & Developer",
     url: SITE_URL,
+    sameAs: ["https://www.linkedin.com/in/samir-magdy-/"],
     worksFor: { "@id": `${SITE_URL}/#business` },
   };
 
@@ -293,6 +294,7 @@ export default async function LangLayout({ children, params }) {
       FAQs: t.nav.FAQs[lang],
       contact: t.nav.contact[lang],
       guides: t.nav.guides[lang],
+      about: t.nav.about[lang],
     },
     a11y: {
       desktopNav: t.a11y.desktopNav[lang],
@@ -309,7 +311,7 @@ export default async function LangLayout({ children, params }) {
       dir={lang === "ar" ? "rtl" : "ltr"}
       suppressHydrationWarning
     >
-      <body className={`${fonts.variable} font-cairo antialiased`}>
+      <body className={`${fonts.variable} font-cairo antialiased min-h-dvh flex flex-col`}>
         {/* ── Structured Data (JSON-LD) ── */}
         <Script
           id="structured-data"
@@ -321,7 +323,7 @@ export default async function LangLayout({ children, params }) {
         {/* ── Skip navigation ── */}
         <a
           href="#main-content"
-          className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-4 focus-visible:left-4 focus-visible:z-100 focus-visible:px-4 focus-visible:py-2 focus-visible:bg-white focus-visible:text-black focus-visible:rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+          className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-4 focus-visible:left-4 focus-visible:z-100 focus-visible:px-4 focus-visible:py-2 focus-visible:bg-white focus-visible:text-black focus-visible:rounded-md"
         >
           {skipLabel}
         </a>
@@ -330,7 +332,7 @@ export default async function LangLayout({ children, params }) {
         <HeroNav lang={lang} strings={heroNavStrings} />
 
         {/* ── Main content ── */}
-        <main id="main-content">{children}</main>
+        <main id="main-content" className="md:flex-1 md:flex md:flex-col">{children}</main>
         <Footer />
         <Analytics />
       </body>

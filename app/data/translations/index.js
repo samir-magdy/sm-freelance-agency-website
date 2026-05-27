@@ -1,5 +1,6 @@
 import nav, { navLinks, langToggle } from "./nav";
 import hero from "./heroSection";
+import aboutSection from "./aboutSection";
 import { projectsSection, projectData } from "./portfolioSection";
 import { pricingCards } from "./pricingSection";
 import faqSection from "./faqSection";
@@ -11,6 +12,7 @@ const translations = {
   nav,
   navLinks,
   hero,
+  aboutSection,
   projectsSection,
   projectData,
   pricingCards,

@@ -2,7 +2,7 @@ import Script from "next/script";
 import { use } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, User, Calendar } from "lucide-react";
 import { SITE_URL } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guides";
@@ -144,11 +144,11 @@ export default function GuidePage({ params }) {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:gap-8">
+      <div className="max-w-5xl mx-auto flex flex-col gap-6 sm:gap-8">
           {/* Back link */}
          <Link
             href={`/${lang}/guides`}
-            className="hover:bg-white/90 hover:border-white/90 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.8rem,1.3vw,1.1rem)] font-medium transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+            className="hover:bg-white/90 hover:border-white/90 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.8rem,1.3vw,1.1rem)] font-medium transition-all duration-500"
           >
             <ArrowLeft
               className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}
@@ -172,6 +172,19 @@ export default function GuidePage({ params }) {
                 );
               })()}
             </h1>
+            <div className="flex flex-wrap items-center gap-3 mt-4">
+              <span className="inline-flex font-semibold items-center gap-1.5 text-sm text-content-muted border border-border-subtle rounded-lg px-3 py-1">
+                <User size={13} aria-hidden />
+                {t.by[lang]} <span className="font-normal">{lang === 'ar' ? "سمير مجدى" : "Samir Magdy"}</span>
+              </span>
+              <time
+                dateTime={guide.datePublished}
+                className="inline-flex items-center gap-1.5 text-sm text-content-muted border border-border-subtle rounded-lg px-3 py-1"
+              >
+                <Calendar size={13} aria-hidden />
+                {new Intl.DateTimeFormat(lang === "ar" ? "ar-EG" : "en-US", { dateStyle: "long" }).format(new Date(guide.datePublished))}
+              </time>
+            </div>
           </header>
           {/* Guide body */}
           <article
@@ -182,8 +195,15 @@ export default function GuidePage({ params }) {
             [&_h3]:text-[clamp(1.15rem,5vw,2.25rem)] [&_h3]:font-semibold [&_h3]:text-content-heading [&_h3]:mt-8 [&_h3]:mb-4 [&_h3]:leading-snug
             [&_p]:text-content-body [&_p]:text-subheading [&_p]:leading-relaxed [&_p]:mb-6
             [&_ul]:list-disc [&_ul]:ps-7 [&_ul]:mb-6 [&_ul]:space-y-3
+            [&_ol]:list-decimal [&_ol]:ps-7 [&_ol]:mb-6 [&_ol]:space-y-3
             [&_li]:text-content-body [&_li]:text-subheading [&_li]:leading-relaxed
             [&_strong]:text-content-heading [&_strong]:font-semibold [&[dir=rtl]_*]:leading-loose
+            [&_table]:w-full [&_table]:my-8 [&_table]:border-separate [&_table]:border-spacing-0 [&_table]:border [&_table]:border-white/15 [&_table]:rounded-lg [&_table]:overflow-hidden [&_table]:table-fixed
+            [&_thead]:bg-white/5
+            [&_th]:text-content-heading [&_th]:font-semibold [&_th]:text-start [&_th]:p-3 [&_th]:text-base [&_th]:border-b [&_th]:border-e [&_th]:border-white/15 [&_th]:align-middle sm:[&_th]:p-4 sm:[&_th]:text-subheading
+            [&_td]:text-content-body [&_td]:text-base [&_td]:p-3 [&_td]:border-b [&_td]:border-e [&_td]:border-white/10 [&_td]:align-middle [&_td]:leading-relaxed sm:[&_td]:p-4 sm:[&_td]:text-subheading
+            [&_th:last-child]:border-e-0 [&_td:last-child]:border-e-0
+            [&_tbody_tr:last-child_td]:border-b-0
           "
             dangerouslySetInnerHTML={{ __html: guide.content[lang] }}
           />
@@ -254,7 +274,7 @@ export default function GuidePage({ params }) {
           </Script>
           <Link
             href={`/${lang}/guides`}
-            className="hover:bg-white/90 hover:border-white/90 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.8rem,1.3vw,1.1rem)] font-medium transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+            className="hover:bg-white/90 hover:border-white/90 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.9rem,1.3vw,1.1rem)] font-medium transition-all duration-500"
           >
             <ArrowLeft
               className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}

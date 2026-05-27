@@ -57,7 +57,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
     <nav
       id="mobile-menu"
       aria-label={a11y.mobileNav}
-      className="xl:hidden fixed top-0 inset-x-0 z-50 pointer-events-none"
+      className="lg:hidden fixed top-0 inset-x-0 z-50 pointer-events-none"
     >
       <div
         className="absolute top-0 inset-x-0 w-full py-1 z-50 backdrop-blur-xl pointer-events-auto"
@@ -136,7 +136,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               <a
                 href={isHome ? `#${item}` : `/${lang}/#${item}`}
                 onClick={(e) => handleNavClick(e, item)}
-                className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+                className="font-semibold text-content-body text-[1.55rem] tracking-wide"
               >
                 {nav[item]}
               </a>
@@ -146,16 +146,25 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             <Link
               href={`/${lang}/guides`}
               onClick={pathname === `/${lang}/guides` ? closeMenu : null}
-              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light"
+              className="font-semibold text-content-body text-[1.55rem] tracking-wide"
             >
               {nav["guides"]}
+            </Link>
+          </li>
+          <li onClick={(e) => e.stopPropagation()}>
+            <Link
+              href={`/${lang}/about`}
+              onClick={pathname === `/${lang}/about` ? closeMenu : null}
+              className="font-semibold text-content-body text-[1.55rem] tracking-wide"
+            >
+              {nav["about"]}
             </Link>
           </li>
           <li key={contactItem}>
             <a
               href={isHome ? `#${contactItem}` : `/${lang}/#${contactItem}`}
               onClick={(e) => handleNavClick(e, contactItem)}
-              className="font-semibold text-content-body text-[1.75rem] tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm"
+              className="font-semibold text-content-body text-[1.55rem] tracking-wide"
             >
               {nav[contactItem]}
             </a>

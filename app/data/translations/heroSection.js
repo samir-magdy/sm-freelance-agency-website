@@ -1,6 +1,6 @@
 const hero = {
   eyebrow: {
-    en: "SM Web Design Studio · Egypt",
+    en: "Website Design Company · Egypt",
     ar: "شركة تصميم مواقع · مصر",
   },
   name: {
@@ -17,7 +17,7 @@ const hero = {
   },
   subheading: {
     en: "Setting the new standard for web design in Egypt.",
-    ar: "نُعيد تعريف معايير تصميم الويب في مصر.",
+    ar: "بنعيد تعريف معايير تصميم الويب في مصر.",
   },
 };
 

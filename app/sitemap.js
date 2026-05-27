@@ -1,6 +1,5 @@
 import { SITE_URL } from "./constants";
 import guides from "./data/guides";
-import { projects } from "./data/portfolio";
 
 const langs = ["en", "ar"];
 
@@ -26,6 +25,13 @@ export default function sitemap() {
     alternates: alternates(homeUrl("en"), homeUrl("ar")),
   }));
 
+  const aboutEntries = langs.map((lang) => ({
+    url: pageUrl(lang, "/about"),
+    lastModified: now,
+    priority: 0.8,
+    alternates: alternates(pageUrl("en", "/about"), pageUrl("ar", "/about")),
+  }));
+
   const guidesListingEntries = langs.map((lang) => ({
     url: pageUrl(lang, "/guides"),
     lastModified: now,
@@ -45,20 +51,6 @@ export default function sitemap() {
     }))
   );
 
-  const portfolioEntries = projects
-    .filter((project) => project.liveUrl.startsWith("/"))
-    .map((project) => ({
-      url: `${SITE_URL}/portfolio/${project.slug}`,
-      lastModified: now,
-      priority: 0.8,
-    }));
-
-  const premiumComponentsEntry = {
-    url: `${SITE_URL}/react-components`,
-    lastModified: now,
-    priority: 0.5,
-  };
-
   const showcaseEntry = {
     url: `${SITE_URL}/react-components-showcase`,
     lastModified: now,
@@ -67,10 +59,9 @@ export default function sitemap() {
 
   return [
     ...homeEntries,
+    ...aboutEntries,
     ...guidesListingEntries,
     ...guideEntries,
-    ...portfolioEntries,
-    premiumComponentsEntry,
     showcaseEntry,
   ];
 }

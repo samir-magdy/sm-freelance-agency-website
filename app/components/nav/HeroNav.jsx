@@ -20,7 +20,7 @@ function DesktopNavLinks({ nav }) {
   const contactDestination = isHome ? `#${contactItem}` : `/${lang}/#${contactItem}`;
 
   return (
-    <ul className="flex w-full justify-center gap-14 xl:gap-32">
+    <ul className="flex w-full justify-around xl:px-36 lg:px-16">
       {navLinks.slice(0, -1).map((item, i) => {
         const destination = isHome ? `#${item}` : `/${lang}/#${item}`;
 
@@ -33,7 +33,7 @@ function DesktopNavLinks({ nav }) {
                   smoothScroll(e);
                 }
               }}
-              className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
+              className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
             >
               {nav[item]}
             </Link>
@@ -43,9 +43,17 @@ function DesktopNavLinks({ nav }) {
       <li>
         <Link
           href={`/${lang}/guides`}
-          className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
+          className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
         >
           {nav.guides}
+        </Link>
+      </li>
+      <li>
+        <Link
+          href={`/${lang}/about`}
+          className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
+        >
+          {nav.about}
         </Link>
       </li>
       <li>
@@ -56,7 +64,7 @@ function DesktopNavLinks({ nav }) {
               smoothScroll(e);
             }
           }}
-          className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-light rounded-sm transition-colors duration-500"
+          className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
         >
           {nav[contactItem]}
         </Link>
@@ -72,7 +80,7 @@ export default function HeroNav({ lang, strings }) {
       {/* Fixed Top Navbar for Desktop — fully static, server-rendered */}
       <nav
         aria-label={a11y.desktopNav}
-        className="hidden xl:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl px-8 pe-10"
+        className="hidden lg:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl px-8 pe-10"
       >
         <div className="relative flex items-center w-full">
           <a href={`/${lang}/#home`} onClick={smoothScroll} aria-label="Samir Magdy Web Studio - Home">

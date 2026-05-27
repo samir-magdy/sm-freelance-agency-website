@@ -7,7 +7,6 @@ import { notFound } from "next/navigation";
 import { projectsStructuredData } from "../data/portfolio";
 import Script from "next/script";
 
-
 export default async function Page({ params }) {
   const { lang: rawLang } = await params;
   if (rawLang !== "en" && rawLang !== "ar") notFound();
@@ -17,8 +16,8 @@ export default async function Page({ params }) {
     <div className="relative min-h-screen bg-background text-content-heading flex flex-col gap-40 md:gap-72">
       <HeroSection lang={lang} />
       <PortfolioSection key={lang} lang={lang} />
-      <FAQSection lang={lang} />
 
+      <FAQSection lang={lang} />
       <PricingSection lang={lang} />
 
       <ContactSection lang={lang} />
