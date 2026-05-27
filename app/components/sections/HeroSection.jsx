@@ -39,7 +39,7 @@ export default function HeroSection({ lang }) {
 
       <div
         id="hero-container"
-        className="relative flex flex-col items-center pt-8 sm:pt-20"
+        className="relative flex flex-col items-center pt-10 sm:pt-20"
       >
         <h1
           dir="ltr"

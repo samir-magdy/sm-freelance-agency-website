@@ -24,11 +24,11 @@ export const pricingCards = {
       id: "landing",
       name: {
         en: "Landing Page",
-        ar: "صفحة هبوط (Landing Page)",
+        ar: "صفحة هبوط",
       },
       tagline: {
         en: "A single-page website designed to guide visitors toward taking one action, like filling out a form or clicking a 'Chat with us' button. <em>Ideal for startups, smaller businesses and service providers.</em>",
-        ar: "صفحة واحدة مركزة، هدفها تخلي العميل ياخد قرار سريع زي إنه يملأ بياناته أو يكلمك واتساب. <em>اختيار ممتاز للشركات الناشئة ومقدمي الخدمات.</em>",
+        ar: "صفحة واحدة مركزة، هدفها تخلي العميل ياخد قرار سريع زي إنه يملأ بياناته أو يبعت رسالة على الواتساب. <em>مثالي للشركات الناشئة ومقدمي الخدمات.</em>",
       },
       price: "7,500",
     },
@@ -40,7 +40,7 @@ export const pricingCards = {
       },
       tagline: {
         en: "A multi-page website that presents your company and the products/services you offer in detail. <em>Ideal for established businesses that need to build a credible online presence.</em>",
-        ar: "موقع متكامل بعدة صفحات، بيعرض شركتك وخدماتك وتفاصيل شغلك بشكل احترافي. <em>مناسب للشركات اللي عايزة تبني ثقة قوية عند عملائها.</em>",
+        ar: "موقع متكامل بعدة صفحات، بيعرض شركتك وخدماتك وتفاصيل شغلك بشكل احترافي. <em>مثالي للشركات اللي عايزة تبني ثقة قوية عند عملائها.</em>",
       },
       price: "12,500",
     },

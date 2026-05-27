@@ -5,11 +5,11 @@ const aboutSection = {
   },
 storyP1: {
     en: "I founded SM Web Studio to bring global web design standards to our local market. We are a small, dedicated team of designers, developers, and marketing experts operating as a fully remote company. This allows us to provide you with higher quality at a competitive price.",
-    ar: "أسست SM ويب ستوديو علشان ننقل معايير تصميم المواقع العالمية لسوقنا المحلي. إحنا فريق صغير من المصممين، المطورين، وخبراء التسويق، وبنشتغل بالكامل عن بُعد؛ وده بيتيح لنا نقدّم لك جودة أعلى وبسعر تنافسي.",
+    ar: "أسست SM ويب ستوديو علشان ننقل معايير تصميم المواقع العالمية لسوقنا المحلي. إحنا فريق صغير من المصممين، المطورين، وخبراء التسويق، وبنشتغل بالكامل عن بُعد؛ وده بيتيح لنا نقدّم لك جودة أعلى وبسعر منافس.",
   },
   storyP2: {
     en: "Many business owners in Egypt have lost faith in web design companies after dealing with terrible experiences. The truth is, <strong>Egypt doesn't have a shortage of web designers, it has a shortage of web design.</strong> SM Web Studio is here to rebuild that trust by delivering reliable, high-quality service.",
-    ar: "كثير من أصحاب الأعمال في مصر فقدوا الثقة في شركات تصميم المواقع بعد تجارب سيئة مرّوا بيها. الحقيقة هي إن <strong>مصر مش بتعاني من نقص في مصممي المواقع، لكن بتعاني من نقص في تصميم المواقع نفسه.</strong> SM ويب ستوديو موجود علشان يعيد بناء الثقة دي من خلال تقديم خدمة موثوقة وعالية الجودة.",
+    ar: "كثير من أصحاب الأعمال في مصر فقدوا الثقة في شركات تصميم المواقع بعد تجارب سيئة مرّوا بيها. SM ويب ستوديو موجود علشان يعيد بناء الثقة دي من خلال تقديم خدمة موثوقة وعالية الجودة.",
   },
   founderName: {
     en: "Samir Magdy",
@@ -21,7 +21,7 @@ storyP1: {
   },
   ctaContact: {
     en: "Let's Work Together",
-    ar: "خلينا نشتغل سوا",
+    ar: "تواصل",
   },
   ctaLinkedIn: {
     en: "My LinkedIn",

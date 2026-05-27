@@ -8,12 +8,12 @@ const hero = {
     ar: '<span class="md:inline block"><span class="text-gold">تصميم</span> استثنائي.</span> <span class="md:inline block"><span class="text-gold">برمجة</span> احترافية.</span> <span class="md:inline block"><span class="text-gold">نتائج</span> حقيقية.</span>'
   },
   primaryCta: {
-    en: "Get Started",
+    en: "Request a Quote",
     ar: "ابدأ مشروعك",
   },
   secondaryCta: {
-    en: "Not Sure Yet?",
-    ar: "لسه بتفكر؟",
+    en: "Have Questions?",
+    ar: "عندك أسئلة؟",
   },
   subheading: {
     en: "Setting the new standard for web design in Egypt.",

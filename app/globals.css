@@ -52,7 +52,7 @@ section {
 
 @media (min-width: 1280px) {
   section {
-    scroll-margin-top: 5rem;
+    scroll-margin-top: 6rem;
   }
 }
 
@@ -230,11 +230,11 @@ html.hero-played .hero-cta-entrance {
 }
 
 .hero-cta-entrance::before {
-  animation: ctaInitialShimmer 0.8s ease-out 1.8s forwards;
+  animation: ctaInitialShimmer 0.8s ease-out 3s forwards;
 }
 
 [dir="rtl"] .hero-cta-entrance::before {
-  animation: ctaInitialShimmerRtl 0.8s ease-out 1.8s forwards;
+  animation: ctaInitialShimmerRtl 0.8s ease-out 3s forwards;
 }
 
 @keyframes ctaInitialShimmer {
