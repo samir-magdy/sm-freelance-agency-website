@@ -51,6 +51,20 @@ export default function sitemap() {
     }))
   );
 
+  const privacyEntries = langs.map((lang) => ({
+    url: pageUrl(lang, "/privacy"),
+    lastModified: now,
+    priority: 0.4,
+    alternates: alternates(pageUrl("en", "/privacy"), pageUrl("ar", "/privacy")),
+  }));
+
+  const termsEntries = langs.map((lang) => ({
+    url: pageUrl(lang, "/terms"),
+    lastModified: now,
+    priority: 0.4,
+    alternates: alternates(pageUrl("en", "/terms"), pageUrl("ar", "/terms")),
+  }));
+
   const showcaseEntry = {
     url: `${SITE_URL}/react-components-showcase`,
     lastModified: now,
@@ -62,6 +76,8 @@ export default function sitemap() {
     ...aboutEntries,
     ...guidesListingEntries,
     ...guideEntries,
+    ...privacyEntries,
+    ...termsEntries,
     showcaseEntry,
   ];
 }
