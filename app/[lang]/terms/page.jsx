@@ -7,7 +7,7 @@ export async function generateMetadata({ params }) {
 
   return {
     title: t?.heading?.[lang] || t?.heading?.en || "Terms of Service",
-    robots: { index: false, follow: true },
+    robots: { index: true, follow: true },
   };
 }
 
