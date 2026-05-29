@@ -16,7 +16,7 @@ const projectData = {
       ar: "متجر إلكتروني للأزياء",
     },
     description: {
-      en: "In the crowded fashion market, generic websites lose sales to bigger brands with better sites. This web design provides the the optimal user experience you need to become the preferred choice for shoppers.",
+      en: "In the crowded fashion market, generic websites lose sales to bigger brands with better sites. This web design provides the optimal user experience you need to become the preferred choice for shoppers.",
       ar: "في سوق الأزياء المليء بالمنافسة، قد تخسر المواقع التقليدية الكثير من فرص البيع لصالح العلامات التجارية التي تهتم بتجربة العميل. يساعدك هذا التصميم في تقديم واجهة احترافية وسلسة، تجعل من متجرك الاختيار المفضل والموثوق للمتسوقين.",
     },
     cta: {

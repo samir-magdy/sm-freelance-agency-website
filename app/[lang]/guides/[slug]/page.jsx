@@ -3,7 +3,7 @@ import { use } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, User, Calendar } from "lucide-react";
-import { SITE_URL } from "@/app/constants";
+import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guides";
 
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }) {
       description: guide.metaDescription[lang],
       url: canonical,
       type: "article",
-      siteName: "SM Web Design Studio",
+      siteName: SITE_NAME,
       locale: lang === "en" ? "en_US" : "ar_EG",
       alternateLocale: lang === "en" ? "ar_EG" : "en_US",
       article: {
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }) {
           url: `${SITE_URL}/open-graph.webp`,
           width: 1200,
           height: 630,
-          alt: "SM Web Design Studio – Web Design Agency in Egypt",
+          alt: "SM Web Design Studio – Web Design Company in Egypt",
         },
       ],
     },
@@ -59,19 +59,8 @@ export async function generateMetadata({ params }) {
       title: guide.title[lang],
       description: guide.metaDescription[lang],
       images: [`${SITE_URL}/open-graph.webp`],
-      site: "@SMWebDesignCo",
-      creator: "@SMWebDesignCo",
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
+      site: TWITTER_HANDLE,
+      creator: TWITTER_HANDLE,
     },
   };
 }

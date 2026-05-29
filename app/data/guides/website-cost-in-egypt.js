@@ -8,7 +8,7 @@ const resource = {
   },
   metaTitle: {
     en: "How Much Does a Website Cost in Egypt? (2026)",
-    ar: "أسعار تصميم المواقع في مصر لعام 2026",
+    ar: "سعر تصميم موقع إلكتروني في مصر (2026)",
   },
   excerpt: {
     en: "Website pricing in Egypt varies widely, and the variation is never random. This guide explains exactly what drives costs, what price ranges to expect for each project type, and how to avoid overpaying or underpaying for web design & development services.",
@@ -46,7 +46,7 @@ const resource = {
 
 <h2>What factors actually drive website pricing?</h2>
 <ul>
-<li><strong>The technology used:</strong> Basic page builders like WordPress, Wix, and others cost less and are faster to finish, but often result in a slow website that looks like every other average website on the internet. A custom-coded solution requires more expertise and time, which increases the price but delivers a superior, unique product. For a full comparison of what each approach means for your business beyond cost, read our guide on <a href='/en/guides/diy-vs-professional-web-design-egypt' target='_blank' rel='noopener noreferrer'>DIY vs. professional web design</a>.</li>
+<li><strong>The technology used:</strong> Basic page builders like WordPress, Wix, and others cost less and are faster to finish, but often result in a slow website that looks like every other average website on the internet. A custom-coded solution requires more expertise and time, which increases the price but delivers a superior, unique product. For a full comparison of what each approach means for your business beyond cost, read our guide on <a href='/en/guides/diy-vs-professional-web-design' target='_blank' rel='noopener noreferrer'>DIY vs. professional web design</a>.</li>
 <li><strong>Scope of content:</strong> More pages, more sections, and more content types mean more design and development work.</li>
 <li><strong>Admin panel / <abbr data-tooltip="Content Management System — a built-in control panel that lets you edit your website's text and images yourself without touching any code">CMS</abbr>:</strong> If you want to update your own content without contacting a developer every time, a content management system needs to be built and configured. This adds cost but gives you long-term independence.</li>
 <li><strong>Bilingual support:</strong> Arabic/English bilingual websites require additional development work, particularly for <abbr data-tooltip="Right-to-Left — the text direction used in Arabic, which requires specific development work to ensure layouts display correctly">RTL</abbr> layouts and ensuring the design works correctly in both languages.</li>
@@ -98,7 +98,7 @@ const resource = {
 
 <h2>إيه العوامل الأساسية اللي بتحدد تكلفة تصميم الموقع؟</h2>
 <ul>
-<li><strong>التكنولوجيا المستخدمة:</strong> استخدام أدوات بناء المواقع البسيطة زي <abbr data-tooltip="أشهر نظام لإدارة المحتوى (CMS) في العالم، بيستخدم لبناء كل أنواع المواقع سواء بقوالب جاهزة أو كود مخصص">WordPress</abbr> أو <abbr data-tooltip="أداة سهلة لبناء المواقع بتعتمد على سحب العناصر (Drag and Drop)، مناسبة للمشاريع البسيطة بس فيها قيود في التحكم الكامل بالكود">Wix</abbr> بيكون أرخص وأسرع، بس غالباً بيطلع موقع بطيء وشبه باقي المواقع الموجودة على الإنترنت. الكود الخاص بيحتاج خبرة ووقت أكبر وده بيزود السعر بس بيطلع منتج فريد وممتاز. للمقارنة الكاملة بين الخيارين وتأثيرهم على شغلك، اقرأ دليلنا عن <a href='/ar/guides/diy-vs-professional-web-design-egypt' target='_blank' rel='noopener noreferrer'>تصميم الموقع بنفسك مقابل التصميم الاحترافي</a>.</li>
+<li><strong>التكنولوجيا المستخدمة:</strong> استخدام أدوات بناء المواقع البسيطة زي <abbr data-tooltip="أشهر نظام لإدارة المحتوى (CMS) في العالم، بيستخدم لبناء كل أنواع المواقع سواء بقوالب جاهزة أو كود مخصص">WordPress</abbr> أو <abbr data-tooltip="أداة سهلة لبناء المواقع بتعتمد على سحب العناصر (Drag and Drop)، مناسبة للمشاريع البسيطة بس فيها قيود في التحكم الكامل بالكود">Wix</abbr> بيكون أرخص وأسرع، بس غالباً بيطلع موقع بطيء وشبه باقي المواقع الموجودة على الإنترنت. الكود الخاص بيحتاج خبرة ووقت أكبر وده بيزود السعر بس بيطلع منتج فريد وممتاز. للمقارنة الكاملة بين الخيارين وتأثيرهم على شغلك، اقرأ دليلنا عن <a href='/ar/guides/diy-vs-professional-web-design' target='_blank' rel='noopener noreferrer'>تصميم الموقع بنفسك مقابل التصميم الاحترافي</a>.</li>
 <li><strong>حجم المحتوى:</strong> كل ما زاد عدد الصفحات والأقسام، زاد مجهود التصميم والبرمجة.</li>
 <li><strong>لوحة التحكم (<abbr data-tooltip="Content Management System — لوحة تحكم داخلية بتخليك تعدل محتوى الموقع بنفسك من غير ما تلمس الكود">CMS</abbr>):</strong> لو عايز تعدل شغلك بنفسك من غير ما ترجع للمبرمج، ده بيحتاج بناء لوحة تحكم وبيضيف للتكلفة بس بيديك استقلالية على المدى البعيد.</li>
 <li><strong>اللغات:</strong> المواقع اللي بالعربي والإنجليزي مع بعض بتحتاج مجهود أكبر في البرمجة وتنسيق اتجاهات الـ <abbr data-tooltip="Right-to-Left — اتجاه الكتابة من اليمين للشمال في العربي، وده بيحتاج شغل برمجي خاص لضمان إن التصميم يظهر صح">RTL</abbr>.</li>
@@ -120,8 +120,8 @@ const resource = {
 <p>كل موقع بنبنيه بيشمل تصميم مخصص لبراندك، وسرعة تحميل عالية، وتوافق تام مع الموبايل، مع تجهيز أساسيات الـ SEO، وعملية مراجعة بتضمن إنك مبسوط من النتيجة. إحنا واضحين جداً في أسعارنا من قبل ما نبدأ؛ هدفنا مش إننا نبيع لك أغلى حاجة، هدفنا نساعدك تختار الاستثمار اللي هيجيب لك عائد فعلي لشركتك. ولو حابب نبعتلك عرض سعر رسمي، تقدر تطلبه من <a href="/ar/#contact">هنا</a>. ولو لسه بتقيّم خياراتك، دليلنا عن <a href='/ar/guides/choose-web-design-company-egypt' target='_blank' rel='noopener noreferrer'>إزاي تختار شركة تصميم المواقع الصح</a> هيساعدك تاخد القرار الصح.</p>`,
   },
   metaDescription: {
-    en: "An honest breakdown of website costs in Egypt — what drives pricing, what to expect for landing pages, business sites, and online stores, and how to budget wisely.",
-    ar: "اعرف تكاليف تصميم المواقع في مصر لعام ٢٠٢٦. شرح واضح لأسعار صفحات الهبوط، مواقع الشركات، والمتاجر الإلكترونية، وإزاي تختار اللي يناسب ميزانيتك.",
+    en: "Find out how much a professional website costs in Egypt in 2026. An honest breakdown of pricing for landing pages, business sites, and e-commerce stores.",
+    ar: "اعرف كام بتكلف تصميم موقع احترافي في مصر 2026. تفصيلة واضحة لأسعار صفحات الهبوط والمواقع التجارية والمتاجر الإلكترونية.",
   },
 };
 

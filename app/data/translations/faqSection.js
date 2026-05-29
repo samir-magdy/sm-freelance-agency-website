@@ -14,8 +14,8 @@ const faqSection = {
         ar: "هو الموقع الإلكتروني مهم فعلاً؟",
       },
       answer: {
-        en: "If you want to compete and win in today's market, then absolutely! Some benefits a professional website provides are credibility, utility, and visibility. To understand exactly how it provides these benefits, read our guide on <a href='/en/guides/why-your-business-needs-a-website-in-2026' target='_blank' rel='noopener noreferrer'>the benefits of a professional website for your business</a>.",
-        ar: "لو عايز تنافس وتكبر في السوق دلوقتي، فالموقع خطوة أساسية! الموقع الاحترافي بيدي لمشروعك مصداقية، وسهولة في الوصول، وتواجد قوي قدام عملائك. عشان تعرف إزاي الموقع بيساعدك في ده بالتفصيل، ممكن تقرأ دليلنا عن <a href='/ar/guides/why-your-business-needs-a-website-in-2026' target='_blank' rel='noopener noreferrer'>أهمية الموقع الإلكتروني لعملك</a>.",
+        en: "If you want to compete and win in today's market, then absolutely! Some benefits a professional website provides are credibility, utility, and visibility. To understand exactly how it provides these benefits, read our guide on <a href='/en/guides/why-your-business-needs-a-website' target='_blank' rel='noopener noreferrer'>the benefits of a professional website for your business</a>.",
+        ar: "لو عايز تنافس وتكبر في السوق دلوقتي، فالموقع خطوة أساسية! الموقع الاحترافي بيدي لمشروعك مصداقية، وسهولة في الوصول، وتواجد قوي قدام عملائك. عشان تعرف إزاي الموقع بيساعدك في ده بالتفصيل، ممكن تقرأ دليلنا عن <a href='/ar/guides/why-your-business-needs-a-website' target='_blank' rel='noopener noreferrer'>أهمية الموقع الإلكتروني لعملك</a>.",
       },
     },
     {
@@ -24,8 +24,8 @@ const faqSection = {
         ar: "أعمل الموقع بنفسي على منصات جاهزة ولا أستعين بمحترف؟",
       },
       answer: {
-        en: "There are many online drag-and-drop platforms that allow you to create your own site. However, these are not recommended for professional websites. Read our guide on the differences between <a href='/en/guides/diy-vs-professional-web-design-egypt' target='_blank' rel='noopener noreferrer'>building your own site vs hiring a professional</a> so you can make the right choice.",
-        ar: "أكيد فيه منصات كتير بتخليك تعمل موقعك بنفسك، بس للمشاريع اللي عايزة تبان احترافية، مش بننصح بالطريقة دي. اقرأ دليلنا اللي بيوضح الفرق بين <a href='/ar/guides/diy-vs-professional-web-design-egypt' target='_blank' rel='noopener noreferrer'>بناء الموقع بنفسك وبين الاستعانة بمحترف</a>، عشان تاخد القرار الأنسب لمشروعك.",
+        en: "There are many online drag-and-drop platforms that allow you to create your own site. However, these are not recommended for professional websites. Read our guide on the differences between <a href='/en/guides/diy-vs-professional-web-design' target='_blank' rel='noopener noreferrer'>building your own site vs hiring a professional</a> so you can make the right choice.",
+        ar: "أكيد فيه منصات كتير بتخليك تعمل موقعك بنفسك، بس للمشاريع اللي عايزة تبان احترافية، مش بننصح بالطريقة دي. اقرأ دليلنا اللي بيوضح الفرق بين <a href='/ar/guides/diy-vs-professional-web-design' target='_blank' rel='noopener noreferrer'>بناء الموقع بنفسك وبين الاستعانة بمحترف</a>، عشان تاخد القرار الأنسب لمشروعك.",
       },
     },
 

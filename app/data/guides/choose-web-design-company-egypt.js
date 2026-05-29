@@ -6,9 +6,9 @@ const resource = {
     en: "Choosing a Web Design Company in Egypt: How to Get It Right",
     ar: "شركات تصميم المواقع في مصر: كيف تختار الشريك المناسب لعملك؟",
   },
-  metaTitle: {
-    en: "Choosing the Right Web Design Company in Egypt",
-    ar: "كيف تختار أفضل شركة تصميم مواقع لعملك في مصر؟",
+metaTitle: {
+    en: "How to Choose the Best Web Design Company in Egypt",
+    ar: "كيف تختار شركة تصميم مواقع في مصر؟",
   },
   excerpt: {
     en: "Choosing the wrong web design company is one of the most costly mistakes a business can make. This guide gives you the exact questions to ask, the red flags to watch for, and the criteria that separate genuinely capable entities from ones that will waste your time and money.",
@@ -144,7 +144,7 @@ const resource = {
 <li><strong>وعود خيالية:</strong> زي "هخليك رقم ١ في جوجل في أسبوع" أو "تعديلات غير محدودة". الكلام ده غير واقعي ومجرد تسويق رخيص.</li>
 <li><strong>أسعار غامضة وغير مفصلة:</strong> المحترف بيقدر يشرحلك كل جنيه هتدفعه رايح فين. التهرب من كتابة التفاصيل علامة خطر.</li>
 <li><strong>مش مهتمين يعرفوا حاجة عن مشروعك:</strong> لو الشركة إدتك سعر من غير ما تسألك عن أهدافك، جمهورك، ومنافسيك، يبقوا بيبيعوا لك "قالب" جاهز مش حل لمشكلتك.</li>
-<li><strong>أسعار مبالغ فيها (رخيصة أو غالية):</strong> السعر الرخيص زيادة معناه شغل قوالب وأساس تقني ضعيف. والأسعار الخرافية ممكن تكون استغلال؛ شفنا شركات في مصر بتطلب ٥٠,٠٠٠ جنيه في موقع ووردبريس بسيط، وده رقم غير منطقي. عشان تعرف أكتر عن الأسعار، اقرأ مقالنا: <a href='/ar/guides/website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>تكلُفة إنشاء موقع إلكتروني في مصر: تحليل حقيقي للأسعار</a>.</li>
+<li><strong>أسعار مبالغ فيها (رخيصة أو غالية):</strong> السعر الرخيص زيادة معناه شغل قوالب وأساس تقني ضعيف. والأسعار الخرافية ممكن تكون استغلال؛ شفنا شركات في مصر بتطلب ٥٠,٠٠٠ جنيه في موقع ووردبريس بسيط، وده رقم غير منطقي. عشان تعرف أكتر عن الأسعار، اقرأ مقالنا: <a href='/ar/guides/website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>تكلفة إنشاء موقع إلكتروني في مصر: تحليل حقيقي للأسعار</a>.</li>
 </ul>
 
 <h2>إزاي تعرف الفرق بين المهارة والفهم الحقيقي للبزنس؟</h2>
@@ -174,8 +174,8 @@ const resource = {
 <p>من سنين من مشاهدة شركات بتختار مقدم الخدمة الغلط وبعدين بيرجعوا عشان نعيد بناء اللي دفعوا تمنه أول مرة، النمط ثابت بقسوة. الشركة الصح هي اللي عندها سابقة أعمال حقيقية، بتسأل أسئلة ذكية عن أهدافك، شفافة في أسعارها، وواضحة في تواصلها. في <strong>SM Web Design Studio</strong>، دي المعايير اللي بنمشي عليها. لو محتاج استشارة حقيقية لمشروعك، يسعدنا ندردش معاك. تقدر تطلب استشارة مجانية <a href="/ar/#contact">من هنا</a>.</p>`,
   },
   metaDescription: {
-    en: "How to choose the right web design company for your business. Learn what questions to ask, what red flags to avoid, and what separates genuinely capable agencies from the rest.",
-    ar: "دليل عملي لاختيار شركة تصميم مواقع مناسبة لشركتك. اعرف الأسئلة الصح، العلامات التحذيرية، والمعايير الحقيقية اللي بتفرق بين الشركة المحترفة وغيرها.",
+    en: "Learn what questions to ask, what to avoid, & what separates professional agencies from others that will waste your time & money.",
+    ar: "اعرف الأسئلة اللي تسألها، العلامات التحذيرية اللي تتجنبها، وايه اللي بيفرق الشركات المحترفة فعلاً عن اللي هتضيع وقتك وفلوسك.",
   },
 };
 

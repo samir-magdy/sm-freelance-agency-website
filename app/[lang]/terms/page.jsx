@@ -1,13 +1,55 @@
 import { use } from "react";
 import translations from "@/app/data/translations";
+import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
+
+const metaDescription = {
+  en: "Read the terms of service for SM Web Design Studio. Learn about your rights and obligations when using our web design and development services.",
+  ar: "اطّلع على شروط الخدمة الخاصة بـ SM Web Design Studio وتعرّف على حقوقك والتزاماتك عند استخدام خدمات تصميم المواقع لدينا.",
+};
 
 export async function generateMetadata({ params }) {
   const { lang } = await params;
   const t = translations.terms;
+  const title = t?.heading?.[lang] || t?.heading?.en || "Terms of Service";
+  const description = metaDescription[lang] ?? metaDescription.en;
+  const canonical = `${SITE_URL}/${lang}/terms`;
 
   return {
-    title: t?.heading?.[lang] || t?.heading?.en || "Terms of Service",
-    robots: { index: true, follow: true },
+    title,
+    description,
+    alternates: {
+      canonical,
+      languages: {
+        en: `${SITE_URL}/en/terms`,
+        ar: `${SITE_URL}/ar/terms`,
+        "x-default": `${SITE_URL}/en/terms`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      type: "website",
+      siteName: SITE_NAME,
+      locale: lang === "en" ? "en_US" : "ar_EG",
+      alternateLocale: lang === "en" ? "ar_EG" : "en_US",
+      images: [
+        {
+          url: `${SITE_URL}/open-graph.webp`,
+          width: 1200,
+          height: 630,
+          alt: "SM Web Design Studio – Web Design Company in Egypt",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`${SITE_URL}/open-graph.webp`],
+      site: TWITTER_HANDLE,
+      creator: TWITTER_HANDLE,
+    },
   };
 }
 

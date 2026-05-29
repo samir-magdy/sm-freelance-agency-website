@@ -31,8 +31,8 @@ export const form = {
   message: { en: "Message", ar: "تفاصيل المشروع" },
   messageOptional: { en: "optional", ar: "اختياري" },
   messagePlaceholder: {
-    en: "Describe what you need your website to do..",
-    ar: "إيه اللي محتاجه من موقعك؟ احكيلنا فكرتك..",
+    en: "Describe what you need your website to do...",
+    ar: "إيه اللي محتاجه من موقعك؟ احكيلنا فكرتك...",
   },
   submit: { en: "Send My Request", ar: "أرسل الطلب" },
   sending: { en: "Sending...", ar: "جاري الإرسال..." },

@@ -1,6 +1,6 @@
-import whyYourBusinessNeedsAWebsite from "./why-your-business-needs-a-website-in-2026";
+import whyYourBusinessNeedsAWebsite from "./why-your-business-needs-a-website";
 import howMuchDoesAWebsiteCost from "./website-cost-in-egypt";
-import webDesignVsWebsiteBuilder from "./diy-vs-professional-web-design-egypt";
+import webDesignVsWebsiteBuilder from "./diy-vs-professional-web-design";
 import howToPickTheRightWebDesignCompany from "./choose-web-design-company-egypt";
 
 const resources = [

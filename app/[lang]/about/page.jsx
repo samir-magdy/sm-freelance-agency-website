@@ -3,24 +3,60 @@ import Link from "next/link";
 import profilePhoto from "@/public/profilePhoto.jpg";
 import translations from "@/app/data/translations";
 import { notFound } from "next/navigation";
+import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
 
 const meta = {
   en: {
-    title: "Samir Magdy | Website Designer & Developer in Egypt",
-    description: "Samir Magdy is a web designer & developer in Egypt and the founder of SM Web Studio — delivering international-grade web design to the Egyptian market.",
+    title: "Website Designer in Egypt | Samir Magdy",
+    description: "Samir Magdy is a website designer & developer in Egypt & the founder of SM Web Design Studio, specializing in custom web development.",
   },
   ar: {
-    title: "سمير مجدي | مصمم ومطور مواقع في مصر",
-    description: "سمير مجدي مصمم ومطور مواقع في مصر، ومؤسس SM Web Studio — يقدم تصميم مواقع بمعايير عالمية للسوق المصري.",
+    title: "مصمم مواقع في مصر | سمير مجدي",
+    description: "سمير مجدي هو مصمم ومطور مواقع في مصر ومؤسس شركة إس إم ويب ستوديو. متخصص في خدمات تصميم المواقع المخصصة للشركات والأفراد.",
   },
 };
 
 export async function generateMetadata({ params }) {
   const { lang } = await params;
   const m = meta[lang] ?? meta.en;
+  const canonical = `${SITE_URL}/${lang}/about`;
+
   return {
-    title: m.title,
+    title: { absolute: m.title },
     description: m.description,
+    alternates: {
+      canonical,
+      languages: {
+        en: `${SITE_URL}/en/about`,
+        ar: `${SITE_URL}/ar/about`,
+        "x-default": `${SITE_URL}/en/about`,
+      },
+    },
+    openGraph: {
+      title: m.title,
+      description: m.description,
+      url: canonical,
+      type: "profile",
+      siteName: SITE_NAME,
+      locale: lang === "en" ? "en_US" : "ar_EG",
+      alternateLocale: lang === "en" ? "ar_EG" : "en_US",
+      images: [
+        {
+          url: `${SITE_URL}/open-graph.webp`,
+          width: 1200,
+          height: 630,
+          alt: "SM Web Design Studio – Web Design Company in Egypt",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: m.title,
+      description: m.description,
+      images: [`${SITE_URL}/open-graph.webp`],
+      site: TWITTER_HANDLE,
+      creator: TWITTER_HANDLE,
+    },
   };
 }
 

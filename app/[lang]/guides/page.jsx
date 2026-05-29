@@ -1,5 +1,5 @@
 import { use } from "react";
-import { SITE_URL } from "@/app/constants";
+import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guides";
 import GuidesGrid from "./GuidesGrid";
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }) {
       description: t.metaDescription[lang],
       url: canonical,
       type: "website",
-      siteName: "SM Web Design Studio",
+      siteName: SITE_NAME,
       locale: lang === "en" ? "en_US" : "ar_EG",
       alternateLocale: lang === "en" ? "ar_EG" : "en_US",
       images: [
@@ -47,19 +47,8 @@ export async function generateMetadata({ params }) {
       title: t.metaTitle[lang],
       description: t.metaDescription[lang],
       images: [`${SITE_URL}/open-graph.webp`],
-      site: "@SMWebDesignCo",
-      creator: "@SMWebDesignCo",
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
+      site: TWITTER_HANDLE,
+      creator: TWITTER_HANDLE,
     },
   };
 }

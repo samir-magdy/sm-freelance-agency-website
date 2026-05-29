@@ -1,5 +1,5 @@
 const resource = {
-  slug: "diy-vs-professional-web-design-egypt",
+  slug: "diy-vs-professional-web-design",
   datePublished: "2026-03-25",
   dateModified: "2026-05-25",
   title: {
@@ -7,8 +7,8 @@ const resource = {
     ar: "تصميم موقعك بنفسك أم الاستعانة بمحترف؟ أيهما أفضل لعملك؟",
   },
   metaTitle: {
-    en: "Should You Build Your Own Website or Hire a Pro?",
-    ar: "إنشاء موقع إلكتروني بنفسك أم الاستعانة بمحترف؟",
+    en: "Should I Build My Own Website Or Hire Someone?",
+    ar: "تستخدم المنصات الجاهزة ولا توظف البرمجة الخاصة؟",
   },
   excerpt: {
     en: "There are many tools today that allow a non-technical person to make a basic website. Should you build your website yourself or hire a professional web design company? We break down the real costs, risks, so you can make the right call for your business.",
@@ -16,9 +16,9 @@ const resource = {
   },
   content: {
     en: `
-<p>A <abbr data-tooltip="Do-It-Yourself">DIY</abbr> website builder is generally fine if you need something very simple like a portfolio site, and even then, its not the optimal choice. On the other hand, if you run a business that needs real credibility and results, professional web design is without a doubt the right choice. Note that not every entity that claims they are professional actually are, especially with the rise of AI tools that allow an amateur to build websites without having the necessary technical knowledge. This is a crucial topic to understand when deciding on who you will be paying to design your website, before taking that step, you must read our guide on <a href='/en/guides/choose-web-design-company-egypt' target='_blank' rel='noopener noreferrer'>how to choose the right web design company in Egypt</a>.</p>
+<p>A <abbr data-tooltip="Do-It-Yourself">DIY</abbr> website builder is generally fine if you need something very simple like a portfolio site, and even then, it's not the optimal choice. On the other hand, if you run a business that needs real credibility and results, professional web design is without a doubt the right choice. Note that not every entity that claims they are professional actually are, especially with the rise of AI tools that allow an amateur to build websites without having the necessary technical knowledge. This is a crucial topic to understand when deciding on who you will be paying to design your website, before taking that step, you must read our guide on <a href='/en/guides/choose-web-design-company-egypt' target='_blank' rel='noopener noreferrer'>how to choose the right web design company in Egypt</a>.</p>
 
-<h2>DIY vs. Professional: a side-by-side comparison</h2>
+<h2>DIY vs. Professional: A Side-by-Side Comparison</h2>
 <table>
 <thead>
 <tr><th>Factor</th><th>DIY</th><th>Professional</th></tr>
@@ -110,8 +110,8 @@ const resource = {
 <p>بناء الموقع بنفسك اختيار كويس لو لسه بتجرب فكرة جديدة وميزانيتك محدودة جداً. لكن لو عندك بزنس حقيقي وعايز تكبر وتنافس في ٢٠٢٦، الموقع الاحترافي هو الأساس اللي هتبني عليه نجاحك. من سنين من تصليح مواقع DIY اتعملت عشان "توفر فلوس" وبعدين كلفت أكتر في الإصلاح، النمط ثابت: الشركات اللي بتستثمر في التصميم الاحترافي من البداية بتتجنب فخ إعادة البناء تماماً. عشان تفهم إيه اللي بتدفع تمنه، اقرأ <a href='/ar/guides/website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>دليلنا عن أسعار تصميم المواقع في مصر</a>. ولما تكون جاهز تختار مين هيبني موقعك، دليلنا عن <a href='/ar/guides/choose-web-design-company-egypt' target='_blank' rel='noopener noreferrer'>إزاي تختار شركة تصميم المواقع الصح</a> هيفيدك كتير. ولو جاهز تبدأ، تقدر <a href='/ar/#contact' target='_blank' rel='noopener noreferrer'>تطلب عرض سعر رسمي</a> لموقعك.</p>`,
   },
   metaDescription: {
-    en: "Choosing between DIY website builders and professional design in Egypt. Learn about SEO, costs, and performance differences to make the best choice for your brand.",
-    ar: "مقارنة بين تصميم الموقع بنفسك والاستعانة بشركة محترفة في مصر. اعرف الفرق في السرعة، التكلفة، والظهور على جوجل عشان تاخد القرار الصح لشركتك.",
+    en: "Learn about the differences between DIY website builders and hiring a pro so you can make the right choice for your brand.",
+    ar: "اكتشف الفرق بين أدوات بناء المواقع الجاهزة والاستعانة بمحترف علشان تقدر تاخد القرار الصح لعملك.",
   },
 };
 

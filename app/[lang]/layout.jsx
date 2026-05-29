@@ -3,7 +3,7 @@ import "../globals.css";
 import HeroNav from "../components/nav/HeroNav";
 import translations from "../data/translations";
 import Footer from "../components/nav/Footer";
-import { SITE_URL } from "@/app/constants";
+import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
@@ -18,14 +18,12 @@ const fonts = Cairo({
 // SITE-WIDE CONSTANTS
 // ─────────────────────────────────────────────
 
-const SITE_NAME = "SM Web Studio";
 const CONTACT_EMAIL = "studio@samirmagdy.com";
 const PHONE_NUMBER = "+201274613331";
-const TWITTER_HANDLE = "@SMWebDesignCo";
 
 const META_DESCRIPTION = {
-  en: "Expert web design & development in Egypt. Discover how we can grow your online presence.",
-  ar: "تصميم مواقع احترافية ومتاجر شوبيفاي في مصر. اكتشف كيف يمكننا تنمية حضورك الرقمي.",
+  en: "Looking for the best web design company in Egypt? Look no further. Get a free quote today!",
+  ar: "هل تبحث عن أفضل شركة تصميم مواقع في مصر؟ لقد وجدت وجهتك. احصل على عرض سعر مجاني اليوم!",
 };
 
 const SOCIAL_LINKS = {
@@ -135,17 +133,6 @@ export async function generateMetadata({ params }) {
       images: [`${SITE_URL}/open-graph.webp`],
       site: TWITTER_HANDLE,
       creator: TWITTER_HANDLE,
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
     },
   };
 }

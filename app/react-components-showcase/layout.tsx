@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
-import { SITE_URL } from "@/app/constants";
+import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
 
 const PAGE_URL = `${SITE_URL}/react-components-showcase`;
-const SITE_NAME = "SM Web Design Studio";
-const TWITTER_HANDLE = "@SMWebDesignCo";
 
 const TITLE = `Ready-to-Use React UI Components | ${SITE_NAME}`;
 const DESCRIPTION =
@@ -41,17 +39,6 @@ export const metadata: Metadata = {
     images: [`${SITE_URL}/open-graph.webp`],
     site: TWITTER_HANDLE,
     creator: TWITTER_HANDLE,
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
   icons: {
     icon: [
