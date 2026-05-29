@@ -7,12 +7,12 @@ import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
 
 const meta = {
   en: {
-    title: "Samir Magdy — Web Designer for Egyptian Solopreneurs & Online Sellers",
-    description: "Samir Magdy is the founder of SM Web Design Studio, building websites in EGP for Egyptian solopreneurs, online sellers, freelancers, and clinics — with InstaPay, Vodafone Cash, Paymob, and Fawry integrated from day one. No commercial register required.",
+    title: "Samir Magdy | Website Designer in Egypt | SM Web Design Studio",
+    description: "Samir Magdy is a website designer & developer in Egypt & the founder of SM Web Design Studio, specializing in custom web development.",
   },
   ar: {
-    title: "سمير مجدي — مصمم مواقع لأصحاب المشاريع وتجار أونلاين في مصر",
-    description: "سمير مجدي مؤسس إس إم ويب ستوديو، بيعمل مواقع بالجنيه لأصحاب المشاريع، تجار أونلاين، الفريلانسرز، والعيادات في مصر — مدمجة مع انستا باي، فودافون كاش، باي موب، وفوري من اليوم الأول. من غير سجل تجاري.",
+    title: "سمير مجدي | مطور ومصمم مواقع إلكترونية مخصصة في مصر",
+    description: "سمير مجدي هو مصمم ومطور مواقع في مصر ومؤسس شركة إس إم ويب ستوديو. متخصص في خدمات تصميم المواقع المخصصة للشركات والأفراد.",
   },
 };
 

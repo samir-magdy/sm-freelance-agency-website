@@ -4,12 +4,12 @@ const aboutSection = {
     ar: "سمير مجدي — مصمم ومطور مواقع في مصر",
   },
 storyP1: {
-    en: "I started SM Web Studio because Egyptian solopreneurs, online sellers, freelancers, and clinic owners kept hitting the same walls. Sales lost in Instagram DMs. Shopify subscriptions billed in USD they couldn't pay themselves. Every web design agency asking for a commercial register before they'd even quote. We built this studio to solve exactly that — real websites with InstaPay, Vodafone Cash, Fawry, and Paymob integrated from day one, and the Shopify USD subscription handled on our end so you only ever deal in local currency.",
-    ar: "بدأت إس إم ويب ستوديو علشان لاحظت إن أصحاب المشاريع، تجار أونلاين، الفريلانسرز، وأصحاب العيادات في مصر كلهم بيقعوا في نفس المشاكل. مبيعات بتضيع في رسايل الانستجرام. اشتراكات شوبيفاي بالدولار مش قادرين يدفعوها بنفسهم. وكل شركة تصميم بتطلب منهم سجل تجاري قبل ما تعملهم حتى عرض سعر. الاستوديو ده اتعمل عشان يحل ده بالظبط — مواقع مدمجة مع انستا باي، فودافون كاش، فوري، وباي موب من اليوم الأول، واشتراك شوبيفاي بالدولار بنتولاه من جهتنا فانت بتتعامل بالعملة المحلية بس.",
+    en: "I founded SM Web Studio to bring global web design standards to our local market. We are a small, dedicated team of designers, developers, and marketing experts operating as a fully remote company. This allows us to provide you with higher quality at a competitive price.",
+    ar: "أسست إس إم ويب ستوديو علشان ننقل معايير تصميم المواقع العالمية لسوقنا المحلي. إحنا فريق صغير من المصممين، المطورين، وخبراء التسويق، وبنشتغل بالكامل عن بُعد؛ وده بيتيح لنا نقدّم لك جودة أعلى وبسعر منافس.",
   },
   storyP2: {
-    en: "Many business owners in Egypt have lost faith in web design companies after dealing with terrible experiences — endless delays, hidden fees, and pretty-looking sites that never converted a single sale. The truth is, <strong>Egypt doesn't have a shortage of web designers, it has a shortage of web design that actually sells.</strong> We rebuild that trust by being upfront about <a href='/en/guides/website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>pricing</a>, deadlines, and the exact local payment integrations your site will ship with.",
-    ar: "كتير من أصحاب الشركات في مصر فقدوا الثقة في شركات تصميم المواقع بعد تجارب صعبة — تأخير في التسليم، رسوم مخفية، ومواقع شكلها شيك بس ولا عميل واحد اشترى منها. الحقيقة، <strong>مصر مش عندها مشكلة في عدد المصممين، عندها مشكلة في تصميم بيبيع فعلاً.</strong> إحنا بنرجع الثقة دي بإننا واضحين في <a href='/ar/guides/website-cost-in-egypt' target='_blank' rel='noopener noreferrer'>السعر</a>، المواعيد، والبوابات المحلية اللي هتشتغل على موقعك من أول يوم.",
+    en: "Many business owners in Egypt have lost faith in web design companies after dealing with terrible experiences. The truth is, <strong>Egypt doesn't have a shortage of web designers, it has a shortage of web design.</strong> SM Web Studio is here to rebuild that trust by delivering reliable, high-quality service.",
+    ar: "كثير من أصحاب الأعمال في مصر فقدوا الثقة في شركات تصميم المواقع بعد تجارب سيئة مرّوا بيها. إس إم ويب ستوديو موجود علشان يعيد بناء الثقة دي من خلال تقديم خدمة موثوقة وعالية الجودة.",
   },
   founderName: {
     en: "Samir Magdy",

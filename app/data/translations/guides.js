@@ -1,15 +1,14 @@
 const guidesTranslations = {
   pageTitle: {
-    en: "Web Design Guides for Egyptian Businesses",
-    ar: "أدلة تصميم المواقع لأصحاب المشاريع في مصر",
-  },
-  pageSubtitle: {
-    en: "Honest answers for solopreneurs, online sellers, and growing brands",
-    ar: "إجابات بصراحة لأصحاب المشاريع وتجار أونلاين والبراندات الصاعدة",
+    en: "Web Design Guides for Everyone",
+    ar: "أدلة لأصحاب المشاريع في مصر",
   },
   metaTitle: {
-    en: "Web Design Guides for Egyptian Solopreneurs & Online Sellers",
-    ar: "أدلة تصميم المواقع لأصحاب المشاريع في مصر",
+    en: {
+      absolute:
+        "Digital Marketing & Web Design Guides for Everyone",
+    },
+    ar: { absolute: "أدلة تصميم المواقع لأصحاب المشاريع في مصر" },
   },
 
   metaDescription: {
