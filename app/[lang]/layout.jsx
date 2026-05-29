@@ -22,8 +22,8 @@ const CONTACT_EMAIL = "studio@samirmagdy.com";
 const PHONE_NUMBER = "+201274613331";
 
 const META_DESCRIPTION = {
-  en: "Looking for the best web design company in Egypt? Look no further. Get a free quote today!",
-  ar: "هل تبحث عن أفضل شركة تصميم مواقع في مصر؟ لقد وجدت وجهتك. احصل على عرض سعر مجاني اليوم!",
+  en: "Looking for the best website design company in Egypt? Look no further. We provide custom web design & development for businesses & individuals. Get a free quote today!",
+  ar: "نقدم خدمات تصميم وتطوير المواقع المخصصة للشركات والأفراد بأحدث التقنيات. اكتشف كيف يمكننا مساعدة عملك على النمو، احصل على عرض سعر مجاني اليوم!",
 };
 
 const SOCIAL_LINKS = {
@@ -158,7 +158,7 @@ function buildStructuredData(lang) {
     name: SITE_NAME,
     inLanguage: "en",
     description:
-      "SM Web Design Studio is a professional web design company in Egypt specializing in custom website design, Shopify e-commerce stores, and SEO-optimized web development for businesses in Cairo, Alexandria, and across Egypt.",
+      "SM Web Design Studio is a professional web design company in Egypt specializing in EGP-priced custom websites, Shopify e-commerce stores with InstaPay, Vodafone Cash, Paymob, and Fawry integration, portfolio sites for freelancers, and private clinic booking systems. Serving solopreneurs, online sellers, freelancers, doctors, and independent professionals in Cairo, Alexandria, and across Egypt — no commercial register required.",
     url: SITE_URL,
     telephone: PHONE_NUMBER,
     email: CONTACT_EMAIL,
@@ -198,7 +198,131 @@ function buildStructuredData(lang) {
     sameAs: [SOCIAL_LINKS.instagram, SOCIAL_LINKS.facebook],
     founder: { "@id": `${SITE_URL}/#founder` },
     knowsLanguage: ["en", "ar"],
+    knowsAbout: [
+      "Web design in Egypt",
+      "E-commerce development in Egypt",
+      "Egyptian payment gateway integration",
+      "InstaPay e-commerce checkout",
+      "Vodafone Cash payment integration",
+      "Paymob payment integration",
+      "Fawry payment integration",
+      "Bilingual Arabic and English web development",
+      "Right-to-left (RTL) web design",
+      "Vezeeta alternative for doctors",
+      "Instagram-to-website storefront migration",
+    ],
   };
+
+  // 1b. Service entries — persona/cluster-targeted capability signals.
+  // Each Service is backed by visible content in FAQs, guides, and pricing copy.
+  // Pricing stays in businessSchema.hasOfferCatalog (single source of truth).
+  const services = [
+    {
+      "@type": "Service",
+      "@id": `${SITE_URL}/#service-ecommerce-local-payments`,
+      name: "Custom E-commerce Stores with Local Payment Integration",
+      alternateName: "متاجر إلكترونية بربط بوابات الدفع المحلية",
+      description:
+        "Shopify e-commerce stores for Egyptian merchants, with native InstaPay, Vodafone Cash, Paymob, and Fawry checkout, EGP billing managed end-to-end, and no commercial register required.",
+      serviceType: "E-commerce Web Development",
+      provider: { "@id": `${SITE_URL}/#business` },
+      areaServed: [
+        { "@type": "Country", name: "Egypt" },
+        { "@type": "City", name: "Cairo" },
+        { "@type": "City", name: "Alexandria" },
+      ],
+      audience: {
+        "@type": "Audience",
+        audienceType:
+          "Egyptian online sellers, fashion brands, handmade artisans, and dropshippers",
+      },
+      inLanguage: ["en", "ar"],
+    },
+    {
+      "@type": "Service",
+      "@id": `${SITE_URL}/#service-instagram-migration`,
+      name: "Instagram-to-Website Storefront Migration",
+      alternateName: "نقل البيع من الانستجرام لموقع إلكتروني",
+      description:
+        "Migration service for Egyptian Instagram and Facebook merchants moving from manual DM-based sales to an independent storefront with automated order intake, InstaPay/Vodafone Cash confirmation, and stock tracking.",
+      serviceType: "Social Commerce Migration",
+      provider: { "@id": `${SITE_URL}/#business` },
+      areaServed: [
+        { "@type": "Country", name: "Egypt" },
+        { "@type": "City", name: "Cairo" },
+        { "@type": "City", name: "Alexandria" },
+      ],
+      audience: {
+        "@type": "Audience",
+        audienceType:
+          "Egyptian Instagram sellers, TikTok merchants, and social commerce solopreneurs",
+      },
+      inLanguage: ["en", "ar"],
+    },
+    {
+      "@type": "Service",
+      "@id": `${SITE_URL}/#service-freelancer-portfolio`,
+      name: "Freelancer Portfolio Websites with International Payment Receipt",
+      alternateName: "مواقع بورتفوليو للفريلانسرز باستلام مدفوعات دولية",
+      description:
+        "Portfolio websites for Egyptian freelancers, designers, and independent consultants with integrated international payment receipt via Paymob, Stripe-supported channels, and wire-friendly payment links — funds settle to local Egyptian bank accounts.",
+      serviceType: "Portfolio Web Development",
+      provider: { "@id": `${SITE_URL}/#business` },
+      areaServed: [
+        { "@type": "Country", name: "Egypt" },
+        { "@type": "City", name: "Cairo" },
+        { "@type": "City", name: "Alexandria" },
+      ],
+      audience: {
+        "@type": "Audience",
+        audienceType:
+          "Egyptian freelancers, designers, developers, and independent consultants serving international clients",
+      },
+      inLanguage: ["en", "ar"],
+    },
+    {
+      "@type": "Service",
+      "@id": `${SITE_URL}/#service-bilingual-rtl`,
+      name: "Bilingual Arabic/English Business Websites with RTL Support",
+      alternateName: "مواقع شركات ثنائية اللغة عربي وإنجليزي بدعم RTL كامل",
+      description:
+        "Multi-page business websites built natively bilingual (Arabic right-to-left and English left-to-right) with correct RTL layouts, legible Arabic typography, and SEO indexed separately in both languages — one site, double Google visibility.",
+      serviceType: "Bilingual Web Development",
+      provider: { "@id": `${SITE_URL}/#business` },
+      areaServed: [
+        { "@type": "Country", name: "Egypt" },
+        { "@type": "City", name: "Cairo" },
+        { "@type": "City", name: "Alexandria" },
+      ],
+      audience: {
+        "@type": "Audience",
+        audienceType:
+          "Egyptian businesses targeting both Arabic and English-speaking customers, and regional brands serving GCC markets",
+      },
+      inLanguage: ["en", "ar"],
+    },
+    {
+      "@type": "Service",
+      "@id": `${SITE_URL}/#service-clinic-booking`,
+      name: "Private Clinic Booking Systems (Vezeeta Alternative)",
+      alternateName: "نظام حجز خاص للعيادات (بديل فيزيتا)",
+      description:
+        "Private clinic booking websites on the doctor's own domain with appointment scheduling, prepaid consultation fees via InstaPay, Vodafone Cash, or cards, automated SMS/WhatsApp reminders, and full patient data ownership — no annual aggregator subscription, no per-booking commission.",
+      serviceType: "Medical Booking System Development",
+      provider: { "@id": `${SITE_URL}/#business` },
+      areaServed: [
+        { "@type": "Country", name: "Egypt" },
+        { "@type": "City", name: "Cairo" },
+        { "@type": "City", name: "Alexandria" },
+      ],
+      audience: {
+        "@type": "Audience",
+        audienceType:
+          "Egyptian doctors, private clinic owners, and independent medical practitioners",
+      },
+      inLanguage: ["en", "ar"],
+    },
+  ];
 
   // 2. WebSite schema
   const websiteSchema = {
@@ -258,6 +382,7 @@ function buildStructuredData(lang) {
     "@context": "https://schema.org",
     "@graph": [
       businessSchema,
+      ...services,
       websiteSchema,
       webPageSchema,
       founderSchema,
@@ -298,7 +423,9 @@ export default async function LangLayout({ children, params }) {
       dir={lang === "ar" ? "rtl" : "ltr"}
       suppressHydrationWarning
     >
-      <body className={`${fonts.variable} font-cairo antialiased min-h-dvh flex flex-col`}>
+      <body
+        className={`${fonts.variable} font-cairo antialiased min-h-dvh flex flex-col`}
+      >
         {/* ── Structured Data (JSON-LD) ── */}
         <Script
           id="structured-data"
@@ -319,7 +446,9 @@ export default async function LangLayout({ children, params }) {
         <HeroNav lang={lang} strings={heroNavStrings} />
 
         {/* ── Main content ── */}
-        <main id="main-content" className="md:flex-1 md:flex md:flex-col">{children}</main>
+        <main id="main-content" className="md:flex-1 md:flex md:flex-col">
+          {children}
+        </main>
         <Footer />
         <Analytics />
       </body>

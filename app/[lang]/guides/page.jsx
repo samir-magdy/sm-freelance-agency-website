@@ -95,7 +95,7 @@ export default function GuidesPage({ params }) {
   ];
 
   return (
-    <div dir={dir} className="bg-background pt-16 sm:pt-24 pb-20 px-5">
+    <div dir={dir} className="bg-background pt-16 sm:pt-28 pb-20 px-5">
       <Script
         id="guides-grid-seo"
         type="application/ld+json"

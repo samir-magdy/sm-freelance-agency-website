@@ -26,6 +26,9 @@ export default function PricingSection({ lang }) {
             <p className="text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)] max-w-2xl mx-auto">
               {t.subheading[lang]}
             </p>
+            <p className="mt-4 text-center text-content-muted/70 text-sm md:text-base font-medium max-w-3xl mx-auto leading-relaxed">
+              {t.trustStrip[lang]}
+            </p>
           </div>
 
           {/* Cards Grid - Added md:grid-cols-2 to handle scaled screens gracefully */}

@@ -1,20 +1,20 @@
 const guidesTranslations = {
   pageTitle: {
-    en: "Web Design Guides & Resources",
-    ar: "أدلة ومصادر تصميم المواقع",
+    en: "Web Design Guides for Egyptian Businesses",
+    ar: "أدلة تصميم المواقع لأصحاب المشاريع في مصر",
   },
   pageSubtitle: {
-    en: "Digital growth for everyone",
-    ar: "النمو الرقمي للجميع",
+    en: "Honest answers for solopreneurs, online sellers, and growing brands",
+    ar: "إجابات بصراحة لأصحاب المشاريع وتجار أونلاين والبراندات الصاعدة",
   },
   metaTitle: {
-    en: "Web Design & Digital Marketing Guides",
-    ar: "أدلة تصميم المواقع والتسويق الإلكتروني",
+    en: "Web Design Guides for Egyptian Solopreneurs & Online Sellers",
+    ar: "أدلة تصميم المواقع لأصحاب المشاريع في مصر",
   },
 
   metaDescription: {
-    en: "Explore expert guides from SM Web Design Studio & learn what really matters when creating a website in Egypt.",
-    ar: "تعرّف على أفضل الممارسات لإنشاء موقع ناجح في مصر. اقرأ أحدث الأدلة عن تصميم المواقع والتسويق الإلكتروني.",
+    en: "Honest guides on website costs in Egypt, DIY vs hiring a pro, choosing a web design company, and why your business needs a site in 2026 — written for solopreneurs, online sellers, and freelancers.",
+    ar: "أدلة بصراحة عن تكلفة الموقع في مصر، اعمل موقعك بنفسك ولا توظف محترف، ازاي تختار شركة تصميم مواقع، وليه مشروعك محتاج موقع في 2026 — مكتوبة لأصحاب المشاريع، تجار أونلاين، والفريلانسرز.",
   },
   readMore: { en: "Read Guide", ar: "اقرأ الدليل" },
   backToGuides: { en: "Back to Guides", ar: "العودة إلى الأدلة" },

@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
   const canonical = `${SITE_URL}/${lang}/guides/${slug}`;
 
   return {
-    title: (guide.metaTitle ?? guide.title)[lang],
+    title: {absolute: (guide.metaTitle ?? guide.title)[lang]},
     description: guide.metaDescription[lang],
     alternates: {
       canonical,
