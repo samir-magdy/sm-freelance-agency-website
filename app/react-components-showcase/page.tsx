@@ -1,14 +1,40 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import IPhoneMockup from "./components/iphone-mockup/IPhoneMockup";
 import MacMockup from "./components/mac-mockup/MacMockup";
 import TimelineShowcase from "./TimelineShowcase";
 import type { ReactNode } from "react";
 
-const slides = [
-  { image: "/project-screenshots/sellable-blocks/github-img-mobile.webp", alt: "An interactive, scrollable iPhone frame mockup of github's website on mobile" },
-  { image: "/project-screenshots/sellable-blocks/apple-img-mobile.webp", alt: "An interactive, scrollable iPhone mockup of apple's website on mobile" },
-  { image: "/project-screenshots/sellable-blocks/linear-img-mobile.webp", alt: "An interactive, scrollable iPhone mockup of linear's website on mobile" },
+const slideData = [
+  {
+    image: "/project-screenshots/sellable-blocks/github-img-mobile.webp",
+    alt: "An interactive, scrollable iPhone frame mockup of github's website on mobile",
+    tag: "Snap Carousel",
+    title: "Swipe to explore",
+    description:
+      "Native scroll-snap delivers hardware-accelerated swiping on touch and arrow navigation on desktop — zero dependencies.",
+  },
+  {
+    image: "/project-screenshots/sellable-blocks/apple-img-mobile.webp",
+    alt: "An interactive, scrollable iPhone mockup of apple's website on mobile",
+    tag: "Auto-Play",
+    title: "Hands-free rotation",
+    description:
+      "Pass autoPlay and autoPlayInterval to cycle slides automatically. Pauses on hover or touch so it never interrupts.",
+  },
+  {
+    image: "/project-screenshots/sellable-blocks/linear-img-mobile.webp",
+    alt: "An interactive, scrollable iPhone mockup of linear's website on mobile",
+    tag: "Scrollable Screens",
+    title: "Full-page content",
+    description:
+      "Screens taller than the frame scroll naturally inside the mockup — exactly like a real device in your hand.",
+  },
 ];
+
+const slides = slideData.map(({ image, alt }) => ({ image, alt }));
 
 const desktopSlides = [
   { image: "/project-screenshots/sellable-blocks/github-img-desktop.webp", alt: "An interactive, scrollable Mac OS browser mockup of github's website on desktop", url: "github.com" },
@@ -68,6 +94,9 @@ function ComponentSection({
 }
 
 export default function Home() {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const { tag, title, description } = slideData[activeSlide];
+
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -117,9 +146,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
 
-      {/* Scroll Timeline. */}
+      {/* Scroll Timeline */}
       <ComponentSection
         id="scroll-timeline"
         title="Scroll Timeline"
@@ -133,10 +161,32 @@ export default function Home() {
       <ComponentSection
         id="ios-mockup"
         title="iOS Mockup"
-        tagline="An IPhone shell for mobile UI previews."
-        usage={`import IPhoneMockup from "@/components/IPhoneMockup";\n\nexport default function MyPage() {\n  return (\n    <IPhoneMockup\n      slides={[\n        { image: "/screen1.png", alt: "alt text" },\n        { image: "/screen2.png", alt: "alt text" },\n        { image: "/screen3.png", alt: "alt text" },\n      ]}\n      className="mx-auto my-12"\n      frameClassName="w-64 h-96"\n      paginationDotColor="#6366f1"\n      inactiveDotColor="rgba(99,102,241,0.3)"\n    />\n  );\n}`}
+        tagline="An iPhone shell for mobile UI previews."
+        usage={`import { useState } from "react";\nimport IPhoneMockup from "@/components/IPhoneMockup";\n\nconst slides = [\n  {\n    image: "/github-mobile.webp",\n    alt: "GitHub on mobile",\n    title: "Swipe to explore",\n    description: "Native scroll-snap delivers hardware-accelerated swiping on touch and arrow navigation on desktop — zero dependencies.",\n  },\n  {\n    image: "/apple-mobile.webp",\n    alt: "Apple on mobile",\n    title: "Hands-free rotation",\n    description: "Pass autoPlay and autoPlayInterval to cycle slides automatically. Pauses on hover or touch so it never interrupts.",\n  },\n  {\n    image: "/linear-mobile.webp",\n    alt: "Linear on mobile",\n    title: "Full-page content",\n    description: "Screens taller than the frame scroll naturally inside the mockup — exactly like a real device in your hand.",\n  },\n];\n\nexport default function MyPage() {\n  const [activeSlide, setActiveSlide] = useState(0);\n  const { title, description } = slides[activeSlide];\n\n  return (\n    <>\n      <IPhoneMockup\n        slides={slides}\n        theme="dark"\n        autoPlay\n        autoPlayInterval={3500}\n        onSlideChange={setActiveSlide}\n        className="my-8"\n        sizeClassName="w-65 sm:w-75 aspect-10.5/19"\n      />\n      <h2>{title}</h2>\n      <p>{description}</p>\n    </>\n  );\n}`}
       >
-        <IPhoneMockup slides={slides} />
+        <div className="flex flex-col items-center gap-10 sm:flex-row sm:gap-16">
+        
+
+          <IPhoneMockup
+            slides={slides}
+            autoPlay
+            onSlideChange={setActiveSlide}
+            theme="dark"
+          />
+            {/* Text — key triggers re-mount + animation on every slide change */}
+          <div
+            key={activeSlide}
+            className="animate-showcase-in max-w-xs text-center sm:text-left"
+          >
+            <span className="mb-3 animate-showcase-in block text-xs font-semibold uppercase tracking-widest text-amber-400/80">
+              {tag}
+            </span>
+            <h3 className="mb-4 text-2xl animate-showcase-in font-bold tracking-tight text-white sm:text-3xl">
+              {title}
+            </h3>
+            <p className="leading-relaxed animate-showcase-in text-zinc-400">{description}</p>
+          </div>
+        </div>
       </ComponentSection>
 
       {/* Browser Mockup */}

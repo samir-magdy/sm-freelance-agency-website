@@ -1,54 +1,31 @@
-# IPhoneMockup — Interactive iPhone Carousel Mockup
+# IPhoneMockup
 
-A plug-and-play React component that renders a realistic iPhone frame with a scrollable screenshot carousel inside. Built with TypeScript and Tailwind CSS v4.
+A realistic, interactive iPhone mockup with a built-in screenshot carousel. Single file, zero dependencies.
 
----
-
-## Requirements
-
-| Requirement | Version |
-|---|---|
-| React | 18+ |
-| Tailwind CSS | **v4 only** |
-
-No extra packages required.
+Requires **React 18+** and **Tailwind CSS v4**.
 
 ---
 
 ## Installation
 
-Copy `IPhoneMockup.tsx` into your components folder (e.g. `src/components/IPhoneMockup.tsx`)
+Copy `IPhoneMockup.tsx` into your project.
 
-That's it.
+**Next.js App Router** — works as-is. The `"use client"` directive is already included.
+
+**Vite / CRA / other** — remove the `"use client"` line at the top of the file.
 
 ---
 
-## Usage
+## Basic usage
 
 ```tsx
 import IPhoneMockup from "@/components/IPhoneMockup";
 
-export default function MyPage() {
-  return (
-    <IPhoneMockup
-      slides={[
-        { image: "/screenshots/screen1.png", alt: "Home screen" },
-        { image: "/screenshots/screen2.png", alt: "Dashboard" },
-        { image: "/screenshots/screen3.png", alt: "Settings" },
-      ]}
-    />
-  );
-}
-```
-
-With all optional props:
-
-```tsx
 <IPhoneMockup
-  slides={[...]}
-  className="mx-auto my-12"
-  paginationDotColor="#6366f1"
-  inactiveDotColor="rgba(99,102,241,0.3)"
+  slides={[
+    { image: "/screenshots/home.png",      alt: "Home screen" },
+    { image: "/screenshots/dashboard.png", alt: "Dashboard" },
+  ]}
 />
 ```
 
@@ -56,48 +33,70 @@ With all optional props:
 
 ## Props
 
-### `IPhoneMockupProps`
+**`slides`** (required) — an array of slide objects. Each slide has an `image` (path or URL) and an optional `alt` string for accessibility.
 
-| Prop | Type | Default | Description |
-|---|---|---|---|
-| `slides` | `Slide[]` | — | **Required.** Array of slides to display. |
-| `className` | `string` | — | Classes applied to the outer wrapper. Use for layout, positioning, or margin. |
-| `paginationDotColor` | `string` | `"white"` | Color of the active pagination dot. Any valid CSS color — hex, hsl, rgb, or a named color. |
-| `inactiveDotColor` | `string` | `"rgba(255,255,255,0.3)"` | Color of inactive pagination dots. Any valid CSS color. Override when using the component on a light background. |
+**`theme`** — `"dark"` or `"light"`, defaults to `"dark"`. Controls the color of the navigation arrows and pagination dots. Use `"light"` when placing the component on a white or light-colored background.
 
-### `Slide`
+**`autoPlay`** — boolean, defaults to `false`. When true, slides advance automatically on a timer and loop back to the first slide.
 
-| Field | Type | Required | Description |
-|---|---|---|---|
-| `image` | `string` | ✅ | Path or URL to the screenshot image. |
-| `alt` | `string` | — | Alt text for accessibility. Recommended. |
+**`autoPlayInterval`** — number in milliseconds, defaults to `4000`. How long each slide stays visible before advancing. Only applies when `autoPlay` is true.
 
-> **Single slide:** pass one item and the navigation arrows and pagination dots are hidden automatically.
+**`onSlideChange`** — a callback `(index: number) => void` that fires whenever the active slide changes. Use this to sync external content — like a text block or a heading — to the current slide.
+
+**`className`** — classes applied to the outer wrapper. Use for margin, positioning, or layout.
+
+**`sizeClassName`** — replaces the default responsive width and aspect ratio on the phone shell. Use this when you need a fixed size.
 
 ---
 
-## Preparing your screenshots
+## Examples
 
-Screenshots should be **390px wide** (iPhone 14 logical width) for a perfect fit inside the phone frame.
+### Auto-playing carousel
 
-**Option 1 — Browser DevTools**
-1. Open the page you want to capture
-2. Open DevTools (`F12`)
-3. Toggle the device toolbar (`Ctrl+Shift+M` on Windows / `Cmd+Shift+M` on Mac)
-4. Set the width to **390** in the dimensions field at the top
-5. Open the Command Menu (`Ctrl+Shift+P` on Windows / `Cmd+Shift+P` on Mac)
-6. Type `screenshot` and select **Capture full size screenshot**
+```tsx
+<IPhoneMockup
+  slides={slides}
+  autoPlay
+  autoPlayInterval={3000}
+/>
+```
 
-> Shortcuts and menu labels may vary depending on your browser and operating system.
+The carousel pauses automatically when the user hovers over or touches the phone, and resumes the interval timer once they move away.
 
-**Option 2 — GoFullPage** (free Chrome extension) — activate the device toolbar first (step 3–4 above), then run GoFullPage.
+### Syncing text to the active slide
 
-**Option 3 — Figma** — export your mobile frame at 1x as PNG at 390px width.
+```tsx
+const descriptions = ["First screen", "Second screen"];
+const [active, setActive] = useState(0);
+
+<IPhoneMockup
+  slides={slides}
+  onSlideChange={setActive}
+/>
+<p>{descriptions[active]}</p>
+```
+
+### Custom size
+
+```tsx
+<IPhoneMockup
+  slides={slides}
+  sizeClassName="w-80 h-150 sm:w-100"
+/>
+```
 
 ---
 
-## Notes
+## Navigation
 
-- **Next.js App Router:** The `"use client"` directive is already set up. No action needed.
-- **Other setups (Vite, CRA, etc.):** Remove the `"use client"` line at the top of the file. That's it.
-- The component is **fully responsive** — scales down gracefully on mobile. Navigation arrows are hidden below the `sm` breakpoint; users swipe natively on touch screens.
+On desktop, users click the left and right arrows or the pagination dots. The component also supports keyboard navigation — focus it and use the `←` `→` arrow keys to move between slides. On mobile, arrows are hidden and users swipe natively.
+
+---
+
+## Preparing screenshots
+
+Screenshots should be **390px wide** (iPhone logical width) for a perfect fit.
+
+**Browser DevTools** — open DevTools, toggle the device toolbar (`Ctrl+Shift+M` / `Cmd+Shift+M`), set the width to `390`, then open the Command Menu (`Ctrl+Shift+P` / `Cmd+Shift+P`) and run `Capture full size screenshot`.
+
+**Figma** — export your mobile frame at 1x, 390px wide.
