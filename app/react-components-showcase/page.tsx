@@ -162,7 +162,7 @@ export default function Home() {
         id="ios-mockup"
         title="iOS Mockup"
         tagline="An iPhone shell for mobile UI previews."
-        usage={`import { useState } from "react";\nimport IPhoneMockup from "@/components/IPhoneMockup";\n\nconst slides = [\n  {\n    image: "/github-mobile.webp",\n    alt: "GitHub on mobile",\n    title: "Swipe to explore",\n    description: "Native scroll-snap delivers hardware-accelerated swiping on touch and arrow navigation on desktop — zero dependencies.",\n  },\n  {\n    image: "/apple-mobile.webp",\n    alt: "Apple on mobile",\n    title: "Hands-free rotation",\n    description: "Pass autoPlay and autoPlayInterval to cycle slides automatically. Pauses on hover or touch so it never interrupts.",\n  },\n  {\n    image: "/linear-mobile.webp",\n    alt: "Linear on mobile",\n    title: "Full-page content",\n    description: "Screens taller than the frame scroll naturally inside the mockup — exactly like a real device in your hand.",\n  },\n];\n\nexport default function MyPage() {\n  const [activeSlide, setActiveSlide] = useState(0);\n  const { title, description } = slides[activeSlide];\n\n  return (\n    <>\n      <IPhoneMockup\n        slides={slides}\n        theme="dark"\n        autoPlay\n        autoPlayInterval={3500}\n        onSlideChange={setActiveSlide}\n        className="my-8"\n        sizeClassName="w-65 sm:w-75 aspect-10.5/19"\n      />\n      <h2>{title}</h2>\n      <p>{description}</p>\n    </>\n  );\n}`}
+        usage={`import { useState } from "react";\nimport IPhoneMockup from "@/components/IPhoneMockup";\n\nconst slides = [\n  {\n    image: "/image-1.webp",\n    alt: "alt text here",\n    title: "Your title here",\n    description: "Your description here.",\n  },\n  {\n    image: "/image-2",\n    alt: "alt text here",\n    title: "Your title here",\n    description: "Your description here.",\n  },\n  {\n    image: "/image-3",\n    alt: "alt text here",\n    title: "Your title here",\n    description: "Your description here.",\n  },\n];\n\nexport default function MyPage() {\n  const [activeSlide, setActiveSlide] = useState(0);\n  const { title, description } = slides[activeSlide];\n\n  return (\n    <>\n      <IPhoneMockup\n        slides={slides}\n        theme="dark"\n        autoPlay\n        onSlideChange={setActiveSlide}\n        className="my-8"\n        sizeClassName="w-65 sm:w-75 aspect-10.5/19"\n      />\n      <h2>{title}</h2>\n      <p>{description}</p>\n    </>\n  );\n}`}
       >
         <div className="flex flex-col items-center gap-10 sm:flex-row sm:gap-16">
         
@@ -178,13 +178,13 @@ export default function Home() {
             key={activeSlide}
             className="animate-showcase-in max-w-xs text-center sm:text-left"
           >
-            <span className="mb-3 animate-showcase-in block text-xs font-semibold uppercase tracking-widest text-amber-400/80">
+            <span className="mb-3 block text-xs font-semibold uppercase tracking-widest text-amber-400/80">
               {tag}
             </span>
-            <h3 className="mb-4 text-2xl animate-showcase-in font-bold tracking-tight text-white sm:text-3xl">
+            <h3 className="mb-4 text-heading font-bold tracking-tight text-white">
               {title}
             </h3>
-            <p className="leading-relaxed animate-showcase-in text-zinc-400">{description}</p>
+            <p className="leading-relaxed text-zinc-400 text-base">{description}</p>
           </div>
         </div>
       </ComponentSection>

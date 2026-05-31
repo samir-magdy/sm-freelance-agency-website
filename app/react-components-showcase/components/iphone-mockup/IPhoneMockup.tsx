@@ -191,7 +191,7 @@ const themes = {
   light: {
     navArrowColor: "light" as const,
     paginationDotColor: "#1c1c1e",
-    inactiveDotColor: "rgba(0,0,0,0.25)",
+    inactiveDotColor: "rgba(0,0,0,0.5)",
   },
 };
 
@@ -201,7 +201,7 @@ export default function IPhoneMockup({
   sizeClassName,
   theme = "dark",
   autoPlay = false,
-  autoPlayInterval = 6000,
+  autoPlayInterval = 5000,
   onSlideChange,
 }: IPhoneMockupProps) {
   const { navArrowColor, paginationDotColor, inactiveDotColor } = themes[theme];
@@ -237,7 +237,8 @@ export default function IPhoneMockup({
       const el = snapRef.current;
       if (!el) return;
       const next = (activeRef.current + 1) % slides.length;
-      el.scrollTo({ left: next * el.clientWidth, behavior: "smooth" });
+      const isWrapping = next === 0;
+      el.scrollTo({ left: next * el.clientWidth, behavior: isWrapping ? "instant" : "smooth" });
     }, autoPlayInterval);
     return () => clearInterval(id);
   }, [autoPlay, autoPlayInterval, slides.length, isPaused]);
