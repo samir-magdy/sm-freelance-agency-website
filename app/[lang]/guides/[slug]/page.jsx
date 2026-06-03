@@ -2,7 +2,7 @@ import Script from "next/script";
 import { use } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, User, Calendar } from "lucide-react";
+import { ArrowLeft, Calendar } from "lucide-react";
 import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guides";
@@ -162,10 +162,6 @@ export default function GuidePage({ params }) {
               })()}
             </h1>
             <div className="flex flex-wrap items-center gap-3 mt-4">
-              <span className="inline-flex font-semibold items-center gap-1.5 text-sm text-content-muted border border-border-subtle rounded-lg px-3 py-1">
-                <User size={13} aria-hidden />
-                {t.by[lang]} <span className="font-normal">{lang === 'ar' ? "سمير مجدى" : "Samir Magdy"}</span>
-              </span>
               <time
                 dateTime={guide.datePublished}
                 className="inline-flex items-center gap-1.5 text-sm text-content-muted border border-border-subtle rounded-lg px-3 py-1"
@@ -187,12 +183,15 @@ export default function GuidePage({ params }) {
             [&_ol]:list-decimal [&_ol]:ps-7 [&_ol]:mb-6 [&_ol]:space-y-3
             [&_li]:text-content-body [&_li]:text-subheading [&_li]:leading-relaxed
             [&_strong]:text-content-heading [&_strong]:font-semibold [&[dir=rtl]_*]:leading-loose
-            [&_table]:w-full [&_table]:my-8 [&_table]:border-separate [&_table]:border-spacing-0 [&_table]:border [&_table]:border-white/15 [&_table]:rounded-lg [&_table]:overflow-hidden [&_table]:table-fixed
-            [&_thead]:bg-white/5
-            [&_th]:text-content-heading [&_th]:font-semibold [&_th]:text-start [&_th]:p-3 [&_th]:text-base [&_th]:border-b [&_th]:border-e [&_th]:border-white/15 [&_th]:align-middle sm:[&_th]:p-4 sm:[&_th]:text-subheading
-            [&_td]:text-content-body [&_td]:text-base [&_td]:p-3 [&_td]:border-b [&_td]:border-e [&_td]:border-white/10 [&_td]:align-middle [&_td]:leading-relaxed sm:[&_td]:p-4 sm:[&_td]:text-subheading
+            [&_table]:w-full [&_table]:my-8 [&_table]:border-separate [&_table]:border-spacing-0 [&_table]:border [&_table]:border-white/15 [&_table]:rounded-lg [&_table]:table-fixed
+            [&_thead]:bg-white/5 [&_tbody_tr]:transition-colors [&_tbody_tr]:hover:bg-white/4
+            [&_th]:text-content-heading [&_th]:font-semibold [&_th]:text-center [&_th]:p-3 [&_th]:text-base [&_th]:border-b [&_th]:border-e [&_th]:border-white/15 [&_th]:align-middle sm:[&_th]:p-4 sm:[&_th]:text-subheading
+            [&_td]:text-content-body [&_td]:text-base [&_td]:text-center [&_td]:p-3 [&_td]:border-b [&_td]:border-e [&_td]:border-white/10 [&_td]:align-middle [&_td]:leading-relaxed sm:[&_td]:p-4 sm:[&_td]:text-subheading
             [&_th:last-child]:border-e-0 [&_td:last-child]:border-e-0
+            [&_th:nth-child(3)]:hidden sm:[&_th:nth-child(3)]:table-cell [&_td:nth-child(3)]:hidden sm:[&_td:nth-child(3)]:table-cell
             [&_tbody_tr:last-child_td]:border-b-0
+            [&_thead_th:first-child]:rounded-tl-lg [&_thead_th:last-child]:rounded-tr-lg
+            [&_tbody_tr:last-child_td:first-child]:rounded-bl-lg [&_tbody_tr:last-child_td:last-child]:rounded-br-lg
           "
             dangerouslySetInnerHTML={{ __html: guide.content[lang] }}
           />

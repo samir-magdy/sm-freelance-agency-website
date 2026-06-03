@@ -20,19 +20,55 @@ const resource = {
 
 <h2>DIY vs. Professional: A Side-by-Side Comparison</h2>
 <table>
-<thead>
-<tr><th>Factor</th><th>DIY</th><th>Professional</th></tr>
-</thead>
-<tbody>
-<tr><td>Cost</td><td>Low up-front, recurring in USD</td><td>Higher up-front, one-time in EGP</td></tr>
-<tr><td>Your Time</td><td>Days / weeks</td><td>Hours of review only</td></tr>
-<tr><td>Design</td><td>Templated, common</td><td>Custom to your brand</td></tr>
-<tr><td>Performance</td><td>Average</td><td>High</td></tr>
-<tr><td><abbr data-tooltip="Search Engine Optimization">SEO</abbr></td><td>Baseline only</td><td>Highly optimized</td></tr>
-<tr><td>Local Payments (InstaPay / Vodafone Cash / Fawry)</td><td>Limited or unavailable</td><td>Native integration</td></tr>
-<tr><td>Scalability</td><td>Hard / locked in</td><td>Easy to extend</td></tr>
-<tr><td>Ownership</td><td>You rent the platform</td><td>You own the code</td></tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Factor</th>
+      <th>DIY</th>
+      <th>Professional</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cost</td>
+      <td>Low up-front, recurring in USD</td>
+      <td>Higher up-front, one-time in EGP</td>
+    </tr>
+    <tr>
+      <td>Your Time</td>
+      <td>Days / weeks</td>
+      <td>Hours of review only</td>
+    </tr>
+    <tr>
+      <td>Design</td>
+      <td>Templated, common</td>
+      <td>Custom to your brand</td>
+    </tr>
+    <tr>
+      <td>Performance</td>
+      <td>Average</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td><abbr data-tooltip="Search Engine Optimization">SEO</abbr></td>
+      <td>Baseline only</td>
+      <td>Highly optimized</td>
+    </tr>
+    <tr>
+      <td>Local Payments (InstaPay / Vodafone Cash / Fawry)</td>
+      <td>Limited or unavailable</td>
+      <td>Native integration</td>
+    </tr>
+    <tr>
+      <td>Scalability</td>
+      <td>Hard / locked in</td>
+      <td>Easy to extend</td>
+    </tr>
+    <tr>
+      <td>Ownership</td>
+      <td>You rent the platform</td>
+      <td>You own the code</td>
+    </tr>
+  </tbody>
 </table>
 
 <h2>The Cost Illusion</h2>
@@ -54,34 +90,71 @@ const resource = {
 <h2>When is DIY actually the right choice?</h2>
 <p>DIY is the right answer in a narrow set of cases:</p>
 <ul>
-<li>You are testing a brand-new business idea and don't yet know if it will work.</li>
-<li>You need a simple, temporary placeholder while you plan your real site.</li>
-<li>Your business doesn't depend on the website to generate leads, accept payments, or build credibility.</li>
-<li>You have weeks of free time to learn the platform and tinker with the design yourself.</li>
+  <li>You are testing a brand-new business idea and don't yet know if it will work.</li>
+  <li>You need a simple, temporary placeholder while you plan your real site.</li>
+  <li>Your business doesn't depend on the website to generate leads, accept payments, or build credibility.</li>
+  <li>You have weeks of free time to learn the platform and tinker with the design yourself.</li>
 </ul>
 <p>Outside of those cases, the math on DIY almost always works against an Egyptian business — and that's before you factor in the friction of accepting local payment methods that the global DIY platforms don't natively support.</p>
 
 <h2>Our Take: The Right Choice for a Serious Business in 2026</h2>
 <p>DIY is great for hobbyists or tiny startups testing an idea. But if you are serious about your business, professional web design is the foundation you need to compete and win in 2026. After years of fixing DIY websites that were built to "save money" and then cost more to repair, the pattern is consistent: the businesses that invest in professional design from the start avoid the rebuild trap entirely. To see who's behind that work, check out <a href="/en/about">the team behind the studio</a>. To see what gets asked most often by Egyptian businesses in the same situation, browse our <a href="/en/#FAQs">FAQs</a>. And when you're ready to get started you can <a href="/en/#contact">request an official EGP quote</a> for your website.</p>`,
 
-    ar: `<h2>أعمل موقعي بنفسي ولا أشتغل مع محترف؟</h2>
+    ar: `
+<h2>أعمل موقعي بنفسي ولا أشتغل مع محترف؟</h2>
 <p>لو إنت هاوي، أو ستارت أب صغير جداً بيجرب فكرة، أو محتاج كارت بزنس بسيط أونلاين، أدوات بناء المواقع الجاهزة (<abbr data-tooltip="Do-It-Yourself - تعملها بنفسك">DIY</abbr>) زي Wix أو WordPress.com أو Squarespace ممكن تكفي. بس فيه تكلفة خفية مش بيوضحوها: الاشتراكات الشهرية بالدولار، اللي على مدار السنة بتطلع أعلى من تكلفة الموقع الاحترافي اللي بتدفعه مرة واحدة بالجنيه. ولو عندك بزنس جدي بيعتمد على الموقع في المصداقية، ربط بوابات الدفع المحلية (انستا باي، فودافون كاش، باي موب، فوري)، وتحويل الزوار لعملاء، التصميم الاحترافي هو الاستثمار الصح. السبب بسيط: أدوات الـ DIY متصممة عشان السهولة، أما التصميم الاحترافي فمتصمم عشان نتائج بزنس حقيقية في السوق المصري. قبل ما تدفع لأي حد، اقرأ دليلنا عن <a href='/ar/guides/choose-web-design-company-egypt' target='_blank' rel='noopener noreferrer'>ازاي تختار شركة تصميم مواقع</a>. ولو لسه مش مقتنع إنك محتاج موقع من الأساس، دليلنا عن <a href='/ar/guides/why-your-business-needs-a-website' target='_blank' rel='noopener noreferrer'>ليه مشروعك في مصر محتاج موقع</a> بيشرح الأساس ده الأول.</p>
 
 <h2>DIY مقابل الاحترافي: مقارنة جنباً إلى جنب</h2>
 <table>
-<thead>
-<tr><th>العامل</th><th>أداة DIY</th><th>التصميم الاحترافي</th></tr>
-</thead>
-<tbody>
-<tr><td>التكلفة الابتدائية</td><td>اشتراك شهري بالدولار</td><td>استثمار أعلى مرة واحدة بالجنيه</td></tr>
-<tr><td>الوقت المطلوب منك</td><td>كبير (ساعات / أسابيع)</td><td>قليل (مراجعة وملاحظات بس)</td></tr>
-<tr><td>تفرّد التصميم</td><td>قوالب جاهزة مكررة</td><td>تصميم خاص لبراندك</td></tr>
-<tr><td>السرعة والأداء</td><td>غالباً بطيء بسبب الكود الزيادة</td><td>محسّن للسرعة العالية</td></tr>
-<tr><td>أساس الـ <abbr data-tooltip="Search Engine Optimization — مجموعة من العوامل اللي بتحدد ترتيب موقعك في نتائج بحث جوجل">SEO</abbr></td><td>محدود وعام</td><td>مبني من الأساس</td></tr>
-<tr><td>الدفع المحلي (انستا باي / فودافون كاش / فوري)</td><td>محدود أو مش متاح</td><td>مدمج بشكل أساسي</td></tr>
-<tr><td>القابلية للنمو</td><td>صعب التوسع أو النقل</td><td>مبني عشان يكبر مع شركتك</td></tr>
-<tr><td>الملكية</td><td>إنت بتأجر المنصة</td><td>الكود والملفات ملكك</td></tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>العامل</th>
+      <th>أداة DIY</th>
+      <th>التصميم الاحترافي</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>التكلفة الابتدائية</td>
+      <td>اشتراك شهري بالدولار</td>
+      <td>استثمار أعلى مرة واحدة بالجنيه</td>
+    </tr>
+    <tr>
+      <td>الوقت المطلوب منك</td>
+      <td>كبير (ساعات / أسابيع)</td>
+      <td>قليل (مراجعة وملاحظات بس)</td>
+    </tr>
+    <tr>
+      <td>تفرّد التصميم</td>
+      <td>قوالب جاهزة مكررة</td>
+      <td>تصميم خاص لبراندك</td>
+    </tr>
+    <tr>
+      <td>السرعة والأداء</td>
+      <td>غالباً بطيء بسبب الكود الزيادة</td>
+      <td>محسّن للسرعة العالية</td>
+    </tr>
+    <tr>
+      <td>أساس الـ <abbr data-tooltip="Search Engine Optimization — مجموعة من العوامل اللي بتحدد ترتيب موقعك في نتائج بحث جوجل">SEO</abbr></td>
+      <td>محدود وعام</td>
+      <td>مبني من الأساس</td>
+    </tr>
+    <tr>
+      <td>الدفع المحلي (انستا باي / فودافون كاش / فوري)</td>
+      <td>محدود أو مش متاح</td>
+      <td>مدمج بشكل أساسي</td>
+    </tr>
+    <tr>
+      <td>القابلية للنمو</td>
+      <td>صعب التوسع أو النقل</td>
+      <td>مبني عشان يكبر مع شركتك</td>
+    </tr>
+    <tr>
+      <td>الملكية</td>
+      <td>إنت بتأجر المنصة</td>
+      <td>الكود والملفات ملكك</td>
+    </tr>
+  </tbody>
 </table>
 
 <h2>إزاي التكاليف بتتقارن فعلاً؟</h2>
@@ -103,10 +176,10 @@ const resource = {
 <h2>إمتى الـ DIY يكون الاختيار الصح فعلاً؟</h2>
 <p>الـ DIY هو الإجابة الصح في حالات محدودة:</p>
 <ul>
-<li>إنت بتجرب فكرة بزنس جديدة جداً ولسه مش متأكد إنها هتنجح.</li>
-<li>محتاج موقع مؤقت بسيط لحد ما تخطط للموقع الحقيقي.</li>
-<li>شركتك مش بتعتمد على الموقع في جلب العملاء، استقبال دفع، أو بناء مصداقية.</li>
-<li>عندك أسابيع من الوقت الفاضي عشان تتعلم المنصة وتظبط التصميم بنفسك.</li>
+  <li>إنت بتجرب فكرة بزنس جديدة جداً ولسه مش متأكد إنها هتنجح.</li>
+  <li>محتاج موقع مؤقت بسيط لحد ما تخطط للموقع الحقيقي.</li>
+  <li>شركتك مش بتعتمد على الموقع في جلب العملاء، استقبال دفع، أو بناء مصداقية.</li>
+  <li>عندك أسابيع من الوقت الفاضي عشان تتعلم المنصة وتظبط التصميم بنفسك.</li>
 </ul>
 <p>خارج الحالات دي، الحسبة على الـ DIY بتشتغل ضد البزنس المصري في الغالب — وده قبل ما نحسب المشاكل اللي بتحصل في استقبال طرق الدفع المحلية اللي منصات الـ DIY العالمية مش بتدعمها بشكل طبيعي.</p>
 

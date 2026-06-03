@@ -3,8 +3,8 @@ const resource = {
   datePublished: "2026-03-18",
   dateModified: "2026-05-29",
   title: {
-    en: "How Much Does a Website Cost in Egypt? An Honest EGP Breakdown (2026)",
-    ar: "تصميم موقع إلكتروني في مصر بكام في 2026؟ تفاصيل بالجنيه ومن غير مبالغة",
+    en: "How Much Does a Website Cost in Egypt? An Honest Breakdown",
+    ar: "تصميم موقع إلكتروني في مصر بكام في 2026؟",
   },
   metaTitle: {
     en: "How Much Does a Website Cost In Egypt (2026)",
@@ -15,24 +15,54 @@ const resource = {
     ar: "أسعار المواقع في مصر بتختلف من 5,000 لـ 50,000 جنيه، والاختلاف ده مش عشوائي. الدليل ده بيوريك بالظبط إيه اللي بيأثر على التكلفة بالجنيه، نطاق السعر المتوقع لكل نوع موقع (صفحة هبوط، موقع شركة، متجر شوبيفاي)، وإزاي تتجنب إنك تدفع أكتر من اللازم أو تختار أرخص حاجة وتندم بعدين.",
   },
   content: {
-    en: `<h2>How much does a website cost in Egypt?</h2>
+    en: `
 <p>A professional website in Egypt typically costs between 5,000 EGP and 50,000 EGP, depending on the type of site, its complexity, and the local payment methods you need integrated. Landing pages range from 5,000–15,000 EGP, multi-page business websites from 8,000–25,000 EGP, and e-commerce stores from 15,000–50,000 EGP. The wide variation is never random — it reflects real differences in design quality, technical foundations, local payment integration (Paymob, InstaPay, Vodafone Cash, Fawry, Kashier), and the level of ongoing support included. Every number below is in EGP. We don't quote in USD and we don't pass exchange-rate risk back to you.</p>
 
 <h2>What are you actually paying for in a website?</h2>
 <p>A website is not a single deliverable. It's the combination of several distinct types of work: visual design, technical development, content structure, hosting and domain setup, local payment gateway integration, and ongoing maintenance. When you see vastly different prices on the Egyptian market — from 500 EGP "we'll throw something together" offers to 50,000 EGP custom builds — you are usually seeing different combinations of these components and different quality levels within each.</p>
 <p>The cheapest options typically involve reused templates, minimal customization, no local payment integration, and limited revisions. The most expensive options involve fully custom design from scratch, native InstaPay or Vodafone Cash checkout, automated order management, and comprehensive ongoing support. Neither extreme is necessarily right for every business. Before deciding on a price tier, it helps to first understand <a href='/en/guides/why-your-business-needs-a-website' target='_blank' rel='noopener noreferrer'>why a professional website is worth investing in at all</a> — because the right tier depends entirely on what you expect the site to do for your business.</p>
 
+<h2>What determines the price of any website?</h2>
+<ul>
+  <li><strong>Site size and number of pages:</strong> A single-page landing page costs significantly less than a 20- or 50-page website. Every additional page means more design, layout, and development work.</li>
+  <li><strong>Template vs. custom design:</strong> Are we adapting a ready-made template with color and image swaps? Or building a fully custom UI/UX design from scratch to reflect your brand identity? Custom work takes longer and costs more.</li>
+  <li><strong>Technology and programming stack:</strong> Built on <abbr data-tooltip="The world's most widely used content management system, used to build all types of websites">WordPress</abbr> or <abbr data-tooltip="A platform specialized in building professional e-commerce stores">Shopify</abbr>? Generally faster and more affordable. Custom development using React or Laravel costs more because it requires more time and specialized developers.</li>
+  <li><strong>Complexity and special features:</strong> Is this an informational site that displays content? Or does it need an online store, card payment gateways, a booking system, or complex user dashboards? Every programmatic feature adds to the budget.</li>
+  <li><strong>Copywriting:</strong> Who writes the words on the site? If the client provides content ready-made, that's one thing. If we're writing marketing copy that draws in visitors and communicates the business, that's a specialized service billed separately.</li>
+  <li><strong>Multiple languages:</strong> Arabic only, or Arabic and English? Adding languages isn't just translation — it requires layout adjustments for text direction (<abbr data-tooltip="Right-to-Left — the text direction used in Arabic, requiring specific development work to ensure layouts display correctly">RTL</abbr>) and additional development work.</li>
+  <li><strong>Search engine optimization (<abbr data-tooltip="Search Engine Optimization — the process of improving your website so it ranks higher in Google results">SEO</abbr>):</strong> Are we handing over the site as-is, or doing an initial technical setup so Google can read, index, and rank it from day one?</li>
+  <li><strong>Images and animation:</strong> Stock photos or a custom product photography session? Does the design include complex animations that make the site impressive but add time to develop?</li>
+  <li><strong>Hosting and domain:</strong> The server the site runs on. Shared hosting is cheaper, but a high-traffic site needs a more powerful server — Cloud or Dedicated — with higher ongoing costs.</li>
+  <li><strong>Maintenance and technical support:</strong> After delivery, what happens when something breaks or you want to add a feature? Annual or monthly maintenance contracts keep the site running efficiently over time.</li>
+</ul>
+
 <h2>What pricing tiers should you expect?</h2>
 <p>Here is a quick reference for the three most common website types in Egypt. You can see how these map directly to our own published packages in the <a href="/en/#pricing">pricing section of the home page</a>:</p>
 <table>
-<thead>
-<tr><th>Website Type</th><th>Price Range (EGP)</th><th>Best For</th></tr>
-</thead>
-<tbody>
-<tr><td>Landing Page (Single Page)</td><td>5,000 – 15,000</td><td>Freelancers, solo doctors, single services, ad campaigns</td></tr>
-<tr><td>Business Website (Multi-Page)</td><td>8,000 – 25,000</td><td>Clinics, agencies, consultancies, established service businesses</td></tr>
-<tr><td>E-commerce Store (Shopify)</td><td>15,000 – 50,000</td><td>Online product sales, Instagram sellers going pro, retail brands</td></tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Website Type</th>
+      <th>Price Range (EGP)</th>
+      <th>Best For</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Landing Page (Single Page)</td>
+      <td>5,000 – 15,000</td>
+      <td>Freelancers, solo doctors, single services, ad campaigns</td>
+    </tr>
+    <tr>
+      <td>Business Website (Multi-Page)</td>
+      <td>8,000 – 25,000</td>
+      <td>Clinics, agencies, consultancies, established service businesses</td>
+    </tr>
+    <tr>
+      <td>E-commerce Store (Shopify)</td>
+      <td>15,000 – 50,000</td>
+      <td>Online product sales, Instagram sellers going pro, retail brands</td>
+    </tr>
+  </tbody>
 </table>
 
 <h3>Landing Pages: 5,000 – 15,000 EGP</h3>
@@ -46,23 +76,23 @@ const resource = {
 
 <h2>What factors actually drive website pricing?</h2>
 <ul>
-<li><strong>The technology used:</strong> Basic page builders like WordPress and Wix cost less up-front and are faster to finish, but often result in a slow website that looks like every other template-built site on the internet — and they usually charge ongoing fees in USD. A custom-coded solution requires more expertise and time, which increases the up-front EGP price but eliminates recurring USD fees entirely. For a full comparison of what each approach means for your business beyond cost, read our guide on <a href='/en/guides/diy-vs-professional-web-design' target='_blank' rel='noopener noreferrer'>DIY vs. professional web design</a>.</li>
-<li><strong>Local payment gateway integration:</strong> Connecting your site to Paymob, Fawaterk, Kashier, or Fawry adds development time. Adding native InstaPay or Vodafone Cash checkout — instead of asking customers to screenshot transfers on WhatsApp — adds even more. This is one of the largest hidden cost drivers and is what separates a site that actually converts in Egypt from one that doesn't.</li>
-<li><strong>Scope of content:</strong> More pages, more sections, and more content types mean more design and development work.</li>
-<li><strong>Admin panel / <abbr data-tooltip="Content Management System — a built-in control panel that lets you edit your website's text and images yourself without touching any code">CMS</abbr>:</strong> If you want to update your own content without contacting a developer every time, a content management system needs to be built and configured. This adds cost but gives you long-term independence.</li>
-<li><strong>Bilingual support:</strong> Arabic/English bilingual websites require additional development work, particularly for <abbr data-tooltip="Right-to-Left — the text direction used in Arabic, which requires specific development work to ensure layouts display correctly">RTL</abbr> layouts and ensuring the design works correctly in both languages. The upside is one site indexed twice by Google, doubling your search surface without doubling your cost.</li>
-<li><strong>Integrations:</strong> Connecting your website to third-party tools — booking systems for clinics, <abbr data-tooltip="Customer Relationship Management software — tools that help you track leads, clients, and sales activity, like HubSpot or Zoho">CRMs</abbr>, analytics platforms, WhatsApp Business APIs — requires additional development time.</li>
-<li><strong>Performance and SEO:</strong> Basic SEO setup is included in our professional packages, but advanced SEO services like keyword research, content production, and link building are usually separate engagements.</li>
+  <li><strong>The technology used:</strong> Basic page builders like WordPress and Wix cost less up-front and are faster to finish, but often result in a slow website that looks like every other template-built site on the internet — and they usually charge ongoing fees in USD. A custom-coded solution requires more expertise and time, which increases the up-front EGP price but eliminates recurring USD fees entirely. For a full comparison of what each approach means for your business beyond cost, read our guide on <a href='/en/guides/diy-vs-professional-web-design' target='_blank' rel='noopener noreferrer'>DIY vs. professional web design</a>.</li>
+  <li><strong>Local payment gateway integration:</strong> Connecting your site to Paymob, Fawaterk, Kashier, or Fawry adds development time. Adding native InstaPay or Vodafone Cash checkout — instead of asking customers to screenshot transfers on WhatsApp — adds even more. This is one of the largest hidden cost drivers and is what separates a site that actually converts in Egypt from one that doesn't.</li>
+  <li><strong>Scope of content:</strong> More pages, more sections, and more content types mean more design and development work.</li>
+  <li><strong>Admin panel / <abbr data-tooltip="Content Management System — a built-in control panel that lets you edit your website's text and images yourself without touching any code">CMS</abbr>:</strong> If you want to update your own content without contacting a developer every time, a content management system needs to be built and configured. This adds cost but gives you long-term independence.</li>
+  <li><strong>Bilingual support:</strong> Arabic/English bilingual websites require additional development work, particularly for <abbr data-tooltip="Right-to-Left — the text direction used in Arabic, which requires specific development work to ensure layouts display correctly">RTL</abbr> layouts and ensuring the design works correctly in both languages. The upside is one site indexed twice by Google, doubling your search surface without doubling your cost.</li>
+  <li><strong>Integrations:</strong> Connecting your website to third-party tools — booking systems for clinics, <abbr data-tooltip="Customer Relationship Management software — tools that help you track leads, clients, and sales activity, like HubSpot or Zoho">CRMs</abbr>, analytics platforms, WhatsApp Business APIs — requires additional development time.</li>
+  <li><strong>Performance and SEO:</strong> Basic SEO setup is included in our professional packages, but advanced SEO services like keyword research, content production, and link building are usually separate engagements.</li>
 </ul>
 
 <h2>Why do cheap websites cost more in the long run?</h2>
 <p>The 500 EGP website offer exists, and for any serious business it almost always causes more harm than good. Here is the typical failure pattern we see in Egypt:</p>
 <ul>
-<li>Poor technical foundations result in slow loading, which hurts both user experience and Google rankings.</li>
-<li>Generic template designs make it impossible to stand out from competitors using the same templates.</li>
-<li>No local payment integration means customers have to send WhatsApp screenshots, which kills conversion.</li>
-<li>The absence of mobile optimization drives away the majority of your visitors — and in Egypt, mobile is essentially all of your traffic.</li>
-<li>Fixing these issues later, often by rebuilding from scratch, costs more than if you had built correctly from the start.</li>
+  <li>Poor technical foundations result in slow loading, which hurts both user experience and Google rankings.</li>
+  <li>Generic template designs make it impossible to stand out from competitors using the same templates.</li>
+  <li>No local payment integration means customers have to send WhatsApp screenshots, which kills conversion.</li>
+  <li>The absence of mobile optimization drives away the majority of your visitors — and in Egypt, mobile is essentially all of your traffic.</li>
+  <li>Fixing these issues later, often by rebuilding from scratch, costs more than if you had built correctly from the start.</li>
 </ul>
 <p>The relevant question is not "what's the cheapest website I can get?" but "what's the minimum investment that will generate a positive return for my specific business?" Many of the <a href="/en/#FAQs">FAQs we get</a> are different versions of this same question — and the honest answer is that the right price tier depends entirely on what your business needs the site to do.</p>
 
@@ -70,64 +100,79 @@ const resource = {
 <p>Every website we build includes professional design created specifically for your brand, performance optimization for fast loading, mobile-first development, basic SEO setup, EGP-only pricing with no recurring USD fees, and a revision process that ensures you are happy with the result. For e-commerce, we integrate the Egyptian payment gateways your customers actually use — Paymob, InstaPay, Vodafone Cash, and Fawry — alongside card payments. We don't require you to have a commercial register or tax card to start; we'll help you pick the gateway tier that activates with just your National ID.</p>
 <p>We're transparent about pricing before any project starts, so you know exactly what you're getting and what it costs. Our goal is not to sell you the most expensive option — it's to help you understand what level of investment makes sense for your goals and build accordingly. If you'd like a formal EGP quote, you can <a href="/en/#contact">request one here</a>. If you want to know more about the team behind the studio first, our <a href="/en/about">about page</a> covers who we are and why we started. And if you're still evaluating your options, our guide on <a href='/en/guides/choose-web-design-company-egypt' target='_blank' rel='noopener noreferrer'>how to choose the right web design company in Egypt</a> covers exactly what to look for before you commit.</p>`,
 
-    ar: `<h2>تصميم موقع إلكتروني في مصر بكام؟</h2>
-<p>الموقع الاحترافي في مصر بيكلف عادةً ما بين 5,000 و50,000 جنيه، حسب نوع الموقع، تعقيده، وبوابات الدفع المحلية اللي محتاج تربطها بيه. صفحات الهبوط من 5,000 لـ 15,000 جنيه، مواقع الشركات المتعددة الصفحات من 8,000 لـ 25,000 جنيه، والمتاجر الإلكترونية من 15,000 لـ 50,000 جنيه. الفروق دي مش عشوائية، بتعكس فروق حقيقية في جودة التصميم، الأساس التقني، ربط بوابات الدفع المحلية (باي موب، انستا باي، فودافون كاش، فوري، كاشير)، ومستوى الدعم المستمر. كل الأسعار اللي تحت بالجنيه. إحنا مش بنحاسبك بالدولار ومش بنحط على دماغك ريسك سعر الصرف.</p>
+    ar: `
+<p><strong>بشكل عام، أسعار تصميم المواقع الإلكترونية في مصر ممكن تتراوح من 5,000 لـ 50,000 ج.م</strong>، والحقيقة إن مفيش إجابة واحدة ثابتة لسؤال التكلفة، لأن كل مشروع بيختلف عن التاني وفي عوامل كتير بتدخل في التسعير. الاختلاف ده مش عشوائي، ومن خلال قرايتك للدليل ده، هتكتشف أنواع المواقع المختلفة، ونطاق السعر المتوقع لكل نوع، وهتعرف إيه هي العوامل الأساسية اللي بتحدد سعر الموقع في السوق عشان تتجنب إنك تدفع أكتر من اللازم أو تختار أرخص حاجة وتندم بعدين.</p>
 
-<h2>إنت بتدفع تمن إيه بالظبط في الموقع؟</h2>
-<p>الموقع مش مجرد ملف بتستلمه. هو مجهود في كذا حاجة مع بعض: شكل التصميم، البرمجة والكود، تنظيم المحتوى، تجهيز الاستضافة والدومين، ربط بوابات الدفع المحلية، والصيانة المستمرة. لما بتشوف فرق كبير في السعر في السوق المصري — من عروض الـ 500 جنيه "هاجمعلك حاجة" لمواقع مخصوصة بـ 50,000 جنيه — ده معناه إن جودة الحاجات دي مختلفة، أو فيه حاجات منها مش موجودة أصلاً في العرض الرخيص.</p>
-<p>العروض الرخيصة عادةً بتعتمد على <abbr data-tooltip="تصميمات جاهزة بيتم استخدامها لسرعة التنفيذ لكنها مش فريدة لشركتك وممكن منافسك يستخدمها">قوالب جاهزة</abbr> بتعديلات بسيطة جداً، من غير ربط بوابات دفع محلية، وبمراجعات محدودة. أما العروض الغالية فبتكون عبارة عن تصميم خاص لبراندك من الصفر، دفع انستا باي أو فودافون كاش مدمج في صفحة الـ checkout، إدارة طلبات أوتوماتيكي، ودعم فني مستمر. مش لازم تختار الأغلى ولا الأرخص. قبل ما تختار فئة سعرية، الأول لازم تفهم <a href='/ar/guides/why-your-business-needs-a-website' target='_blank' rel='noopener noreferrer'>ليه مشروعك في مصر محتاج موقع إلكتروني من الأساس</a> — لأن الفئة المناسبة بتعتمد على اللي إنت متوقعه من الموقع لشركتك.</p>
-
-<h2>إيه فئات الأسعار اللي ممكن تتوقعها؟</h2>
-<p>ده مرجع سريع لأكتر 3 أنواع مواقع شيوعاً في مصر. تقدر تشوف الباقات المعلنة بتاعتنا على <a href="/ar/#pricing">قسم الأسعار في الصفحة الرئيسية</a>:</p>
+<h2>ما هي التكلفة المتوقعة حسب نوع الموقع؟</h2>
+<p>الجدول ده هيديك فكرة عن الأسعار اللي هتقابلها في السوق حسب نوع الموقع اللي أنت محتاجه:</p>
 <table>
-<thead>
-<tr><th>نوع الموقع</th><th>نطاق السعر (جنيه)</th><th>مناسب لـ</th></tr>
-</thead>
-<tbody>
-<tr><td>صفحة هبوط (Landing Page)</td><td>5,000 – 15,000</td><td>الفريلانسرز، الدكاترة، الخدمة الواحدة، الحملات الإعلانية</td></tr>
-<tr><td>موقع شركة (Multi-Page)</td><td>8,000 – 25,000</td><td>العيادات، الوكالات، شركات الاستشارات، الشركات اللي عندها خدمات متعددة</td></tr>
-<tr><td>متجر إلكتروني (Shopify)</td><td>15,000 – 50,000</td><td>بيع المنتجات أونلاين، تجار الانستجرام، البراندات التجارية</td></tr>
-</tbody>
+  <thead>
+    <tr>
+      <th scope="col">نوع الموقع</th>
+      <th>نطاق السعر بالجنيه</th>
+      <th>الفئة المستهدفة</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <strong>صفحة هبوط</strong>
+        <br><small style="color: #bfbfbf;">صفحة واحدة مركزة تدفع الزائر لاتخاذ إجراء (مثل تعبئة نموذج أو شراء منتج)</small>
+      </td>
+      <td>5,000 – 15,000</td>
+      <td>المستقلين والشركات الناشئة</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>موقع شركة</strong>
+        <br><small style="color: #bfbfbf;">موقع تعريفي، متعدد الصفحات لعرض خدماتك، وتفاصيل الشركة بالكامل</small>
+      </td>
+      <td>8,000 – 30,000</td>
+      <td>الشركات المستقرة</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>متجر إلكتروني</strong>
+        <br><small style="color: #bfbfbf;">موقع يعرض منتجاتك للبيع، يدعم الدفع الإلكتروني وإدارة المخزون</small>
+      </td>
+      <td>15,000 – 50,000</td>
+      <td>البراندات والتجار</td>
+    </tr>
+  </tbody>
 </table>
+<p><small>تنويه: هذه الأسعار تقريبية وتعتمد على احتياجات الشركات الناشئة والصغيرة. المشاريع الضخمة يتم تسعيرها بشكل مخصص.</small></p>
 
-<h3>صفحات الهبوط: 5,000 – 15,000 جنيه</h3>
-<p>دي بتكون صفحة واحدة بس، هدفها إن العميل ياخد قرار واحد — يبعت واتساب، يتصل، يحجز معاد، أو يدفع. مناسبة جداً للفريلانسرز، مقدمي الخدمات، الدكاترة اللي بيسيبوا فيزيتا وعايزين يستقبلوا حجوزات على دومين باسمهم، وتجار الانستجرام اللي عايزين شكل احترافي من غير ما يبنوا متجر كامل لسه. السعر القليل بيكون تصميم جاهز بتعديلات بسيطة. السعر العالي بيكون تصميم مخصوص، كتابة محتوى احترافي، تحسين أداء، ورابط دفع مربوط بانستا باي، فودافون كاش، أو الكروت عن طريق باي موب.</p>
-
-<h3>مواقع الشركات: 8,000 – 25,000 جنيه</h3>
-<p>ده الموقع التقليدي اللي فيه كذا صفحة (الرئيسية، عن الشركة، الخدمات، أعمالنا، اتصل بنا). السعر هنا بيعتمد على عدد الصفحات، وجود لوحة تحكم تعدل منها بنفسك، درجة تعقيد التصميم والحركات، دعم العربي والإنجليزي مع بعض، ومستوى شغل الـ <abbr data-tooltip="Search Engine Optimization — عملية تحسين موقعك علشان يظهر في نتائج بحث جوجل الأولى">SEO</abbr> اللي بنبنيه في الموقع من اليوم الأول.</p>
-
-<h3>المتاجر الإلكترونية: 15,000 – 50,000 جنيه</h3>
-<p>بناء متجر أونلاين فيه تفاصيل أكتر بكتير من الموقع العادي. محتاج صفحات للمنتجات، تنظيم تصنيفات، ربط <abbr data-tooltip="بوابات الدفع — الخدمة اللي بتأمن عمليات الدفع أونلاين على موقعك زي Paymob أو Stripe">بوابات الدفع</abbr> المصرية اللي عملاءك فعلاً بيستخدموها، تجهيز طرق الشحن، وتخصيص شكل المتجر علشان يناسب براندك. المتاجر اللي عندها منتجات كتير، أو نظام دفع مخصوص، أو دعم لغتين، أو تأكيد انستا باي أوتوماتيكي (بدل تأكيد سكرين شوت يدوي على الواتساب) — كل دي بتطلع في الفئة الأعلى. تقدر تشوف نموذج حي لمتجر مصري شغّلناه في <a href="/ar/#portfolio">قسم أعمالنا</a>.</p>
-
-<h2>إيه العوامل الأساسية اللي بتحدد تكلفة تصميم الموقع؟</h2>
+<h2>إيه اللي بيحدد سعر أي موقع إلكتروني؟</h2>
+<p>علشان تفهم ميزانيتك رايحة فين بالظبط، جمعنالك أهم النقاط اللي بتتحكم في السعر النهائي:</p>
 <ul>
-<li><strong>التكنولوجيا المستخدمة:</strong> أدوات بناء المواقع البسيطة زي <abbr data-tooltip="أشهر نظام لإدارة المحتوى (CMS) في العالم، بيستخدم لبناء كل أنواع المواقع سواء بقوالب جاهزة أو كود مخصص">WordPress</abbr> أو <abbr data-tooltip="أداة سهلة لبناء المواقع بتعتمد على سحب العناصر (Drag and Drop)، مناسبة للمشاريع البسيطة بس فيها قيود في التحكم الكامل بالكود">Wix</abbr> بتكون أرخص وأسرع في التجهيز، بس غالباً بيطلع موقع بطيء وشبه باقي المواقع — وأغلبها بياخد منك اشتراك شهري بالدولار. الكود المخصوص بيحتاج خبرة ووقت أكبر وده بيزود السعر الأولي بالجنيه، بس بيلغي تماماً أي اشتراكات شهرية بالدولار. للمقارنة الكاملة بين الخيارين، اقرأ دليلنا عن <a href='/ar/guides/diy-vs-professional-web-design' target='_blank' rel='noopener noreferrer'>تعمل موقعك بنفسك ولا توظف محترف</a>.</li>
-<li><strong>ربط بوابات الدفع المحلية:</strong> ربط الموقع بباي موب، فواتيرك، كاشير، أو فوري بيضيف وقت برمجة. وإضافة دفع انستا باي أو فودافون كاش مباشرة في الـ checkout — بدل ما العميل يبعتلك سكرين شوت على الواتساب — بيضيف أكتر. ده من أكبر العوامل الخفية في التكلفة، وهو اللي بيفرق بين موقع بيبيع فعلاً في مصر وموقع لأ.</li>
-<li><strong>حجم المحتوى:</strong> كل ما زاد عدد الصفحات والأقسام، زاد مجهود التصميم والبرمجة.</li>
-<li><strong>لوحة التحكم (<abbr data-tooltip="Content Management System — لوحة تحكم داخلية بتخليك تعدل محتوى الموقع بنفسك من غير ما تلمس الكود">CMS</abbr>):</strong> لو عايز تعدل شغلك بنفسك من غير ما ترجع للمبرمج، ده بيحتاج بناء لوحة تحكم وبيضيف للتكلفة بس بيديك استقلالية على المدى البعيد.</li>
-<li><strong>اللغات:</strong> المواقع اللي بالعربي والإنجليزي مع بعض بتحتاج مجهود أكبر في البرمجة وتنسيق اتجاهات الـ <abbr data-tooltip="Right-to-Left — اتجاه الكتابة من اليمين للشمال في العربي، وده بيحتاج شغل برمجي خاص لضمان إن التصميم يظهر صح">RTL</abbr>. والمكسب إن موقع واحد بيتسجل مرتين عند جوجل، فظهورك في البحث بيتضاعف بنفس التكلفة.</li>
-<li><strong>الربط مع خدمات تانية:</strong> ربط الموقع بنظام حجز للعيادات، أنظمة الـ <abbr data-tooltip="Customer Relationship Management — برامج بتساعدك تتابع العملاء والمبيعات زي HubSpot أو Zoho">CRMs</abbr>، أو واتساب بزنس API بيحتاج وقت برمجة إضافي.</li>
-<li><strong>الأداء والـ SEO:</strong> الأساسيات بتكون متضمنة في الباقات الاحترافية بتاعتنا، أما خدمات الـ SEO المتقدمة (بحث الكلمات المفتاحية، إنتاج المحتوى، بناء الروابط) فبتكون اشتراكات منفصلة.</li>
+  <li><strong>حجم الموقع وعدد الصفحات:</strong> موقع من صفحة واحدة تكلفته أقل بكثير من موقع متفرع لـ 30 صفحة، لأن كل صفحة زيادة بتحتاج مجهود إضافي في التصميم والبرمجة.</li>
+  <li><strong>قالب جاهز ولا تصميم مخصص:</strong> القوالب الجاهزة مفيهاش شغل تصميم، ده معناه إن شكل الموقع مطابق لآلاف المواقع التانية، لكن التصميم المخصص بياخد وقت ومجهود أكبر وبالتالي تكلفته أعلى.</li>
+  <li><strong>التكنولوجيا المستخدمة:</strong> الشغل على المنصات الجاهزة زي ووردبريس أو ويكس بيكون أسرع وأوفر في السعر، أما البرمجة الخاصة بتزود التكلفة لأنها بتحتاج مبرمجين متخصصين.</li>
+  <li><strong>المميزات الخاصة:</strong> السعر بيزيد مع إضافة ميزات برمجية خاصة زي نظام حجز، أو شات بوت للدعم الفني، أو لوحة تحكم مخصصة لإدارة الموقع بنفسك.</li>
+  <li><strong>كتابة المحتوى:</strong> لو هتسلم المحتوى المكتوب للموقع يبقى مفيش تكلفة إضافية، لكن لو الجهة اللي بتبني الموقع هتكتب المحتوى، بيكون في تكلفة زيادة.</li>
+  <li><strong>تعدد اللغات:</strong> إضافة لغات تانية للموقع بتزود التكلفة لأنها مش مجرد ترجمة، دي بتحتاج شغل برمجي خاص زي تعديل اتجاهات التصميم <abbr data-tooltip="Right to Left">(RTL)</abbr>.</li>
+  <li><strong>تهيئة محركات البحث <abbr style="color: #bfbfbf;" data-tooltip="Search Engine Optimization">(SEO)</abbr>:</strong> تهيئة الموقع علشان يظهر في نتائج البحث دي خدمة برمجية بتدخل في الحسبة، وممكن تاخد ميزانية لوحدها لو عايز فرص حقيقية إنك تتصدر نتائج جوجل.</li>
+  <li><strong>الاستضافة:</strong> الاستضافة المشتركة سعرها رخيص بس ممكن تخلي الموقع بطيء مع ضغط الزوار أو في أسوأ الأحوال ممكن الموقع ميشتغلش خالص، عكس الاستضافة الخاصة اللي بتضمن كفاءة أعلى.</li>
+  <li><strong>الصيانة والدعم الفني:</strong> عقود الصيانة الدورية (الشهرية أو السنوية) دي تكلفة إضافية بتضمن إن الموقع يفضل شغال بكفاءة وإن أي مشكلة تظهر بعد التسليم تتحل بدون تكاليف.</li>
 </ul>
 
-<h2>ليه الموقع الرخيص ممكن يكلفك أكتر في الآخر؟</h2>
-<p>ممكن تقابل عروض بـ 500 جنيه، وللأعمال الجدية بتسبب ضرر أكتر من الفايدة. ده النمط المتكرر للفشل اللي بنشوفه في السوق المصري:</p>
+<h2>فخ الموقع الرخيص: المخاطر الخفية وإزاي تتجنبها</h2>
+<p>لو قعدت تدور وتقارن الأسعار في السوق، هتلاقي مستقل بيعرض عليك الموقع بـ 1,000 جنيه، وفي نفس الوقت هتلاقي شركة تصميم مواقع أو مطور تاني بيعرضوا عليك نفس الموقع بـ 15,000 جنيه. الفرق الضخم ده معناه إن جودة الشغل والقيمة اللي هتاخدها مختلفة تماماً، أو إن فيه تفاصيل ومميزات أساسية مش موجودة أصلاً في العرض الأرخص.</p>
+<p>ممكن يقابلك العرض اللي بـ 1,000 جنيه، لكن احذر من الأسعار دي. نوع الشغل ده مش محتاج مبرمج من الأساس، انت ممكن تعمله بنفسك. وده موضوع بنتكلم عنه بالتفصيل في دليلنا عن <a href='/ar/guides/diy-vs-professional-web-design'>الفرق بين تصميم موقعك بنفسك وتوظيف محترف</a>.</p>
+<p>للأعمال الجدية، الموقع الرخيص هيسببلك ضرر أكتر من فايدة. ده النمط المتكرر للفشل اللي بنشوفه في السوق المصري:</p>
 <ul>
-<li>الموقع الرخيص غالباً بيبقى بطيء جداً، وده بيخلي العملاء يقفلوه ومبيظهرش في جوجل.</li>
-<li>التصميم بيبقى مكرر ومش احترافي، فمش هتتميز عن منافسيك اللي مستخدمين نفس القوالب.</li>
-<li>مفيش ربط بوابات دفع محلية، فالعميل بيضطر يبعت سكرين شوت على الواتساب، وده بيقتل المبيعات.</li>
-<li>مبيشتغلش كويس على الموبايل، وده بيطرد معظم زوارك — وفي مصر، الموبايل تقريباً كل تراففيك.</li>
-<li>في الآخر هتضطر تدفع فلوس تانية علشان تصلح، وغالباً تبني من الأول، وده بيكلفك أكتر من اللي كان هيكلفك تبني صح من البداية.</li>
+  <li>الموقع الرخيص غالباً بيبقى بطيء جداً، وده بيخلي العملاء يقفلوه ومبيظهرش في جوجل.</li>
+  <li>التصميم بيبقى مكرر ومش احترافي، فمش هتتميز عن منافسيك اللي مستخدمين نفس القوالب.</li>
+  <li>الموقع مبيشتغلش كويس على الموبايل، وفي مصر، الأغلبية العظمى بتستخدم الموبايل.</li>
+  <li>في الآخر هتضطر تدفع فلوس تاني علشان تصلح، وغالباً بيكون أسهل إنك تبني من الأول. النتيجة بتكون إنك ضيعت وقتك وفلوسك.</li>
 </ul>
-<p>السؤال الصح مش "إيه أرخص موقع ممكن أعمله؟" لكن "إيه أقل استثمار هيجيب لي عائد إيجابي لشركتي تحديداً؟" كتير من <a href="/ar/#FAQs">الأسئلة اللي بتوصلنا</a> هي في الحقيقة صور مختلفة لنفس السؤال ده — والإجابة الصادقة إن الفئة السعرية المناسبة بتعتمد على اللي شركتك محتاجة الموقع يعمله.</p>
-
-<h2>وجهة نظرنا: إيه اللي بيشمله كل موقع في SM Web Design Studio؟</h2>
-<p>كل موقع بنبنيه بيشمل تصميم مخصص لبراندك، سرعة تحميل عالية، تجهيز للموبايل من الأساس، أساسيات الـ SEO، أسعار بالجنيه من غير أي رسوم شهرية بالدولار، وعملية مراجعة بتضمن إنك مبسوط من النتيجة. للمتاجر، بنربط بوابات الدفع المصرية اللي عملاءك فعلاً بيستخدموها — باي موب، انستا باي، فودافون كاش، وفوري — جنب الدفع بالكروت. مش لازم يكون عندك سجل تجاري أو بطاقة ضريبية علشان نبدأ؛ هنساعدك تختار باقة البوابة اللي بتفعّل بالرقم القومي بس.</p>
-<p>إحنا واضحين جداً في الأسعار من قبل ما نبدأ. هدفنا مش إننا نبيع لك أغلى حاجة؛ هدفنا نساعدك تختار الاستثمار اللي هيجيب لك عائد فعلي. ولو حابب نبعتلك عرض سعر رسمي بالجنيه، تقدر <a href="/ar/#contact">تطلبه من هنا</a>. ولو عايز تعرف أكتر عن الفريق اللي هيشتغل على موقعك، صفحة <a href="/ar/about">من نحن</a> بتشرح إحنا مين وليه بدأنا الاستوديو. ولو لسه بتقيّم خياراتك، دليلنا عن <a href='/ar/guides/choose-web-design-company-egypt' target='_blank' rel='noopener noreferrer'>ازاي تختار شركة تصميم مواقع</a> هيوريك بالظبط إيه اللي تدور عليه قبل ما تختار.</p>`,
+<p>متكررش أخطاء الآخرين، اقرأ دليلنا: <a href="/ar/guides/choose-web-design-company-egypt">إزاي تختار شركة تصميم مواقع في مصر</a>، لمعلومات إضافية هتحميك من الوقوع في نفس الفخ.</p>
+<p>الخلاصة هي إن السؤال الصحيح مش «إيه أرخص موقع ممكن أعمله؟» لكن «إيه أقل استثمار هيجيب عائد إيجابي لشركتي؟»</p>
+<p>لو إنت في مرحلة التخطيط لمشروعك وعايز رؤية واضحة للتكلفة أو الخطوات أو عندك أي أسئلة، <a href="/ar#contact">تواصل معنا للحصول على استشارة مجانية</a>.</p>`,
   },
   metaDescription: {
-    en: "Find out how much a professional website costs in Egypt in 2026. An honest EGP breakdown of pricing for landing pages, business sites, and e-commerce stores with local payment integration (Paymob, InstaPay, Vodafone Cash, Fawry).",
-    ar: "اعرف كام بتكلف تصميم موقع احترافي في مصر 2026 بالجنيه. تفصيلة واضحة لأسعار صفحات الهبوط، المواقع التجارية، والمتاجر الإلكترونية مع ربط بوابات الدفع المحلية (باي موب، انستا باي، فودافون كاش، فوري).",
+    en: "Find out how much a professional website costs in Egypt in 2026. An honest EGP breakdown of what drives the price for landing pages, business sites, and online stores.",
+    ar: "اعرف كام بتكلف تصميم موقع احترافي في مصر 2026 بالجنيه. دليل واضح لأسعار صفحات الهبوط، مواقع الشركات، والمتاجر الإلكترونية، وإيه اللي بيأثر على السعر.",
   },
 };
 
