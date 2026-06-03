@@ -85,8 +85,8 @@ const resource = {
   <li><strong>Performance and SEO:</strong> Basic SEO setup is included in our professional packages, but advanced SEO services like keyword research, content production, and link building are usually separate engagements.</li>
 </ul>
 
-<h2>Estimate Your Website Cost</h2>
-<p>Use this calculator to get a rough EGP estimate before reaching out. Select your website type, content size, and any add-ons to see a live price.</p>
+<!-- <h2>Estimate Your Website Cost</h2>
+<p>Use this calculator to get a rough EGP estimate before reaching out. Select your website type, content size, and any add-ons to see a live price.</p> -->
 <!-- PRICING_ESTIMATOR_SLOT -->
 
 <h2>Why do cheap websites cost more in the long run?</h2>
@@ -160,8 +160,8 @@ const resource = {
   <li><strong>الصيانة والدعم الفني:</strong> عقود الصيانة الدورية (الشهرية أو السنوية) دي تكلفة إضافية بتضمن إن الموقع يفضل شغال بكفاءة وإن أي مشكلة تظهر بعد التسليم تتحل بدون تكاليف.</li>
 </ul>
 
-<h2>احسب تكلفة موقعك</h2>
-<p>اختار نوع الموقع وحجم المحتوى والإضافات اللي محتاجها، وهتشوف تقدير السعر على الفور بالجنيه المصري.</p>
+<!-- <h2>احسب تكلفة موقعك</h2>
+<p>اختار نوع الموقع وحجم المحتوى والإضافات اللي محتاجها، وهتشوف تقدير السعر على الفور بالجنيه المصري.</p> -->
 <!-- PRICING_ESTIMATOR_SLOT -->
 
 <h2>فخ الموقع الرخيص: المخاطر الخفية وإزاي تتجنبها</h2>
