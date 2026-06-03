@@ -133,7 +133,7 @@ export default function GuidePage({ params }) {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="max-w-5xl mx-auto flex flex-col gap-6 sm:gap-8">
+      <div className="max-w-7xl mx-auto flex flex-col gap-6 sm:gap-8">
           {/* Back link */}
          <Link
             href={`/${lang}/guides`}

@@ -172,7 +172,7 @@ const resource = {
   },
   metaDescription: {
     en: "Find out how much a professional website costs in Egypt in 2026. An honest EGP breakdown of what drives the price for landing pages, business sites, and online stores.",
-    ar: "اعرف كام بتكلف تصميم موقع احترافي في مصر 2026 بالجنيه. دليل واضح لأسعار صفحات الهبوط، مواقع الشركات، والمتاجر الإلكترونية، وإيه اللي بيأثر على السعر.",
+    ar: "مفيش أسعار ثابتة لتصميم المواقع، بس إحنا جبنالك الخلاصة! تفاصيل تكلفة المواقع الإلكترونية في مصر 2026، وإيه العوامل اللي بتحدد السعر النهائي.",
   },
 };
 
