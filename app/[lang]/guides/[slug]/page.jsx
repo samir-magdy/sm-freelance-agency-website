@@ -6,6 +6,7 @@ import { ArrowLeft, Calendar } from "lucide-react";
 import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guides";
+import PricingEstimator from "@/app/components/utils/PricingEstimator";
 
 export function generateStaticParams() {
   return guides.flatMap((r) => [
@@ -172,9 +173,9 @@ export default function GuidePage({ params }) {
             </div>
           </header>
           {/* Guide body */}
-          <article
-            dir={dir}
-            className="
+          {(() => {
+            const SLOT = "<!-- PRICING_ESTIMATOR_SLOT -->";
+            const articleClassName = `
             html-content
             [&_h2]:text-[clamp(1.25rem,5vw,2.5rem)] [&_h2]:font-bold [&_h2]:text-content-heading/95 [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:leading-snug
             [&_h3]:text-[clamp(1.15rem,5vw,2.25rem)] [&_h3]:font-semibold [&_h3]:text-content-heading [&_h3]:mt-8 [&_h3]:mb-4 [&_h3]:leading-snug
@@ -192,9 +193,35 @@ export default function GuidePage({ params }) {
             [&_tbody_tr:last-child_td]:border-b-0
             [&_thead_th:first-child]:rounded-tl-lg [&_thead_th:last-child]:rounded-tr-lg
             [&_tbody_tr:last-child_td:first-child]:rounded-bl-lg [&_tbody_tr:last-child_td:last-child]:rounded-br-lg
-          "
-            dangerouslySetInnerHTML={{ __html: guide.content[lang] }}
-          />
+          `;
+            const parts = guide.content[lang].split(SLOT);
+            if (parts.length === 1) {
+              return (
+                <article
+                  dir={dir}
+                  className={articleClassName}
+                  dangerouslySetInnerHTML={{ __html: parts[0] }}
+                />
+              );
+            }
+            return (
+              <>
+                <article
+                  dir={dir}
+                  className={articleClassName}
+                  dangerouslySetInnerHTML={{ __html: parts[0] }}
+                />
+                <div className="my-10 sm:my-14">
+                  <PricingEstimator lang={lang} />
+                </div>
+                <article
+                  dir={dir}
+                  className={articleClassName}
+                  dangerouslySetInnerHTML={{ __html: parts[1] }}
+                />
+              </>
+            );
+          })()}
           <Script id="guide-tooltips" strategy="afterInteractive">
             {`
     (() => {

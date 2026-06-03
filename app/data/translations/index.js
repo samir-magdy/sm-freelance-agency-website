@@ -8,6 +8,7 @@ import { contactSection, form } from "./contactSection";
 import a11y from "./a11y";
 import privacy from "./privacy";
 import terms from "./terms";
+import pricingEstimator from "./PricingEstimator";
 const translations = {
   nav,
   navLinks,
@@ -23,6 +24,7 @@ const translations = {
   langToggle,
   privacy,
   terms,
+  pricingEstimator,
 };
 
 export default translations;

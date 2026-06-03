@@ -85,6 +85,10 @@ const resource = {
   <li><strong>Performance and SEO:</strong> Basic SEO setup is included in our professional packages, but advanced SEO services like keyword research, content production, and link building are usually separate engagements.</li>
 </ul>
 
+<h2>Estimate Your Website Cost</h2>
+<p>Use this calculator to get a rough EGP estimate before reaching out. Select your website type, content size, and any add-ons to see a live price.</p>
+<!-- PRICING_ESTIMATOR_SLOT -->
+
 <h2>Why do cheap websites cost more in the long run?</h2>
 <p>The 500 EGP website offer exists, and for any serious business it almost always causes more harm than good. Here is the typical failure pattern we see in Egypt:</p>
 <ul>
@@ -109,8 +113,8 @@ const resource = {
   <thead>
     <tr>
       <th scope="col">نوع الموقع</th>
-      <th>نطاق السعر بالجنيه</th>
-      <th>الفئة المستهدفة</th>
+      <th scope="col">نطاق السعر بالجنيه</th>
+      <th scope="col">الفئة المستهدفة</th>
     </tr>
   </thead>
   <tbody>
@@ -155,6 +159,10 @@ const resource = {
   <li><strong>الاستضافة:</strong> الاستضافة المشتركة سعرها رخيص بس ممكن تخلي الموقع بطيء مع ضغط الزوار أو في أسوأ الأحوال ممكن الموقع ميشتغلش خالص، عكس الاستضافة الخاصة اللي بتضمن كفاءة أعلى.</li>
   <li><strong>الصيانة والدعم الفني:</strong> عقود الصيانة الدورية (الشهرية أو السنوية) دي تكلفة إضافية بتضمن إن الموقع يفضل شغال بكفاءة وإن أي مشكلة تظهر بعد التسليم تتحل بدون تكاليف.</li>
 </ul>
+
+<h2>احسب تكلفة موقعك</h2>
+<p>اختار نوع الموقع وحجم المحتوى والإضافات اللي محتاجها، وهتشوف تقدير السعر على الفور بالجنيه المصري.</p>
+<!-- PRICING_ESTIMATOR_SLOT -->
 
 <h2>فخ الموقع الرخيص: المخاطر الخفية وإزاي تتجنبها</h2>
 <p>لو قعدت تدور وتقارن الأسعار في السوق، هتلاقي مستقل بيعرض عليك الموقع بـ 1,000 جنيه، وفي نفس الوقت هتلاقي شركة تصميم مواقع أو مطور تاني بيعرضوا عليك نفس الموقع بـ 15,000 جنيه. الفرق الضخم ده معناه إن جودة الشغل والقيمة اللي هتاخدها مختلفة تماماً، أو إن فيه تفاصيل ومميزات أساسية مش موجودة أصلاً في العرض الأرخص.</p>
