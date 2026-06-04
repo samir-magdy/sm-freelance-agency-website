@@ -74,7 +74,7 @@ export default async function AboutPage({ params }) {
         <div className="hidden md:block shrink-0 md:w-[30%]">
           <Image
             src={profilePhoto}
-            alt="Samir Magdy, Founder of SM Web Design Studio"
+            alt="Photo of Samir Magdy, Founder of SM Web Design Studio"
             className="w-full h-full object-cover object-top"
             sizes="35vw"
           />

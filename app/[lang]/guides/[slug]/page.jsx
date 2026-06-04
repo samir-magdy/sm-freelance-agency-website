@@ -211,9 +211,7 @@ export default function GuidePage({ params }) {
                   className={articleClassName}
                   dangerouslySetInnerHTML={{ __html: parts[0] }}
                 />
-                {/* <div className="my-10 sm:my-14">
                   <PricingEstimator lang={lang} />
-                </div> */}
                 <article
                   dir={dir}
                   className={articleClassName}

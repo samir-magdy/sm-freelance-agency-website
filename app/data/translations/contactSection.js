@@ -49,5 +49,5 @@ export const form = {
     ar: "حصل خطأ، ياريت تحاول مرة تانية.",
   },
   orWhatsapp: { en: "OR", ar: "أو" },
-  chatInstead: { en: "Reach Us On WhatsApp", ar: "تواصل على الواتساب" },
+  chatInstead: { en: "Reach Us On WhatsApp", ar: "تواصل عبر الواتساب" },
 };

@@ -1,26 +1,28 @@
 const pricingEstimator = {
-  usdExchangeRate: 50,
-
   baseLabel: { en: "Website Type", ar: "نوع الموقع" },
-  scopeLabel: { en: "Content Size", ar: "حجم المحتوى" },
+  scopeLabelByBase: {
+    landing: { en: "Content Size", ar: "حجم المحتوى" },
+    business: { en: "Content Size", ar: "حجم المحتوى" },
+    ecommerce: { en: "Store Size", ar: "كمية المنتجات" },
+  },
   addonsLabel: { en: "Add-ons", ar: "الإضافات" },
-  estimateLabel: { en: "Estimate", ar: "تقدير السعر" },
-  cta: { en: "Get a Free Quote", ar: "احصل على عرض سعر مجاني" },
+  estimateLabel: { en: "Estimate", ar: "تقدير السعر:" },
+  cta: { en: "Get a Free Quote", ar: "احصل على عرض سعر رسمي" },
   disclaimer: {
     en: "Rough estimate only — final pricing is confirmed after a free consultation.",
-    ar: "تقدير تقريبي فقط — السعر النهائي بيتحدد بعد استشارة مجانية.",
+    ar: " السعر المعروض تقدير تقريبي — السعر النهائي بيتحدد بعد الإستشارة.",
   },
 
   bases: [
     {
       id: "landing",
       name: { en: "Landing Page", ar: "صفحة هبوط" },
-      description: { en: "One page, one goal", ar: "صفحة واحدة، هدف واحد" },
+      description: { en: "One page, one goal", ar: " موقع صفحة واحدة" },
       price: 7500,
     },
     {
       id: "business",
-      name: { en: "Business Website", ar: "موقع أعمال" },
+      name: { en: "Business Website", ar: "موقع شركة" },
       description: { en: "Multi-page company site", ar: "موقع متعدد الصفحات" },
       price: 12500,
     },
@@ -36,51 +38,42 @@ const pricingEstimator = {
     landing: [
       {
         name: { en: "Essential", ar: "أساسي" },
-        description: { en: "Up to 5 sections", ar: "حتى 5 أقسام" },
         multiplier: 0,
       },
       {
         name: { en: "Standard", ar: "قياسي" },
-        description: { en: "6–10 sections", ar: "6–10 أقسام" },
         multiplier: 0.5,
       },
       {
         name: { en: "Full", ar: "شامل" },
-        description: { en: "10+ sections", ar: "أكثر من 10 أقسام" },
         multiplier: 1.0,
       },
     ],
     business: [
       {
-        name: { en: "Starter", ar: "بداية" },
-        description: { en: "4–5 pages", ar: "4–5 صفحات" },
+        name: { en: "Essential", ar: "أساسي" },
         multiplier: 0,
       },
       {
         name: { en: "Standard", ar: "قياسي" },
-        description: { en: "6–10 pages", ar: "6–10 صفحات" },
         multiplier: 0.4,
       },
       {
         name: { en: "Full", ar: "شامل" },
-        description: { en: "10+ pages", ar: "أكثر من 10 صفحات" },
         multiplier: 1.0,
       },
     ],
     ecommerce: [
       {
-        name: { en: "Starter", ar: "بداية" },
-        description: { en: "Up to 25 products", ar: "حتى 25 منتج" },
+        name: { en: "Essential", ar: "أساسي" },
         multiplier: 0,
       },
       {
         name: { en: "Standard", ar: "قياسي" },
-        description: { en: "Up to 100 products", ar: "حتى 100 منتج" },
         multiplier: 0.9,
       },
       {
         name: { en: "Full", ar: "شامل" },
-        description: { en: "100+ products", ar: "100+ منتج" },
         multiplier: 2.2,
       },
     ],
@@ -89,10 +82,10 @@ const pricingEstimator = {
   addons: [
     {
       id: "bilingual",
-      name: { en: "Bilingual (AR + EN)", ar: "ثنائي اللغة (عربي + إنجليزي)" },
+      name: { en: "Bilingual (AR + EN)", ar: "ثنائي اللغة" },
       description: {
         en: "Arabic & English, full RTL support",
-        ar: "عربي وإنجليزي مع دعم RTL الكامل",
+        ar: " دعم كامل، عربي وإنجليزي",
       },
       appliesTo: ["landing", "business", "ecommerce"],
       isMultiplier: true,
@@ -105,7 +98,7 @@ const pricingEstimator = {
       name: { en: "SEO Setup", ar: "إعداد SEO" },
       description: {
         en: "Technical SEO from day one",
-        ar: "تهيئة تقنية لجوجل من البداية",
+        ar: "تهيئة لجوجل من البداية",
       },
       appliesTo: ["landing", "business", "ecommerce"],
       isMultiplier: false,
@@ -117,7 +110,7 @@ const pricingEstimator = {
       name: { en: "Copywriting", ar: "كتابة المحتوى" },
       description: {
         en: "Professional marketing copy",
-        ar: "كتابة محتوى تسويقي احترافي",
+        ar: "كتابة محتوى تسويقي",
       },
       appliesTo: ["landing", "business"],
       isMultiplier: false,
@@ -126,10 +119,10 @@ const pricingEstimator = {
     },
     {
       id: "cms",
-      name: { en: "CMS / Admin Panel", ar: "لوحة تحكم المحتوى" },
+      name: { en: "CMS / Admin Panel", ar: "لوحة تحكم" },
       description: {
         en: "Edit your content without a developer",
-        ar: "تعديل المحتوى بنفسك بدون مبرمج",
+        ar: "تعديل المحتوى بنفسك",
       },
       appliesTo: ["landing", "business"],
       isMultiplier: false,
