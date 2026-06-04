@@ -1,11 +1,11 @@
 const termsOfService = {
-  heading: { 
-    en: "Terms of Service", 
-    ar: "شروط الخدمة" 
+  heading: {
+    en: "Terms of Service",
+    ar: "شروط الخدمة"
   },
   subheading: {
-    en: "Last Updated: May 1st 2026. Please read these terms and conditions carefully before using Our Service.",
-    ar: "آخر تحديث: 1 مايو 2026. يرجى قراءة هذه الشروط والأحكام بعناية قبل استخدام خدمتنا.",
+    en: "Last Updated: June 4th 2026. Please read these terms and conditions carefully before using Our Service.",
+    ar: "آخر تحديث: 4 يونيو 2026. يرجى قراءة هذه الشروط والأحكام بعناية قبل استخدام خدمتنا.",
   },
   items: [
     {
@@ -24,8 +24,8 @@ const termsOfService = {
         ar: "2. الخدمات المقدمة",
       },
       content: {
-        en: "SM Web Design Studio provides digital services including, but not limited to, web design, development, and branding for various industries. The specific scope, deliverables, timeline, and cost of any project will be outlined in a separate, mutually agreed-upon formal proposal or contract.",
-        ar: "تقدم SM Web Design Studio خدمات رقمية تشمل، على سبيل المثال لا الحصر، تصميم وتطوير مواقع الويب، وبناء العلامات التجارية لمختلف الصناعات. سيتم تحديد النطاق الدقيق والمخرجات والجدول الزمني والتكلفة الخاصة بأي مشروع في اقتراح أو عقد رسمي منفصل متفق عليه بين الطرفين.",
+        en: "SM Web Design Studio provides digital services including, but not limited to, web design, development, and branding for various industries. The specific scope, deliverables, timeline, and cost of any project will be outlined in a separate, mutually agreed-upon formal proposal or contract, which supersedes these general terms where they conflict.",
+        ar: "تقدم SM Web Design Studio خدمات رقمية تشمل، على سبيل المثال لا الحصر، تصميم وتطوير مواقع الويب وبناء الهوية البصرية لمختلف القطاعات. سيتم تحديد النطاق الدقيق والمخرجات والجدول الزمني والتكلفة الخاصة بأي مشروع في عرض أو عقد رسمي منفصل متفق عليه بين الطرفين، ويُقدَّم هذا العرض على هذه الشروط العامة عند أي تعارض بينهما.",
       },
     },
     {
@@ -34,34 +34,54 @@ const termsOfService = {
         ar: "3. التقديرات والتسعير",
       },
       content: {
-        en: "Any starting prices displayed on our website are strictly for informational purposes and do not constitute a final, binding quote or contract. Actual project costs will be determined after a full consultation and scope review, and will be presented to you in a formal proposal.",
-        ar: "أي أسعار ابتدائية معروضة على موقعنا هي للأغراض التثقيفية فقط ولا تشكل عرض سعر أو عقدًا نهائيًا وملزمًا. سيتم تحديد تكاليف المشروع الفعلية بعد إجراء استشارة كاملة ومراجعة النطاق، وسيتم تقديمها لك في اقتراح رسمي.",
+        en: "Any starting prices or estimates displayed on our website are strictly for informational purposes and do not constitute a final, binding quote or contract. Actual project costs will be determined after a full consultation and scope review, and will be presented to you in a formal proposal.",
+        ar: "أي أسعار ابتدائية أو تقديرات معروضة على موقعنا هي للأغراض الاستعلامية فقط ولا تشكل عرض سعر أو عقدًا نهائيًا وملزمًا. سيتم تحديد تكاليف المشروع الفعلية بعد إجراء استشارة كاملة ومراجعة النطاق، وسيتم تقديمها لك في عرض رسمي.",
       },
     },
     {
       title: {
-        en: "4. Intellectual Property and Portfolio Rights",
-        ar: "4. الملكية الفكرية وحقوق معرض الأعمال",
+        en: "4. Payment Terms",
+        ar: "4. شروط الدفع",
       },
       content: {
-        en: "Upon full payment for our services, you will own the final digital products and deliverables as outlined in your project contract. However, SM Web Design Studio is proud of the work we do. Unless a Non-Disclosure Agreement (NDA) is explicitly signed before the commencement of a project, we reserve the right to feature completed projects, screenshots, and case studies in our website's portfolio and marketing materials.",
-        ar: "عند دفع كامل رسوم خدماتنا، ستمتلك المنتجات الرقمية النهائية والمخرجات كما هو موضح في عقد مشروعك. ومع ذلك، تفتخر SM Web Design Studio بالعمل الذي نقوم به. ما لم يتم توقيع اتفاقية عدم إفشاء (NDA) صراحةً قبل بدء المشروع، فإننا نحتفظ بالحق في عرض المشاريع المكتملة، ولقطات الشاشة، ودراسات الحالة في معرض أعمال موقعنا والمواد التسويقية.",
+        en: "Projects are billed in two installments:\n\n• 50% deposit is required before any design or development work begins. This deposit is non-refundable and secures your project slot.\n\n• The remaining 50% is due upon project completion, before the final website files or credentials are handed over.\n\nWork will not commence until the deposit is received and confirmed. The final deliverables will not be transferred until the remaining balance is paid in full.",
+        ar: "تُسدَّد مبالغ المشاريع على دفعتين:\n\n• دفعة مقدمة بنسبة 50% مطلوبة قبل البدء في أي أعمال تصميم أو تطوير، وهي غير قابلة للاسترداد وتضمن حجز موعد مشروعك.\n\n• يُستحق سداد الـ 50% المتبقية عند اكتمال المشروع، قبل تسليم ملفات الموقع النهائية أو بيانات الوصول.\n\nلن يبدأ العمل إلا بعد استلام الدفعة المقدمة وتأكيدها. ولن يتم تسليم المخرجات النهائية إلا بعد سداد الرصيد المتبقي بالكامل.",
       },
     },
     {
       title: {
-        en: "5. User Representations",
-        ar: "5. إقرارات المستخدم",
+        en: "5. Refund and Cancellation Policy",
+        ar: "5. سياسة الاسترداد والإلغاء",
+      },
+      content: {
+        en: "The 50% deposit is non-refundable under all circumstances, as it compensates for time and resources allocated to your project.\n\nOnce a design has been presented and approved by the client, no refund will be issued for any reason. Approval may be given explicitly (written or verbal confirmation) or implicitly (proceeding to the development phase without objection).\n\nIf you choose to cancel a project after approval of the design, the deposit is forfeited and no further charges will apply, provided development has not yet begun. If development has already commenced, the remaining balance or a pro-rated portion may be owed depending on the work completed, as outlined in the project proposal.",
+        ar: "الدفعة المقدمة البالغة 50% غير قابلة للاسترداد في جميع الأحوال، إذ تُعوَّض بها الوقت والموارد المخصصة لمشروعك.\n\nبمجرد تقديم التصميم واعتماده من قِبل العميل، لن يتم إصدار أي استرداد لأي سبب كان. قد يكون الاعتماد صريحًا (تأكيد كتابي أو شفهي) أو ضمنيًا (الانتقال إلى مرحلة التطوير دون اعتراض).\n\nإذا اخترت إلغاء المشروع بعد اعتماد التصميم، تُصادَر الدفعة المقدمة ولا تُطبَّق أي رسوم إضافية، شريطة ألا يكون التطوير قد بدأ. أما إذا كان التطوير قد بدأ فعلًا، فقد يُستحق سداد الرصيد المتبقي أو جزء منه بحسب العمل المنجز، وفق ما هو محدد في عرض المشروع.",
+      },
+    },
+    {
+      title: {
+        en: "6. Intellectual Property and Portfolio Rights",
+        ar: "6. الملكية الفكرية وحقوق معرض الأعمال",
+      },
+      content: {
+        en: "Upon receipt of full payment, you will own the final digital products and deliverables as outlined in your project contract. Ownership does not transfer until the final balance is paid in full.\n\nUnless a Non-Disclosure Agreement (NDA) is explicitly signed before the commencement of a project, SM Web Design Studio reserves the right to feature completed projects, screenshots, and case studies in our portfolio and marketing materials.",
+        ar: "عند استلام الدفع الكامل، ستمتلك المنتجات الرقمية النهائية والمخرجات كما هو موضح في عقد مشروعك. لا تنتقل الملكية إلا بعد سداد الرصيد النهائي بالكامل.\n\nما لم يتم توقيع اتفاقية عدم إفشاء (NDA) صراحةً قبل بدء المشروع، تحتفظ SM Web Design Studio بالحق في عرض المشاريع المكتملة ولقطات الشاشة ودراسات الحالة في معرض أعمالها ومواد التسويق.",
+      },
+    },
+    {
+      title: {
+        en: "7. User Representations",
+        ar: "7. إقرارات المستخدم",
       },
       content: {
         en: "By using the Site, you represent and warrant that all registration or inquiry information you submit will be true, accurate, current, and complete. You agree that you will not use the Site for any illegal or unauthorized purpose, and you will not access the Site through automated or non-human means, whether through a bot, script, or otherwise.",
-        ar: "باستخدامك للموقع، فإنك تقر وتضمن أن جميع معلومات التسجيل أو الاستفسار التي تقدمها ستكون صحيحة ودقيقة وحديثة وكاملة. توافق على أنك لن تستخدم الموقع لأي غرض غير قانوني أو غير مصرح به، ولن تصل إلى الموقع من خلال وسائل آلية أو غير بشرية، سواء من خلال روبوت (bot) أو برنامج نصي (script) أو غير ذلك.",
+        ar: "باستخدامك للموقع، فإنك تقر وتضمن أن جميع معلومات التسجيل أو الاستفسار التي تقدمها ستكون صحيحة ودقيقة وحديثة وكاملة. توافق على أنك لن تستخدم الموقع لأي غرض غير قانوني أو غير مصرح به، ولن تصل إلى الموقع من خلال وسائل آلية أو غير بشرية.",
       },
     },
     {
       title: {
-        en: "6. Limitation of Liability",
-        ar: "6. حدود المسؤولية",
+        en: "8. Limitation of Liability",
+        ar: "8. حدود المسؤولية",
       },
       content: {
         en: "In no event will SM Web Design Studio, or our directors, employees, or agents, be liable to you or any third party for any direct, indirect, consequential, exemplary, incidental, special, or punitive damages arising from your use of the site or our services, even if we have been advised of the possibility of such damages.",
@@ -70,12 +90,12 @@ const termsOfService = {
     },
     {
       title: {
-        en: "7. Governing Law",
-        ar: "7. القانون الحاكم",
+        en: "9. Governing Law and Jurisdiction",
+        ar: "9. القانون الحاكم والاختصاص القضائي",
       },
       content: {
-        en: "These Terms are governed by the laws that apply to this agreement, and any disputes arising out of or in connection with these Terms will normally be resolved in a competent court or through arbitration, as appropriate. If your local laws provide rights that cannot be waived, those laws will apply instead.",
-        ar: "تخضع هذه الشروط للقوانين التي تنطبق على هذه الاتفاقية، وعادة ما يتم حل أي نزاعات تنشأ عن هذه الشروط أو تتعلق بها في محكمة مختصة أو من خلال التحكيم، حسب الاقتضاء. إذا كانت قوانينك المحلية تنص على حقوق لا يمكن التنازل عنها، فسيتم تطبيق تلك القوانين بدلاً من ذلك.",
+        en: "These Terms are governed by the laws of the Arab Republic of Egypt. Any disputes arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the competent courts of Cairo, Egypt.",
+        ar: "تخضع هذه الشروط لقوانين جمهورية مصر العربية. تختص محاكم القاهرة المصرية المختصة حصريًا بالنظر في أي نزاعات تنشأ عن هذه الشروط أو تتعلق بها.",
       },
     },
   ],

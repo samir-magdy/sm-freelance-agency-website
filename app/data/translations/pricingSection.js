@@ -8,8 +8,8 @@ export const pricingCards = {
     ar: "اختار الموقع اللي يناسب احتياجاتك",
   },
   trustStrip: {
-    en: "All prices in EGP · No recurring USD fees · No commercial register required",
-    ar: "كل الأسعار بالجنيه · من غير اشتراكات بالدولار · من غير سجل تجاري",
+    en: '<p>Not how these prices work?</p><p>Read our guide on <a href="/en/guides/website-cost-in-egypt">the cost of a website in Egypt</a>.</p>',
+    ar: '<p>مش عارف المشروع المفروض يكلف قد إيه؟</p><p>اقرأ دليلنا عن <a href="/ar/guides/website-cost-in-egypt">تكلفة تصميم موقع في مصر</a>.</p>',
   },
   startsAt: {
     en: "Starts at",
@@ -31,7 +31,7 @@ export const pricingCards = {
         ar: "صفحة هبوط",
       },
       tagline: {
-        en: "A single-page website built to drive one action — a WhatsApp message, a booking, or a sale. <em>Perfect for freelancers, solo service providers, doctors moving off Vezeeta, and Instagram sellers ready to look credible.</em>",
+        en: "A single-page website built to drive one action like a WhatsApp message, a booking, or filling out a form. <em>Perfect for stratups, freelancers and marketing campaigns.</em>",
         ar: "صفحة واحدة هدفها تخلي العميل ياخد قرار سريع — يبعت واتساب، يحجز معاد، أو يدفع. <em>مثالية للفريلانسرز، مقدمي الخدمات، الدكاترة اللي عايزين بديل لفيزيتا، وتجار الانستجرام اللي عايزين شكل احترافي.</em>",
       },
       price: "7,500",
@@ -43,7 +43,7 @@ export const pricingCards = {
         ar: "موقع أعمال",
       },
       tagline: {
-        en: "A multi-page website that presents your company, services, portfolio, and contact in detail. <em>Ideal for clinics, consultancies, agencies, and established service businesses that need credibility on Google — bilingual Arabic/English included by default.</em>",
+        en: "A multi-page website that presents your company in full detail. <em>Ideal for more established businesses that have a lot to show and tell.</em>",
         ar: "موقع متعدد الصفحات بيعرض شركتك، خدماتك، أعمالك، وبيانات التواصل بشكل احترافي. <em>مثالي للعيادات، شركات الاستشارات، الوكالات، والشركات اللي عايزة وجود قوي على جوجل — عربي وإنجليزي من غير أي تكلفة إضافية.</em>",
       },
       price: "12,500",
@@ -55,7 +55,7 @@ export const pricingCards = {
         ar: "متجر إلكتروني",
       },
       tagline: {
-        en: "A full Shopify store with inventory, checkout, and shipping handled for you. We integrate local payment methods — Paymob, InstaPay, Vodafone Cash, and Fawry — alongside card payments. <em>Built for online clothing brands, handmade sellers, dropshippers, and anyone tired of verifying InstaPay screenshots manually on WhatsApp.</em>",
+        en: "A Shopify store that automates the process of selling your products online. <em>Ideal for anyone who wants to sell their products online.</em>",
         ar: "متجر شوبيفاي متكامل بنديره من الألف للياء — مخزون، دفع، وشحن. بنربط بوابات الدفع المحلية: باي موب، انستا باي، فودافون كاش، وفوري، جنب الدفع بالكارت. <em>مناسب لتجار اللبس أونلاين، الهاند ميد، الدروبشيبينج، وأي حد تعب من تأكيد سكرين شوت انستا باي يدوي على الواتساب.</em>",
       },
       price: "15,500",

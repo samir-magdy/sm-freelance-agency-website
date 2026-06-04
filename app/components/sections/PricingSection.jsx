@@ -26,9 +26,7 @@ export default function PricingSection({ lang }) {
             <p className="text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)] max-w-2xl mx-auto">
               {t.subheading[lang]}
             </p>
-            <p className="mt-4 text-center text-content-muted/70 text-sm md:text-base font-medium max-w-3xl mx-auto leading-relaxed">
-              {t.trustStrip[lang]}
-            </p>
+            
           </div>
 
           {/* Cards Grid - Added md:grid-cols-2 to handle scaled screens gracefully */}
@@ -39,7 +37,7 @@ export default function PricingSection({ lang }) {
                 onClick={smoothScroll}
                 href="#contact"
                 /* Trimmed internal padding slightly for mobile/scaled views */
-                className="max-w-4xl reveal-element group flex flex-col p-6 sm:p-8 lg:p-10 rounded-[2rem] border border-border-subtle bg-surface-card hover:border-gold/40 hover:bg-surface-low hover:shadow-2xl hover:shadow-gold/5 transition-all duration-500 ease-out hover:-translate-y-1.5"
+                className="max-w-4xl reveal-element group flex flex-col p-6 sm:p-8 lg:p-10 rounded-4xl border border-border-subtle bg-surface-card hover:border-gold/40 hover:bg-surface-low hover:shadow-2xl hover:shadow-gold/5 transition-all duration-500 ease-out hover:-translate-y-1.5"
               >
                 {/* Top Half: Title & Tagline */}
                 {/* Reduced mb-10 to mb-6 to stop vertical bloating */}
@@ -97,6 +95,10 @@ export default function PricingSection({ lang }) {
               </a>
             ))}
           </div>
+          <div
+              className="mt-4 sm:mt-10 reveal-element text-center text-content-muted/70 text-base sm:text-[clamp(1.2rem,2vw,1.4rem)] font-medium max-w-3xl mx-auto leading-relaxed [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 [&_a]:hover:text-gold-light [&_a]:transition-colors"
+              dangerouslySetInnerHTML={{ __html: t.trustStrip[lang] }}
+            />
         </div>
     </section>
   );

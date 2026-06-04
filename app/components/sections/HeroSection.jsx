@@ -28,6 +28,20 @@ export default function HeroSection({ lang }) {
     };
   }, []);
 
+  useEffect(() => {
+    const cta = document.getElementById("cta-main");
+    if (!cta) return;
+
+    const onEnd = (e) => {
+      if (e.animationName === "heroRiseIn") {
+        cta.classList.add("cta-shimmer-ready");
+      }
+    };
+
+    cta.addEventListener("animationend", onEnd);
+    return () => cta.removeEventListener("animationend", onEnd);
+  }, []);
+
   return (
     <section
       id="home"
@@ -73,7 +87,7 @@ export default function HeroSection({ lang }) {
           <a
             id="cta-main"
             href="#contact"
-            className="cta-primary hero-cta-entrance font-semibold bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1rem,2vw,1.7rem)] rtl:text-[clamp(16px,1.8vw,26px)] px-6 sm:px-10 py-2.5 rounded-2xl"
+            className="cta-primary rtl:pb-3.5 hero-cta-entrance font-semibold bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1rem,2vw,1.7rem)] rtl:text-[clamp(16px,1.8vw,26px)] px-6 sm:px-10 py-2.5 rounded-2xl"
           >
             {hero.primaryCta[lang]}
           </a>

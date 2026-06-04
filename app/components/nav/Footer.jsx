@@ -19,7 +19,7 @@ export default function Footer() {
       dir="ltr"
       className="bg-background/10 border-t border-border-subtle py-4"
     >
-      <div className="flex flex-col items-center justify-center gap-4 text-content-muted">
+      <div className="flex flex-col items-center justify-center gap-3 sm:gap-2.5 text-content-muted">
         <div className="flex items-center">
           <SocialIcons />
           <span

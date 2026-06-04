@@ -89,18 +89,18 @@ export default function ContactSection({ lang }) {
   const selectClass = (value) =>
     `${selectBaseClass} ${value ? "text-content-heading" : "text-content-muted"}`;
   const labelClass =
-    "block text-caption font-bold text-content-muted mb-2 ms-1";
+    "block text-base font-bold text-content-muted mb-2 ms-1";
 
   return (
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="pt-4 pb-12 px-4"
+      className="pt-4 pb-12 sm:pb-8 px-4"
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="reveal">
         <div className="max-w-3xl mx-auto">
-          <div className="mb-8 md:mb-12">
+          <div className="mb-8">
             <h2
               id="contact-heading"
               className="font-bold text-heading text-center mb-2"
@@ -113,7 +113,7 @@ export default function ContactSection({ lang }) {
           </div>
 
           <form
-            className="text-start relative sm:min-h-[540px]"
+            className="text-start relative sm:min-h-140"
             onSubmit={handleSubmit}
             aria-label={t.a11y.contactForm[lang]}
           >
@@ -170,7 +170,7 @@ export default function ContactSection({ lang }) {
                       <option value="phone-call">{t.form.phoneCall[lang]}</option>
                       <option value="email">{t.form.email[lang]}</option>
                     </select>
-                    <div className="pointer-events-none absolute inset-y-0 end-4 flex items-center text-content-muted">
+                    <div className="pointer-events-none absolute inset-y-0 inset-e-4 flex items-center text-content-muted">
                       <ChevronDown />
                     </div>
                   </div>

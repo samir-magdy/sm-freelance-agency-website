@@ -1,11 +1,11 @@
 const privacyPolicy = {
-  heading: { 
-    en: "Privacy Policy", 
-    ar: "سياسة الخصوصية" 
+  heading: {
+    en: "Privacy Policy",
+    ar: "سياسة الخصوصية"
   },
   subheading: {
-    en: "Last Updated: May 1st 2026. Welcome to SM Web Design Studio. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website and use our services.",
-    ar: "آخر تحديث: 1 مايو 2026. مرحبًا بك في SM Web Design Studio. نحن ملتزمون بحماية معلوماتك الشخصية وحقك في الخصوصية. تشرح سياسة الخصوصية هذه كيف نقوم بجمع واستخدام وحماية معلوماتك عند زيارة موقعنا واستخدام خدماتنا.",
+    en: "Last Updated: June 4th 2026. Welcome to SM Web Design Studio. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website and use our services.",
+    ar: "آخر تحديث: 4 يونيو 2026. مرحبًا بك في SM Web Design Studio. نحن ملتزمون بحماية معلوماتك الشخصية وحقك في الخصوصية. تشرح سياسة الخصوصية هذه كيف نقوم بجمع واستخدام وحماية معلوماتك عند زيارة موقعنا واستخدام خدماتنا.",
   },
   items: [
     {
@@ -14,8 +14,8 @@ const privacyPolicy = {
         ar: "1. المعلومات التي نجمعها",
       },
       content: {
-        en: "We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our products and Services. When you use our contact forms, we collect your name, email address, phone number, and details regarding your project inquiry. Like many businesses, we also automatically collect certain information when you visit, use, or navigate the site. This information does not reveal your specific identity but may include device and usage information, such as your IP address, browser and device characteristics, and operating system.",
-        ar: "نحن نجمع المعلومات الشخصية التي تقدمها لنا طواعية عندما تعرب عن اهتمامك بالحصول على معلومات عنا أو عن منتجاتنا وخدماتنا. عندما تستخدم نماذج الاتصال الخاصة بنا، نقوم بجمع اسمك وعنوان بريدك الإلكتروني ورقم هاتفك وتفاصيل حول استفسار مشروعك. مثل العديد من الشركات، نقوم تلقائيًا بجمع معلومات معينة عندما تزور الموقع أو تستخدمه أو تتصفحه. هذه المعلومات لا تكشف عن هويتك المحددة ولكنها قد تتضمن معلومات الجهاز والاستخدام.",
+        en: "We collect personal information that you voluntarily provide when you submit a contact or inquiry form. This includes your name, email address, phone number, preferred contact method, and any project details you choose to share.\n\nWe also automatically collect your IP address when you submit a form. This is used solely for rate-limiting purposes — to prevent automated abuse of our contact system — and is not used for tracking, profiling, or marketing.",
+        ar: "نحن نجمع المعلومات الشخصية التي تقدمها طواعية عند إرسال نموذج التواصل أو الاستفسار، وتشمل: اسمك، وعنوان بريدك الإلكتروني، ورقم هاتفك، وطريقة التواصل المفضلة لديك، وأي تفاصيل تتعلق بمشروعك.\n\nكما نجمع تلقائيًا عنوان IP الخاص بك عند إرسال النموذج، وذلك حصريًا لأغراض تحديد معدل الإرسال ومنع الإساءة الآلية لنظام التواصل لدينا، ولا يُستخدم لأغراض التتبع أو تحليل السلوك أو التسويق.",
       },
     },
     {
@@ -24,48 +24,58 @@ const privacyPolicy = {
         ar: "2. كيف نستخدم معلوماتك",
       },
       content: {
-        en: "We use the information we collect or receive to respond to your inquiries, provide you with project estimates, and facilitate the delivery of our web design and development services. We also use this data to improve our website, services, and user experience, and to send administrative information to you, such as changes to our terms, conditions, and policies.",
-        ar: "نحن نستخدم المعلومات التي نجمعها أو نتلقاها للرد على استفساراتك وتزويدك بتقديرات المشروع وتسهيل تقديم خدمات تصميم وتطوير الويب لدينا. كما نستخدم هذه البيانات لتحسين موقعنا وخدماتنا وتجربة المستخدم، وإرسال المعلومات الإدارية إليك، مثل التغييرات في الشروط والأحكام والسياسات الخاصة بنا.",
+        en: "We use the information you provide to respond to your inquiry, prepare project estimates, and deliver our web design and development services. The legal basis for this processing is the performance of a pre-contractual or contractual relationship with you, as well as our legitimate interest in preventing abuse of our systems.\n\nWe do not sell, rent, or share your personal information with third parties for marketing purposes.",
+        ar: "نستخدم المعلومات التي تقدمها للرد على استفسارك، وإعداد تقديرات المشروع، وتقديم خدمات تصميم وتطوير المواقع. يستند هذا المعالجة إلى ضرورة تنفيذ علاقة تعاقدية أو ما قبل التعاقد معك، فضلاً عن مصلحتنا المشروعة في منع إساءة استخدام أنظمتنا.\n\nنحن لا نبيع معلوماتك الشخصية أو نؤجرها أو نشاركها مع أطراف ثالثة لأغراض تسويقية.",
       },
     },
     {
       title: {
-        en: "3. Third-Party Services and External Links",
-        ar: "3. خدمات الطرف الثالث والروابط الخارجية",
+        en: "3. Third-Party Service Providers",
+        ar: "3. مزودو الخدمات من الأطراف الثالثة",
       },
       content: {
-        en: "Our website includes external communication links, specifically WhatsApp integration. Please note that clicking these links will take you to third-party platforms. Any information you share on these platforms is governed by their respective privacy policies, not ours. We encourage you to review WhatsApp's privacy policy before sharing personal data through their application.",
-        ar: "يتضمن موقعنا روابط اتصال خارجية، وتحديداً تكامل WhatsApp. يرجى ملاحظة أن النقر على هذه الروابط سيأخذك إلى منصات تابعة لجهات خارجية. أي معلومات تشاركها على هذه المنصات تخضع لسياسات الخصوصية الخاصة بها، وليس لسياستنا. نشجعك على مراجعة سياسة خصوصية WhatsApp قبل مشاركة البيانات الشخصية من خلال تطبيقهم.",
+        en: "To operate our website and deliver our services, we share data with the following third-party processors:\n\n• Vercel (vercel.com) — our hosting provider. All website traffic, including form submissions, is processed through Vercel's infrastructure.\n\n• Resend (resend.com) — our email delivery provider. When you submit a contact form, your name, contact details, and message are transmitted to Resend to deliver the notification to our team.\n\n• Upstash (upstash.com) — our Redis database provider. Your IP address is stored temporarily in Upstash for rate-limiting purposes and is automatically deleted after 3 minutes.\n\n• WhatsApp (Meta Platforms) — our website includes a direct WhatsApp contact link. If you choose to use it, you are leaving our site and any information you share is governed by Meta's privacy policy.\n\nEach of these providers operates under their own privacy and data protection policies. We encourage you to review them.",
+        ar: "لتشغيل موقعنا وتقديم خدماتنا، نشارك البيانات مع مزودي الخدمات التاليين:\n\n• Vercel (vercel.com) — مزود الاستضافة لدينا. يمر جميع حركة مرور الموقع، بما في ذلك نماذج التواصل، عبر بنية Vercel التحتية.\n\n• Resend (resend.com) — مزود خدمة تسليم البريد الإلكتروني. عند إرسال نموذج التواصل، يتم نقل اسمك وبيانات التواصل والرسالة إلى Resend لتوصيل الإشعار إلى فريقنا.\n\n• Upstash (upstash.com) — مزود قاعدة بيانات Redis. يتم تخزين عنوان IP الخاص بك مؤقتًا في Upstash لأغراض تحديد معدل الإرسال، ويُحذف تلقائيًا بعد 3 دقائق.\n\n• WhatsApp (Meta Platforms) — يتضمن موقعنا رابط تواصل مباشر عبر WhatsApp. إذا اخترت استخدامه، فأنت تغادر موقعنا وأي معلومات تشاركها تخضع لسياسة خصوصية Meta.\n\nيعمل كل مزود من هؤلاء وفق سياسات الخصوصية وحماية البيانات الخاصة به. نشجعك على مراجعتها.",
       },
     },
     {
       title: {
-        en: "4. Data Security",
-        ar: "4. أمن البيانات",
+        en: "4. Data Retention",
+        ar: "4. مدة الاحتفاظ بالبيانات",
       },
       content: {
-        en: "We have implemented appropriate technical and organizational security measures designed to protect the security of any personal information we process. However, please also remember that we cannot guarantee that the internet itself is 100% secure. Although we will do our best to protect your personal information, transmission of personal information to and from our website is at your own risk.",
-        ar: "لقد قمنا بتنفيذ تدابير أمنية فنية وتنظيمية مناسبة مصممة لحماية أمن أي معلومات شخصية نقوم بمعالجتها. ومع ذلك، يرجى تذكر أيضًا أننا لا نستطيع ضمان أمان الإنترنت بنسبة 100%. على الرغم من أننا سنبذل قصارى جهدنا لحماية معلوماتك الشخصية، إلا أن نقل المعلومات الشخصية من وإلى موقعنا يكون على مسؤوليتك الخاصة.",
+        en: "IP addresses collected for rate-limiting are automatically deleted from Upstash after 3 minutes. Form submission data (name, contact details, project message) is retained in our email system for as long as necessary to manage our client relationships and fulfil any ongoing service obligations, after which it is deleted.",
+        ar: "يتم حذف عناوين IP المجمعة لأغراض تحديد معدل الإرسال تلقائيًا من Upstash بعد 3 دقائق. يتم الاحتفاظ ببيانات نماذج التواصل (الاسم وبيانات التواصل ورسالة المشروع) في نظام البريد الإلكتروني لدينا طالما كان ذلك ضروريًا لإدارة علاقاتنا مع العملاء والوفاء بأي التزامات خدمية جارية، وبعد ذلك يتم حذفها.",
       },
     },
     {
       title: {
-        en: "5. Your Privacy Rights",
-        ar: "5. حقوق الخصوصية الخاصة بك",
+        en: "5. Data Security",
+        ar: "5. أمن البيانات",
       },
       content: {
-        en: "Depending on your location, you may have certain rights regarding your personal information, such as the right to request access to, correct, or delete the data we hold about you. To make such a request, please contact us using the details provided below.",
-        ar: "اعتمادًا على موقعك، قد تكون لك حقوق معينة تتعلق بمعلوماتك الشخصية، مثل الحق في طلب الوصول إلى البيانات التي نحتفظ بها عنك أو تصحيحها أو حذفها. لتقديم مثل هذا الطلب، يرجى الاتصال بنا باستخدام التفاصيل الموضحة أدناه.",
+        en: "We have implemented appropriate technical and organizational security measures to protect the personal information we process. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.",
+        ar: "قمنا بتطبيق تدابير أمنية فنية وتنظيمية مناسبة لحماية المعلومات الشخصية التي نعالجها. ومع ذلك، لا توجد طريقة نقل عبر الإنترنت آمنة بنسبة 100%، ولا يمكننا ضمان الأمان المطلق.",
       },
     },
     {
       title: {
-        en: "6. Contact Us",
-        ar: "6. اتصل بنا",
+        en: "6. Your Rights",
+        ar: "6. حقوقك",
       },
       content: {
-        en: "If you have questions or comments about this notice, you may email us at studio@samirmagdy.com or contact us directly through the website. We are dedicated to resolving any privacy concerns quickly and transparently.",
-        ar: "إذا كانت لديك أسئلة أو تعليقات حول هذا الإشعار، يمكنك مراسلتنا عبر البريد الإلكتروني على studio@samirmagdy.com أو الاتصال بنا مباشرة من خلال الموقع. نحن ملتزمون بحل أي مخاوف تتعلق بالخصوصية بسرعة وشفافية.",
+        en: "Under Egypt's Personal Data Protection Law (Law No. 151 of 2020) and applicable international standards, you have the right to: access the personal data we hold about you; request correction of inaccurate data; request deletion of your data; object to or restrict our processing of your data; and withdraw any consent you have given at any time.\n\nTo exercise any of these rights, contact us at studio@samirmagdy.com. We will respond within a reasonable timeframe.",
+        ar: "بموجب قانون حماية البيانات الشخصية المصري (القانون رقم 151 لسنة 2020) والمعايير الدولية المعمول بها، يحق لك: الوصول إلى البيانات الشخصية التي نحتفظ بها عنك؛ طلب تصحيح البيانات غير الدقيقة؛ طلب حذف بياناتك؛ الاعتراض على معالجتنا لبياناتك أو تقييدها؛ وسحب أي موافقة قدمتها في أي وقت.\n\nللممارسة أي من هذه الحقوق، تواصل معنا على studio@samirmagdy.com. وسنرد في غضون وقت معقول.",
+      },
+    },
+    {
+      title: {
+        en: "7. Contact Us",
+        ar: "7. تواصل معنا",
+      },
+      content: {
+        en: "If you have questions or concerns about this Privacy Policy or how we handle your data, you may email us at studio@samirmagdy.com or use the contact form on our website. We are committed to resolving any privacy concerns promptly and transparently.",
+        ar: "إذا كانت لديك أسئلة أو مخاوف بشأن سياسة الخصوصية هذه أو طريقة تعاملنا مع بياناتك، يمكنك مراسلتنا على studio@samirmagdy.com أو استخدام نموذج التواصل على موقعنا. نحن ملتزمون بمعالجة أي مخاوف تتعلق بالخصوصية بسرعة وشفافية.",
       },
     },
   ],

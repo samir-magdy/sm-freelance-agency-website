@@ -28,7 +28,7 @@
   --color-icon: oklch(68.4% 0.0252 267.2);
   --color-gold: oklch(76.7% 0.1399 91.2);
   --color-gold-light: oklch(78.4% 0.1605 86.5);
-  --color-gold-dark: oklch(52% 0.0847 92.2);
+  --color-gold-dark: oklch(60% 0.105 92.2);
 
   --animate-showcase-in: showcaseTextIn 0.45s cubic-bezier(0.25,0,0,1) both;
   --color-success: #10b981;
@@ -231,12 +231,12 @@ html.hero-played .hero-cta-entrance {
   animation: ctaGlowPulse 3.5s ease-in-out 0.5s infinite;
 }
 
-.hero-cta-entrance::before {
-  animation: ctaInitialShimmer 0.8s ease-out 2.6s forwards;
+.hero-cta-entrance.cta-shimmer-ready::before {
+  animation: ctaInitialShimmer 0.8s ease-out 0.1s forwards;
 }
 
-[dir="rtl"] .hero-cta-entrance::before {
-  animation: ctaInitialShimmerRtl 0.8s ease-out 2.6s forwards;
+[dir="rtl"] .hero-cta-entrance.cta-shimmer-ready::before {
+  animation: ctaInitialShimmerRtl 0.8s ease-out 0.1s forwards;
 }
 
 @keyframes ctaInitialShimmer {
@@ -336,14 +336,14 @@ html.hero-played .hero-cta-entrance {
    ══════════════════════════════════════ */
 
 .html-content a {
-  color: rgb(86, 86, 255);
+  color: var(--color-gold);
   text-decoration: underline;
   text-underline-offset: 3px;
-  transition: opacity 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .html-content a:hover {
-  opacity: 0.9;
+  color: var(--color-gold-light);
 }
 
 .html-content abbr {
@@ -418,12 +418,30 @@ html.hero-played .hero-cta-entrance {
    6. Primary CTA — Shimmer Effect + Conversion Animations
    ══════════════════════════════════════
    ::before → one-time initial shimmer sweep on hero CTA (fires at 2.6s)
-   ::after  → hover shimmer (re-fires each hover via animation reset)
    ══════════════════════════════════════ */
+
+@property --cta-hover-mix {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
 
 .cta-primary {
   position: relative;
   overflow: hidden;
+  --cta-hover-mix: 0%;
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in oklch, var(--color-gold-light) var(--cta-hover-mix), var(--color-gold)),
+    color-mix(in oklch, var(--color-gold) var(--cta-hover-mix), var(--color-gold-dark))
+  );
+  transition: --cta-hover-mix 0.5s ease, opacity 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cta-primary:hover {
+    --cta-hover-mix: 100%;
+  }
 }
 
 .cta-primary::before {
@@ -454,56 +472,6 @@ html.hero-played .hero-cta-entrance {
   translate: 110% 0;
 }
 
-.cta-primary::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    105deg,
-    transparent 35%,
-    hsl(0 0% 100% / 0.25) 45%,
-    hsl(0 0% 100% / 0.35) 50%,
-    hsl(0 0% 100% / 0.25) 55%,
-    transparent 65%
-  );
-  translate: -100% 0;
-  pointer-events: none;
-  animation: none;
-}
-
-@keyframes shimmer-sweep {
-  to {
-    translate: 100% 0;
-  }
-}
-
-/* CTA shimmer — RTL */
-[dir="rtl"] .cta-primary::after {
-  background: linear-gradient(
-    -105deg,
-    transparent 35%,
-    hsl(0 0% 100% / 0.25) 45%,
-    hsl(0 0% 100% / 0.35) 50%,
-    hsl(0 0% 100% / 0.25) 55%,
-    transparent 65%
-  );
-  translate: 100% 0;
-}
-
-@keyframes shimmer-sweep-rtl {
-  to {
-    translate: -100% 0;
-  }
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .cta-primary:hover::after {
-    animation: shimmer-sweep 0.6s ease-out forwards;
-  }
-  [dir="rtl"] .cta-primary:hover::after {
-    animation: shimmer-sweep-rtl 0.6s ease-out forwards;
-  }
-}
 
 /* ══════════════════════════════════════
    5b. Submit Button — Label Fade-In
@@ -561,8 +529,8 @@ html.hero-played .hero-cta-entrance {
 @keyframes reveal-in {
   from {
     opacity: 0;
-    filter: blur(2px);
-    scale: 0.95;
+    filter: blur(4px);
+    scale: 0.9;
     translate: 0 2rem;
   }
   to {

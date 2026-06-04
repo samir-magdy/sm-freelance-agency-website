@@ -11,7 +11,7 @@ const meta = {
     description: "Samir Magdy is a web designer & developer & the founder of SM Web Design Studio — specializing in high-performance, custom web development.",
   },
   ar: {
-    title: "سمير مجدي | مطور ومصمم مواقع إلكترونية مخصصة في مصر",
+    title: "مبرمج ومصمم مواقع إلكترونية في مصر | سمير مجدي",
     description: "سمير مجدي هو مصمم ومطور مواقع في مصر ومؤسس شركة إس إم ويب ستوديو. متخصص في خدمات تصميم المواقع المخصصة للشركات والأفراد.",
   },
 };
@@ -77,20 +77,21 @@ export default async function AboutPage({ params }) {
             alt="Photo of Samir Magdy, Founder of SM Web Design Studio"
             className="w-full h-full object-cover object-top"
             sizes="35vw"
+            priority
           />
         </div>
 
-        <div className="flex flex-col justify-center py-8 px-8 md:pe-10">
-          <h1 className="font-bold text-[clamp(1.05rem,1.4vw,1.5rem)] tracking-widest uppercase text-gold/80 mb-5">
+        <div className="flex flex-col justify-evenly py-8 sm:py-6 px-8 md:pe-10">
+          <h1 className="font-bold text-[clamp(1.05rem,1.4vw,1.5rem)] tracking-wider rtl:leading-loose uppercase text-gold/80 mb-5">
             {t.heading[lang]}
           </h1>
 
 
-          <p className="text-content-body leading-[1.7] text-[1rem] md:text-[clamp(1.05rem,1.4vw,1.2rem)]">
+          <p className="text-content-body leading-[1.7] rtl:leading-loose text-[1rem] md:text-[clamp(1.05rem,1.4vw,1.2rem)]">
             {t.storyP1[lang]}
           </p>
           <p
-            className="text-content-body leading-[1.7] text-[1rem] md:text-[clamp(1.05rem,1.4vw,1.2rem)] mt-4"
+            className="text-content-body leading-[1.7] rtl:leading-loose text-[1rem] md:text-[clamp(1.05rem,1.4vw,1.2rem)] mt-4"
             dangerouslySetInnerHTML={{ __html: t.storyP2[lang] }}
           />
 
@@ -103,30 +104,31 @@ export default async function AboutPage({ params }) {
               alt="Samir Magdy, Founder of SM Web Design Studio"
               className="w-full h-full object-cover object-[50%_25%]"
               sizes="100vw"
+              priority
             />
           </div>
           <div className="flex flex-col md:flex-row md:justify-between">
             <div className="flex flex-col justify-end">
-            <p className="md:text-[clamp(1.05rem,1.4vw,1.4rem)] font-semibold text-content-heading leading-snug">
+            <p className="text-xl md:text-[clamp(1.05rem,1.4vw,1.4rem)] font-semibold text-content-heading leading-snug">
               {t.founderName[lang]}
             </p>
             <p className="text-base text-content-muted mt-1 md:text-[clamp(1.05rem,1.4vw,1.2rem)]">{t.founderRole[lang]}</p>
             </div>
-            <div className="flex flex-wrap gap-3 mt-6 items-center">
+            <div className="flex gap-3 mt-6">
               <Link
                 href={`/${lang}/#contact`}
-                className="cta-primary font-semibold bg-linear-to-b m-auto from-gold to-gold-dark text-gray-900 px-6 py-2.5 rounded-2xl text-sm md:text-lg"
+                className="cta-primary flex flex-1 items-center justify-center font-semibold bg-linear-to-b from-gold to-gold-dark text-gray-900 px-6 py-2.5 rounded-2xl text-base md:text-lg whitespace-nowrap"
               >
                 {t.ctaContact[lang]}
               </Link>
-              <a
+              <Link
                 href="https://www.linkedin.com/in/samir-magdy-/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-2.5 rounded-2xl m-auto border border-border-strong text-content-muted hover:text-gray-900 md:text-lg hover:bg-white/90 transition-colors duration-250 text-sm font-medium"
+                className="flex flex-1 justify-center items-center gap-2 px-6 py-2.5 rounded-2xl m-auto border border-border-strong text-content-muted hover:text-gray-900 md:text-lg hover:bg-white/90 transition-colors duration-250 text-base font-medium"
               >
                 {t.ctaLinkedIn[lang]}
-              </a>
+              </Link>
             </div>
             </div>
           </div>

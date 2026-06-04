@@ -1,7 +1,7 @@
 const aboutSection = {
   heading: {
-    en: "Samir Magdy — Web Designer & Developer in Egypt",
-    ar: "سمير مجدي — مصمم ومطور مواقع في مصر",
+    en: "Samir Magdy — Web Developer",
+    ar: "سمير مجدي — مصمم ومبرمج مواقع",
   },
 storyP1: {
     en: "I founded SM Web Studio to bring global web design standards to our local market. We are a small, dedicated team of designers, developers, and marketing experts operating as a fully remote company. This allows us to provide you with higher quality at a competitive price.",
@@ -17,15 +17,15 @@ storyP1: {
   },
   founderRole: {
     en: "Founder & Lead Developer",
-    ar: "المؤسس والمطور الرئيسي",
+    ar: "المؤسس والمبرمج الرئيسي",
   },
   ctaContact: {
     en: "Get In Touch",
-    ar: "تواصل معنا",
+    ar: "تواصل",
   },
   ctaLinkedIn: {
-    en: "My LinkedIn",
-    ar: "حسابي على LinkedIn",
+    en: "LinkedIn",
+    ar: "LinkedIn",
   },
 };
 

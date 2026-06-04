@@ -113,7 +113,7 @@ The Calculated Data:
 
   return (
     <>
-      <div className="relative max-w-[90rem] w-full mx-auto px-4 py-3 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-strong flex flex-col gap-2.5 sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0">
+      <div id="pricing-calculator" className="scroll-mt-20 sm:scroll-mt-80 relative max-w-360 w-full mx-auto px-4 py-3.5 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-strong flex flex-col gap-2.5 sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0">
         {/* DESKTOP SPLIT CONTAINER - Fixed using Grid */}
         <div className="flex flex-col md:grid md:grid-cols-12 md:gap-8 w-full">
           {/* ========================================= */}
@@ -237,7 +237,7 @@ The Calculated Data:
               }}
             >
               <div className="flex items-end gap-2 justify-center">
-                <span className="text-[0.9rem] font-semibold uppercase tracking-[0.3em] text-content-muted pb-0.5">
+                <span className="text-[0.9rem] font-semibold uppercase tracking-widest text-content-muted pb-0.5">
                   {t.estimateLabel[lang]}
                 </span>
                 <div className="flex items-baseline gap-1.5">
@@ -293,10 +293,6 @@ The Calculated Data:
             </div>
           </div>
         </div>
-
-        <small className="block w-full sm:mt-6 text-center text-xs sm:text-xl font-semibold text-content-muted leading-relaxed tracking-wide">
-          * {t.disclaimer[lang]}
-        </small>
       </div>
     </>
   );

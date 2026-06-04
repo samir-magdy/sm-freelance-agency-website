@@ -6,10 +6,10 @@ const pricingEstimator = {
     ecommerce: { en: "Store Size", ar: "كمية المنتجات" },
   },
   addonsLabel: { en: "Add-ons", ar: "الإضافات" },
-  estimateLabel: { en: "Estimate", ar: "تقدير السعر:" },
-  cta: { en: "Get a Free Quote", ar: "احصل على عرض سعر رسمي" },
+  estimateLabel: { en: "Estimate:", ar: "تقدير السعر:" },
+  cta: { en: "Get an Official Quote", ar: "احصل على عرض سعر رسمي" },
   disclaimer: {
-    en: "Rough estimate only — final pricing is confirmed after a free consultation.",
+    en: "Rough estimate only — final pricing is confirmed after consultation.",
     ar: " السعر المعروض تقدير تقريبي — السعر النهائي بيتحدد بعد الإستشارة.",
   },
 
@@ -22,13 +22,13 @@ const pricingEstimator = {
     },
     {
       id: "business",
-      name: { en: "Business Website", ar: "موقع شركة" },
-      description: { en: "Multi-page company site", ar: "موقع متعدد الصفحات" },
+      name: { en: "Business Site", ar: "موقع شركة" },
+      description: { en: "Multi-page website", ar: "موقع متعدد الصفحات" },
       price: 12500,
     },
     {
       id: "ecommerce",
-      name: { en: "E-commerce Store", ar: "متجر إلكتروني" },
+      name: { en: "Online Store", ar: "متجر إلكتروني" },
       description: { en: "Full Shopify store", ar: "متجر شوبيفاي متكامل" },
       price: 15500,
     },
@@ -42,11 +42,11 @@ const pricingEstimator = {
       },
       {
         name: { en: "Standard", ar: "قياسي" },
-        multiplier: 0.5,
+        multiplier: 0.02,
       },
       {
         name: { en: "Full", ar: "شامل" },
-        multiplier: 1.0,
+        multiplier: 0.04,
       },
     ],
     business: [
@@ -56,11 +56,11 @@ const pricingEstimator = {
       },
       {
         name: { en: "Standard", ar: "قياسي" },
-        multiplier: 0.4,
+        multiplier: 0.1,
       },
       {
         name: { en: "Full", ar: "شامل" },
-        multiplier: 1.0,
+        multiplier: 0.2,
       },
     ],
     ecommerce: [
@@ -70,11 +70,11 @@ const pricingEstimator = {
       },
       {
         name: { en: "Standard", ar: "قياسي" },
-        multiplier: 0.9,
+        multiplier: 0.2,
       },
       {
         name: { en: "Full", ar: "شامل" },
-        multiplier: 2.2,
+        multiplier: 0.3,
       },
     ],
   },
@@ -82,9 +82,9 @@ const pricingEstimator = {
   addons: [
     {
       id: "bilingual",
-      name: { en: "Bilingual (AR + EN)", ar: "ثنائي اللغة" },
+      name: { en: "Bilingual", ar: "ثنائي اللغة" },
       description: {
-        en: "Arabic & English, full RTL support",
+        en: "Full Bilingual support",
         ar: " دعم كامل، عربي وإنجليزي",
       },
       appliesTo: ["landing", "business", "ecommerce"],
@@ -97,7 +97,7 @@ const pricingEstimator = {
       id: "seo",
       name: { en: "SEO Setup", ar: "إعداد SEO" },
       description: {
-        en: "Technical SEO from day one",
+        en: "Technical SEO built-in",
         ar: "تهيئة لجوجل من البداية",
       },
       appliesTo: ["landing", "business", "ecommerce"],
@@ -109,7 +109,7 @@ const pricingEstimator = {
       id: "copywriting",
       name: { en: "Copywriting", ar: "كتابة المحتوى" },
       description: {
-        en: "Professional marketing copy",
+        en: "Expert marketing copy",
         ar: "كتابة محتوى تسويقي",
       },
       appliesTo: ["landing", "business"],
@@ -119,9 +119,9 @@ const pricingEstimator = {
     },
     {
       id: "cms",
-      name: { en: "CMS / Admin Panel", ar: "لوحة تحكم" },
+      name: { en: "Admin Panel", ar: "لوحة تحكم" },
       description: {
-        en: "Edit your content without a developer",
+        en: "Edit content yourself",
         ar: "تعديل المحتوى بنفسك",
       },
       appliesTo: ["landing", "business"],
@@ -131,10 +131,10 @@ const pricingEstimator = {
     },
     {
       id: "payments",
-      name: { en: "Local Payment Gateways", ar: "بوابات الدفع المحلية" },
+      name: { en: "Payment Gateways", ar: "بوابات الدفع" },
       description: {
-        en: "Paymob, InstaPay, Vodafone Cash, Fawry",
-        ar: "باي موب، انستا باي، فودافون كاش، فوري",
+        en: "Online payments",
+        ar: "الدفع الإلكتروني",
       },
       appliesTo: ["ecommerce"],
       isMultiplier: false,

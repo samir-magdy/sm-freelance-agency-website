@@ -1,3 +1,4 @@
+import Link from "next/link";
 import translations from "@/app/data/translations";
 
 export default function FAQSection({ lang }) {
@@ -32,7 +33,7 @@ export default function FAQSection({ lang }) {
                   focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border-strong focus-visible:ring-offset-4 focus-visible:ring-offset-background rounded-sm
                 `}
               >
-                <div className="relative flex-shrink-0 w-5 h-5 me-5">
+                <div className="relative shrink-0 w-5 h-5 me-5">
                   <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-0.5 rounded-full bg-icon [details[open]_&]:bg-icon" />
                   <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-3 rounded-full bg-icon [details[open]_&]:h-0 [details[open]_&]:opacity-0" />
                 </div>
@@ -51,6 +52,28 @@ export default function FAQSection({ lang }) {
             
           ))}
           </div>
+          <Link
+            href={`/${lang}/guides`}
+            className="reveal-element group mt-10 sm:mt-14 flex items-center gap-2 text-gold hover:text-gold-light text-base sm:text-subheading font-medium underline underline-offset-[3px] transition-colors duration-200"
+          >
+            {t.browseGuides[lang]}
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              className={`shrink-0 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`}
+              aria-hidden="true"
+            >
+              <path
+                d="M3.333 8h9.334M8.667 4l4 4-4 4"
+                stroke="currentColor"
+                strokeWidth="1"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Link>
       </div>
     </section>
   );
