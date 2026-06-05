@@ -148,13 +148,12 @@ export default function PortfolioShowcase({ lang }) {
       className="flex flex-col items-center justify-start pt-8 sm:pt-10 min-h-screen relative overflow-clip select-none px-5"
       aria-labelledby="portfolio-heading"
     >
-      <div className="reveal">
         {/* ── Section heading ── */}
         <div className="text-center relative z-2 px-5 mb-2 md:mb-12">
-          <h2 id="portfolio-heading" className="font-bold text-heading mb-2 rtl:mb-3">
+          <h2 id="portfolio-heading" className="reveal-element font-bold text-heading mb-2 rtl:mb-3">
             {t.heading[lang]}
           </h2>
-          <p className="hidden sm:block text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
+          <p className="reveal-element hidden sm:block text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
             {t.subheading[lang]}
           </p>
         </div>
@@ -179,7 +178,7 @@ export default function PortfolioShowcase({ lang }) {
           dir={isRtl ? "rtl" : "ltr"}
         >
           {/* ── Info panel ── */}
-          <div className="order-first lg:order-last mb-2.5 lg:mb-0">
+          <div className="reveal-element order-first lg:order-last mb-2.5 lg:mb-0">
             <div
               key={`info-${project.id}`}
               className="text-center lg:text-start lg:max-w-lg flex flex-col items-center lg:items-start gap-6"
@@ -208,7 +207,7 @@ export default function PortfolioShowcase({ lang }) {
           </div>
 
           {/* ── Phone column ── */}
-          <div className="flex flex-col items-center gap-3">
+          <div className="reveal-element flex flex-col items-center gap-3">
             {/* Genre badge — mobile only */}
             <h3
               aria-hidden="true"
@@ -257,6 +256,7 @@ export default function PortfolioShowcase({ lang }) {
                             className="w-full h-auto block"
                             sizes="(max-width: 640px) 53vw, (max-width: 768px) 252px, (max-width: 1024px) 282px, 300px"
                             priority={i === 0}
+                            placeholder="blur"
                           />
                         </div>
                       </div>
@@ -311,7 +311,6 @@ export default function PortfolioShowcase({ lang }) {
             </a>
           </div>
         </div>
-      </div>
     </section>
   );
 }

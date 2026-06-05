@@ -133,26 +133,26 @@ const faqSection = {
       ar: "بنبني المتجر الأول، وبعدين بنشغّله بالتوازي مع الانستجرام لكام أسبوع وانت بتوجّه المتابعين لرابط الموقع في الباي بتاعك. الموقع بيستقبل الطلبات أوتوماتيكي، بيسهل الدفع، وبيتابع المخزون — ورسايل الانستجرام بتتحول من قناة بيع لخدمة عملاء بس. أغلب عملاءنا بيلاقوا طلبات أقل بتضيع وتنفيذ أسرع من أول شهر. ولو لسه مش متأكد إن الخروج من الانستجرام يستاهل، دليلنا عن <a href='/ar/guides/why-your-business-needs-a-website'>ليه مشروعك في مصر محتاج موقع</a> بيشرح بالظبط ليه السوشيال ميديا لوحدها مش كفاية.",
     },
   },
-  {
-    question: {
-      en: "Can I run a Shopify store in Egypt without dealing with USD billing myself?",
-      ar: "ينفع أشغّل متجر شوبيفاي في مصر من غير ما أتعامل مع فواتير بالدولار بنفسي؟",
-    },
-    answer: {
-      en: "Yes. International card restrictions can be a hurdle, but we assist you in setting up compliant local payment methods or managed billing solutions to cover your Shopify subscription. You get full control of a real Shopify store with all its tools, while we help you navigate the platform fees in local currency.",
-      ar: "أيوة. قيود الدفع بالكروت الدولية ممكن تكون عقبة، بس إحنا بنساعدك توفر حلول دفع محلية مناسبة أو بنقدم خدمة إدارة الفواتير عشان نغطي اشتراك شوبيفاي. هتاخد متجر شوبيفاي كامل بكل أدواته، وإحنا بنساعدك تدير رسوم المنصة بالعملة المحلية.",
-    },
-  },
-  {
-    question: {
-      en: "Can you build a booking system for my clinic instead of using Vezeeta?",
-      ar: "تقدروا تعملولي نظام حجز للعيادة بدل ما أشترك في فيزيتا؟",
-    },
-    answer: {
-      en: "Yes. We build private clinic booking systems on your own domain with appointment scheduling, prepaid consultation fees (via Vodafone Cash, InstaPay, or cards), and optional SMS/WhatsApp integrations. Unlike directory platforms, we charge zero commissions per booking—you only pay for your standard website hosting and actual SMS usage. Your patients, your data, your brand.",
-      ar: "أيوة. بنعمل نظام حجز خاص بعيادتك على دومين باسمك، فيه جدول مواعيد، تحصيل رسوم الكشف مقدم، مع إمكانية ربط رسائل تذكير على SMS أو واتساب. عكس منصات الحجز التانية، مفيش أي عمولة بتتدفع على الحجز—أنت بتدفع بس تكلفة الاستضافة العادية للموقع واستهلاك الرسائل. مرضاك، بياناتك، وبراندك.",
-    },
-  },
+  // {
+  //   question: {
+  //     en: "Can I run a Shopify store in Egypt without dealing with USD billing myself?",
+  //     ar: "ينفع أشغّل متجر شوبيفاي في مصر من غير ما أتعامل مع فواتير بالدولار بنفسي؟",
+  //   },
+  //   answer: {
+  //     en: "Yes. International card restrictions can be a hurdle, but we assist you in setting up compliant local payment methods or managed billing solutions to cover your Shopify subscription. You get full control of a real Shopify store with all its tools, while we help you navigate the platform fees in local currency.",
+  //     ar: "أيوة. قيود الدفع بالكروت الدولية ممكن تكون عقبة، بس إحنا بنساعدك توفر حلول دفع محلية مناسبة أو بنقدم خدمة إدارة الفواتير عشان نغطي اشتراك شوبيفاي. هتاخد متجر شوبيفاي كامل بكل أدواته، وإحنا بنساعدك تدير رسوم المنصة بالعملة المحلية.",
+  //   },
+  // },
+  // {
+  //   question: {
+  //     en: "Can you build a booking system for my clinic instead of using Vezeeta?",
+  //     ar: "تقدروا تعملولي نظام حجز للعيادة بدل ما أشترك في فيزيتا؟",
+  //   },
+  //   answer: {
+  //     en: "Yes. We build private clinic booking systems on your own domain with appointment scheduling, prepaid consultation fees (via Vodafone Cash, InstaPay, or cards), and optional SMS/WhatsApp integrations. Unlike directory platforms, we charge zero commissions per booking—you only pay for your standard website hosting and actual SMS usage. Your patients, your data, your brand.",
+  //     ar: "أيوة. بنعمل نظام حجز خاص بعيادتك على دومين باسمك، فيه جدول مواعيد، تحصيل رسوم الكشف مقدم، مع إمكانية ربط رسائل تذكير على SMS أو واتساب. عكس منصات الحجز التانية، مفيش أي عمولة بتتدفع على الحجز—أنت بتدفع بس تكلفة الاستضافة العادية للموقع واستهلاك الرسائل. مرضاك، بياناتك، وبراندك.",
+  //   },
+  // },
   // ── STAGE 4: POST-PURCHASE & VALUE-ADD (RETENTION / DE-RISK) ───────────────
   {
     question: {

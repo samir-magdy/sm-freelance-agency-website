@@ -542,13 +542,6 @@ html.hero-played .hero-cta-entrance {
 }
 
 @supports (animation-timeline: view()) {
-  .reveal {
-    animation: reveal-in ease-out both;
-    animation-duration: auto;
-    animation-timeline: view();
-    animation-range: entry 0% cover 55%;
-  }
-
   .reveal-element {
     animation: reveal-in ease-out both;
     animation-duration: auto;

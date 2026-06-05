@@ -24,7 +24,7 @@ const pricingEstimator = {
       id: "business",
       name: { en: "Business Site", ar: "موقع شركة" },
       description: { en: "Multi-page website", ar: "موقع متعدد الصفحات" },
-      price: 12500,
+      price: 10000,
     },
     {
       id: "ecommerce",
@@ -89,7 +89,7 @@ const pricingEstimator = {
       },
       appliesTo: ["landing", "business", "ecommerce"],
       isMultiplier: true,
-      multiplierByBase: { landing: 0.35, business: 0.4, ecommerce: 0.3 },
+      multiplierByBase: { landing: 0.3, business: 0.3, ecommerce: 0.3 },
       price: 0,
       scalesWithScope: false,
     },
@@ -97,7 +97,7 @@ const pricingEstimator = {
       id: "seo",
       name: { en: "SEO Setup", ar: "إعداد SEO" },
       description: {
-        en: "Technical SEO built-in",
+        en: "Technical SEO Setup",
         ar: "تهيئة لجوجل من البداية",
       },
       appliesTo: ["landing", "business", "ecommerce"],

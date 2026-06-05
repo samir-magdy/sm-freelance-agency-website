@@ -22,7 +22,7 @@ const CONTACT_EMAIL = "studio@samirmagdy.com";
 const PHONE_NUMBER = "+201274613331";
 
 const META_DESCRIPTION = {
-  en: "Looking for the best website design company in Egypt? Look no further. We provide custom web design & development for businesses & individuals. Get a free quote today!",
+  en: "Looking for the best website design company in Egypt? We provide custom web design & development for businesses & individuals. Get a free quote today!",
   ar: "نقدم خدمات تصميم وتطوير المواقع المخصصة للشركات والأفراد بأحدث التقنيات. اكتشف كيف يمكننا مساعدة عملك على النمو، احصل على عرض سعر مجاني اليوم!",
 };
 
@@ -62,7 +62,7 @@ const meta = {
 // Single source of truth so canonical, OG url, and structured data never drift apart.
 
 function getCanonicalUrl(lang) {
-  return lang === "en" ? `${SITE_URL}/` : `${SITE_URL}/${lang}`;
+  return lang === "en" ? SITE_URL : `${SITE_URL}/${lang}`;
 }
 
 export async function generateMetadata({ params }) {
@@ -104,9 +104,9 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        en: `${SITE_URL}/`,
+        en: SITE_URL,
         ar: `${SITE_URL}/ar`,
-        "x-default": `${SITE_URL}/`,
+        "x-default": SITE_URL,
       },
     },
     openGraph: {

@@ -77,12 +77,13 @@ export default async function AboutPage({ params }) {
             alt="Photo of Samir Magdy, Founder of SM Web Design Studio"
             className="w-full h-full object-cover object-top"
             sizes="35vw"
+            placeholder="blur"
             priority
           />
         </div>
 
         <div className="flex flex-col justify-evenly py-8 sm:py-6 px-8 md:pe-10">
-          <h1 className="font-bold text-[clamp(1.05rem,1.4vw,1.5rem)] tracking-wider rtl:leading-loose uppercase text-gold/80 mb-5">
+          <h1 className="font-bold text-[clamp(0.9rem,1.6vw,1.5rem)] tracking-wider rtl:leading-loose uppercase text-gold/80 mb-5">
             {t.heading[lang]}
           </h1>
 
@@ -104,6 +105,7 @@ export default async function AboutPage({ params }) {
               alt="Samir Magdy, Founder of SM Web Design Studio"
               className="w-full h-full object-cover object-[50%_25%]"
               sizes="100vw"
+              placeholder="blur"
               priority
             />
           </div>

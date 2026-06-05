@@ -98,16 +98,15 @@ export default function ContactSection({ lang }) {
       className="pt-4 pb-12 sm:pb-8 px-4"
       dir={isRtl ? "rtl" : "ltr"}
     >
-      <div className="reveal">
         <div className="max-w-3xl mx-auto">
           <div className="mb-8">
             <h2
               id="contact-heading"
-              className="font-bold text-heading text-center mb-2"
+              className="reveal-element font-bold text-heading text-center mb-2"
             >
               {t.contactSection.heading[lang]}
             </h2>
-            <p className="text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
+            <p className="reveal-element text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
               {t.contactSection.subheading[lang]}
             </p>
           </div>
@@ -120,7 +119,7 @@ export default function ContactSection({ lang }) {
             <fieldset className="border-none p-0 m-0">
               <legend className="sr-only">{t.form.legend[lang]}</legend>
 
-              <div className="grid grid-cols-2 gap-4 md:gap-x-3">
+              <div className="reveal-element grid grid-cols-2 gap-4 md:gap-x-3">
                 {/* Name */}
                 <div className="col-span-1">
                   <label htmlFor="name" className={labelClass}>
@@ -257,7 +256,7 @@ export default function ContactSection({ lang }) {
             <button
               type="submit"
               disabled={status !== "idle"}
-              className={`z-20 mt-4 w-full mx-auto block tracking-wide font-bold text-base py-4 rounded-lg disabled:cursor-not-allowed transition-all duration-300 relative overflow-hidden ${
+              className={`reveal-element z-20 mt-4 w-full mx-auto block tracking-wide font-bold text-base py-4 rounded-lg disabled:cursor-not-allowed transition-all duration-300 relative overflow-hidden ${
                 status === "success"
                   ? "mt-3.5 w-full border border-green-500/40 bg-green-500/20 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-lg font-bold text-base"
                   : status === "error"
@@ -283,26 +282,27 @@ export default function ContactSection({ lang }) {
               </span>
             </button>
 
-            <div className="flex items-center gap-3 mt-4">
-              <span className="flex-1 h-px bg-border-subtle" />
-              <span className="text-content-muted text-caption font-bold">
-                {t.form.orWhatsapp[lang]}
-              </span>
-              <span className="flex-1 h-px bg-border-subtle" />
-            </div>
+            <div className="reveal-element">
+              <div className="flex items-center gap-3 mt-4">
+                <span className="flex-1 h-px bg-border-subtle" />
+                <span className="text-content-muted text-caption font-bold">
+                  {t.form.orWhatsapp[lang]}
+                </span>
+                <span className="flex-1 h-px bg-border-subtle" />
+              </div>
 
-            <a
-              href="https://wa.me/201274613331"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3.5 w-full border border-green-500/40 bg-green-500/20 hover:bg-green-500/40 transition-colors duration-200 py-4 px-6 text-content-body flex items-center justify-center gap-2 rounded-lg font-bold text-base"
-            >
-              <WhatsAppIcon className="size-5" fill="currentColor" />
-              {t.form.chatInstead[lang]}
-            </a>
+              <a
+                href="https://wa.me/201274613331"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3.5 w-full border border-green-500/40 bg-green-500/20 hover:bg-green-500/40 transition-colors duration-200 py-4 px-6 text-content-body flex items-center justify-center gap-2 rounded-lg font-bold text-base"
+              >
+                <WhatsAppIcon className="size-5" fill="currentColor" />
+                {t.form.chatInstead[lang]}
+              </a>
+            </div>
           </form>
         </div>
-      </div>
     </section>
   );
 }

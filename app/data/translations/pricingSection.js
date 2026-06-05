@@ -46,7 +46,7 @@ export const pricingCards = {
         en: "A multi-page website that presents your company in full detail. <em>Ideal for more established businesses that have a lot to show and tell.</em>",
         ar: "موقع متعدد الصفحات بيعرض شركتك، خدماتك، أعمالك، وبيانات التواصل بشكل احترافي. <em>مثالي للعيادات، شركات الاستشارات، الوكالات، والشركات اللي عايزة وجود قوي على جوجل — عربي وإنجليزي من غير أي تكلفة إضافية.</em>",
       },
-      price: "12,500",
+      price: "10,000",
     },
     {
       id: "shopify",

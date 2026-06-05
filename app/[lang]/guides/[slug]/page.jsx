@@ -76,7 +76,7 @@ export default function GuidePage({ params }) {
 
   const canonical = `${SITE_URL}/${lang}/guides/${slug}`;
 
-  const homeUrl = lang === "en" ? `${SITE_URL}/` : `${SITE_URL}/ar`;
+  const homeUrl = lang === "en" ? SITE_URL : `${SITE_URL}/ar`;
   const guidesUrl = `${SITE_URL}/${lang}/guides`;
 
   const jsonLd = [

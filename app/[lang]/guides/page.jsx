@@ -59,7 +59,7 @@ export default function GuidesPage({ params }) {
   const dir = lang === "ar" ? "rtl" : "ltr";
   const canonical = `${SITE_URL}/${lang}/guides`;
 
-  const homeUrl = lang === "en" ? `${SITE_URL}/` : `${SITE_URL}/ar`;
+  const homeUrl = lang === "en" ? SITE_URL : `${SITE_URL}/ar`;
 
   const jsonLd = [
     {
@@ -106,7 +106,7 @@ export default function GuidesPage({ params }) {
       <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:gap-8">
           {/* Hero */}
           <header className="text-center flex flex-col">
-            <h1 className="text-heading font-bold text-content-heading mb-2 rtl:mb-3">
+            <h1 className="text-[clamp(1.3rem,1.7vw,2.25rem)] font-bold text-content-heading mb-2 rtl:mb-3">
               {t.pageTitle[lang]}
             </h1>
      

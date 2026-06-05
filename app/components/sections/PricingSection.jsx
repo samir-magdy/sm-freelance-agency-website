@@ -96,7 +96,7 @@ export default function PricingSection({ lang }) {
             ))}
           </div>
           <div
-              className="mt-4 sm:mt-10 reveal-element text-center text-content-muted/70 text-base sm:text-[clamp(1.2rem,2vw,1.4rem)] font-medium max-w-3xl mx-auto leading-relaxed [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 [&_a]:hover:text-gold-light [&_a]:transition-colors"
+              className="mt-4 sm:mt-10 reveal-element text-center text-content-muted/70 text-sm sm:text-[clamp(1.2rem,2vw,1.4rem)] font-medium max-w-3xl mx-auto leading-relaxed [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 [&_a]:hover:text-gold-light [&_a]:transition-colors"
               dangerouslySetInnerHTML={{ __html: t.trustStrip[lang] }}
             />
         </div>
