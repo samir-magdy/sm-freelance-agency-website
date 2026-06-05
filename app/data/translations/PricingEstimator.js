@@ -42,11 +42,11 @@ const pricingEstimator = {
       },
       {
         name: { en: "Standard", ar: "قياسي" },
-        multiplier: 0.02,
+        multiplier: 0.05,
       },
       {
         name: { en: "Full", ar: "شامل" },
-        multiplier: 0.04,
+        multiplier: 0.1,
       },
     ],
     business: [
