@@ -52,28 +52,47 @@ export default function FAQSection({ lang }) {
             
           ))}
           </div>
-          <Link
-            href={`/${lang}/guides`}
-            className="reveal-element group mt-10 sm:mt-14 flex items-center gap-2 text-gold hover:text-gold-light text-base sm:text-subheading font-medium underline underline-offset-[3px] transition-colors duration-200"
-          >
-            {t.browseGuides[lang]}
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              className={`shrink-0 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`}
-              aria-hidden="true"
+          <div className="reveal-element mt-12 sm:mt-22 w-full space-y-6">
+            {/* Gold separator */}
+            <div className="h-px bg-linear-to-r from-transparent via-gold/35 to-transparent" />
+
+            {/* CTA strip */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 sm:gap-10 ps-5 border-s-2 border-gold/70">
+              <p className="text-[clamp(1.05rem,2.5vw,1.35rem)] font-medium text-content-heading tracking-wide">
+                {t.ctaHeading[lang]}
+              </p>
+              <a
+                href="#contact"
+                className="cta-primary shrink-0 py-2.5 px-6 rounded-lg text-gray-900 text-sm sm:text-base font-semibold tracking-wide"
+              >
+                {t.cta[lang]}
+              </a>
+            </div>
+
+            {/* Tertiary: Browse Guides */}
+            <Link
+              href={`/${lang}/guides`}
+              className="group flex items-center gap-2 text-content-muted hover:text-gold text-sm sm:text-base font-medium transition-colors duration-200 ps-5"
             >
-              <path
-                d="M3.333 8h9.334M8.667 4l4 4-4 4"
-                stroke="currentColor"
-                strokeWidth="1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </Link>
+              {t.browseGuides[lang]}
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="none"
+                className={`shrink-0 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`}
+                aria-hidden="true"
+              >
+                <path
+                  d="M3.333 8h9.334M8.667 4l4 4-4 4"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </Link>
+          </div>
       </div>
     </section>
   );

@@ -1,18 +1,18 @@
 export const contactSection = {
   heading: {
-    en: "Got a Project in Mind?",
-    ar: "عندك مشروع جديد؟",
+    en: "Get In Touch",
+    ar: "طلب تسعير أو استشارة",
   },
   subheading: {
     en: "Share a few details and we'll reach out",
-    ar: "شاركنا تفاصيل مشروعك وهنتواصل معاك",
+    ar: "شاركنا بعض التفاصيل وسنتواصل معك",
   },
 };
 
 export const form = {
   legend: { en: "Contact information", ar: "بيانات التواصل" },
   name: { en: "Name", ar: "الاسم" },
-  namePlaceholder: { en: "Your name", ar: "اكتب اسمك هنا" },
+  namePlaceholder: { en: "Salma Ahmed", ar: "سلمى أحمد" },
   phone: { en: "Mobile Number", ar: "رقم الموبايل" },
   phonePlaceholder: { en: "01XXXXXXXXX", ar: "01XXXXXXXXX" },
   contactMethod: {
@@ -31,22 +31,22 @@ export const form = {
   message: { en: "Message", ar: "تفاصيل المشروع" },
   messageOptional: { en: "optional", ar: "اختياري" },
   messagePlaceholder: {
-    en: "Describe what you need your website to do...",
-    ar: "إيه اللي محتاجه من موقعك؟ احكيلنا فكرتك...",
+    en: "I own a beauty center and need a website to show my services, prices, photos and videos of our work...",
+    ar: "عندي مركز تجميل ومحتاجة موقع أعرض فيه الخدمات والأسعار، وصور وفيديوهات لشغلنا...",
   },
   submit: { en: "Send My Request", ar: "أرسل الطلب" },
   sending: { en: "Sending...", ar: "جاري الإرسال..." },
   success: {
     en: "Thank you. We have received your request.",
-    ar: "شكراً ليك! استلمنا طلبك وهنكلمك قريب.",
+    ar: "شكراً لك. لقد استلمنا طلبك وسنتواصل معك قريباً.",
   },
   errorRateLimit: {
     en: "Wait a few minutes to send another request.",
-    ar: "ممكن تستنى دقايق قبل ما تبعت طلب تاني.",
+    ar: "يرجى الانتظار بضع دقائق قبل إرسال طلب جديد.",
   },
   errorGeneric: {
     en: "Something went wrong. Please try again.",
-    ar: "حصل خطأ، ياريت تحاول مرة تانية.",
+    ar: "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
   },
   orWhatsapp: { en: "OR", ar: "أو" },
   chatInstead: { en: "Reach Us On WhatsApp", ar: "تواصل عبر الواتساب" },

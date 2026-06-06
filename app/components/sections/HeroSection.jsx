@@ -55,7 +55,7 @@ export default function HeroSection({ lang }) {
         id="hero-container"
         className="relative flex flex-col items-center pt-10 sm:pt-20"
       >
-        <h1
+        <h2
           dir="ltr"
           className="hero-fade hero-fade-eyebrow flex items-center gap-3 sm:gap-4"
         >
@@ -64,9 +64,9 @@ export default function HeroSection({ lang }) {
             {hero.eyebrow[lang]}
           </span>
           <span className="eyebrow-rule-right" aria-hidden="true" />
-        </h1>
+        </h2>
 
-        <h2
+        <h1
           id="hero-hook"
           className="py-4 sm:py-8 sm:pt-6 font-bold text-center text-content-heading text-[clamp(2.2rem,9.5vw,4.2rem)] rtl:text-[clamp(1.5rem,9vw,4.2rem)] sm:text-[clamp(2.2rem,3.5vw,5rem)] leading-relaxed rtl:leading-16 sm:rtl:leading-normal"
         >
@@ -74,7 +74,7 @@ export default function HeroSection({ lang }) {
             className="hero-fade hero-fade-hook block"
             dangerouslySetInnerHTML={{ __html: hookLines }}
           />
-        </h2>
+        </h1>
 
         <p
           id="subheading"

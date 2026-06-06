@@ -4,8 +4,8 @@ const aboutSection = {
     ar: "سمير مجدي — مصمم ومبرمج مواقع",
   },
 storyP1: {
-    en: "I founded SM Web Studio to bring global web design standards to our local market. We are a small, dedicated team of designers, developers, and marketing experts operating as a fully remote company. This allows us to provide you with higher quality at a competitive price.",
-    ar: "أسست إس إم ويب ستوديو علشان ننقل معايير تصميم المواقع العالمية لسوقنا المحلي. إحنا فريق صغير من المصممين، المطورين، وخبراء التسويق، وبنشتغل بالكامل عن بُعد؛ وده بيتيح لنا نقدّم لك جودة أعلى وبسعر منافس.",
+    en: "I founded SM Web Studio to bring global web design standards to our local market. We are a small team consisting of a designer, a developer, and a marketing expert, operating as a fully remote company. This allows us to provide you with higher quality at a competitive price.",
+    ar: "أسست إس إم ويب ستوديو علشان ننقل معايير تصميم المواقع العالمية لسوقنا المحلي. إحنا فريق صغير مكوّن من مصمم، ومطوّر، وخبير تسويق، وبنشتغل بالكامل عن بُعد؛ وده بيتيح لنا نقدّم لك جودة أعلى وبسعر منافس.",
   },
   storyP2: {
     en: "Many business owners in Egypt have lost faith in web design companies after dealing with terrible experiences. The truth is, <strong>Egypt doesn't have a shortage of web designers, it has a shortage of web design.</strong> SM Web Studio is here to rebuild that trust by delivering reliable, high-quality service.",

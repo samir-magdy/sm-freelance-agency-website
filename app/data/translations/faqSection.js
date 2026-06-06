@@ -11,6 +11,16 @@ const faqSection = {
     ar: "تصفح جميع أدلة تصميم المواقع",
   },
 
+  ctaHeading: {
+    en: "Still have questions?",
+    ar: "لديك أسئلة أخرى؟",
+  },
+
+  cta: {
+    en: "Request a Free Consultation",
+    ar: "احصل على استشارة مجانية",
+  },
+
   guidesEyebrow: {
     en: "More Resources",
     ar: "موارد إضافية",

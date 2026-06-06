@@ -8,7 +8,7 @@ const resource = {
   },
   metaTitle: {
     en: "How to Choose the Best Web Design Company in Egypt (2026)",
-    ar: "ازاي تختار أفضل  شركة تصميم مواقع في مصر؟ (2026)",
+    ar: "ازاي تختار أفضل شركة تصميم مواقع في مصر؟ (2026)",
   },
   excerpt: {
     en: "Choosing the wrong web design company in Egypt is one of the most expensive mistakes a business can make — delayed projects, hidden fees, USD-billing surprises, and abandoned sites that never launch. This guide gives you the exact questions to ask, the red flags to watch for, and the criteria that separate genuinely capable studios from ones that will waste your time and money.",
@@ -82,7 +82,7 @@ const resource = {
   <li><strong>Guarantees that sound too good to be true:</strong> Promises like "first page of Google in two weeks" or "unlimited revisions" are misleading and unrealistic.</li>
   <li><strong>Vague pricing with no itemization:</strong> A professional provider can explain exactly what you are paying for, in EGP, with a clear breakdown. Evasiveness about costs — or quoting in USD without explaining the EGP equivalent — is a major warning sign. For reference, you can see what transparent EGP pricing looks like on our <a href="/en/#pricing">our transparent EGP pricing</a>.</li>
   <li><strong>No questions about your business:</strong> A company that quotes a price without asking about your goals, audience, and competitors is just filling a template, not building a solution.</li>
-  <li><strong>Extremely low (or extremely high) prices:</strong> Unusually cheap design almost always means templates and poor technical foundations, costing more in the long run. Conversely, extreme prices can be scams — we've seen companies in Egypt charging 50,000 EGP for a simple WordPress site, which is absurd. For more detailed information on professional web design pricing, read our guide <a href='/en/guides/website-cost-in-egypt'>How Much Does a Website Cost in Egypt? An Honest Breakdown</a>.</li>
+  <li><strong>Extremely low (or extremely high) prices:</strong> Unusually cheap design almost always means templates and poor technical foundations, costing more in the long run. Conversely, extreme prices can be scams — we've seen companies in Egypt charging 50,000 EGP for a simple Squarespace site, which is absurd. For more detailed information on professional web design pricing, read our guide <a href='/en/guides/website-cost-in-egypt'>How Much Does a Website Cost in Egypt? An Honest Breakdown</a>.</li>
 </ul>
 
 <h2>How can you tell skill from real business understanding?</h2>
@@ -212,7 +212,7 @@ const resource = {
 <p>من سنين من مشاهدة شركات بتختار مقدم الخدمة الغلط وبعدين بيرجعوا عشان نعيد بناء اللي دفعوا تمنه أول مرة، النمط ثابت بقسوة. الشركة الصح هي اللي عندها سابقة أعمال حقيقية، بتسأل أسئلة ذكية عن أهدافك، شفافة في أسعارها بالجنيه، وواضحة في تواصلها. في <strong>SM Web Design Studio</strong>، دي المعايير اللي بنمشي عليها. قبل ما تكلمنا، تقدر تتفرج على <a href="/ar/#FAQs">أسئلة شائعة عن تصميم المواقع في مصر</a> عشان تلاقي إجابة لأكتر الأسئلة اللي بتسأل عنها الشركات المصرية قبل ما تبدأ مشروع. ولو محتاج استشارة حقيقية لمشروعك، يسعدنا ندردش معاك. <a href="/ar/#contact">تطلب استشارة مجانية لتصميم موقعك</a>.</p>`,
   },
   metaDescription: {
-    en: "Choosing the wrong web design company in Egypt is expensive — delayed projects, hidden USD fees, abandoned sites. Learn the questions to ask, the red flags to spot, and the criteria for picking a freelancer, studio, or agency in 2026.",
+    en: "Choosing the wrong web design company in Egypt costs more than money. Learn the key questions to ask, red flags to spot, and how to choose right in 2026.",
     ar: "اختيار شركة تصميم مواقع غلط في مصر مكلف — تأخير، رسوم خفية بالدولار، ومواقع متفتحش. اعرف الأسئلة اللي تسألها، العلامات التحذيرية، ومعايير اختيار فريلانسر، استوديو، أو شركة في 2026.",
   },
 };

@@ -65,7 +65,7 @@ const resource = {
 <ul>
   <li><strong>Site size and number of pages:</strong> A one-page website costs much less than a 30-page site because every extra page requires additional design and development effort.</li>
   <li><strong>Template vs. custom design:</strong> Ready-made templates involve no actual design work, meaning your site will look identical to thousands of others. Custom design takes more time and effort, making it more expensive.</li>
-  <li><strong>The technology used:</strong> Working with ready-made platforms like WordPress or Wix is faster and more affordable, while custom programming increases the cost because it requires specialized developers.</li>
+  <li><strong>The technology used:</strong> Working with ready-made platforms like Squarespace or Wix is faster and more affordable, while custom programming increases the cost because it requires specialized developers.</li>
   <li><strong>Special features:</strong> The price increases with the addition of custom programmatic features like a booking system, a customer support chatbot, or a custom dashboard to manage the site yourself.</li>
   <li><strong>Copywriting:</strong> If you provide the written content, there is no extra cost. But if the agency building the site writes the content, it's an additional billed service.</li>
   <li><strong>Multiple languages:</strong> Adding languages isn't just translation; it requires specific development work, such as adjusting the design for Right-to-Left (<abbr data-tooltip="Right-to-Left">RTL</abbr>) text direction.</li>

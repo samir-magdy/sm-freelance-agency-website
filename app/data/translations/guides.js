@@ -12,11 +12,23 @@ const guidesTranslations = {
   },
 
   metaDescription: {
-    en: "Honest guides on website costs in Egypt, DIY vs hiring a pro, choosing a web design company, and why your business needs a site in 2026 — written for solopreneurs, online sellers, and freelancers.",
-    ar: "أدلة بصراحة عن تكلفة الموقع في مصر، اعمل موقعك بنفسك ولا توظف محترف، ازاي تختار شركة تصميم مواقع، وليه مشروعك محتاج موقع في 2026 — مكتوبة لأصحاب المشاريع، تجار أونلاين، والفريلانسرز.",
+    en: "Guides for Egyptian business owners on website costs, DIY vs hiring a pro, how to pick a web design company, and why your business needs a site in 2026.",
+    ar: "أدلة بصراحة عن تكلفة الموقع في مصر، اعمل موقعك بنفسك ولا توظف محترف، ازاي تختار شركة تصميم مواقع، وليه مشروعك محتاج موقع إلكتروني في 2026 — لأصحاب البزنس.",
   },
   readMore: { en: "Read Guide", ar: "اقرأ الدليل" },
   backToGuides: { en: "Back to Guides", ar: "العودة إلى الأدلة" },
+  articleCta: {
+    en: "Ready to build your website?",
+    ar: "جاهز تبني موقعك؟",
+  },
+  articleCtaSub: {
+    en: "Custom websites for businesses in Egypt — transparent EGP pricing, no templates.",
+    ar: "مواقع مخصصة للشركات في مصر — أسعار بالجنيه وبدون قوالب جاهزة.",
+  },
+  articleCtaButton: {
+    en: "Get a Free Quote",
+    ar: "احصل على عرض سعر مجاني",
+  },
   by: { en: "Author:", ar: "الكاتب:" },
 };
 

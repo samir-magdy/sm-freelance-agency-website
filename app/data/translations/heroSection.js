@@ -1,6 +1,6 @@
 const hero = {
   eyebrow: {
-    en: "Website Design Company · Egypt",
+    en: "SM Web Design Studio · Egypt",
     ar: "شركة تصميم مواقع · مصر",
   },
   name: {
