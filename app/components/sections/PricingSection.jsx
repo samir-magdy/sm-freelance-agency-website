@@ -55,7 +55,7 @@ export default function PricingSection({ lang }) {
                 <div className="mt-auto pt-4 border-t border-border-subtle/50">
                   {/* Reduced mb-8 to mb-6 */}
                   <div className="flex flex-col gap-1">
-                    <span className="text-[0.55rem] sm:text-xs font-bold uppercase tracking-[0.2em] text-content-muted/70 leading-none">
+                    <span className="text-xs mb-1 sm:text-xs font-bold uppercase tracking-[0.2em] text-content-muted/70 leading-none">
                       {t.startsAt[lang]}
                     </span>
                     <div className="flex items-baseline gap-1.5">
@@ -96,7 +96,7 @@ export default function PricingSection({ lang }) {
             ))}
           </div>
           <div
-              className="mt-4 sm:mt-10 reveal-element text-center text-content-muted/70 text-sm sm:text-[clamp(1.2rem,2vw,1.4rem)] font-medium max-w-3xl mx-auto leading-relaxed [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 [&_a]:hover:text-gold-light [&_a]:transition-colors"
+              className="mt-4 sm:mt-10 reveal-element text-center text-content-muted/85 text-base sm:text-[clamp(1.2rem,2vw,1.4rem)] font-medium max-w-3xl mx-auto leading-relaxed [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 [&_a]:hover:text-gold-light [&_a]:transition-colors"
               dangerouslySetInnerHTML={{ __html: t.trustStrip[lang] }}
             />
         </div>

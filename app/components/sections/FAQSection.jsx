@@ -44,7 +44,7 @@ export default function FAQSection({ lang }) {
               </summary>
 
               <div className="pb-6 md:pb-7 ps-10">
-                <p className="html-content text-base text-content-muted/95 leading-relaxed"
+                <p className="html-content text-base sm:text-xl text-content-muted/95 leading-relaxed"
                   dangerouslySetInnerHTML={{ __html: item.answer[lang] }}
                 />
               </div>
@@ -52,46 +52,41 @@ export default function FAQSection({ lang }) {
             
           ))}
           </div>
-          <div className="reveal-element mt-12 sm:mt-22 w-full space-y-6">
-            {/* Gold separator */}
-            <div className="h-px bg-linear-to-r from-transparent via-gold/35 to-transparent" />
-
-            {/* CTA strip */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 sm:gap-10 ps-5 border-s-2 border-gold/70">
-              <p className="text-[clamp(1.05rem,2.5vw,1.35rem)] font-medium text-content-heading tracking-wide">
-                {t.ctaHeading[lang]}
-              </p>
+          <div className="reveal-element mt-2 sm:mt-8 w-full flex flex-col items-center gap-5 py-8">
+            <p className="text-[clamp(1.4rem,2vw,1.6rem)] font-medium text-content-heading tracking-wide">
+              {t.ctaHeading[lang]}
+            </p>
+            <div className="flex flex-col items-center gap-2.5">
               <a
                 href="#contact"
-                className="cta-primary shrink-0 py-2.5 px-6 rounded-lg text-gray-900 text-sm sm:text-base font-semibold tracking-wide"
+                className="cta-primary rtl:pb-3 shrink-0 py-2.5 px-6 rounded-lg text-gray-900 text-[clamp(1rem,2vw,1.3rem)] font-semibold tracking-wide"
               >
                 {t.cta[lang]}
               </a>
-            </div>
-
-            {/* Tertiary: Browse Guides */}
-            <Link
-              href={`/${lang}/guides`}
-              className="group flex items-center gap-2 text-content-muted hover:text-gold text-sm sm:text-base font-medium transition-colors duration-200 ps-5"
-            >
-              {t.browseGuides[lang]}
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 16 16"
-                fill="none"
-                className={`shrink-0 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`}
-                aria-hidden="true"
+              <Link
+                href={`/${lang}/guides`}
+                className="group flex items-center gap-1.5 text-content-body hover:text-content-heading text-base transition-colors duration-200"
               >
-                <path
-                  d="M3.333 8h9.334M8.667 4l4 4-4 4"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </Link>
+                <span className="text-content-muted/90">{lang === "ar" ? "أو" : "or"}</span>
+                {t.browseGuides[lang]}
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  className={`shrink-0 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`}
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3.333 8h9.334M8.667 4l4 4-4 4"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+            </div>
           </div>
       </div>
     </section>

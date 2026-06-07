@@ -92,7 +92,7 @@ export default function PricingEstimator({ lang }) {
 - حجم المحتوى: ${currentScope.name.ar}
 - الإضافات: ${addonNames}
 - التكلفة التقديرية: ${totalEGP.toLocaleString()} ${currencySymbol}`
-      : `Hello, I just used the price calculator on your website.
+      : `Hello, I just used the price calculator on your website and would like to discuss my project.
 
 The Calculated Data:
 - Type: ${baseType.name.en}
@@ -113,19 +113,19 @@ The Calculated Data:
 
   return (
     <>
-      <div id="pricing-calculator" className="scroll-mt-20 sm:scroll-mt-80 relative max-w-360 w-full mx-auto px-4 py-3.5 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-strong flex flex-col gap-2.5 sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0">
+      <div id="pricing-calculator" className="scroll-mt-54 sm:scroll-mt-80 ltr:sm:scroll-mt-76 relative max-w-360 w-full mx-auto px-3 py-2 sm:py-3.5 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-strong flex flex-col sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0">
         {/* DESKTOP SPLIT CONTAINER - Fixed using Grid */}
         <div className="flex flex-col md:grid md:grid-cols-12 md:gap-8 w-full">
           {/* ========================================= */}
           {/* LEFT COLUMN: Configuration Steps          */}
           {/* ========================================= */}
-          <div className="md:col-span-7 flex flex-col gap-2.5 sm:gap-3.5 md:bg-surface-card/50 md:shadow-xl md:shadow-black/30 md:border-2 md:border-border-strong md:rounded-3xl md:p-6 md:pt-4">
+          <div className="md:col-span-7 flex flex-col gap-1 sm:gap-3.5 md:bg-surface-card/50 md:shadow-xl md:shadow-black/30 md:border-2 md:border-border-strong md:rounded-3xl md:p-6 md:pt-4">
             {/* Step 1: Base Type */}
             <div className="flex flex-col gap-2">
               <label className="ms-1 rtl:mb-1 sm:mb-2 text-content-heading font-bold text-base lg:text-[1.2rem] block">
                 {t.baseLabel[lang]}
               </label>
-              <div className="flex sm:grid sm:grid-cols-3 gap-2.5 sm:justify-between items-center">
+              <div className="flex sm:grid sm:grid-cols-3 gap-2 sm:gap-2.5 sm:justify-between items-center">
                 {t.bases.map((base) => {
                   const Icon = BASE_ICONS[base.id];
                   const isSelected = baseId === base.id;
@@ -133,7 +133,7 @@ The Calculated Data:
                     <button
                       key={base.id}
                       onClick={() => handleBaseTypeChange(base.id)}
-                      className={`cursor-pointer flex flex-col items-start text-start p-2.5 py-3.5 pb-4 sm:p-4 rounded-2xl border transition-all duration-200 w-full gap-3 sm:gap-2 ${
+                      className={`cursor-pointer flex flex-col items-start text-start px-2 py-2.5 sm:p-4 rounded-2xl border transition-all duration-200 w-full gap-3 sm:gap-2 ${
                         isSelected
                           ? "bg-black/40 shadow-md border-white/60 border-2"
                           : "border-2 border-border-subtle hover:border-border-strong bg-black/15"
@@ -144,7 +144,7 @@ The Calculated Data:
                       />
                       <div className="flex flex-col gap-2">
                         <span
-                          className={`text-sm sm:text-base font-semibold leading-tight transition-colors ${isSelected ? "text-content-heading" : "text-content-heading/95"}`}
+                          className={`text-xs sm:text-base font-semibold leading-tight transition-colors ${isSelected ? "text-content-heading" : "text-content-heading/95"}`}
                         >
                           {base.name[lang]}
                         </span>
@@ -177,7 +177,7 @@ The Calculated Data:
                       }`}
                     >
                       <span
-                        className={`font-semibold text-sm sm:text-base lg:text-xl py-0.5 leading-tight ${isSelected ? "text-content-heading" : "text-content-body"}`}
+                        className={`font-semibold text-xs sm:text-base lg:text-xl py-0.5 leading-tight ${isSelected ? "text-content-heading" : "text-content-body"}`}
                       >
                         {scope.name[lang]}
                       </span>
@@ -202,14 +202,14 @@ The Calculated Data:
                     <button
                       key={addon.id}
                       onClick={() => toggleAddon(addon.id)}
-                      className={`cursor-pointer flex flex-1 flex-col items-center gap-2 sm:gap-2.5 px-3 py-2.5 sm:py-4 rounded-2xl border text-sm transition-all ${
+                      className={`cursor-pointer flex flex-1 flex-col items-center gap-2 sm:gap-2.5 px-3 py-2.5 sm:py-4 rounded-2xl border text-sm transition-all justify-center min-h-20 sm:min-h-32 ${
                         isSelected
                           ? "bg-black/40 shadow-md border-white/60 border-2"
                           : "border-2 border-border-subtle hover:border-border-strong bg-black/15"
                       }`}
                     >
                       <span
-                        className={`font-semibold text-sm sm:text-base lg:text-xl leading-tight ${isSelected ? "text-content-heading" : "text-content-body"}`}
+                        className={`font-semibold text-xs sm:text-base lg:text-xl leading-tight ${isSelected ? "text-content-heading" : "text-content-body"}`}
                       >
                         {addon.name[lang]}
                       </span>
@@ -255,7 +255,7 @@ The Calculated Data:
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="sm:hidden mt-0.5 w-[98%] mx-auto border border-green-500/40 bg-green-500/20 hover:bg-green-500/40 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-2xl font-bold text-base"
+              className="sm:hidden my-2 mt-2.5 w-[98%] mx-auto border border-green-500/40 bg-green-500/20 hover:bg-green-500/40 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-2xl font-bold text-base"
             >
               <WhatsAppIcon className="w-5 h-5" />
               <span>{t.cta[lang]}</span>

@@ -178,7 +178,7 @@ export default function PortfolioShowcase({ lang }) {
           dir={isRtl ? "rtl" : "ltr"}
         >
           {/* ── Info panel ── */}
-          <div className="reveal-element order-first lg:order-last mb-2.5 lg:mb-0">
+          <div id="portfolio-title" className="reveal-element order-first lg:order-last mb-2.5 lg:mb-0">
             <div
               key={`info-${project.id}`}
               className="text-center lg:text-start lg:max-w-lg flex flex-col items-center lg:items-start gap-6"
@@ -210,6 +210,7 @@ export default function PortfolioShowcase({ lang }) {
           <div className="reveal-element flex flex-col items-center gap-3">
             {/* Genre badge — mobile only */}
             <h3
+              id="portfolio-genre" 
               aria-hidden="true"
               key={`genre-${project.id}`}
               className="lg:hidden inline-flex items-center px-4 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-[0.1em] border border-border-subtle text-content-heading bg-surface-card"
@@ -225,7 +226,7 @@ export default function PortfolioShowcase({ lang }) {
               />
 
               {/* Phone outer shell */}
-              <div id="mobile-mockup" className="phone-outer w-[59vw] h-[58svh] sm:w-[16.4vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
+              <div id="mobile-mockup" className="phone-outer w-[59vw] h-[61.5vh] sm:w-[17vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
                 {/* Left volume buttons */}
                 <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
                 <div className="absolute -left-[2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />

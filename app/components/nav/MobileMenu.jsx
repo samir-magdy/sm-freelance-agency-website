@@ -121,7 +121,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
       <div
         onClick={closeMenu}
         inert={!isMenuOpen}
-        className={`fixed inset-0 z-40 flex flex-col items-center justify-center transition-[opacity,visibility] duration-250ms ease-out ${
+        className={`pt-6 fixed inset-0 z-40 flex flex-col items-center justify-center transition-[opacity,visibility] duration-250ms ease-out ${
           isMenuOpen
             ? "opacity-100 visible pointer-events-auto"
             : "opacity-0 invisible pointer-events-none"
@@ -169,7 +169,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               {nav[contactItem]}
             </a>
           </li>
-          <li onClick={(e) => e.stopPropagation()} className="pt-4 [&_svg]:block [&_a]:text-subheading">
+          <li onClick={(e) => e.stopPropagation()} className="pt-2.5 [&_svg]:block [&_a]:text-subheading">
             <LanguageToggle lang={lang} label={langToggleLabel} />
           </li>
         </ul>

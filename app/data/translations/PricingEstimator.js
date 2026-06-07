@@ -1,11 +1,11 @@
 const pricingEstimator = {
-  baseLabel: { en: "Website Type", ar: "نوع الموقع" },
+  baseLabel: { en: "Website Type:", ar: "نوع الموقع" },
   scopeLabelByBase: {
-    landing: { en: "Content Size", ar: "حجم المحتوى" },
-    business: { en: "Content Size", ar: "حجم المحتوى" },
-    ecommerce: { en: "Store Size", ar: "كمية المنتجات" },
+    landing: { en: "Content Size:", ar: "حجم المحتوى" },
+    business: { en: "Content Size:", ar: "حجم المحتوى" },
+    ecommerce: { en: "Store Size:", ar: "كمية المنتجات" },
   },
-  addonsLabel: { en: "Add-ons", ar: "الإضافات" },
+  addonsLabel: { en: "Add-ons:", ar: "الإضافات" },
   estimateLabel: { en: "Estimate:", ar: "تقدير السعر:" },
   cta: { en: "Get an Official Quote", ar: "احصل على عرض سعر رسمي" },
   disclaimer: {
@@ -18,19 +18,19 @@ const pricingEstimator = {
       id: "landing",
       name: { en: "Landing Page", ar: "صفحة هبوط" },
       description: { en: "One page, one goal", ar: " موقع صفحة واحدة" },
-      price: 7500,
+      price: 6999,
     },
     {
       id: "business",
       name: { en: "Business Site", ar: "موقع شركة" },
       description: { en: "Multi-page website", ar: "موقع متعدد الصفحات" },
-      price: 10000,
+      price: 8999,
     },
     {
       id: "ecommerce",
       name: { en: "Online Store", ar: "متجر إلكتروني" },
       description: { en: "Full Shopify store", ar: "متجر شوبيفاي متكامل" },
-      price: 15500,
+      price: 15499,
     },
   ],
 
@@ -85,7 +85,7 @@ const pricingEstimator = {
       name: { en: "Bilingual", ar: "ثنائي اللغة" },
       description: {
         en: "Full Bilingual support",
-        ar: " دعم كامل، عربي وإنجليزي",
+        ar: "دعم كامل لللغتين",
       },
       appliesTo: ["landing", "business", "ecommerce"],
       isMultiplier: true,
@@ -109,7 +109,7 @@ const pricingEstimator = {
       id: "copywriting",
       name: { en: "Copywriting", ar: "كتابة المحتوى" },
       description: {
-        en: "Expert marketing copy",
+        en: "We write the content",
         ar: "كتابة محتوى تسويقي",
       },
       appliesTo: ["landing", "business"],

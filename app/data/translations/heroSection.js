@@ -12,12 +12,12 @@ const hero = {
     ar: "احصل على عرض سعر",
   },
   secondaryCta: {
-    en: "Have Questions?",
-    ar: "عندك أسئلة؟",
+    en: "How Pricing Works",
+    ar: "كيفية حساب التكلفة",
   },
   subheading: {
-    en: "Setting the new standard for web design in Egypt.",
-    ar: "بنعيد تعريف معايير تصميم الويب في مصر.",
+    en: "Your online presence starts here.",
+    ar: "وجودك على الإنترنت يبدأ من هنا.",
   },
 };
 

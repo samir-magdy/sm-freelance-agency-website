@@ -31,14 +31,14 @@ export default function GuidesGrid({ resources, lang, t }) {
 
           <Link
             href={`/${lang}/guides/${guide.slug}`}
-            className="relative overflow-hidden inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-base font-semibold tracking-wide transition-all duration-200"
+            className="cta-primary inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-xl text-gray-900 text-base font-semibold tracking-wide"
           >
             {t.readMore[lang]}
           </Link>
         </article>
       ))}
       <div
-        className="relative flex flex-col items-center justify-center gap-4 p-8 rounded-2xl bg-surface-card/20 transition-all duration-50 min-h-[350px] text-center overflow-hidden col-span-full sm:max-w-[calc(50%-0.75rem)] sm:w-full mx-auto"
+        className="relative flex flex-col items-center justify-center gap-4 p-8 rounded-2xl bg-surface-card/20 transition-all duration-50 min-h-[350px] text-center overflow-hidden sm:w-full mx-auto"
       >
         <svg className="absolute inset-0 w-full h-full pointer-events-none" fill="none" aria-hidden="true">
           <rect

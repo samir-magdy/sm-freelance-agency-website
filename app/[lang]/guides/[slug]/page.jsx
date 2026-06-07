@@ -138,7 +138,7 @@ export default function GuidePage({ params }) {
           {/* Back link */}
          <Link
             href={`/${lang}/guides`}
-            className="hover:bg-white/90 hover:border-white/90 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.8rem,1.3vw,1.1rem)] font-medium transition-all duration-500"
+            className="hover:bg-white/90 hover:border-white/90 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.9rem,1.3vw,1.2rem)] font-medium transition-all duration-500"
           >
             <ArrowLeft
               className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}
@@ -285,19 +285,18 @@ export default function GuidePage({ params }) {
     })();
   `}
           </Script>
-          <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-surface-low">
-            {/* Cinematic gold line at top */}
-            <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-gold/60 to-transparent" />
+          <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-surface-low mb-6">
+     
             {/* Ambient glow */}
             <div className="pointer-events-none absolute -top-12 -start-12 w-52 h-52 rounded-full bg-gold/[0.07] blur-3xl" />
 
-            <div className="relative flex flex-col sm:flex-row sm:items-center gap-7 sm:gap-12 px-7 py-9 sm:px-11 sm:py-11">
-              <p className="flex-1 text-[clamp(1.5rem,4vw,2.2rem)] font-semibold text-content-heading leading-tight rtl:leading-loose">
+            <div className="relative text-center sm:text-start flex flex-col sm:flex-row sm:items-center gap-7 sm:gap-12 px-7 py-9 sm:px-11 sm:py-11">
+              <p className="flex-1 text-[clamp(1.2rem,4vw,2.2rem)] font-semibold text-content-heading leading-tight rtl:leading-loose">
                 {t.articleCta[lang]}
               </p>
               <a
                 href={`/${lang}#contact`}
-                className="cta-primary shrink-0 inline-flex items-center gap-2.5 py-3 px-8 rounded-lg text-gray-900 text-base font-medium tracking-wide whitespace-nowrap"
+                className="cta-primary justify-center shrink-0 inline-flex items-center gap-2.5 py-3 px-8 rounded-lg text-gray-900 text-base font-medium tracking-wide whitespace-nowrap"
               >
                 {t.articleCtaButton[lang]}
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className={lang === "ar" ? "rotate-180" : ""} aria-hidden="true">
@@ -308,7 +307,7 @@ export default function GuidePage({ params }) {
           </div>
           <Link
             href={`/${lang}/guides`}
-            className="hover:bg-white/90 hover:border-white/90 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.9rem,1.3vw,1.1rem)] font-medium transition-all duration-500"
+            className="hover:bg-white/90 hover:border-white/90 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.9rem,1.3vw,1.2rem)] font-medium transition-all duration-500"
           >
             <ArrowLeft
               className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}

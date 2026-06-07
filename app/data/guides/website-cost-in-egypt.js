@@ -57,8 +57,8 @@ const resource = {
 </table>
 <p><small>Note: These prices are approximate and depend on the needs of startups and small businesses. Large-scale projects are priced individually.</small></p>
 
-<h2>Website Cost Calculator: Estimate your price in EGP</h2>
-<p>Choose your website type, content size, and any required add-ons to see an instant estimated price:</p>
+<h2>Estimate your websites price</h2>
+<p style="margin-bottom: 0.5rem">Choose your website type, content size, and required add-ons to see an instant estimate:</p>
 <!-- PRICING_ESTIMATOR_SLOT -->
 <h2>What determines the price of any website?</h2>
 <p>To understand exactly where your budget is going, we've compiled the main factors that control the final price:</p>
@@ -89,7 +89,7 @@ const resource = {
 <p>If you are in the planning stage of your project and want a clear view of the costs or steps, or if you have any questions, <a href="/en/#contact">contact us for a free consultation</a>.</p>`,
 
     ar: `
-<p><strong>بشكل عام، أسعار تصميم المواقع الإلكترونية في مصر ممكن تتراوح من 5,000 لـ 50,000 ج.م</strong>، والحقيقة إن مفيش إجابة واحدة ثابتة لسؤال التكلفة، لأن كل مشروع بيختلف عن التاني وفي عوامل كتير بتدخل في التسعير. الاختلاف ده مش عشوائي، ومن خلال قرايتك للدليل ده، هتكتشف أنواع المواقع المختلفة، ونطاق السعر المتوقع لكل نوع، وهتعرف إيه هي العوامل الأساسية اللي بتحدد سعر الموقع في السوق عشان تتجنب إنك تدفع أكتر من اللازم أو تختار أرخص حاجة وتندم بعدين.</p>
+<p><strong>بشكل عام، أسعار تصميم المواقع الإلكترونية في مصر ممكن تتراوح من 5,000 لـ 50,000 ج.م</strong>، والحقيقة إن مفيش إجابة واحدة ثابتة لسؤال التكلفة، لأن كل مشروع بيختلف عن التاني وفي عوامل كتير بتدخل في التسعير. الاختلاف ده مش عشوائي، ومن خلال قرايتك للدليل ده، هتكتشف أنواع المواقع المختلفة، ونطاق السعر المتوقع لكل نوع، وهتعرف إيه هي العوامل الأساسية اللي بتحدد سعر الموقع في السوق علشان تتجنب إنك تدفع أكتر من اللازم أو تختار أرخص حاجة وتندم بعدين.</p>
 
 <h2>إيه التكلفة المتوقعة حسب نوع الموقع؟</h2>
 <p>الجدول ده هيديك فكرة عن الأسعار اللي هتقابلها في السوق حسب نوع الموقع اللي أنت محتاجه:</p>
@@ -105,7 +105,7 @@ const resource = {
     <tr>
       <td>
         <strong>صفحة هبوط</strong>
-        <br><small style="color: #bfbfbf;">صفحة واحدة بتخلي الزائر ياخد إجراء (زي ملء فورم أو يكلمك على الواتساب)</small>
+        <br><small style="color: #bfbfbf;">صفحة واحدة تعريفية بتخلي الزائر ياخد إجراء مُعين (تعبئة نموذج أو رسالة عبر الواتساب)</small>
       </td>
       <td>5,000 – 15,000</td>
       <td>المستقلين والشركات الناشئة</td>
@@ -131,8 +131,8 @@ const resource = {
 <p><small>ملحوظة: الأسعار دي تقريبية وبتعتمد على احتياجات الشركات الناشئة والصغيرة. المشاريع الضخمة بيتحدد سعرها بشكل مخصص.</small></p>
 
 
-<h2>حاسبة تكلفة موقع إلكتروني: احسب سعر موقعك بالجنيه</h2>
-<p>اختار نوع الموقع، حجم المحتوى، الإضافات اللي محتاجها، وهتشوف تقدير سعر فوري:</p>
+<h2>حاسبة التكلفة: احسب سعر موقعك</h2>
+<p style="margin-bottom: 0.5rem">اختار نوع الموقع، حجم المحتوى، الإضافات اللي محتاجها، وهتشوف تقدير سعر فوري:</p>
 <!-- PRICING_ESTIMATOR_SLOT -->
 <h2>إيه اللي بيحدد سعر أي موقع إلكتروني؟</h2>
 <p>علشان تفهم ميزانيتك رايحة فين بالظبط، جمعنالك أهم النقاط اللي بتتحكم في السعر النهائي:</p>

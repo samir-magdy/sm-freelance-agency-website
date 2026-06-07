@@ -1,12 +1,12 @@
 const guidesTranslations = {
   pageTitle: {
-    en: "Web Design Guides for Everyone",
+    en: "Web Guides for Brands & Startups",
     ar: "أدلة لأصحاب المشاريع في مصر",
   },
   metaTitle: {
     en: {
       absolute:
-        "Digital Marketing & Web Design Guides for Everyone",
+        "Web Design Guides for Businesses in Egypt",
     },
     ar: { absolute: "أدلة تصميم المواقع لأصحاب المشاريع في مصر" },
   },
@@ -26,8 +26,8 @@ const guidesTranslations = {
     ar: "مواقع مخصصة للشركات في مصر — أسعار بالجنيه وبدون قوالب جاهزة.",
   },
   articleCtaButton: {
-    en: "Get a Free Quote",
-    ar: "احصل على عرض سعر مجاني",
+    en: "Get a Quote",
+    ar: "احصل على عرض سعر",
   },
   by: { en: "Author:", ar: "الكاتب:" },
 };

@@ -2,8 +2,8 @@ const faqSection = {
   heading: { en: "FAQs", ar: "الأسئلة الشائعة" },
 
   subheading: {
-    en: "What you need to know",
-    ar: "كل اللي محتاج تعرفه",
+    en: "Answers to common questions",
+    ar: "أسئلة شائعة عن تصميم المواقع",
   },
 
   browseGuides: {
@@ -13,7 +13,7 @@ const faqSection = {
 
   ctaHeading: {
     en: "Still have questions?",
-    ar: "لديك أسئلة أخرى؟",
+    ar: "لسا عندك أسئلة؟",
   },
 
   cta: {
@@ -35,7 +35,7 @@ const faqSection = {
     },
     answer: {
       en: "If you want to compete and win in today's market, then <strong>absolutely!</strong> Some of the benefits a professional website provides are credibility, utility, and visibility. To understand exactly how it provides these benefits, read our guide on <a href='/en/guides/why-your-business-needs-a-website'>why you need a professional website for your business</a>.",
-      ar: "لو عايز تنافس وتكبر في السوق دلوقتي، فالموقع خطوة أساسية! الموقع الاحترافي بيدي لمشروعك مصداقية، وسهولة في الوصول، وتواجد قوي قدام عملائك. عشان تعرف إزاي الموقع بيساعدك في ده بالتفصيل، ممكن تقرأ دليلنا عن <a href='/ar/guides/why-your-business-needs-a-website'>أهمية الموقع الإلكتروني لعملك</a>.",
+      ar: "لو عايز تنافس وتكبر في السوق دلوقتي، فالموقع خطوة أساسية! الموقع الاحترافي بيدي لمشروعك مصداقية، وسهولة في الوصول، وتواجد قوي قدام عملائك. علشان تعرف إزاي الموقع بيساعدك في ده بالتفصيل، ممكن تقرأ دليلنا عن <a href='/ar/guides/why-your-business-needs-a-website'>أهمية الموقع الإلكتروني لعملك</a>.",
     },
   },
   {
@@ -44,8 +44,8 @@ const faqSection = {
       ar: "أعمل الموقع بنفسي على منصات جاهزة ولا أستعين بمحترف؟",
     },
     answer: {
-      en: "There are many online platforms that allow you to create your own site. However, these are not recommended for professional websites. Read our guide on the differences between <a href='/en/guides/diy-vs-professional-web-design'>building your own website vs hiring a professional</a> so you can make the right choice.",
-      ar: "أكيد فيه منصات كتير بتخليك تعمل موقعك بنفسك، بس للمشاريع اللي عايزة تبان احترافية، مش بننصح بالطريقة دي. اقرأ دليلنا اللي بيوضح الفرق بين <a href='/ar/guides/diy-vs-professional-web-design'>بناء الموقع بنفسك وبين الاستعانة بمحترف</a>، عشان تاخد القرار الأنسب لمشروعك.",
+      en: "These online platforms are definitely not recommended for professional websites that are expected to generate a return on investment. Read our guide on the differences between <a href='/en/guides/diy-vs-professional-web-design'>building your own website vs hiring a professional</a> so you can make the right choice.",
+      ar: "في منصات كتير بتخليك تعمل موقعك بنفسك، لكن للمشاريع اللي محتاجة ظهور احترافي، مش بننصح بالطريقة دي. اقرأ دليلنا اللي بيوضح الفرق بين <a href='/ar/guides/diy-vs-professional-web-design'>بناء الموقع بنفسك وبين الاستعانة بمحترف</a>، علشان تاخد القرار الأنسب لمشروعك.",
     },
   },
 
@@ -57,17 +57,17 @@ const faqSection = {
     },
     answer: {
       en: "Whether it's a single-page portfolio or a more complex system with multiple pages and custom features, the prices vary greatly. Read our guide on <a href='/en/guides/website-cost-in-egypt'>the real cost of a website in Egypt</a> so that you know what you're paying for. If you want an exact cost for your investment, you can <a href='#contact'>request an official quote</a>.",
-      ar: "الأسعار بتختلف طبعاً حسب طبيعة الموقع، سواء كنت محتاج صفحة واحدة لعرض أعمالك أو نظام متكامل ومقاسات خاصة. اقرأ دليلنا عن <a href='/ar/guides/website-cost-in-egypt'>أسعار المواقع في مصر</a> عشان تكون عارف إنت بتدفع في إيه بالضبط. ولو حابب تعرف تكلفة لمشروعك، ممكن <a href='#contact'>تطلب عرض سعر رسمي</a> مننا.",
+      ar: "الأسعار بتختلف طبعاً حسب طبيعة الموقع، سواء كنت محتاج صفحة واحدة لعرض أعمالك أو نظام متكامل ومقاسات خاصة. اقرأ دليلنا عن <a href='/ar/guides/website-cost-in-egypt'>أسعار المواقع في مصر</a> علشان تكون عارف إنت بتدفع في إيه بالضبط. ولو حابب تعرف تكلفة لمشروعك، ممكن <a href='#contact'>تطلب عرض سعر رسمي</a> مننا.",
     },
   },
   {
     question: {
       en: "How do I choose the right web design company?",
-      ar: "إزاي أختار شركة تصميم مواقع صح؟",
+      ar: "إزاي أختار أفضل شركة تصميم مواقع في مصر؟",
     },
     answer: {
       en: "There are many factors to consider, and because choosing correctly can be confusing, we recommend that you read our guide on <a href='/en/guides/choose-web-design-company-egypt'>how to choose the best web design company in Egypt</a>, as the wrong decision could cost your time and money.",
-      ar: "الاختيارات كتير والموضوع ممكن يكون مربك، عشان كدة بننصحك تقرأ دليلنا عن <a href='/ar/guides/choose-web-design-company-egypt'>إزاي تختار شركة تصميم مواقع</a>، عشان تتجنب القرارات اللي ممكن تضيع وقتك وفلوسك.",
+      ar: "الاختيارات كتير والموضوع ممكن يكون مربك، علشان كدة بننصحك تقرأ دليلنا: <a href='/ar/guides/choose-web-design-company-egypt'>إزاي تختار أفضل شركة تصميم مواقع</a>، علشان تتجنب القرارات اللي ممكن تضيع وقتك وفلوسك.",
     },
   },
   // ── STAGE 3: LOGISTICS & PROCESS (BOFU) ───────────────────────────────────
@@ -78,13 +78,13 @@ const faqSection = {
     },
     answer: {
       en: "We first communicate to understand your business and your goals. From there, we create a visual design for your review. Once approved, we turn that design into your fully functioning website!",
-      ar: "إحنا بنبدأ الأول بالتواصل معاك عشان نفهم شغلك وأهدافك من الموقع. بعد كدة بنعمل تصور لتصميم الموقع عشان تراجعه، وبعد ما تعتمد التصميم، بنبدأ نحوله لموقع إلكتروني جاهز وشغال تمام.",
+      ar: "إحنا بنبدأ الأول بالتواصل معاك علشان نفهم شغلك وأهدافك من الموقع. بعد كدة بنعمل تصور لتصميم الموقع علشان تراجعه، وبعد ما تعتمد التصميم، بنبدأ نطوره لموقع إلكتروني فعلي.",
     },
   },
   {
     question: {
       en: "How long does it take to create a website?",
-      ar: "الموقع بياخد وقت قد إيه عشان يجهز؟",
+      ar: "الموقع بياخد وقت قد إيه علشان يجهز؟",
     },
     answer: {
       en: "Single-page websites (landing pages) are typically completed within a week, business websites can take 1 to 3 weeks, and online stores take around 3 weeks. Please note that these timelines depend on how quickly you can provide your text, images, and feedback during the project.",
@@ -94,7 +94,7 @@ const faqSection = {
   {
     question: {
       en: "What do I need to provide to get started?",
-      ar: "إيه اللي محتاج أجهزه عشان نبدأ؟",
+      ar: "إيه اللي محتاج أجهزه علشان نبدأ؟",
     },
     answer: {
       en: "We'll need your basic brand materials. This mainly includes your logo, the text content you want for each section, and any high-quality photos or videos you'd like to showcase on the site.",
@@ -110,7 +110,7 @@ const faqSection = {
     },
     answer: {
       en: "Yes, you can activate Paymob, Fawaterk, or Kashier with just your National ID to accept cards, InstaPay, and wallets. However, individual tiers are limited to EGP payments only, cannot offer installment options (like valU), and cap monthly sales around 50k EGP. It is ideal for launching, but scaling requires official papers.",
-      ar: "أيوة، تقدر تفعل بوابات دفع زي باي موب، فواتيرك، أو كاشير بالرقم القومي وتستقبل كروت، انستا باي، ومحافظ ذكية. لكن حسابات الأفراد ليها قيود: بتدعم الجنيه المصري بس، مفيش خدمات تقسيط (زي ڤاليو)، وفيها حد أقصى للمبيعات بيكون تقريباً 50 ألف جنيه شهرياً. دي بداية كويسة، لكن هتحتاج ورق رسمي عشان تتوسع.",
+      ar: "أيوة، تقدر تفعل بوابات دفع زي باي موب، فواتيرك، أو كاشير بالرقم القومي وتستقبل كروت، انستا باي، ومحافظ ذكية. لكن حسابات الأفراد ليها قيود: بتدعم الجنيه المصري بس، مفيش خدمات تقسيط (زي ڤاليو)، وفيها حد أقصى للمبيعات بيكون تقريباً 50 ألف جنيه شهرياً. دي بداية كويسة، لكن هتحتاج ورق رسمي علشان تتوسع.",
     },
   },
   {
@@ -120,7 +120,7 @@ const faqSection = {
     },
     answer: {
       en: "Yes. We add InstaPay as a custom checkout option that displays your payment details and captures the customer's transfer reference number. This routes the order straight to your admin dashboard, allowing your team to easily verify the transfer and process the order without having to track down screenshots in WhatsApp DMs.",
-      ar: "أيوة. بنضيف انستا باي كاختيار دفع أساسي بيعرض بياناتك للعميل وبياخد منه رقم التحويل (Reference Number). الطلب بيوصلك على لوحة التحكم برقم التحويل، عشان فريقك يقدر يراجع العملية ويأكد الطلب بسهولة من غير زحمة السكرين شوتس على الواتساب.",
+      ar: "أيوة. بنضيف انستا باي كاختيار دفع أساسي بيعرض بياناتك للعميل وبياخد منه رقم التحويل (Reference Number). الطلب بيوصلك على لوحة التحكم برقم التحويل، علشان فريقك يقدر يراجع العملية ويأكد الطلب بسهولة من غير زحمة السكرين شوتس على الواتساب.",
     },
   },
   {
@@ -130,7 +130,7 @@ const faqSection = {
     },
     answer: {
       en: "Yes. All three Egyptian telecom wallets (Vodafone Cash, Etisalat Cash, Orange Cash) are supported via Paymob and Kashier. We integrate them securely into your checkout flow, making it simple for the large portion of buyers in Egypt who prefer mobile wallets to complete their purchases.",
-      ar: "أيوة. كل محافظ التليكوم المصرية — فودافون كاش، اتصالات كاش، وأورنج كاش — بنضيفها للموقع من خلال باي موب أو كاشير. بنربطهم بشكل سلس بخطوات الدفع عشان نسهل الشراء على الشريحة الكبيرة من العملاء في مصر اللي بيفضلوا الدفع بالمحافظ الإلكترونية.",
+      ar: "أيوة. كل محافظ التليكوم المصرية — فودافون كاش، اتصالات كاش، وأورنج كاش — بنضيفها للموقع من خلال باي موب أو كاشير. بنربطهم بشكل سلس بخطوات الدفع علشان نسهل الشراء على الشريحة الكبيرة من العملاء في مصر اللي بيفضلوا الدفع بالمحافظ الإلكترونية.",
     },
   },
   {
@@ -150,7 +150,7 @@ const faqSection = {
   //   },
   //   answer: {
   //     en: "Yes. International card restrictions can be a hurdle, but we assist you in setting up compliant local payment methods or managed billing solutions to cover your Shopify subscription. You get full control of a real Shopify store with all its tools, while we help you navigate the platform fees in local currency.",
-  //     ar: "أيوة. قيود الدفع بالكروت الدولية ممكن تكون عقبة، بس إحنا بنساعدك توفر حلول دفع محلية مناسبة أو بنقدم خدمة إدارة الفواتير عشان نغطي اشتراك شوبيفاي. هتاخد متجر شوبيفاي كامل بكل أدواته، وإحنا بنساعدك تدير رسوم المنصة بالعملة المحلية.",
+  //     ar: "أيوة. قيود الدفع بالكروت الدولية ممكن تكون عقبة، بس إحنا بنساعدك توفر حلول دفع محلية مناسبة أو بنقدم خدمة إدارة الفواتير علشان نغطي اشتراك شوبيفاي. هتاخد متجر شوبيفاي كامل بكل أدواته، وإحنا بنساعدك تدير رسوم المنصة بالعملة المحلية.",
   //   },
   // },
   // {
@@ -171,7 +171,7 @@ const faqSection = {
     },
     answer: {
       en: "If your site includes an admin page (known as a <abbr data-tooltip='Content Management System'>CMS</abbr>), then yes. We will walk you through how to use it before the handover. It is built to be straightforward and does not require any technical knowledge.",
-      ar: "لو موقعك فيه لوحة تحكم (نظام إدارة المحتوى <abbr data-tooltip='نظام إدارة المحتوى'>CMS</abbr>)، طبعاً هتعرف. قبل ما نسلمك الموقع، بنشرحلك إزاي تستخدم اللوحة دي ببساطة، ومش هتحتاج أي خبرة تقنية عشان تدير المحتوى بتاعك.",
+      ar: "لو موقعك فيه لوحة تحكم (نظام إدارة المحتوى <abbr data-tooltip='نظام إدارة المحتوى'>CMS</abbr>)، طبعاً هتعرف. قبل ما نسلمك الموقع، بنشرحلك إزاي تستخدم اللوحة دي ببساطة، ومش هتحتاج أي خبرة تقنية علشان تدير المحتوى بتاعك.",
     },
   },
   {

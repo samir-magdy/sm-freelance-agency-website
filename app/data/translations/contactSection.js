@@ -31,8 +31,8 @@ export const form = {
   message: { en: "Message", ar: "تفاصيل المشروع" },
   messageOptional: { en: "optional", ar: "اختياري" },
   messagePlaceholder: {
-    en: "I own a beauty center and need a website to show my services, prices, photos and videos of our work...",
-    ar: "عندي مركز تجميل ومحتاجة موقع أعرض فيه الخدمات والأسعار، وصور وفيديوهات لشغلنا...",
+    en: "I need a website for my beauty center to show my services, photos and videos...",
+    ar: "عندي مركز تجميل ومحتاجة موقع أعرض فيه الخدمات، وصور وفيديوهات لشغلنا...",
   },
   submit: { en: "Send My Request", ar: "أرسل الطلب" },
   sending: { en: "Sending...", ar: "جاري الإرسال..." },
