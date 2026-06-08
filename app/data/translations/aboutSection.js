@@ -1,6 +1,6 @@
 const aboutSection = {
   heading: {
-    en: "Samir Magdy, Web Developer",
+    en: "Samir Magdy - Web Developer & Designer",
     ar: "سمير مجدي، مصمم ومبرمج مواقع",
   },
 storyP1: {

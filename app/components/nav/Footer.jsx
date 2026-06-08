@@ -1,5 +1,3 @@
-"use client";
-import { usePathname } from "next/navigation";
 import SocialIcons from "../ui/SocialIcons";
 import { Copyright } from "lucide-react";
 import Link from "next/link";
@@ -9,9 +7,7 @@ const footerLinks = [
   { href: "/terms", en: "Terms of Service", ar: "شروط الخدمة" },
 ];
 
-export default function Footer() {
-  const pathname = usePathname();
-  const lang = pathname.split("/")[1] || "en";
+export default function Footer({ lang }) {
 
   return (
     <footer

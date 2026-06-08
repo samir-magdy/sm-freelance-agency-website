@@ -6,7 +6,7 @@ const guidesTranslations = {
   metaTitle: {
     en: {
       absolute:
-        "Web Design Guides for Businesses in Egypt",
+        "Web Guides for Brands & Startups in Egypt",
     },
     ar: { absolute: "أدلة تصميم المواقع لأصحاب المشاريع في مصر" },
   },
@@ -15,6 +15,7 @@ const guidesTranslations = {
     en: "Guides for Egyptian business owners on website costs, DIY vs hiring a pro, how to pick a web design company, and why your business needs a site in 2026.",
     ar: "أدلة بصراحة عن تكلفة الموقع في مصر، اعمل موقعك بنفسك ولا توظف محترف، ازاي تختار شركة تصميم مواقع، وليه مشروعك محتاج موقع إلكتروني في 2026. لأصحاب البزنس.",
   },
+  minRead: { en: "min read", ar: "دقيقة قراءة" },
   readMore: { en: "Read Guide", ar: "اقرأ الدليل" },
   backToGuides: { en: "Back to Guides", ar: "العودة إلى الأدلة" },
   articleCta: {

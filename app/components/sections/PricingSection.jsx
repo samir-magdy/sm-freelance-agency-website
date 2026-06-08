@@ -1,7 +1,4 @@
-"use client";
-
 import translations from "@/app/data/translations";
-import smoothScroll from "../utils/SmoothScroll";
 
 export default function PricingSection({ lang }) {
   const t = translations.pricingCards;
@@ -34,7 +31,6 @@ export default function PricingSection({ lang }) {
             {t.cards.map((card) => (
               <a
                 key={card.id}
-                onClick={smoothScroll}
                 href="#contact"
                 /* Trimmed internal padding slightly for mobile/scaled views */
                 className="max-w-4xl reveal-element group flex flex-col p-6 sm:p-8 lg:p-10 rounded-4xl border border-border-subtle bg-surface-card hover:border-gold/40 hover:bg-surface-low hover:shadow-2xl hover:shadow-gold/5 transition-all duration-500 ease-out hover:-translate-y-1.5"

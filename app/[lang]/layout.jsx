@@ -449,7 +449,7 @@ export default async function LangLayout({ children, params }) {
         <main id="main-content" className="md:flex-1 md:flex md:flex-col">
           {children}
         </main>
-        <Footer />
+        <Footer lang={lang} />
         <Analytics />
       </body>
     </html>

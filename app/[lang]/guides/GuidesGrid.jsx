@@ -1,4 +1,10 @@
 import Link from "next/link";
+import { Calendar, Clock } from "lucide-react";
+
+function readingMinutes(content) {
+  const words = content.replace(/<[^>]+>/g, " ").trim().split(/\s+/).length;
+  return Math.max(1, Math.ceil(words / 200));
+}
 
 export default function GuidesGrid({ resources, lang, t }) {
   return (
@@ -8,37 +14,41 @@ export default function GuidesGrid({ resources, lang, t }) {
           key={guide.slug}
           className="flex flex-col justify-between gap-4 p-5.5 rounded-2xl border-2 border-border-subtle bg-surface-card/50 hover:border-border-strong transition-colors duration-200"
         >
-          <h2 className="text-content-heading font-bold text-subheading leading-snug rtl:leading-loose">
-            {(() => {
-              const colonIndex = guide.title[lang].indexOf(":");
-              if (colonIndex === -1) return guide.title[lang];
-              return (
-                <>
-                  {guide.title[lang].slice(0, colonIndex + 1)}
-                  <span className="font-semibold text-content-heading/95">
-                    {guide.title[lang].slice(colonIndex + 1)}
-                  </span>
-                </>
-              );
-            })()}
-          </h2>
+          <div>
+            <h2 className="text-content-heading font-bold text-subheading leading-snug rtl:leading-loose">
+              {guide.title[lang]}
+            </h2>
+            <div className="flex flex-wrap items-center gap-2 mt-3">
+              <time
+                dateTime={guide.datePublished}
+                className="inline-flex items-center gap-1.5 text-sm text-content-muted border border-border-subtle rounded-lg px-3 py-1"
+              >
+                <Calendar size={13} aria-hidden />
+                {new Intl.DateTimeFormat(lang === "ar" ? "ar-EG" : "en-US", { dateStyle: "long" }).format(new Date(guide.datePublished))}
+              </time>
+              <span className="inline-flex items-center gap-1.5 text-sm text-content-muted border border-border-subtle rounded-lg px-3 py-1">
+                <Clock size={13} aria-hidden />
+                {readingMinutes(guide.content[lang])} {t.minRead[lang]}
+              </span>
+            </div>
+          </div>
 
           <div className="flex items-center sm:pb-2">
-            <p className="text-content-muted text-base leading-relaxed rtl:md:py-2 rtl:leading-loose">
+            <p className="text-content-muted text-base sm:text-[clamp(1rem,3.5vw,1.3rem)] leading-relaxed rtl:md:py-2 rtl:leading-loose">
               {guide.excerpt[lang]}
             </p>
           </div>
 
           <Link
             href={`/${lang}/guides/${guide.slug}`}
-            className="cta-primary inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-xl text-gray-900 text-base font-semibold tracking-wide"
+            className="cta-primary inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-xl text-gray-900 text-base sm:text-[clamp(1rem,3vw,1.3rem)] font-semibold tracking-wide"
           >
             {t.readMore[lang]}
           </Link>
         </article>
       ))}
       <div
-        className="relative flex flex-col items-center justify-center gap-4 p-8 rounded-2xl bg-surface-card/20 transition-all duration-50 min-h-[350px] text-center overflow-hidden sm:w-full mx-auto"
+        className="relative flex flex-col items-center justify-center gap-4 p-8 rounded-2xl bg-surface-card/20 transition-all sm:col-span-2 max-w-[40rem] duration-50 min-h-[350px] text-center overflow-hidden sm:w-full mx-auto"
       >
         <svg className="absolute inset-0 w-full h-full pointer-events-none" fill="none" aria-hidden="true">
           <rect
@@ -46,7 +56,7 @@ export default function GuidesGrid({ resources, lang, t }) {
             width="calc(100% - 2px)"
             height="calc(100% - 2px)"
             rx="16"
-            stroke="gray"
+            stroke="#FFD7004D"
             strokeWidth="3"
             strokeDasharray="8 6"
             style={{ animation: "dash-march 2s linear infinite" }}

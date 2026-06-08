@@ -58,7 +58,7 @@ export default function FAQSection({ lang }) {
             <div className="flex flex-col items-center gap-2.5">
               <a
                 href="#contact"
-                className="cta-primary rtl:pb-3 shrink-0 py-2.5 px-6 rounded-lg text-gray-900 text-[clamp(1rem,2vw,1.3rem)] font-semibold tracking-wide"
+                className="cta-primary rtl:pb-3 mb-2 sm:mb-0 shrink-0 py-2.5 px-6 rounded-lg text-gray-900 text-[clamp(1rem,4.5vw,1.3rem)] font-semibold tracking-wide"
               >
                 {t.cta[lang]}
               </a>

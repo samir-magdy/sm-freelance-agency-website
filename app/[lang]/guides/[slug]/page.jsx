@@ -165,7 +165,7 @@ export default function GuidePage({ params }) {
             <div className="flex flex-wrap items-center gap-3 mt-4">
               <time
                 dateTime={guide.datePublished}
-                className="inline-flex items-center gap-1.5 text-sm text-content-muted border border-border-subtle rounded-lg px-3 py-1"
+                className="inline-flex items-center gap-1.5 text-sm sm:text-base text-content-muted border border-border-subtle rounded-lg px-3 py-1"
               >
                 <Calendar size={13} aria-hidden />
                 {new Intl.DateTimeFormat(lang === "ar" ? "ar-EG" : "en-US", { dateStyle: "long" }).format(new Date(guide.datePublished))}
@@ -219,71 +219,6 @@ export default function GuidePage({ params }) {
               </>
             );
           })()}
-          <Script id="guide-tooltips" strategy="afterInteractive">
-            {`
-    (() => {
-      const TOOLTIP_MAX_W = 280;
-      const EDGE_GAP = 12;
-      const TOOLTIP_GAP = 12;
-      const heightCache = new Map();
-
-      const measureTooltipHeight = (text) => {
-        if (heightCache.has(text)) return heightCache.get(text);
-        const el = document.createElement('div');
-        el.style.cssText = 'position:fixed;visibility:hidden;pointer-events:none;top:-9999px;width:min(280px,calc(100vw - 24px));padding:0.55rem 0.85rem;font-size:1.1rem;line-height:1.5;white-space:normal;';
-        el.textContent = text;
-        document.body.appendChild(el);
-        const h = el.offsetHeight;
-        document.body.removeChild(el);
-        heightCache.set(text, h);
-        return h;
-      };
-
-      const adjustTooltip = (abbr) => {
-        if (!abbr) return;
-        const { left, top, width } = abbr.getBoundingClientRect();
-        const vw = window.innerWidth;
-
-        const tipW = Math.min(TOOLTIP_MAX_W, vw - 24);
-        const tipLeft = left + width / 2 - tipW / 2;
-        const tipRight = tipLeft + tipW;
-        let offset = 0;
-        if (tipLeft < EDGE_GAP) {
-          offset = EDGE_GAP - tipLeft;
-        } else if (tipRight > vw - EDGE_GAP) {
-          offset = vw - EDGE_GAP - tipRight;
-        }
-        abbr.style.setProperty('--tooltip-offset', offset + 'px');
-
-        const navH = document.querySelector('header')?.offsetHeight ?? 0;
-        const tipH = measureTooltipHeight(abbr.dataset.tooltip);
-        if (top - navH - TOOLTIP_GAP < tipH) {
-          abbr.classList.add('tooltip-below');
-        } else {
-          abbr.classList.remove('tooltip-below');
-        }
-      };
-
-      // Click listener (using event delegation)
-      document.addEventListener('click', (e) => {
-        const abbr = e.target.closest('abbr[data-tooltip]');
-        document.querySelectorAll('abbr[data-tooltip].is-active').forEach((el) => {
-          if (el !== abbr) el.classList.remove('is-active');
-        });
-        if (abbr) {
-          if (!abbr.classList.contains('is-active')) adjustTooltip(abbr);
-          abbr.classList.toggle('is-active');
-        }
-      });
-
-      // Hover listener (using event delegation so it works with dynamic content)
-      document.addEventListener('mouseover', (e) => {
-        const abbr = e.target.closest('abbr[data-tooltip]');
-        if (abbr) adjustTooltip(abbr);
-      });
-    })();
-  `}
-          </Script>
           <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-surface-low mb-6">
      
             {/* Ambient glow */}

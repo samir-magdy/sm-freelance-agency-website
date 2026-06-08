@@ -43,7 +43,7 @@ export const pricingCards = {
         ar: "موقع أعمال",
       },
       tagline: {
-        en: "A multi-page website that presents your company in full detail. <em>Ideal for more established businesses that have a lot to show and tell.</em>",
+        en: "A multi-page website that presents your company in full detail. <em>Ideal for more established businesses and entities that have a lot to show and tell.</em>",
         ar: "موقع متعدد الصفحات بيعرض شركتك، خدماتك، أعمالك، وبيانات التواصل بشكل احترافي. <em>مثالي للشركات المستقرة، والشركات اللي محتاجة وجود قوي على جوجل.</em>",
       },
       price: "8,999",

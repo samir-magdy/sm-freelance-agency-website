@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import LanguageToggle from "../ui/LanguageToggle";
 import MobileMenu from "./MobileMenu";
-import smoothScroll from "../utils/SmoothScroll";
 import translations from "@/app/data/translations";
 
 const { navLinks } = translations;
@@ -28,11 +27,6 @@ function DesktopNavLinks({ nav }) {
           <li key={i}>
             <Link
               href={destination}
-              onClick={(e) => {
-                if (isHome) {
-                  smoothScroll(e);
-                }
-              }}
               className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
             >
               {nav[item]}
@@ -59,11 +53,6 @@ function DesktopNavLinks({ nav }) {
       <li>
         <Link
           href={contactDestination}
-          onClick={(e) => {
-            if (isHome) {
-              smoothScroll(e);
-            }
-          }}
           className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
         >
           {nav[contactItem]}
@@ -83,7 +72,7 @@ export default function HeroNav({ lang, strings }) {
         className="hidden lg:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl px-8 pe-10 py-4"
       >
         <div className="relative flex items-center w-full">
-          <a href={`/${lang}/#home`} onClick={smoothScroll} aria-label="Samir Magdy Web Studio - Home">
+          <a href={`/${lang}/#home`} aria-label="Samir Magdy Web Studio - Home">
             <Image
               src="/brand.svg"
               alt="SM Web Design Studio – Website Design Company in Egypt"

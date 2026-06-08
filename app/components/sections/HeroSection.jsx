@@ -17,7 +17,7 @@ export default function HeroSection({ lang }) {
 
       <div
         id="hero-container"
-        className="relative flex flex-col items-center pt-6 sm:pt-20"
+        className="relative flex flex-col items-center pt-6 sm:pt-26"
       >
         <h2
           dir="ltr"
@@ -42,7 +42,7 @@ export default function HeroSection({ lang }) {
 
         <p
           id="subheading"
-          className="mb-6 sm:mb-8 hero-fade hero-fade-nav text-content-body text-[clamp(1rem,4.5vw,2rem)] sm:text-[clamp(1rem,1.6vw,2.2rem)] sm:rtl:text-[clamp(1rem,1.8vw,2.2rem)] rtl:leading-loose text-center px-10 sm:px-16"
+          className="mb-8 sm:mb-10 hero-fade hero-fade-nav text-content-body text-[clamp(1.1rem,4vw,2.5rem)] sm:text-[clamp(1.2rem,2.2vw,2.8rem)] sm:rtl:text-[clamp(1.2rem,2.4vw,2.8rem)] rtl:leading-loose text-center sm:px-16"
           dangerouslySetInnerHTML={{ __html: hero.subheading[lang] }}
         />
 
@@ -50,7 +50,7 @@ export default function HeroSection({ lang }) {
           <a
             id="cta-main"
             href="#contact"
-            className="cta-primary font-semibold sm:font-normal rtl:pb-4! hero-cta-entrance bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1rem,1.8vw,1.7rem)] rtl:text-[clamp(16px,1.8vw,26px)] px-6 sm:px-10 py-2.5 rounded-2xl"
+            className="cta-primary font-semibold rtl:pb-4! hero-cta-entrance bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1rem,1.8vw,1.7rem)] rtl:text-[clamp(16px,1.8vw,26px)] px-6 sm:px-10 py-2.5 rounded-2xl"
           >
             {hero.primaryCta[lang]}
           </a>

@@ -34,7 +34,7 @@ const faqSection = {
       ar: "هو الموقع الإلكتروني مهم فعلاً؟",
     },
     answer: {
-      en: "If you want to compete and win in today's market, then <strong>absolutely!</strong> Some of the benefits a professional website provides are credibility, utility, and visibility. To understand exactly how it provides these benefits, read our guide on <a href='/en/guides/why-your-business-needs-a-website'>why you need a professional website for your business</a>.",
+      en: "If you want to compete and win in today's market, then <strong>absolutely!</strong> Some of the benefits a professional website provides are credibility, visibility and utility. To understand exactly how it provides these benefits, read our guide on <a href='/en/guides/why-your-business-needs-a-website'>why you need a professional website for your business</a>.",
       ar: "لو عايز تنافس وتكبر في السوق دلوقتي، فالموقع خطوة أساسية! الموقع الاحترافي بيدي لمشروعك مصداقية، وسهولة في الوصول، وتواجد قوي قدام عملائك. علشان تعرف إزاي الموقع بيساعدك في ده بالتفصيل، ممكن تقرأ دليلنا عن <a href='/ar/guides/why-your-business-needs-a-website'>أهمية الموقع الإلكتروني لعملك</a>.",
     },
   },
@@ -44,7 +44,7 @@ const faqSection = {
       ar: "أعمل الموقع بنفسي على منصات جاهزة ولا أستعين بمحترف؟",
     },
     answer: {
-      en: "These online platforms are definitely not recommended for professional websites that are expected to generate a return on investment. Read our guide on the differences between <a href='/en/guides/diy-vs-professional-web-design'>building your own website vs hiring a professional</a> so you can make the right choice.",
+      en: "These online platforms are definitely not recommended for websites that are expected to generate a return on investment. Read our guide on the differences between <a href='/en/guides/diy-vs-professional-web-design'>building your own website vs hiring a professional</a> so you can make the right choice.",
       ar: "في منصات كتير بتخليك تعمل موقعك بنفسك، لكن للمشاريع اللي محتاجة ظهور احترافي، مش بننصح بالطريقة دي. اقرأ دليلنا اللي بيوضح الفرق بين <a href='/ar/guides/diy-vs-professional-web-design'>بناء الموقع بنفسك وبين الاستعانة بمحترف</a>، علشان تاخد القرار الأنسب لمشروعك.",
     },
   },
@@ -56,7 +56,7 @@ const faqSection = {
       ar: "تكلفة الموقع الإلكتروني كام في مصر؟ (2026)",
     },
     answer: {
-      en: "Whether it's a single-page portfolio or a more complex system with multiple pages and custom features, the prices vary greatly. Read our guide on <a href='/en/guides/website-cost-in-egypt'>the real cost of a website in Egypt</a> so that you know what you're paying for. If you want an exact cost for your investment, you can <a href='#contact'>request an official quote</a>.",
+      en: "Whether it's a single-page portfolio or a more complex system with multiple pages and custom features, the prices vary greatly. Read our guide on <a href='/en/guides/website-cost-in-egypt'>the real cost of a website in Egypt</a> so that you know what you're paying for. If you'd like to skip the reading and talk to us, you can <a href='#contact'>request an official quote</a>.",
       ar: "الأسعار بتختلف طبعاً حسب طبيعة الموقع، سواء كنت محتاج صفحة واحدة لعرض أعمالك أو نظام متكامل ومقاسات خاصة. اقرأ دليلنا عن <a href='/ar/guides/website-cost-in-egypt'>أسعار المواقع في مصر</a> علشان تكون عارف إنت بتدفع في إيه بالضبط. ولو حابب تعرف تكلفة لمشروعك، ممكن <a href='#contact'>تطلب عرض سعر رسمي</a> مننا.",
     },
   },
@@ -77,7 +77,7 @@ const faqSection = {
       ar: "إيه هي خطوات تنفيذ الموقع؟",
     },
     answer: {
-      en: "We first communicate to understand your business and your goals. From there, we create a visual design for your review. Once approved, we turn that design into your fully functioning website!",
+      en: "We first connect to understand your business and your vision. From there, we create a visual design for your review. Once approved, we turn that design into your fully functioning website!",
       ar: "إحنا بنبدأ الأول بالتواصل معاك علشان نفهم شغلك وأهدافك من الموقع. بعد كدة بنعمل تصور لتصميم الموقع علشان تراجعه، وبعد ما تعتمد التصميم، بنبدأ نطوره لموقع إلكتروني فعلي.",
     },
   },
@@ -170,8 +170,8 @@ const faqSection = {
       ar: "هل هعرف أعدل في محتوى الموقع بنفسي؟",
     },
     answer: {
-      en: "If your site includes an admin page (known as a <abbr data-tooltip='Content Management System'>CMS</abbr>), then yes. We will walk you through how to use it before the handover. It is built to be straightforward and does not require any technical knowledge.",
-      ar: "لو موقعك فيه لوحة تحكم (نظام إدارة المحتوى <abbr data-tooltip='نظام إدارة المحتوى'>CMS</abbr>)، طبعاً هتعرف. قبل ما نسلمك الموقع، بنشرحلك إزاي تستخدم اللوحة دي ببساطة، ومش هتحتاج أي خبرة تقنية علشان تدير المحتوى بتاعك.",
+      en: "If your site includes an admin page (known as a CMS), then yes. We will walk you through how to use it before the handover. It is built to be straightforward and does not require any technical knowledge.",
+      ar: "لو موقعك فيه لوحة تحكم (نظام إدارة المحتوى CMS)، طبعاً هتعرف. قبل ما نسلمك الموقع، بنشرحلك إزاي تستخدم اللوحة دي ببساطة، ومش هتحتاج أي خبرة تقنية علشان تدير المحتوى بتاعك.",
     },
   },
   {
@@ -180,7 +180,7 @@ const faqSection = {
       ar: "ممكن أضيف مميزات تانية للموقع بعدين؟",
     },
     answer: {
-      en: "Of course, whether you want to add more pages, sections, or a management dashboard (<abbr data-tooltip='Content Management System'>CMS</abbr>), we can expand your site without having to start over.",
+      en: "Of course, whether you want to add more pages, sections, or a management dashboard (CMS), we can expand your site without having to start over.",
       ar: "أكيد طبعاً، سواء عايز تضيف صفحات جديدة، أو أقسام تانية، أو حتى لوحة تحكم لإدارة المحتوى، نقدر نوسع ونطور الموقع في أي وقت ومن غير ما نضطر نبدأ من الصفر.",
     },
   },

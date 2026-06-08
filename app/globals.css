@@ -66,10 +66,17 @@ section {
     font-family: var(--font-cairo), sans-serif;
   }
 
+  html,
+  body {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: var(--color-background);
   }
+
 }
+
 /* ══════════════════════════════════════
    6. Hero Section
    ══════════════════════════════════════ */
@@ -182,12 +189,12 @@ section {
   background: linear-gradient(
     to right,
     transparent,
-    var(--color-gold) 30%,
-    var(--color-gold) 70%,
+    var(--color-gold) 10%,
+    var(--color-gold) 90%,
     transparent
   );
   transform-origin: center;
-  animation: hereRuleIn 1s cubic-bezier(0.25, 0, 0, 1) 2s both;
+  animation: hereRuleIn 1s cubic-bezier(0.25, 0, 0, 0.8) 0.5s both;
 }
 
 @keyframes hereRuleIn {
@@ -369,6 +376,9 @@ html.hero-played .hero-cta-entrance {
     [dir="rtl"] #hero-hook {
       line-height: 1.9;
     }
+    #hero-container{
+      padding-top: 5rem;
+    }
     #mobile-mockup {
       height: 55vh;
     }
@@ -384,6 +394,9 @@ html.hero-played .hero-cta-entrance {
     #portfolio-genre{
       font-size: 0.9rem;
       margin-bottom: 0.25rem;
+    }
+    #subheading {
+      font-size: clamp(1.2rem, 5.2vw, 4rem);
     }
     #cta-main {
       font-size: clamp(1.2rem, 4vw, 1.5rem);
@@ -426,74 +439,6 @@ details[open]::details-content {
 
 .html-content a:hover {
   color: var(--color-gold-light);
-}
-
-.html-content abbr {
-  font-style: normal;
-  text-decoration: underline dotted var(--color-content-muted);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-  cursor: help;
-  position: relative;
-}
-
-.html-content abbr[data-tooltip]::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: calc(100% + 2px);
-  left: 50%;
-  transform: translateX(calc(-50% + var(--tooltip-offset, 0px)))
-    translateY(10px);
-  width: max-content;
-  max-width: min(280px, calc(100vw - 24px));
-  background: rgb(0, 0, 0);
-  color: var(--color-content-body);
-  border: 1px solid var(--color-border-strong);
-  border-radius: var(--radius-md);
-  padding: 0.55rem 0.85rem;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  white-space: normal;
-  text-align: start;
-  pointer-events: none;
-  opacity: 0;
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 8px 24px oklch(0% 0 0 / 0.6);
-  z-index: 10;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .html-content abbr[data-tooltip]:hover::after {
-    opacity: 1;
-    transform: translateX(calc(-50% + var(--tooltip-offset, 0px))) translateY(0);
-  }
-}
-
-.html-content abbr[data-tooltip].is-active::after {
-  opacity: 1;
-  transform: translateX(calc(-50% + var(--tooltip-offset, 0px))) translateY(0);
-}
-
-/* Tooltip flipped below when near the top of the viewport */
-.html-content abbr[data-tooltip].tooltip-below::after {
-  bottom: auto;
-  top: calc(100% + 2px);
-  transform: translateX(calc(-50% + var(--tooltip-offset, 0px)))
-    translateY(-10px);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .html-content abbr[data-tooltip].tooltip-below:hover::after {
-    opacity: 1;
-    transform: translateX(calc(-50% + var(--tooltip-offset, 0px))) translateY(0);
-  }
-}
-
-.html-content abbr[data-tooltip].tooltip-below.is-active::after {
-  opacity: 1;
-  transform: translateX(calc(-50% + var(--tooltip-offset, 0px))) translateY(0);
 }
 
 /* ══════════════════════════════════════
