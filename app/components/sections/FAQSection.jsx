@@ -23,7 +23,6 @@ export default function FAQSection({ lang }) {
           {t.items.map((item, i) => (
             <details
               key={i}
-              name="faq"
               className="reveal-element border-b border-border-subtle px-2"
             >
               <summary
@@ -34,11 +33,11 @@ export default function FAQSection({ lang }) {
                 `}
               >
                 <div className="relative shrink-0 w-5 h-5 me-5">
-                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-0.5 rounded-full bg-icon [details[open]_&]:bg-icon" />
-                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-3 rounded-full bg-icon [details[open]_&]:h-0 [details[open]_&]:opacity-0" />
+                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-0.5 rounded-full bg-icon" />
+                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-3 rounded-full bg-icon transition-transform duration-300 ease-out [details[open]_&]:rotate-90" />
                 </div>
 
-                <span className="text-content-body font-normal tracking-wide text-base sm:text-subheading">
+                <span className="text-content-heading font-normal tracking-wide text-base sm:text-subheading">
                   {item.question[lang]}
                 </span>
               </summary>
@@ -49,7 +48,7 @@ export default function FAQSection({ lang }) {
                 />
               </div>
             </details>
-            
+
           ))}
           </div>
           <div className="reveal-element mt-2 sm:mt-8 w-full flex flex-col items-center gap-5 py-8">

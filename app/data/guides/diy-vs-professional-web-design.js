@@ -11,12 +11,12 @@ const resource = {
     ar: "أعمل موقعي بنفسي على منصة جاهزة ولا أوظف محترف؟",
   },
   excerpt: {
-    en: "There are many drag-and-drop tools today — Wix and Squarespace — that let anyone build a basic website. So should you build it yourself or hire a professional? This guide breaks down the real costs (including hidden USD subscriptions), the risks, and the long-term tradeoffs, so you can make the right call for your business in Egypt.",
-    ar: "فيه أدوات كتير دلوقتي بتخليك تعمل موقع بسيط من غير ما تكون مبرمج — زي Wix وSquarespace. السؤال: تعمل موقعك بنفسك على المنصات دي ولا توظف محترف؟ في الدليل ده بنشرحلك التكلفة الحقيقية (بما فيها الاشتراكات بالدولار اللي مش بيوضحوها)، المخاطر، والفرق على المدى البعيد علشان تاخد القرار اللي ينفع شغلك في مصر.",
+    en: "There are many drag-and-drop tools today (Wix and Squarespace) that let anyone build a basic website. So should you build it yourself or hire a professional? This guide breaks down the real costs (including hidden USD subscriptions), the risks, and the long-term tradeoffs, so you can make the right call for your business in Egypt.",
+    ar: "فيه أدوات كتير دلوقتي بتخليك تعمل موقع بسيط من غير ما تكون مبرمج، زي Wix وSquarespace. السؤال: تعمل موقعك بنفسك على المنصات دي ولا توظف محترف؟ في الدليل ده بنشرحلك التكلفة الحقيقية (بما فيها الاشتراكات بالدولار اللي مش بيوضحوها)، المخاطر، والفرق على المدى البعيد علشان تاخد القرار اللي ينفع شغلك في مصر.",
   },
   content: {
     en: `
-<p><abbr data-tooltip="Do-It-Yourself">DIY</abbr> website builders like Wix or Squarespace can work if you need something very simple. But they come with significant drawbacks that aren't immediately obvious — they tend to surface over time, or the moment you need customizations that go beyond what the platform allows. Let's start with a clear comparison.</p>
+<p><abbr data-tooltip="Do-It-Yourself">DIY</abbr> website builders like Wix or Squarespace can work if you need something very simple. But they come with significant drawbacks that aren't immediately obvious; they tend to surface over time, or the moment you need customizations that go beyond what the platform allows. Let's start with a clear comparison.</p>
 
 <h2>DIY vs. Professional: A Side-by-Side Comparison</h2>
 <table>
@@ -49,7 +49,7 @@ const resource = {
       <td>Optimized for high performance</td>
     </tr>
     <tr>
-      <td><abbr data-tooltip="Search Engine Optimization — the set of factors that determine how high your website ranks on Google search results.">SEO</abbr> Foundation</td>
+      <td><abbr data-tooltip="Search Engine Optimization: the set of factors that determine how high your website ranks on Google search results.">SEO</abbr> Foundation</td>
       <td>Limited and generic</td>
       <td>Built in from the ground up</td>
     </tr>
@@ -67,7 +67,7 @@ const resource = {
 </table>
 
 <h2>The DIY Cost Trap</h2>
-<p>The main appeal of DIY platforms is the low starting price — you pay a monthly subscription (in USD) and do everything yourself. But two costs aren't visible up front. The first is the value of your time: the hours you spend wrestling with layouts and fixing technical issues are hours away from running your business. The second is the compounding USD subscription. Most platforms cost $20–$50/month — over two years, that's roughly 30,000–80,000 EGP at current exchange rates. A professional build, paid once in EGP, will typically cost less than 30,000. For a full breakdown of what professional builds cost, read our <a href='/en/guides/website-cost-in-egypt'>guide on website costs in Egypt</a>. The bottom line: DIY platforms will cost you far more than professional design over the long run.</p>
+<p>The main appeal of DIY platforms is the low starting price: you pay a monthly subscription (in USD) and do everything yourself. But two costs aren't visible up front. The first is the value of your time: the hours you spend wrestling with layouts and fixing technical issues are hours away from running your business. The second is the compounding USD subscription. Most platforms cost $20–$50/month, and over two years, that's roughly 30,000–80,000 EGP at current exchange rates. A professional build, paid once in EGP, will typically cost less than 30,000. For a full breakdown of what professional builds cost, read our <a href='/en/guides/website-cost-in-egypt'>guide on website costs in Egypt</a>. The bottom line: DIY platforms will cost you far more than professional design over the long run.</p>
 
 <h2>The Bottom Line</h2>
 <p>Building your own site is a reasonable choice if you're still testing a new idea and your budget is very tight. But if you have a real business and want to grow and compete in 2026, professional web design is the foundation you need. The pattern is consistent: businesses that invest in professional design from the start avoid the rebuild trap entirely. When you're ready, you can <a href="/en/#contact">request an official EGP quote</a> for your website.</p>`,
@@ -106,7 +106,7 @@ const resource = {
       <td>محسّن للسرعة العالية</td>
     </tr>
     <tr>
-      <td>أساس الـ <abbr data-tooltip="Search Engine Optimization — مجموعة من العوامل اللي بتحدد ترتيب موقعك في نتائج بحث جوجل">SEO</abbr></td>
+      <td>أساس الـ <abbr data-tooltip="Search Engine Optimization: مجموعة من العوامل اللي بتحدد ترتيب موقعك في نتائج بحث جوجل">SEO</abbr></td>
       <td>محدود وعام</td>
       <td>مبني من الأساس</td>
     </tr>

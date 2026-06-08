@@ -1,7 +1,7 @@
 const aboutSection = {
   heading: {
-    en: "Samir Magdy — Web Developer",
-    ar: "سمير مجدي — مصمم ومبرمج مواقع",
+    en: "Samir Magdy, Web Developer",
+    ar: "سمير مجدي، مصمم ومبرمج مواقع",
   },
 storyP1: {
     en: "I founded SM Web Studio to bring global web design standards to our local market. We are a small team consisting of a designer, a developer, and a marketing expert, operating as a fully remote company. This allows us to provide you with higher quality at a competitive price.",

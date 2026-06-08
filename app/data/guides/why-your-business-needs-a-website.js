@@ -11,8 +11,8 @@ const resource = {
     ar: "هل مشروعي محتاج موقع إلكتروني في 2026؟",
   },
   excerpt: {
-    en: "In Egypt in 2026, the first thing a customer does when they hear about your business is Google it. The results they see decide whether they reach out to you or move on to a competitor with a real website. This guide breaks down the real benefits of having a professional website for your business — and why an Instagram or Facebook page alone is no longer enough.",
-    ar: "في مصر في 2026، أول حاجة العميل بيعملها لما يسمع عن شركتك إنه يدوّر عليها في جوجل. النتايج اللي هتظهر هي اللي بتحدد هل هيتواصل معاك ولا هيروح لمنافس عنده موقع. في الدليل ده، بنشرحلك الفوايد الحقيقية لامتلاك موقع احترافي لشركتك — وليه صفحة انستجرام أو فيسبوك بس مش كفاية في 2026.",
+    en: "In Egypt in 2026, the first thing a customer does when they hear about your business is Google it. The results they see decide whether they reach out to you or move on to a competitor with a real website. This guide breaks down the real benefits of having a professional website for your business, and why an Instagram or Facebook page alone is no longer enough.",
+    ar: "في مصر في 2026، أول حاجة العميل بيعملها لما يسمع عن شركتك إنه يدوّر عليها في جوجل. النتايج اللي هتظهر هي اللي بتحدد هل هيتواصل معاك ولا هيروح لمنافس عنده موقع. في الدليل ده، بنشرحلك الفوايد الحقيقية لامتلاك موقع احترافي لشركتك، وليه صفحة انستجرام أو فيسبوك بس مش كفاية في 2026.",
   },
   content: {
     en: `
@@ -115,7 +115,7 @@ const resource = {
   },
   metaDescription: {
     en: "Discover why your business in Egypt needs a website in 2026: real credibility, Google visibility, and ROI that Instagram and Facebook simply cannot match.",
-    ar: "هل فعلاً محتاج موقع إلكتروني في مصر في 2026؟ اكتشف فوايد حقيقية — المصداقية، التحكم، الظهور في جوجل، والعائد بالجنيه — وليه إنستجرام وفيسبوك مش كفاية.",
+    ar: "هل فعلاً محتاج موقع إلكتروني في مصر في 2026؟ اكتشف فوايد حقيقية: المصداقية، التحكم، الظهور في جوجل، والعائد بالجنيه. وليه إنستجرام وفيسبوك مش كفاية.",
   },
 };
 

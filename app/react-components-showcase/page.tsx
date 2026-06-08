@@ -14,7 +14,7 @@ const slideData = [
     tag: "Snap Carousel",
     title: "Swipe to explore",
     description:
-      "Native scroll-snap delivers hardware-accelerated swiping on touch and arrow navigation on desktop — zero dependencies.",
+      "Native scroll-snap delivers hardware-accelerated swiping on touch and arrow navigation on desktop, with zero dependencies.",
   },
   {
     image: "/project-screenshots/sellable-blocks/apple-img-mobile.webp",
@@ -30,7 +30,7 @@ const slideData = [
     tag: "Scrollable Screens",
     title: "Full-page content",
     description:
-      "Screens taller than the frame scroll naturally inside the mockup — exactly like a real device in your hand.",
+      "Screens taller than the frame scroll naturally inside the mockup, exactly like a real device in your hand.",
   },
 ];
 
@@ -106,7 +106,8 @@ export default function Home() {
             <Image
               src="/brand.svg"
               width={70}
-              height={70}
+              height={58}
+              style={{ height: "auto" }}
               alt="SM Web Design Studio Logo"
             />
           </a>

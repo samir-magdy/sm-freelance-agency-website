@@ -184,23 +184,22 @@ export default function GuidePage({ params }) {
             [&_ol]:list-decimal [&_ol]:ps-7 [&_ol]:mb-6 [&_ol]:space-y-3
             [&_li]:text-content-body [&_li]:text-subheading [&_li]:leading-relaxed
             [&_strong]:text-content-heading [&_strong]:font-semibold [&[dir=rtl]_*]:leading-loose
-            [&_table]:w-full [&_table]:my-8 [&_table]:border-separate [&_table]:border-spacing-0 [&_table]:border [&_table]:border-white/15 [&_table]:rounded-lg [&_table]:table-fixed
+            [&_table]:w-full [&_table]:min-w-[600px] [&_table]:table-fixed [&_table]:border-separate [&_table]:border-spacing-0
             [&_thead]:bg-white/5 [&_tbody_tr]:transition-colors [&_tbody_tr]:hover:bg-white/4
             [&_th]:text-content-heading [&_th]:font-semibold [&_th]:text-center [&_th]:p-3 [&_th]:text-base [&_th]:border-b [&_th]:border-e [&_th]:border-white/15 [&_th]:align-middle sm:[&_th]:p-4 sm:[&_th]:text-subheading
             [&_td]:text-content-body [&_td]:text-base [&_td]:text-center [&_td]:p-3 [&_td]:border-b [&_td]:border-e [&_td]:border-white/10 [&_td]:align-middle [&_td]:leading-relaxed sm:[&_td]:p-4 sm:[&_td]:text-subheading
             [&_th:last-child]:border-e-0 [&_td:last-child]:border-e-0
-            [&_th:nth-child(3)]:hidden sm:[&_th:nth-child(3)]:table-cell [&_td:nth-child(3)]:hidden sm:[&_td:nth-child(3)]:table-cell
-            [&_tbody_tr:last-child_td]:border-b-0
-            [&_thead_th:first-child]:rounded-tl-lg [&_thead_th:last-child]:rounded-tr-lg
-            [&_tbody_tr:last-child_td:first-child]:rounded-bl-lg [&_tbody_tr:last-child_td:last-child]:rounded-br-lg
+[&_tbody_tr:last-child_td]:border-b-0
           `;
+            const wrapTables = (html) =>
+              html.replaceAll("<table", '<div class="table-wrap"><table').replaceAll("</table>", "</table></div>");
             const parts = guide.content[lang].split(SLOT);
             if (parts.length === 1) {
               return (
                 <article
                   dir={dir}
                   className={articleClassName}
-                  dangerouslySetInnerHTML={{ __html: parts[0] }}
+                  dangerouslySetInnerHTML={{ __html: wrapTables(parts[0]) }}
                 />
               );
             }
@@ -209,13 +208,13 @@ export default function GuidePage({ params }) {
                 <article
                   dir={dir}
                   className={articleClassName}
-                  dangerouslySetInnerHTML={{ __html: parts[0] }}
+                  dangerouslySetInnerHTML={{ __html: wrapTables(parts[0]) }}
                 />
                   <PricingEstimator lang={lang} />
                 <article
                   dir={dir}
                   className={articleClassName}
-                  dangerouslySetInnerHTML={{ __html: parts[1] }}
+                  dangerouslySetInnerHTML={{ __html: wrapTables(parts[1]) }}
                 />
               </>
             );

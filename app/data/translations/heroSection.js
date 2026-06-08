@@ -16,8 +16,8 @@ const hero = {
     ar: "كيفية حساب التكلفة",
   },
   subheading: {
-    en: "Your online presence starts here.",
-    ar: "وجودك على الإنترنت يبدأ من هنا.",
+    en: 'Your online presence starts <span class="here-mark">here</span>.',
+    ar: 'وجودك على الإنترنت يبدأ من <span class="here-mark">هنا</span>.',
   },
 };
 

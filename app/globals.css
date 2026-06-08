@@ -165,6 +165,54 @@ section {
   animation: eyebrowRuleIn 0.3s cubic-bezier(0.25, 0, 0, 1) 0s both;
 }
 
+.here-mark {
+  position: relative;
+  display: inline-block;
+  color: var(--color-gold-light);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.here-mark::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: -0.15em;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-gold) 30%,
+    var(--color-gold) 70%,
+    transparent
+  );
+  transform-origin: center;
+  animation: hereRuleIn 1s cubic-bezier(0.25, 0, 0, 1) 2s both;
+}
+
+@keyframes hereRuleIn {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .here-mark::after {
+    background: linear-gradient(
+      to right,
+      transparent,
+      oklch(from var(--color-gold) l c h / 0.4) 40%,
+      oklch(from var(--color-gold) l c h / 0.4) 80%,
+      transparent
+    );
+  }
+}
+
 @keyframes heroRiseIn {
   from {
     opacity: 0;
@@ -213,7 +261,8 @@ html:not(.fonts-ready) .eyebrow-rule-right,
 html:not(.fonts-ready) .hero-fade-hook,
 html:not(.fonts-ready) .hero-fade-nav,
 html:not(.fonts-ready) .hero-cta-entrance,
-html:not(.fonts-ready) .hero-fade-secondary-cta {
+html:not(.fonts-ready) .hero-fade-secondary-cta,
+html:not(.fonts-ready) .here-mark::after {
   animation-play-state: paused;
 }
 
@@ -223,7 +272,8 @@ html.hero-played .eyebrow-rule-right,
 html.hero-played .hero-fade-hook,
 html.hero-played .hero-fade-nav,
 html.hero-played .hero-cta-entrance::before,
-html.hero-played .hero-fade-secondary-cta {
+html.hero-played .hero-fade-secondary-cta,
+html.hero-played .here-mark::after {
   animation: none;
 }
 
@@ -320,7 +370,13 @@ html.hero-played .hero-cta-entrance {
       line-height: 1.9;
     }
     #mobile-mockup {
-      height: 54.5vh;
+      height: 55vh;
+    }
+    #portfolio-subheading{
+      display: block;
+    }
+    #portfolio-cta{
+      font-size: 1.1rem;
     }
     #portfolio-title{
       padding-bottom: 0.8rem;
@@ -338,6 +394,25 @@ html.hero-played .hero-cta-entrance {
     }
   }
 }
+/* ══════════════════════════════════════
+   7. FAQ — Accordion Open/Close Animation
+   ══════════════════════════════════════ */
+
+details::details-content {
+  max-block-size: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-block-size 2s cubic-bezier(0.25, 0, 0, 1),
+    opacity 0.3s ease-out,
+    content-visibility 0s allow-discrete;
+}
+
+details[open]::details-content {
+  max-block-size: 1000px;
+  opacity: 1;
+}
+
 /* ══════════════════════════════════════
    5. Inline HTML Content — Link Styling
    ══════════════════════════════════════ */
@@ -449,6 +524,13 @@ html.hero-played .hero-cta-entrance {
   .cta-primary:hover {
     --cta-hover-mix: 100%;
   }
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 2rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.5rem;
 }
 
 .cta-primary::before {

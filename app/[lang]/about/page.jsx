@@ -8,7 +8,7 @@ import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
 const meta = {
   en: {
     title: "Website Designer & Developer in Egypt | Samir Magdy",
-    description: "Samir Magdy is a web designer & developer & the founder of SM Web Design Studio — specializing in high-performance, custom web development.",
+    description: "Samir Magdy is a web designer & developer & the founder of SM Web Design Studio, specializing in high-performance, custom web development.",
   },
   ar: {
     title: "مبرمج ومصمم مواقع إلكترونية في مصر | سمير مجدي",

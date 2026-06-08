@@ -11,7 +11,7 @@ const resource = {
     ar: "سعر تصميم موقع إلكتروني في مصر (2026)",
   },
   excerpt: {
-    en: "Website pricing in Egypt varies widely — from 5,000 EGP landing pages to 50,000 EGP Shopify stores — and the variation is never random. This guide explains exactly what drives the cost in EGP, what to expect for each project type, and how to avoid overpaying for features you don't need or underpaying for a site that won't convert.",
+    en: "Website pricing in Egypt varies widely, from 5,000 EGP landing pages to 50,000 EGP Shopify stores, and the variation is never random. This guide explains exactly what drives the cost in EGP, what to expect for each project type, and how to avoid overpaying for features you don't need or underpaying for a site that won't convert.",
     ar: "أسعار المواقع في مصر بتختلف من 5,000 لـ 50,000 جنيه، والاختلاف ده مش عشوائي. الدليل ده بيوريك بالظبط إيه اللي بيأثر على التكلفة بالجنيه، نطاق السعر المتوقع لكل نوع موقع (صفحة هبوط، موقع شركة، متجر شوبيفاي)، وإزاي تتجنب إنك تدفع أكتر من اللازم أو تختار أرخص حاجة وتندم بعدين.",
   },
   content: {
@@ -58,7 +58,7 @@ const resource = {
 <p><small>Note: These prices are approximate and depend on the needs of startups and small businesses. Large-scale projects are priced individually.</small></p>
 
 <h2>Estimate your websites price</h2>
-<p style="margin-bottom: 0.5rem">Choose your website type, content size, and required add-ons to see an instant estimate:</p>
+<p style="margin-bottom: 0">Choose your website type, content size, and required add-ons to see an instant estimate:</p>
 <!-- PRICING_ESTIMATOR_SLOT -->
 <h2>What determines the price of any website?</h2>
 <p>To understand exactly where your budget is going, we've compiled the main factors that control the final price:</p>
@@ -81,7 +81,7 @@ const resource = {
 <ul>
   <li>The cheap website is often extremely slow, which frustrates customers and ruins your Google rankings.</li>
   <li>The design is repetitive and unprofessional, making it impossible to stand out from competitors using the same templates.</li>
-  <li>The website doesn't work well on mobile devices—and in Egypt, the vast majority of traffic is mobile.</li>
+  <li>The website doesn't work well on mobile devices. In Egypt, the vast majority of traffic is mobile.</li>
   <li>Eventually, you will have to pay again to fix it, and it's often easier to rebuild from scratch. The result is wasted time and money.</li>
 </ul>
 <p>Don't repeat the mistakes of others. Read our guide on <a href='/en/guides/choose-web-design-company-egypt'>how to choose the best web design company in Egypt</a> for additional information to protect yourself from falling into the same trap.</p>
@@ -132,7 +132,7 @@ const resource = {
 
 
 <h2>حاسبة التكلفة: احسب سعر موقعك</h2>
-<p style="margin-bottom: 0.5rem">اختار نوع الموقع، حجم المحتوى، الإضافات اللي محتاجها، وهتشوف تقدير سعر فوري:</p>
+<p style="margin-bottom: 0">اختار نوع الموقع، حجم المحتوى، الإضافات اللي محتاجها، وهتشوف تقدير سعر فوري:</p>
 <!-- PRICING_ESTIMATOR_SLOT -->
 <h2>إيه اللي بيحدد سعر أي موقع إلكتروني؟</h2>
 <p>علشان تفهم ميزانيتك رايحة فين بالظبط، جمعنالك أهم النقاط اللي بتتحكم في السعر النهائي:</p>

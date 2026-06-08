@@ -158,7 +158,7 @@ function buildStructuredData(lang) {
     name: SITE_NAME,
     inLanguage: "en",
     description:
-      "SM Web Design Studio is a professional web design company in Egypt specializing in EGP-priced custom websites, Shopify e-commerce stores with InstaPay, Vodafone Cash, Paymob, and Fawry integration, portfolio sites for freelancers, and private clinic booking systems. Serving solopreneurs, online sellers, freelancers, doctors, and independent professionals in Cairo, Alexandria, and across Egypt — no commercial register required.",
+      "SM Web Design Studio is a professional web design company in Egypt specializing in EGP-priced custom websites, Shopify e-commerce stores with InstaPay, Vodafone Cash, Paymob, and Fawry integration, portfolio sites for freelancers, and private clinic booking systems. Serving solopreneurs, online sellers, freelancers, doctors, and independent professionals in Cairo, Alexandria, and across Egypt. No commercial register required.",
     url: SITE_URL,
     telephone: PHONE_NUMBER,
     email: CONTACT_EMAIL,
@@ -265,7 +265,7 @@ function buildStructuredData(lang) {
       name: "Freelancer Portfolio Websites with International Payment Receipt",
       alternateName: "مواقع بورتفوليو للفريلانسرز باستلام مدفوعات دولية",
       description:
-        "Portfolio websites for Egyptian freelancers, designers, and independent consultants with integrated international payment receipt via Paymob, Stripe-supported channels, and wire-friendly payment links — funds settle to local Egyptian bank accounts.",
+        "Portfolio websites for Egyptian freelancers, designers, and independent consultants with integrated international payment receipt via Paymob, Stripe-supported channels, and wire-friendly payment links. Funds settle to local Egyptian bank accounts.",
       serviceType: "Portfolio Web Development",
       provider: { "@id": `${SITE_URL}/#business` },
       areaServed: [
@@ -286,7 +286,7 @@ function buildStructuredData(lang) {
       name: "Bilingual Arabic/English Business Websites with RTL Support",
       alternateName: "مواقع شركات ثنائية اللغة عربي وإنجليزي بدعم RTL كامل",
       description:
-        "Multi-page business websites built natively bilingual (Arabic right-to-left and English left-to-right) with correct RTL layouts, legible Arabic typography, and SEO indexed separately in both languages — one site, double Google visibility.",
+        "Multi-page business websites built natively bilingual (Arabic right-to-left and English left-to-right) with correct RTL layouts, legible Arabic typography, and SEO indexed separately in both languages: one site, double Google visibility.",
       serviceType: "Bilingual Web Development",
       provider: { "@id": `${SITE_URL}/#business` },
       areaServed: [
@@ -307,7 +307,7 @@ function buildStructuredData(lang) {
       name: "Private Clinic Booking Systems (Vezeeta Alternative)",
       alternateName: "نظام حجز خاص للعيادات (بديل فيزيتا)",
       description:
-        "Private clinic booking websites on the doctor's own domain with appointment scheduling, prepaid consultation fees via InstaPay, Vodafone Cash, or cards, automated SMS/WhatsApp reminders, and full patient data ownership — no annual aggregator subscription, no per-booking commission.",
+        "Private clinic booking websites on the doctor's own domain with appointment scheduling, prepaid consultation fees via InstaPay, Vodafone Cash, or cards, automated SMS/WhatsApp reminders, and full patient data ownership. No annual aggregator subscription, no per-booking commission.",
       serviceType: "Medical Booking System Development",
       provider: { "@id": `${SITE_URL}/#business` },
       areaServed: [

@@ -145,7 +145,7 @@ export default function PortfolioShowcase({ lang }) {
   return (
     <section
       id="portfolio"
-      className="flex flex-col items-center justify-start pt-8 sm:pt-10 min-h-screen relative overflow-clip select-none px-5"
+      className="flex flex-col items-center justify-start pt-4 sm:pt-10 min-h-screen relative overflow-clip select-none px-5"
       aria-labelledby="portfolio-heading"
     >
         {/* ── Section heading ── */}
@@ -153,7 +153,7 @@ export default function PortfolioShowcase({ lang }) {
           <h2 id="portfolio-heading" className="reveal-element font-bold text-heading mb-2 rtl:mb-3">
             {t.heading[lang]}
           </h2>
-          <p className="reveal-element hidden sm:block text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
+          <p id="portfolio-subheading" className="reveal-element hidden sm:block text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
             {t.subheading[lang]}
           </p>
         </div>
@@ -226,7 +226,7 @@ export default function PortfolioShowcase({ lang }) {
               />
 
               {/* Phone outer shell */}
-              <div id="mobile-mockup" className="phone-outer w-[59vw] h-[61.5vh] sm:w-[17vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
+              <div id="mobile-mockup" className="phone-outer w-[59vw] h-[54vh] sm:h-[61.5vh] sm:w-[17vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0">
                 {/* Left volume buttons */}
                 <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
                 <div className="absolute -left-[2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -300,11 +300,12 @@ export default function PortfolioShowcase({ lang }) {
 
             {/* "View Live Site" CTA — mobile only */}
             <a
+              id="portfolio-cta"
               href={project.liveUrl}
               onClick={handleDemoClick}
               target="_blank"
               rel="noopener"
-              className="cta-primary relative overflow-hidden inline-flex items-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[3.5vw] font-semibold tracking-wide lg:hidden"
+              className="cta-primary relative overflow-hidden inline-flex items-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-sm sm:text-[3.5vw] font-semibold tracking-wide lg:hidden"
               aria-label={`${pd.cta[lang]} – ${pd.title[lang]}`}
             >
               {pd.cta[lang]}

@@ -113,9 +113,9 @@ The Calculated Data:
 
   return (
     <>
-      <div id="pricing-calculator" className="scroll-mt-54 sm:scroll-mt-80 ltr:sm:scroll-mt-76 relative max-w-360 w-full mx-auto px-3 py-2 sm:py-3.5 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-strong flex flex-col sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0">
+      <div id="pricing-calculator" className="scroll-mt-28 sm:scroll-mt-72 ltr:sm:scroll-mt-72 relative max-w-360 w-full mx-auto px-3 py-2 sm:py-3.5 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-strong flex flex-col sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0 sm:mb-16">
         {/* DESKTOP SPLIT CONTAINER - Fixed using Grid */}
-        <div className="flex flex-col md:grid md:grid-cols-12 md:gap-8 w-full">
+        <div className="flex flex-col md:grid md:grid-cols-12 md:gap-8 w-full sm:py-4">
           {/* ========================================= */}
           {/* LEFT COLUMN: Configuration Steps          */}
           {/* ========================================= */}
