@@ -1,53 +1,16 @@
-"use client";
-
-import { useEffect, useLayoutEffect } from "react";
+import HeroEffects from "./HeroEffects";
 import translations from "@/app/data/translations";
 
 export default function HeroSection({ lang }) {
   const hero = translations.hero;
   const hookLines = hero.name[lang];
-  useLayoutEffect(() => {
-    if (sessionStorage.getItem("heroAnimationPlayed")) {
-      document.documentElement.classList.add("hero-played");
-    }
-    return () => {
-      document.documentElement.classList.remove("hero-played");
-    };
-  }, []);
-
-  useEffect(() => {
-    let active = true;
-    document.fonts.ready.then(() => {
-      if (!active) return;
-      document.documentElement.classList.add("fonts-ready");
-      sessionStorage.setItem("heroAnimationPlayed", "true");
-    });
-    return () => {
-      active = false;
-      document.documentElement.classList.remove("fonts-ready");
-    };
-  }, []);
-
-  useEffect(() => {
-    const cta = document.getElementById("cta-main");
-    if (!cta) return;
-
-    const onEnd = (e) => {
-      if (e.animationName === "heroRiseIn") {
-        cta.classList.add("cta-shimmer-ready");
-      }
-    };
-
-    cta.addEventListener("animationend", onEnd);
-    return () => cta.removeEventListener("animationend", onEnd);
-  }, []);
-
 
   return (
     <section
       id="home"
       className="h-dvh flex items-center justify-center relative overflow-hidden"
     >
+      <HeroEffects />
       {/* Dot grid + radial glow background */}
       <div className="hero-grid" aria-hidden="true" />
       <div className="hero-glow" aria-hidden="true" />
