@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
   const canonical = `${SITE_URL}/${lang}/guides/${slug}`;
 
   return {
-    title: {absolute: (guide.metaTitle ?? guide.title)[lang]},
+    title: (guide.metaTitle ?? guide.title)[lang],
     description: guide.metaDescription[lang],
     alternates: {
       canonical,
@@ -149,18 +149,7 @@ export default function GuidePage({ params }) {
           {/* Guide header */}
           <header>
             <h1 className="text-[clamp(1.5rem,5vw,2.8rem)] font-bold text-content-heading leading-tight rtl:leading-loose">
-              {(() => {
-                const colonIndex = guide.title[lang].indexOf(":");
-                if (colonIndex === -1) return guide.title[lang];
-                return (
-                  <>
-                    {guide.title[lang].slice(0, colonIndex + 1)}
-                    <span className="font-semibold text-content-heading/95">
-                      {guide.title[lang].slice(colonIndex + 1)}
-                    </span>
-                  </>
-                );
-              })()}
+              {guide.title[lang]}
             </h1>
             <div className="flex flex-wrap items-center gap-3 mt-4">
               <time

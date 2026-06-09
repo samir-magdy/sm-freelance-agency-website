@@ -1,11 +1,11 @@
 const hero = {
   eyebrow: {
     en: "SM Web Design Studio · Egypt",
-    ar: "شركة تصميم مواقع · مصر",
+    ar: "خدمات إنشاء و تصميم مواقع · مصر",
   },
   name: {
     en: '<span class="md:inline block">Custom <span class="text-gold">Websites</span>.</span> <span class="md:inline block">Smart <span class="text-gold">Designs</span>.</span> <span class="md:inline block">Real <span class="text-gold">Results</span>.</span>',
-    ar: '<span class="md:inline block"><span class="text-gold">تصميم</span> استثنائي.</span> <span class="md:inline block"><span class="text-gold">برمجة</span> احترافية.</span> <span class="md:inline block"><span class="text-gold">نتائج</span> حقيقية.</span>'
+    ar: '<span class="md:inline block"><span class="text-gold">تصميم</span> مواقع.</span> <span class="md:inline block"><span class="text-gold">برمجة</span> مخصصة.</span> <span class="md:inline block"><span class="text-gold">نتائج</span> حقيقية.</span>'
   },
   primaryCta: {
     en: "Request a Quote",

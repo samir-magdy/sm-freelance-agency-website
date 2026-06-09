@@ -1,20 +1,16 @@
 const guidesTranslations = {
   pageTitle: {
-    en: "Web Guides for Brands & Startups",
+    en: "Web Guides for Entrepreneurs",
     ar: "أدلة لأصحاب المشاريع في مصر",
   },
   metaTitle: {
-    en: {
-      absolute:
-        "Web Guides for Brands & Startups in Egypt",
-    },
-    ar: { absolute: "أدلة تصميم المواقع لأصحاب المشاريع في مصر" },
+    en: "Web Guides for Entrepreneurs in Egypt",
+    ar: "أدلة تصميم المواقع لأصحاب المشاريع في مصر",
   },
 
   metaDescription: {
-    en: "Guides for Egyptian business owners on website costs, DIY vs hiring a pro, how to pick a web design company, and why your business needs a site in 2026.",
-    ar: "أدلة بصراحة عن تكلفة الموقع في مصر، اعمل موقعك بنفسك ولا توظف محترف، ازاي تختار شركة تصميم مواقع، وليه مشروعك محتاج موقع إلكتروني في 2026. لأصحاب البزنس.",
-  },
+    en: "Useful guides for Egyptian business owners and freelancers. Covering topics like how websites are priced and online website builders vs hiring a pro.",
+ar: "أدلة عملية لأصحاب الأعمال والمستقلين في مصر. اكتشف تكلفة المواقع، مقارنة بين إنشاء موقعك بنفسك أو توظيف محترف، وكيفية اختيار شريكك الرقمي المناسب.",  },
   minRead: { en: "min read", ar: "دقيقة قراءة" },
   readMore: { en: "Read Guide", ar: "اقرأ الدليل" },
   backToGuides: { en: "Back to Guides", ar: "العودة إلى الأدلة" },
@@ -23,8 +19,8 @@ const guidesTranslations = {
     ar: "جاهز تبني موقعك؟",
   },
   articleCtaSub: {
-    en: "Custom websites for businesses in Egypt: transparent EGP pricing, no templates.",
-    ar: "مواقع مخصصة للشركات في مصر: أسعار بالجنيه وبدون قوالب جاهزة.",
+    en: "Custom websites for Entrepreneurs in Egypt",
+    ar: "مواقع مخصصة لأصحاب المشاريع في مصر.",
   },
   articleCtaButton: {
     en: "Get a Quote",

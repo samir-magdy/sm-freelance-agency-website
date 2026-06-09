@@ -22,7 +22,7 @@ const CONTACT_EMAIL = "studio@samirmagdy.com";
 const PHONE_NUMBER = "+201274613331";
 
 const META_DESCRIPTION = {
-  en: "Looking for the best website design company in Egypt? We provide custom web design & development for businesses & individuals. Get a free quote today!",
+  en: "We provide custom web design & development for small-medium businesses & individuals. Get a free quote today!",
   ar: "نقدم خدمات تصميم وتطوير المواقع المخصصة للشركات والأفراد بأحدث التقنيات. اكتشف كيف يمكننا مساعدة عملك على النمو، احصل على عرض سعر مجاني اليوم!",
 };
 
@@ -37,7 +37,7 @@ const SOCIAL_LINKS = {
 
 const meta = {
   en: {
-    title: `Create a Website in Egypt | ${SITE_NAME}`,
+    title: `Custom Website Development in Egypt | ${SITE_NAME}`,
     description: META_DESCRIPTION.en,
     ogLocale: "en_US",
     altLocale: "ar_EG",
@@ -46,7 +46,7 @@ const meta = {
     skipToContent: "Skip to main content",
   },
   ar: {
-    title: `إنشاء موقع إلكتروني في مصر | ${SITE_NAME}`,
+    title: `تصميم وإنشاء مواقع إلكترونية مخصصة في مصر | ${SITE_NAME}`,
     description: META_DESCRIPTION.ar,
     ogLocale: "ar_EG",
     altLocale: "en_US",
@@ -422,6 +422,7 @@ export default async function LangLayout({ children, params }) {
       lang={lang}
       dir={lang === "ar" ? "rtl" : "ltr"}
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
     >
       <body
         className={`${fonts.variable} font-cairo antialiased min-h-dvh flex flex-col`}
