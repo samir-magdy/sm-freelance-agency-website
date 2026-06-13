@@ -1,6 +1,6 @@
 const projectsSection = {
   heading: {
-    en: "Web Design Portfolio",
+    en: "Website Design Portfolio",
     ar: "معرض أعمالنا",
   },
   subheading: {
@@ -37,6 +37,21 @@ const projectData = {
     cta: {
       en: "View Tourism Site",
       ar: "استعرض الموقع",
+    },
+  },
+
+  ButterDesign: {
+    title: {
+      en: "Branding Studio Portfolio",
+      ar: "بورتفوليو استوديو تصميم",
+    },
+    description: {
+      en: "Butter Design Bureau is a branding studio based in Cairo, Egypt — specializing in brand identity, strategy, and visual design. We built their portfolio site with a clean, typography-driven aesthetic that lets their creative work take center stage.",
+      ar: "Butter Design Bureau استوديو تصميم وهوية بصرية مقره القاهرة — متخصص في الهوية التجارية والاستراتيجية والتصميم البصري. بنينا موقعهم بأسلوب أنيق يعتمد على التايبوغرافي ليضع أعمالهم الإبداعية في قلب تجربة الزائر.",
+    },
+    cta: {
+      en: "Visit Live Site",
+      ar: "زيارة الموقع",
     },
   },
 

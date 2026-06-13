@@ -63,7 +63,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
         className="absolute top-0 inset-x-0 w-full py-1 z-50 backdrop-blur-xl pointer-events-auto"
         dir="ltr"
       >
-        <div className="flex justify-between items-center px-3">
+        <div className="flex justify-between items-center px-3 ps-5">
           <a
             href={`/${lang}/#home`}
             aria-label="Samir Magdy Web Studio - Home"
@@ -73,8 +73,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               src="/brand.svg"
               alt="SM Web Design Studio – Website Design Company in Egypt"
               width={50}
-              height={41}
-              style={{ height: "auto" }}
+              height={42}
               loading="eager"
             />
           </a>

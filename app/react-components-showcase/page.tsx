@@ -107,7 +107,6 @@ export default function Home() {
               src="/brand.svg"
               width={70}
               height={58}
-              style={{ height: "auto" }}
               alt="SM Web Design Studio Logo"
             />
           </a>

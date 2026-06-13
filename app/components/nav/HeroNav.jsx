@@ -18,6 +18,12 @@ function DesktopNavLinks({ nav }) {
   const contactItem = navLinks[navLinks.length - 1];
   const contactDestination = isHome ? `#${contactItem}` : `/${lang}/#${contactItem}`;
 
+  const handleHashClick = (e, targetId) => {
+    if (!isHome) return;
+    e.preventDefault();
+    document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <ul className="flex w-full justify-around xl:px-36 lg:px-16">
       {navLinks.slice(0, -1).map((item, i) => {
@@ -27,6 +33,7 @@ function DesktopNavLinks({ nav }) {
           <li key={i}>
             <Link
               href={destination}
+              onClick={(e) => handleHashClick(e, item)}
               className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
             >
               {nav[item]}
@@ -53,6 +60,7 @@ function DesktopNavLinks({ nav }) {
       <li>
         <Link
           href={contactDestination}
+          onClick={(e) => handleHashClick(e, contactItem)}
           className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
         >
           {nav[contactItem]}
@@ -69,15 +77,15 @@ export default function HeroNav({ lang, strings }) {
       {/* Fixed Top Navbar for Desktop — fully static, server-rendered */}
       <nav
         aria-label={a11y.desktopNav}
-        className="hidden lg:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl px-8 pe-10 py-4"
+        className="hidden lg:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl px-8 pe-10 py-1"
       >
         <div className="relative flex items-center w-full">
           <a href={`/${lang}/#home`} aria-label="Samir Magdy Web Studio - Home">
             <Image
-              src="/brand.svg"
+              src="/favicon-dark.svg"
               alt="SM Web Design Studio – Website Design Company in Egypt"
-              width={95}
-              height={79}
+              width={80}
+              height={69}
               style={{ height: "auto" }}
               priority
             />

@@ -67,7 +67,7 @@ export default async function AboutPage({ params }) {
   const t = translations.aboutSection;
   const dir = lang === "ar" ? "rtl" : "ltr";
   return (
-    <div dir={dir} className="bg-background md:flex-1 flex items-center px-6 sm:px-8 pt-24 pb-10">
+    <div dir={dir} className="bg-background md:flex-1 flex items-center px-6 sm:px-8 pt-18 pb-10">
       <div className="mx-auto w-full max-w-7xl bg-surface-card border border-border-subtle rounded-2xl overflow-hidden shadow-[0_32px_72px_-24px_rgba(0,0,0,0.7)] flex flex-col md:flex-row">
 
         {/* Desktop: image as left column */}
@@ -82,8 +82,8 @@ export default async function AboutPage({ params }) {
           />
         </div>
 
-        <div className="flex flex-col justify-evenly py-8 sm:py-6 px-8 md:pe-10">
-          <h1 className="font-bold text-[clamp(0.9rem,1.6vw,1.5rem)] tracking-wider rtl:leading-loose uppercase text-gold/80 mb-5">
+        <div className="flex flex-col justify-evenly py-6 sm:py-6 px-5 sm:px-8 md:pe-10">
+          <h1 id="about-title" className="font-bold text-[clamp(0.75rem,1.5vw,1.5rem)] tracking-wider rtl:leading-loose uppercase text-gold/80 mb-4">
             {t.heading[lang]}
           </h1>
 

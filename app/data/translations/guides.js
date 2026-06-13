@@ -11,7 +11,7 @@ const guidesTranslations = {
   metaDescription: {
     en: "Useful guides for Egyptian business owners and freelancers. Covering topics like how websites are priced and online website builders vs hiring a pro.",
 ar: "أدلة عملية لأصحاب الأعمال والمستقلين في مصر. اكتشف تكلفة المواقع، مقارنة بين إنشاء موقعك بنفسك أو توظيف محترف، وكيفية اختيار شريكك الرقمي المناسب.",  },
-  minRead: { en: "min read", ar: "دقيقة قراءة" },
+  minRead: { en: "min read", ar: "دقايق قراءة" },
   readMore: { en: "Read Guide", ar: "اقرأ الدليل" },
   backToGuides: { en: "Back to Guides", ar: "العودة إلى الأدلة" },
   articleCta: {
