@@ -1,13 +1,18 @@
 import ecommerceImg from "../../public/project-screenshots/e-commerce.webp";
 import travelImg from "../../public/project-screenshots/travel.webp";
 import butterDesignImg from "../../public/project-screenshots/butter-design.webp";
+import dentalImg from "../../public/project-screenshots/dental.webp";
+import interiorImg from "../../public/project-screenshots/interior.webp";
+import petImg from "../../public/project-screenshots/pet.webp";
 
 import { SITE_URL } from "../constants";
 
 export const projects = [
   {
     id: "ButterDesign",
-    slug: "design-agency-portfolio-website",
+    // Real client site on a live domain — open it bare, never append our
+    // internal ref/lang params (those are only for SMWS demo sites).
+    clientSite: true,
     liveUrl: "https://butterdesignbureau.com",
     screenshot: butterDesignImg,
     schemaName: "Design Agency Portfolio Website – Egypt",
@@ -20,7 +25,6 @@ export const projects = [
 
   {
     id: "Travel",
-    slug: "travel-agency-website",
     liveUrl: "/portfolio/travel-agency-website",
     screenshot: travelImg,
     schemaName: "Travel Agency Website – Egypt",
@@ -32,15 +36,47 @@ export const projects = [
   },
   {
     id: "Ecommerce",
-    slug: "fashion-ecommerce-website",
     liveUrl: "https://ecommerce.smwebdesign.studio",
     screenshot: ecommerceImg,
     schemaName: "Fashion E-commerce – Egypt",
     schemaNameAr: "متجر إلكتروني للأزياء – مصر",
     description:
-      "A fashion e-commerce demo by SM Web Design Studio showcasing advanced product listings and a streamlined WhatsApp checkout system designed for retail scalability.",
+      "A fashion e-commerce demo by SM Web Design Studio showcasing advanced product listings and a polished shopping experience designed for retail scalability.",
     genre: "Fashion E-commerce",
     genreAr: "التجارة الإلكترونية للأزياء",
+  },
+  {
+    id: "DentalClinic",
+    liveUrl: "/portfolio/dental-clinic-site-demo",
+    screenshot: dentalImg,
+    schemaName: "Dental Clinic Website – Egypt",
+    schemaNameAr: "موقع عيادة أسنان – مصر",
+    description:
+      "A dental clinic demo by SM Web Design Studio built to attract new patients in Egypt with a professional, trust-building web presence that highlights treatments, expertise, and clinic facilities.",
+    genre: "Dental Clinic",
+    genreAr: "عيادة أسنان",
+  },
+  {
+    id: "InteriorDesign",
+    liveUrl: "/portfolio/interior-design-site-demo",
+    screenshot: interiorImg,
+    schemaName: "Interior Design Studio Website – Egypt",
+    schemaNameAr: "موقع استوديو تصميم داخلي – مصر",
+    description:
+      "An interior design studio demo by SM Web Design Studio showcasing project portfolios and services to attract high-value clients in Egypt looking for premium residential and commercial design.",
+    genre: "Interior Design",
+    genreAr: "تصميم داخلي",
+  },
+  {
+    id: "PetCare",
+    liveUrl: "/portfolio/pet-care-site-demo",
+    screenshot: petImg,
+    schemaName: "Veterinary & Pet Care Clinic Website – Egypt",
+    schemaNameAr: "موقع عيادة بيطرية – مصر",
+    description:
+      "A veterinary and pet care clinic demo by SM Web Design Studio designed to build trust with pet owners in Egypt and drive appointment bookings through a warm, professional online presence.",
+    genre: "Vet & Pet Care",
+    genreAr: "رعاية الحيوانات",
   },
 ];
 

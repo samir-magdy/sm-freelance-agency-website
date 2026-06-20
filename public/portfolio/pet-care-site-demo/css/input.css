@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-mint: #A7F3D0;
+  --color-mint-dark: #059669;
+  --color-peach: #FFEDD5;
+  --color-peach-dark: #EA580C;
+  --color-charcoal: #1F2937;
+  --color-softbg: #FAFAF9;
+  --font-sans: "Inter", sans-serif;
+  --font-rounded: "Quicksand", sans-serif;
+}

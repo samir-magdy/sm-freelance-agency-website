@@ -8,12 +8,12 @@ const hero = {
     ar: '<span class="md:inline block"><span class="text-gold">تصميم</span> مواقع.</span> <span class="md:inline block"><span class="text-gold">برمجة</span> مخصصة.</span> <span class="md:inline block"><span class="text-gold">نتائج</span> حقيقية.</span>'
   },
   primaryCta: {
-    en: "Request a Quote",
-    ar: "احصل على عرض سعر",
+    en: "See Our Work",
+    ar: "شاهد أعمالنا",
   },
   secondaryCta: {
-    en: "How Pricing Works",
-    ar: "كيفية حساب التكلفة",
+    en: "Request a Quote",
+    ar: "احصل على عرض سعر",
   },
   subheading: {
     en: 'Your online presence starts <span class="here-mark">here</span>.',

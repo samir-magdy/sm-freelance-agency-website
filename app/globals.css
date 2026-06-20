@@ -58,9 +58,9 @@ section {
   }
 }
 
-/* #portfolio {
-  --nav-h: 3rem;
-} */
+#portfolio {
+  --nav-h: 2rem;
+}
 
 @media (min-width: 1280px) {
   #portfolio {
@@ -392,7 +392,8 @@ html.hero-played .hero-cta-entrance {
       padding-top: 5rem;
     }
     #mobile-mockup {
-      height: 55.5vh;
+      height: 55vh;
+      min-height: 250px;
     }
     #portfolio-subheading {
       display: block;
@@ -637,3 +638,24 @@ details[open]::details-content {
     font-size: 0.875rem; /* text-sm */
   }
 }
+
+/* ══════════════════════════════════════
+   8. Case Study Page — numerals, textures
+   ══════════════════════════════════════ */
+
+/* Faint outlined section numerals (01–04) */
+.cs-num {
+  color: oklch(76.7% 0.1399 91.2 / 0.5);
+  -webkit-text-stroke: 1px oklch(76.7% 0.1399 91.2);
+}
+
+/* Placeholder texture for empty screenshot slots */
+.cs-dot-grid {
+  background-image: radial-gradient(
+    circle,
+    oklch(92% 0.0051 267.4 / 0.07) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+

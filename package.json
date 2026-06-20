@@ -1,5 +1,5 @@
 {
-  "name": "sm-web-studio",
+  "name": "sm-web-design-studio",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",

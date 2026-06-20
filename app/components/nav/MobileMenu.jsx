@@ -142,7 +142,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               </a>
             </li>
           ))}
-          <li onClick={(e) => e.stopPropagation()}>
+          {/* <li onClick={(e) => e.stopPropagation()}>
             <Link
               href={`/${lang}/guides`}
               onClick={pathname === `/${lang}/guides` ? closeMenu : null}
@@ -150,7 +150,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             >
               {nav["guides"]}
             </Link>
-          </li>
+          </li> */}
           <li onClick={(e) => e.stopPropagation()}>
             <Link
               href={`/${lang}/about`}

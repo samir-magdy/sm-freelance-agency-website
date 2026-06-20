@@ -49,7 +49,7 @@ export default function HeroSection({ lang }) {
         <div className="flex flex-col items-center gap-5">
           <a
             id="cta-main"
-            href="#contact"
+            href="#portfolio"
             className="cta-primary font-semibold rtl:pb-4! hero-cta-entrance bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1rem,1.8vw,1.7rem)] rtl:text-[clamp(16px,1.8vw,26px)] px-6 sm:px-10 py-2.5 rounded-2xl"
           >
             {hero.primaryCta[lang]}
@@ -57,7 +57,7 @@ export default function HeroSection({ lang }) {
 
           <a
             id="cta-secondary"
-            href={`/${lang}/guides/website-cost-in-egypt`}
+            href="#contact"
             className="ms-4 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-2 text-content-muted hover:text-content-body text-[clamp(0.8rem,1.5vw,1.25rem)] font-medium transition-colors duration-300"
           >
             {hero.secondaryCta[lang]}

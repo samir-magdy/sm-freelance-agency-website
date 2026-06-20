@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-clinical: #F8F9FA;
+  --color-obsidian: #111111;
+  --color-sand: #E6DCC8;
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+}

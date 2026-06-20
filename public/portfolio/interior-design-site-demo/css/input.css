@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bone: #F9F6F0;
+  --color-charcoal: #1A1A1A;
+  --color-greige: #A09990;
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+}

@@ -349,7 +349,7 @@ function buildStructuredData(lang) {
     },
   };
 
-  // 4. Person schema — ties Samir Magdy to SM Web Studio
+  // 4. Person schema — ties Samir Magdy to SM Web Design Studio
   const founderSchema = {
     "@type": "Person",
     "@id": `${SITE_URL}/#founder`,
@@ -405,7 +405,7 @@ export default async function LangLayout({ children, params }) {
       pricing: t.nav.pricing[lang],
       FAQs: t.nav.FAQs[lang],
       contact: t.nav.contact[lang],
-      guides: t.nav.guides[lang],
+      // guides: t.nav.guides[lang],
       about: t.nav.about[lang],
     },
     a11y: {
