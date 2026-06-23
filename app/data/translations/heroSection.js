@@ -5,15 +5,19 @@ const hero = {
   },
   name: {
     en: '<span class="md:inline block">Custom <span class="text-gold">Websites</span>.</span> <span class="md:inline block">Smart <span class="text-gold">Designs</span>.</span> <span class="md:inline block">Real <span class="text-gold">Results</span>.</span>',
-    ar: '<span class="md:inline block"><span class="text-gold">تصميم</span> مواقع.</span> <span class="md:inline block"><span class="text-gold">برمجة</span> مخصصة.</span> <span class="md:inline block"><span class="text-gold">نتائج</span> حقيقية.</span>'
+    ar: '<span class="md:inline block"><span class="text-gold">تصميم</span> مواقع.</span> <span class="md:inline block"><span class="text-gold">برمجة</span> مخصصة.</span> <span class="md:inline block"><span class="text-gold">نتائج</span> حقيقية.</span>',
   },
   primaryCta: {
-    en: "See Our Work",
-    ar: "شاهد أعمالنا",
+    en: "Schedule a Meeting",
+    ar: "اطلب استشارة",
+  },
+  mobileHeaderCta: {
+    en: "Schedule Meeting",
+    ar: "اطلب استشارة",
   },
   secondaryCta: {
-    en: "Request a Quote",
-    ar: "احصل على عرض سعر",
+    en: "See Our Work",
+    ar: "شاهد أعمالنا",
   },
   subheading: {
     en: 'Your online presence starts <span class="here-mark">here</span>.',

@@ -5,7 +5,7 @@ const projectsSection = {
   },
   subheading: {
     en: "Explore our featured projects",
-    ar: "استعرض نماذج من مشاريعنا",
+    ar: "استعرض أحدث مشاريعنا",
   },
   viewProject: {
     en: "View Project",

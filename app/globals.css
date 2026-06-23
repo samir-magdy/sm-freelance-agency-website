@@ -203,7 +203,7 @@ section {
     transparent
   );
   transform-origin: center;
-  animation: hereRuleIn 1s cubic-bezier(0.25, 0, 0, 0.8) 0.5s both;
+  animation: hereRuleIn 1s cubic-bezier(0.25, 0, 0, 0.8) 1.2s both;
 }
 
 @keyframes hereRuleIn {
@@ -293,46 +293,6 @@ html.hero-played .here-mark::after {
   animation: none;
 }
 
-html.hero-played .hero-cta-entrance {
-  animation: ctaGlowPulse 3.5s ease-in-out 0.5s infinite;
-}
-
-.hero-cta-entrance.cta-shimmer-ready::before {
-  animation: ctaInitialShimmer 0.8s ease-out 0.1s forwards;
-}
-
-[dir="rtl"] .hero-cta-entrance.cta-shimmer-ready::before {
-  animation: ctaInitialShimmerRtl 0.8s ease-out 0.1s forwards;
-}
-
-@keyframes ctaInitialShimmer {
-  from {
-    translate: -110% 0;
-  }
-  to {
-    translate: 110% 0;
-  }
-}
-
-@keyframes ctaInitialShimmerRtl {
-  from {
-    translate: 110% 0;
-  }
-  to {
-    translate: -110% 0;
-  }
-}
-
-@keyframes ctaGlowPulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 oklch(76.7% 0.1399 91.2 / 0);
-  }
-  50% {
-    box-shadow: 0 0 25px 5px oklch(76.7% 0.1399 91.2 / 0.05);
-  }
-}
-
 /* ══════════════════════════════════════
    3. RTL — Global Adjustments
    ══════════════════════════════════════ */
@@ -384,6 +344,9 @@ html.hero-played .hero-cta-entrance {
   @media (max-width: 680px) {
     [dir="rtl"] #hero-hook {
       line-height: 1.9;
+    }
+    #mobile-header-cta{
+      font-size: 0.9rem;
     }
     #about-title{
       font-size: clamp(0.9rem,1.6vw,1.5rem);
@@ -456,12 +419,6 @@ details[open]::details-content {
 .html-content a:hover {
   color: var(--color-gold-light);
 }
-
-/* ══════════════════════════════════════
-   6. Primary CTA — Shimmer Effect + Conversion Animations
-   ══════════════════════════════════════
-   ::before → one-time initial shimmer sweep on hero CTA (fires at 2.6s)
-   ══════════════════════════════════════ */
 
 @property --cta-hover-mix {
   syntax: "<percentage>";

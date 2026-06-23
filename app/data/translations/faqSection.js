@@ -17,8 +17,8 @@ const faqSection = {
   },
 
   cta: {
-    en: "Request a Free Consultation",
-    ar: "احصل على استشارة مجانية",
+    en: "Request a Consultation",
+    ar: "اطلب استشارة مجانية",
   },
 
   guidesEyebrow: {
@@ -56,8 +56,8 @@ const faqSection = {
       ar: "تكلفة الموقع الإلكتروني كام في مصر؟ (2026)",
     },
     answer: {
-      en: "Whether it's a single-page portfolio or a more complex system with multiple pages and custom features, the prices vary greatly. Read our guide on <a href='/en/guides/website-cost-in-egypt'>the real cost of a website in Egypt</a> so that you know what you're paying for. If you'd like to skip the reading and talk to us, you can <a href='#contact'>request a free consultation</a>.",
-      ar: "الأسعار بتختلف طبعاً حسب طبيعة الموقع، سواء كنت محتاج صفحة واحدة لعرض أعمالك أو نظام متكامل ومقاسات خاصة. اقرأ دليلنا عن <a href='/ar/guides/website-cost-in-egypt'>أسعار المواقع في مصر</a> علشان تكون عارف إنت بتدفع في إيه بالضبط. ولو حابب تعرف تكلفة لمشروعك، ممكن <a href='#contact'>تطلب عرض سعر رسمي</a> مننا.",
+      en: "Whether it's a single-page portfolio or a more complex system with multiple pages and custom features, the prices vary greatly. Read our guide on <a href='/en/guides/website-cost-in-egypt'>the real cost of a website in Egypt</a> so that you know what you're paying for. If you'd like to skip the reading and talk to us, you can <a href='#contact'>schedule a meeting</a>.",
+      ar: "الأسعار بتختلف طبعاً حسب طبيعة الموقع، سواء كنت محتاج صفحة واحدة لعرض أعمالك أو نظام متكامل ومقاسات خاصة. اقرأ دليلنا عن <a href='/ar/guides/website-cost-in-egypt'>أسعار المواقع في مصر</a> علشان تكون عارف إنت بتدفع في إيه بالضبط. ولو حابب تعرف تكلفة لمشروعك، ممكن <a href='#contact'>اطلب استشارة</a> مننا.",
     },
   },
   {

@@ -8,8 +8,8 @@ export const pricingCards = {
     ar: "اختار الموقع اللي يناسب احتياجاتك",
   },
   trustStrip: {
-    en: '<p>Want to get an instant estimate?</p><p>Use our <a href="/en/guides/website-cost-in-egypt#pricing-calculator">website pricing calculator</a>.</p>',
-    ar: '<p>عايز تقدير سعر فوري؟</p><p>إستخدم <a href="/ar/guides/website-cost-in-egypt#pricing-calculator"> حاسبة تكلفة المواقع</a>.</p>',
+    en: '<p>Want to know how pricing works?</p><p>Read our <a href="/en/guides/website-cost-in-egypt">guide on website pricing</a>.</p>',
+    ar: '<p>حابب تعرف الأسعار بتتحسب إزاي؟</p><p>اقرأ <a href="/ar/guides/website-cost-in-egypt">دليلنا عن أسعار تصميم المواقع</a>.</p>',
   },
   startsAt: {
     en: "Starts at",
@@ -20,8 +20,8 @@ export const pricingCards = {
     ar: "جنيه مصري",
   },
   cta: {
-    en: "Discuss your Project",
-    ar: "ناقش مشروعك",
+    en: "Schedule a Meeting",
+    ar: "اطلب استشارة",
   },
   cards: [
     {

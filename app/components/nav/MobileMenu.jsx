@@ -8,7 +8,7 @@ import LanguageToggle from "../ui/LanguageToggle";
 
 import translations from "@/app/data/translations";
 
-const { navLinks } = translations;
+const { navLinks, hero } = translations;
 
 export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -77,6 +77,19 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               loading="eager"
             />
           </a>
+          {/* Header CTA — hidden when menu is open */}
+          {!isMenuOpen && (
+            <a
+            id="mobile-header-cta"
+              href={isHome ? "#contact" : `/${lang}/#contact`}
+              onClick={(e) => handleNavClick(e, contactItem)}
+              className="border border-gold/20 font-semibold text-content-muted/80 text-xs px-3.5 py-[0.4rem] rounded-lg tracking-wide whitespace-nowrap inline-flex items-center gap-1.5 md:ms-auto"
+            >
+        
+              {hero.mobileHeaderCta[lang]}
+          
+            </a>
+          )}
           {/* UTILITY GROUP: Language + Hamburger grouped on the right */}
           <div className="flex items-center gap-3">
             <div className={isMenuOpen ? "hidden" : ""}>

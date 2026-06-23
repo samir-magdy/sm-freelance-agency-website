@@ -42,14 +42,14 @@ export default function HeroSection({ lang }) {
 
         <p
           id="subheading"
-          className="mb-8 sm:mb-10 hero-fade hero-fade-nav text-content-body text-[clamp(1.1rem,4vw,2.5rem)] sm:text-[clamp(1.2rem,2.2vw,2.8rem)] sm:rtl:text-[clamp(1.2rem,2.4vw,2.8rem)] rtl:leading-loose text-center sm:px-16"
+          className="mb-8 sm:mb-10 hero-fade hero-fade-nav text-content-body text-[clamp(1.1rem,4vw,2.5rem)] sm:text-[clamp(1.2rem,2.2vw,2.6rem)] sm:rtl:text-[clamp(1.2rem,2.4vw,2.8rem)] rtl:leading-loose text-center sm:px-16"
           dangerouslySetInnerHTML={{ __html: hero.subheading[lang] }}
         />
 
         <div className="flex flex-col items-center gap-5">
           <a
             id="cta-main"
-            href="#portfolio"
+            href="#contact"
             className="cta-primary font-semibold rtl:pb-4! hero-cta-entrance bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1rem,1.8vw,1.7rem)] rtl:text-[clamp(16px,1.8vw,26px)] px-6 sm:px-10 py-2.5 rounded-2xl"
           >
             {hero.primaryCta[lang]}
@@ -57,7 +57,7 @@ export default function HeroSection({ lang }) {
 
           <a
             id="cta-secondary"
-            href="#contact"
+            href="#portfolio"
             className="ms-4 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-2 text-content-muted hover:text-content-body text-[clamp(0.8rem,1.5vw,1.25rem)] font-medium transition-colors duration-300"
           >
             {hero.secondaryCta[lang]}

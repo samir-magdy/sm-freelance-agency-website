@@ -81,6 +81,102 @@
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
       }
     </style>
+    <style>
+      /* ── Booking Modal ─────────────────────────── */
+      .booking-overlay{display:none;position:fixed;inset:0;z-index:200;align-items:center;justify-content:center;padding:1rem;background:rgba(0,0,0,.45);backdrop-filter:blur(8px)}
+      .booking-overlay.open{display:flex}
+      .booking-panel{position:relative;background:#fff;border-radius:2rem;width:100%;max-width:680px;max-height:92vh;display:flex;flex-direction:column;box-shadow:0 40px 80px rgba(0,0,0,.18);overflow:hidden}
+      .booking-backdrop{position:absolute;inset:0;cursor:pointer}
+      .booking-panel{position:relative;z-index:1}
+      .b-header{display:flex;align-items:center;justify-content:space-between;padding:1.75rem 2.25rem 1.1rem;border-bottom:1px solid #f0f0f0;flex-shrink:0}
+      .b-step-lbl{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;display:block;margin-bottom:.3rem}
+      .b-step-ttl{font-family:"Cormorant Garamond",serif;font-size:1.55rem;font-weight:600;color:#111;margin:0}
+      .b-close{width:2.4rem;height:2.4rem;border-radius:50%;background:#F8F9FA;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+      .b-close:hover{background:#E6DCC8}
+      .b-prog-wrap{padding:.65rem 2.25rem;flex-shrink:0}
+      .b-prog-track{height:3px;background:#f0f0f0;border-radius:99px;overflow:hidden}
+      .b-prog-fill{height:100%;background:#111;border-radius:99px;transition:width .5s cubic-bezier(.4,0,.2,1)}
+      .b-body{flex:1;overflow-y:auto;padding:1.5rem 2.25rem}
+      .b-footer{padding:1.1rem 2.25rem;border-top:1px solid #f0f0f0;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+      .b-back{background:none;border:none;font-size:.82rem;font-weight:600;color:#bbb;cursor:pointer;transition:color .2s;padding:0;display:flex;align-items:center;gap:.4rem}
+      .b-back:hover{color:#111}
+      .b-back:disabled{visibility:hidden}
+      .b-nxt{background:#111;color:#fff;border:none;padding:.75rem 1.75rem;border-radius:99px;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s;display:flex;align-items:center;gap:.5rem}
+      .b-nxt:hover{background:#E6DCC8;color:#111}
+      .b-nxt:disabled:not(.loading){background:#ddd;color:#aaa;cursor:not-allowed}
+      .b-nxt.loading{background:#333;cursor:not-allowed}
+      /* Animations */
+      @keyframes bIn{from{opacity:0;transform:translateX(22px)}to{opacity:1;transform:translateX(0)}}
+      @keyframes bInBack{from{opacity:0;transform:translateX(-22px)}to{opacity:1;transform:translateX(0)}}
+      .b-enter{animation:bIn .28s ease forwards}
+      .b-enter-back{animation:bInBack .28s ease forwards}
+      /* Service cards */
+      .b-svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+      .b-svc-card{background:#F8F9FA;border:1.5px solid transparent;border-radius:1.2rem;padding:1.1rem;cursor:pointer;transition:border-color .2s,background .2s,transform .15s}
+      .b-svc-card:hover{border-color:#ddd;background:#fff;transform:translateY(-2px)}
+      .b-svc-card.sel{border-color:#111;background:#fff}
+      .b-svc-icon{font-size:1.4rem;display:block;margin-bottom:.5rem}
+      .b-svc-name{font-family:"Cormorant Garamond",serif;font-size:1.05rem;font-weight:600;color:#111;display:block;line-height:1.2;margin-bottom:.15rem}
+      .b-svc-desc{font-size:.7rem;color:#999;display:block;margin-bottom:.45rem}
+      .b-svc-price{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#b5834a;display:block}
+      /* Doctor cards */
+      .b-doc-card{display:flex;align-items:center;gap:1.1rem;background:#F8F9FA;border:1.5px solid transparent;border-radius:1.2rem;padding:1.1rem 1.35rem;cursor:pointer;transition:border-color .2s,background .2s;margin-bottom:.65rem}
+      .b-doc-card:hover{border-color:#ddd;background:#fff}
+      .b-doc-card.sel{border-color:#111;background:#fff}
+      .b-doc-photo{width:58px;height:58px;border-radius:50%;object-fit:cover;flex-shrink:0}
+      .b-doc-name{font-family:"Cormorant Garamond",serif;font-size:1.1rem;font-weight:600;color:#111;display:block}
+      .b-doc-title{font-size:.72rem;color:#999;display:block;margin-bottom:.45rem}
+      .b-doc-badges{display:flex;flex-wrap:wrap;gap:.4rem}
+      .b-doc-badge{font-size:.65rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#666;background:#ece9e3;padding:.18rem .55rem;border-radius:99px}
+      .b-doc-radio{margin-left:auto;width:18px;height:18px;border-radius:50%;border:2px solid #ddd;flex-shrink:0;transition:border-color .2s,background .2s}
+      .b-doc-card.sel .b-doc-radio{border-color:#111;background:#111;box-shadow:inset 0 0 0 3.5px #fff}
+      /* Calendar */
+      .b-cal-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem}
+      .b-cal-month{font-family:"Cormorant Garamond",serif;font-size:1.15rem;font-weight:600}
+      .b-cal-nav{background:#F8F9FA;border:none;width:1.9rem;height:1.9rem;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+      .b-cal-nav:hover{background:#E6DCC8}
+      .b-cal-nav:disabled{opacity:.3;cursor:not-allowed}
+      .b-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:1.25rem}
+      .b-cal-wd{text-align:center;font-size:.63rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#ccc;padding-bottom:.45rem}
+      .b-cal-d{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:.8rem;border-radius:50%;transition:background .15s,color .15s}
+      .b-cal-d.empty{pointer-events:none}
+      .b-cal-d.past,.b-cal-d.wknd{color:#ddd;cursor:not-allowed}
+      .b-cal-d.booked{color:#ccc;text-decoration:line-through;cursor:not-allowed}
+      .b-cal-d.avail{cursor:pointer;font-weight:500;color:#111}
+      .b-cal-d.avail:hover{background:#F8F9FA}
+      .b-cal-d.sel-d{background:#111!important;color:#fff!important;font-weight:700}
+      .b-cal-d.today-d{border:1.5px solid #E6DCC8}
+      /* Time slots */
+      .b-time-lbl{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:.65rem;display:block}
+      .b-time-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.45rem}
+      .b-time-slot{padding:.55rem .2rem;border:1.5px solid #eee;border-radius:.75rem;text-align:center;font-size:.76rem;font-weight:500;cursor:pointer;transition:all .15s;background:#fff;color:#111}
+      .b-time-slot:hover{border-color:#111;background:#F8F9FA}
+      .b-time-slot.taken{background:#F8F9FA;color:#ccc;border-color:#f0f0f0;cursor:not-allowed;text-decoration:line-through}
+      .b-time-slot.sel-t{background:#111;color:#fff;border-color:#111}
+      /* Form */
+      .b-fgrp{margin-bottom:1.1rem}
+      .b-flbl{display:block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;margin-bottom:.35rem}
+      .b-finput,.b-ftextarea{width:100%;padding:.8rem 1rem;background:#F8F9FA;border:1.5px solid transparent;border-radius:.85rem;font-family:"Inter",sans-serif;font-size:.87rem;color:#111;transition:border-color .2s;outline:none;box-sizing:border-box}
+      .b-finput:focus,.b-ftextarea:focus{border-color:#111;background:#fff}
+      .b-finput.err,.b-ftextarea.err{border-color:#ef4444}
+      .b-ftextarea{resize:vertical;min-height:78px}
+      .b-frow{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+      /* Confirmation */
+      .b-confirm{text-align:center;padding:.75rem 0}
+      .b-confirm-icon{width:58px;height:58px;background:#111;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.35rem;animation:scIn .4s cubic-bezier(.34,1.56,.64,1) forwards}
+      @keyframes scIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+      .b-confirm-ref{font-size:.67rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#b5834a;display:block;margin-bottom:.4rem}
+      .b-confirm-ttl{font-family:"Cormorant Garamond",serif;font-size:1.9rem;font-weight:600;color:#111;margin-bottom:.6rem}
+      .b-confirm-sub{font-size:.82rem;color:#999;margin-bottom:1.75rem;line-height:1.65}
+      .b-confirm-sum{background:#F8F9FA;border-radius:1.1rem;padding:1.1rem 1.35rem;text-align:left}
+      .b-confirm-row{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;padding:.38rem 0;border-bottom:1px solid #f0f0f0}
+      .b-confirm-row:last-child{border-bottom:none}
+      .b-confirm-k{font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#bbb;font-size:.65rem}
+      .b-confirm-v{color:#111;font-weight:500}
+      /* Spinner */
+      @keyframes spin{to{transform:rotate(360deg)}}
+      .b-spinner{width:13px;height:13px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
+    </style>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -532,6 +628,343 @@
           nav.classList.remove("py-2");
         }
       });
+    </script>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="booking-overlay" role="dialog" aria-modal="true" aria-labelledby="b-step-title">
+      <div class="booking-backdrop" id="b-backdrop"></div>
+      <div class="booking-panel">
+        <div class="b-header">
+          <div>
+            <span class="b-step-lbl" id="b-step-lbl">Step 1 of 4</span>
+            <h2 class="b-step-ttl" id="b-step-title">Select a Treatment</h2>
+          </div>
+          <button class="b-close" id="b-close" aria-label="Close booking">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M1 1l12 12M13 1L1 13"/></svg>
+          </button>
+        </div>
+        <div class="b-prog-wrap">
+          <div class="b-prog-track"><div class="b-prog-fill" id="b-prog"></div></div>
+        </div>
+        <div class="b-body" id="b-body"></div>
+        <div class="b-footer" id="b-footer">
+          <button class="b-back" id="b-back" disabled>← Back</button>
+          <button class="b-nxt" id="b-nxt">Continue</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    (function() {
+      var modal   = document.getElementById('booking-modal');
+      var bBody   = document.getElementById('b-body');
+      var bProg   = document.getElementById('b-prog');
+      var bStepLbl= document.getElementById('b-step-lbl');
+      var bStepTtl= document.getElementById('b-step-title');
+      var bBack   = document.getElementById('b-back');
+      var bNxt    = document.getElementById('b-nxt');
+      var bFooter = document.getElementById('b-footer');
+
+      var state = {
+        step:1, service:null, doctor:null, date:null, time:null,
+        calY:0, calM:0, fname:'', lname:'', phone:'', email:'', notes:''
+      };
+
+      var SVCS = [
+        {id:'consultation',icon:'🩺',name:'Initial Consultation',desc:'Free 30-min assessment',price:'Free'},
+        {id:'veneers',icon:'✨',name:'Veneers & Lumineers',desc:'Porcelain smile design',price:'From 4,500 EGP'},
+        {id:'implants',icon:'🦷',name:'German Implants',desc:'Permanent tooth replacement',price:'From 18,000 EGP'},
+        {id:'whitening',icon:'💡',name:'Laser Whitening',desc:'Up to 8 shades lighter',price:'3,000 EGP'},
+        {id:'ortho',icon:'📐',name:'Orthodontics',desc:'Invisalign & clear aligners',price:'From 25,000 EGP'},
+        {id:'smile',icon:'🎨',name:'Smile Design',desc:'Full digital smile preview',price:'From 8,000 EGP'}
+      ];
+
+      var DOCS = [
+        {id:'layla',name:'Dr. Layla Hassan',title:'Cosmetic Dentist & Smile Designer',
+         photo:'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=160&q=80',
+         avail:'Mon – Fri',exp:'12 years',rating:'4.9 ★'},
+        {id:'omar',name:'Dr. Omar Khalil',title:'Implantologist & Oral Surgeon',
+         photo:'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=160&q=80',
+         avail:'Sun – Thu',exp:'18 years',rating:'5.0 ★'}
+      ];
+
+      var SLOTS  = ['09:00 AM','10:00 AM','11:00 AM','12:00 PM','02:00 PM','03:00 PM','04:00 PM','05:00 PM'];
+      var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      var WDS    = ['Mo','Tu','We','Th','Fr','Sa','Su'];
+
+      function takenSlots(d) {
+        var s = d.getDate() + d.getMonth() * 31;
+        return SLOTS.filter(function(_,i){ return (s*(i+1))%7===0; });
+      }
+      function isDayBooked(d) { var n=d.getDate(); return n%11===0||n%13===0; }
+
+      function buildCal() {
+        var now=new Date(), Y=state.calY, M=state.calM;
+        var minD=new Date(now); minD.setDate(minD.getDate()+2);
+        var maxD=new Date(now); maxD.setDate(maxD.getDate()+60);
+        var first=new Date(Y,M,1), last=new Date(Y,M+1,0);
+        var startDow=(first.getDay()+6)%7;
+        var today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+        var minDay=new Date(minD.getFullYear(),minD.getMonth(),minD.getDate());
+        var nowMo=new Date(now.getFullYear(),now.getMonth(),1);
+        var canPrev=new Date(Y,M-1,1)>=nowMo;
+        var canNext=new Date(Y,M,1)<new Date(now.getFullYear(),now.getMonth()+2,1);
+
+        var h='<div class="b-cal-hd">'+
+          '<button class="b-cal-nav" id="cal-prev"'+(canPrev?'':' disabled')+'>'+
+            '<svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 1L3 5l4 4"/></svg>'+
+          '</button>'+
+          '<span class="b-cal-month">'+MONTHS[M]+' '+Y+'</span>'+
+          '<button class="b-cal-nav" id="cal-next"'+(canNext?'':' disabled')+'>'+
+            '<svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 1l4 4-4 4"/></svg>'+
+          '</button>'+
+        '</div><div class="b-cal-grid">'+
+        WDS.map(function(w){return '<div class="b-cal-wd">'+w+'</div>';}).join('');
+
+        for(var i=0;i<startDow;i++) h+='<div class="b-cal-d empty"></div>';
+        for(var d=1;d<=last.getDate();d++){
+          var dd=new Date(Y,M,d), dow=dd.getDay();
+          var isWknd=dow===0||dow===6;
+          var isPast=dd<minDay, isFuture=dd>maxD;
+          var isBooked=isDayBooked(dd);
+          var isSel=state.date&&state.date.getFullYear()===Y&&state.date.getMonth()===M&&state.date.getDate()===d;
+          var isToday=dd.getTime()===today.getTime();
+          var cls='b-cal-d';
+          if(isSel) cls+=' sel-d';
+          else if(isPast||isFuture) cls+=' past';
+          else if(isWknd) cls+=' wknd';
+          else if(isBooked) cls+=' booked';
+          else cls+=' avail';
+          if(isToday) cls+=' today-d';
+          var clickable=cls.indexOf('avail')>-1;
+          h+='<div class="'+cls+'"'+(clickable?' data-d="'+d+'"':'')+'>'+d+'</div>';
+        }
+        h+='</div>';
+
+        if(state.date&&state.date.getMonth()===M&&state.date.getFullYear()===Y){
+          var taken=takenSlots(state.date);
+          h+='<span class="b-time-lbl">Available Times</span><div class="b-time-grid">';
+          SLOTS.forEach(function(t){
+            var isTaken=taken.indexOf(t)>-1, isSel2=state.time===t;
+            var c2='b-time-slot'+(isTaken?' taken':isSel2?' sel-t':'');
+            h+='<div class="'+c2+'"'+(!isTaken?' data-t="'+t+'"':'')+'>'+t+'</div>';
+          });
+          h+='</div>';
+        } else {
+          h+='<p style="font-size:.78rem;color:#ccc;text-align:center;margin-top:.75rem">Select a date to see available times</p>';
+        }
+        return h;
+      }
+
+      function attachCalListeners() {
+        bBody.querySelectorAll('.b-cal-d.avail').forEach(function(el){
+          el.addEventListener('click',function(){
+            state.date=new Date(state.calY,state.calM,parseInt(this.dataset.d));
+            state.time=null; rebuildCal(); syncNxt();
+          });
+        });
+        bBody.querySelectorAll('[data-t]').forEach(function(el){
+          el.addEventListener('click',function(){
+            state.time=this.dataset.t;
+            bBody.querySelectorAll('[data-t]').forEach(function(x){x.classList.remove('sel-t');});
+            this.classList.add('sel-t'); syncNxt();
+          });
+        });
+        var prev=document.getElementById('cal-prev'), next=document.getElementById('cal-next');
+        if(prev) prev.addEventListener('click',function(){
+          if(state.calM===0){state.calM=11;state.calY--;}else state.calM--;
+          rebuildCal();
+        });
+        if(next) next.addEventListener('click',function(){
+          if(state.calM===11){state.calM=0;state.calY++;}else state.calM++;
+          rebuildCal();
+        });
+      }
+
+      function rebuildCal(){
+        var w=bBody.firstElementChild;
+        if(w){w.innerHTML=buildCal();attachCalListeners();}
+      }
+      function syncNxt(){ if(state.step===3) bNxt.disabled=!(state.date&&state.time); }
+
+      var META=[
+        {lbl:'Step 1 of 4',ttl:'Select a Treatment'},
+        {lbl:'Step 2 of 4',ttl:'Choose Your Doctor'},
+        {lbl:'Step 3 of 4',ttl:'Pick a Date & Time'},
+        {lbl:'Step 4 of 4',ttl:'Your Details'}
+      ];
+
+      function renderStep(dir){
+        var cls=dir==='back'?'b-enter-back':'b-enter';
+        if(state.step<=4){bStepLbl.textContent=META[state.step-1].lbl;bStepTtl.textContent=META[state.step-1].ttl;}
+        bProg.style.width=(state.step/4*100)+'%';
+        var h='';
+        switch(state.step){
+          case 1:
+            h='<div class="b-svc-grid '+cls+'">'+
+              SVCS.map(function(s){
+                return '<div class="b-svc-card'+(state.service===s.id?' sel':'')+'" data-svc="'+s.id+'">'+
+                  '<span class="b-svc-icon">'+s.icon+'</span>'+
+                  '<span class="b-svc-name">'+s.name+'</span>'+
+                  '<span class="b-svc-desc">'+s.desc+'</span>'+
+                  '<span class="b-svc-price">'+s.price+'</span></div>';
+              }).join('')+'</div>';
+            bBack.disabled=true; bNxt.disabled=!state.service; bNxt.textContent='Continue';
+            break;
+          case 2:
+            h='<div class="'+cls+'">'+
+              DOCS.map(function(d){
+                return '<div class="b-doc-card'+(state.doctor===d.id?' sel':'')+'" data-doc="'+d.id+'">'+
+                  '<img class="b-doc-photo" src="'+d.photo+'" alt="'+d.name+'" loading="lazy"/>'+
+                  '<div style="flex:1">'+
+                    '<span class="b-doc-name">'+d.name+'</span>'+
+                    '<span class="b-doc-title">'+d.title+'</span>'+
+                    '<div class="b-doc-badges">'+
+                      '<span class="b-doc-badge">'+d.exp+'</span>'+
+                      '<span class="b-doc-badge">'+d.rating+'</span>'+
+                      '<span class="b-doc-badge">'+d.avail+'</span>'+
+                    '</div></div>'+
+                  '<div class="b-doc-radio"></div></div>';
+              }).join('')+'</div>';
+            bBack.disabled=false; bNxt.disabled=!state.doctor; bNxt.textContent='Continue';
+            break;
+          case 3:
+            h='<div class="'+cls+'">'+buildCal()+'</div>';
+            bBack.disabled=false; bNxt.disabled=!(state.date&&state.time); bNxt.textContent='Continue';
+            break;
+          case 4:
+            h='<div class="'+cls+'">'+
+              '<div class="b-frow">'+
+                '<div class="b-fgrp"><label class="b-flbl">First Name</label>'+
+                  '<input class="b-finput" id="b-fn" type="text" placeholder="Layla" value="'+state.fname+'" autocomplete="given-name"/></div>'+
+                '<div class="b-fgrp"><label class="b-flbl">Last Name</label>'+
+                  '<input class="b-finput" id="b-ln" type="text" placeholder="Hassan" value="'+state.lname+'" autocomplete="family-name"/></div>'+
+              '</div>'+
+              '<div class="b-fgrp"><label class="b-flbl">Phone Number</label>'+
+                '<input class="b-finput" id="b-ph" type="tel" placeholder="+20 100 000 0000" value="'+state.phone+'" autocomplete="tel"/></div>'+
+              '<div class="b-fgrp"><label class="b-flbl">Email Address</label>'+
+                '<input class="b-finput" id="b-em" type="email" placeholder="your@email.com" value="'+state.email+'" autocomplete="email"/></div>'+
+              '<div class="b-fgrp"><label class="b-flbl">Notes <span style="color:#ccc;font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>'+
+                '<textarea class="b-ftextarea" id="b-nt" placeholder="Concerns, previous treatments, any questions...">'+state.notes+'</textarea></div>'+
+            '</div>';
+            bBack.disabled=false; bNxt.disabled=false; bNxt.textContent='Confirm Booking';
+            break;
+        }
+        bBody.innerHTML=h;
+        bFooter.style.display='flex';
+        attachStepListeners();
+      }
+
+      function attachStepListeners(){
+        bBody.querySelectorAll('[data-svc]').forEach(function(el){
+          el.addEventListener('click',function(){
+            state.service=this.dataset.svc;
+            bBody.querySelectorAll('[data-svc]').forEach(function(c){c.classList.remove('sel');});
+            this.classList.add('sel'); bNxt.disabled=false;
+          });
+        });
+        bBody.querySelectorAll('[data-doc]').forEach(function(el){
+          el.addEventListener('click',function(){
+            state.doctor=this.dataset.doc;
+            bBody.querySelectorAll('[data-doc]').forEach(function(c){c.classList.remove('sel');});
+            this.classList.add('sel'); bNxt.disabled=false;
+          });
+        });
+        if(state.step===3) attachCalListeners();
+      }
+
+      function validateStep4(){
+        var fn=document.getElementById('b-fn'), ln=document.getElementById('b-ln');
+        var ph=document.getElementById('b-ph'), em=document.getElementById('b-em');
+        var ok=true;
+        [fn,ln,ph,em].forEach(function(el){
+          if(!el.value.trim()){el.classList.add('err');ok=false;}
+          else el.classList.remove('err');
+        });
+        if(ok){
+          state.fname=fn.value.trim(); state.lname=ln.value.trim();
+          state.phone=ph.value.trim(); state.email=em.value.trim();
+          state.notes=document.getElementById('b-nt').value.trim();
+        }
+        return ok;
+      }
+
+      function showConfirmation(){
+        var ref='AUR-'+new Date().getFullYear()+'-'+Math.floor(1000+Math.random()*9000);
+        var doc=DOCS.filter(function(d){return d.id===state.doctor;})[0];
+        var svc=SVCS.filter(function(s){return s.id===state.service;})[0];
+        var dateStr=state.date.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+        bStepLbl.textContent='Confirmed';
+        bStepTtl.textContent='Booking Confirmed';
+        bProg.style.width='100%';
+        bFooter.style.display='none';
+        bBody.innerHTML=
+          '<div class="b-confirm b-enter">'+
+            '<div class="b-confirm-icon"><svg width="26" height="26" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 13 10 19 22 7"/></svg></div>'+
+            '<span class="b-confirm-ref">Booking Ref: '+ref+'</span>'+
+            '<h3 class="b-confirm-ttl">You\'re all set, '+state.fname+'!</h3>'+
+            '<p class="b-confirm-sub">A confirmation has been sent to <strong>'+state.email+'</strong>.<br/>We look forward to welcoming you.</p>'+
+            '<div class="b-confirm-sum">'+
+              '<div class="b-confirm-row"><span class="b-confirm-k">Treatment</span><span class="b-confirm-v">'+(svc?svc.name:'')+'</span></div>'+
+              '<div class="b-confirm-row"><span class="b-confirm-k">Doctor</span><span class="b-confirm-v">'+(doc?doc.name:'')+'</span></div>'+
+              '<div class="b-confirm-row"><span class="b-confirm-k">Date</span><span class="b-confirm-v">'+dateStr+'</span></div>'+
+              '<div class="b-confirm-row"><span class="b-confirm-k">Time</span><span class="b-confirm-v">'+state.time+'</span></div>'+
+              '<div class="b-confirm-row"><span class="b-confirm-k">Location</span><span class="b-confirm-v">Capital Business Park, Sheikh Zayed</span></div>'+
+            '</div>'+
+            '<p style="font-size:.73rem;color:#ccc;margin-top:1.4rem">Need to reschedule? Call <strong style="color:#999">+20 100 000 0000</strong></p>'+
+          '</div>';
+      }
+
+      function openBooking(svcId){
+        var now=new Date();
+        state.step=1; state.service=svcId||null; state.doctor=null;
+        state.date=null; state.time=null;
+        state.calY=now.getFullYear(); state.calM=now.getMonth();
+        state.fname=''; state.lname=''; state.phone=''; state.email=''; state.notes='';
+        bNxt.disabled=false; bNxt.classList.remove('loading');
+        bNxt.textContent='Continue'; bBack.disabled=true;
+        bFooter.style.display='flex';
+        modal.classList.add('open');
+        document.body.style.overflow='hidden';
+        renderStep('forward');
+      }
+
+      function closeBooking(){
+        modal.classList.remove('open');
+        document.body.style.overflow='';
+      }
+
+      bBack.addEventListener('click',function(){if(state.step<=1)return;state.step--;renderStep('back');});
+      bNxt.addEventListener('click',function(){
+        if(state.step===4){
+          if(!validateStep4()) return;
+          bBack.disabled=true; bNxt.disabled=true;
+          bNxt.classList.add('loading');
+          bNxt.innerHTML='<span class="b-spinner"></span>Confirming...';
+          setTimeout(showConfirmation,1800);
+          return;
+        }
+        state.step++; renderStep('forward');
+      });
+
+      document.getElementById('b-close').addEventListener('click',closeBooking);
+      document.getElementById('b-backdrop').addEventListener('click',closeBooking);
+      document.addEventListener('keydown',function(e){if(e.key==='Escape')closeBooking();});
+
+      document.querySelectorAll('a,button').forEach(function(el){
+        var t=el.textContent.trim();
+        if(t==='Book Visit'||t==='Contact via WhatsApp'){
+          el.addEventListener('click',function(e){e.preventDefault();openBooking();});
+        }
+      });
+
+      var svcMap=['veneers','implants','whitening'];
+      document.querySelectorAll('#expertise .group').forEach(function(card,i){
+        card.addEventListener('click',function(){openBooking(svcMap[i]);});
+      });
+
+      window.openBooking=openBooking;
+    })();
     </script>
   </body>
 </html>

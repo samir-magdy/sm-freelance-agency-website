@@ -13,7 +13,7 @@ const guidesTranslations = {
 ar: "أدلة عملية لأصحاب الأعمال والمستقلين في مصر. اكتشف تكلفة المواقع، مقارنة بين إنشاء موقعك بنفسك أو توظيف محترف، وكيفية اختيار شريكك الرقمي المناسب.",  },
   minRead: { en: "min read", ar: "دقايق قراءة" },
   readMore: { en: "Read Guide", ar: "اقرأ الدليل" },
-  backToGuides: { en: "Back to Guides", ar: "العودة إلى الأدلة" },
+  backToGuides: { en: "All Guides", ar: "جميع الأدلة" },
   articleCta: {
     en: "Ready to build your website?",
     ar: "جاهز تبني موقعك؟",
@@ -23,8 +23,8 @@ ar: "أدلة عملية لأصحاب الأعمال والمستقلين في �
     ar: "مواقع مخصصة لأصحاب المشاريع في مصر.",
   },
   articleCtaButton: {
-    en: "Get a Quote",
-    ar: "احصل على عرض سعر",
+    en: "Get In Touch",
+    ar: "تواصل معنا",
   },
   by: { en: "Author:", ar: "الكاتب:" },
 };

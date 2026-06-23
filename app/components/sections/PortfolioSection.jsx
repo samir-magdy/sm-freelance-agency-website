@@ -7,13 +7,14 @@ import Link from "next/link";
 import { projects } from "@/app/data/portfolio";
 import translations from "@/app/data/translations";
 
-function NavArrow({ direction, disabled, onClick }) {
+function NavArrow({ direction, disabled, onClick, ...props }) {
   if (disabled) return <div className="hidden sm:block w-11 h-11 shrink-0" />;
 
   const Icon = direction === "prev" ? ArrowLeft : ArrowRight;
   return (
     <button
       onClick={onClick}
+      {...props}
       aria-label={direction === "prev" ? "Previous project" : "Next project"}
       className="hidden group sm:flex items-center justify-center w-11 h-11 rounded-full shrink-0 p-0 transition-all duration-300 ease-out border bg-white/[0.1] border-white/[0.12] text-content-heading cursor-pointer hover:border-white/20"
     >
@@ -136,16 +137,20 @@ function StatusBar() {
    Main Component
    ───────────────────────────────────── */
 export default function PortfolioShowcase({ lang }) {
-  const { projectsSection, projectData, a11y } = translations;
+  const { projectsSection, projectData, a11y, hero } = translations;
   const t = projectsSection;
   const [mounted, setMounted] = useState(false);
   const [active, setActive] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const snapRef = useRef(null);
+  const activeRef = useRef(0);
+
   useEffect(() => {
     const el = snapRef.current;
     if (el) el.scrollLeft = 0;
     setMounted(true);
   }, []);
+
   /* Sync scroll position → active state */
   useEffect(() => {
     const el = snapRef.current;
@@ -166,6 +171,26 @@ export default function PortfolioShowcase({ lang }) {
     el.addEventListener("scroll", onScroll, { passive: true });
     return () => el.removeEventListener("scroll", onScroll);
   }, []);
+
+  /* Keep ref in sync so autoplay interval never reads stale active */
+  useEffect(() => {
+    activeRef.current = active;
+  }, [active]);
+
+  /* Autoplay */
+  useEffect(() => {
+    if (projects.length <= 1 || isPaused) return;
+    const id = setInterval(() => {
+      const el = snapRef.current;
+      if (!el) return;
+      const next = (activeRef.current + 1) % projects.length;
+      el.scrollTo({
+        left: next * el.clientWidth,
+        behavior: next === 0 ? "instant" : "smooth",
+      });
+    }, 8000);
+    return () => clearInterval(id);
+  }, [isPaused]);
 
   const handleDemoClick = useCallback(
     (e) => {
@@ -258,16 +283,31 @@ export default function PortfolioShowcase({ lang }) {
               {pd.description[lang]}
             </p>
 
-            <Link
-              id="pricing-cta"
-              onClick={handleCtaClick}
-              href={ctaHref}
-              className="cta-primary relative overflow-hidden items-center gap-2 py-3 px-6 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(0.7rem,1.5vw,1.2rem)] font-normal sm:font-semibold tracking-wide transition-all duration-200 hidden lg:inline-flex"
-              aria-label={`${t.viewProject[lang]} – ${pd.title[lang]}`}
-            >
-              {t.viewProject[lang]}
-              <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
-            </Link>
+            <div className="portfolio-info-enter hidden lg:flex items-center gap-3">
+              <a
+                href="#contact"
+                className="cta-primary inline-flex items-center gap-2 py-3 px-6 rounded-xl text-gray-900 text-[clamp(0.7rem,1.5vw,1.2rem)] font-semibold tracking-wide"
+              >
+                {lang === "ar" && (
+                  <ArrowRight className="size-4 rotate-180" aria-hidden />
+                )}
+                {hero.primaryCta[lang]}
+                {lang !== "ar" && <ArrowRight className="size-4" aria-hidden />}
+              </a>
+              <Link
+                id="pricing-cta"
+                onClick={handleCtaClick}
+                href={ctaHref}
+                className="inline-flex items-center gap-2 py-3 px-6 rounded-xl border border-border-strong text-content-body hover:text-content-heading text-[clamp(0.7rem,1.5vw,1.2rem)] font-semibold tracking-wide transition-colors duration-200"
+                aria-label={`${t.viewProject[lang]} – ${pd.title[lang]}`}
+              >
+                {lang === "ar" && (
+                  <ArrowRight className="size-4 rotate-180" aria-hidden />
+                )}
+                {t.viewProject[lang]}
+                {lang !== "ar" && <ArrowRight className="size-4" aria-hidden />}
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -288,12 +328,20 @@ export default function PortfolioShowcase({ lang }) {
               direction="prev"
               disabled={mounted && active === 0}
               onClick={() => scrollToProject(active - 1)}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              onTouchStart={() => setIsPaused(true)}
+              onTouchEnd={() => setIsPaused(false)}
             />
 
             {/* Phone outer shell */}
             <div
               id="mobile-mockup"
               className="phone-outer aspect-11/19.5 h-[min(60svh,440px)] sm:h-[min(62svh,500px)] md:h-[min(64svh,560px)] lg:h-[min(66svh,600px)] xl:h-[min(68svh,615px)] 2xl:h-[min(70svh,600px)] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              onTouchStart={() => setIsPaused(true)}
+              onTouchEnd={() => setIsPaused(false)}
             >
               {/* Left volume buttons */}
               <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -344,6 +392,10 @@ export default function PortfolioShowcase({ lang }) {
               direction="next"
               disabled={mounted && active === projects.length - 1}
               onClick={() => scrollToProject(active + 1)}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              onTouchStart={() => setIsPaused(true)}
+              onTouchEnd={() => setIsPaused(false)}
             />
           </div>
 

@@ -20,8 +20,8 @@ storyP1: {
     ar: "المؤسس والمبرمج الرئيسي",
   },
   ctaContact: {
-    en: "Get In Touch",
-    ar: "تواصل",
+    en: "Schedule a Meeting",
+    ar: "اطلب استشارة",
   },
   ctaLinkedIn: {
     en: "LinkedIn",
