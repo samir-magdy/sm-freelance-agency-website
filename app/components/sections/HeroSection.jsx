@@ -42,7 +42,7 @@ export default function HeroSection({ lang }) {
 
         <p
           id="subheading"
-          className="mb-8 sm:mb-10 hero-fade hero-fade-nav text-content-body text-[clamp(1.1rem,4vw,2.5rem)] sm:text-[clamp(1.2rem,2.2vw,2.6rem)] sm:rtl:text-[clamp(1.2rem,2.4vw,2.8rem)] rtl:leading-loose text-center sm:px-16"
+          className="mb-8 sm:mb-10 hero-fade hero-fade-nav text-content-body text-[clamp(1.1rem,4vw,2.5rem)] sm:text-[clamp(1.2rem,2.2vw,2.6rem)] sm:rtl:text-[clamp(1.2rem,2.4vw,2.8rem)] rtl:leading-loose text-center px-18 sm:px-16"
           dangerouslySetInnerHTML={{ __html: hero.subheading[lang] }}
         />
 
