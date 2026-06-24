@@ -37,14 +37,6 @@ export default function DesktopNavLinks({ nav }) {
           </li>
         );
       })}
-      {/* <li>
-        <Link
-          href={`/${lang}/guides`}
-          className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
-        >
-          {nav.guides}
-        </Link>
-      </li> */}
       <li>
         <Link
           href={`/${lang}/about`}

@@ -72,7 +72,7 @@ export default function PricingSection({ lang }) {
                       </>
                     ) : (
                       <div className="flex items-center">
-                        <span className="text-heading font-bold text-gold tracking-tighter leading-none">
+                        <span className="text-subheading md:text-3xl font-bold text-gold tracking-wide leading-none pb-1">
                           {t.customPriceLabel[lang]}
                         </span>
                         <span className="ms-auto inline-flex items-center gap-2 text-text-base font-semibold text-content-body group-hover:text-gold transition-colors duration-300">

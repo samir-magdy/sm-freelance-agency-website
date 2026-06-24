@@ -9,7 +9,7 @@ const hero = {
   },
   primaryCta: {
     en: "Schedule a Meeting",
-    ar: "اطلب استشارة",
+    ar: "طلب استشارة",
   },
   mobileHeaderCta: {
     en: "Schedule Meeting",

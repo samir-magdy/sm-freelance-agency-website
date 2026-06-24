@@ -84,15 +84,15 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               id="mobile-header-cta"
               href={isHome ? "#contact" : `/${lang}/#contact`}
               onClick={(e) => handleNavClick(e, contactItem)}
-              className="border border-gold/20 font-semibold text-content-muted/80 text-xs px-3.5 py-[0.4rem] gap-1.5 rounded-lg tracking-wide whitespace-nowrap inline-flex items-center ms-auto mr-3"
+              className="border border-white/20 font-semibold text-content-body text-sm px-4 py-2 gap-1.5 rounded-lg tracking-wide whitespace-nowrap inline-flex items-center ms-auto mr-3"
             >
               <ArrowRight
-                className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "en" ? "hidden" : ""}`}
+                className={`size-3.5 rotate-180 ${lang === "en" ? "hidden" : ""}`}
                 aria-hidden
               />
               {hero.mobileHeaderCta[lang]}
               <ArrowRight
-                className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "hidden" : ""}`}
+                className={`size-3.5 ${lang === "ar" ? "hidden" : ""}`}
                 aria-hidden
               />
             </a>
@@ -135,7 +135,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
       <div
         onClick={closeMenu}
         inert={!isMenuOpen}
-        className={`pt-6 fixed inset-0 z-40 flex flex-col items-center justify-center transition-[opacity,visibility] duration-250ms ease-out ${
+        className={`pt-10 fixed inset-0 z-40 flex flex-col items-center justify-center transition-[opacity,visibility] duration-250ms ease-out ${
           isMenuOpen
             ? "opacity-100 visible pointer-events-auto"
             : "opacity-0 invisible pointer-events-none"
@@ -150,26 +150,17 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               <a
                 href={isHome ? `#${item}` : `/${lang}/#${item}`}
                 onClick={(e) => handleNavClick(e, item)}
-                className="font-semibold text-content-body text-[1.55rem] tracking-wide"
+                className="font-semibold text-content-body text-3xl tracking-wide"
               >
                 {nav[item]}
               </a>
             </li>
           ))}
-          {/* <li onClick={(e) => e.stopPropagation()}>
-            <Link
-              href={`/${lang}/guides`}
-              onClick={pathname === `/${lang}/guides` ? closeMenu : null}
-              className="font-semibold text-content-body text-[1.55rem] tracking-wide"
-            >
-              {nav["guides"]}
-            </Link>
-          </li> */}
           <li onClick={(e) => e.stopPropagation()}>
             <Link
               href={`/${lang}/about`}
               onClick={pathname === `/${lang}/about` ? closeMenu : null}
-              className="font-semibold text-content-body text-[1.55rem] tracking-wide"
+              className="font-semibold text-content-body text-3xl tracking-wide"
             >
               {nav["about"]}
             </Link>
@@ -178,14 +169,14 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             <a
               href={isHome ? `#${contactItem}` : `/${lang}/#${contactItem}`}
               onClick={(e) => handleNavClick(e, contactItem)}
-              className="font-semibold text-content-body text-[1.55rem] tracking-wide"
+              className="font-semibold text-content-body text-3xl tracking-wide"
             >
               {nav[contactItem]}
             </a>
           </li>
           <li
             onClick={(e) => e.stopPropagation()}
-            className="pt-5 [&_svg]:block [&_a]:text-subheading"
+            className="pt-4 [&_svg]:block [&_a]:text-[1.25rem]"
           >
             <LanguageToggle lang={lang} label={langToggleLabel} />
           </li>

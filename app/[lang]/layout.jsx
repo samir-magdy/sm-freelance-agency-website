@@ -22,7 +22,7 @@ const CONTACT_EMAIL = "studio@samirmagdy.com";
 const PHONE_NUMBER = "+201274613331";
 
 const META_DESCRIPTION = {
-  en: "We provide modern, custom web design & development for small-medium businesses & individuals. Get a free quote today!",
+  en: "We provide custom web design & development for small-medium businesses & individuals. Get a free quote today!",
   ar: "نقدم خدمات تصميم وتطوير المواقع المخصصة للشركات والأفراد بأحدث التقنيات. اكتشف كيف يمكننا مساعدة عملك على النمو، احصل على عرض سعر مجاني اليوم!",
 };
 

@@ -1,4 +1,3 @@
-import HeroEffects from "./HeroEffects";
 import translations from "@/app/data/translations";
 
 export default function HeroSection({ lang }) {
@@ -10,18 +9,16 @@ export default function HeroSection({ lang }) {
       id="home"
       className="h-dvh flex items-center justify-center relative overflow-hidden"
     >
-      <HeroEffects />
-      {/* Dot grid + radial glow background */}
+      {/* Dot grid background */}
       <div className="hero-grid" aria-hidden="true" />
-      <div className="hero-glow" aria-hidden="true" />
 
       <div
         id="hero-container"
-        className="relative flex flex-col items-center pt-6 sm:pt-26"
+        className="relative flex flex-col items-center pt-6 sm:pt-26 hero-fade-in"
       >
         <h2
           dir="ltr"
-          className="hero-fade hero-fade-eyebrow flex items-center gap-3 sm:gap-4"
+          className="flex items-center gap-3 sm:gap-4"
         >
           <span className="eyebrow-rule-left" aria-hidden="true" />
           <span className="text-[clamp(0.5rem,2.8vw,1rem)] rtl:text-[clamp(0.75rem,3.5vw,1.25rem)] uppercase tracking-widest font-semibold text-content-muted">
@@ -35,14 +32,14 @@ export default function HeroSection({ lang }) {
           className="py-4 sm:py-6 sm:pb-4 font-bold text-center text-content-heading text-[clamp(2.2rem,9.5vw,4.2rem)] rtl:text-[clamp(1.5rem,9vw,4.2rem)] sm:text-[clamp(2.2rem,3.5vw,5rem)] rtl:sm:text-[clamp(2.2rem,3.5vw,5rem)] leading-relaxed rtl:leading-16 sm:rtl:leading-normal"
         >
           <span
-            className="hero-fade hero-fade-hook block"
+            className="block"
             dangerouslySetInnerHTML={{ __html: hookLines }}
           />
         </h1>
 
         <p
           id="subheading"
-          className="mb-8 sm:mb-10 hero-fade hero-fade-nav text-content-body text-[clamp(1.1rem,4vw,2.5rem)] sm:text-[clamp(1.2rem,2.2vw,2.6rem)] sm:rtl:text-[clamp(1.2rem,2.4vw,2.8rem)] rtl:leading-loose text-center px-18 sm:px-16"
+          className="mb-8 sm:mb-10 text-content-body text-[clamp(1.1rem,4vw,2.5rem)] sm:text-[clamp(1.2rem,2.2vw,2.6rem)] sm:rtl:text-[clamp(1.2rem,2.4vw,2.8rem)] rtl:leading-loose text-center px-18 rtl:px-22 sm:px-16"
           dangerouslySetInnerHTML={{ __html: hero.subheading[lang] }}
         />
 
@@ -50,7 +47,7 @@ export default function HeroSection({ lang }) {
           <a
             id="cta-main"
             href="#contact"
-            className="cta-primary font-semibold rtl:pb-4! hero-cta-entrance bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1rem,1.8vw,1.7rem)] rtl:text-[clamp(16px,1.8vw,26px)] px-6 sm:px-10 py-2.5 rounded-2xl"
+            className="cta-primary font-semibold rtl:pb-4! bg-linear-to-b from-gold to-gold-dark text-gray-900 text-[clamp(1rem,1.8vw,1.7rem)] rtl:text-[clamp(16px,1.8vw,26px)] px-6 sm:px-10 py-2.5 rounded-2xl"
           >
             {hero.primaryCta[lang]}
           </a>
@@ -58,7 +55,7 @@ export default function HeroSection({ lang }) {
           <a
             id="cta-secondary"
             href="#portfolio"
-            className="ms-4 tracking-wide hero-fade hero-fade-secondary-cta group flex items-center gap-2 text-content-muted hover:text-content-body text-[clamp(0.8rem,1.5vw,1.25rem)] font-medium transition-colors duration-300"
+            className="ms-4 tracking-wide group flex items-center gap-2 text-content-muted hover:text-content-body text-[clamp(0.8rem,1.5vw,1.25rem)] font-medium transition-colors duration-300"
           >
             {hero.secondaryCta[lang]}
             <svg

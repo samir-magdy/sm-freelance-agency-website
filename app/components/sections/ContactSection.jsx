@@ -266,7 +266,6 @@ export default function ContactSection({ lang }) {
             >
               <span
                 key={status === "loading" ? "default" : status}
-                className="btn-label"
               >
                 {status === "loading" ? (
                   t.form.sending[lang]

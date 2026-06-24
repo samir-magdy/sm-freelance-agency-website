@@ -181,9 +181,6 @@ The Calculated Data:
                       >
                         {scope.name[lang]}
                       </span>
-                      {/* <span className="text-xs lg:text-[1.12rem] text-content-muted/90 leading-snug">
-                        {scope.description[lang]}
-                      </span> */}
                     </button>
                   );
                 })}
