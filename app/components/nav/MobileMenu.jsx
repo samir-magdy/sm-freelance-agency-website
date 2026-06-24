@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import LanguageToggle from "../ui/LanguageToggle";
+import { ArrowRight } from "lucide-react";
 
 import translations from "@/app/data/translations";
 
@@ -80,44 +81,44 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           {/* Header CTA — hidden when menu is open */}
           {!isMenuOpen && (
             <a
-            id="mobile-header-cta"
+              id="mobile-header-cta"
               href={isHome ? "#contact" : `/${lang}/#contact`}
               onClick={(e) => handleNavClick(e, contactItem)}
-              className="border border-gold/20 font-semibold text-content-muted/80 text-xs px-3.5 py-[0.4rem] rounded-lg tracking-wide whitespace-nowrap inline-flex items-center gap-1.5 md:ms-auto"
+              className="border border-gold/20 font-semibold text-content-muted/80 text-xs px-3.5 py-[0.4rem] gap-1.5 rounded-lg tracking-wide whitespace-nowrap inline-flex items-center ms-auto mr-3"
             >
-        
+              <ArrowRight
+                className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "en" ? "hidden" : ""}`}
+                aria-hidden
+              />
               {hero.mobileHeaderCta[lang]}
-          
+              <ArrowRight
+                className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "hidden" : ""}`}
+                aria-hidden
+              />
             </a>
           )}
-          {/* UTILITY GROUP: Language + Hamburger grouped on the right */}
-          <div className="flex items-center gap-3">
-            <div className={isMenuOpen ? "hidden" : ""}>
-              <LanguageToggle lang={lang} label={langToggleLabel} />
-            </div>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setIsMenuOpen(!isMenuOpen);
-              }}
-              className="block p-4"
-              aria-label={isMenuOpen ? a11y.closeMenu : a11y.openMenu}
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-menu"
-            >
-              <span className="w-8 flex flex-col gap-1.5">
-                <span
-                  className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}
-                />
-                <span
-                  className={`block h-0.5 bg-content-heading transition-all duration-500 ${isMenuOpen ? "opacity-0 scale-0" : ""}`}
-                />
-                <span
-                  className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-                />
-              </span>
-            </button>
-          </div>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsMenuOpen(!isMenuOpen);
+            }}
+            className="block p-4"
+            aria-label={isMenuOpen ? a11y.closeMenu : a11y.openMenu}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+          >
+            <span className="w-8 flex flex-col gap-1.5">
+              <span
+                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}
+              />
+              <span
+                className={`block h-0.5 bg-content-heading transition-all duration-500 ${isMenuOpen ? "opacity-0 scale-0" : ""}`}
+              />
+              <span
+                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+              />
+            </span>
+          </button>
         </div>
       </div>
 
@@ -182,7 +183,10 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               {nav[contactItem]}
             </a>
           </li>
-          <li onClick={(e) => e.stopPropagation()} className="pt-2.5 [&_svg]:block [&_a]:text-subheading">
+          <li
+            onClick={(e) => e.stopPropagation()}
+            className="pt-5 [&_svg]:block [&_a]:text-subheading"
+          >
             <LanguageToggle lang={lang} label={langToggleLabel} />
           </li>
         </ul>

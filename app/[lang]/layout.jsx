@@ -22,7 +22,7 @@ const CONTACT_EMAIL = "studio@samirmagdy.com";
 const PHONE_NUMBER = "+201274613331";
 
 const META_DESCRIPTION = {
-  en: "We provide custom web design & development for small-medium businesses & individuals. Get a free quote today!",
+  en: "We provide modern, custom web design & development for small-medium businesses & individuals. Get a free quote today!",
   ar: "نقدم خدمات تصميم وتطوير المواقع المخصصة للشركات والأفراد بأحدث التقنيات. اكتشف كيف يمكننا مساعدة عملك على النمو، احصل على عرض سعر مجاني اليوم!",
 };
 
@@ -158,7 +158,7 @@ function buildStructuredData(lang) {
     name: SITE_NAME,
     inLanguage: "en",
     description:
-      "SM Web Design Studio is a professional web design company in Egypt specializing in EGP-priced custom websites, Shopify e-commerce stores with InstaPay, Vodafone Cash, Paymob, and Fawry integration, portfolio sites for freelancers, and private clinic booking systems. Serving solopreneurs, online sellers, freelancers, doctors, and independent professionals in Cairo, Alexandria, and across Egypt. No commercial register required.",
+      "SM Web Design Studio is a professional web design company in Egypt specializing in EGP-priced custom websites, custom web apps with InstaPay, Vodafone Cash, Paymob, and Fawry integration, portfolio sites for freelancers, and private clinic booking systems. Serving solopreneurs, online sellers, freelancers, doctors, and independent professionals in Cairo, Alexandria, and across Egypt. No commercial register required.",
     url: SITE_URL,
     telephone: PHONE_NUMBER,
     email: CONTACT_EMAIL,
@@ -191,8 +191,7 @@ function buildStructuredData(lang) {
           alternateName: card.name.ar,
           description: card.tagline.en,
         },
-        price: card.price.replace(/,/g, ""),
-        priceCurrency: "EGP",
+        ...(card.price ? { price: card.price.replace(/,/g, ""), priceCurrency: "EGP" } : {}),
       })),
     },
     sameAs: [SOCIAL_LINKS.instagram, SOCIAL_LINKS.facebook],
@@ -223,7 +222,7 @@ function buildStructuredData(lang) {
       name: "Custom E-commerce Stores with Local Payment Integration",
       alternateName: "متاجر إلكترونية بربط بوابات الدفع المحلية",
       description:
-        "Shopify e-commerce stores for Egyptian merchants, with native InstaPay, Vodafone Cash, Paymob, and Fawry checkout, EGP billing managed end-to-end, and no commercial register required.",
+        "Custom web apps for Egyptian businesses, with native InstaPay, Vodafone Cash, Paymob, and Fawry checkout, EGP billing managed end-to-end, and no commercial register required.",
       serviceType: "E-commerce Web Development",
       provider: { "@id": `${SITE_URL}/#business` },
       areaServed: [

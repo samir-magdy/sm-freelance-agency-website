@@ -285,7 +285,7 @@ export default function ContactSection({ lang }) {
             <div className="reveal-element">
               <div className="flex items-center gap-3 mt-4">
                 <span className="flex-1 h-px bg-border-subtle" />
-                <span className="text-content-muted text-caption font-bold">
+                <span className="text-content-muted text-body font-bold">
                   {t.form.orWhatsapp[lang]}
                 </span>
                 <span className="flex-1 h-px bg-border-subtle" />

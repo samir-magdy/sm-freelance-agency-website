@@ -3,7 +3,6 @@ const pricingEstimator = {
   scopeLabelByBase: {
     landing: { en: "Content Size:", ar: "حجم المحتوى" },
     business: { en: "Content Size:", ar: "حجم المحتوى" },
-    ecommerce: { en: "Store Size:", ar: "كمية المنتجات" },
   },
   addonsLabel: { en: "Add-ons:", ar: "الإضافات" },
   estimateLabel: { en: "Estimate:", ar: "تقدير السعر:" },
@@ -25,12 +24,6 @@ const pricingEstimator = {
       name: { en: "Business Site", ar: "موقع شركة" },
       description: { en: "Multi-page website", ar: "موقع متعدد الصفحات" },
       price: 7999,
-    },
-    {
-      id: "ecommerce",
-      name: { en: "Online Store", ar: "متجر إلكتروني" },
-      description: { en: "Full Shopify store", ar: "متجر شوبيفاي متكامل" },
-      price: 14999,
     },
   ],
 
@@ -63,20 +56,6 @@ const pricingEstimator = {
         multiplier: 0.2,
       },
     ],
-    ecommerce: [
-      {
-        name: { en: "Essential", ar: "أساسي" },
-        multiplier: 0,
-      },
-      {
-        name: { en: "Standard", ar: "قياسي" },
-        multiplier: 0.2,
-      },
-      {
-        name: { en: "Full", ar: "شامل" },
-        multiplier: 0.3,
-      },
-    ],
   },
 
   addons: [
@@ -87,9 +66,9 @@ const pricingEstimator = {
         en: "Full Bilingual support",
         ar: "دعم كامل لللغتين",
       },
-      appliesTo: ["landing", "business", "ecommerce"],
+      appliesTo: ["landing", "business"],
       isMultiplier: true,
-      multiplierByBase: { landing: 0.35, business: 0.35, ecommerce: 0.4 },
+      multiplierByBase: { landing: 0.35, business: 0.35 },
       price: 0,
       scalesWithScope: false,
     },
@@ -100,7 +79,7 @@ const pricingEstimator = {
         en: "Technical SEO Setup",
         ar: "تهيئة لجوجل من البداية",
       },
-      appliesTo: ["landing", "business", "ecommerce"],
+      appliesTo: ["landing", "business"],
       isMultiplier: false,
       price: 1500,
       scalesWithScope: true,
@@ -127,18 +106,6 @@ const pricingEstimator = {
       appliesTo: ["landing", "business"],
       isMultiplier: false,
       price: 3000,
-      scalesWithScope: false,
-    },
-    {
-      id: "payments",
-      name: { en: "Payment Gateways", ar: "بوابات الدفع" },
-      description: {
-        en: "Online payments",
-        ar: "الدفع الإلكتروني",
-      },
-      appliesTo: ["ecommerce"],
-      isMultiplier: false,
-      price: 5000,
       scalesWithScope: false,
     },
   ],

@@ -59,7 +59,7 @@ section {
 }
 
 #portfolio {
-  --nav-h: 2rem;
+  --nav-h: 4rem;
 }
 
 @media (min-width: 1280px) {
@@ -130,55 +130,38 @@ section {
   }
 }
 
-.hero-fade-eyebrow {
-  animation: heroFadeIn 0.3s cubic-bezier(0.25, 0, 0, 1) 0s both;
-}
-
-@keyframes heroFadeIn {
+@keyframes heroBlurIn {
   from {
     opacity: 0;
+    filter: blur(20px);
   }
   to {
     opacity: 1;
+    filter: blur(0);
   }
+}
+
+.hero-fade-eyebrow,
+.eyebrow-rule-left,
+.eyebrow-rule-right,
+.hero-fade-hook,
+.hero-fade-nav,
+.hero-cta-entrance,
+.hero-fade-secondary-cta,
+.here-mark::after {
+  animation: heroBlurIn 2s cubic-bezier(0.25, 0, 0, 1) both;
 }
 
 .eyebrow-rule-left {
   height: 1px;
   width: 1.75rem;
-  background: linear-gradient(
-    to left,
-    oklch(73.8% 0.0173 267.3 / 0.55),
-    transparent
-  );
-  transform-origin: right center;
+  background: linear-gradient(to left, oklch(73.8% 0.0173 267.3 / 0.55), transparent);
 }
 
 .eyebrow-rule-right {
   height: 1px;
   width: 1.75rem;
-  background: linear-gradient(
-    to right,
-    oklch(73.8% 0.0173 267.3 / 0.55),
-    transparent
-  );
-  transform-origin: left center;
-}
-
-@keyframes eyebrowRuleIn {
-  from {
-    transform: scaleX(0);
-    opacity: 0;
-  }
-  to {
-    transform: scaleX(1);
-    opacity: 1;
-  }
-}
-
-.eyebrow-rule-left,
-.eyebrow-rule-right {
-  animation: eyebrowRuleIn 0.3s cubic-bezier(0.25, 0, 0, 1) 0s both;
+  background: linear-gradient(to right, oklch(73.8% 0.0173 267.3 / 0.55), transparent);
 }
 
 .here-mark {
@@ -202,19 +185,6 @@ section {
     var(--color-gold) 90%,
     transparent
   );
-  transform-origin: center;
-  animation: hereRuleIn 1s cubic-bezier(0.25, 0, 0, 0.8) 1.2s both;
-}
-
-@keyframes hereRuleIn {
-  from {
-    transform: scaleX(0);
-    opacity: 0;
-  }
-  to {
-    transform: scaleX(1);
-    opacity: 1;
-  }
 }
 
 @media (max-width: 768px) {
@@ -229,65 +199,13 @@ section {
   }
 }
 
-@keyframes heroRiseIn {
-  from {
-    opacity: 0;
-    translate: 0 8px;
-  }
-  to {
-    opacity: 1;
-    translate: 0 0;
-  }
-}
-
-@keyframes heroRiseInBlur {
-  from {
-    opacity: 0;
-    translate: 0 10px;
-    filter: blur(6px);
-  }
-  to {
-    opacity: 1;
-    translate: 0 0;
-    filter: blur(0px);
-  }
-}
-
-.hero-fade-hook {
-  animation: heroRiseInBlur 0.75s cubic-bezier(0.25, 0, 0, 1) 0.2s both;
-}
-
-.hero-fade-nav {
-  animation: heroRiseIn 0.6s cubic-bezier(0.25, 0, 0, 1) 0.4s both;
-}
-
-.hero-cta-entrance {
-  animation:
-    heroRiseIn 0.6s cubic-bezier(0.25, 0, 0, 1) 0.6s both,
-    ctaGlowPulse 3.5s ease-in-out 2s infinite;
-}
-
-.hero-fade-secondary-cta {
-  animation: heroRiseIn 0.6s cubic-bezier(0.25, 0, 0, 1) 0.8s both;
-}
-
-html:not(.fonts-ready) .hero-fade-eyebrow,
-html:not(.fonts-ready) .eyebrow-rule-left,
-html:not(.fonts-ready) .eyebrow-rule-right,
-html:not(.fonts-ready) .hero-fade-hook,
-html:not(.fonts-ready) .hero-fade-nav,
-html:not(.fonts-ready) .hero-cta-entrance,
-html:not(.fonts-ready) .hero-fade-secondary-cta,
-html:not(.fonts-ready) .here-mark::after {
-  animation-play-state: paused;
-}
 
 html.hero-played .hero-fade-eyebrow,
 html.hero-played .eyebrow-rule-left,
 html.hero-played .eyebrow-rule-right,
 html.hero-played .hero-fade-hook,
 html.hero-played .hero-fade-nav,
-html.hero-played .hero-cta-entrance::before,
+html.hero-played .hero-cta-entrance,
 html.hero-played .hero-fade-secondary-cta,
 html.hero-played .here-mark::after {
   animation: none;
@@ -355,7 +273,7 @@ html.hero-played .here-mark::after {
       padding-top: 5rem;
     }
     #mobile-mockup {
-      height: 55vh;
+      height: 57vh;
       min-height: 250px;
     }
     #portfolio-subheading {
@@ -369,10 +287,10 @@ html.hero-played .here-mark::after {
     }
     #portfolio-genre {
       font-size: 0.75rem;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.2rem;
     }
     [dir="rtl"] #portfolio-genre {
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
     #subheading {
       font-size: clamp(1.2rem, 5.2vw, 4rem);
@@ -384,6 +302,9 @@ html.hero-played .here-mark::after {
     #cta-secondary {
       font-size: clamp(0.95rem, 3.5vw, 1.2rem);
     }
+    #portfolio {
+  --nav-h: 2.5rem;
+}
   }
 }
 /* ══════════════════════════════════════
@@ -446,10 +367,8 @@ details[open]::details-content {
   transition:
     --cta-hover-mix 0.5s ease,
     opacity 0.3s ease;
-}
 
-@media (hover: hover) and (pointer: fine) {
-  .cta-primary:hover {
+  @variant hover {
     --cta-hover-mix: 100%;
   }
 }
@@ -461,64 +380,25 @@ details[open]::details-content {
   border-radius: 0.5rem;
 }
 
-.cta-primary::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    105deg,
-    transparent 35%,
-    hsl(0 0% 100% / 0.25) 45%,
-    hsl(0 0% 100% / 0.35) 50%,
-    hsl(0 0% 100% / 0.25) 55%,
-    transparent 65%
-  );
-  translate: -110% 0;
-  pointer-events: none;
-}
-
-[dir="rtl"] .cta-primary::before {
-  background: linear-gradient(
-    -105deg,
-    transparent 35%,
-    hsl(0 0% 100% / 0.25) 45%,
-    hsl(0 0% 100% / 0.35) 50%,
-    hsl(0 0% 100% / 0.25) 55%,
-    transparent 65%
-  );
-  translate: 110% 0;
-}
 
 /* ══════════════════════════════════════
    5b. Submit Button — Label Fade-In
    ══════════════════════════════════════ */
 
-@keyframes btnLabelIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .btn-label {
-  animation: btnLabelIn 0.18s ease-out both;
+  animation: fadeIn 0.18s ease-out both;
 }
 
 /* ══════════════════════════════════════
    7. Portfolio Showcase — Scroll-Snap
    ══════════════════════════════════════ */
-@keyframes portfolioInfoIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 .portfolio-info-enter {
-  animation: portfolioInfoIn 0.5s ease-out both;
+  animation: fadeIn 0.5s ease-out both;
 }
 .portfolio-snap::-webkit-scrollbar {
   display: none;
@@ -596,23 +476,4 @@ details[open]::details-content {
   }
 }
 
-/* ══════════════════════════════════════
-   8. Case Study Page — numerals, textures
-   ══════════════════════════════════════ */
-
-/* Faint outlined section numerals (01–04) */
-.cs-num {
-  color: oklch(76.7% 0.1399 91.2 / 0.5);
-  -webkit-text-stroke: 1px oklch(76.7% 0.1399 91.2);
-}
-
-/* Placeholder texture for empty screenshot slots */
-.cs-dot-grid {
-  background-image: radial-gradient(
-    circle,
-    oklch(92% 0.0051 267.4 / 0.07) 1px,
-    transparent 1px
-  );
-  background-size: 22px 22px;
-}
 

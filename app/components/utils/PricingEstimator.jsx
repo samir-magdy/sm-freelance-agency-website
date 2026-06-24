@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
-import { Globe, Layout, Zap } from "lucide-react";
+import { Globe, Layout } from "lucide-react";
 import translations from "@/app/data/translations";
 import WhatsAppIcon from "./WhatsAppIcon";
 
-const BASE_ICONS = { landing: Layout, business: Globe, ecommerce: Zap };
+const BASE_ICONS = { landing: Layout, business: Globe };
 
 export default function PricingEstimator({ lang }) {
   const t = translations.pricingEstimator;
@@ -125,7 +125,7 @@ The Calculated Data:
               <label className="ms-1 rtl:mb-1 sm:mb-2 text-content-heading font-bold text-base lg:text-[1.2rem] block">
                 {t.baseLabel[lang]}
               </label>
-              <div className="flex sm:grid sm:grid-cols-3 gap-2 sm:gap-2.5 sm:justify-between items-center">
+              <div className="flex sm:grid sm:grid-cols-2 gap-2 sm:gap-2.5 sm:justify-between items-center">
                 {t.bases.map((base) => {
                   const Icon = BASE_ICONS[base.id];
                   const isSelected = baseId === base.id;
@@ -133,7 +133,7 @@ The Calculated Data:
                     <button
                       key={base.id}
                       onClick={() => handleBaseTypeChange(base.id)}
-                      className={`cursor-pointer flex flex-col items-start text-start px-2 py-2.5 sm:p-4 rounded-2xl border transition-all duration-200 w-full gap-3 sm:gap-2 ${
+                      className={`cursor-pointer flex sm:flex-col items-start text-start px-2 py-2.5 sm:p-4 rounded-2xl border transition-all duration-200 w-full gap-3 sm:gap-2 ${
                         isSelected
                           ? "bg-black/40 shadow-md border-white/60 border-2"
                           : "border-2 border-border-subtle hover:border-border-strong bg-black/15"

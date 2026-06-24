@@ -188,7 +188,7 @@ export default function PortfolioShowcase({ lang }) {
         left: next * el.clientWidth,
         behavior: next === 0 ? "instant" : "smooth",
       });
-    }, 8000);
+    }, 4500);
     return () => clearInterval(id);
   }, [isPaused]);
 
@@ -229,7 +229,7 @@ export default function PortfolioShowcase({ lang }) {
       aria-labelledby="portfolio-heading"
     >
       {/* ── Section heading ── */}
-      <div className="text-center relative z-2 px-5 mb-2 md:mb-12">
+      <div className="text-center relative z-2 px-5 mb-1 md:mb-12">
         <h2
           id="portfolio-heading"
           className="reveal-element font-bold text-heading mb-2 rtl:mb-3"
@@ -312,7 +312,7 @@ export default function PortfolioShowcase({ lang }) {
         </div>
 
         {/* ── Phone column ── */}
-        <div className="reveal-element flex flex-col items-center gap-3">
+        <div className="reveal-element flex flex-col items-center gap-2.5">
           {/* Genre badge — mobile only */}
           <h3
             id="portfolio-genre"
@@ -402,7 +402,7 @@ export default function PortfolioShowcase({ lang }) {
           {/* Pagination dots */}
           <div
             dir="ltr"
-            className="flex items-center gap-1.5 mb-0.5"
+            className="flex items-center gap-1.5 mb-1"
             role="tablist"
             aria-label="Project slides"
           >

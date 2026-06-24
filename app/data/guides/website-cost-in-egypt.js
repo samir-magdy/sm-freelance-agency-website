@@ -34,7 +34,7 @@ const resource = {
         <strong>Landing Page</strong>
         <br><small style="color: #bfbfbf;">A single page that drives the visitor to take action (fill a form or contact via WhatsApp)</small>
       </td>
-      <td>5,000 – 15,000</td>
+      <td>5,000 – 25,000</td>
       <td>Freelancers & Startups</td>
     </tr>
     <tr>
@@ -42,7 +42,7 @@ const resource = {
         <strong>Business Website</strong>
         <br><small style="color: #bfbfbf;">A multi-page informational site to showcase your services and complete company details</small>
       </td>
-      <td>8,000 – 30,000</td>
+      <td>8,000 – 40,000</td>
       <td>Established Businesses</td>
     </tr>
     <tr>
@@ -50,16 +50,14 @@ const resource = {
         <strong>E-commerce Store</strong>
         <br><small style="color: #bfbfbf;">A site to display your products for sale, supports online payments and inventory management</small>
       </td>
-      <td>15,000 – 50,000</td>
+      <td>15,000 – 100,000</td>
       <td>Brands & Retailers</td>
     </tr>
   </tbody>
 </table>
 <p><small>Note: These prices are approximate and depend on the needs of startups and small businesses. Large-scale projects are priced individually.</small></p>
 
-<h2 style="margin-bottom: 0.4rem">Cost Calculator: Get an Instant Estimate</h2>
-<p style="margin-bottom: 0">Choose your website type, content size, and required add-ons to see an instant estimate:</p>
-<!-- PRICING_ESTIMATOR_SLOT -->
+
 <h2>What determines the price of any website?</h2>
 <p>To understand exactly where your budget is going, we've compiled the main factors that control the final price:</p>
 <ul>
@@ -73,7 +71,9 @@ const resource = {
   <li><strong>Hosting:</strong> Shared hosting is cheap but can make the site slow under heavy traffic or even crash it, unlike private hosting which guarantees higher performance.</li>
   <li><strong>Maintenance and technical support:</strong> Periodic maintenance contracts (monthly or yearly) are an additional cost that ensures the site keeps running efficiently and any post-delivery issues are fixed without surprise fees.</li>
 </ul>
-
+<h2 style="margin-bottom: 0.4rem">Cost Calculator: Get an Instant Estimate</h2>
+<p style="margin-bottom: 0">Choose your website type, content size, and required add-ons to see an instant estimate:</p>
+<!-- PRICING_ESTIMATOR_SLOT -->
 <h2>The Trap of Cheap Websites: Hidden Risks and How to Avoid Them</h2>
 <p>If you search and compare market prices, you might find a freelancer offering a website for 1,000 EGP, while a web design agency or another developer quotes 15,000 EGP for the same project. This massive difference means the quality of work and the value you receive will be completely different, or that essential features are simply missing from the cheaper offer.</p>
 <p>You might encounter that 1,000 EGP offer, but beware. This type of work usually doesn't require a developer at all; you could likely do it yourself. We discuss this in detail in our guide on <a href='/en/guides/diy-vs-professional-web-design'>DIY website builders vs professional web design</a>.</p>
@@ -106,7 +106,7 @@ const resource = {
         <strong>صفحة هبوط</strong>
         <br><small style="color: #bfbfbf;">صفحة واحدة تعريفية بتخلي الزائر ياخد إجراء مُعين (تعبئة نموذج أو رسالة عبر الواتساب)</small>
       </td>
-      <td>5,000 – 15,000</td>
+      <td>5,000 – 25,000</td>
       <td>المستقلين والشركات الناشئة</td>
     </tr>
     <tr>
@@ -114,7 +114,7 @@ const resource = {
         <strong>موقع شركة</strong>
         <br><small style="color: #bfbfbf;">موقع تعريفي، متعدد الصفحات لعرض خدماتك، وتفاصيل الشركة بالكامل</small>
       </td>
-      <td>8,000 – 30,000</td>
+      <td>8,000 – 40,000</td>
       <td>الشركات المستقرة</td>
     </tr>
     <tr>
@@ -122,7 +122,7 @@ const resource = {
         <strong>متجر إلكتروني</strong>
         <br><small style="color: #bfbfbf;">موقع يعرض منتجاتك للبيع، بيدعم الدفع الإلكتروني وإدارة المخزون</small>
       </td>
-      <td>15,000 – 50,000</td>
+      <td>15,000 – 100,000</td>
       <td>البراندات والتجار</td>
     </tr>
   </tbody>
@@ -130,23 +130,23 @@ const resource = {
 <p><small>ملحوظة: الأسعار المذكورة تقريبية وتعتمد على احتياجات الشركات الناشئة والصغيرة. المشاريع الضخمة بيتحدد سعرها بشكل مخصص.</small></p>
 
 
-<h2 style="margin-bottom: 0.4rem">حاسبة التكلفة: احسب سعر موقعك</h2>
-<p style="margin-bottom: 0">اختار نوع الموقع، حجم المحتوى، الإضافات اللي محتاجها، وهتشوف تقدير سعر فوري:</p>
-<!-- PRICING_ESTIMATOR_SLOT -->
 <h2>إيه اللي بيحدد سعر أي موقع إلكتروني؟</h2>
 <p>علشان تفهم ميزانيتك رايحة فين بالظبط، جمعنالك أهم النقاط اللي بتتحكم في السعر النهائي:</p>
 <ul>
-  <li><strong>حجم الموقع وعدد الصفحات:</strong> موقع من صفحة واحدة تكلفته أقل بكثير من موقع متفرع لـ 30 صفحة، لأن كل صفحة زيادة بتحتاج مجهود إضافي في التصميم والبرمجة.</li>
-  <li><strong>قالب جاهز ولا تصميم مخصص:</strong> القوالب الجاهزة مفيهاش شغل تصميم، ده معناه إن شكل الموقع مطابق لآلاف المواقع التانية، لكن التصميم المخصص بياخد وقت ومجهود أكبر وبالتالي تكلفته أعلى.</li>
-  <li><strong>التكنولوجيا المستخدمة:</strong> الشغل على المنصات الجاهزة زي ووردبريس أو ويكس بيكون أسرع وأوفر في السعر، أما البرمجة الخاصة بتزود التكلفة لأنها بتحتاج مبرمجين متخصصين.</li>
-  <li><strong>المميزات الخاصة:</strong> السعر بيزيد مع إضافة ميزات برمجية خاصة زي نظام حجز، أو شات بوت للدعم الفني، أو لوحة تحكم مخصصة لإدارة الموقع بنفسك.</li>
+<li><strong>حجم الموقع وعدد الصفحات:</strong> موقع من صفحة واحدة تكلفته أقل بكثير من موقع متفرع لـ 30 صفحة، لأن كل صفحة زيادة بتحتاج مجهود إضافي في التصميم والبرمجة.</li>
+<li><strong>قالب جاهز ولا تصميم مخصص:</strong> القوالب الجاهزة مفيهاش شغل تصميم، ده معناه إن شكل الموقع مطابق لآلاف المواقع التانية، لكن التصميم المخصص بياخد وقت ومجهود أكبر وبالتالي تكلفته أعلى.</li>
+<li><strong>التكنولوجيا المستخدمة:</strong> الشغل على المنصات الجاهزة زي ووردبريس أو ويكس بيكون أسرع وأوفر في السعر، أما البرمجة الخاصة بتزود التكلفة لأنها بتحتاج مبرمجين متخصصين.</li>
+<li><strong>المميزات الخاصة:</strong> السعر بيزيد مع إضافة ميزات برمجية خاصة زي نظام حجز، أو شات بوت للدعم الفني، أو لوحة تحكم مخصصة لإدارة الموقع بنفسك.</li>
   <li><strong>كتابة المحتوى:</strong> لو هتسلم المحتوى المكتوب للموقع يبقى مفيش تكلفة إضافية، لكن لو الجهة اللي بتبني الموقع هتكتب المحتوى، بيكون في تكلفة زيادة.</li>
   <li><strong>تعدد اللغات:</strong> إضافة لغات تانية للموقع بتزود التكلفة لأنها مش مجرد ترجمة، دي بتحتاج شغل برمجي خاص زي تعديل اتجاهات التصميم (RTL).</li>
   <li><strong>تهيئة محركات البحث (SEO):</strong> تهيئة الموقع علشان يظهر في نتائج البحث دي خدمة برمجية بتدخل في الحسبة، وممكن تاخد ميزانية لوحدها لو عايز فرص حقيقية إنك تتصدر نتائج جوجل.</li>
   <li><strong>الاستضافة:</strong> الاستضافة المشتركة سعرها رخيص بس ممكن تخلي الموقع بطيء مع ضغط الزوار أو في أسوأ الأحوال ممكن الموقع ميشتغلش خالص، عكس الاستضافة الخاصة اللي بتضمن كفاءة أعلى.</li>
   <li><strong>الصيانة والدعم الفني:</strong> عقود الصيانة الدورية (الشهرية أو السنوية) دي تكلفة إضافية بتضمن إن الموقع يفضل شغال بكفاءة وإن أي مشكلة تظهر بعد التسليم تتحل بدون تكاليف.</li>
-</ul>
-
+  </ul>
+  
+  <h2 style="margin-bottom: 0.4rem">حاسبة التكلفة: احسب سعر موقعك</h2>
+  <p style="margin-bottom: 0">اختار نوع الموقع، حجم المحتوى، الإضافات اللي محتاجها، وهتشوف تقدير سعر فوري:</p>
+  <!-- PRICING_ESTIMATOR_SLOT -->
 
 <h2>فخ الموقع الرخيص: المخاطر الخفية وإزاي تتجنبها</h2>
 <p>لو قعدت تدور وتقارن الأسعار في السوق، هتلاقي عروض بـ 1,000 جنيه، وفي نفس الوقت هتلاقي عروض تانيا لنفس الموقع بـ 15,000 جنيه. الفرق الضخم ده معناه إن جودة الشغل والقيمة اللي هتاخدها مختلفة تماماً، أو إن فيه تفاصيل ومميزات أساسية مش موجودة أصلاً في العرض الأرخص.</p>

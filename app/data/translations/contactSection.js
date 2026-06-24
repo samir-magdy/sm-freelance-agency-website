@@ -1,7 +1,7 @@
 export const contactSection = {
   heading: {
     en: "Get In Touch",
-    ar: "طلب تسعير أو استشارة",
+    ar: "تواصل معنا",
   },
   subheading: {
     en: "Share a few details and we'll reach out",

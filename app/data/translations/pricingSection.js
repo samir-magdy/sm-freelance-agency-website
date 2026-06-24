@@ -23,6 +23,10 @@ export const pricingCards = {
     en: "Schedule a Meeting",
     ar: "اطلب استشارة",
   },
+  customPriceLabel: {
+    en: "Custom Pricing",
+    ar: "سعر حسب المشروع",
+  },
   cards: [
     {
       id: "landing",
@@ -49,16 +53,16 @@ export const pricingCards = {
       price: "7,999",
     },
     {
-      id: "shopify",
+      id: "custom-app",
       name: {
-        en: "Shopify E-commerce",
-        ar: "متجر إلكتروني",
+        en: "Custom Web Apps",
+        ar: "تطبيق ويب",
       },
       tagline: {
-        en: "A Shopify store that automates the process of selling your products online. <em>Ideal for anyone who wants to sell their products online.</em>",
-        ar: "متجر شوبيفاي بيشغّل عملية بيع منتجاتك أونلاين بشكل تلقائي بالكامل. <em>ممتاز لأي حد حابب يبيع منتجاته عبر الإنترنت.</em>",
+        en: "A fully custom-built web application designed around your exact business requirements — from online stores and booking systems to internal tools and client portals. <em>Ideal for businesses with specific needs that off-the-shelf solutions can't cover.</em>",
+        ar: "تطبيق ويب مبني بالكامل من الصفر حسب متطلبات مشروعك — من المتاجر الإلكترونية وأنظمة الحجز للوحات التحكم الداخلية. <em>مثالي للمشاريع اللي محتاجة حل مخصص مش قالب جاهز.</em>",
       },
-      price: "14,999",
+      price: null,
     },
   ],
 };
