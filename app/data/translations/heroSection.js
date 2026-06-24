@@ -20,8 +20,8 @@ const hero = {
     ar: "شاهد أعمالنا",
   },
   subheading: {
-    en: 'Your online presence starts <span class="here-mark">here</span>.',
-    ar: 'وجودك على الإنترنت يبدأ من <span class="here-mark">هنا</span>.',
+    en: "Behind every great business is a website that proves it.",
+    ar: "وراء كل مشروع ناجح، موقع يُثبت جدارته.",
   },
 };
 

@@ -132,7 +132,7 @@ section {
 
 @keyframes heroBlurIn {
   from {
-    opacity: 0;
+    opacity: 0.5;
     filter: blur(20px);
   }
   to {
@@ -147,9 +147,8 @@ section {
 .hero-fade-hook,
 .hero-fade-nav,
 .hero-cta-entrance,
-.hero-fade-secondary-cta,
-.here-mark::after {
-  animation: heroBlurIn 2s cubic-bezier(0.25, 0, 0, 1) both;
+.hero-fade-secondary-cta {
+  animation: heroBlurIn 3s ease-out;
 }
 
 .eyebrow-rule-left {
@@ -164,40 +163,6 @@ section {
   background: linear-gradient(to right, oklch(73.8% 0.0173 267.3 / 0.55), transparent);
 }
 
-.here-mark {
-  position: relative;
-  display: inline-block;
-  color: var(--color-gold-light);
-  font-weight: 500;
-  font-style: italic;
-}
-
-.here-mark::after {
-  content: "";
-  position: absolute;
-  inset-inline: 0;
-  bottom: -0.15em;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    var(--color-gold) 10%,
-    var(--color-gold) 90%,
-    transparent
-  );
-}
-
-@media (max-width: 768px) {
-  .here-mark::after {
-    background: linear-gradient(
-      to right,
-      transparent,
-      oklch(from var(--color-gold) l c h / 0.4) 40%,
-      oklch(from var(--color-gold) l c h / 0.4) 80%,
-      transparent
-    );
-  }
-}
 
 
 html.hero-played .hero-fade-eyebrow,
@@ -206,8 +171,7 @@ html.hero-played .eyebrow-rule-right,
 html.hero-played .hero-fade-hook,
 html.hero-played .hero-fade-nav,
 html.hero-played .hero-cta-entrance,
-html.hero-played .hero-fade-secondary-cta,
-html.hero-played .here-mark::after {
+html.hero-played .hero-fade-secondary-cta {
   animation: none;
 }
 
