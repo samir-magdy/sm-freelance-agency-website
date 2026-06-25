@@ -407,7 +407,7 @@ export default async function LangLayout({ children, params }) {
       data-scroll-behavior="smooth"
     >
       <body
-        className={`${fonts.variable} font-cairo antialiased min-h-dvh flex flex-col`}
+        className={`${fonts.variable} font-cairo antialiased min-h-svh flex flex-col`}
       >
         {/* ── Structured Data (JSON-LD) ── */}
         <script
