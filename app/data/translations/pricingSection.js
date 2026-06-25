@@ -20,7 +20,7 @@ export const pricingCards = {
     ar: "جنيه مصري",
   },
   cta: {
-    en: "Schedule a Meeting",
+    en: "Schedule Meeting",
     ar: "اطلب استشارة",
   },
   customPriceLabel: {
@@ -55,11 +55,11 @@ export const pricingCards = {
     {
       id: "custom-app",
       name: {
-        en: "Custom Web Apps",
+        en: "Custom Web App",
         ar: "تطبيق ويب",
       },
       tagline: {
-        en: "A fully custom-built web application designed around your exact business requirements — from online stores and booking systems to internal tools and client portals. <em>Ideal for businesses with specific needs that off-the-shelf solutions can't cover.</em>",
+        en: "A fully custom-built web application designed around your exact business requirements, from online stores and booking systems to internal tools and client portals. <em>Ideal for businesses with specific needs that require custom solutions.</em>",
         ar: "تطبيق ويب مبني بالكامل من الصفر حسب متطلبات مشروعك — من المتاجر الإلكترونية وأنظمة الحجز للوحات التحكم الداخلية. <em>مثالي للمشاريع اللي محتاجة حل مخصص مش قالب جاهز.</em>",
       },
       price: null,

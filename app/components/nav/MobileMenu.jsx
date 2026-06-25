@@ -129,7 +129,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               <a
                 href={isHome ? `#${item}` : `/${lang}/#${item}`}
                 onClick={(e) => handleNavClick(e, item)}
-                className="font-semibold text-content-body text-3xl tracking-wide"
+                className="font-semibold text-content-heading text-3xl tracking-wide"
               >
                 {nav[item]}
               </a>
@@ -139,7 +139,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             <Link
               href={`/${lang}/about`}
               onClick={pathname === `/${lang}/about` ? closeMenu : null}
-              className="font-semibold text-content-body text-3xl tracking-wide"
+              className="font-semibold text-content-heading text-3xl tracking-wide"
             >
               {nav["about"]}
             </Link>
@@ -148,7 +148,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             <a
               href={isHome ? `#${contactItem}` : `/${lang}/#${contactItem}`}
               onClick={(e) => handleNavClick(e, contactItem)}
-              className="font-semibold text-content-body text-3xl tracking-wide"
+              className="font-semibold text-content-heading text-3xl tracking-wide"
             >
               {nav[contactItem]}
             </a>

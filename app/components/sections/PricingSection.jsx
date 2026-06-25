@@ -62,7 +62,7 @@ export default function PricingSection({ lang }) {
                           <span className="text-caption font-medium text-content-muted">
                             {t.currency[lang]}
                           </span>
-                          <span className="ms-auto inline-flex items-center gap-2 text-text-base font-semibold text-content-body group-hover:text-gold transition-colors duration-300">
+                          <span className="ms-auto inline-flex items-center gap-2 text-sm font-semibold text-content-body group-hover:text-gold transition-colors duration-300">
                             {t.cta[lang]}
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className={`transition-transform duration-300 ${isRtl ? "rotate-180 group-hover:-translate-x-1.5" : "group-hover:translate-x-1.5"}`}>
                               <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -72,10 +72,10 @@ export default function PricingSection({ lang }) {
                       </>
                     ) : (
                       <div className="flex items-center">
-                        <span className="text-subheading md:text-3xl font-bold text-gold tracking-wide leading-none pb-1">
+                        <span className="text-subheading md:text-3xl font-bold text-gold tracking-tight leading-none pb-1">
                           {t.customPriceLabel[lang]}
                         </span>
-                        <span className="ms-auto inline-flex items-center gap-2 text-text-base font-semibold text-content-body group-hover:text-gold transition-colors duration-300">
+                        <span className="ms-auto inline-flex items-center gap-2 text-sm font-semibold text-content-body group-hover:text-gold transition-colors duration-300">
                           {t.cta[lang]}
                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className={`transition-transform duration-300 ${isRtl ? "rotate-180 group-hover:-translate-x-1.5" : "group-hover:translate-x-1.5"}`}>
                             <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
