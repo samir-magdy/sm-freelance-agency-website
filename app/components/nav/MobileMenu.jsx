@@ -63,7 +63,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
         dir="ltr"
       >
         <div className="flex justify-between items-center px-3">
-          <Link
+          <a
             href={`/${lang}/#home`}
             aria-label="Samir Magdy Web Studio - Home"
             onClick={closeMenu}
@@ -75,7 +75,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               height={42}
               priority
             />
-          </Link>
+          </a>
           <button
             onClick={(e) => {
               e.stopPropagation();
