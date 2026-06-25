@@ -11,11 +11,7 @@ const hero = {
     en: "Schedule a Meeting",
     ar: "طلب استشارة",
   },
-  mobileHeaderCta: {
-    en: "Schedule Meeting",
-    ar: "طلب استشارة",
-  },
-  secondaryCta: {
+secondaryCta: {
     en: "See Our Work",
     ar: "شاهد أعمالنا",
   },

@@ -55,7 +55,7 @@ export default function HeroSection({ lang }) {
           <a
             id="cta-secondary"
             href="#portfolio"
-            className="ms-4 tracking-wide group flex items-center gap-2 text-content-muted hover:text-content-body text-[clamp(0.8rem,1.5vw,1.25rem)] font-medium transition-colors duration-300"
+            className="ms-2 tracking-wide group flex items-center gap-2 text-content-muted hover:text-content-body text-[clamp(0.8rem,1.5vw,1.25rem)] font-medium transition-colors duration-300"
           >
             {hero.secondaryCta[lang]}
             <svg

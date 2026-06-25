@@ -128,7 +128,7 @@ section {
 }
 
 .hero-fade-in {
-  animation: heroBlurIn 2s ease-out;
+  animation: heroBlurIn 1.5s ease-out;
 }
 
 .eyebrow-rule-left {

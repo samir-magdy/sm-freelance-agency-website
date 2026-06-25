@@ -5,11 +5,9 @@ import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import LanguageToggle from "../ui/LanguageToggle";
-import { ArrowRight } from "lucide-react";
-
 import translations from "@/app/data/translations";
 
-const { navLinks, hero } = translations;
+const { navLinks } = translations;
 
 export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -64,7 +62,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
         className="absolute top-0 inset-x-0 w-full py-1 z-50 backdrop-blur-xl pointer-events-auto"
         dir="ltr"
       >
-        <div className="flex justify-between items-center px-3 ps-5">
+        <div className="flex justify-between items-center px-3">
           <a
             href={`/${lang}/#home`}
             aria-label="Samir Magdy Web Studio - Home"
@@ -78,26 +76,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               loading="eager"
             />
           </a>
-          {/* Header CTA — hidden when menu is open */}
-          {!isMenuOpen && (
-            <a
-              id="mobile-header-cta"
-              href={isHome ? "#contact" : `/${lang}/#contact`}
-              onClick={(e) => handleNavClick(e, contactItem)}
-              className="border border-white/20 font-semibold text-content-body text-sm px-4 py-2 gap-1.5 rounded-lg tracking-wide whitespace-nowrap inline-flex items-center ms-auto mr-3"
-            >
-              <ArrowRight
-                className={`size-3.5 rotate-180 ${lang === "en" ? "hidden" : ""}`}
-                aria-hidden
-              />
-              {hero.mobileHeaderCta[lang]}
-              <ArrowRight
-                className={`size-3.5 ${lang === "ar" ? "hidden" : ""}`}
-                aria-hidden
-              />
-            </a>
-          )}
-          <button
+<button
             onClick={(e) => {
               e.stopPropagation();
               setIsMenuOpen(!isMenuOpen);

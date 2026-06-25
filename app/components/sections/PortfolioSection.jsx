@@ -141,9 +141,7 @@ export default function PortfolioShowcase({ lang }) {
   const t = projectsSection;
   const [mounted, setMounted] = useState(false);
   const [active, setActive] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const snapRef = useRef(null);
-  const activeRef = useRef(0);
 
   useEffect(() => {
     const el = snapRef.current;
@@ -172,27 +170,7 @@ export default function PortfolioShowcase({ lang }) {
     return () => el.removeEventListener("scroll", onScroll);
   }, []);
 
-  /* Keep ref in sync so autoplay interval never reads stale active */
-  useEffect(() => {
-    activeRef.current = active;
-  }, [active]);
-
-  /* Autoplay */
-  useEffect(() => {
-    if (projects.length <= 1 || isPaused) return;
-    const id = setInterval(() => {
-      const el = snapRef.current;
-      if (!el) return;
-      const next = (activeRef.current + 1) % projects.length;
-      el.scrollTo({
-        left: next * el.clientWidth,
-        behavior: next === 0 ? "instant" : "smooth",
-      });
-    }, 4500);
-    return () => clearInterval(id);
-  }, [isPaused]);
-
-  const handleDemoClick = useCallback(
+const handleDemoClick = useCallback(
     (e) => {
       e.preventDefault();
       const proj = projects[active];
@@ -328,20 +306,12 @@ export default function PortfolioShowcase({ lang }) {
               direction="prev"
               disabled={mounted && active === 0}
               onClick={() => scrollToProject(active - 1)}
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
-              onTouchStart={() => setIsPaused(true)}
-              onTouchEnd={() => setIsPaused(false)}
             />
 
             {/* Phone outer shell */}
             <div
               id="mobile-mockup"
               className="phone-outer aspect-11/19.5 h-[min(60svh,440px)] sm:h-[min(62svh,500px)] md:h-[min(64svh,560px)] lg:h-[min(66svh,600px)] xl:h-[min(68svh,615px)] 2xl:h-[min(70svh,600px)] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
-              onTouchStart={() => setIsPaused(true)}
-              onTouchEnd={() => setIsPaused(false)}
             >
               {/* Left volume buttons */}
               <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -392,10 +362,6 @@ export default function PortfolioShowcase({ lang }) {
               direction="next"
               disabled={mounted && active === projects.length - 1}
               onClick={() => scrollToProject(active + 1)}
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
-              onTouchStart={() => setIsPaused(true)}
-              onTouchEnd={() => setIsPaused(false)}
             />
           </div>
 
