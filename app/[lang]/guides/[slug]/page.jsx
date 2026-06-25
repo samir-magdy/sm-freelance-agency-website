@@ -1,4 +1,3 @@
-import Script from "next/script";
 import { use } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -127,8 +126,7 @@ export default function GuidePage({ params }) {
       dir={dir}
       className="min-h-screen bg-background pt-22 sm:pt-28 pb-14 sm:pb-20 px-5 overflow-x-hidden"
     >
-      <Script
-        id="guides-seo"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),

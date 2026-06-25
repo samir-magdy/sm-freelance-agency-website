@@ -6,7 +6,6 @@ import Footer from "../components/nav/Footer";
 import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";
-import Script from "next/script";
 
 const fonts = Cairo({
   variable: "--font-cairo",
@@ -22,8 +21,8 @@ const CONTACT_EMAIL = "studio@samirmagdy.com";
 const PHONE_NUMBER = "+201274613331";
 
 const META_DESCRIPTION = {
-  en: "We provide custom web design & development for small-medium businesses & individuals. Get a free quote today!",
-  ar: "نقدم خدمات تصميم وتطوير المواقع المخصصة للشركات والأفراد بأحدث التقنيات. اكتشف كيف يمكننا مساعدة عملك على النمو، احصل على عرض سعر مجاني اليوم!",
+  en: "Custom web design & development for small-medium businesses & individuals. Your professional online presence starts here.",
+  ar: "تصميم وتطوير مواقع إلكترونية مخصصة للشركات والأفراد. ابدأ حضورك الرقمي الاحترافي معنا.",
 };
 
 const SOCIAL_LINKS = {
@@ -191,7 +190,9 @@ function buildStructuredData(lang) {
           alternateName: card.name.ar,
           description: card.tagline.en,
         },
-        ...(card.price ? { price: card.price.replace(/,/g, ""), priceCurrency: "EGP" } : {}),
+        ...(card.price
+          ? { price: card.price.replace(/,/g, ""), priceCurrency: "EGP" }
+          : {}),
       })),
     },
     sameAs: [SOCIAL_LINKS.instagram, SOCIAL_LINKS.facebook],
@@ -360,23 +361,6 @@ function buildStructuredData(lang) {
     worksFor: { "@id": `${SITE_URL}/#business` },
   };
 
-  // 5. FAQPage schema
-  const faqSchema = {
-    "@type": "FAQPage",
-    "@id": `${pageUrl}#faqpage`,
-    mainEntity: translations.faqSection.items.map((item) => ({
-      "@type": "Question",
-      name: item.question[lang],
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer[lang].replace(
-          /href=(['"])\//g,
-          `href=$1${SITE_URL}/`,
-        ),
-      },
-    })),
-  };
-
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -385,7 +369,6 @@ function buildStructuredData(lang) {
       websiteSchema,
       webPageSchema,
       founderSchema,
-      faqSchema,
     ],
   };
 }
@@ -427,8 +410,7 @@ export default async function LangLayout({ children, params }) {
         className={`${fonts.variable} font-cairo antialiased min-h-dvh flex flex-col`}
       >
         {/* ── Structured Data (JSON-LD) ── */}
-        <Script
-          id="structured-data"
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),

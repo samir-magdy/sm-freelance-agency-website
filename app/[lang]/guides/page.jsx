@@ -3,7 +3,6 @@ import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guides";
 import GuidesGrid from "./GuidesGrid";
-import Script from "next/script";
 
 export function generateStaticParams() {
   return [{ lang: "en" }, { lang: "ar" }];
@@ -96,8 +95,7 @@ export default function GuidesPage({ params }) {
 
   return (
     <div dir={dir} className="bg-background pt-18 sm:pt-26 pb-20 px-5">
-      <Script
-        id="guides-grid-seo"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),

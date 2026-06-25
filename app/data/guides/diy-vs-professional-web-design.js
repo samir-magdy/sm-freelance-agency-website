@@ -7,8 +7,8 @@ const resource = {
     ar: "أستخدم المنصات الجاهزة ولا أوظف محترف؟",
   },
   metaTitle: {
-    en: "Should I Use Website Builders Or Hire a Pro?",
-    ar: "أعمل موقعي بنفسي على منصة جاهزة ولا أوظف محترف؟",
+    en: "Website Builder vs. Web Developer: Which Is Better For You?",
+    ar: "منصات إنشاء المواقع أم مبرمج محترف؟ أيهما أفضل لمشروعك؟",
   },
   excerpt: {
     en: "There are many drag-and-drop tools today like Canva, Wix and Squarespace, that let anyone build a basic website. So why even pay high rates for a web design company anymore? This guide breaks down the cost illusion, highlights the risks of using these platforms, and the limitations. Armed with this knowledge, you will be able to make the right call for your brand.",
