@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 import "./globals.css";
 
 
@@ -22,12 +22,12 @@ export default function NotFound() {
               </p>
             </div>
 
-            <a
+            <Link
               href="/en"
               className="cta-primary inline-block font-semibold bg-linear-to-b from-gold to-gold-dark text-gray-900 px-8 py-3 rounded-2xl text-base"
             >
               Back to Home
-            </a>
+            </Link>
           </div>
         </div>
       </body>

@@ -215,8 +215,8 @@ export default function GuidePage({ params }) {
             <p className="flex-1 text-[clamp(1.2rem,4vw,2.2rem)] font-semibold text-content-heading leading-tight rtl:leading-loose">
               {t.articleCta[lang]}
             </p>
-            <a
-              href={`/${lang}#contact`}
+            <Link
+              href={`/${lang}/#contact`}
               className="cta-primary justify-center shrink-0 inline-flex items-center gap-2.5 py-3 px-8 rounded-lg text-gray-900 text-base font-medium tracking-wide whitespace-nowrap"
             >
               {t.articleCtaButton[lang]}
@@ -236,7 +236,7 @@ export default function GuidePage({ params }) {
                   strokeLinejoin="round"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
         <Link

@@ -71,7 +71,7 @@ const projectData = {
 
   ButterDesign: {
     title: {
-      en: "Branding Studio Portfolio",
+      en: "Butter Design Bureau",
       ar: "بورتفوليو استوديو تصميم",
     },
     description: {

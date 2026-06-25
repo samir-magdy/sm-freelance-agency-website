@@ -63,7 +63,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
         dir="ltr"
       >
         <div className="flex justify-between items-center px-3">
-          <a
+          <Link
             href={`/${lang}/#home`}
             aria-label="Samir Magdy Web Studio - Home"
             onClick={closeMenu}
@@ -75,7 +75,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               height={42}
               priority
             />
-          </a>
+          </Link>
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -126,13 +126,13 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
         >
           {navLinks.slice(0, -1).map((item) => (
             <li key={item}>
-              <a
+              <Link
                 href={isHome ? `#${item}` : `/${lang}/#${item}`}
                 onClick={(e) => handleNavClick(e, item)}
                 className="font-semibold text-content-heading text-3xl tracking-wide"
               >
                 {nav[item]}
-              </a>
+              </Link>
             </li>
           ))}
           <li onClick={(e) => e.stopPropagation()}>
@@ -145,13 +145,13 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
             </Link>
           </li>
           <li key={contactItem}>
-            <a
+            <Link
               href={isHome ? `#${contactItem}` : `/${lang}/#${contactItem}`}
               onClick={(e) => handleNavClick(e, contactItem)}
               className="font-semibold text-content-heading text-3xl tracking-wide"
             >
               {nav[contactItem]}
-            </a>
+            </Link>
           </li>
           <li
             onClick={(e) => e.stopPropagation()}
