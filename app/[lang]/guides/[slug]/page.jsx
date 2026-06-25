@@ -133,36 +133,38 @@ export default function GuidePage({ params }) {
         }}
       />
       <div className="max-w-7xl mx-auto flex flex-col gap-6 sm:gap-8">
-          {/* Back link */}
-         <Link
-            href={`/${lang}/guides`}
-            className="hover:bg-white/90 hover:border-white/90 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.9rem,1.3vw,1.2rem)] font-medium transition-all duration-500"
-          >
-            <ArrowLeft
-              className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}
-              aria-hidden
-            />
-            {t.backToGuides[lang]}
-          </Link>
-          {/* Guide header */}
-          <header>
-            <h1 className="text-[clamp(1.5rem,5vw,2.8rem)] font-bold text-content-heading leading-tight rtl:leading-loose">
-              {guide.title[lang]}
-            </h1>
-            <div className="flex flex-wrap items-center gap-3 mt-4">
-              <time
-                dateTime={guide.datePublished}
-                className="inline-flex items-center gap-1.5 text-sm sm:text-base text-content-muted border border-border-subtle rounded-lg px-3 py-1"
-              >
-                <Calendar size={13} aria-hidden />
-                {new Intl.DateTimeFormat(lang === "ar" ? "ar-EG" : "en-US", { dateStyle: "long" }).format(new Date(guide.datePublished))}
-              </time>
-            </div>
-          </header>
-          {/* Guide body */}
-          {(() => {
-            const SLOT = "<!-- PRICING_ESTIMATOR_SLOT -->";
-            const articleClassName = `
+        {/* Back link */}
+        <Link
+          href={`/${lang}/guides`}
+          className="hover:bg-white/90 hover:border-white/90 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.9rem,1.3vw,1.2rem)] font-medium transition-all duration-500"
+        >
+          <ArrowLeft
+            className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}
+            aria-hidden
+          />
+          {t.backToGuides[lang]}
+        </Link>
+        {/* Guide header */}
+        <header>
+          <h1 className="text-[clamp(1.5rem,5vw,2.8rem)] font-bold text-content-heading leading-tight rtl:leading-loose">
+            {guide.title[lang]}
+          </h1>
+          <div className="flex flex-wrap items-center gap-3 mt-4">
+            <time
+              dateTime={guide.datePublished}
+              className="inline-flex items-center gap-1.5 text-sm sm:text-base text-content-muted border border-border-subtle rounded-lg px-3 py-1"
+            >
+              <Calendar size={13} aria-hidden />
+              {new Intl.DateTimeFormat(lang === "ar" ? "ar-EG" : "en-US", {
+                dateStyle: "long",
+              }).format(new Date(guide.datePublished))}
+            </time>
+          </div>
+        </header>
+        {/* Guide body */}
+        {(() => {
+          const SLOT = "<!-- PRICING_ESTIMATOR_SLOT -->";
+          const articleClassName = `
             html-content
             [&_h2]:text-[clamp(1.25rem,5vw,2.5rem)] [&_h2]:font-bold [&_h2]:text-content-heading/95 [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:leading-snug
             [&_h3]:text-[clamp(1.15rem,5vw,2.25rem)] [&_h3]:font-semibold [&_h3]:text-content-heading [&_h3]:mt-8 [&_h3]:mb-4 [&_h3]:leading-snug
@@ -178,65 +180,76 @@ export default function GuidePage({ params }) {
             [&_th:last-child]:border-e-0 [&_td:last-child]:border-e-0
 [&_tbody_tr:last-child_td]:border-b-0
           `;
-            const wrapTables = (html) =>
-              html.replaceAll("<table", '<div class="table-wrap"><table').replaceAll("</table>", "</table></div>");
-            const parts = guide.content[lang].split(SLOT);
-            if (parts.length === 1) {
-              return (
-                <article
-                  dir={dir}
-                  className={articleClassName}
-                  dangerouslySetInnerHTML={{ __html: wrapTables(parts[0]) }}
-                />
-              );
-            }
+          const wrapTables = (html) =>
+            html
+              .replaceAll("<table", '<div class="table-wrap"><table')
+              .replaceAll("</table>", "</table></div>");
+          const parts = guide.content[lang].split(SLOT);
+          if (parts.length === 1) {
             return (
-              <>
-                <article
-                  dir={dir}
-                  className={articleClassName}
-                  dangerouslySetInnerHTML={{ __html: wrapTables(parts[0]) }}
-                />
-                  <PricingEstimator lang={lang} />
-                <article
-                  dir={dir}
-                  className={articleClassName}
-                  dangerouslySetInnerHTML={{ __html: wrapTables(parts[1]) }}
-                />
-              </>
+              <article
+                dir={dir}
+                className={articleClassName}
+                dangerouslySetInnerHTML={{ __html: wrapTables(parts[0]) }}
+              />
             );
-          })()}
-          <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-surface-low mb-6">
-     
-            {/* Ambient glow */}
-            <div className="pointer-events-none absolute -top-12 -start-12 w-52 h-52 rounded-full bg-gold/[0.07] blur-3xl" />
-
-            <div className="relative text-center sm:text-start flex flex-col sm:flex-row sm:items-center gap-7 sm:gap-12 px-7 py-9 sm:px-11 sm:py-11">
-              <p className="flex-1 text-[clamp(1.2rem,4vw,2.2rem)] font-semibold text-content-heading leading-tight rtl:leading-loose">
-                {t.articleCta[lang]}
-              </p>
-              <a
-                href={`/${lang}#contact`}
-                className="cta-primary justify-center shrink-0 inline-flex items-center gap-2.5 py-3 px-8 rounded-lg text-gray-900 text-base font-medium tracking-wide whitespace-nowrap"
+          }
+          return (
+            <>
+              <article
+                dir={dir}
+                className={articleClassName}
+                dangerouslySetInnerHTML={{ __html: wrapTables(parts[0]) }}
+              />
+              <PricingEstimator lang={lang} />
+              <article
+                dir={dir}
+                className={articleClassName}
+                dangerouslySetInnerHTML={{ __html: wrapTables(parts[1]) }}
+              />
+            </>
+          );
+        })()}
+        <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-surface-low mb-6">
+          <div className="relative text-center sm:text-start flex flex-col sm:flex-row sm:items-center gap-7 sm:gap-12 px-7 py-9 sm:px-11 sm:py-11">
+            <p className="flex-1 text-[clamp(1.2rem,4vw,2.2rem)] font-semibold text-content-heading leading-tight rtl:leading-loose">
+              {t.articleCta[lang]}
+            </p>
+            <a
+              href={`/${lang}#contact`}
+              className="cta-primary justify-center shrink-0 inline-flex items-center gap-2.5 py-3 px-8 rounded-lg text-gray-900 text-base font-medium tracking-wide whitespace-nowrap"
+            >
+              {t.articleCtaButton[lang]}
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                className={lang === "ar" ? "rotate-180" : ""}
+                aria-hidden="true"
               >
-                {t.articleCtaButton[lang]}
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className={lang === "ar" ? "rotate-180" : ""} aria-hidden="true">
-                  <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </a>
-            </div>
+                <path
+                  d="M3.333 8h9.334M8.667 4l4 4-4 4"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
           </div>
-          <Link
-            href={`/${lang}/guides`}
-            className="hover:bg-white/90 hover:border-white/90 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.9rem,1.3vw,1.2rem)] font-medium transition-all duration-500"
-          >
-            <ArrowLeft
-              className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}
-              aria-hidden
-            />
-            {t.backToGuides[lang]}
-          </Link>
         </div>
+        <Link
+          href={`/${lang}/guides`}
+          className="hover:bg-white/90 hover:border-white/90 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.9rem,1.3vw,1.2rem)] font-medium transition-all duration-500"
+        >
+          <ArrowLeft
+            className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}
+            aria-hidden
+          />
+          {t.backToGuides[lang]}
+        </Link>
+      </div>
     </div>
   );
 }

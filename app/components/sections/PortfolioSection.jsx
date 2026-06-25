@@ -311,7 +311,7 @@ const handleDemoClick = useCallback(
             {/* Phone outer shell */}
             <div
               id="mobile-mockup"
-              className="phone-outer aspect-11/19.5 h-[min(60svh,440px)] sm:h-[min(62svh,500px)] md:h-[min(64svh,560px)] lg:h-[min(66svh,600px)] xl:h-[min(68svh,615px)] 2xl:h-[min(70svh,600px)] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="phone-outer aspect-11/19.5 w-[61vw] sm:w-63 md:w-70.5 lg:w-75 xl:w-77 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               {/* Left volume buttons */}
               <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />

@@ -14,7 +14,7 @@ export default function HeroSection({ lang }) {
 
       <div
         id="hero-container"
-        className="relative flex flex-col items-center pt-6 sm:pt-26 hero-fade-in"
+        className="relative flex flex-col items-center pt-6 sm:pt-26"
       >
         <h2
           dir="ltr"

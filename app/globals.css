@@ -116,34 +116,26 @@ section {
   }
 }
 
-@keyframes heroBlurIn {
-  from {
-    opacity: 0.5;
-    filter: blur(12px);
-  }
-  to {
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-.hero-fade-in {
-  animation: heroBlurIn 1.5s ease-out;
-}
 
 .eyebrow-rule-left {
   height: 1px;
   width: 1.75rem;
-  background: linear-gradient(to left, oklch(73.8% 0.0173 267.3 / 0.55), transparent);
+  background: linear-gradient(
+    to left,
+    oklch(73.8% 0.0173 267.3 / 0.55),
+    transparent
+  );
 }
 
 .eyebrow-rule-right {
   height: 1px;
   width: 1.75rem;
-  background: linear-gradient(to right, oklch(73.8% 0.0173 267.3 / 0.55), transparent);
+  background: linear-gradient(
+    to right,
+    oklch(73.8% 0.0173 267.3 / 0.55),
+    transparent
+  );
 }
-
-
 
 /* ══════════════════════════════════════
    3. RTL — Global Adjustments
@@ -197,18 +189,14 @@ section {
     [dir="rtl"] #hero-hook {
       line-height: 1.9;
     }
-    #mobile-header-cta{
+    #mobile-header-cta {
       font-size: 0.9rem;
     }
-    #about-title{
-      font-size: clamp(0.9rem,1.6vw,1.5rem);
+    #about-title {
+      font-size: clamp(0.9rem, 1.6vw, 1.5rem);
     }
     #hero-container {
       padding-top: 5rem;
-    }
-    #mobile-mockup {
-      height: 57vh;
-      min-height: 250px;
     }
     #portfolio-subheading {
       display: block;
@@ -237,14 +225,13 @@ section {
       font-size: clamp(0.95rem, 3.5vw, 1.2rem);
     }
     #portfolio {
-  --nav-h: 2.5rem;
-}
+      --nav-h: 2.5rem;
+    }
   }
 }
 /* ══════════════════════════════════════
    7. FAQ — Accordion Open/Close Animation
    ══════════════════════════════════════ */
-
 
 /* ══════════════════════════════════════
    5. Inline HTML Content — Link Styling
@@ -324,13 +311,11 @@ section {
 @keyframes reveal-in {
   from {
     opacity: 0;
-    filter: blur(4px);
     scale: 0.9;
     translate: 0 2rem;
   }
   to {
     opacity: 1;
-    filter: blur(0px);
     scale: 1;
     translate: 0 0;
   }
@@ -368,5 +353,3 @@ section {
     font-size: 0.875rem; /* text-sm */
   }
 }
-
-

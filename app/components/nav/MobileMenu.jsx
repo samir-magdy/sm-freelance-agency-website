@@ -73,10 +73,10 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
               alt="SM Web Design Studio – Website Design Company in Egypt"
               width={50}
               height={42}
-              loading="eager"
+              priority
             />
           </a>
-<button
+          <button
             onClick={(e) => {
               e.stopPropagation();
               setIsMenuOpen(!isMenuOpen);
