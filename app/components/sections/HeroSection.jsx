@@ -7,7 +7,7 @@ export default function HeroSection({ lang }) {
   return (
     <section
       id="home"
-      className="h-dvh flex items-center justify-center relative overflow-hidden"
+      className="h-svh flex items-center justify-center relative overflow-hidden"
     >
       {/* Dot grid background */}
       <div className="hero-grid" aria-hidden="true" />
