@@ -7,10 +7,30 @@ import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";
 
-const fonts = Cairo({
+// Per-locale font subsetting.
+//
+// Both instances are instantiated in this single shared [lang] layout, so
+// next/font emits a preload <link> for each on *every* locale route — a
+// conditionally-applied `.variable` does not gate preloading. To stop the
+// English route from force-downloading the (heavy) Arabic glyph file, the
+// Arabic-bearing instance opts out of preload. The @font-face it emits still
+// carries the Arabic `unicode-range`, so browsers only fetch that file when an
+// Arabic glyph is actually rendered — i.e. on /ar, never on /en.
+//
+// The Latin instance keeps preload on. Its file is shared by both routes, so
+// Latin text is preloaded on /en (English content) and /ar alike (footer email,
+// "©<year> SM Web Studio", phone numbers, the status-bar clock).
+const cairoLatin = Cairo({
+  variable: "--font-cairo",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const cairoFull = Cairo({
   variable: "--font-cairo",
   subsets: ["latin", "arabic"],
   display: "swap",
+  preload: false,
 });
 
 // ─────────────────────────────────────────────
@@ -377,6 +397,7 @@ export default async function LangLayout({ children, params }) {
   const { lang: rawLang } = await params;
   if (rawLang !== "en" && rawLang !== "ar") notFound();
   const lang = rawLang;
+  const font = lang === "ar" ? cairoFull : cairoLatin;
   const structuredData = buildStructuredData(lang);
   const skipLabel = meta[lang].skipToContent;
   const t = translations;
@@ -407,7 +428,7 @@ export default async function LangLayout({ children, params }) {
       data-scroll-behavior="smooth"
     >
       <body
-        className={`${fonts.variable} font-cairo antialiased min-h-svh flex flex-col`}
+        className={`${font.variable} font-cairo antialiased min-h-svh flex flex-col`}
       >
         {/* ── Structured Data (JSON-LD) ── */}
         <script

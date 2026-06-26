@@ -343,7 +343,6 @@ const handleDemoClick = useCallback(
                             alt={`${a11y.screenshotOf[lang]} ${projectData[proj.id].title[lang]}`}
                             className="w-full h-auto block"
                             sizes="(max-width: 640px) 53vw, (max-width: 768px) 252px, (max-width: 1024px) 282px, 300px"
-                            priority={i === 0}
                             placeholder="blur"
                           />
                         ) : (
