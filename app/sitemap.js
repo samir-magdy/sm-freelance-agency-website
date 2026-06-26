@@ -50,18 +50,6 @@ export default function sitemap() {
     }))
   );
 
-  const privacyEntries = langs.map((lang) => ({
-    url: pageUrl(lang, "/privacy"),
-    priority: 0.4,
-    alternates: alternates(pageUrl("en", "/privacy"), pageUrl("ar", "/privacy")),
-  }));
-
-  const termsEntries = langs.map((lang) => ({
-    url: pageUrl(lang, "/terms"),
-    priority: 0.4,
-    alternates: alternates(pageUrl("en", "/terms"), pageUrl("ar", "/terms")),
-  }));
-
   const demoEntries = projects
     .filter((p) => p.liveUrl.startsWith("/portfolio/"))
     .map((p) => ({
@@ -76,7 +64,5 @@ export default function sitemap() {
     ...guidesListingEntries,
     ...guideEntries,
     ...demoEntries,
-    ...privacyEntries,
-    ...termsEntries,
   ];
 }

@@ -1,7 +1,7 @@
 import { use } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Calendar } from "lucide-react";
+import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guides";
@@ -12,6 +12,11 @@ export function generateStaticParams() {
     { lang: "en", slug: r.slug },
     { lang: "ar", slug: r.slug },
   ]);
+}
+
+function readingMinutes(content) {
+  const words = content.replace(/<[^>]+>/g, " ").trim().split(/\s+/).length;
+  return Math.max(1, Math.ceil(words / 135));
 }
 
 export async function generateMetadata({ params }) {
@@ -159,6 +164,10 @@ export default function GuidePage({ params }) {
                 dateStyle: "long",
               }).format(new Date(guide.datePublished))}
             </time>
+             <span className="inline-flex items-center gap-1.5 text-sm sm:text-base text-content-muted border border-border-subtle rounded-lg px-3 py-1">
+                <Clock size={13} aria-hidden />
+                {readingMinutes(guide.content[lang])} {t.minRead[lang]}
+              </span>
           </div>
         </header>
         {/* Guide body */}

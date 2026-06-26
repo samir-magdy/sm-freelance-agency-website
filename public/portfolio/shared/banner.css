@@ -25,6 +25,11 @@
     justify-content: space-between;
   }
 }
+/* External banner has a single child, so center it on every viewport.
+   space-around/space-between left-aligns a lone flex item on mobile. */
+#banner-external {
+  justify-content: center;
+}
 @keyframes bannerFadeIn {
   from {
     opacity: 0;

@@ -257,7 +257,7 @@ const handleDemoClick = useCallback(
               {pd.title[lang]}
             </h3>
 
-            <p className="portfolio-info-enter text-content-body text-[clamp(1.2rem,2.5vw,1.8rem)] rtl:text-[clamp(1.5rem,2.5vw,1.3rem)] leading-relaxed rtl:leading-loose hidden lg:block mb-4">
+            <p className="text-content-body text-[clamp(1.2rem,2.5vw,1.7rem)] rtl:text-[clamp(1.5rem,2.5vw,1.3rem)] leading-relaxed rtl:leading-loose hidden lg:block mb-4">
               {pd.description[lang]}
             </p>
 
@@ -311,7 +311,7 @@ const handleDemoClick = useCallback(
             {/* Phone outer shell */}
             <div
               id="mobile-mockup"
-              className="phone-outer aspect-11/19.5 w-[61vw] sm:w-[63vw] md:w-[70.5vw] lg:w-[75vw] xl:w-[19vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="phone-outer aspect-11/19.5 w-[64vw] sm:w-[63vw] md:w-[70.5vw] lg:w-[75vw] xl:w-[18.5vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               {/* Left volume buttons */}
               <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
