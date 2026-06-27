@@ -1,4 +1,5 @@
 import WhatsAppIcon from "../utils/WhatsAppIcon";
+import LinkedInIcon from "../utils/LinkedInIcon";
 
 export { WhatsAppIcon };
 
@@ -49,13 +50,13 @@ export default function SocialIcons() {
       </li>
       <li>
         <a
-          href="https://wa.me/201274613331"
+          href="https://www.linkedin.com/company/sm-web-design-studio/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Open WhatsApp chat"
+          aria-label="Visit SM Web Design Studio on LinkedIn"
           className="text-content-muted hover:text-content-heading"
         >
-          <WhatsAppIcon className="w-5 h-5" />
+          <LinkedInIcon className="w-5 h-5 rounded-sm" />
         </a>
       </li>
     </ul>

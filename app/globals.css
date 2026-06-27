@@ -192,9 +192,6 @@ section {
     #mobile-header-cta {
       font-size: 0.9rem;
     }
-    #about-title {
-      font-size: clamp(0.9rem, 1.6vw, 1.5rem);
-    }
     #hero-container {
       padding-top: 5rem;
     }
