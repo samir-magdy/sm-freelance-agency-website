@@ -5,9 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import LanguageToggle from "../ui/LanguageToggle";
-import translations from "@/app/data/translations";
-
-const { navLinks } = translations;
+import { navLinks } from "@/app/data/translations/nav";
 
 export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -137,11 +135,29 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           ))}
           <li onClick={(e) => e.stopPropagation()}>
             <Link
+              href={`/${lang}/guides`}
+              onClick={pathname === `/${lang}/guides` ? closeMenu : null}
+              className="font-semibold text-content-heading text-3xl tracking-wide"
+            >
+              {nav["guides"]}
+            </Link>
+          </li>
+          <li onClick={(e) => e.stopPropagation()}>
+            <Link
               href={`/${lang}/about`}
               onClick={pathname === `/${lang}/about` ? closeMenu : null}
               className="font-semibold text-content-heading text-3xl tracking-wide"
             >
               {nav["about"]}
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={isHome ? "#FAQs" : `/${lang}/#FAQs`}
+              onClick={(e) => handleNavClick(e, "FAQs")}
+              className="font-semibold text-content-heading text-3xl tracking-wide"
+            >
+              {nav["FAQs"]}
             </Link>
           </li>
           <li key={contactItem}>

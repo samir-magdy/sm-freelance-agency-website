@@ -2,9 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import translations from "@/app/data/translations";
-
-const { navLinks } = translations;
+import { navLinks } from "@/app/data/translations/nav";
 
 export default function DesktopNavLinks({ nav }) {
   const pathname = usePathname();
@@ -39,10 +37,27 @@ export default function DesktopNavLinks({ nav }) {
       })}
       <li>
         <Link
+          href={`/${lang}/guides`}
+          className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
+        >
+          {nav.guides}
+        </Link>
+      </li>
+      <li>
+        <Link
           href={`/${lang}/about`}
           className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
         >
           {nav.about}
+        </Link>
+      </li>
+      <li>
+        <Link
+          href={isHome ? "#FAQs" : `/${lang}/#FAQs`}
+          onClick={(e) => handleHashClick(e, "FAQs")}
+          className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
+        >
+          {nav.FAQs}
         </Link>
       </li>
       <li>

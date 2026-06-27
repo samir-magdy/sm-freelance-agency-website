@@ -3,7 +3,7 @@ const resource = {
   datePublished: "2026-03-10",
   dateModified: "2026-05-29",
   title: {
-    en: "Why Your Business Needs a Website in 2026",
+    en: "Why Your Business Needs a Website",
     ar: "ضرورة الموقع الإلكتروني في مصر (2026)",
   },
   metaTitle: {

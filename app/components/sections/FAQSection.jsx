@@ -1,8 +1,8 @@
 import Link from "next/link";
-import translations from "@/app/data/translations";
+import faqSection from "@/app/data/translations/faqSection";
 
 export default function FAQSection({ lang }) {
-  const t = translations.faqSection;
+  const t = faqSection;
   const dir = lang === "ar" ? "rtl" : "ltr";
 
   return (

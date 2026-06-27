@@ -1,6 +1,6 @@
 export const pricingCards = {
   heading: {
-    en: "Website Design Pricing",
+    en: "Pricing",
     ar: "أسعار تصميم المواقع",
   },
   subheading: {

@@ -1,7 +1,6 @@
-import translations from "@/app/data/translations";
+import hero from "@/app/data/translations/heroSection";
 
 export default function HeroSection({ lang }) {
-  const hero = translations.hero;
   const hookLines = hero.name[lang];
 
   return (

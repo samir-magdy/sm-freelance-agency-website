@@ -4,9 +4,9 @@ import webDesignVsWebsiteBuilder from "./diy-vs-professional-web-design";
 import howToPickTheRightWebDesignCompany from "./choose-web-design-company-egypt";
 
 const resources = [
+  howMuchDoesAWebsiteCost,
   whyYourBusinessNeedsAWebsite,
   webDesignVsWebsiteBuilder,
-  howMuchDoesAWebsiteCost,
   howToPickTheRightWebDesignCompany,
 ];
 

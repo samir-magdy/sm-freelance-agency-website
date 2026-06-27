@@ -3,7 +3,7 @@ const resource = {
   datePublished: "2026-03-25",
   dateModified: "2026-05-29",
   title: {
-    en: "Using Website Builders vs Hiring a Professional",
+    en: "Website Builders vs Hiring a Professional",
     ar: "أستخدم المنصات الجاهزة ولا أوظف محترف؟",
   },
   metaTitle: {

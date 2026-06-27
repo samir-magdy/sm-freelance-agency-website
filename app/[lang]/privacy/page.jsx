@@ -1,5 +1,5 @@
 import { use } from "react";
-import translations from "@/app/data/translations";
+import privacy from "@/app/data/translations/privacy";
 import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
 
 const metaDescription = {
@@ -9,7 +9,7 @@ const metaDescription = {
 
 export async function generateMetadata({ params }) {
   const { lang } = await params;
-  const t = translations.privacy;
+  const t = privacy;
   const title = t?.heading?.[lang] || t?.heading?.en || "Privacy Policy";
   const description = metaDescription[lang] ?? metaDescription.en;
   const canonical = `${SITE_URL}/${lang}/privacy`;
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }) {
 
 export default function PrivacyPage({ params }) {
   const { lang } = use(params); // use() unwraps the Promise synchronously in a Client Component
-  const t = translations.privacy;
+  const t = privacy;
   const dir = lang === "ar" ? "rtl" : "ltr";
 
   return (

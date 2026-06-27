@@ -2,13 +2,13 @@
 
 import { useState, useMemo, useCallback } from "react";
 import { Globe, Layout } from "lucide-react";
-import translations from "@/app/data/translations";
+import pricingEstimator from "@/app/data/translations/PricingEstimator";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 const BASE_ICONS = { landing: Layout, business: Globe };
 
 export default function PricingEstimator({ lang }) {
-  const t = translations.pricingEstimator;
+  const t = pricingEstimator;
   const isRtl = lang === "ar";
   const currencySymbol = isRtl ? "ج.م" : "EGP";
 

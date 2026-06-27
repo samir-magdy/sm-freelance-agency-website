@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import profilePhoto from "@/public/profilePhoto.jpg";
-import translations from "@/app/data/translations";
+import aboutSection from "@/app/data/translations/aboutSection";
 import { notFound } from "next/navigation";
 import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
 import { Eye, MessagesSquare, Handshake, Mail } from "lucide-react";
@@ -70,7 +70,7 @@ export default async function AboutPage({ params }) {
   const { lang } = await params;
   if (lang !== "en" && lang !== "ar") notFound();
 
-  const t = translations.aboutSection;
+  const t = aboutSection;
   const dir = lang === "ar" ? "rtl" : "ltr";
 
   return (
@@ -103,14 +103,14 @@ export default async function AboutPage({ params }) {
         <div className="reveal-element mt-20 flex items-center justify-center gap-4">
           <span
             aria-hidden="true"
-            className="h-px w-8 bg-linear-to-r from-transparent to-gold/50"
+            className="h-px w-8 bg-linear-to-r rtl:bg-linear-to-l from-transparent to-gold/50"
           />
-          <p className="text-base font-semibold uppercase tracking-[0.28em] rtl:tracking-normal text-content-muted">
+          <p className="text-base font-semibold uppercase tracking-[0.28em] rtl:text-subheading rtl:tracking-normal text-content-muted">
             {t.pillarsLabel[lang]}
           </p>
           <span
             aria-hidden="true"
-            className="h-px w-8 bg-linear-to-r from-gold/50 to-transparent"
+            className="h-px w-8 bg-linear-to-r rtl:bg-linear-to-l from-gold/50 to-transparent"
           />
         </div>
         <ul className="mt-8 grid gap-6 text-center sm:grid-cols-3 sm:gap-5 max-w-4xl mx-auto">
@@ -149,7 +149,7 @@ export default async function AboutPage({ params }) {
 
         {/* ── Signature — portrait + name ───────────────── */}
         {/* Mobile: centered stack (unchanged). Desktop: side-by-side founder card. */}
-        <div className="reveal-element mt-20 flex max-w-4xl mx-auto flex-col items-center text-center md:mt-28 md:flex-row md:items-center md:justify-center md:gap-12 md:text-start rtl:md:flex-row-reverse">
+        <div className="reveal-element mt-20 flex max-w-4xl mx-auto flex-col items-center text-center md:mt-28 md:flex-row md:items-center md:justify-center md:gap-12 md:text-start">
           {/* Top hairline — mobile only; desktop uses the vertical gold rule */}
           <span className="h-px w-full max-w-[8rem] bg-border-subtle md:hidden" aria-hidden="true" />
              <p className="sm:hidden mt-5 text-[clamp(2rem,5vw,1.55rem)] font-semibold text-content-heading md:mt-0 md:text-[clamp(1.8rem,2.4vw,2.4rem)] md:leading-tight">
@@ -159,7 +159,7 @@ export default async function AboutPage({ params }) {
               {t.founderRole[lang]}
             </p>
           {/* Portrait */}
-          <div className="mt-10 shrink-0 overflow-hidden rounded-4xl border border-border-strong shadow-[0_18px_40px_-18px_rgba(0,0,0,0.8)] md:mt-0 md:w-52">
+          <div className="mt-10 shrink-0 overflow-hidden rounded-4xl border border-border-strong shadow-[0_18px_40px_-18px_rgba(0,0,0,0.8)] md:mt-0 md:w-62">
             
             <Image
               src={profilePhoto}
@@ -175,12 +175,12 @@ export default async function AboutPage({ params }) {
             className="hidden md:block md:h-48 md:w-px md:shrink-0 md:bg-linear-to-b md:from-transparent md:via-gold/40 md:to-transparent"
           />
 
-          {/* Identity + CTAs */}
-          <div className="flex flex-col sm:w-fit w-full px-2 items-center md:items-start">
+          {/* Identity + CTAs خلاهمث*/}
+          <div className="flex flex-col w-full px-2 items-center md:items-start">
             <p className="hidden sm:block mt-5 text-[clamp(1.3rem,1rem+1.1vw,1.55rem)] font-semibold text-content-heading md:mt-0 md:text-[clamp(1.8rem,2.4vw,2.4rem)] md:leading-tight">
               {t.founderName[lang]}
             </p>
-            <p className="hidden sm:block mt-1.5 text-content-muted text-[1.02rem] md:mt-3 md:text-[0.78rem] md:font-semibold md:uppercase md:tracking-[0.2em] md:text-gold/85">
+            <p className="hidden sm:block text-content-muted text-[1.1rem] mt-3 rtl:mt-5 rtl:text-[1.2rem] md:font-semibold md:uppercase md:tracking-[0.2em] md:text-gold/85">
               {t.founderRole[lang]}
             </p>
 
@@ -192,7 +192,7 @@ export default async function AboutPage({ params }) {
                   href="https://wa.me/201274613331"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-1 items-center justify-center gap-2.5 rounded-2xl border border-border-strong px-6 py-3 text-base font-medium text-content-body transition-all duration-250 hover:border-white/30"
+                  className="flex flex-1 items-center justify-center gap-2.5 rounded-2xl border border-border-strong px-6 py-3 text-base font-medium text-content-body transition-all duration-250 hover:border-[#25D366]/50"
                 >
                   <WhatsAppIcon className="size-5 shrink-0 text-[#25D366]" />
                   {t.ctaWhatsApp[lang]}
@@ -210,7 +210,7 @@ export default async function AboutPage({ params }) {
                   href="https://www.linkedin.com/in/samir-magdy-/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-1 items-center justify-center gap-2.5 rounded-2xl border border-border-strong px-6 py-3 text-base font-medium text-content-body transition-all duration-250 hover:border-white/30"
+                  className="flex flex-1 items-center justify-center gap-2.5 rounded-2xl border border-border-strong px-6 py-3 text-base font-medium text-content-body transition-all duration-250 hover:border-[#0A66C2]/50"
                 >
                   <LinkedInIcon className="size-5 shrink-0 text-[#0A66C2]" />
                   {t.ctaLinkedIn[lang]}
@@ -220,7 +220,7 @@ export default async function AboutPage({ params }) {
               {/* Primary — stretches the full width */}
               <Link
                 href={`/${lang}/#contact`}
-                className="w-full whitespace-nowrap rounded-2xl border border-border-strong px-7 py-3 text-center text-base font-semibold text-content-body transition-all duration-300 hover:border-gold hover:bg-gold hover:text-gray-900"
+                className="w-full whitespace-nowrap rounded-2xl border border-border-strong px-7 py-3 text-center text-base font-semibold text-content-body transition-all duration-300 hover:border-gold/50"
               >
                 {t.ctaContact[lang]}
               </Link>

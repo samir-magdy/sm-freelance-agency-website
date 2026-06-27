@@ -1,5 +1,5 @@
 import { use } from "react";
-import translations from "@/app/data/translations";
+import terms from "@/app/data/translations/terms";
 import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
 
 const metaDescription = {
@@ -9,7 +9,7 @@ const metaDescription = {
 
 export async function generateMetadata({ params }) {
   const { lang } = await params;
-  const t = translations.terms;
+  const t = terms;
   const title = t?.heading?.[lang] || t?.heading?.en || "Terms of Service";
   const description = metaDescription[lang] ?? metaDescription.en;
   const canonical = `${SITE_URL}/${lang}/terms`;
@@ -57,7 +57,7 @@ export async function generateMetadata({ params }) {
 export default function TermsPage({ params }) {
   const { lang } = use(params);
 
-  const t = translations.terms;
+  const t = terms;
   const dir = lang === "ar" ? "rtl" : "ltr";
 
 

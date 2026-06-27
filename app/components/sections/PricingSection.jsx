@@ -1,7 +1,7 @@
-import translations from "@/app/data/translations";
+import { pricingCards } from "@/app/data/translations/pricingSection";
 
 export default function PricingSection({ lang }) {
-  const t = translations.pricingCards;
+  const t = pricingCards;
   const isRtl = lang === "ar";
 
   return (

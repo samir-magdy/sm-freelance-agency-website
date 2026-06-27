@@ -5,48 +5,45 @@ const aboutSection = {
   },
 
   // ── Body — three logical paragraphs ──
-  paragraphs: [
+paragraphs: [
     {
       en: "SM Web Design Studio was built on a simple belief: every business deserves honest guidance, professional work, and fair pricing.",
-      ar: "بدأت فكرتنا من إيمان بسيط: إن كل بيزنس يستحق إنه يلاقي حد يرشده بصدق، ويقدم له شغل احترافي، وبأسعار عادلة.",
+      ar: "أسسنا الاستوديو الخاص بنا على مبدأ بسيط: إن أي شركة من حقها تحصل على توجيه صادق، وعمل احترافي، وأسعار عادلة.",
     },
     {
       en: "After seeing people struggle with incompetent providers, we realized the problem wasn't buidling the website, it was trust & communication.",
-      ar: "على مدار سنين، شفنا شركات وأصحاب مشاريع كتير بيعانوا بسبب المصطلحات التقنية المعقدة، والأسعار المبالغ فيها، والخدمات اللي جودتها أقل من المتوقع. وقتها أدركنا إن المشكلة ما كانتش في وجود موقع إلكتروني بس... المشكلة كانت في الثقة. عملاء كتير كانوا بيدفعوا مقابل خدمات هما أصلًا مش فاهمينها، وفي المقابل، شركات وأصحاب مشاريع عندهم إمكانيات كبيرة كانوا بيتراجعوا عن خطوة التحول الرقمي بسبب تجارب سيئة أو لأن تكلفة التعامل مع الشركات الاحترافية كانت خارج ميزانيتهم. ومن هنا بدأت فكرة الاستوديو الخاص بنا.",
+      ar: "بعد ما شفنا أصحاب مشاريع كتير بيعانوا من التعامل مع جهات غير مؤهلة، أدركنا إن الأزمة الحقيقية مش في تنفيذ الموقع.. المشكلة كلها في الثقة والتواصل.",
     },
     {
       en: "We're not here to sell you a site you don't need. We're here to help you understand your options, plan your budget, and build you a website that serves both of our interests.",
-      ar: "إحنا مش موجودين علشان نبيعلك موقع إلكتروني وخلاص. لكن علشان نساعدك تفهم احتياجاتك، وتتعرف على الخيارات المناسبة ليك، وتحدد ميزانيتك بشكل واقعي، ونبني معاك حضور رقمي يخدم أهداف مشروعك فعلًا.",
+      ar: "إحنا مش هنا علشان نبيعلك موقع إنت مش محتاجه؛ هدفنا نساعدك تفهم كل خياراتك، وتخطط ميزانيتك بشكل صحيح، ونبنيلك موقع يخدم مصلحة الطرفين ويحقق أهدافك.",
     },
   ],
 
   pillarsLabel: {
     en: "Our Values",
-    ar: "اللي بنشتغل عليه",
+    ar: "قيمنا",
   },
   pillars: [
     {
-      num: "01",
       title: { en: "Transparency", ar: "الشفافية" },
       desc: {
         en: "Clear options, fair pricing and honest advice.",
-        ar: "خيارات واضحة وأسعار عادلة، من غير مصطلحات معقدة.",
+        ar: "خيارات واضحة وأسعار عادلة.",
       },
     },
     {
-      num: "02",
       title: { en: "Communication", ar: "التواصل" },
       desc: {
         en: "Honest guidance every step of the way.",
-        ar: "إرشاد بصدق في كل خطوة، علشان تبقى عارف إنت واقف فين.",
+        ar: "إرشاد بصدق في كل خطوة.",
       },
     },
     {
-      num: "03",
       title: { en: "Partnership", ar: "الشراكة" },
       desc: {
         en: "A professional site built around your goals.",
-        ar: "حضور رقمي مبني على أهداف مشروعك، مش أهدافنا.",
+        ar: "موقع مبني على أهدافك.",
       },
     },
   ],
@@ -58,15 +55,15 @@ const aboutSection = {
   },
   founderRole: {
     en: "Founder & Lead Developer",
-    ar: "المؤسس والمبرمج الرئيسي",
+    ar: "المؤسس والمطور الرئيسي",
   },
   ctaContact: {
     en: "Start a Project",
-    ar: "اطلب استشارة",
+    ar: "ابدأ مشروعك",
   },
   ctaLinkedIn: {
     en: "LinkedIn",
-    ar: "LinkedIn",
+    ar: "لينكد إن",
   },
   ctaWhatsApp: {
     en: "WhatsApp",
@@ -74,7 +71,7 @@ const aboutSection = {
   },
   ctaEmail: {
     en: "Email",
-    ar: "البريد الإلكتروني",
+    ar: "الإيميل",
   },
 };
 

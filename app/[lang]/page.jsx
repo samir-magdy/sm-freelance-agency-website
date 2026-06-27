@@ -33,8 +33,8 @@ export default async function Page({ params }) {
       <HeroSection lang={lang} />
       <PortfolioSection key={lang} lang={lang} />
 
-      <FAQSection lang={lang} />
       <PricingSection lang={lang} />
+      <FAQSection lang={lang} />
 
       <ContactSection lang={lang} />
       <script

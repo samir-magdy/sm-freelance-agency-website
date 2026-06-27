@@ -1,6 +1,6 @@
 const projectsSection = {
   heading: {
-    en: "Website Design Portfolio",
+    en: "Portfolio",
     ar: "معرض أعمالنا",
   },
   subheading: {
@@ -8,8 +8,12 @@ const projectsSection = {
     ar: "استعرض أحدث مشاريعنا",
   },
   viewProject: {
-    en: "View Project",
-    ar: "عرض المشروع",
+    en: "View Website",
+    ar: "عرض الموقع",
+  },
+  primaryCta: {
+    en: "Get Started",
+    ar: "طلب استشارة",
   },
 };
 

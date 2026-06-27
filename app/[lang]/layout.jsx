@@ -1,7 +1,9 @@
 import { Cairo } from "next/font/google";
 import "../globals.css";
 import HeroNav from "../components/nav/HeroNav";
-import translations from "../data/translations";
+import nav, { langToggle } from "../data/translations/nav";
+import a11y from "../data/translations/a11y";
+import { pricingCards } from "../data/translations/pricingSection";
 import Footer from "../components/nav/Footer";
 import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
 import { notFound } from "next/navigation";
@@ -202,7 +204,7 @@ function buildStructuredData(lang) {
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Web Design & Development Services in Egypt",
-      itemListElement: translations.pricingCards.cards.map((card) => ({
+      itemListElement: pricingCards.cards.map((card) => ({
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
@@ -400,7 +402,7 @@ export default async function LangLayout({ children, params }) {
   const font = lang === "ar" ? cairoFull : cairoLatin;
   const structuredData = buildStructuredData(lang);
   const skipLabel = meta[lang].skipToContent;
-  const t = translations;
+  const t = { nav, a11y, langToggle };
 
   const heroNavStrings = {
     nav: {
@@ -408,7 +410,7 @@ export default async function LangLayout({ children, params }) {
       pricing: t.nav.pricing[lang],
       FAQs: t.nav.FAQs[lang],
       contact: t.nav.contact[lang],
-      // guides: t.nav.guides[lang],
+      guides: t.nav.guides[lang],
       about: t.nav.about[lang],
     },
     a11y: {

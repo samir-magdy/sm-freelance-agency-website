@@ -198,15 +198,15 @@ section {
     #portfolio-subheading {
       display: block;
     }
-    #portfolio-cta {
-      font-size: 1.1rem;
-    }
     #portfolio-title {
       padding-bottom: 0.5rem;
     }
     #portfolio-genre {
       font-size: 0.75rem;
       margin-bottom: 0.2rem;
+    }
+    #mobile-mockup{
+      height: 59.5vh;
     }
     [dir="rtl"] #portfolio-genre {
       font-size: 1rem;

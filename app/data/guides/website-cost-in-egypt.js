@@ -3,7 +3,7 @@ const resource = {
   datePublished: "2026-03-18",
   dateModified: "2026-06-09",
   title: {
-    en: "How Much Does a Website Cost in Egypt?",
+    en: "How Much Does a Website Cost in Egypt? (2026)",
     ar: "تصميم موقع إلكتروني في مصر بكام في 2026؟",
   },
   metaTitle: {

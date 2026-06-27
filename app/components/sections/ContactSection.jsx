@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { WhatsAppIcon } from "@/app/components/ui/SocialIcons";
-import translations from "@/app/data/translations";
+import { contactSection, form } from "@/app/data/translations/contactSection";
+import a11y from "@/app/data/translations/a11y";
 
 const ChevronDown = () => (
   <svg
@@ -21,7 +22,7 @@ const ChevronDown = () => (
 );
 
 export default function ContactSection({ lang }) {
-  const t = translations;
+  const t = { contactSection, form, a11y };
   const isRtl = lang === "ar";
 
   const [formData, setFormData] = useState({

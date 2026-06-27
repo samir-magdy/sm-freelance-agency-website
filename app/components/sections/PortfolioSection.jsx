@@ -5,7 +5,8 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { projects } from "@/app/data/portfolio";
-import translations from "@/app/data/translations";
+import { projectsSection, projectData } from "@/app/data/translations/portfolioSection";
+import a11y from "@/app/data/translations/a11y";
 
 function NavArrow({ direction, disabled, onClick, ...props }) {
   if (disabled) return <div className="hidden sm:block w-11 h-11 shrink-0" />;
@@ -137,7 +138,6 @@ function StatusBar() {
    Main Component
    ───────────────────────────────────── */
 export default function PortfolioShowcase({ lang }) {
-  const { projectsSection, projectData, a11y, hero } = translations;
   const t = projectsSection;
   const [mounted, setMounted] = useState(false);
   const [active, setActive] = useState(0);
@@ -257,21 +257,12 @@ const handleDemoClick = useCallback(
               {pd.title[lang]}
             </h3>
 
-            <p className="text-content-body text-[clamp(1.2rem,2.5vw,1.7rem)] rtl:text-[clamp(1.5rem,2.5vw,1.3rem)] leading-relaxed rtl:leading-loose hidden lg:block mb-4">
+            <p className="text-content-body text-[clamp(1.2rem,2.5vw,1.5rem)] rtl:text-[clamp(1.5rem,2.5vw,1.3rem)] leading-relaxed rtl:leading-loose hidden lg:block mb-4">
               {pd.description[lang]}
             </p>
 
             <div className="portfolio-info-enter hidden lg:flex items-center gap-3">
-              <a
-                href="#contact"
-                className="cta-primary inline-flex items-center gap-2 py-3 px-6 rounded-xl text-gray-900 text-[clamp(0.7rem,1.5vw,1.5rem)] font-semibold tracking-wide"
-              >
-                {lang === "ar" && (
-                  <ArrowRight className="size-4 rotate-180" aria-hidden />
-                )}
-                {hero.primaryCta[lang]}
-                {lang !== "ar" && <ArrowRight className="size-4" aria-hidden />}
-              </a>
+            
               <Link
                 id="pricing-cta"
                 onClick={handleCtaClick}
@@ -279,12 +270,16 @@ const handleDemoClick = useCallback(
                 className="inline-flex items-center gap-2 py-3 px-6 rounded-xl border border-border-strong text-content-body hover:text-content-heading text-[clamp(0.7rem,1.5vw,1.5rem)] font-semibold tracking-wide transition-colors duration-200"
                 aria-label={`${t.viewProject[lang]} – ${pd.title[lang]}`}
               >
-                {lang === "ar" && (
-                  <ArrowRight className="size-4 rotate-180" aria-hidden />
-                )}
                 {t.viewProject[lang]}
-                {lang !== "ar" && <ArrowRight className="size-4" aria-hidden />}
+                <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
               </Link>
+                <a
+                href="#contact"
+                className="cta-primary inline-flex items-center gap-2 py-3 px-6 rounded-xl text-gray-900 text-[clamp(0.7rem,1.5vw,1.5rem)] font-semibold tracking-wide"
+              >
+                {t.primaryCta[lang]}
+                <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
+              </a>
             </div>
           </div>
         </div>
@@ -387,17 +382,26 @@ const handleDemoClick = useCallback(
             ))}
           </div>
 
-          {/* "View Live Site" CTA — mobile only */}
-          <Link
-            id="portfolio-cta"
-            onClick={handleCtaClick}
-            href={ctaHref}
-            className="cta-primary relative overflow-hidden inline-flex items-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-sm sm:text-[3.5vw] font-semibold tracking-wide lg:hidden"
-            aria-label={`${t.viewProject[lang]} – ${pd.title[lang]}`}
-          >
-            {t.viewProject[lang]}
-            <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
-          </Link>
+          {/* CTAs — mobile only: view live site + primary contact */}
+          <div className="flex items-center gap-3 lg:hidden">
+            <Link
+              id="portfolio-cta"
+              onClick={handleCtaClick}
+              href={ctaHref}
+              className="inline-flex items-center gap-2 whitespace-nowrap py-2.5 px-5 rounded-xl border border-border-strong text-content-body hover:text-content-heading text-base sm:text-[3.5vw] font-semibold tracking-wide transition-colors duration-200"
+              aria-label={`${t.viewProject[lang]} – ${pd.title[lang]}`}
+            >
+              {t.viewProject[lang]}
+              <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
+            </Link>
+            <a
+              href="#contact"
+              className="cta-primary relative overflow-hidden inline-flex items-center gap-2 whitespace-nowrap py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-base sm:text-[3.5vw] font-semibold tracking-wide"
+            >
+              {t.primaryCta[lang]}
+              <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
+            </a>
+          </div>
         </div>
       </div>
     </section>
