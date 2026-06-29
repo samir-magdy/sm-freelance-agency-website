@@ -35,11 +35,11 @@ const pricingEstimator = {
       },
       {
         name: { en: "Standard", ar: "قياسي" },
-        multiplier: 0.1,
+        multiplier: 0.2,
       },
       {
         name: { en: "Full", ar: "شامل" },
-        multiplier: 0.2,
+        multiplier: 0.4,
       },
     ],
     business: [
@@ -49,11 +49,11 @@ const pricingEstimator = {
       },
       {
         name: { en: "Standard", ar: "قياسي" },
-        multiplier: 0.1,
+        multiplier: 0.2,
       },
       {
         name: { en: "Full", ar: "شامل" },
-        multiplier: 0.2,
+        multiplier: 0.4,
       },
     ],
   },
@@ -68,7 +68,7 @@ const pricingEstimator = {
       },
       appliesTo: ["landing", "business"],
       isMultiplier: true,
-      multiplierByBase: { landing: 0.35, business: 0.35 },
+      multiplierByBase: { landing: 0.3, business: 0.4 },
       price: 0,
       scalesWithScope: false,
     },

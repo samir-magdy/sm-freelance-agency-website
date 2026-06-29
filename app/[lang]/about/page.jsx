@@ -93,7 +93,7 @@ export default async function AboutPage({ params }) {
         {t.paragraphs.map((para, i) => (
           <p
             key={i}
-            className="reveal-element mx-auto mt-8 max-w-4xl text-center font-light leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)]"
+            className="reveal-element mx-auto mt-8 max-w-4xl text-center leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)]"
           >
             {para[lang]}
           </p>

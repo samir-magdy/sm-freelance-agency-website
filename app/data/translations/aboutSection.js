@@ -7,6 +7,10 @@ const aboutSection = {
   // ── Body — three logical paragraphs ──
 paragraphs: [
     {
+      en: "We're a small, focused team: a developer, a UI/UX designer, and a content writer, working closely together on every project.",
+      ar: "إحنا فريق صغير ومتخصص: مطور، ومصمم واجهات وتجربة استخدام، وكاتب محتوى، بنشتغل مع بعض عن قرب في كل مشروع.",
+    },
+    {
       en: "SM Web Design Studio was built on a simple belief: every business deserves honest guidance, professional work, and fair pricing.",
       ar: "أسسنا الاستوديو الخاص بنا على مبدأ بسيط: ان جميع الشركات والأفراد من حقهم يحصلوا على توجيه صادق، عمل احترافي، وأسعار عادلة.",
     },

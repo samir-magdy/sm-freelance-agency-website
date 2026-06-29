@@ -34,7 +34,7 @@ const faqSection = {
       ar: "هو الموقع الإلكتروني مهم فعلاً؟",
     },
     answer: {
-      en: "If you want to compete and win in today's market, then <strong>absolutely!</strong> The main benefits a professional website provides are credibility, visibility and utility. To discover how it provides these benefits, read our guide on <a href='/en/guides/why-your-business-needs-a-website'>the real benefits of having a professional website</a>.",
+      en: "If you want to compete and win in today's market, then <strong>absolutely!</strong> Read our guide on <a href='/en/guides/why-your-business-needs-a-website'>the real benefits of having a professional website</a> for a deep dive on why a website is no longer optional.",
       ar: "لو عايز تنافس وتكبر في السوق دلوقتي، فالموقع خطوة أساسية! الموقع الاحترافي بيدي لمشروعك مصداقية، وسهولة في الوصول، وتواجد قوي قدام عملائك. علشان تعرف إزاي الموقع بيساعدك في ده بالتفصيل، ممكن تقرأ دليلنا عن <a href='/ar/guides/why-your-business-needs-a-website'>أهمية الموقع الإلكتروني لعملك</a>.",
     },
   },
@@ -44,7 +44,7 @@ const faqSection = {
       ar: "أعمل الموقع بنفسي على منصات جاهزة ولا أستعين بمحترف؟",
     },
     answer: {
-      en: "Online website builders are not recommended for sites that are expected to generate a return on investment. Read our guide on the differences between <a href='/en/guides/diy-vs-professional-web-design'>building your own website vs hiring a professional</a> so you can make the right choice.",
+      en: "Online website builders are not recommended for professional websites that are expected to generate a return on investment. Read our guide on the differences between <a href='/en/guides/diy-vs-professional-web-design'>building your own website vs hiring a professional</a> so you can make the right choice.",
       ar: "في منصات كتير بتخليك تعمل موقعك بنفسك، لكن للمشاريع اللي محتاجة ظهور احترافي، مش بننصح بالطريقة دي. اقرأ دليلنا اللي بيوضح الفرق بين <a href='/ar/guides/diy-vs-professional-web-design'>بناء الموقع بنفسك وبين الاستعانة بمحترف</a>، علشان تاخد القرار الأنسب لمشروعك.",
     },
   },
@@ -56,7 +56,7 @@ const faqSection = {
       ar: "تكلفة الموقع الإلكتروني كام في مصر؟ (2026)",
     },
     answer: {
-      en: "Whether it's a single-page portfolio or a more complex system with multiple pages and custom features, the prices vary greatly. Read our guide on <a href='/en/guides/website-cost-in-egypt'>the real cost of a website in Egypt</a> so that you know what you're paying for. If you'd like to skip the reading and talk to us, you can <a href='#contact'>schedule a meeting</a>.",
+      en: "Whether it's a single-page portfolio or a more complex system with multiple pages and custom features, the prices vary greatly. Read our guide on <a href='/en/guides/website-cost-in-egypt'>the real cost of a website in Egypt</a> so that you know what you're paying for. If you'd like to skip the reading and talk to us, you can <a href='#contact'>get in touch</a>.",
       ar: "الأسعار بتختلف طبعاً حسب طبيعة الموقع، سواء كنت محتاج صفحة واحدة لعرض أعمالك أو نظام متكامل ومقاسات خاصة. اقرأ دليلنا عن <a href='/ar/guides/website-cost-in-egypt'>أسعار المواقع في مصر</a> علشان تكون عارف إنت بتدفع في إيه بالضبط. ولو حابب تعرف تكلفة لمشروعك، ممكن <a href='#contact'>اطلب استشارة</a> مننا.",
     },
   },
