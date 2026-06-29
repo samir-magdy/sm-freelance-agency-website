@@ -257,7 +257,7 @@ const handleDemoClick = useCallback(
               {pd.title[lang]}
             </h3>
 
-            <p className="text-content-body text-[clamp(1.2rem,2.5vw,1.5rem)] rtl:text-[clamp(1.5rem,2.5vw,1.3rem)] leading-relaxed rtl:leading-loose hidden lg:block mb-4">
+            <p className="text-content-body text-[clamp(1.2rem,2.5vw,1.25rem)] rtl:text-[clamp(1.5rem,2.5vw,1.3rem)] leading-relaxed rtl:leading-loose hidden lg:block mb-4">
               {pd.description[lang]}
             </p>
 
@@ -267,7 +267,7 @@ const handleDemoClick = useCallback(
                 id="pricing-cta"
                 onClick={handleCtaClick}
                 href={ctaHref}
-                className="inline-flex items-center gap-2 py-3 px-6 rounded-xl border border-border-strong text-content-body hover:text-content-heading text-[clamp(0.7rem,1.5vw,1.5rem)] font-semibold tracking-wide transition-colors duration-200"
+                className="inline-flex items-center gap-2 py-3 px-6 rounded-xl border border-border-strong text-content-body hover:text-content-heading text-[clamp(0.7rem,1.5vw,1.2rem)] font-semibold tracking-wide transition-colors duration-200"
                 aria-label={`${t.viewProject[lang]} – ${pd.title[lang]}`}
               >
                 {t.viewProject[lang]}
@@ -275,10 +275,10 @@ const handleDemoClick = useCallback(
               </Link>
                 <a
                 href="#contact"
-                className="cta-primary inline-flex items-center gap-2 py-3 px-6 rounded-xl text-gray-900 text-[clamp(0.7rem,1.5vw,1.5rem)] font-semibold tracking-wide"
+                className="cta-primary inline-flex items-center gap-2 py-3 px-6 rounded-xl text-gray-900 text-[clamp(0.7rem,1.5vw,1.2rem)] font-semibold tracking-wide"
               >
                 {t.primaryCta[lang]}
-                <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
+                <ArrowRight className="size-4 rotate-90" aria-hidden />
               </a>
             </div>
           </div>
@@ -306,7 +306,7 @@ const handleDemoClick = useCallback(
             {/* Phone outer shell */}
             <div
               id="mobile-mockup"
-              className="phone-outer aspect-11/19.5 w-[64vw] sm:w-[63vw] md:w-[70.5vw] lg:w-[75vw] xl:w-[18.5vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="phone-outer aspect-11/19.5 w-[64vw] sm:w-[50vw] md:w-[35vw] lg:w-[25vw] xl:w-[17.2vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               {/* Left volume buttons */}
               <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -337,7 +337,7 @@ const handleDemoClick = useCallback(
                             src={proj.screenshot}
                             alt={`${a11y.screenshotOf[lang]} ${projectData[proj.id].title[lang]}`}
                             className="w-full h-auto block"
-                            sizes="(max-width: 640px) 53vw, (max-width: 768px) 252px, (max-width: 1024px) 282px, 300px"
+                            sizes="(max-width: 639px) 64vw, (max-width: 767px) 63vw, (max-width: 1023px) 70.5vw, (max-width: 1279px) 75vw, 18.5vw"
                             placeholder="blur"
                           />
                         ) : (

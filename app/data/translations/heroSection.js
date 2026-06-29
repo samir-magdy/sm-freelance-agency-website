@@ -4,20 +4,20 @@ const hero = {
     ar: "خدمات إنشاء و تصميم مواقع · مصر",
   },
   name: {
-    en: '<span class="md:inline block">Custom <span class="text-gold">Websites</span>.</span> <span class="md:inline block">Smart <span class="text-gold">Designs</span>.</span> <span class="md:inline block">Real <span class="text-gold">Results</span>.</span>',
-    ar: '<span class="md:inline block"><span class="text-gold">تصميم</span> مواقع.</span> <span class="md:inline block"><span class="text-gold">برمجة</span> مخصصة.</span> <span class="md:inline block"><span class="text-gold">نتائج</span> حقيقية.</span>',
+    en: 'Behind every great business is a website that <span class="hero-mark">proves it</span>.',
+    ar: 'وراء كل بيزنس ناجح.. موقع <span class="hero-mark">يثبت جدارته</span>.',
   },
   primaryCta: {
-    en: "Schedule a Meeting",
-    ar: "طلب استشارة",
+    en: "Request a Quote",
+    ar: "استشارة مجانية",
   },
-secondaryCta: {
+  secondaryCta: {
     en: "See Our Work",
     ar: "شاهد أعمالنا",
   },
   subheading: {
-    en: "Behind every great business is a website that proves it.",
-    ar: "وراء كل مشروع ناجح، موقع يُثبت جدارته.",
+    en: "Designing expert web solutions that validate your brand's <strong>true value</strong>.",
+    ar: "نصمم مواقع مخصصة تعكس <strong>القيمة الحقيقية</strong> لشركتك وتثبت مكانتك في السوق من أول نظرة.",
   },
 };
 

@@ -7,8 +7,8 @@ const faqSection = {
   },
 
   browseGuides: {
-    en: "Browse all web design guides",
-    ar: "تصفح جميع أدلة تصميم المواقع",
+    en: "Browse all web guides",
+    ar: "تصفح أدلة تصميم المواقع",
   },
 
   ctaHeading: {

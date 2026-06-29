@@ -8,15 +8,15 @@ const aboutSection = {
 paragraphs: [
     {
       en: "SM Web Design Studio was built on a simple belief: every business deserves honest guidance, professional work, and fair pricing.",
-      ar: "أسسنا الاستوديو الخاص بنا على مبدأ بسيط: إن أي شركة من حقها تحصل على توجيه صادق، وعمل احترافي، وأسعار عادلة.",
+      ar: "أسسنا الاستوديو الخاص بنا على مبدأ بسيط: ان جميع الشركات والأفراد من حقهم يحصلوا على توجيه صادق، عمل احترافي، وأسعار عادلة.",
     },
     {
       en: "After seeing people struggle with incompetent providers, we realized the problem wasn't buidling the website, it was trust & communication.",
-      ar: "بعد ما شفنا أصحاب مشاريع كتير بيعانوا من التعامل مع جهات غير مؤهلة، أدركنا إن الأزمة الحقيقية مش في تنفيذ الموقع.. المشكلة كلها في الثقة والتواصل.",
+      ar: "بعد ما شفنا أصحاب مشاريع كتير بيعانوا من التعامل مع جهات غير مؤهلة، أدركنا إن الأزمة الحقيقية مش في تنفيذ الموقع، الأزمة في الثقة والتواصل.",
     },
     {
       en: "We're not here to sell you a site you don't need. We're here to help you understand your options, plan your budget, and build you a website that serves both of our interests.",
-      ar: "إحنا مش هنا علشان نبيعلك موقع إنت مش محتاجه؛ هدفنا نساعدك تفهم كل خياراتك، وتخطط ميزانيتك بشكل صحيح، ونبنيلك موقع يخدم مصلحة الطرفين ويحقق أهدافك.",
+      ar: "إحنا مش هنا علشان نبيعلك موقع إنت مش محتاجه، هدفنا نساعدك تفهم كل خياراتك، تخطط ميزانيتك بشكل صحيح، ونبني لك موقع يحقق أهدافك ويخدم مصلحة الطرفين.",
     },
   ],
 

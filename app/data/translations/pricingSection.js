@@ -8,8 +8,16 @@ export const pricingCards = {
     ar: "اختار الموقع اللي يناسب احتياجاتك",
   },
   trustStrip: {
-    en: '<p>Want to know how pricing works?</p><p>Read our <a href="/en/guides/website-cost-in-egypt">guide on website pricing</a>.</p>',
-    ar: '<p>حابب تعرف الأسعار بتتحسب إزاي؟</p><p>اقرأ <a href="/ar/guides/website-cost-in-egypt">دليلنا عن أسعار تصميم المواقع</a>.</p>',
+    en: '<p>Or read our <a href="/en/guides/website-cost-in-egypt">guide on website pricing</a>.</p>',
+    ar: '<p>اقرأ <a href="/ar/guides/website-cost-in-egypt">دليلنا عن أسعار تصميم المواقع</a>.</p>',
+  },
+  estimatorLead: {
+    en: "Wondering how much your project will cost?",
+    ar: "حابب تعرف مشروعك هيكلفك كام؟",
+  },
+  estimatorCta: {
+    en: "Estimate your project cost",
+    ar: "قدّر تكلفة مشروعك",
   },
   startsAt: {
     en: "Starts at",
@@ -20,8 +28,8 @@ export const pricingCards = {
     ar: "جنيه مصري",
   },
   cta: {
-    en: "Schedule Meeting",
-    ar: "اطلب استشارة",
+    en: "Start a Project",
+    ar: "طلب استشارة",
   },
   customPriceLabel: {
     en: "Custom Pricing",
@@ -50,7 +58,7 @@ export const pricingCards = {
         en: "A multi-page website that presents your company in full detail. <em>Ideal for more established businesses and entities that have a lot to show and tell.</em>",
         ar: "موقع متعدد الصفحات بيعرض شركتك، خدماتك، أعمالك، وبيانات التواصل بشكل احترافي. <em>مثالي للشركات المستقرة، والشركات اللي محتاجة وجود قوي على جوجل.</em>",
       },
-      price: "7,999",
+      price: "8,999",
     },
     {
       id: "custom-app",
@@ -59,7 +67,7 @@ export const pricingCards = {
         ar: "تطبيق ويب",
       },
       tagline: {
-        en: "A fully custom-built web application designed around your exact business requirements, from online stores and booking systems to internal tools and client portals. <em>Ideal for businesses with specific needs that require custom solutions.</em>",
+        en: "A fully custom-built web application designed around your exact requirements, from online stores and booking systems to client portals. <em>Ideal for businesses with specific needs that require custom solutions.</em>",
         ar: "تطبيق ويب مبني بالكامل من الصفر حسب متطلبات مشروعك — من المتاجر الإلكترونية وأنظمة الحجز للوحات التحكم الداخلية. <em>مثالي للمشاريع اللي محتاجة حل مخصص مش قالب جاهز.</em>",
       },
       price: null,

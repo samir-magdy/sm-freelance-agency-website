@@ -192,7 +192,7 @@ export default async function AboutPage({ params }) {
                   href="https://wa.me/201274613331"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-1 items-center justify-center gap-2.5 rounded-2xl border border-border-strong px-6 py-3 text-base font-medium text-content-body transition-all duration-250 hover:border-[#25D366]/50"
+                  className="flex flex-1 items-center justify-center gap-2.5 rounded-2xl border border-border-strong px-6 py-3 text-base font-medium text-content-body transition-all duration-250 hover:border-white/30"
                 >
                   <WhatsAppIcon className="size-5 shrink-0 text-[#25D366]" />
                   {t.ctaWhatsApp[lang]}
@@ -210,7 +210,7 @@ export default async function AboutPage({ params }) {
                   href="https://www.linkedin.com/in/samir-magdy-/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-1 items-center justify-center gap-2.5 rounded-2xl border border-border-strong px-6 py-3 text-base font-medium text-content-body transition-all duration-250 hover:border-[#0A66C2]/50"
+                  className="flex flex-1 items-center justify-center gap-2.5 rounded-2xl border border-border-strong px-6 py-3 text-base font-medium text-content-body transition-all duration-250 hover:border-white/30"
                 >
                   <LinkedInIcon className="size-5 shrink-0 text-[#0A66C2]" />
                   {t.ctaLinkedIn[lang]}
@@ -220,7 +220,7 @@ export default async function AboutPage({ params }) {
               {/* Primary — stretches the full width */}
               <Link
                 href={`/${lang}/#contact`}
-                className="w-full whitespace-nowrap rounded-2xl border border-border-strong px-7 py-3 text-center text-base font-semibold text-content-body transition-all duration-300 hover:border-gold/50"
+                className="w-full cta-primary whitespace-nowrap rounded-2xl px-7 py-3 text-center text-base font-semibold text-gray-900 transition-all duration-300 hover:border-gold/50 sm:mt-1"
               >
                 {t.ctaContact[lang]}
               </Link>

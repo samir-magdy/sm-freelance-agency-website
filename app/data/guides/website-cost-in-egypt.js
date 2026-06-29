@@ -16,7 +16,7 @@ const resource = {
   },
   content: {
     en: `
-<p><strong>Generally, professional website prices in Egypt range from 5,000 to 50,000 EGP.</strong> The truth is, there is no single fixed answer for the cost, as every project is different and many factors influence the final pricing. This variation is never random. By reading this guide, you will discover the different types of websites, the expected price range for each, and the core factors that determine market pricing so you can avoid overpaying or choosing the cheapest option and regretting it later.</p>
+<p><strong>Generally, professional website prices in Egypt typically range from 5,000 to 100,000 EGP.</strong> The truth is, there is no single fixed answer for the cost, as every project is different and many factors influence the final pricing. This variation is never random. By reading this guide, you will discover the different types of websites, the expected price range for each, and the core factors that determine market pricing so you can avoid overpaying or choosing the cheapest option and regretting it later.</p>
 
 <h2>What is the expected cost by website type?</h2>
 <p>This table gives you an idea of the market prices you will encounter based on the type of website you need:</p>

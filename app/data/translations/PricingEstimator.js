@@ -23,7 +23,7 @@ const pricingEstimator = {
       id: "business",
       name: { en: "Business Site", ar: "موقع شركة" },
       description: { en: "Multi-page website", ar: "موقع متعدد الصفحات" },
-      price: 7999,
+      price: 8999,
     },
   ],
 

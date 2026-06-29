@@ -56,7 +56,7 @@ export default function FAQSection({ lang }) {
             <p className="text-[clamp(1.4rem,2vw,1.6rem)] font-medium text-content-heading tracking-wide">
               {t.ctaHeading[lang]}
             </p>
-            <div className="flex flex-col items-center gap-2.5">
+            <div className="flex flex-col items-center gap-2.5 sm:gap-4">
               <a
                 href="#contact"
                 className="cta-primary rtl:pb-3 mb-2 sm:mb-0 shrink-0 py-2.5 px-6 rounded-lg text-gray-900 text-[clamp(1rem,4.5vw,1.3rem)] font-semibold tracking-wide"
@@ -70,17 +70,16 @@ export default function FAQSection({ lang }) {
                 <span className="text-content-muted/90">{lang === "ar" ? "أو" : "or"}</span>
                 {t.browseGuides[lang]}
                 <svg
-                  width="12"
-                  height="12"
+               
                   viewBox="0 0 16 16"
                   fill="none"
-                  className={`shrink-0 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1"}`}
+                  className={`w-5 h-5 rtl:sm:w-6 rtl:sm:h-6 shrink-0 transition-transform duration-300 sm:pt-1 ${lang === "ar" ? "sm:pb-1.5 rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1 "}`}
                   aria-hidden="true"
                 >
                   <path
                     d="M3.333 8h9.334M8.667 4l4 4-4 4"
                     stroke="currentColor"
-                    strokeWidth="1"
+                    strokeWidth="1.3"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />

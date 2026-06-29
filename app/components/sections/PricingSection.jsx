@@ -64,7 +64,7 @@ export default function PricingSection({ lang }) {
                           </span>
                           <span className="ms-auto inline-flex items-center gap-2 text-sm font-semibold text-content-body group-hover:text-gold transition-colors duration-300">
                             {t.cta[lang]}
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className={`transition-transform duration-300 ${isRtl ? "rotate-180 group-hover:-translate-x-1.5" : "group-hover:translate-x-1.5"}`}>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="rotate-90">
                               <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                           </span>
@@ -72,12 +72,12 @@ export default function PricingSection({ lang }) {
                       </>
                     ) : (
                       <div className="flex items-center">
-                        <span className="text-subheading md:text-3xl font-bold text-gold tracking-tight leading-none pb-1">
+                        <span className="text-subheading md:text-heading font-bold text-gold tracking-tight leading-none pb-1">
                           {t.customPriceLabel[lang]}
                         </span>
                         <span className="ms-auto inline-flex items-center gap-2 text-sm font-semibold text-content-body group-hover:text-gold transition-colors duration-300">
                           {t.cta[lang]}
-                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className={`transition-transform duration-300 ${isRtl ? "rotate-180 group-hover:-translate-x-1.5" : "group-hover:translate-x-1.5"}`}>
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="rotate-90">
                             <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </span>
@@ -88,8 +88,48 @@ export default function PricingSection({ lang }) {
               </a>
             ))}
           </div>
+          {/* Calculator CTA — answers "what would mine cost?" before the contact-form leap */}
+          <div className="reveal-element mt-8 sm:mt-12 flex flex-col items-center gap-3">
+            <span className="text-content-muted text-base sm:text-lg font-medium">
+              {t.estimatorLead[lang]}
+            </span>
+            <a
+              href={`/${lang}/guides/website-cost-in-egypt#pricing-calculator`}
+              className="group inline-flex items-center gap-3 px-6 py-3 rounded-2xl border border-gold/30 bg-surface-card hover:bg-surface-low hover:border-gold/60 text-content-heading font-semibold text-base sm:text-lg transition-all duration-300"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+                className="text-gold shrink-0"
+              >
+                <rect x="4" y="2.5" width="16" height="19" rx="2.5" stroke="currentColor" strokeWidth="1.6" />
+                <line x1="7.5" y1="6.5" x2="16.5" y2="6.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                <line x1="8" y1="11" x2="8" y2="11" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+                <line x1="12" y1="11" x2="12" y2="11" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+                <line x1="16" y1="11" x2="16" y2="11" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+                <line x1="8" y1="15" x2="8" y2="15" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+                <line x1="12" y1="15" x2="12" y2="15" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+                <line x1="16" y1="15" x2="16" y2="18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+              </svg>
+              {t.estimatorCta[lang]}
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                aria-hidden="true"
+                className="shrink-0 rtl:rotate-180 transition-transform duration-300 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
+              >
+                <path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          </div>
+
           <div
-              className="mt-4 sm:mt-10 reveal-element text-center text-content-muted/85 text-base sm:text-[clamp(1.2rem,2vw,1.4rem)] font-medium max-w-3xl mx-auto leading-relaxed [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 [&_a]:hover:text-gold-light [&_a]:transition-colors"
+              className="mt-4 reveal-element text-center text-content-muted/85 text-base sm:text-[clamp(1rem,1vw,1.1rem)] font-medium max-w-3xl mx-auto leading-relaxed [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 [&_a]:hover:text-gold-light [&_a]:transition-colors"
               dangerouslySetInnerHTML={{ __html: t.trustStrip[lang] }}
             />
         </div>

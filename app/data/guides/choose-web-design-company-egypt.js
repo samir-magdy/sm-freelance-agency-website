@@ -62,7 +62,7 @@ const resource = {
 </ul>
 
 <h2>Our take: How to make the right call</h2>
-<p>The right company has a live portfolio you can explore, genuinely wants to understand your goals, is transparent about pricing, and communicates clearly. They do not need to be the cheapest or the biggest; they need to be the right fit for your business. If you are weighing doing it yourself through a website builder, read our guide on <a href='/en/guides/diy-vs-professional-web-design'>DIY vs hiring a professional</a> before you decide.</p>`,
+<p>The right company has a live portfolio you can explore, genuinely wants to understand your goals, is transparent about pricing, and communicates clearly. They do not need to be the cheapest or the biggest; they need to be the right fit for your business. Transparency, clear communication, and a genuine partnership are the same standards we hold ourselves to; you can read more about <a href='/en/about'>how we work</a>. If you are weighing doing it yourself through a website builder, read our guide on <a href='/en/guides/diy-vs-professional-web-design'>DIY vs hiring a professional</a> before you decide.</p>`,
 
     ar: `
 <p>الشركة المناسبة في مصر عندها سابقة أعمال من مواقع حقيقية معروضة تقدر تدخل عليها وتجربها بنفسك، بتسأل عن أهدافك، شفافة في التسعير، وبتتواصل بوضوح في مرحلة الاتفاق. لكن قبل اى حاجا، لازم تقرر الأول هل تختار مستقل، استوديو، أو شركة. خلينا نبدأ بالمقارنة.</p>
@@ -112,7 +112,7 @@ const resource = {
 </ul>
 
 <h2>وجهة نظرنا: ازاي تختار شركة تصميم مواقع صح</h2>
-<p> الشركة الصح هي اللي عندها سابقة أعمال معروضة تقدر تجربها، مهتمة تعرف عن شغلك  وأهدافك، شفافة في أسعارها، وواضحة في تواصلها. مش لازم يكونوا الأرخص ولا الأكبر، لازم يكونوا الأنسب لشغلك. لو بتفكر تعمل موقعك بنفسك من خلال المنصات الجاهزة، اقرأ دليلنا عن <a href="/ar/guides/diy-vs-professional-web-design"> المقارنة بين المنصات الجاهزة والتصميم الاحترافي</a>.</p>`,
+<p> الشركة الصح هي اللي عندها سابقة أعمال معروضة تقدر تجربها، مهتمة تعرف عن شغلك  وأهدافك، شفافة في أسعارها، وواضحة في تواصلها. مش لازم يكونوا الأرخص ولا الأكبر، لازم يكونوا الأنسب لشغلك. الشفافية والتواصل الواضح والشراكة الحقيقية دي نفس المعايير اللي بنلتزم بيها مع كل عميل، تقدر تعرف أكتر عن <a href="/ar/about">طريقتنا في الشغل</a>. لو بتفكر تعمل موقعك بنفسك من خلال المنصات الجاهزة، اقرأ دليلنا عن <a href="/ar/guides/diy-vs-professional-web-design"> المقارنة بين المنصات الجاهزة والتصميم الاحترافي</a>.</p>`,
   },
   metaDescription: {
     en: "Choosing the wrong web design company in Egypt costs more than money. Learn the key questions to ask, red flags to spot, and how to choose right in 2026.",
