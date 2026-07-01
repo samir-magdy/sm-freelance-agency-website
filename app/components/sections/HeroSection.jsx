@@ -17,7 +17,7 @@ export default function HeroSection({ lang }) {
             aria-hidden="true"
             className="flex-none h-px w-[clamp(2rem,4vw,3rem)] rounded-full bg-linear-to-r rtl:bg-linear-to-l from-transparent to-white/70 shadow-[0_0_8px_oklch(76.7%_0.1399_91.2/0.25)]"
           />
-          <span className="ps-0.5 font-semibold uppercase sm:tracking-[0.15em] tracking-[0.1em] leading-none bg-clip-text text-[clamp(0.5rem,2.2vw,0.8rem)] rtl:text-[clamp(0.6rem,3vw,1rem)] text-content-muted rtl:normal-case rtl:tracking-normal rtl:leading-normal">
+          <span className="ps-0.5 font-semibold uppercase sm:tracking-[0.15em] tracking-widest leading-none bg-clip-text text-[clamp(0.5rem,2.2vw,0.8rem)] rtl:text-[clamp(0.6rem,3vw,1rem)] text-content-muted rtl:normal-case rtl:tracking-normal rtl:leading-normal">
             {hero.eyebrow[lang]}
           </span>
           <span
@@ -33,7 +33,7 @@ export default function HeroSection({ lang }) {
         />
 
         <p
-          className="hero-sub w-full rtl:mt-0 mt-[clamp(0.5rem,3vw,1.75rem)] sm:mt-0 text-content-body text-[clamp(1.1rem,5vw,1.6rem)] rtl:text-[clamp(0.9rem,4vw,1.5rem)] sm:leading-[1.6] rtl:leading-[2.15] sm:rtl:leading-[2] rtl:max-w-150 rtl:px-4"
+          className="hero-sub w-full rtl:mt-0 mt-[clamp(0.5rem,3vw,1.75rem)] sm:mt-0 text-content-body text-[clamp(1.1rem,5vw,1.6rem)] rtl:text-[clamp(0.9rem,4vw,1.5rem)] sm:leading-[1.6] rtl:leading-[2.15] sm:rtl:leading-loose rtl:max-w-150 rtl:px-4"
           dangerouslySetInnerHTML={{ __html: hero.subheading[lang] }}
         />
 

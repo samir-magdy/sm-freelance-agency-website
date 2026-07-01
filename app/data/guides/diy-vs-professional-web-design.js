@@ -11,12 +11,12 @@ const resource = {
     ar: "منصات إنشاء المواقع أم مبرمج محترف؟ أيهما أفضل لمشروعك؟",
   },
   excerpt: {
-    en: "There are many drag-and-drop tools today like Canva, Wix and Squarespace, that let anyone build a basic website. So why even pay high rates for a web design company anymore? This guide breaks down the cost illusion, highlights the risks of using these platforms, and the limitations. Armed with this knowledge, you will be able to make the right call for your brand.",
-    ar: "فيه أدوات كتير دلوقتي بتخليك تعمل موقع بسيط من غير ما تكون مبرمج، زي Wix وSquarespace. السؤال: تعمل موقعك بنفسك على المنصات دي ولا توظف محترف؟ في الدليل ده بنشرحلك التكلفة الحقيقية (بما فيها الاشتراكات بالدولار اللي مش بيوضحوها)، المخاطر، والفرق على المدى البعيد علشان تاخد القرار اللي ينفع شغلك في مصر.",
+    en: "Website builders like Wix or Squarespace can work if you need something fairly simple. But they come with significant drawbacks that aren't immediately obvious and tend to surface over time. In this guide you'll learn the drawbacks of using these platforms, including the hidden costs and limitations.",
+    ar: "لو إنت محتاج موقع بسيط، أدوات بناء المواقع الجاهزة زي Wix أو Squarespace ممكن تكفي. لكن الحقيقة إن ليها عيوب كتير هنوضحها في الدليل ده. العيوب دي مابتظهرش في البداية.",
   },
   content: {
     en: `
-<p>DIY website builders like Wix or Squarespace can work if you need something very simple. But they come with significant drawbacks that aren't immediately obvious; they tend to surface over time, or the moment you need customizations that go beyond what the platform allows. Let's start with a clear comparison.</p>
+<p>DIY website builders like Wix or Squarespace can work if you need something fairly simple. But they come with significant drawbacks that aren't immediately obvious and tend to surface over time, or the moment you need customizations that go beyond what the platform allows. Let's start with a clear comparison.</p>
 
 <h2>DIY vs. Professional: A Side-by-Side Comparison</h2>
 <table>
@@ -45,16 +45,16 @@ const resource = {
     </tr>
     <tr>
       <td>Speed &amp; Performance</td>
-      <td>Often slow</td>
+      <td>Often slower</td>
       <td>Optimized for high performance</td>
     </tr>
     <tr>
       <td>SEO Foundation</td>
       <td>Limited and generic</td>
-      <td>Built in from the ground up</td>
+      <td>Optimized for maximum reach</td>
     </tr>
     <tr>
-      <td>Local Payments (InstaPay / Fawry)</td>
+      <td>Local Payments (Paymob / Fawry)</td>
       <td>Limited or unavailable</td>
       <td>Native integration</td>
     </tr>

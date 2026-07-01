@@ -43,10 +43,10 @@ const projectData = {
   DentalClinic: {
     title: {
       en: "Health & Wellness",
-      ar: "موقع عيادة أسنان",
+      ar: "تصميم ونظام حجز عيادات",
     },
     description: {
-      en: "Patients always choose the clinic they trust most. This site presents your clinic in a way that makes you the obvious choice. In addition to a built-in booking system, making you independent of platforms like Vezeeta.",
+      en: "Patients always choose the clinic they trust most. This site presents your clinic in a way that makes you the obvious choice. In addition to a built-in booking system you can track, making you independent of platforms like Vezeeta.",
       ar: "المريض يختار العيادة التي تبدو أكثر ثقة واحترافية على الإنترنت قبل أن يتصل. هذا التصميم يعرض علاجاتك وخبرتك وعيادتك بأسلوب يجعل اختيار عيادتك القرار البديهي.",
     },
   },
@@ -54,7 +54,7 @@ const projectData = {
   InteriorDesign: {
     title: {
       en: "Interior Designer Porfolio",
-      ar: "موقع استوديو تصميم داخلي",
+      ar: "خدمات التصميم الداخلي",
     },
     description: {
       en: "Clients hire the interior designer whose portfolio inspires confidence and elegance before the first meeting. This site showcases your projects with the visual impact needed to attract clients willing to invest in quality interior design.",
@@ -65,7 +65,7 @@ const projectData = {
   PetCare: {
     title: {
       en: "Veterinary & Pet Care",
-      ar: "موقع عيادة بيطرية",
+      ar: "رعاية الحيوانات الأليفة",
     },
     description: {
       en: "Pet owners trust the vet clinic with the most professional and reassuring online presence. This web design communicates care, expertise, and warmth, turning first-time visitors into loyal clients for your clinic.",
@@ -76,7 +76,7 @@ const projectData = {
   ButterDesign: {
     title: {
       en: "Butter Design Bureau",
-      ar: "بورتفوليو استوديو تصميم",
+      ar: "تصميم وهوية بصرية",
     },
     description: {
       en: "A design & branding agency in Cairo - Specializing in brand identity, strategy, and visual design. We built their website with an inspiring and playful vibe that showcases their creative work and lets it take center stage.",

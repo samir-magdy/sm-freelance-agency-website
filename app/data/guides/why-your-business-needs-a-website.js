@@ -11,8 +11,8 @@ const resource = {
     ar: "هل مشروعي محتاج موقع إلكتروني في 2026؟",
   },
   excerpt: {
-    en: "Today, the first thing a customer does when they hear about your business is Google it. The results they find will play a huge role in determining whether they reach out to you or move on to a competitor with a professional website. This guide breaks down the real benefits of having a website for your business, and why a social media page alone is no longer enough.",
-    ar: "في مصر في 2026، أول حاجة العميل بيعملها لما يسمع عن شركتك إنه يدوّر عليها في جوجل. النتايج اللي هتظهر هي اللي بتحدد هل هيتواصل معاك ولا هيروح لمنافس عنده موقع. في الدليل ده، بنشرحلك الفوايد الحقيقية لامتلاك موقع احترافي لشركتك، وليه صفحة انستجرام أو فيسبوك بس مش كفاية في 2026.",
+    en: "When you hear about a company or service you are considering, what is the first thing you do? You open Google or ChatGPT and search for it. Your customers do exactly the same thing, if they don't find you and find a competitor instead, you've most likely lost the sale. In this guide we explain why having a website is crucial for this scenario.",
+    ar: "لما بتسمع عن شركة أو خدمة جديدة، أول حاجة بتعملها إيه؟ تلقائياً بتفتح جوجل أو شات جي بي تي وتكتب اسمها علشان تطمن وتشوف تفاصيلها. العميل اللي بيدور على شركتك بيعمل نفس الشىء.",
   },
   content: {
     en: `

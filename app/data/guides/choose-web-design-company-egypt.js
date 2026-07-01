@@ -11,8 +11,8 @@ const resource = {
     ar: "ازاي تختار أفضل شركة تصميم مواقع في مصر؟ (2026)",
   },
   excerpt: {
-    en: "Choosing the wrong web design company is one of the most stressful and expensive mistakes a business owner can make, and most people only realize it after the damage is done. This guide gives you the exact questions to ask, the red flags to watch for, and the criteria that separate genuinely capable entities from ones that will waste your time and money.",
-    ar: "اختيار شركة تصميم مواقع غلط في مصر ممكن يكلفك وقت وفلوس كتير: تأخير في التسليم، رسوم مخفية، مفاجآت في الفواتير بالدولار، ومواقع متفتحش خالص. الدليل ده بيديك بالظبط الأسئلة اللي لازم تسألها، العلامات التحذيرية اللي تخليك تجري بعيد، والمعايير الحقيقية اللي بتفرق بين الاستوديو المحترف وغيره.",
+    en: "A competent web design company has a portfolio of real websites you can visit and explore, asks about your goals, is transparent about pricing, and communicates clearly from the start. Should you even hire a company? or a freelancer? Read this guide to get a clearer picture of your options and how to choose correctly.",
+    ar: "الشركة المناسبة في مصر عندها سابقة أعمال من مواقع حقيقية معروضة تقدر تدخل عليها وتجربها بنفسك، بتسأل عن أهدافك، شفافة في التسعير، وبتتواصل بوضوح في مرحلة الاتفاق.",
   },
   content: {
     en: `

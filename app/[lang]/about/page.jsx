@@ -118,7 +118,7 @@ export default async function AboutPage({ params }) {
             const Icon = pillarIcons[i] ?? pillarIcons[0];
             return (
             <li
-              key={p.num}
+              key={p.title.en}
               className="reveal-element group relative overflow-hidden rounded-3xl border border-border-subtle bg-linear-to-b from-surface-card/80 to-surface-card/40 px-6 py-10 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-gold/40"
             >
               {/* Gold pillar icon — the crest marker */}

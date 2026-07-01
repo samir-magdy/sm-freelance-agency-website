@@ -11,12 +11,12 @@ const resource = {
     ar: "سعر تصميم موقع إلكتروني في مصر (2026)",
   },
   excerpt: {
-    en: "Most Egyptian businesses see their first website quote with no idea whether the number is fair. Prices range from 5,000 EGP for a basic landing page to over 50,000 EGP for a custom e-commerce store, and that gap is never random. This guide breaks down what drives website costs in Egypt, what a realistic budget looks like for each project type, and how to spot a bad deal before you commit.",
-    ar: "أسعار المواقع في مصر بتختلف من 5,000 لـ 50,000 جنيه، والاختلاف ده مش عشوائي. الدليل ده بيوريك بالظبط إيه اللي بيأثر على التكلفة بالجنيه، نطاق السعر المتوقع لكل نوع موقع (صفحة هبوط، موقع شركة، متجر شوبيفاي)، وإزاي تتجنب إنك تدفع أكتر من اللازم أو تختار أرخص حاجة وتندم بعدين.",
+    en: "Professional website prices in Egypt typically range anywhere from 5,000 to 100,000 EGP. The truth is, there is no single fixed answer for the cost, as every project is different and many factors influence the final pricing. In this guide we tell you what these factors are so that you know what you're paying for when making your investment.",
+    ar: "أسعار تصميم المواقع الإلكترونية في مصر ممكن تتراوح من 5,000 لـ 100,000 ج.م، والحقيقة إن مفيش إجابة واحدة ثابتة لسؤال التكلفة، لأن كل مشروع بيختلف عن التاني وفي عوامل كتير بتدخل في التسعير.",
   },
   content: {
     en: `
-<p><strong>Generally, professional website prices in Egypt typically range from 5,000 to 100,000 EGP.</strong> The truth is, there is no single fixed answer for the cost, as every project is different and many factors influence the final pricing. This variation is never random. By reading this guide, you will discover the different types of websites, the expected price range for each, and the core factors that determine market pricing so you can avoid overpaying or choosing the cheapest option and regretting it later.</p>
+<p><strong>Professional website prices in Egypt typically range from 5,000 to 100,000 EGP.</strong> The truth is, there is no single fixed answer for the cost, as every project is different and many factors influence the final pricing. This variation is never random. By reading this guide, you will discover the different types of websites, the expected price range for each, and the core factors that determine market pricing so you can avoid overpaying or choosing the cheapest option and regretting it later.</p>
 
 <h2>What is the expected cost by website type?</h2>
 <p>This table gives you an idea of the market prices you will encounter based on the type of website you need:</p>
