@@ -159,7 +159,7 @@ const resource = {
   <li>في الآخر هتضطر تدفع فلوس تاني علشان تصلح، وغالباً بيكون أسهل إنك تبني من الأول. النتيجة بتكون إنك ضيعت وقتك وفلوسك.</li>
 </ul>
 <p>متكررش أخطاء الآخرين، اقرأ دليلنا: <a href="/ar/guides/choose-web-design-company-egypt">إزاي تختار أفضل شركة تصميم مواقع في مصر</a>، لمعلومات إضافية هتحميك من الوقوع في نفس الفخ.</p>
-<p>الخلاصة هي إن السؤال الصحيح مش «إيه أرخص موقع ممكن أعمله؟» لكن «إيه أقل استثمار هيجيب عائد إيجابي لشركتي؟»</p>`,
+<p>في المحصلة، السؤال الصحيح مش «إيه أرخص موقع ممكن أعمله؟» لكن «إيه أقل استثمار هيجيب عائد إيجابي لشركتي؟»</p>`,
   },
   metaDescription: {
     en: "Find out how much a professional website costs in Egypt in 2026. An honest EGP breakdown of what drives the price for landing pages, business sites, and online stores.",

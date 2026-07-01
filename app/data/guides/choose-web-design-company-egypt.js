@@ -65,7 +65,7 @@ const resource = {
 <p>The right company has a live portfolio you can explore, genuinely wants to understand your goals, is transparent about pricing, and communicates clearly. They do not need to be the cheapest or the biggest; they need to be the right fit for your business. Transparency, clear communication, and a genuine partnership are the same standards we hold ourselves to; you can read more about <a href='/en/about'>how we work</a>. If you are weighing doing it yourself through a website builder, read our guide on <a href='/en/guides/diy-vs-professional-web-design'>DIY vs hiring a professional</a> before you decide.</p>`,
 
     ar: `
-<p>الشركة المناسبة في مصر عندها سابقة أعمال من مواقع حقيقية معروضة تقدر تدخل عليها وتجربها بنفسك، بتسأل عن أهدافك، شفافة في التسعير، وبتتواصل بوضوح في مرحلة الاتفاق. لكن قبل اى حاجا، لازم تقرر الأول هل تختار مستقل، استوديو، أو شركة. خلينا نبدأ بالمقارنة.</p>
+<p>الشركة المناسبة في مصر عندها سابقة أعمال من مواقع حقيقية معروضة تقدر تدخل عليها وتجربها بنفسك، بتسأل عن أهدافك، شفافة في التسعير، وبتتواصل بوضوح في مرحلة الاتفاق. لكن لازم تقرر الأول هل تختار مستقل، استوديو، أو شركة. خلينا نبدأ بالمقارنة.</p>
 
 <h2>تتعامل مع مستقل، استوديو، ولا شركة؟</h2>
 <p>ده مقارنة سريعة قبل ما نبدأ الشرح:</p>
