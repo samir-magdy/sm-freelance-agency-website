@@ -7,7 +7,7 @@ const resource = {
     ar: "ضرورة الموقع الإلكتروني في مصر (2026)",
   },
   metaTitle: {
-    en: "Do I Need a Website for My Business in Egypt? (2026)",
+    en: "Do I Need a Website for My Business? (2026)",
     ar: "هل مشروعي محتاج موقع إلكتروني في 2026؟",
   },
   excerpt: {

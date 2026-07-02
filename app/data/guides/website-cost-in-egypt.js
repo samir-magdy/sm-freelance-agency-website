@@ -4,7 +4,7 @@ const resource = {
   dateModified: "2026-07-02",
   title: {
     en: "How Much Does a Website Cost in Egypt? (2026)",
-    ar: "تصميم موقع إلكتروني في مصر بكام في 2026؟",
+    ar: "اسعار تصميم المواقع الالكترونية في مصر (2026)",
   },
   metaTitle: {
     en: "How Much Does a Website Cost In Egypt (2026)",

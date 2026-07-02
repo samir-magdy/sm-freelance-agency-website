@@ -7,7 +7,7 @@ const resource = {
     ar: "أستخدم المنصات الجاهزة ولا أوظف محترف؟",
   },
   metaTitle: {
-    en: "Website Builder vs. Web Developer: Which Is Better For You?",
+    en: "DIY Website Builders vs Hiring a Developer",
     ar: "منصات إنشاء المواقع أم مبرمج محترف؟ أيهما أفضل لمشروعك؟",
   },
   excerpt: {

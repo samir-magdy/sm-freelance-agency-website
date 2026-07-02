@@ -7,7 +7,7 @@ const resource = {
     ar: "ازاي تختار أفضل شركة تصميم مواقع في مصر؟",
   },
   metaTitle: {
-    en: "How to Choose the Best Web Design Company in Egypt (2026)",
+    en: "How to Choose the Best Web Design Company/Agency",
     ar: "ازاي تختار أفضل شركة تصميم مواقع في مصر؟ (2026)",
   },
   excerpt: {
