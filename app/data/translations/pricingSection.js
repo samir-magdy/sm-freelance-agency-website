@@ -9,7 +9,7 @@ export const pricingCards = {
   },
   trustStrip: {
     en: '<p>Or read our <a href="/en/guides/website-cost-in-egypt">guide on website pricing</a>.</p>',
-    ar: '<p>اقرأ <a href="/ar/guides/website-cost-in-egypt">دليلنا عن أسعار تصميم المواقع</a>.</p>',
+    ar: '<p>أو اقرأ <a href="/ar/guides/website-cost-in-egypt">دليلنا عن أسعار تصميم المواقع</a>.</p>',
   },
   estimatorLead: {
     en: "Wondering how much your project will cost?",

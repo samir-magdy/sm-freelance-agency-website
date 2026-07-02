@@ -1,7 +1,7 @@
 const resource = {
   slug: "why-your-business-needs-a-website",
   datePublished: "2026-03-10",
-  dateModified: "2026-05-29",
+  dateModified: "2026-07-02",
   title: {
     en: "Why Your Business Needs a Website",
     ar: "ضرورة الموقع الإلكتروني في مصر (2026)",
@@ -29,7 +29,7 @@ const resource = {
 </ul>
 
 <h2>The Financial Reality: Ads vs. A Website</h2>
-<p>Most small business owners rely entirely on paid Facebook and Instagram ads. Ads matter, but here is a simple comparison of the investment difference:</p>
+<p>Paid ads stop bringing customers the moment you stop paying, while a professional website keeps bringing free Google traffic for years after a single one-time build cost. Most small business owners rely entirely on paid Facebook and Instagram ads — here is the investment difference side by side:</p>
 
 <table>
   <thead>
@@ -72,7 +72,7 @@ const resource = {
 
 
 <h2>الحسبة المالية: الإعلانات المدفوعة ضد الموقع الإلكتروني</h2>
-<p>أغلب أصحاب المشاريع بيعتمدوا بالكامل على إعلانات فيسبوك وإنستجرام المموله. الإعلانات مهمة طبعاً، بس دي مقارنة بسيطة توضحلك الفرق الاستثماري:</p>
+<p>الإعلانات المدفوعة بتوقف تجيبلك عملاء بمجرد ما توقف الدفع، لكن الموقع الإلكتروني الاحترافي بيفضل يجيبلك زيارات مجانية من جوجل لسنين بعد تكلفة بناء مرة واحدة. أغلب أصحاب المشاريع بيعتمدوا بالكامل على إعلانات فيسبوك وإنستجرام المموله — دي المقارنة الاستثمارية بالتفصيل:</p>
 
 <table>
   <thead>

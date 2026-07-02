@@ -253,6 +253,9 @@ section {
     #mobile-header-cta {
       font-size: 0.9rem;
     }
+    #pricing-calculator{
+      scroll-margin-top: 12rem;
+    }
     .safari-hero-padding{
       padding-top: 10rem;
     }

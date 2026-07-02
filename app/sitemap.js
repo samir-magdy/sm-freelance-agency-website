@@ -19,14 +19,14 @@ function alternates(enUrl, arUrl) {
 export default function sitemap() {
   const homeEntries = langs.map((lang) => ({
     url: homeUrl(lang),
-    lastModified: "2026-06-25",
+    lastModified: "2026-07-02",
     priority: lang === "en" ? 1.0 : 0.9,
     alternates: alternates(homeUrl("en"), homeUrl("ar")),
   }));
 
   const aboutEntries = langs.map((lang) => ({
     url: pageUrl(lang, "/about"),
-    lastModified: "2026-06-25",
+    lastModified: "2026-07-02",
     priority: 0.8,
     alternates: alternates(pageUrl("en", "/about"), pageUrl("ar", "/about")),
   }));

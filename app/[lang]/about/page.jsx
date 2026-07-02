@@ -89,15 +89,17 @@ export default async function AboutPage({ params }) {
           </h1>
         </header>
 
-        {/* ── Body — three logical paragraphs ───────────── */}
-        {t.paragraphs.map((para, i) => (
-          <p
-            key={i}
-            className="reveal-element mx-auto mt-8 max-w-4xl text-center leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)]"
-          >
-            {para[lang]}
-          </p>
-        ))}
+        {/* ── Intro paragraphs — team + belief ──────────── */}
+        {t.paragraphs.slice(0, 2).map((para, i) =>
+          para[lang] ? (
+            <p
+              key={`pre-${i}`}
+              className="reveal-element mx-auto mt-8 max-w-4xl text-center leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)]"
+            >
+              {para[lang]}
+            </p>
+          ) : null
+        )}
 
         {/* ── Pillars — section eyebrow + cards ─────────── */}
         <div className="reveal-element mt-20 flex items-center justify-center gap-4">
@@ -146,6 +148,20 @@ export default async function AboutPage({ params }) {
             );
           })}
         </ul>
+
+        {/* ── Continuation paragraphs — origin + promise ─ */}
+        {t.paragraphs.slice(2).map((para, i) =>
+          para[lang] ? (
+            <p
+              key={`post-${i}`}
+              className={`reveal-element mx-auto max-w-4xl text-center leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)] ${
+                i === 0 ? "mt-20" : "mt-8"
+              }`}
+            >
+              {para[lang]}
+            </p>
+          ) : null
+        )}
 
         {/* ── Signature — portrait + name ───────────────── */}
         {/* Mobile: centered stack (unchanged). Desktop: side-by-side founder card. */}

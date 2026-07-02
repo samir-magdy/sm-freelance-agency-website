@@ -56,8 +56,8 @@ const faqSection = {
       ar: "تكلفة الموقع الإلكتروني كام في مصر؟ (2026)",
     },
     answer: {
-      en: "Whether it's a single-page portfolio or a more complex system with multiple pages and custom features, the prices vary greatly. Read our guide on <a href='/en/guides/website-cost-in-egypt'>the real cost of a website in Egypt</a> so that you know what you're paying for. If you'd like to skip the reading and talk to us, you can <a href='#contact'>get in touch</a>.",
-      ar: "الأسعار بتختلف طبعاً حسب طبيعة الموقع، سواء كنت محتاج صفحة واحدة لعرض أعمالك أو نظام متكامل ومقاسات خاصة. اقرأ دليلنا عن <a href='/ar/guides/website-cost-in-egypt'>أسعار المواقع في مصر</a> علشان تكون عارف إنت بتدفع في إيه بالضبط. ولو حابب تعرف تكلفة لمشروعك، ممكن <a href='#contact'>اطلب استشارة</a> مننا.",
+      en: "Websites in Egypt typically cost between 5,000 and 100,000 EGP. Read our guide on <a href='/en/guides/website-cost-in-egypt'>the real cost of a website in Egypt</a> for the full breakdown, or <a href='#contact'>get in touch</a> for a quote tailored to your project.",
+      ar: "أسعار المواقع الإلكترونية في مصر بتتراوح من 5,000 لـ 100,000 جنيه. اقرأ دليلنا عن <a href='/ar/guides/website-cost-in-egypt'>أسعار المواقع في مصر</a> للتفاصيل الكاملة، أو <a href='#contact'>اطلب استشارة</a> لمشروعك.",
     },
   },
   {
@@ -66,8 +66,8 @@ const faqSection = {
       ar: "إزاي أختار أفضل شركة تصميم مواقع في مصر؟",
     },
     answer: {
-      en: "There are many factors to consider, and because choosing correctly can be confusing, we recommend that you read our guide on <a href='/en/guides/choose-web-design-company-egypt'>how to choose the best web design company in Egypt</a>, as the wrong decision could cost your time and money.",
-      ar: "الاختيارات كتير والموضوع ممكن يكون مربك، علشان كدة بننصحك تقرأ دليلنا: <a href='/ar/guides/choose-web-design-company-egypt'>إزاي تختار أفضل شركة تصميم مواقع</a>، علشان تتجنب القرارات اللي ممكن تضيع وقتك وفلوسك.",
+      en: "Choose a company with a live portfolio you can visit yourself, transparent EGP pricing, genuine interest in your business goals, and clear communication from the start. Read our guide on <a href='/en/guides/choose-web-design-company-egypt'>how to choose the best web design company in Egypt</a> for the full checklist and red flags to avoid.",
+      ar: "اختار شركة عندها سابقة أعمال حقيقية تقدر تدخل عليها بنفسك، أسعار شفافة بالجنيه، اهتمام حقيقي بأهداف شغلك، وتواصل واضح من البداية. اقرأ دليلنا: <a href='/ar/guides/choose-web-design-company-egypt'>إزاي تختار أفضل شركة تصميم مواقع</a> للتفاصيل الكاملة والعلامات التحذيرية اللي لازم تتجنبها.",
     },
   },
   // ── STAGE 3: LOGISTICS & PROCESS (BOFU) ───────────────────────────────────
