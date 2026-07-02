@@ -7,17 +7,13 @@ export const pricingCards = {
     en: "Pick what best suits your needs",
     ar: "اختار الموقع اللي يناسب احتياجاتك",
   },
-  trustStrip: {
-    en: '<p>Or read our <a href="/en/guides/website-cost-in-egypt">guide on website pricing</a>.</p>',
-    ar: '<p>أو اقرأ <a href="/ar/guides/website-cost-in-egypt">دليلنا عن أسعار تصميم المواقع</a>.</p>',
-  },
   estimatorLead: {
-    en: "Wondering how much your project will cost?",
-    ar: "حابب تعرف مشروعك هيكلفك كام؟",
+    en: "Want a personalized estimate for your site?",
+    ar: "حابب تقدير سعر فورى لمشروعك؟",
   },
   estimatorCta: {
-    en: "Estimate your project cost",
-    ar: "قدّر تكلفة مشروعك",
+    en: "Calculate your investment",
+    ar: "احسب تكلفة الموقع",
   },
   startsAt: {
     en: "Starts at",

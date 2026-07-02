@@ -127,11 +127,6 @@ export default function PricingSection({ lang }) {
               </svg>
             </a>
           </div>
-
-          <div
-              className="mt-4 reveal-element text-center text-content-muted/85 text-base sm:text-[clamp(1rem,1vw,1.1rem)] font-medium max-w-3xl mx-auto leading-relaxed [&_a]:text-gold [&_a]:underline [&_a]:underline-offset-2 [&_a]:hover:text-gold-light [&_a]:transition-colors"
-              dangerouslySetInnerHTML={{ __html: t.trustStrip[lang] }}
-            />
         </div>
     </section>
   );

@@ -1,7 +1,7 @@
 const resource = {
   slug: "why-your-business-needs-a-website",
   datePublished: "2026-03-10",
-  dateModified: "2026-07-02",
+  dateModified: new Date(),
   title: {
     en: "Why Your Business Needs a Website",
     ar: "ضرورة الموقع الإلكتروني في مصر (2026)",

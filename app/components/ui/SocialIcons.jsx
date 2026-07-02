@@ -1,5 +1,6 @@
 import WhatsAppIcon from "../utils/WhatsAppIcon";
 import LinkedInIcon from "../utils/LinkedInIcon";
+import { SOCIAL_LINKS } from "@/app/constants";
 
 export { WhatsAppIcon };
 
@@ -7,12 +8,12 @@ export default function SocialIcons() {
   return (
     <ul
       dir="ltr"
-      className="flex items-center gap-3 sm:gap-2.5"
+      className="flex items-center gap-3 me-0.5"
       aria-label="Social media links"
     >
       <li>
         <a
-          href="https://www.instagram.com/smwebdesign.studio/"
+          href={SOCIAL_LINKS.instagram}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visit SM Web Design Studio on Instagram"
@@ -31,7 +32,7 @@ export default function SocialIcons() {
       </li>
       <li>
         <a
-          href="https://www.facebook.com/SMWebDesignStudio"
+          href={SOCIAL_LINKS.facebook}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visit SM Web Design Studio on Facebook"
@@ -50,7 +51,7 @@ export default function SocialIcons() {
       </li>
       <li>
         <a
-          href="https://www.linkedin.com/company/sm-web-design-studio/"
+          href={SOCIAL_LINKS.linkedin}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visit SM Web Design Studio on LinkedIn"

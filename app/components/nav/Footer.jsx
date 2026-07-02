@@ -1,6 +1,7 @@
 import SocialIcons from "../ui/SocialIcons";
-import { Copyright } from "lucide-react";
+import { Copyright, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
+import { PHONE_NUMBER, PHONE_DISPLAY, SOCIAL_LINKS } from "@/app/constants";
 
 const footerLinks = [
   { href: "/privacy", en: "Privacy Policy", ar: "سياسة الخصوصية" },
@@ -8,18 +9,28 @@ const footerLinks = [
 ];
 
 export default function Footer({ lang }) {
-
   return (
     <footer
       id="contact-footer"
       dir="ltr"
       className="bg-background/10 border-t border-border-subtle py-4"
     >
-      <div className="flex flex-col items-center justify-center gap-3 sm:gap-2.5 text-content-muted">
-        <div className="flex items-center">
+      <div className="flex flex-col items-center justify-center gap-4 text-content-muted">
+        <address className="not-italic flex flex-wrap items-center justify-center gap-y-3">
           <SocialIcons />
           <span
-            className="inline-block w-1 h-1 rounded-full bg-content-muted mx-3"
+            className="inline-block w-1 h-1 rounded-full bg-content-muted mx-2.5 sm:mx-3.5"
+            aria-hidden="true"
+          />
+          <a
+            href={`tel:${PHONE_NUMBER}`}
+            className="inline-flex items-center gap-1.5 hover:text-content-heading transition-colors"
+          >
+            <Phone className="w-4 h-4" aria-hidden="true" />
+            <span className="text-base pb-0.5">{PHONE_DISPLAY}</span>
+          </a>
+          <span
+            className="hidden sm:inline-block w-1 h-1 rounded-full bg-content-muted mx-2.5 sm:mx-3.5"
             aria-hidden="true"
           />
           <a
@@ -42,12 +53,26 @@ export default function Footer({ lang }) {
             </svg>
             <span className="text-base pb-0.5">studio@samirmagdy.com</span>
           </a>
-        </div>
+
+          <span
+            className="inline-block w-1 h-1 rounded-full bg-content-muted mx-2.5 sm:mx-3.5"
+            aria-hidden="true"
+          />
+          <a
+            href={SOCIAL_LINKS.gbp}
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-1.5 hover:text-content-heading transition-colors"
+          >
+            <MapPin className="w-4 h-4" aria-hidden="true" />
+            <span className="text-base pb-0.5">Cairo, Egypt</span>
+          </a>
+        </address>
 
         <div className="flex divide-x divide-content-muted/40 mx-auto">
-          <small className="flex px-1.5 sm:pr-3 items-center text-xs sm:text-sm text-content-muted/80 divide-x divide-content-muted/40">
+          <small className="flex px-1.5 sm:pr-3 items-center text-[0.65rem] sm:text-sm text-content-muted/80 divide-x divide-content-muted/40">
             <Copyright size={12} />
-            &nbsp;{new Date().getFullYear()} SM Web Studio
+            &nbsp;{new Date().getFullYear()} SM Web Design Studio
           </small>
           {/* Legal Links */}
           <nav
@@ -58,7 +83,7 @@ export default function Footer({ lang }) {
               <Link
                 key={link.href}
                 href={`/${lang}${link.href}`}
-                className="px-1.5 sm:px-3 text-xs sm:text-sm text-content-muted/80 hover:text-content-heading transition-colors underline-offset-2 hover:underline"
+                className="px-1.5 sm:px-3 text-[0.65rem] sm:text-sm text-content-muted/80 hover:text-content-heading transition-colors underline-offset-2 hover:underline"
               >
                 {link[lang] || link.en}
               </Link>

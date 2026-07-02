@@ -1,7 +1,7 @@
 const resource = {
   slug: "website-cost-in-egypt",
   datePublished: "2026-03-18",
-  dateModified: "2026-07-02",
+  dateModified: new Date(),
   title: {
     en: "How Much Does a Website Cost in Egypt? (2026)",
     ar: "اسعار تصميم المواقع الالكترونية في مصر (2026)",
@@ -71,7 +71,7 @@ const resource = {
   <li><strong>Hosting:</strong> Shared hosting is cheap but can make the site slow under heavy traffic or even crash it, unlike private hosting which guarantees higher performance.</li>
   <li><strong>Maintenance and technical support:</strong> Periodic maintenance contracts (monthly or yearly) are an additional cost that ensures the site keeps running efficiently and any post-delivery issues are fixed without surprise fees.</li>
 </ul>
-<h2 style="margin-bottom: 0.4rem">Calculate Your Estimate</h2>
+<h2 style="margin-bottom: 0.4rem">Website Price Calculator</h2>
 <p style="margin-bottom: 0">Choose your website type, content size, and required add-ons to see an instant estimate:</p>
 <!-- PRICING_ESTIMATOR_SLOT -->
 <h2>The Trap of Cheap Websites: Hidden Risks and How to Avoid Them</h2>

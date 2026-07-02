@@ -92,28 +92,35 @@ export const projectsStructuredData = {
   description:
     "Custom-coded websites built by SM Web Design Studio for small businesses in Cairo and Egypt. Specializing in landing pages, single-page websites, ecommerce and bilingual Arabic/English web design.",
   numberOfItems: projects.length,
-  itemListElement: projects.map((project, index) => ({
-    "@type": "ListItem",
-    position: index + 1,
-    item: {
-      "@type": "WebSite",
-      name: project.schemaName,
-      alternateName: project.schemaNameAr,
-      url: project.liveUrl.startsWith("http")
-        ? project.liveUrl
-        : `${SITE_URL}${project.liveUrl}`,
-      description: project.description,
-      inLanguage: ["en", "ar"],
-      genre: project.genre,
-      creator: smWebStudio,
-      locationCreated: {
-        "@type": "City",
-        name: "Cairo",
-        containedInPlace: {
-          "@type": "Country",
-          name: "Egypt",
+  itemListElement: projects.map((project, index) => {
+    const liveUrl = project.liveUrl.startsWith("http")
+      ? project.liveUrl
+      : `${SITE_URL}${project.liveUrl}`;
+    return {
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "CreativeWork",
+        name: project.schemaName,
+        alternateName: project.schemaNameAr,
+        url: liveUrl,
+        description: project.description,
+        inLanguage: ["en", "ar"],
+        genre: project.genre,
+        creator: smWebStudio,
+        locationCreated: {
+          "@type": "City",
+          name: "Cairo",
+          containedInPlace: {
+            "@type": "Country",
+            name: "Egypt",
+          },
+        },
+        workExample: {
+          "@type": "WebSite",
+          url: liveUrl,
         },
       },
-    },
-  })),
+    };
+  }),
 };

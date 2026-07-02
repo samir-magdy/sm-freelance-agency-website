@@ -5,7 +5,13 @@ import nav, { langToggle } from "../data/translations/nav";
 import a11y from "../data/translations/a11y";
 import { pricingCards } from "../data/translations/pricingSection";
 import Footer from "../components/nav/Footer";
-import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
+import {
+  SITE_URL,
+  SITE_NAME,
+  TWITTER_HANDLE,
+  SOCIAL_LINKS,
+  PHONE_NUMBER,
+} from "@/app/constants";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -40,16 +46,10 @@ const cairoFull = Cairo({
 // ─────────────────────────────────────────────
 
 const CONTACT_EMAIL = "studio@samirmagdy.com";
-const PHONE_NUMBER = "+201274613331";
 
 const META_DESCRIPTION = {
   en: "Custom web design & development for small-medium businesses & individuals. Your professional online presence starts here.",
   ar: "تصميم وتطوير مواقع إلكترونية مخصصة للشركات والأفراد. ابدأ حضورك الرقمي الاحترافي معنا.",
-};
-
-const SOCIAL_LINKS = {
-  instagram: "https://www.instagram.com/smwebdesign.studio",
-  facebook: "https://www.facebook.com/SMWebDesignStudio",
 };
 
 // ─────────────────────────────────────────────
@@ -171,8 +171,8 @@ function buildStructuredData(lang) {
 
   // 1. ProfessionalService — Primary business schema
   // Canonical English content for stable @id resolution across locales.
-  // Language-specific content belongs on the WebPage and FAQPage nodes,
-  // which carry their own per-locale @id values.
+  // Language-specific content belongs on the WebPage node,
+  // which carries its own per-locale @id value.
   const businessSchema = {
     "@type": "ProfessionalService",
     "@id": `${SITE_URL}/#business`,
@@ -196,11 +196,6 @@ function buildStructuredData(lang) {
       { "@type": "City", name: "Cairo" },
       { "@type": "City", name: "Alexandria" },
     ],
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 30.0444,
-      longitude: 31.2357,
-    },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Web Design & Development Services in Egypt",
@@ -217,21 +212,37 @@ function buildStructuredData(lang) {
           : {}),
       })),
     },
-    sameAs: [SOCIAL_LINKS.instagram, SOCIAL_LINKS.facebook],
+    sameAs: [
+      SOCIAL_LINKS.instagram,
+      SOCIAL_LINKS.facebook,
+      SOCIAL_LINKS.gbp,
+      SOCIAL_LINKS.x,
+      SOCIAL_LINKS.linkedin,
+    ],
     founder: { "@id": `${SITE_URL}/#founder` },
     knowsLanguage: ["en", "ar"],
     knowsAbout: [
-      "Web design in Egypt",
-      "E-commerce development in Egypt",
-      "Egyptian payment gateway integration",
-      "InstaPay e-commerce checkout",
-      "Vodafone Cash payment integration",
-      "Paymob payment integration",
-      "Fawry payment integration",
-      "Bilingual Arabic and English web development",
-      "Right-to-left (RTL) web design",
-      "Vezeeta alternative for doctors",
-      "Instagram-to-website storefront migration",
+      // Core Technical Expertise (Matches Google Knowledge Graph Entities)
+      "Web Design",
+      "Web Development",
+      "E-commerce Development",
+      "Responsive Web Design",
+      "Website Creation",
+      "Internationalization and Localization", // Covers bilingual/RTL architecture
+      "Right-to-Left (RTL) Display",
+
+      // High-Value Technical Integrations
+      "Payment Gateway Integration",
+      "Paymob",
+      "Fawry",
+      "Vodafone Cash",
+      "InstaPay", // Excellent for local B2C targeting
+      "API Integration",
+
+      // Specific Business Solutions & Niches
+      "E-commerce Platforms",
+      "Medical Practice Management Software", // Highly targeted alternative to "Vezeeta alternative"
+      "Digital Transformation", // Matches the "Instagram-to-website" migration concept
     ],
   };
 
@@ -378,8 +389,18 @@ function buildStructuredData(lang) {
     name: "Samir Magdy",
     alternateName: "سمير مجدي",
     jobTitle: "Founder, Web Designer & Developer",
+    description:
+      "Samir Magdy is a web designer & developer & the founder of SM Web Design Studio, specializing in high-performance, custom web development.",
+    nationality: {
+      "@type": "Country",
+      name: "Egypt",
+    },
     url: SITE_URL,
-    sameAs: ["https://www.linkedin.com/in/samir-magdy-/"],
+    image: `${SITE_URL}/profilePhoto.jpg`,
+    sameAs: [
+      "https://www.linkedin.com/in/samir-magdy-/",
+      "https://github.com/samir-magdy",
+    ],
     worksFor: { "@id": `${SITE_URL}/#business` },
   };
 

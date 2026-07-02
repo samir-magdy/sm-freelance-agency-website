@@ -1,7 +1,7 @@
 const resource = {
   slug: "diy-vs-professional-web-design",
   datePublished: "2026-03-25",
-  dateModified: "2026-07-02",
+  dateModified: new Date(),
   title: {
     en: "Website Builders vs Hiring a Professional",
     ar: "أستخدم المنصات الجاهزة ولا أوظف محترف؟",

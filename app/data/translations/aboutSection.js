@@ -15,7 +15,7 @@ paragraphs: [
     ar: "إحنا فريق صغير ومتخصص، مكون من مبرمج، ومصمم، وكاتب محتوى. أسسنا الاستوديو الخاص بنا على مبدأ بسيط: ان جميع الشركات والأفراد من حقهم يحصلوا على توجيه صادق، عمل احترافي، وأسعار عادلة.",
   },
     {
-      en: "After seeing people struggle with incompetent providers, we realized the problem wasn't buidling the website, it was trust & communication.",
+      en: "After seeing people struggle with incompetent providers, we realized the problem wasn't building the website, it was trust & communication.",
       ar: "بعد ما شفنا أصحاب مشاريع كتير بيعانوا من التعامل مع جهات غير مؤهلة، أدركنا إن الأزمة الحقيقية مش في تنفيذ الموقع، الأزمة في الثقة والتواصل.",
     },
     {

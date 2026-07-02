@@ -1,7 +1,7 @@
 const resource = {
   slug: "choose-web-design-company-egypt",
   datePublished: "2026-04-15",
-  dateModified: "2026-07-02",
+  dateModified: new Date(),
   title: {
     en: "How to Choose a Web Design Company in Egypt",
     ar: "ازاي تختار أفضل شركة تصميم مواقع في مصر؟",

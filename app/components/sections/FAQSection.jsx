@@ -38,9 +38,9 @@ export default function FAQSection({ lang }) {
                   <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-3 rounded-full bg-icon [details[open]_&]:rotate-90" />
                 </div>
 
-                <span className="text-content-heading font-normal tracking-wide text-base sm:text-subheading">
+                <h3 className="text-content-heading font-normal tracking-wide text-base sm:text-subheading">
                   {item.question[lang]}
-                </span>
+                </h3>
               </summary>
 
               <div className="pb-6 md:pb-7 ps-10">

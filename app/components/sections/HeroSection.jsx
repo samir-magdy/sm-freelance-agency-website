@@ -12,7 +12,7 @@ export default function HeroSection({ lang }) {
 
       {/* ── Content ── */}
       <div className="hero-inner safari-hero-padding relative z-10 w-full mx-auto flex flex-col items-center text-center px-8 sm:px-10 pt-24 pb-24 sm:pt-44 sm:rtl:pb-32 sm:pb-28">
-        <p className="inline-flex items-center gap-2.5 sm:gap-[0.85rem]">
+        <h1 className="inline-flex items-center gap-2.5 sm:gap-[0.85rem]">
           <span
             aria-hidden="true"
             className="flex-none h-px w-[clamp(2rem,4vw,3rem)] rounded-full bg-linear-to-r rtl:bg-linear-to-l from-transparent to-white/70 shadow-[0_0_8px_oklch(76.7%_0.1399_91.2/0.25)]"
@@ -24,9 +24,9 @@ export default function HeroSection({ lang }) {
             aria-hidden="true"
             className="flex-none h-px w-[clamp(2rem,4vw,3rem)] rounded-full bg-linear-to-r rtl:bg-linear-to-l from-white/70 to-transparent shadow-[0_0_8px_oklch(76.7%_0.1399_91.2/0.25)]"
           />
-        </p>
+        </h1>
 
-        <h1
+        <h2
         id="hero-title"
           className="max-w-[30ch] mt-6 sm:my-4 mb-2 rtl:my-4 sm:rtl:mb-6 text-balance font-extrabold tracking-[-0.02em] text-content-heading text-[clamp(1.8rem,12vw,5.25rem)] rtl:text-[clamp(2rem,4.5vw,45rem)] ltr:leading-14 ltr:sm:leading-28 sm:rtl:max-w-[18ch] rtl:tracking-normal rtl:leading-[1.9] sm:rtl:leading-[1.55]"
           dangerouslySetInnerHTML={{ __html: hero.name[lang] }}

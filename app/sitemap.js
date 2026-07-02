@@ -17,23 +17,25 @@ function alternates(enUrl, arUrl) {
 }
 
 export default function sitemap() {
+  const now = new Date();
+
   const homeEntries = langs.map((lang) => ({
     url: homeUrl(lang),
-    lastModified: "2026-07-02",
+    lastModified: now,
     priority: lang === "en" ? 1.0 : 0.9,
     alternates: alternates(homeUrl("en"), homeUrl("ar")),
   }));
 
   const aboutEntries = langs.map((lang) => ({
     url: pageUrl(lang, "/about"),
-    lastModified: "2026-07-02",
+    lastModified: now,
     priority: 0.8,
     alternates: alternates(pageUrl("en", "/about"), pageUrl("ar", "/about")),
   }));
 
   const guidesListingEntries = langs.map((lang) => ({
     url: pageUrl(lang, "/guides"),
-    lastModified: "2026-06-25",
+    lastModified: now,
     priority: 0.8,
     alternates: alternates(pageUrl("en", "/guides"), pageUrl("ar", "/guides")),
   }));
@@ -54,7 +56,7 @@ export default function sitemap() {
     .filter((p) => p.liveUrl.startsWith("/portfolio/"))
     .map((p) => ({
       url: `${SITE_URL}${p.liveUrl}`,
-      lastModified: "2026-06-25",
+      lastModified: now,
       priority: 0.6,
     }));
 
