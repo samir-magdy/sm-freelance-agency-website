@@ -4,6 +4,7 @@ import butterDesignImg from "../../public/project-screenshots/butter-design.webp
 import dentalImg from "../../public/project-screenshots/dental.webp";
 import interiorImg from "../../public/project-screenshots/interior.webp";
 import petImg from "../../public/project-screenshots/pet.webp";
+import hadeerImg from "../../public/project-screenshots/hadeer.webp";
 
 import { SITE_URL } from "../constants";
 
@@ -44,6 +45,17 @@ export const projects = [
       "A fashion e-commerce demo by SM Web Design Studio showcasing advanced product listings and a polished shopping experience designed for retail scalability.",
     genre: "Fashion E-commerce",
     genreAr: "التجارة الإلكترونية للأزياء",
+  },
+  {
+    id: "HadeerEnglish",
+    liveUrl: "/portfolio/hadeer-english-tutor",
+    screenshot: hadeerImg,
+    schemaName: "Private English Tutor Website – Egypt",
+    schemaNameAr: "موقع مدرس لغة إنجليزية خاص – مصر",
+    description:
+      "A landing page built for Ms Hadeer Nabil, a private english tutor based in Cairo, Egypt. It highlights one-on-one lessons, courses available, and an interactive placement quiz designed to convert visitors into students.",
+    genre: "Private English Tutoring",
+    genreAr: "تدريس اللغة الإنجليزية الخاص",
   },
   {
     id: "DentalClinic",

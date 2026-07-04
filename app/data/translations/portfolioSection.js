@@ -83,5 +83,16 @@ const projectData = {
       ar: "Butter Design Bureau استوديو تصميم وهوية بصرية مقره القاهرة، متخصص في الهوية التجارية والاستراتيجية والتصميم البصري. بنينا موقعهم بأسلوب أنيق يعتمد على التايبوغرافي ليضع أعمالهم الإبداعية في قلب تجربة الزائر.",
     },
   },
+
+  HadeerEnglish: {
+    title: {
+      en: "Private English Tutoring",
+      ar: "تدريس اللغة الإنجليزية الخاص",
+    },
+    description: {
+      en: "A landing page built for Ms Hadeer Nabil, a private english tutor based in Cairo, Egypt. It highlights one-on-one lessons, courses available, and an interactive placement quiz designed to convert visitors into students.",
+      ar: "صفحة هبوط مميزة تم تصميمها للأستاذة هدير نبيل، مدرسة لغة إنجليزية في القاهرة. الموقع يبرز مميزات الدروس الفردية، وباقات الكورسات المتاحة، مع اختبار تحديد مستوى تفاعلي صُمم خصيصاً لتحوّيل الزوار لطلاب."
+    },
+  },
 };
 export { projectsSection, projectData };
