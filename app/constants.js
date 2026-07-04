@@ -9,5 +9,5 @@ export const SOCIAL_LINKS = {
   facebook: "https://www.facebook.com/SMWebDesignStudio",
   gbp: "https://www.google.com/maps/place/?q=place_id:ChIJvcMWKdK8MGERZCgcuuWWS1c",
   x: "https://x.com/SMWebDesignCo",
-  linkedin: "https://www.linkedin.com/company/sm-web-design-studio/",
+  linkedin: "https://www.linkedin.com/company/sm-web-design-studio-egypt/",
 };
