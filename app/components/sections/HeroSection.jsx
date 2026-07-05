@@ -33,21 +33,21 @@ export default function HeroSection({ lang }) {
         />
 
         <p
-          className="hero-sub w-full rtl:mt-0 mt-[clamp(0.5rem,3vw,1.75rem)] sm:mt-0 text-content-body text-[clamp(1.1rem,5vw,1.6rem)] rtl:text-[clamp(0.9rem,4vw,1.5rem)] sm:leading-[1.6] rtl:leading-[2.15] sm:rtl:leading-loose rtl:max-w-150 rtl:px-4"
+          className="hero-sub sm:max-w-none rtl:mt-0 mt-[clamp(0.5rem,3vw,1.75rem)] sm:mt-0 text-content-body text-[clamp(1.1rem,5vw,1.6rem)] rtl:text-[clamp(0.9rem,4vw,1.5rem)] sm:leading-[1.6] rtl:leading-[2.15] sm:rtl:leading-loose max-w-80 rtl:max-w-150 rtl:px-4"
           dangerouslySetInnerHTML={{ __html: hero.subheading[lang] }}
         />
 
         <div className="px-6 sm:px-0 flex flex-col sm:flex-row items-stretch sm:items-center sm:flex-wrap w-full sm:w-auto gap-3 sm:gap-6 mt-[clamp(2rem,4vw,2rem)]">
           <a
             href="#contact"
-            className="cta-primary inline-flex w-auto items-center justify-center rounded-[0.9rem] px-[1.9rem] py-[0.85rem] rtl:text-[clamp(1.1rem,1.2vw+0.6rem,1.5rem)] text-[clamp(1.2rem,1.2vw+0.6rem,1.6rem)] font-semibold bg-linear-to-b text-gray-900 rtl:pb-4"
+            className="cta-primary inline-flex w-auto items-center justify-center rounded-[0.9rem] px-[2vw] py-[1.5vh] text-[clamp(0.7rem,4.5vw,1.6rem)] font-semibold bg-linear-to-b text-gray-900 rtl:pb-3 sm:rtl:pb-3.5"
           >
             {hero.primaryCta[lang]}
           </a>
 
           <a
             href="#portfolio"
-            className="group inline-flex w-auto items-center justify-center gap-2 rounded-[0.9rem] border border-border-strong backdrop-blur-sm bg-white/2 px-[1.9rem] py-[0.85rem] text-[clamp(1.2rem,1.2vw+0.6rem,1.6rem)] rtl:text-[clamp(1.1rem,1.2vw+0.6rem,1.5rem)] font-semibold text-content-body transition-all hover:text-content-heading hover:border-white/30 rtl:pb-4"
+            className="group inline-flex w-auto items-center justify-center gap-2 rounded-[0.9rem] border border-border-strong backdrop-blur-sm bg-white/2 px-[2vw] py-[1.5vh] text-[clamp(0.7rem,4.5vw,1.6rem)] font-semibold text-content-body transition-all hover:text-content-heading hover:border-white/30 rtl:pb-3 sm:rtl:pb-3.5"
           >
             <span>{hero.secondaryCta[lang]}</span>
             <svg

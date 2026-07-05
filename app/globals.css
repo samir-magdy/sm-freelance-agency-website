@@ -47,6 +47,9 @@ section {
 #portfolio {
   --nav-h: 4rem;
 }
+[dir="rtl"] #portfolio {
+  --nav-h: 3rem;
+}
 
 @media (min-width: 1280px) {
   #portfolio {
@@ -250,36 +253,23 @@ section {
 /* safari only style */
 @supports (-webkit-hyphens: none) {
   @media (max-width: 680px) {
-    #mobile-header-cta {
-      font-size: 0.9rem;
-    }
-    #pricing-calculator{
+    #pricing-calculator {
       scroll-margin-top: 12rem;
     }
-    .safari-hero-padding{
+    .safari-hero-padding {
       padding-top: 10rem;
     }
-    [dir="rtl"] #hero-title{
-       font-size: clamp(2rem,9vw,5.25rem);
-    }
-    #portfolio-subheading {
-      display: block;
-    }
-    #portfolio-title {
-      padding-bottom: 0.5rem;
+    [dir="rtl"] #hero-title {
+      font-size: clamp(2rem, 9vw, 5.25rem);
     }
     #portfolio-genre {
       font-size: 0.75rem;
-      margin-bottom: 0.2rem;
-    }
-    #mobile-mockup{
-      height: 59.5vh;
     }
     [dir="rtl"] #portfolio-genre {
       font-size: 1rem;
     }
-    #portfolio {
-      --nav-h: 2.5rem;
+    .mobile-portfolio-buttons{
+      font-size: 1.1rem;
     }
   }
 }

@@ -116,6 +116,21 @@ export function generateStaticParams() {
 }
 
 // ─────────────────────────────────────────────
+// VIEWPORT METADATA
+// ─────────────────────────────────────────────
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+  colorScheme: "dark light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f0f1e" },
+  ],
+};
+
+// ─────────────────────────────────────────────
 // ROOT LAYOUT COMPONENT
 // ─────────────────────────────────────────────
 export default async function LangLayout({ children, params }) {

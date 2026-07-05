@@ -207,15 +207,14 @@ const handleDemoClick = useCallback(
       aria-labelledby="portfolio-heading"
     >
       {/* ── Section heading ── */}
-      <div className="text-center relative z-2 px-5 mb-1 md:mb-12">
+      <div className="text-center relative z-2 px-5 md:mb-12">
         <h2
           id="portfolio-heading"
-          className="reveal-element font-bold text-heading mb-2 rtl:mb-3"
+          className="reveal-element font-bold text-heading"
         >
           {t.heading[lang]}
         </h2>
         <p
-          id="portfolio-subheading"
           className="reveal-element hidden sm:block text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]"
         >
           {t.subheading[lang]}
@@ -291,7 +290,7 @@ const handleDemoClick = useCallback(
             id="portfolio-genre"
             aria-hidden="true"
             key={`genre-${project.id}`}
-            className="lg:hidden inline-flex items-center px-4 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-[0.1em] border border-border-subtle text-content-heading bg-surface-card"
+            className="lg:hidden inline-flex items-center px-4 py-1.5 rounded-xl text-[0.6rem] rtl:text-xs font-semibold uppercase tracking-[0.1em] border border-border-subtle text-content-heading bg-surface-card"
           >
             {isRtl ? project.genreAr : project.genre}
           </h3>
@@ -306,7 +305,7 @@ const handleDemoClick = useCallback(
             {/* Phone outer shell */}
             <div
               id="mobile-mockup"
-              className="phone-outer aspect-11/19.5 w-[64vw] sm:w-[50vw] md:w-[35vw] lg:w-[25vw] xl:w-[17.2vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="phone-outer aspect-11/19.5 w-[66vw] sm:w-[50vw] md:w-[35vw] lg:w-[25vw] xl:w-[17.2vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               {/* Left volume buttons */}
               <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -362,7 +361,7 @@ const handleDemoClick = useCallback(
           {/* Pagination dots */}
           <div
             dir="ltr"
-            className="flex items-center gap-1.5 mb-1"
+            className="flex items-center gap-1.5 mt-0.5 mb-0.5"
             role="tablist"
             aria-label="Project slides"
           >
@@ -385,10 +384,9 @@ const handleDemoClick = useCallback(
           {/* CTAs — mobile only: view live site + primary contact */}
           <div className="flex items-center gap-3 lg:hidden">
             <Link
-              id="portfolio-cta"
               onClick={handleCtaClick}
               href={ctaHref}
-              className="inline-flex items-center gap-2 whitespace-nowrap py-2.5 px-5 rounded-xl border border-border-strong text-content-body hover:text-content-heading text-base sm:text-[3.5vw] font-semibold tracking-wide transition-colors duration-200"
+              className="mobile-portfolio-buttons inline-flex items-center gap-2 whitespace-nowrap py-2.5 px-5 rounded-xl border border-border-strong text-content-body hover:text-content-heading text-sm sm:text-[3.5vw] font-semibold tracking-wide transition-colors duration-200"
               aria-label={`${t.viewProject[lang]} – ${pd.title[lang]}`}
             >
               {t.viewProject[lang]}
@@ -396,10 +394,10 @@ const handleDemoClick = useCallback(
             </Link>
             <a
               href="#contact"
-              className="cta-primary relative overflow-hidden inline-flex items-center gap-2 whitespace-nowrap py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-base sm:text-[3.5vw] font-semibold tracking-wide"
+              className="mobile-portfolio-buttons cta-primary relative overflow-hidden inline-flex items-center gap-2 whitespace-nowrap py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-sm sm:text-[3.5vw] font-semibold tracking-wide"
             >
               {t.primaryCta[lang]}
-              <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
+              <ArrowRight className="size-4 rotate-90" aria-hidden />
             </a>
           </div>
         </div>

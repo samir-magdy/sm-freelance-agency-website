@@ -1,6 +1,6 @@
 const projectsSection = {
   heading: {
-    en: "Portfolio",
+    en: "Our Portfolio",
     ar: "معرض أعمالنا",
   },
   subheading: {
@@ -8,12 +8,12 @@ const projectsSection = {
     ar: "استعرض أحدث مشاريعنا",
   },
   viewProject: {
-    en: "View Website",
-    ar: "عرض الموقع",
+    en: "View Site",
+    ar: "استعرض الموقع",
   },
   primaryCta: {
-    en: "Get in Touch",
-    ar: "تواصل معنا",
+    en: "Start a Project",
+    ar: "إبدأ موقعك",
   },
 };
 
@@ -32,7 +32,7 @@ const projectData = {
   Travel: {
     title: {
       en: "Travel & Tourism",
-      ar: "شركات السياحة والسفر",
+      ar: "السياحة والسفر",
     },
     description: {
       en: "Built for Sky Way Travel - a travel agency in Cairo specializing in trips to Dahab, Sinai. This website showcases their tours and destinations making it easy for visitors to find what they want and giving them the confidence to make the booking.",
@@ -42,8 +42,8 @@ const projectData = {
 
   DentalClinic: {
     title: {
-      en: "Health & Wellness",
-      ar: "تصميم ونظام حجز عيادات",
+      en: "Clinics & Medical",
+      ar: "نظام حجز عيادات",
     },
     description: {
       en: "Patients always choose the clinic they trust most. This site presents your clinic in a way that makes you the obvious choice. In addition to a built-in booking system you can track, making you independent of platforms like Vezeeta.",
@@ -53,7 +53,7 @@ const projectData = {
 
   InteriorDesign: {
     title: {
-      en: "Interior Designer Porfolio",
+      en: "Interior Designer Portfolio",
       ar: "خدمات التصميم الداخلي",
     },
     description: {
@@ -75,19 +75,19 @@ const projectData = {
 
   ButterDesign: {
     title: {
-      en: "Butter Design Bureau",
+      en: "Design & Branding Agency",
       ar: "تصميم وهوية بصرية",
     },
     description: {
       en: "A design & branding agency in Cairo - Specializing in brand identity, strategy, and visual design. We built their website with an inspiring and playful vibe that showcases their creative work and lets it take center stage.",
-      ar: "Butter Design Bureau استوديو تصميم وهوية بصرية مقره القاهرة، متخصص في الهوية التجارية والاستراتيجية والتصميم البصري. بنينا موقعهم بأسلوب أنيق يعتمد على التايبوغرافي ليضع أعمالهم الإبداعية في قلب تجربة الزائر.",
+      ar: "شركة تصميم وهوية بصرية مقرها القاهرة، متخصصة في الهوية الاستراتيجية والتصميم البصري. بنينا موقعهم بأسلوب أنيق يعتمد على التايبوغرافي ليضع أعمالهم الإبداعية في قلب تجربة الزائر.",
     },
   },
 
   HadeerEnglish: {
     title: {
       en: "Private English Tutoring",
-      ar: "تدريس اللغة الإنجليزية الخاص",
+      ar: "الدروس الخاصة",
     },
     description: {
       en: "A landing page built for Ms Hadeer Nabil, a private english tutor based in Cairo, Egypt. It highlights one-on-one lessons, courses available, and an interactive placement quiz designed to convert visitors into students.",

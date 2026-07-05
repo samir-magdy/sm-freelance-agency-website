@@ -73,11 +73,43 @@ export default async function AboutPage({ params }) {
   const t = aboutSection;
   const dir = lang === "ar" ? "rtl" : "ltr";
 
+  // ─────────────────────────────────────────────
+  // PERSON SCHEMA (ABOUT PAGE)
+  // ─────────────────────────────────────────────
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${SITE_URL}#founder`,
+    name: "Samir Magdy",
+    alternateName: "سمير مجدي",
+    jobTitle: "Founder, Web Designer & Developer",
+    description:
+      "Samir Magdy is a web designer & developer & the founder of SM Web Design Studio, specializing in high-performance, custom web development.",
+    nationality: { "@type": "Country", name: "Egypt" },
+    url: `${SITE_URL}/${lang}/about`,
+    image: `${SITE_URL}/profilePhoto.jpg`,
+    sameAs: [
+      "https://www.linkedin.com/in/samir-magdy-/",
+      "https://github.com/samir-magdy",
+    ],
+    worksFor: {
+      "@type": "ProfessionalService",
+      "@id": `${SITE_URL}#business`,
+      name: SITE_NAME,
+    },
+  };
+
   return (
     <div
       dir={dir}
       className="relative isolate bg-background px-8 py-16 md:flex-1 md:pt-28 md:pb-28"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(personSchema).replace(/</g, "\\u003c"),
+        }}
+      />
       <article className="relative z-10 mx-auto max-w-6xl">
         {/* ── Masthead ──────────────────────────────────── */}
         <header className="reveal-element text-center">
@@ -102,7 +134,7 @@ export default async function AboutPage({ params }) {
         )}
 
         {/* ── Pillars — section eyebrow + cards ─────────── */}
-        <div className="reveal-element mt-20 flex items-center justify-center gap-4">
+        <div className="reveal-element mt-12 flex items-center justify-center gap-4">
           <span
             aria-hidden="true"
             className="h-px w-8 bg-linear-to-r rtl:bg-linear-to-l from-transparent to-gold/50"
@@ -155,7 +187,7 @@ export default async function AboutPage({ params }) {
             <p
               key={`post-${i}`}
               className={`reveal-element mx-auto max-w-4xl text-center leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)] ${
-                i === 0 ? "mt-20" : "mt-8"
+                i === 0 ? "mt-16" : "mt-8"
               }`}
             >
               {para[lang]}
@@ -165,7 +197,7 @@ export default async function AboutPage({ params }) {
 
         {/* ── Signature — portrait + name ───────────────── */}
         {/* Mobile: centered stack (unchanged). Desktop: side-by-side founder card. */}
-        <div className="reveal-element mt-20 flex max-w-4xl mx-auto flex-col items-center text-center md:mt-28 md:flex-row md:items-center md:justify-center md:gap-12 md:text-start">
+        <div className="reveal-element mt-20 flex max-w-4xl mx-auto flex-col items-center text-center md:mt-16 md:flex-row md:items-center md:justify-center md:gap-12 md:text-start">
           {/* Top hairline — mobile only; desktop uses the vertical gold rule */}
           <span className="h-px w-full max-w-[8rem] bg-border-subtle md:hidden" aria-hidden="true" />
              <p className="sm:hidden mt-5 text-[clamp(2rem,5vw,1.55rem)] font-semibold text-content-heading md:mt-0 md:text-[clamp(1.8rem,2.4vw,2.4rem)] md:leading-tight">

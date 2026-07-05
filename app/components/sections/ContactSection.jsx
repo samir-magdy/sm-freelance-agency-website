@@ -240,7 +240,7 @@ export default function ContactSection({ lang }) {
                     id="message"
                     rows={2}
                     placeholder={t.form.messagePlaceholder[lang]}
-                    className="resize-none leading-loose placeholder:text-content-muted text-base w-full px-4 py-3 rounded-lg border-2 border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-strong outline-none"
+                    className="resize-none leading-relaxed placeholder:text-content-muted text-base w-full px-4 py-3 rounded-lg border-2 border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-strong outline-none"
                     value={formData.message}
                     onChange={(e) =>
                       setFormData((prev) => ({ ...prev, message: e.target.value }))

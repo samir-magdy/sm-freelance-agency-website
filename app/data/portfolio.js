@@ -53,9 +53,9 @@ export const projects = [
     schemaName: "Private English Tutor Website – Egypt",
     schemaNameAr: "موقع مدرس لغة إنجليزية خاص – مصر",
     description:
-      "A landing page built for Ms Hadeer Nabil, a private english tutor based in Cairo, Egypt. It highlights one-on-one lessons, courses available, and an interactive placement quiz designed to convert visitors into students.",
+      "A landing page built for Ms Hadeer Nabil, a private English tutor based in Cairo, Egypt. It highlights one-on-one lessons, courses available, and an interactive placement quiz designed to convert visitors into students.",
     genre: "Private English Tutoring",
-    genreAr: "تدريس اللغة الإنجليزية الخاص",
+    genreAr: "دروس خاصة",
   },
   {
     id: "DentalClinic",

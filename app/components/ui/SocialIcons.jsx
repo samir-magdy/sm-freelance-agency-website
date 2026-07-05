@@ -51,6 +51,17 @@ export default function SocialIcons() {
       </li>
       <li>
         <a
+          href={SOCIAL_LINKS.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contact SM Web Design Studio on WhatsApp"
+          className="text-content-muted hover:text-content-heading"
+        >
+          <WhatsAppIcon className="w-5 h-5" />
+        </a>
+      </li>
+      <li>
+        <a
           href={SOCIAL_LINKS.linkedin}
           target="_blank"
           rel="noopener noreferrer"

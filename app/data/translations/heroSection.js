@@ -17,7 +17,7 @@ const hero = {
   },
   subheading: {
     en: "We build modern websites that validate your brand's <strong>true value</strong>.",
-    ar: "نصمم مواقع مخصصة تعكس <strong>القيمة الحقيقية</strong> لشركتك وتثبت مكانتك في السوق من أول نظرة.",
+    ar: "نصمم مواقع مخصصة تعكس <strong>القيمة الحقيقية</strong> لشركتك وتثبت مكانتك في السوق.",
   },
 };
 
