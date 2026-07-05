@@ -48,7 +48,7 @@ export const projects = [
   },
   {
     id: "HadeerEnglish",
-    liveUrl: "/portfolio/hadeer-english-tutor",
+    liveUrl: "https://hadeernabil.site",
     screenshot: hadeerImg,
     schemaName: "Private English Tutor Website – Egypt",
     schemaNameAr: "موقع مدرس لغة إنجليزية خاص – مصر",
