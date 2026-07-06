@@ -16,7 +16,7 @@ const resource = {
   },
   content: {
     en: `
-<p>When you hear about a company or service you are considering, what is the first thing you do? You open Google and search for it to check the details and make sure it is legitimate. Your customers do exactly the same thing. If they search for your business and find no website, while your competitor shows up with a professional one, there is a good chance you have already lost them before you had a chance to make your case. A professional website is your official address online. The moment a customer lands on it, they know they are dealing with something real, established, and worth trusting.</p>
+<p>A professional website is your official address online. The moment a customer lands on it, they know they are dealing with something real, established, and worth trusting. Imagine the following scenario, you hear about a company or service you are considering dealing with, what is the first thing you do? You open Google or ChatGPT and search for it to make sure it is legitimate. Your customers do exactly the same thing, if they search for your business and find no website, they will instead find your competitor's site, in that case you have very likely already lost that client before you had a chance. This is the reality of the digital landascape today.</p>
 
 <h2>Why a Facebook or Instagram page is not enough</h2>
 <p>Social media is great for getting discovered, but it should not be the home of your business. Here is why relying on it alone puts you at risk:</p>

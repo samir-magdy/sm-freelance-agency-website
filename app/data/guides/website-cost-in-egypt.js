@@ -11,15 +11,15 @@ const resource = {
     ar: "سعر تصميم موقع إلكتروني في مصر (2026)",
   },
   excerpt: {
-    en: "Professional website prices in Egypt typically range anywhere from 5,000 to 100,000 EGP. The truth is, there is no single fixed answer for the cost, as every project is different and many factors influence the final pricing. In this guide we tell you what these factors are so that you know what you're paying for when making your investment.",
+    en: "A professional website in Egypt typically costs anywhere from EGP 5,000 to over EGP 100,000. The truth is, there is no single fixed answer for the cost, as every project is different and many factors influence the final pricing. In this guide we tell you what these factors are so that you know what you're paying for when making your investment.",
     ar: "أسعار تصميم المواقع الإلكترونية في مصر ممكن تتراوح من 5,000 لـ 100,000 ج.م، والحقيقة إن مفيش إجابة واحدة ثابتة لسؤال التكلفة، لأن كل مشروع بيختلف عن التاني وفي عوامل كتير بتدخل في التسعير.",
   },
   content: {
     en: `
-<p><strong>Professional website prices in Egypt typically range from 5,000 to 100,000 EGP.</strong> The truth is, there is no single fixed answer for the cost, as every project is different and many factors influence the final pricing. This variation is never random. By reading this guide, you will discover the different types of websites, the expected price range for each, and the core factors that determine market pricing so you can avoid overpaying or choosing the cheapest option and regretting it later.</p>
+<p><strong>A professional website in Egypt typically costs anywhere from EGP 5,000 to over EGP 100,000.</strong> Every project is different and many factors influence the final price. By reading this guide, you will discover the different types of websites, the expected price range for each, and the core factors that determine market price. With this new knowledge you will be able to avoid overpaying for your website, or choosing the cheapest option and regretting it later.</p>
 
 <h2>What is the expected cost by website type?</h2>
-<p>A landing page costs 5,000–25,000 EGP, a business website 8,000–40,000 EGP, and an e-commerce store 15,000–100,000 EGP. Here is how those ranges break down:</p>
+<p>This table details the different types of websites and the average price of each:</p>
 <table>
   <thead>
     <tr>
@@ -34,7 +34,7 @@ const resource = {
         <strong>Landing Page</strong>
         <br><small style="color: #bfbfbf;">A single page that drives the visitor to take action (fill a form or contact via WhatsApp)</small>
       </td>
-      <td>5,000 – 25,000</td>
+      <td>5,000 – 20,000</td>
       <td>Freelancers & Startups</td>
     </tr>
     <tr>
@@ -42,7 +42,7 @@ const resource = {
         <strong>Business Website</strong>
         <br><small style="color: #bfbfbf;">A multi-page informational site to showcase your services and complete company details</small>
       </td>
-      <td>8,000 – 40,000</td>
+      <td>8,000 – 25,000</td>
       <td>Established Businesses</td>
     </tr>
     <tr>
@@ -50,20 +50,21 @@ const resource = {
         <strong>E-commerce Store</strong>
         <br><small style="color: #bfbfbf;">A site to display your products for sale, supports online payments and inventory management</small>
       </td>
-      <td>15,000 – 100,000</td>
+      <td>20,000 – 100,000</td>
       <td>Brands & Retailers</td>
     </tr>
   </tbody>
 </table>
-<p><small>Note: These prices are approximate and depend on the needs of startups and small businesses. Large-scale projects are priced individually.</small></p>
+<p><small style="font-size: 1.05rem"><strong>Note</strong>: These prices are an estimate and reflect the needs of small businesses. Every agency has its own pricing strategy and larger corporate projects are priced individually.</small></p>
 
 
-<h2>What determines the price of any website?</h2>
-<p>Nine factors determine the price of a website in Egypt: number of pages, template vs. custom design, technology used, special features, copywriting, multiple languages, SEO, hosting, and maintenance. Here is how each one affects your budget:</p>
+<h2>What factors determine the price of a website?</h2>
+<p>The following factors determine the price of a website. Here is how each one affects your budget:</p>
 <ul>
+<li><strong>Who builds your website:</strong> Hiring a freelancer is usually more affordable than working with a full-service agency. This is mainly due to freelancers having lower overhead costs than companies with large specialized teams.</li>
+<li><strong>The technology used:</strong> Working with ready-made platforms like Squarespace or Wix is faster and more affordable, while custom programming increases the cost because it requires specialized developers.</li>
   <li><strong>Site size and number of pages:</strong> A one-page website costs much less than a 30-page site because every extra page requires additional design and development effort.</li>
   <li><strong>Template vs. custom design:</strong> Ready-made templates involve no actual design work, meaning your site will look identical to thousands of others. Custom design takes more time and effort, making it more expensive.</li>
-  <li><strong>The technology used:</strong> Working with ready-made platforms like Squarespace or Wix is faster and more affordable, while custom programming increases the cost because it requires specialized developers.</li>
   <li><strong>Special features:</strong> The price increases with the addition of custom programmatic features like a booking system, a customer support chatbot, or a custom dashboard to manage the site yourself.</li>
   <li><strong>Copywriting:</strong> If you provide the written content, there is no extra cost. But if the agency building the site writes the content, it's an additional billed service.</li>
   <li><strong>Multiple languages:</strong> Adding languages isn't just translation; it requires specific development work, such as adjusting the design for Right-to-Left (RTL) text direction.</li>
@@ -74,24 +75,22 @@ const resource = {
 <h2 style="margin-bottom: 0.4rem">Website Price Calculator</h2>
 <p style="margin-bottom: 0">Choose your website type, content size, and required add-ons to see an instant estimate:</p>
 <!-- PRICING_ESTIMATOR_SLOT -->
-<h2>The Trap of Cheap Websites: Hidden Risks and How to Avoid Them</h2>
-<p>The trap of cheap websites is that a 1,000 EGP build almost always costs more in the long run, because you end up paying again to rebuild it within a year or two. If you search and compare market prices, you might find a freelancer offering a website for 1,000 EGP while a web design agency quotes 15,000 EGP for the same project. This massive difference means the quality of work and the value you receive will be completely different, or that essential features are simply missing from the cheaper offer.</p>
-<p>You might encounter that 1,000 EGP offer, but beware. This type of work usually doesn't require a developer at all; you could likely do it yourself. We discuss this in detail in our guide on <a href='/en/guides/diy-vs-professional-web-design'>DIY website builders vs professional web design</a>.</p>
+<h2 style="margin-top: 0.5rem">The Trap of Cheap Websites: Hidden Risks and How to Avoid Them</h2>
 <p>For serious businesses, a cheap website usually causes more harm than good. Here is the typical failure pattern we see in the Egyptian market:</p>
 <ul>
   <li>The cheap website is often extremely slow, which frustrates customers and ruins your Google rankings.</li>
   <li>The design is repetitive and unprofessional, making it impossible to stand out from competitors using the same templates.</li>
-  <li>The website doesn't work well on mobile devices. In Egypt, the vast majority of traffic is mobile.</li>
-  <li>Eventually, you will have to pay again to fix it, and it's often easier to rebuild from scratch. The result is wasted time and money.</li>
+  <li>The website doesn't work well on mobile devices, causing visitors to leave. In Egypt, the vast majority of traffic is mobile.</li>
+  <li>Eventually, you will have to pay again to fix it, and it's often easier to rebuild from scratch.</li>
 </ul>
-<p>Don't repeat the mistakes of others. Read our guide on <a href='/en/guides/choose-web-design-company-egypt'>how to choose the best web design company in Egypt</a> for additional information to protect yourself from falling into the same trap.</p>
-<p>The bottom line is that the right question isn't "what is the cheapest website I can get?" but rather "what is the minimum investment that will generate a positive return for my business?"</p>`,
+<p>Don't repeat the mistakes of others. Read our guide on <a href='/en/guides/choose-web-design-company-egypt'>how to choose the best web design company in Egypt</a> for additional information on how to protect yourself and choose wisely.</p>
+<p>The <strong>bottom line</strong> is that the right question isn't "what is the cheapest website I can get?" but rather "what is the minimum investment that will generate a positive return for my business?"</p>`,
 
-    ar: `
+ar: `
 <p><strong>بشكل عام، أسعار تصميم المواقع الإلكترونية في مصر ممكن تتراوح من 5,000 لـ 100,000 ج.م</strong>، والحقيقة إن مفيش إجابة واحدة ثابتة لسؤال التكلفة، لأن كل مشروع بيختلف عن التاني وفي عوامل كتير بتدخل في التسعير. من خلال قرايتك للدليل ده، هتكتشف أنواع المواقع المختلفة، ونطاق السعر المتوقع لكل نوع، وهتعرف إيه هي العوامل الأساسية اللي بتحدد سعر الموقع في السوق علشان تتجنب إنك تدفع أكتر من اللازم أو تختار أرخص حاجة وتندم بعدين.</p>
 
 <h2>إيه التكلفة المتوقعة حسب نوع الموقع؟</h2>
-<p>صفحة الهبوط بتكلف من 5,000 لـ 25,000 جنيه، موقع الشركة من 8,000 لـ 40,000 جنيه، والمتجر الإلكتروني من 15,000 لـ 100,000 جنيه. دي تفاصيل نطاقات الأسعار دي:</p>
+<p>السعر المتوقع حسب نوع الموقع:</p>
 <table>
   <thead>
     <tr>
@@ -106,7 +105,7 @@ const resource = {
         <strong>صفحة هبوط</strong>
         <br><small style="color: #bfbfbf;">صفحة واحدة تعريفية بتخلي الزائر ياخد إجراء مُعين (تعبئة نموذج أو رسالة عبر الواتساب)</small>
       </td>
-      <td>5,000 – 25,000</td>
+      <td>5,000 – 20,000</td>
       <td>المستقلين والشركات الناشئة</td>
     </tr>
     <tr>
@@ -114,7 +113,7 @@ const resource = {
         <strong>موقع شركة</strong>
         <br><small style="color: #bfbfbf;">موقع تعريفي، متعدد الصفحات لعرض خدماتك، وتفاصيل الشركة بالكامل</small>
       </td>
-      <td>8,000 – 40,000</td>
+      <td>8,000 – 25,000</td>
       <td>الشركات المستقرة</td>
     </tr>
     <tr>
@@ -122,45 +121,43 @@ const resource = {
         <strong>متجر إلكتروني</strong>
         <br><small style="color: #bfbfbf;">موقع يعرض منتجاتك للبيع، بيدعم الدفع الإلكتروني وإدارة المخزون</small>
       </td>
-      <td>15,000 – 100,000</td>
+      <td>20,000 – 100,000</td>
       <td>البراندات والتجار</td>
     </tr>
   </tbody>
 </table>
-<p><small>ملحوظة: الأسعار المذكورة تقريبية وتعتمد على احتياجات الشركات الناشئة والصغيرة. المشاريع الضخمة بيتحدد سعرها بشكل مخصص.</small></p>
-
+<p><small style="font-size: 1.1rem"><strong>ملحوظة:</strong> الأسعار المذكورة تقريبية وتعكس احتياجات الشركات الصغيرة. لكل شركة تصميم سياسة تسعير خاصة بها، أما المشاريع الكبيرة فيتم تسعيرها بشكل مخصص.</small></p>
 
 <h2>إيه اللي بيحدد سعر أي موقع إلكتروني؟</h2>
-<p>في تسع عوامل بتحدد سعر أي موقع في مصر: عدد الصفحات، قالب جاهز ولا تصميم مخصص، التكنولوجيا المستخدمة، المميزات الخاصة، كتابة المحتوى، تعدد اللغات، الـ SEO، الاستضافة، والصيانة. دي طريقة تأثير كل عامل على ميزانيتك:</p>
+<p>العوامل التالية هي اللي بتحدد سعر أي موقع إلكتروني. ودي طريقة تأثير كل عامل على ميزانيتك:</p>
 <ul>
-<li><strong>حجم الموقع وعدد الصفحات:</strong> موقع من صفحة واحدة تكلفته أقل بكثير من موقع متفرع لـ 30 صفحة، لأن كل صفحة زيادة بتحتاج مجهود إضافي في التصميم والبرمجة.</li>
-<li><strong>قالب جاهز ولا تصميم مخصص:</strong> القوالب الجاهزة مفيهاش شغل تصميم، ده معناه إن شكل الموقع مطابق لآلاف المواقع التانية، لكن التصميم المخصص بياخد وقت ومجهود أكبر وبالتالي تكلفته أعلى.</li>
-<li><strong>التكنولوجيا المستخدمة:</strong> الشغل على المنصات الجاهزة زي ووردبريس أو ويكس بيكون أسرع وأوفر في السعر، أما البرمجة الخاصة بتزود التكلفة لأنها بتحتاج مبرمجين متخصصين.</li>
-<li><strong>المميزات الخاصة:</strong> السعر بيزيد مع إضافة ميزات برمجية خاصة زي نظام حجز، أو شات بوت للدعم الفني، أو لوحة تحكم مخصصة لإدارة الموقع بنفسك.</li>
-  <li><strong>كتابة المحتوى:</strong> لو هتسلم المحتوى المكتوب للموقع يبقى مفيش تكلفة إضافية، لكن لو الجهة اللي بتبني الموقع هتكتب المحتوى، بيكون في تكلفة زيادة.</li>
-  <li><strong>تعدد اللغات:</strong> إضافة لغات تانية للموقع بتزود التكلفة لأنها مش مجرد ترجمة، دي بتحتاج شغل برمجي خاص زي تعديل اتجاهات التصميم (RTL).</li>
-  <li><strong>تهيئة محركات البحث (SEO):</strong> تهيئة الموقع علشان يظهر في نتائج البحث دي خدمة برمجية بتدخل في الحسبة، وممكن تاخد ميزانية لوحدها لو عايز فرص حقيقية إنك تتصدر نتائج جوجل.</li>
-  <li><strong>الاستضافة:</strong> الاستضافة المشتركة سعرها رخيص بس ممكن تخلي الموقع بطيء مع ضغط الزوار أو في أسوأ الأحوال ممكن الموقع ميشتغلش خالص، عكس الاستضافة الخاصة اللي بتضمن كفاءة أعلى.</li>
-  <li><strong>الصيانة والدعم الفني:</strong> عقود الصيانة الدورية (الشهرية أو السنوية) دي تكلفة إضافية بتضمن إن الموقع يفضل شغال بكفاءة وإن أي مشكلة تظهر بعد التسليم تتحل بدون تكاليف.</li>
-  </ul>
-  
-  <h2 style="margin-bottom: 0.4rem">حاسبة تكلفة المواقع الإلكترونية</h2>
-  <p style="margin-bottom: 0">اختار نوع الموقع، حجم المحتوى، الإضافات اللي محتاجها، وهتشوف تقدير سعر فوري:</p>
-  <!-- PRICING_ESTIMATOR_SLOT -->
-
-<h2>فخ الموقع الرخيص: المخاطر الخفية وإزاي تتجنبها</h2>
-<p>فخ الموقع الرخيص هو إن الموقع اللي بـ 1,000 جنيه بيكلفك أكتر على المدى الطويل، لأنك بتضطر تدفع تاني علشان تبنيه من الأول في خلال سنة أو اتنين. لو قعدت تدور وتقارن الأسعار في السوق، هتلاقي عروض بـ 1,000 جنيه، وفي نفس الوقت هتلاقي عروض تانية لنفس الموقع بـ 15,000 جنيه. الفرق الضخم ده معناه إن جودة الشغل والقيمة اللي هتاخدها مختلفة تماماً، أو إن فيه تفاصيل ومميزات أساسية مش موجودة أصلاً في العرض الأرخص.</p>
-<p>ممكن يقابلك العرض اللي بـ 1,000 جنيه، لكن احذر من الأسعار دي. نوع الشغل ده مش محتاج مبرمج من الأساس، انت ممكن تعمله بنفسك. وده موضوع بنتكلم عنه بالتفصيل في دليلنا عن <a href='/ar/guides/diy-vs-professional-web-design'>الفرق بين تصميم موقعك بنفسك وتوظيف محترف</a>.</p>
-<p>لو شغلك جدي، الموقع الرخيص هيضرك أكتر ما يفيدك. ده النمط اللي بنشوفه بشكل متكرر في السوق المصري:</p>
-<ul>
-  <li>الموقع الرخيص غالباً بيبقى بطيء جداً، وده بيخلي العملاء يقفلوه ومبيظهرش في جوجل.</li>
-  <li>التصميم بيبقى مكرر ومش احترافي، فمش هتتميز عن منافسيك اللي مستخدمين نفس القوالب.</li>
-  <li>الموقع مبيشتغلش كويس على الموبايل، وفي مصر، الأغلبية العظمى بتستخدم الموبايل.</li>
-  <li>في الآخر هتضطر تدفع فلوس تاني علشان تصلح، وغالباً بيكون أسهل إنك تبني من الأول. النتيجة بتكون إنك ضيعت وقتك وفلوسك.</li>
+  <li><strong>الجهة اللي هتبني الموقع:</strong> التعاقد مع مستقل (Freelancer) بيكون غالباً أقل تكلفة من شركة تصميم مواقع متكاملة، لأن المستقل عنده مصاريف تشغيل أقل مقارنة بالشركات اللي عندها فرق عمل متخصصة.</li>
+  <li><strong>التكنولوجيا المستخدمة:</strong> الشغل على المنصات الجاهزة زي Squarespace أو Wix بيكون أسرع وأوفر في السعر، أما البرمجة الخاصة فبتزود التكلفة لأنها بتحتاج مبرمجين متخصصين.</li>
+  <li><strong>حجم الموقع وعدد الصفحات:</strong> موقع من صفحة واحدة تكلفته أقل بكثير من موقع متفرع لـ 30 صفحة، لأن كل صفحة زيادة بتحتاج مجهود إضافي في التصميم والبرمجة.</li>
+  <li><strong>قالب جاهز ولا تصميم مخصص:</strong> القوالب الجاهزة مفيهاش شغل تصميم، وده معناه إن شكل الموقع هيبقى مطابق لآلاف المواقع التانية. أما التصميم المخصص فبياخد وقت ومجهود أكبر، وبالتالي تكلفته أعلى.</li>
+  <li><strong>المميزات الخاصة:</strong> السعر بيزيد مع إضافة ميزات برمجية خاصة زي نظام حجز، أو شات بوت للدعم الفني، أو لوحة تحكم مخصصة لإدارة الموقع بنفسك.</li>
+  <li><strong>كتابة المحتوى:</strong> لو هتسلم المحتوى المكتوب للموقع، مفيش تكلفة إضافية. لكن لو الجهة اللي بتبني الموقع هتكتب المحتوى، فدي خدمة إضافية بتتحاسب عليها.</li>
+  <li><strong>تعدد اللغات:</strong> إضافة لغات تانية للموقع بتزود التكلفة لأنها مش مجرد ترجمة، لكنها بتحتاج شغل تطوير إضافي زي تعديل التصميم ليدعم اتجاه الكتابة من اليمين لليسار (RTL).</li>
+  <li><strong>تهيئة محركات البحث (SEO):</strong> تهيئة الموقع للظهور في نتائج البحث خدمة تقنية مستقلة بتدخل في تكلفة المشروع، وممكن يكون ليها ميزانية خاصة لو عايز فرص حقيقية للتصدر في نتائج جوجل.</li>
+  <li><strong>الاستضافة:</strong> الاستضافة المشتركة رخيصة، لكنها ممكن تخلي الموقع بطيء مع زيادة عدد الزوار أو حتى يتوقف عن العمل، بعكس الاستضافة الخاصة اللي بتوفر أداء أعلى.</li>
+  <li><strong>الصيانة والدعم الفني:</strong> عقود الصيانة الدورية (الشهرية أو السنوية) بتعتبر تكلفة إضافية، لكنها بتضمن إن الموقع يفضل شغال بكفاءة وإن أي مشكلة تظهر بعد التسليم تتحل بدون تكاليف مفاجئة.</li>
 </ul>
-<p>متكررش أخطاء الآخرين، اقرأ دليلنا: <a href="/ar/guides/choose-web-design-company-egypt">إزاي تختار أفضل شركة تصميم مواقع في مصر</a>، لمعلومات إضافية هتحميك من الوقوع في نفس الفخ.</p>
-<p>في المحصلة، السؤال الصحيح مش «إيه أرخص موقع ممكن أعمله؟» لكن «إيه أقل استثمار هيجيب عائد إيجابي لشركتي؟»</p>`,
-  },
+
+<h2 style="margin-bottom: 0.4rem">حاسبة تكلفة المواقع الإلكترونية</h2>
+<p style="margin-bottom: 0">اختار نوع الموقع، حجم المحتوى، والإضافات اللي محتاجها، وهتشوف تقدير سعر فوري:</p>
+<!-- PRICING_ESTIMATOR_SLOT -->
+
+<h2 style="margin-top: 0.5rem">فخ الموقع الرخيص: المخاطر الخفية وإزاي تتجنبها</h2>
+<p>لو شغلك جدي، فالموقع الرخيص غالباً هيضرك أكتر ما هيفيدك. ده النمط اللي بنشوفه بشكل متكرر في السوق المصري:</p>
+<ul>
+  <li>الموقع الرخيص غالباً بيبقى بطيء جداً، وده بيخلي العملاء يقفلوه وبيأثر سلباً على ظهوره في نتائج جوجل.</li>
+  <li>التصميم بيبقى مكرر ومش احترافي، فبيكون صعب تتميز عن منافسيك اللي مستخدمين نفس القوالب.</li>
+  <li>الموقع مبيشتغلش كويس على الموبايل، مع إن أغلب الزيارات في مصر بتيجي من أجهزة الموبايل.</li>
+  <li>في الآخر هتضطر تدفع فلوس تاني علشان تصلحه، وغالباً بيكون أسهل إنك تبنيه من الصفر.</li>
+</ul>
+<p>متكررش أخطاء الآخرين. اقرأ دليلنا: <a href="/ar/guides/choose-web-design-company-egypt">إزاي تختار أفضل شركة تصميم مواقع في مصر</a>، علشان تعرف إزاي تحمي نفسك وتختار الجهة المناسبة.</p>
+<p>في النهاية، السؤال الصحيح مش «إيه أرخص موقع ممكن أعمله؟» لكن «إيه أقل استثمار هيحقق عائد إيجابي لعملي؟»</p>`,
+},
   metaDescription: {
     en: "Find out how much a professional website costs in Egypt in 2026. An honest EGP breakdown of what drives the price for landing pages, business sites, and online stores.",
     ar: "عايز تعرف موقعك هيكلفك كام؟ احسب تكلفة الموقع فوراً باستخدام حاسبة الأسعار الذكية، واكتشف العوامل اللي بتحدد الأسعار.",

@@ -7,7 +7,7 @@ const resource = {
     ar: "ازاي تختار أفضل شركة تصميم مواقع في مصر؟",
   },
   metaTitle: {
-    en: "How to Choose the Best Web Design Company/Agency",
+    en: "How to Choose the Best Web Design Agency in Egypt",
     ar: "ازاي تختار أفضل شركة تصميم مواقع في مصر؟ (2026)",
   },
   excerpt: {
@@ -49,7 +49,7 @@ const resource = {
 <p>The right choice depends entirely on your needs and budget. Once you have settled on a type, the criteria below apply to all three.</p>
 
 <h2>What should you check before hiring?</h2>
-<p>The most important thing to check is their own website. Is the design professional? Is it fast? Do the contact forms actually work, or are they just for show? Are there broken links or buttons that go nowhere? Inspect their site carefully. If you find obvious problems, look elsewhere. A company that cannot keep its own website in order will not do better work on yours. As a reference for what a working portfolio looks like, you can browse <a href="/en/#portfolio">our web design portfolio</a>; every project links to a live, deployed site you can inspect yourself.</p>
+<p>The most important thing to check is their own website. Is the design professional? Is it fast? Do the contact forms actually work, or are they just for show? Are there broken links or buttons that go nowhere? Inspect their site carefully. If you find obvious problems, look elsewhere. A company that cannot keep its own website in order will not do better work on yours. As a reference for what a working portfolio looks like, you can browse <a href="/en/#portfolio">our web design portfolio</a>; every project links to a live, working website you can inspect yourself.</p>
 
 <h2>What are the red flags to watch for?</h2>
 <p>The main red flags are no live portfolio, unrealistic promises, vague or USD-only pricing, no interest in your business, and prices that are unusually cheap or unusually high. Walk away from any provider showing these signs:</p>
@@ -62,7 +62,7 @@ const resource = {
 </ul>
 
 <h2>Our take: How to make the right call</h2>
-<p>The right company has a live portfolio you can explore, genuinely wants to understand your goals, is transparent about pricing, and communicates clearly. They do not need to be the cheapest or the biggest; they need to be the right fit for your business. Transparency, clear communication, and a genuine partnership are the same standards we hold ourselves to; you can read more about <a href='/en/about'>how we work</a>. If you are weighing doing it yourself through a website builder, read our guide on <a href='/en/guides/diy-vs-professional-web-design'>DIY vs hiring a professional</a> before you decide.</p>`,
+<p>The right company has a live portfolio you can explore, genuinely wants to understand your goals, is transparent about pricing, and communicates clearly. They do not need to be the cheapest or the biggest; they need to be the right fit for your business. Transparency, clear communication, and a genuine partnership are the same standards we hold ourselves to; you can read more about <a href='/en/about'>how we work</a>. If you are weighing doing it yourself through a website builder, read our guide on <a href='/en/guides/diy-vs-professional-web-design'>DIY website builders vs hiring a professional</a> before you decide.</p>`,
 
     ar: `
 <p>الشركة المناسبة في مصر عندها سابقة أعمال من مواقع حقيقية معروضة تقدر تدخل عليها وتجربها بنفسك، بتسأل عن أهدافك، شفافة في التسعير، وبتتواصل بوضوح في مرحلة الاتفاق. لكن لازم تقرر الأول هل تختار مستقل، استوديو، أو شركة. خلينا نبدأ بالمقارنة.</p>

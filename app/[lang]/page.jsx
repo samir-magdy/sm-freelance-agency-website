@@ -8,7 +8,12 @@ import { projectsStructuredData } from "../data/portfolio";
 
 // IMPORTS FOR METADATA AND SCHEMA
 import { pricingCards } from "../data/translations/pricingSection";
-import { SITE_URL, SITE_NAME, PHONE_NUMBER, SOCIAL_LINKS } from "@/app/constants";
+import {
+  SITE_URL,
+  SITE_NAME,
+  PHONE_NUMBER,
+  SOCIAL_LINKS,
+} from "@/app/constants";
 
 // ─────────────────────────────────────────────
 // METADATA CONTENT (For Schema & SEO)
@@ -35,7 +40,7 @@ const meta = {
 export async function generateMetadata({ params }) {
   const { lang } = await params;
   const canonicalUrl = lang === "en" ? SITE_URL : `${SITE_URL}/${lang}`;
-  
+
   return {
     alternates: {
       canonical: canonicalUrl,
@@ -46,8 +51,8 @@ export async function generateMetadata({ params }) {
       },
     },
     openGraph: {
-      url: canonicalUrl, 
-    }
+      url: canonicalUrl,
+    },
   };
 }
 
@@ -108,119 +113,71 @@ function buildStructuredData(lang) {
     founder: { "@id": `${SITE_URL}#founder` },
     knowsLanguage: ["en", "ar"],
     knowsAbout: [
-      "Web Design", "Web Development", "E-commerce Development", 
-      "Responsive Web Design", "Website Creation", 
-      "Internationalization and Localization", "Right-to-Left (RTL) Display",
-      "Payment Gateway Integration", "Paymob", "Fawry", "Vodafone Cash", 
-      "InstaPay", "API Integration", "E-commerce Platforms", 
-      "Medical Practice Management Software", "Digital Transformation"
+      "Create a Website",
+      "إنشاء موقع إلكتروني",
+      "Web Design",
+      "تصميم مواقع إلكترونية",
+      "Web Development",
+      "تطوير وبرمجة المواقع",
+      "E-commerce Development",
+      "تصميم متجر إلكتروني",
+      "Clinic Booking Systenm",
+      "نظام حخز عيادات",
+      "Business Email Setup",
+      "إنشاء إيميل رسمي للشركة",
+      "Company Profile Website",
+      "تصميم موقع تعريفي للشركة",
+      "Search Engine Optimization (SEO)",
+      "ظهور الموقع في جوجل",
+      "Custom Website Design & Development",
+      "تصميم وبرمجة مواقع إلكترونية مخصصة"
     ],
   };
 
-  const services = [
+const services = [
     {
       "@type": "Service",
-      "@id": `${SITE_URL}#service-ecommerce-local-payments`,
-      name: "Custom E-commerce Stores with Local Payment Integration",
-      alternateName: "متاجر إلكترونية بربط بوابات الدفع المحلية",
+      "@id": `${SITE_URL}#service-landing-page`,
+      name: "Landing Page",
+      alternateName: "صفحة هبوط",
       description:
-        "Custom web apps for Egyptian businesses, with native InstaPay, Vodafone Cash, Paymob, and Fawry checkout, EGP billing managed end-to-end, and no commercial register required.",
-      serviceType: "E-commerce Web Development",
+        "A single-page website built to drive one action like a WhatsApp message, a booking, or filling out a form. Perfect for startups, freelancers and marketing campaigns.",
+      serviceType: "Landing Page Design",
       provider: { "@id": `${SITE_URL}#business` },
-      areaServed: [
-        { "@type": "Country", name: "Egypt" },
-        { "@type": "City", name: "Cairo" },
-        { "@type": "City", name: "Alexandria" },
-      ],
-      audience: {
-        "@type": "Audience",
-        audienceType:
-          "Egyptian online sellers, fashion brands, handmade artisans, and dropshippers",
+      offers: {
+        "@type": "Offer",
+        price: "5999",
+        priceCurrency: "EGP",
+        description: "Starting price for a single-page landing page.",
       },
       inLanguage: ["en", "ar"],
     },
     {
       "@type": "Service",
-      "@id": `${SITE_URL}#service-instagram-migration`,
-      name: "Instagram-to-Website Storefront Migration",
-      alternateName: "نقل البيع من الانستجرام لموقع إلكتروني",
+      "@id": `${SITE_URL}#service-business-website`,
+      name: "Business Website",
+      alternateName: "موقع أعمال",
       description:
-        "Migration service for Egyptian Instagram and Facebook merchants moving from manual DM-based sales to an independent storefront with automated order intake, InstaPay/Vodafone Cash confirmation, and stock tracking.",
-      serviceType: "Social Commerce Migration",
+        "A multi-page website that presents your company in full detail. Ideal for more established businesses and entities that have a lot to show and tell.",
+      serviceType: "Corporate Web Development",
       provider: { "@id": `${SITE_URL}#business` },
-      areaServed: [
-        { "@type": "Country", name: "Egypt" },
-        { "@type": "City", name: "Cairo" },
-        { "@type": "City", name: "Alexandria" },
-      ],
-      audience: {
-        "@type": "Audience",
-        audienceType:
-          "Egyptian Instagram sellers, TikTok merchants, and social commerce solopreneurs",
+      offers: {
+        "@type": "Offer",
+        price: "8999",
+        priceCurrency: "EGP",
+        description: "Starting price for a multi-page business website.",
       },
       inLanguage: ["en", "ar"],
     },
     {
       "@type": "Service",
-      "@id": `${SITE_URL}#service-freelancer-portfolio`,
-      name: "Freelancer Portfolio Websites with International Payment Receipt",
-      alternateName: "مواقع بورتفوليو للفريلانسرز باستلام مدفوعات دولية",
+      "@id": `${SITE_URL}#service-custom-web-app`,
+      name: "Custom Web App",
+      alternateName: "تطبيق ويب",
       description:
-        "Portfolio websites for Egyptian freelancers, designers, and independent consultants with integrated international payment receipt via Paymob, Stripe-supported channels, and wire-friendly payment links. Funds settle to local Egyptian bank accounts.",
-      serviceType: "Portfolio Web Development",
+        "A fully custom-built web application designed around your exact requirements, from online stores and booking systems to client portals. Ideal for businesses with specific needs that require custom solutions.",
+      serviceType: "Custom Web Application Development",
       provider: { "@id": `${SITE_URL}#business` },
-      areaServed: [
-        { "@type": "Country", name: "Egypt" },
-        { "@type": "City", name: "Cairo" },
-        { "@type": "City", name: "Alexandria" },
-      ],
-      audience: {
-        "@type": "Audience",
-        audienceType:
-          "Egyptian freelancers, designers, developers, and independent consultants serving international clients",
-      },
-      inLanguage: ["en", "ar"],
-    },
-    {
-      "@type": "Service",
-      "@id": `${SITE_URL}#service-bilingual-rtl`,
-      name: "Bilingual Arabic/English Business Websites with RTL Support",
-      alternateName: "مواقع شركات ثنائية اللغة عربي وإنجليزي بدعم RTL كامل",
-      description:
-        "Multi-page business websites built natively bilingual (Arabic right-to-left and English left-to-right) with correct RTL layouts, legible Arabic typography, and SEO indexed separately in both languages: one site, double Google visibility.",
-      serviceType: "Bilingual Web Development",
-      provider: { "@id": `${SITE_URL}#business` },
-      areaServed: [
-        { "@type": "Country", name: "Egypt" },
-        { "@type": "City", name: "Cairo" },
-        { "@type": "City", name: "Alexandria" },
-      ],
-      audience: {
-        "@type": "Audience",
-        audienceType:
-          "Egyptian businesses targeting both Arabic and English-speaking customers, and regional brands serving GCC markets",
-      },
-      inLanguage: ["en", "ar"],
-    },
-    {
-      "@type": "Service",
-      "@id": `${SITE_URL}#service-clinic-booking`,
-      name: "Private Clinic Booking Systems (Vezeeta Alternative)",
-      alternateName: "نظام حجز خاص للعيادات (بديل فيزيتا)",
-      description:
-        "Private clinic booking websites on the doctor's own domain with appointment scheduling, prepaid consultation fees via InstaPay, Vodafone Cash, or cards, automated SMS/WhatsApp reminders, and full patient data ownership. No annual aggregator subscription, no per-booking commission.",
-      serviceType: "Medical Booking System Development",
-      provider: { "@id": `${SITE_URL}#business` },
-      areaServed: [
-        { "@type": "Country", name: "Egypt" },
-        { "@type": "City", name: "Cairo" },
-        { "@type": "City", name: "Alexandria" },
-      ],
-      audience: {
-        "@type": "Audience",
-        audienceType:
-          "Egyptian doctors, private clinic owners, and independent medical practitioners",
-      },
       inLanguage: ["en", "ar"],
     },
   ];
@@ -255,7 +212,8 @@ function buildStructuredData(lang) {
     name: "Samir Magdy",
     alternateName: "سمير مجدي",
     jobTitle: "Founder, Web Designer & Developer",
-    description: "Samir Magdy is a web designer & developer & the founder of SM Web Design Studio, specializing in high-performance, custom web development.",
+    description:
+      "Samir Magdy is a web designer & developer & the founder of SM Web Design Studio, specializing in high-performance, custom web development.",
     nationality: { "@type": "Country", name: "Egypt" },
     url: SITE_URL,
     image: `${SITE_URL}/profilePhoto.jpg`,
@@ -295,7 +253,7 @@ export default async function Page({ params }) {
       <PricingSection lang={lang} />
       <FAQSection lang={lang} />
       <ContactSection lang={lang} />
-      
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
