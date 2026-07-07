@@ -12,6 +12,7 @@ import {
   SITE_URL,
   SITE_NAME,
   PHONE_NUMBER,
+  CONTACT_EMAIL,
   SOCIAL_LINKS,
 } from "@/app/constants";
 
@@ -40,8 +41,10 @@ const meta = {
 export async function generateMetadata({ params }) {
   const { lang } = await params;
   const canonicalUrl = lang === "en" ? SITE_URL : `${SITE_URL}/${lang}`;
-
+  const currentMeta = meta[lang];
   return {
+    title: currentMeta.title,
+    description: currentMeta.description,
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -51,6 +54,8 @@ export async function generateMetadata({ params }) {
       },
     },
     openGraph: {
+      title: currentMeta.title,
+      description: currentMeta.description,
       url: canonicalUrl,
     },
   };
@@ -59,7 +64,6 @@ export async function generateMetadata({ params }) {
 // ─────────────────────────────────────────────
 // HOMEPAGE SCHEMA (WITH CLEANED IDs)
 // ─────────────────────────────────────────────
-const CONTACT_EMAIL = "studio@samirmagdy.com";
 
 function buildStructuredData(lang) {
   const pageUrl = lang === "en" ? SITE_URL : `${SITE_URL}/${lang}`;
@@ -130,11 +134,11 @@ function buildStructuredData(lang) {
       "Search Engine Optimization (SEO)",
       "ظهور الموقع في جوجل",
       "Custom Website Design & Development",
-      "تصميم وبرمجة مواقع إلكترونية مخصصة"
+      "تصميم وبرمجة مواقع إلكترونية مخصصة",
     ],
   };
 
-const services = [
+  const services = [
     {
       "@type": "Service",
       "@id": `${SITE_URL}#service-landing-page`,
