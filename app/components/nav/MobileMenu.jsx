@@ -11,8 +11,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
-  const isHome =
-    pathname === `/${lang}` || pathname === `/${lang}/` || pathname === "/";
+  
   const contactItem = navLinks[navLinks.length - 1];
 
   const closeMenu = () => {
@@ -20,23 +19,24 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
   };
 
   const handleNavClick = (e, targetId) => {
-    e.preventDefault();
-
+    // Check if we are currently on the homepage (or home section)
+    const isHome = pathname === `/${lang}` || pathname === `/${lang}/` || pathname === "/";
+    
     if (isHome) {
+      e.preventDefault();
       closeMenu();
+      
       setTimeout(() => {
         const targetEl = document.getElementById(targetId);
         if (targetEl) {
           targetEl.scrollIntoView({ behavior: "smooth" });
         }
       }, 200);
-    } else {
-      router.push(`/${lang}/#${targetId}`);
     }
+    // If not on home, the default <Link> behavior (using absolute path) 
+    // will navigate to the correct page and jump to the hash naturally.
   };
 
-  // Close menu after pathname changes so navigation renders first, preventing
-  // the overlay fade from briefly exposing the previous page (production flicker).
   useEffect(() => {
     setIsMenuOpen(false);
   }, [pathname]);
@@ -62,7 +62,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
       >
         <div className="flex justify-between items-center px-3">
           <a
-            href={`/${lang}/#home`}
+            href={`/${lang}#home`}
             aria-label="Samir Magdy Web Studio - Home"
             onClick={closeMenu}
           >
@@ -125,7 +125,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           {navLinks.slice(0, -1).map((item) => (
             <li key={item}>
               <Link
-                href={isHome ? `#${item}` : `/${lang}/#${item}`}
+                href={`/${lang}#${item}`}
                 onClick={(e) => handleNavClick(e, item)}
                 className="font-semibold text-content-heading text-3xl tracking-wide"
               >
@@ -153,7 +153,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           </li>
           <li>
             <Link
-              href={isHome ? "#FAQs" : `/${lang}/#FAQs`}
+              href={`/${lang}#FAQs`}
               onClick={(e) => handleNavClick(e, "FAQs")}
               className="font-semibold text-content-heading text-3xl tracking-wide"
             >
@@ -162,7 +162,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
           </li>
           <li key={contactItem}>
             <Link
-              href={isHome ? `#${contactItem}` : `/${lang}/#${contactItem}`}
+              href={`/${lang}#${contactItem}`}
               onClick={(e) => handleNavClick(e, contactItem)}
               className="font-semibold text-content-heading text-3xl tracking-wide"
             >

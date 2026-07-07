@@ -61,8 +61,8 @@ export default function GuidesPage({ params }) {
       description: t.metaDescription[lang],
       url: canonical,
       inLanguage: lang,
-      isPartOf: { "@id": `${SITE_URL}/#website` },
-      publisher: { "@id": `${SITE_URL}/#business` },
+      isPartOf: { "@id": `${SITE_URL}#website` },
+      publisher: { "@id": `${SITE_URL}#business` },
     },
     {
       "@context": "https://schema.org",

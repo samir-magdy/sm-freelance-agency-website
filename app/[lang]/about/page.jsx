@@ -259,7 +259,7 @@ export default async function AboutPage({ params }) {
 
               {/* Primary — stretches the full width */}
               <Link
-                href={`/${lang}/#contact`}
+                href={`/${lang}#contact`}
                 className="w-full cta-primary whitespace-nowrap rounded-2xl px-7 py-3 text-center text-base font-semibold text-gray-900 transition-all duration-300 hover:border-gold/50 sm:mt-1"
               >
                 {t.ctaContact[lang]}

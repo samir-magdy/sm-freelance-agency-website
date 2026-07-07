@@ -8,33 +8,38 @@ export default function DesktopNavLinks({ nav }) {
   const pathname = usePathname();
   const segments = pathname.split("/").filter(Boolean);
   const lang = segments[0] || "en";
+  
+  // We keep isHome only to check if we should intercept the click for smooth scrolling
   const isHome = segments.length <= 1;
 
   const contactItem = navLinks[navLinks.length - 1];
-  const contactDestination = isHome ? `#${contactItem}` : `/${lang}/#${contactItem}`;
+  
+  // Always use the absolute path to prevent hash stacking
+  const contactDestination = `/${lang}#${contactItem}`;
 
   const handleHashClick = (e, targetId) => {
+    // If not on the homepage, let standard Next.js routing handle the jump
     if (!isHome) return;
+    
     e.preventDefault();
+    
+    // 1. Smooth scroll to the element
     document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <ul className="flex w-full justify-around xl:px-36 lg:px-16">
-      {navLinks.slice(0, -1).map((item, i) => {
-        const destination = isHome ? `#${item}` : `/${lang}/#${item}`;
-        return (
-          <li key={i}>
-            <Link
-              href={destination}
-              onClick={(e) => handleHashClick(e, item)}
-              className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
-            >
-              {nav[item]}
-            </Link>
-          </li>
-        );
-      })}
+      {navLinks.slice(0, -1).map((item, i) => (
+        <li key={i}>
+          <Link
+            href={`/${lang}#${item}`}
+            onClick={(e) => handleHashClick(e, item)}
+            className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
+          >
+            {nav[item]}
+          </Link>
+        </li>
+      ))}
       <li>
         <Link
           href={`/${lang}/guides`}
@@ -53,7 +58,7 @@ export default function DesktopNavLinks({ nav }) {
       </li>
       <li>
         <Link
-          href={isHome ? "#FAQs" : `/${lang}/#FAQs`}
+          href={`/${lang}#FAQs`}
           onClick={(e) => handleHashClick(e, "FAQs")}
           className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
         >

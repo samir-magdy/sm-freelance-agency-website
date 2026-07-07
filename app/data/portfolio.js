@@ -94,7 +94,7 @@ export const projects = [
 
 // Reference the canonical ProfessionalService defined in layout.tsx JSON-LD graph
 const smWebStudio = {
-  "@id": `${SITE_URL}/#business`,
+  "@id": `${SITE_URL}#business`,
 };
 
 export const projectsStructuredData = {

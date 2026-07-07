@@ -48,7 +48,7 @@ export async function generateMetadata({ params }) {
       article: {
         publishedTime: guide.datePublished,
         modifiedTime: guide.dateModified,
-        authors: [`${SITE_URL}/#founder`],
+        authors: [`${SITE_URL}#founder`],
       },
       images: [
         {
@@ -87,9 +87,9 @@ export default function GuidePage({ params }) {
       url: canonical,
       datePublished: guide.datePublished,
       dateModified: guide.dateModified,
-      author: { "@id": `${SITE_URL}/#founder`, name: "Samir Magdy" },
-      publisher: { "@id": `${SITE_URL}/#business` },
-      isPartOf: { "@id": `${SITE_URL}/#website` },
+      author: { "@id": `${SITE_URL}#founder`, name: "Samir Magdy" },
+      publisher: { "@id": `${SITE_URL}#business` },
+      isPartOf: { "@id": `${SITE_URL}#website` },
       mainEntityOfPage: { "@id": `${canonical}#webpage` },
     },
     {
@@ -218,7 +218,7 @@ export default function GuidePage({ params }) {
               {t.articleCta[lang]}
             </p>
             <Link
-              href={`/${lang}/#contact`}
+              href={`/${lang}#contact`}
               className="cta-primary justify-center shrink-0 inline-flex items-center gap-2.5 py-3 px-8 rounded-lg text-gray-900 text-base font-medium tracking-wide whitespace-nowrap"
             >
               {t.articleCtaButton[lang]}
