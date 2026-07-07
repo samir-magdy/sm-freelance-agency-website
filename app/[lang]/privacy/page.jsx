@@ -1,6 +1,5 @@
-import { use } from "react";
 import privacy from "@/app/data/translations/privacy";
-import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
+import { SITE_URL, SITE_NAME } from "@/app/constants";
 
 const metaDescription = {
   en: "Read SM Web Design Studio's privacy policy to understand how we collect, use, and protect your personal data when you use our services.",
@@ -42,14 +41,6 @@ export async function generateMetadata({ params }) {
           alt: "SM Web Design Studio – Web Design Company in Egypt",
         },
       ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [`${SITE_URL}/open-graph.webp`],
-      site: TWITTER_HANDLE,
-      creator: TWITTER_HANDLE,
     },
   };
 }

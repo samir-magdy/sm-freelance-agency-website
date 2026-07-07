@@ -1,6 +1,6 @@
 import { use } from "react";
 import terms from "@/app/data/translations/terms";
-import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
+import { SITE_URL, SITE_NAME } from "@/app/constants";
 
 const metaDescription = {
   en: "Read the terms of service for SM Web Design Studio. Learn about your rights and obligations when using our web design and development services.",
@@ -42,14 +42,6 @@ export async function generateMetadata({ params }) {
           alt: "SM Web Design Studio – Web Design Company in Egypt",
         },
       ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [`${SITE_URL}/open-graph.webp`],
-      site: TWITTER_HANDLE,
-      creator: TWITTER_HANDLE,
     },
   };
 }

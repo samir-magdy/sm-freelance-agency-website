@@ -7,7 +7,6 @@ import Footer from "../components/nav/Footer";
 import {
   SITE_URL,
   SITE_NAME,
-  TWITTER_HANDLE,
 } from "@/app/constants";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";
@@ -100,35 +99,12 @@ export async function generateMetadata({ params }) {
       alternateLocale: m.altLocale,
       type: "website",
     },
-    twitter: {
-      card: "summary_large_image",
-      title: m.title,
-      description: m.description,
-      images: [`${SITE_URL}/open-graph.webp`],
-      site: TWITTER_HANDLE,
-      creator: TWITTER_HANDLE,
-    },
   };
 }
 
 export function generateStaticParams() {
   return [{ lang: "en" }, { lang: "ar" }];
 }
-
-// ─────────────────────────────────────────────
-// VIEWPORT METADATA
-// ─────────────────────────────────────────────
-export const viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 5,
-  viewportFit: "cover",
-  colorScheme: "dark light",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0f0f1e" },
-  ],
-};
 
 // ─────────────────────────────────────────────
 // ROOT LAYOUT COMPONENT

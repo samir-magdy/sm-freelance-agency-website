@@ -3,7 +3,7 @@ import Link from "next/link";
 import profilePhoto from "@/public/profilePhoto.jpg";
 import aboutSection from "@/app/data/translations/aboutSection";
 import { notFound } from "next/navigation";
-import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
+import { SITE_URL, SITE_NAME } from "@/app/constants";
 import { Eye, MessagesSquare, Handshake, Mail } from "lucide-react";
 import WhatsAppIcon from "@/app/components/utils/WhatsAppIcon";
 import LinkedInIcon from "@/app/components/utils/LinkedInIcon";
@@ -54,14 +54,6 @@ export async function generateMetadata({ params }) {
           alt: "SM Web Design Studio – Web Design Company in Egypt",
         },
       ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: m.title,
-      description: m.description,
-      images: [`${SITE_URL}/open-graph.webp`],
-      site: TWITTER_HANDLE,
-      creator: TWITTER_HANDLE,
     },
   };
 }

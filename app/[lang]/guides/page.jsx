@@ -1,5 +1,5 @@
 import { use } from "react";
-import { SITE_URL, SITE_NAME, TWITTER_HANDLE } from "@/app/constants";
+import { SITE_URL, SITE_NAME } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guides";
 import GuidesGrid from "./GuidesGrid";
@@ -40,14 +40,6 @@ export async function generateMetadata({ params }) {
           alt: "SM Web Design Studio – Web Design Company in Egypt",
         },
       ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t.metaTitle[lang],
-      description: t.metaDescription[lang],
-      images: [`${SITE_URL}/open-graph.webp`],
-      site: TWITTER_HANDLE,
-      creator: TWITTER_HANDLE,
     },
   };
 }

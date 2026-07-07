@@ -19,13 +19,13 @@ import {
 // METADATA CONTENT (For Schema & SEO)
 // ─────────────────────────────────────────────
 const META_DESCRIPTION = {
-  en: "Custom web design & development for small-medium businesses & individuals. Your professional online presence starts here.",
+  en: "Custom website design & development in Egypt. We build high-quality, affordable websites. Get a quote today.",
   ar: "تصميم وتطوير مواقع إلكترونية مخصصة للشركات والأفراد. ابدأ حضورك الرقمي الاحترافي معنا.",
 };
 
 const meta = {
   en: {
-    title: `Custom Website Development in Egypt | ${SITE_NAME}`,
+    title: `Get a Custom Website in Egypt | ${SITE_NAME}`,
     description: META_DESCRIPTION.en,
   },
   ar: {
