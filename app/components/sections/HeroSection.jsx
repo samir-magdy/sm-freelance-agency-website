@@ -8,7 +8,6 @@ export default function HeroSection({ lang }) {
     >
       {/* ── Atmosphere layers ── */}
       <div className="hero-grid" aria-hidden="true" />
-      <div className="hero-grain" aria-hidden="true" />
 
       {/* ── Content ── */}
       <div className="hero-inner safari-hero-padding relative z-10 w-full mx-auto flex flex-col items-center text-center px-8 sm:px-10 pt-24 pb-24 sm:pt-44 sm:rtl:pb-32 sm:pb-28">

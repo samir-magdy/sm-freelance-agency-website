@@ -4,11 +4,11 @@ const resource = {
   dateModified: new Date(),
   title: {
     en: "Why Your Business Needs a Website",
-    ar: "ضرورة الموقع الإلكتروني في مصر (2026)",
+    ar: "ضرورة الموقع الإلكتروني لشركتك",
   },
   metaTitle: {
     en: "Do I Need a Website for My Business? (2026)",
-    ar: "هل مشروعي محتاج موقع إلكتروني في 2026؟",
+    ar: "هل مشروعي محتاج موقع إلكتروني؟ (2026)",
   },
   excerpt: {
     en: "When you hear about a company or service you are considering, what is the first thing you do? You open Google or ChatGPT and search for it. Your customers do exactly the same thing, if they don't find you and find a competitor instead, you've most likely lost the sale. In this guide we explain why having a website is crucial for this scenario.",

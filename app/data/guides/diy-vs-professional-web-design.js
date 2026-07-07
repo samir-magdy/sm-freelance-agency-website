@@ -4,11 +4,11 @@ const resource = {
   dateModified: new Date(),
   title: {
     en: "Website Builders vs Hiring a Professional",
-    ar: "أستخدم المنصات الجاهزة ولا أوظف محترف؟",
+    ar: "تبني موقعك بنفسك أم تستعين بشركة تصميم؟",
   },
   metaTitle: {
-    en: "DIY Website Builders vs Hiring a Developer",
-    ar: "منصات إنشاء المواقع أم مبرمج محترف؟ أيهما أفضل لمشروعك؟",
+    en: "DIY Website Builders vs Hiring a Developer (2026)",
+    ar: "(2026) منصات إنشاء المواقع أم توظيف مصمم مواقع؟",
   },
   excerpt: {
     en: "Website builders like Wix or Squarespace can work if you need something fairly simple. But they come with significant drawbacks that aren't immediately obvious and tend to surface over time. In this guide you'll learn the drawbacks of using these platforms, including the hidden costs and limitations.",

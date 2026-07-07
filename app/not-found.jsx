@@ -1,10 +1,5 @@
 import Link from "next/link";
 
-// NOTE: This is a separate root document (no shared app/layout exists — see
-// app/[lang]/layout.jsx). It intentionally does NOT import globals.css: a second
-// import here compiles globals into its own chunk and breaks Turbopack's HMR
-// ("No link element found for chunk app_globals_*.css"). globals.css is imported
-// once, in app/[lang]/layout.jsx. The few styles this page needs are inlined below.
 const css = `
   :root {
     --bg: oklch(18.6% 0.0111 267);
@@ -51,8 +46,9 @@ const css = `
     display: inline-block;
     font-weight: 600;
     color: #111827;
+    font-size: 1.5rem;
     background: linear-gradient(to bottom, var(--gold), var(--gold-dark));
-    padding: 0.75rem 2rem;
+    padding: 1rem 2rem;
     border-radius: 1rem;
     text-decoration: none;
   }
@@ -60,7 +56,10 @@ const css = `
 
 export default function NotFound() {
   return (
-    <html lang="en">
+    <html>
+      <head>
+        <title>Page Not Found | SM Web Design Studio</title>
+      </head>
       <body>
         <style dangerouslySetInnerHTML={{ __html: css }} />
         <div className="nf-wrap">
@@ -70,7 +69,7 @@ export default function NotFound() {
             <p className="nf-text">
               Seems like you&apos;ve gotten yourself lost.
             </p>
-            <Link href="/en" className="nf-cta">
+            <Link href="/" className="nf-cta">
               Back to Home
             </Link>
           </div>

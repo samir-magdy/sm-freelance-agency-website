@@ -4,8 +4,8 @@ const hero = {
     ar: "خدمات إنشاء و تصميم مواقع · مصر",
   },
   name: {
-    en: 'Behind every great business is a website that <span class="hero-mark">proves it</span>.',
-    ar: 'وراء كل بيزنس ناجح.. موقع <span class="hero-mark">يثبت جدارته</span>.',
+    en: 'Behind every great business is a website that <span class="text-gold">proves it</span>.',
+    ar: 'وراء كل بيزنس ناجح.. موقع <span class="text-gold">يثبت جدارته</span>.',
   },
   primaryCta: {
     en: "Request a Quote",

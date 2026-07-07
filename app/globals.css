@@ -134,76 +134,6 @@ section {
   }
 }
 
-/* ── Film grain ── */
-.hero-grain {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
-  background-size: 160px 160px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* Gold focal phrase + self-drawing underline.
-   Targets a <span class="hero-mark"> injected via dangerouslySetInnerHTML,
-   so it stays CSS (the rest of the headline lives in Tailwind on the <h1>). */
-.hero-mark {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 0.04em;
-  color: var(--color-gold);
-  background: linear-gradient(
-    100deg,
-    var(--color-gold-light),
-    var(--color-gold) 55%,
-    var(--color-gold-dark)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero-mark::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0.04em;
-  height: 0.1em;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    var(--color-gold-dark),
-    var(--color-gold-light),
-    var(--color-gold)
-  );
-  box-shadow: 0 0 16px oklch(76.7% 0.1399 91.2 / 0.45);
-  transform: scaleX(0);
-  transform-origin: left center;
-  animation: hero-underline 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.35s both;
-}
-
-[dir="rtl"] .hero-mark::after {
-  transform-origin: right center;
-}
-
-/* @keyframes hero-underline {
-  to {
-    transform: scaleX(1);
-  }
-} */
-
-/* ── Subheadline ──
-   The <p> itself is styled with Tailwind; only this rule remains in CSS
-   because it targets a <strong> injected via dangerouslySetInnerHTML.
-   The .hero-sub class is kept on the <p> purely as its scoping hook. */
-.hero-sub strong {
-  color: var(--color-content-heading);
-  font-weight: 600;
-}
-
 /* ══════════════════════════════════════
    3. RTL — Global Adjustments
    ══════════════════════════════════════ */
@@ -249,33 +179,6 @@ section {
     var(--color-gold-dark)
   );
 }
-
-/* safari only style */
-@supports (-webkit-hyphens: none) {
-  @media (max-width: 680px) {
-    #pricing-calculator {
-      scroll-margin-top: 12rem;
-    }
-    .safari-hero-padding {
-      padding-top: 10rem;
-    }
-    [dir="rtl"] #hero-title {
-      font-size: clamp(2rem, 9vw, 5.25rem);
-    }
-    #portfolio-genre {
-      font-size: 0.75rem;
-    }
-    [dir="rtl"] #portfolio-genre {
-      font-size: 1rem;
-    }
-    .mobile-portfolio-buttons{
-      font-size: 1.1rem;
-    }
-  }
-}
-/* ══════════════════════════════════════
-   7. FAQ — Accordion Open/Close Animation
-   ══════════════════════════════════════ */
 
 /* ══════════════════════════════════════
    5. Inline HTML Content — Link Styling
@@ -396,4 +299,22 @@ section {
   #pricing-calculator button * {
     font-size: 0.875rem; /* text-sm */
   }
+    #pricing-calculator {
+      scroll-margin-top: 12rem;
+    }
+    .safari-hero-padding {
+      padding-top: 10rem;
+    }
+    [dir="rtl"] #hero-title {
+      font-size: clamp(2rem, 9vw, 5.25rem);
+    }
+    #portfolio-genre {
+      font-size: 0.75rem;
+    }
+    [dir="rtl"] #portfolio-genre {
+      font-size: 1rem;
+    }
+    .mobile-portfolio-buttons{
+      font-size: 1.1rem;
+    }
 }

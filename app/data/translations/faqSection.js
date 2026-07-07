@@ -20,12 +20,6 @@ const faqSection = {
     en: "Request a Consultation",
     ar: "اطلب استشارة مجانية",
   },
-
-  guidesEyebrow: {
-    en: "More Resources",
-    ar: "موارد إضافية",
-  },
-
   items: [
   // ── STAGE 1: VALIDATION & AWARENESS (TOFU) ────────────────────────────────
   {
@@ -101,73 +95,11 @@ const faqSection = {
       ar: "كل اللي بنحتاجه منك هو أساسيات الهوية الخاصة بيك، زي اللوجو، والنصوص اللي عايزها تظهر في كل قسم، وأي صور أو فيديوهات بجودة كويسة تحب تعرضها على الموقع.",
     },
   },
-
-  // ── STAGE 3B: PAYMENT, MIGRATION & LOCAL CAPABILITIES (BOFU) ──────────────
-  // {
-  //   question: {
-  //     en: "Can I accept payments on my website without a commercial register or tax card?",
-  //     ar: "أقدر أستقبل فلوس على موقعي من غير سجل تجاري أو بطاقة ضريبية؟",
-  //   },
-  //   answer: {
-  //     en: "Yes, you can activate Paymob, Fawaterk, or Kashier with just your National ID to accept cards, InstaPay, and wallets. However, individual tiers are limited to EGP payments only, cannot offer installment options (like valU), and cap monthly sales around 50k EGP. It is ideal for launching, but scaling requires official papers.",
-  //     ar: "أيوة، تقدر تفعل بوابات دفع زي باي موب، فواتيرك، أو كاشير بالرقم القومي وتستقبل كروت، انستا باي، ومحافظ ذكية. لكن حسابات الأفراد ليها قيود: بتدعم الجنيه المصري بس، مفيش خدمات تقسيط (زي ڤاليو)، وفيها حد أقصى للمبيعات بيكون تقريباً 50 ألف جنيه شهرياً. دي بداية كويسة، لكن هتحتاج ورق رسمي علشان تتوسع.",
-  //   },
-  // },
-  // {
-  //   question: {
-  //     en: "Can my website accept InstaPay payments?",
-  //     ar: "هل ممكن الموقع يستقبل دفع بانستا باي؟",
-  //   },
-  //   answer: {
-  //     en: "Yes. We add InstaPay as a custom checkout option that displays your payment details and captures the customer's transfer reference number. This routes the order straight to your admin dashboard, allowing your team to easily verify the transfer and process the order without having to track down screenshots in WhatsApp DMs.",
-  //     ar: "أيوة. بنضيف انستا باي كاختيار دفع أساسي بيعرض بياناتك للعميل وبياخد منه رقم التحويل (Reference Number). الطلب بيوصلك على لوحة التحكم برقم التحويل، علشان فريقك يقدر يراجع العملية ويأكد الطلب بسهولة من غير زحمة السكرين شوتس على الواتساب.",
-  //   },
-  // },
-  // {
-  //   question: {
-  //     en: "Can I accept Vodafone Cash or Etisalat Cash on my website?",
-  //     ar: "ينفع الموقع يقبل فودافون كاش أو اتصالات كاش؟",
-  //   },
-  //   answer: {
-  //     en: "Yes. All three Egyptian telecom wallets (Vodafone Cash, Etisalat Cash, Orange Cash) are supported via Paymob and Kashier. We integrate them securely into your checkout flow, making it simple for the large portion of buyers in Egypt who prefer mobile wallets to complete their purchases.",
-  //     ar: "أيوة. كل محافظ التليكوم المصرية (فودافون كاش، اتصالات كاش، وأورنج كاش) بنضيفها للموقع من خلال باي موب أو كاشير. بنربطهم بشكل سلس بخطوات الدفع علشان نسهل الشراء على الشريحة الكبيرة من العملاء في مصر اللي بيفضلوا الدفع بالمحافظ الإلكترونية.",
-  //   },
-  // },
-  // {
-  //   question: {
-  //     en: "I sell through Instagram DMs. How do I move to a real website without losing orders?",
-  //     ar: "أنا بابيع من رسايل الانستجرام، ازاي أنقل لموقع من غير ما أضيع طلبات؟",
-  //   },
-  //   answer: {
-  //     en: "We build the store first, then run it in parallel with your Instagram for a few weeks while you redirect followers to your site link in bio. The website handles automated order intake, payment processing, and stock tracking, so Instagram DMs go from being your sales channel to being just customer support. If you're not yet sure whether moving off Instagram is worth it, our guide on <a href='/en/guides/why-your-business-needs-a-website'>why your business needs a website in Egypt</a> covers exactly why social media alone is no longer enough.",
-  //     ar: "بنبني المتجر الأول، وبعدين بنشغّله بالتوازي مع الانستجرام لكام أسبوع وانت بتوجّه المتابعين لرابط الموقع في الباي بتاعك. الموقع بيستقبل الطلبات أوتوماتيكي، بيسهل الدفع، وبيتابع المخزون، ورسايل الانستجرام بتتحول من قناة بيع لخدمة عملاء بس. أغلب عملاءنا بيلاقوا طلبات أقل بتضيع وتنفيذ أسرع من أول شهر. ولو لسه مش متأكد إن الخروج من الانستجرام يستاهل، دليلنا عن <a href='/ar/guides/why-your-business-needs-a-website'>ليه مشروعك في مصر محتاج موقع</a> بيشرح بالظبط ليه السوشيال ميديا لوحدها مش كفاية.",
-  //   },
-  // },
-  // {
-  //   question: {
-  //     en: "Can I run a Shopify store in Egypt without dealing with USD billing myself?",
-  //     ar: "ينفع أشغّل متجر شوبيفاي في مصر من غير ما أتعامل مع فواتير بالدولار بنفسي؟",
-  //   },
-  //   answer: {
-  //     en: "Yes. International card restrictions can be a hurdle, but we assist you in setting up compliant local payment methods or managed billing solutions to cover your Shopify subscription. You get full control of a real Shopify store with all its tools, while we help you navigate the platform fees in local currency.",
-  //     ar: "أيوة. قيود الدفع بالكروت الدولية ممكن تكون عقبة، بس إحنا بنساعدك توفر حلول دفع محلية مناسبة أو بنقدم خدمة إدارة الفواتير علشان نغطي اشتراك شوبيفاي. هتاخد متجر شوبيفاي كامل بكل أدواته، وإحنا بنساعدك تدير رسوم المنصة بالعملة المحلية.",
-  //   },
-  // },
-  // {
-  //   question: {
-  //     en: "Can you build a booking system for my clinic instead of using Vezeeta?",
-  //     ar: "تقدروا تعملولي نظام حجز للعيادة بدل ما أشترك في فيزيتا؟",
-  //   },
-  //   answer: {
-  //     en: "Yes. We build private clinic booking systems on your own domain with appointment scheduling, prepaid consultation fees (via Vodafone Cash, InstaPay, or cards), and optional SMS/WhatsApp integrations. Unlike directory platforms, we charge zero commissions per booking—you only pay for your standard website hosting and actual SMS usage. Your patients, your data, your brand.",
-  //     ar: "أيوة. بنعمل نظام حجز خاص بعيادتك على دومين باسمك، فيه جدول مواعيد، تحصيل رسوم الكشف مقدم، مع إمكانية ربط رسائل تذكير على SMS أو واتساب. عكس منصات الحجز التانية، مفيش أي عمولة بتتدفع على الحجز—أنت بتدفع بس تكلفة الاستضافة العادية للموقع واستهلاك الرسائل. مرضاك، بياناتك، وبراندك.",
-  //   },
-  // },
   // ── STAGE 4: POST-PURCHASE & VALUE-ADD (RETENTION / DE-RISK) ───────────────
   {
     question: {
       en: "Will I be able to edit my website myself?",
-      ar: "هل هعرف أعدل في محتوى الموقع بنفسي؟",
+      ar: "هعرف أعدل في محتوى الموقع بنفسي؟",
     },
     answer: {
       en: "If your site includes an admin page (known as a CMS), then yes. We will walk you through how to use it before the handover. It is built to be straightforward and does not require any technical knowledge.",

@@ -41,7 +41,7 @@ const meta = {
 export async function generateMetadata({ params }) {
   const { lang } = await params;
   const canonicalUrl = lang === "en" ? SITE_URL : `${SITE_URL}/${lang}`;
-  const currentMeta = meta[lang];
+  const currentMeta = meta[lang] || {title: "Page Not Found | SM Web Design Studio"};
   return {
     title: currentMeta.title,
     description: currentMeta.description,
