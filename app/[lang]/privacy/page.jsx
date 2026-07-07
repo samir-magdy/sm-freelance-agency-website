@@ -1,5 +1,6 @@
 import privacy from "@/app/data/translations/privacy";
 import { SITE_URL, SITE_NAME } from "@/app/constants";
+import {use} from "react";
 
 const metaDescription = {
   en: "Read SM Web Design Studio's privacy policy to understand how we collect, use, and protect your personal data when you use our services.",
