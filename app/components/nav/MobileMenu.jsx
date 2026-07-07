@@ -62,7 +62,7 @@ export default function MobileMenu({ lang, nav, a11y, langToggleLabel }) {
       >
         <div className="flex justify-between items-center px-3">
           <a
-            href={`/${lang}#home`}
+            href={`/${lang}`}
             aria-label="Samir Magdy Web Studio - Home"
             onClick={closeMenu}
           >
