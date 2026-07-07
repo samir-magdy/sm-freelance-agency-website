@@ -34,7 +34,7 @@ const meta = {
     description: META_DESCRIPTION.ar,
   },
 };
-
+// for github
 // ─────────────────────────────────────────────
 // PAGE-SPECIFIC CANONICAL URL
 // ─────────────────────────────────────────────
