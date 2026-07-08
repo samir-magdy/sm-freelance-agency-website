@@ -9,7 +9,7 @@ import {
   SITE_NAME,
 } from "@/app/constants";
 import { notFound } from "next/navigation";
-import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 // ─────────────────────────────────────────────
 // FONTS
@@ -160,8 +160,8 @@ export default async function LangLayout({ children, params }) {
         </main>
         
         <Footer lang={lang} />
-        <Analytics />
       </body>
+      <GoogleAnalytics gaId="AW-18130188281" />
     </html>
   );
 }
