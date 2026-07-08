@@ -1,3 +1,4 @@
+import { GoogleTagManager } from '@next/third-parties/google'
 import { Cairo } from "next/font/google";
 import "../globals.css";
 import HeroNav from "../components/nav/HeroNav";
@@ -9,7 +10,6 @@ import {
   SITE_NAME,
 } from "@/app/constants";
 import { notFound } from "next/navigation";
-import { GoogleAnalytics } from '@next/third-parties/google'
 
 // ─────────────────────────────────────────────
 // FONTS
@@ -161,7 +161,7 @@ export default async function LangLayout({ children, params }) {
         
         <Footer lang={lang} />
       </body>
-      <GoogleAnalytics gaId="AW-18130188281" />
+      <GoogleTagManager gtmId="GTM-W9S847HD" />
     </html>
   );
 }
