@@ -11,12 +11,12 @@ const resource = {
     ar: "سعر تصميم موقع إلكتروني في مصر (2026)",
   },
   excerpt: {
-    en: "A professional website in Egypt typically costs anywhere from EGP 5,000 to over EGP 100,000. The truth is, there is no single fixed answer for the cost, as every project is different and many factors influence the final pricing. In this guide we tell you what these factors are so that you know what you're paying for when making your investment.",
-    ar: "أسعار تصميم المواقع الإلكترونية في مصر ممكن تتراوح من 5,000 لـ 100,000 ج.م، والحقيقة إن مفيش إجابة واحدة ثابتة لسؤال التكلفة، لأن كل مشروع بيختلف عن التاني وفي عوامل كتير بتدخل في التسعير.",
+    en: "Prices for websites in Egypt typically start at around EGP 5,000 and can exceed EGP 100,000, depending on the project's size, features, and complexity. In this guide we tell you what these factors drive pricing so that you know what you're paying for when making your investment.",
+    ar: "تبدأ تكلفة تصميم المواقع الإلكترونية في مصر من حوالي 5,000 جنيه مصري، وقد تتجاوز الـ 100,000 جنيه مصري حسب حجم المشروع والميزات المطلوبة ومستوى التخصيص.",
   },
   content: {
     en: `
-<p><strong>A professional website in Egypt typically costs anywhere from EGP 5,000 to over EGP 100,000.</strong> Every project is different and many factors influence the final price. By reading this guide, you will discover the different types of websites, the expected price range for each, and the core factors that determine market price. With this new knowledge you will be able to avoid overpaying for your website, or choosing the cheapest option and regretting it later.</p>
+<p><strong>Prices for websites in Egypt typically start at around EGP 5,000 and can exceed EGP 100,000, depending on the project's size, features, and complexity.</strong> By reading this guide, you will discover the different types of websites, the expected price range for each, and the core factors that determine market price. With this new knowledge you will be able to avoid overpaying for your website, or choosing the cheapest option and regretting it later.</p>
 
 <h2>What is the expected cost by website type?</h2>
 <p>This table details the different types of websites and the average price of each:</p>
@@ -87,7 +87,7 @@ const resource = {
 <p>The <strong>bottom line</strong> is that the right question isn't "what is the cheapest website I can get?" but rather "what is the minimum investment that will generate a positive return for my business?"</p>`,
 
 ar: `
-<p><strong>بشكل عام، أسعار تصميم المواقع الإلكترونية في مصر ممكن تتراوح من 5,000 لـ 100,000 ج.م</strong>، والحقيقة إن مفيش إجابة واحدة ثابتة لسؤال التكلفة، لأن كل مشروع بيختلف عن التاني وفي عوامل كتير بتدخل في التسعير. من خلال قرايتك للدليل ده، هتكتشف أنواع المواقع المختلفة، ونطاق السعر المتوقع لكل نوع، وهتعرف إيه هي العوامل الأساسية اللي بتحدد سعر الموقع في السوق علشان تتجنب إنك تدفع أكتر من اللازم أو تختار أرخص حاجة وتندم بعدين.</p>
+<p><strong>تبدأ تكلفة تصميم المواقع الإلكترونية في مصر من حوالي 5,000 جنيه مصري، وممكن تتجاوز الـ 100,000 جنيه مصري حسب حجم المشروع والميزات المطلوبة ومستوى التخصيص</strong>. من خلال قرايتك للدليل ده، هتكتشف أنواع المواقع المختلفة، ونطاق السعر المتوقع لكل نوع، وهتعرف إيه هي العوامل الأساسية اللي بتحدد سعر الموقع في السوق علشان تتجنب إنك تدفع أكتر من اللازم أو تختار أرخص حاجة وتندم بعدين.</p>
 
 <h2>إيه التكلفة المتوقعة حسب نوع الموقع؟</h2>
 <p>السعر المتوقع حسب نوع الموقع:</p>
