@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { WhatsAppIcon } from "@/app/components/ui/SocialIcons";
 import { contactSection, form } from "@/app/data/translations/contactSection";
 import a11y from "@/app/data/translations/a11y";
+import { SOCIAL_LINKS } from "../../constants";
 
 const ChevronDown = () => (
   <svg
@@ -292,7 +293,7 @@ export default function ContactSection({ lang }) {
               </div>
 
               <a
-                href="https://wa.me/201274613331"
+                href={SOCIAL_LINKS.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-3.5 w-full border border-green-500/40 bg-green-500/20 hover:bg-green-500/40 transition-colors duration-200 py-4 px-6 text-content-body flex items-center justify-center gap-2 rounded-lg font-bold text-base"

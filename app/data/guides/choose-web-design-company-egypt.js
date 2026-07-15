@@ -12,14 +12,14 @@ const resource = {
   },
   excerpt: {
     en: "A competent web design company has a portfolio of real websites you can visit and explore, asks about your goals, is transparent about pricing, and communicates clearly from the start. Should you even hire a company? or a freelancer? Read this guide to get a clearer picture of your options and how to choose correctly.",
-    ar: "الشركة المناسبة في مصر عندها سابقة أعمال من مواقع حقيقية معروضة تقدر تدخل عليها وتجربها بنفسك، بتسأل عن أهدافك، شفافة في التسعير، وبتتواصل بوضوح في مرحلة الاتفاق.",
+    ar: "الشركة المناسبة في مصر عندها سابقة أعمال من مواقع حقيقية معروضة تقدر تدخل عليها وتجربها بنفسك، بتسأل عن أهدافك، واضحة في التسعير، وبتتواصل بوضوح في مرحلة الاتفاق.",
   },
   content: {
     en: `
-<p>The right web design company in Egypt has a portfolio of real, live websites you can visit and explore yourself, asks about your goals, is transparent about pricing, and communicates clearly from the start. But before evaluating any provider, you need to decide what type suits your scale. Let us start with that comparison.</p>
+<p>The right web design company in Egypt has a portfolio of real, live websites you can visit and explore yourself, asks about your goals, is transparent about pricing, and communicates clearly from the start. But before evaluating any provider, you need to decide what entity is right for your project. Let us start with that comparison.</p>
 
-<h2>Should you work with a freelancer, a studio, or a company?</h2>
-<p>Choose a freelancer for small projects on tight budgets, a studio for mid-size projects that need specialist skills, and an agency for large or enterprise projects. Here is how the three compare at a glance:</p>
+<h2>Should you hire a freelancer, a studio, or a company?</h2>
+<p>Here is how these entities compare:</p>
 <table>
   <thead>
     <tr>
@@ -49,12 +49,12 @@ const resource = {
 <p>The right choice depends entirely on your needs and budget. Once you have settled on a type, the criteria below apply to all three.</p>
 
 <h2>What should you check before hiring?</h2>
-<p>The most important thing to check is their own website. Is the design professional? Is it fast? Do the contact forms actually work, or are they just for show? Are there broken links or buttons that go nowhere? Inspect their site carefully. If you find obvious problems, look elsewhere. A company that cannot keep its own website in order will not do better work on yours. As a reference for what a working portfolio looks like, you can browse <a href="/en/#portfolio">our web design portfolio</a>; every project links to a live, working website you can inspect yourself.</p>
+<p>The most important thing to check is their own website and their portfolio. First their website, is the design professional? Is it fast? Are there buttons that don't work or links that go nowhere? Inspect their site carefully. If you find obvious problems, look elsewhere. A company that cannot keep its own website in order will not do better work on yours. You also need to check their portfolio to see if it contains real client projects that you can test yourself. Some companies showcase ready-made templates that they did not actually build, which might look legitimate because they are hosted on real domains. To be sure, check the contact details on those portfolio sites; if you find fake information, that is a red flag. If you are still in doubt, try reaching out to that client directly to verify if the company actually built their website. As a reference for what a working portfolio looks like, you can browse <a href="/en/#portfolio">our web design portfolio</a>; every project links to a live, working website you can inspect yourself.</p>
 
 <h2>What are the red flags to watch for?</h2>
 <p>The main red flags are no live portfolio, unrealistic promises, vague or USD-only pricing, no interest in your business, and prices that are unusually cheap or unusually high. Walk away from any provider showing these signs:</p>
 <ul>
-  <li><strong>No portfolio or only mockups:</strong> If they cannot show you real, live websites they have built, be cautious. Design screenshots are not evidence that they can build a working site.</li>
+  <li><strong>No portfolio or only photos:</strong> If they cannot show you real, live client websites they have built, be cautious. Design screenshots are not evidence that they can build a working site.</li>
   <li><strong>Promises that sound too good to be true:</strong> Claims like "first page of Google in two weeks" or "unlimited revisions" are unrealistic and a sign of cheap marketing.</li>
   <li><strong>Vague pricing with no breakdown:</strong> A professional can explain exactly what you are paying for, in EGP, line by line. Evasiveness about costs, or quoting in USD without clarifying the EGP equivalent, is a serious warning sign. For reference, see <a href="/en/#pricing">our transparent EGP pricing</a>.</li>
   <li><strong>No interest in your business:</strong> If they give you a price without asking about your goals, audience, or competitors, they are selling you a template, not building a solution.</li>
@@ -62,13 +62,13 @@ const resource = {
 </ul>
 
 <h2>Our take: How to make the right call</h2>
-<p>The right company has a live portfolio you can explore, genuinely wants to understand your goals, is transparent about pricing, and communicates clearly. They do not need to be the cheapest or the biggest; they need to be the right fit for your business. Transparency, clear communication, and a genuine partnership are the same standards we hold ourselves to; you can read more about <a href='/en/about'>how we work</a>. If you are weighing doing it yourself through a website builder, read our guide on <a href='/en/guides/diy-vs-professional-web-design'>DIY website builders vs hiring a professional</a> before you decide.</p>`,
+<p>The right company has a real portfolio you can explore, genuinely wants to understand your goals, is transparent about pricing, and communicates clearly. They do not need to be the cheapest or the biggest; they need to be the right fit for your business. Transparency, clear communication, and a genuine partnership are the same standards we hold ourselves to; you can read more about <a href='/en/about'>how we work</a>. If you are weighing doing it yourself through a website builder, read our guide on <a href='/en/guides/diy-vs-professional-web-design'>DIY website builders vs hiring a professional</a> before you decide.</p>`,
 
     ar: `
-<p>الشركة المناسبة في مصر عندها سابقة أعمال من مواقع حقيقية معروضة تقدر تدخل عليها وتجربها بنفسك، بتسأل عن أهدافك، شفافة في التسعير، وبتتواصل بوضوح في مرحلة الاتفاق. لكن لازم تقرر الأول هل تختار مستقل، استوديو، أو شركة. خلينا نبدأ بالمقارنة.</p>
+<p>الشركة المناسبة في مصر عندها سابقة أعمال من مواقع حقيقية معروضة تقدر تدخل عليها وتجربها بنفسك، بتسأل عن أهدافك، واضحة في التسعير، وبتتواصل بوضوح في مرحلة الاتفاق. لكن لازم تقرر الأول هل تختار مستقل، استوديو، أو شركة. خلينا نبدأ بالمقارنة.</p>
 
 <h2>تتعامل مع مستقل، استوديو، ولا شركة؟</h2>
-<p>اختار مستقل للمشاريع الصغيرة والميزانيات المحدودة، استوديو للمشاريع المتوسطة اللي محتاجة تخصصات، وشركة للمشاريع الكبيرة وعملاء المؤسسات. ده مقارنة سريعة بين التلاتة:</p>
+<p>مقارنة بين المستقل، الاستوديو، والشركة:</p>
 <table>
   <thead>
     <tr>
@@ -99,7 +99,9 @@ const resource = {
 <p>الاختيار الصحيح بيعتمد تماماً على احتياجاتك وميزانيتك. ومن خلال الإطار ده، تقدر تختار الكيان اللي يناسب احتياجاتك. بمجرد ما تاخد القرار، الخطوات اللي جاية بتنطبق على الكل.</p>
 
 <h2>إيه اللي لازم تفحصه قبل التعامل؟</h2>
-<p>أهم عامل تختار بيه هو موقعهم هما شخصياً. هل تصميمه محترف؟ هل سريع؟ هل نماذج التواصل شغالة ولا مجرد منظر؟ هل في زراير أو صفحات مش شغالة؟ لازم تفحص موقعهم بدقة، لو لقيت غلطات، دور على حد تانى. لو الشركة مش عارفة تظبط موقعها، تفتكر هتظبط موقعك إزاي؟</p>
+<p>أهم عامل تختار بيه هو موقعهم هما شخصياً. هل تصميمه محترف؟ هل سريع؟ هل نماذج التواصل شغالة ولا مجرد منظر؟ هل في زراير أو صفحات مش شغالة؟ لازم تفحص موقعهم بدقة، لو لقيت غلطات، دور على حد تانى. لو الشركة مش عارفة تظبط موقعها، تفتكر هتظبط موقعك إزاي؟
+
+كمان لازم تشوف سابقة أعمالهم، وهل فيها مشاريع حقيقية لعملاء تقدر تجربها بنفسك؟ بعض الشركات بتعرض قوالب جاهزة مش هما اللي مصممنها، وبتظن إنها حقيقية لمجرد إنها شغالة على رابط موقع حقيقي. عشان تتأكد، بص على بيانات التواصل في المواقع دي؛ لو لقيت بيانات وهمية احذر. ولو لسه شاكك، جرب تتصل بالعميل ده بنفسك وتسأله لو هما فعلاً اللي عملوا الموقع. كمرجع لشكل سابقة الأعمال الاحترافية، يمكنك تصفح سابقة أعمالنا <a href="/ar/#portfolio">سابقة أعمالنا في تصميم المواقع</a> حيث يربط كل مشروع بموقع إلكتروني حي وشغال يمكنك فحصه بنفسك.</p>
 
 <h2>العلامات التحذيرية اللي لازم تنتبه ليها</h2>
 <p>أهم العلامات التحذيرية هي: مفيش سابقة أعمال حقيقية، وعود خيالية، أسعار غامضة أو بالدولار من غير توضيح بالجنيه، عدم الاهتمام بشغلك، وأسعار مبالغ فيها سواء رخيصة أو غالية. ابعد عن أي جهة بتظهر العلامات دي:</p>

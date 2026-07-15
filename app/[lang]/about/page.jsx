@@ -7,6 +7,7 @@ import { SITE_URL, SITE_NAME } from "@/app/constants";
 import { Eye, MessagesSquare, Handshake, Mail } from "lucide-react";
 import WhatsAppIcon from "@/app/components/utils/WhatsAppIcon";
 import LinkedInIcon from "@/app/components/utils/LinkedInIcon";
+import { SOCIAL_LINKS } from "../../constants";
 
 // One icon per pillar, matched to the order in aboutSection.pillars.
 const pillarIcons = [Eye, MessagesSquare, Handshake];
@@ -215,7 +216,7 @@ export default async function AboutPage({ params }) {
             className="hidden md:block md:h-48 md:w-px md:shrink-0 md:bg-linear-to-b md:from-transparent md:via-gold/40 md:to-transparent"
           />
 
-          {/* Identity + CTAs خلاهمث*/}
+          {/* Identity + CTAs */}
           <div className="flex flex-col w-full px-2 items-center md:items-start">
             <p className="hidden sm:block mt-5 text-[clamp(1.3rem,1rem+1.1vw,1.55rem)] font-semibold text-content-heading md:mt-0 md:text-[clamp(1.8rem,2.4vw,2.4rem)] md:leading-tight">
               {t.founderName[lang]}
@@ -229,7 +230,7 @@ export default async function AboutPage({ params }) {
               {/* Contact links row */}
               <div className="flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="https://wa.me/201274613331"
+                  href={SOCIAL_LINKS.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-1 items-center justify-center gap-2.5 rounded-2xl border border-border-strong px-6 py-3 text-base font-medium text-content-body transition-all duration-250 hover:border-white/30"

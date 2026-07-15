@@ -5,8 +5,6 @@ import FAQSection from "../components/sections/FAQSection";
 import ContactSection from "../components/sections/ContactSection";
 import { notFound } from "next/navigation";
 import { projectsStructuredData } from "../data/portfolio";
-
-// IMPORTS FOR METADATA AND SCHEMA
 import { pricingCards } from "../data/translations/pricingSection";
 import {
   SITE_URL,
@@ -16,9 +14,6 @@ import {
   SOCIAL_LINKS,
 } from "@/app/constants";
 
-// ─────────────────────────────────────────────
-// METADATA CONTENT (For Schema & SEO)
-// ─────────────────────────────────────────────
 const META_DESCRIPTION = {
   en: "Custom website design & development in Egypt. We build high-quality, affordable websites. Get a quote today.",
   ar: "تصميم وتطوير مواقع إلكترونية مخصصة للشركات والأفراد. ابدأ حضورك الرقمي الاحترافي معنا.",
@@ -34,10 +29,8 @@ const meta = {
     description: META_DESCRIPTION.ar,
   },
 };
-// for github
-// ─────────────────────────────────────────────
+
 // PAGE-SPECIFIC CANONICAL URL
-// ─────────────────────────────────────────────
 export async function generateMetadata({ params }) {
   const { lang } = await params;
   const canonicalUrl = lang === "en" ? SITE_URL : `${SITE_URL}/${lang}`;
@@ -111,7 +104,6 @@ function buildStructuredData(lang) {
       SOCIAL_LINKS.instagram,
       SOCIAL_LINKS.facebook,
       SOCIAL_LINKS.gbp,
-      SOCIAL_LINKS.x,
       SOCIAL_LINKS.linkedin,
     ],
     founder: { "@id": `${SITE_URL}#founder` },
