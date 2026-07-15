@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignore all compiled tailwind assets in the portfolio folders
+public/portfolio/*/css/tailwind.css
