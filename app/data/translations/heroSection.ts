@@ -12,8 +12,8 @@ const hero: {
     ar: "خدمات إنشاء و تصميم مواقع · مصر",
   },
   name: {
-    en: 'Behind every great business is a website that <span class="text-gold">proves it</span>.',
-    ar: 'وراء كل بيزنس ناجح.. موقع <span class="text-gold">يثبت جدارته</span>.',
+    en: 'Every great business has a website to <span class="text-gold">prove it</span>.',
+    ar: 'وراء كل عمل ناجح موقع <span class="text-gold">يثبت جدارته</span>.',
   },
   primaryCta: {
     en: "Request a Quote",
@@ -24,8 +24,8 @@ const hero: {
     ar: "شاهد أعمالنا",
   },
   subheading: {
-    en: "We build modern websites that validate your brand's <strong>true value</strong>.",
-    ar: "نصمم مواقع مخصصة تعكس <strong>قيمة شركتك الحقيقية</strong> وتثبت مكانتك في السوق.",
+    en: "We build modern websites that <strong>validate your brand's true value</strong>.",
+    ar: "نصمم مواقع مخصصة <strong>تعكس قيمة شركتك الحقيقية</strong> وتثبت مكانتك في السوق.",
   },
 };
 

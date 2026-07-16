@@ -23,11 +23,11 @@ const META_DESCRIPTION: Record<Lang, string> = {
 
 const meta: Record<Lang, { title: string; description: string }> = {
   en: {
-    title: `Get a Custom Website in Egypt | ${SITE_NAME}`,
+    title: `${SITE_NAME} · Egypt | Get More Customers Online`,
     description: META_DESCRIPTION.en,
   },
   ar: {
-    title: `تصميم وإنشاء مواقع إلكترونية في مصر | ${SITE_NAME}`,
+    title: `خدمات إنشاء و تصميم مواقع · مصر | ${SITE_NAME}`,
     description: META_DESCRIPTION.ar,
   },
 };
