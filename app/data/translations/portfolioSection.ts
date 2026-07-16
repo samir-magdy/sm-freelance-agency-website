@@ -29,10 +29,10 @@ export interface ProjectCopy {
 
 export type ProjectId =
   | "Ecommerce"
-  | "Travel"
-  | "DentalClinic"
-  | "InteriorDesign"
-  | "PetCare"
+  | "TravelTourismWebsite"
+  | "HealthcareWebsite"
+  | "InteriorDesignWebsite"
+  | "PetcareWebsite"
   | "ButterDesign"
   | "HadeerEnglish";
 
@@ -48,7 +48,7 @@ export const projectData: Record<ProjectId, ProjectCopy> = {
     },
   },
 
-  Travel: {
+  TravelTourismWebsite: {
     title: {
       en: "Travel & Tourism",
       ar: "السياحة والسفر",
@@ -59,10 +59,10 @@ export const projectData: Record<ProjectId, ProjectCopy> = {
     },
   },
 
-  DentalClinic: {
+  HealthcareWebsite: {
     title: {
-      en: "Clinics & Medical",
-      ar: "نظام حجز عيادات",
+      en: "Healthcare & Clinics",
+      ar: "الرعاية الصحية والعيادات",
     },
     description: {
       en: "Patients always choose the clinic they trust most. This site presents your clinic in a way that makes you the obvious choice. In addition to a built-in booking system you can track, making you independent of platforms like Vezeeta.",
@@ -70,10 +70,10 @@ export const projectData: Record<ProjectId, ProjectCopy> = {
     },
   },
 
-  InteriorDesign: {
+  InteriorDesignWebsite: {
     title: {
-      en: "Interior Designer Portfolio",
-      ar: "خدمات التصميم الداخلي",
+      en: "Interior Design & Decor",
+      ar: "التصميم الداخلي والديكور",
     },
     description: {
       en: "Clients hire the interior designer whose portfolio inspires confidence and elegance before the first meeting. This site showcases your projects with the visual impact needed to attract clients willing to invest in quality interior design.",
@@ -81,10 +81,10 @@ export const projectData: Record<ProjectId, ProjectCopy> = {
     },
   },
 
-  PetCare: {
+  PetcareWebsite: {
     title: {
-      en: "Veterinary & Pet Care",
-      ar: "رعاية الحيوانات الأليفة",
+      en: "Pet Care & Veterinary",
+      ar: "رعاية الحيوانات والبيطرة",
     },
     description: {
       en: "Pet owners trust the vet clinic with the most professional and reassuring online presence. This web design communicates care, expertise, and warmth, turning first-time visitors into loyal clients for your clinic.",

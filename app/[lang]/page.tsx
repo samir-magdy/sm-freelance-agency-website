@@ -17,13 +17,13 @@ import {
 import { isLang, type Lang, type LangParams } from "@/app/types";
 
 const META_DESCRIPTION: Record<Lang, string> = {
-  en: "Custom website design & development in Egypt. We build high-quality, affordable websites. Get a quote today.",
-  ar: "تصميم وتطوير مواقع إلكترونية مخصصة للشركات والأفراد. ابدأ حضورك الرقمي الاحترافي معنا.",
+  en: `${SITE_NAME} builds professional, affordable websites that help businesses reach more customers and strengthen their online presence.`,
+  ar: `${SITE_NAME} تصمم مواقع احترافية واقتصادية تساعد الشركات على الوصول لعملاء أكثر وتعزيز وجودها الرقمي.`,
 };
 
 const meta: Record<Lang, { title: string; description: string }> = {
   en: {
-    title: `${SITE_NAME} · Egypt | Get More Customers Online`,
+    title: `${SITE_NAME} · Egypt | Reach More Customers Online`,
     description: META_DESCRIPTION.en,
   },
   ar: {
@@ -69,7 +69,7 @@ function buildStructuredData(lang: Lang) {
     name: SITE_NAME,
     inLanguage: "en",
     description:
-      "SM Web Design Studio is a professional web design company in Egypt specializing in EGP-priced custom websites, custom web apps with InstaPay, Vodafone Cash, Paymob, and Fawry integration, portfolio sites for freelancers, and private clinic booking systems. Serving solopreneurs, online sellers, freelancers, doctors, and independent professionals in Cairo, Alexandria, and across Egypt. No commercial register required.",
+      "SM Web Design Studio is a professional web design company in Egypt specializing in custom websites that deliver exceptional user experiences and measurable ROI. Every website is built using modern technologies like Next.js, creating high-performance, SEO-friendly websites that traditional or AI-powered website builders simply can't match.",
     url: SITE_URL,
     telephone: PHONE_NUMBER,
     email: CONTACT_EMAIL,
@@ -139,7 +139,7 @@ function buildStructuredData(lang: Lang) {
       name: "Landing Page",
       alternateName: "صفحة هبوط",
       description:
-        "A single-page website built to drive one action like a WhatsApp message, a booking, or filling out a form. Perfect for startups, freelancers and marketing campaigns.",
+        "A single-page website built to drive a specific action like a booking, or filling out a form. Perfect for startups, freelancers and marketing campaigns.",
       serviceType: "Landing Page Design",
       provider: { "@id": `${SITE_URL}#business` },
       offers: {
@@ -211,7 +211,7 @@ function buildStructuredData(lang: Lang) {
     alternateName: "سمير مجدي",
     jobTitle: "Founder, Web Designer & Developer",
     description:
-      "Samir Magdy is a web designer & developer & the founder of SM Web Design Studio, specializing in high-performance, custom web development.",
+      "Samir Magdy is a web developer & founder of SM Web Design Studio in Cairo, Egypt. He specializes in high-performance, custom web development using Next.js and TypeScript.",
     nationality: { "@type": "Country", name: "Egypt" },
     url: SITE_URL,
     image: `${SITE_URL}/profilePhoto.jpg`,

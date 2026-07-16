@@ -2,9 +2,9 @@ import type { StaticImageData } from "next/image";
 import ecommerceImg from "../../public/project-screenshots/e-commerce.webp";
 import travelImg from "../../public/project-screenshots/travel.webp";
 import butterDesignImg from "../../public/project-screenshots/butter-design.webp";
-import dentalImg from "../../public/project-screenshots/dental.webp";
+import healthcareImg from "../../public/project-screenshots/dental.webp";
 import interiorImg from "../../public/project-screenshots/interior.webp";
-import petImg from "../../public/project-screenshots/pet.webp";
+import petcareImg from "../../public/project-screenshots/pet.webp";
 import hadeerImg from "../../public/project-screenshots/hadeer.webp";
 
 import { SITE_URL } from "../constants";
@@ -36,13 +36,13 @@ export const projects: Project[] = [
     genreAr: "استوديو تصميم وهوية بصرية",
   },
   {
-    id: "Travel",
-    liveUrl: "/portfolio/travel-agency-website",
+    id: "TravelTourismWebsite",
+    liveUrl: "/portfolio/travel-tourism-website-design",
     screenshot: travelImg,
-    schemaName: "Travel Agency Website – Egypt",
-    schemaNameAr: "موقع شركة سياحة – مصر",
+    schemaName: "Travel & Tourism Website Design – Egypt",
+    schemaNameAr: "تصميم موقع سياحة وسفر – مصر",
     description:
-      "A travel agency demo by SM Web Design Studio showcasing destination-focused hotel listings, trip packages, and a polished browsing experience built to turn visitors into confirmed travelers.",
+      "A travel & tourism website demo by SM Web Design Studio showcasing destination-focused hotel listings, trip packages, and a polished browsing experience built to turn visitors into confirmed travelers.",
     genre: "Travel & Tourism",
     genreAr: "سياحة وسفر",
   },
@@ -59,6 +59,7 @@ export const projects: Project[] = [
   },
   {
     id: "HadeerEnglish",
+    clientSite: true,
     liveUrl: "https://hadeernabil.site",
     screenshot: hadeerImg,
     schemaName: "Private English Tutor Website – Egypt",
@@ -69,36 +70,36 @@ export const projects: Project[] = [
     genreAr: "دروس خاصة",
   },
   {
-    id: "DentalClinic",
-    liveUrl: "/portfolio/dental-clinic-site-demo",
-    screenshot: dentalImg,
-    schemaName: "Dental Clinic Website – Egypt",
-    schemaNameAr: "موقع عيادة أسنان – مصر",
+    id: "HealthcareWebsite",
+    liveUrl: "/portfolio/healthcare-website-design",
+    screenshot: healthcareImg,
+    schemaName: "Healthcare Website Design – Egypt",
+    schemaNameAr: "تصميم موقع رعاية صحية – مصر",
     description:
-      "A dental clinic demo by SM Web Design Studio built to attract new patients in Egypt with a professional, trust-building web presence that highlights treatments, expertise, and clinic facilities.",
-    genre: "Dental Clinic",
-    genreAr: "عيادة أسنان",
+      "A healthcare website demo by SM Web Design Studio built to attract more patients in Egypt with a professional, trust-building web presence that highlights treatments, expertise, and clinic facilities.",
+    genre: "Healthcare",
+    genreAr: "رعاية صحية",
   },
   {
-    id: "InteriorDesign",
-    liveUrl: "/portfolio/interior-design-site-demo",
+    id: "InteriorDesignWebsite",
+    liveUrl: "/portfolio/interior-design-website-design",
     screenshot: interiorImg,
-    schemaName: "Interior Design Studio Website – Egypt",
-    schemaNameAr: "موقع استوديو تصميم داخلي – مصر",
+    schemaName: "Interior Design Website Design – Egypt",
+    schemaNameAr: "تصميم موقع ديكور داخلي – مصر",
     description:
-      "An interior design studio demo by SM Web Design Studio showcasing project portfolios and services to attract high-value clients in Egypt looking for premium residential and commercial design.",
+      "An interior design website demo by SM Web Design Studio showcasing project portfolios and services to attract high-value clients in Egypt looking for premium residential and commercial design.",
     genre: "Interior Design",
     genreAr: "تصميم داخلي",
   },
   {
-    id: "PetCare",
-    liveUrl: "/portfolio/pet-care-site-demo",
-    screenshot: petImg,
-    schemaName: "Veterinary & Pet Care Clinic Website – Egypt",
-    schemaNameAr: "موقع عيادة بيطرية – مصر",
+    id: "PetcareWebsite",
+    liveUrl: "/portfolio/petcare-website-design",
+    screenshot: petcareImg,
+    schemaName: "Petcare Website Design – Egypt",
+    schemaNameAr: "تصميم موقع رعاية الحيوانات – مصر",
     description:
-      "A veterinary and pet care clinic demo by SM Web Design Studio designed to build trust with pet owners in Egypt and drive appointment bookings through a warm, professional online presence.",
-    genre: "Vet & Pet Care",
+      "A petcare website demo by SM Web Design Studio designed to build trust with pet owners in Egypt and drive appointment bookings through a warm, professional online presence.",
+    genre: "Petcare",
     genreAr: "رعاية الحيوانات",
   },
 ];
