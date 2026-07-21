@@ -48,7 +48,7 @@ export const projects: Project[] = [
   },
   {
     id: "Ecommerce",
-    liveUrl: "https://ecommerce.smweb.studio",
+    liveUrl: "https://ecommerce.smwebdesign.studio",
     screenshot: ecommerceImg,
     schemaName: "Fashion E-commerce – Egypt",
     schemaNameAr: "متجر إلكتروني للأزياء – مصر",
