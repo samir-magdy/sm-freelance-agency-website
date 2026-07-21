@@ -173,9 +173,10 @@ The Calculated Data:
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="ms-1 rtl:mb-1 sm:mb-2 text-content-heading font-bold text-base lg:text-[1.2rem] block">
-                {t.scopeLabelByBase[baseId][lang]}
-              </label>
+              <label
+                className="ms-1 rtl:mb-1 sm:mb-2 text-content-heading font-bold text-base lg:text-[1.2rem] block"
+                dangerouslySetInnerHTML={{ __html: t.scopeLabelByBase[baseId][lang] }}
+              />
               <div className="flex flex-wrap gap-2 ">
                 {currentScopes.map((scope, index) => {
                   const isSelected = scopeIndex === index;
@@ -193,6 +194,9 @@ The Calculated Data:
                         className={`font-semibold text-xs sm:text-base lg:text-xl py-0.5 leading-tight ${isSelected ? "text-content-heading" : "text-content-body"}`}
                       >
                         {scope.name[lang]}
+                      </span>
+                      <span className="hidden sm:block text-xs lg:text-[1.05rem] text-content-muted/90 leading-snug">
+                        <bdi>{scope.description[lang]}</bdi>
                       </span>
                     </button>
                   );

@@ -23,7 +23,7 @@ const META_DESCRIPTION: Record<Lang, string> = {
 
 const meta: Record<Lang, { title: string; description: string }> = {
   en: {
-    title: `${SITE_NAME} · Egypt | Attract More Customers Online`,
+    title: `${SITE_NAME} · Egypt | Web Design & Development`,
     description: META_DESCRIPTION.en,
   },
   ar: {

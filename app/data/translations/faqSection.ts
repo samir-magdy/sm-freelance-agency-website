@@ -47,6 +47,16 @@ const faqSection: FAQSection = {
         ar: "بنبدأ بالتواصل علشان نفهم شغلك ومتطلباتك من الموقع. بعدين بنعمل تصور لتصميم الموقع للمراجعه، واخيراً بنطور التصميم لموقع إلكتروني فعلي.",
       },
     },
+{
+      question: {
+        en: "What's included in the base price shown above?",
+        ar: "إيه اللي مشمول في السعر الأساسي المعروض؟",
+      },
+      answer: {
+        en: "Every project includes a custom, ~5 page website (Landing pages are one page). First-year hosting, domain setup, a 90-day post-launch warranty are also included. The following are not included in the base build unless your project requires it: an admin panel to create/update/delete content yourself, SEO (keyword resarch and technical on-page), copywriting, and localized bilingual support.",
+        ar: "كل مشروع يشمل موقع مخصص في حدود 5 صفحات (صفحات الهبوط صفحة واحدة)، استضافة السنة الأولى، إعداد الدومين، وضمان 90 يوم بعد الإطلاق. الخدمات التالية غير مشمولة في البناء الأساسي إلا إذا يتطلب مشروعك: لوحة تحكم علشان تعمل/تعدل/تحذف محتوى بنفسك، SEO (بحث الكلمات المفتاحية والتحسين التقني المباشر)، كتابة المحتوى، والدعم المحلي بلغتين.",
+      },
+    },
     {
       question: {
         en: "How long does it take to create a website?",
