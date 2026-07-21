@@ -13,7 +13,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
     >
       <div className="hero-grid" aria-hidden="true" />
 
-      <div className="safari-hero-padding relative z-10 w-full mx-auto flex flex-col items-center text-center px-8 sm:px-10 pt-24 pb-24 sm:pt-40 sm:pb-28">
+      <div className="safari-hero-padding relative z-10 w-full mx-auto flex flex-col items-center text-center px-8 sm:px-10 pt-36 pb-24 sm:pt-40 sm:pb-28">
         <h1 className="inline-flex items-center gap-2.5 sm:gap-[0.85rem]">
           <span
             aria-hidden="true"
@@ -30,12 +30,12 @@ export default function HeroSection({ lang }: HeroSectionProps) {
 
         <h2
           id="hero-title"
-          className="mt-6 mb-3 sm:mt-8 sm:mb-6 text-content-heading font-medium tracking-[-2px] leading-[1.04] text-[clamp(2.5rem,12vw,5.5rem)] rtl:text-[clamp(2.25rem,10vw,5.5rem)] rtl:leading-relaxed max-w-[16ch] sm:tracking-[-4px] sm:max-w-[14ch]"
+          className="mt-6 mb-3 sm:mt-8 sm:rtl:mt-2.5 sm:mb-6 text-content-heading font-medium tracking-[-2px] leading-[1.04] text-[clamp(2.5rem,12vw,5rem)] rtl:text-[clamp(2.25rem,10vw,5rem)] rtl:leading-relaxed max-w-[16ch] sm:tracking-[-4px] sm:max-w-[14ch]"
           dangerouslySetInnerHTML={{ __html: hero.name[lang] }}
         />
 
         <p
-          className="rtl:mt-0 mt-[clamp(0.5rem,3vw,1.75rem)] sm:mt-0 text-content-body text-[clamp(1.1rem,5vw,1.6rem)] rtl:text-[clamp(0.9rem,4vw,1.5rem)] sm:leading-[1.6] rtl:leading-[2.15] sm:rtl:leading-loose max-w-120 px-4"
+          className="rtl:mt-0 mt-[clamp(0.5rem,3vw,1.75rem)] sm:mt-0 text-content-body text-[clamp(1.1rem,5vw,1.6rem)] rtl:text-[clamp(0.9rem,4vw,1.5rem)] sm:leading-[1.6] rtl:leading-[2.15] sm:rtl:leading-loose max-w-120 px-2"
           dangerouslySetInnerHTML={{ __html: hero.subheading[lang] }}
         />
 

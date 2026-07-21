@@ -75,7 +75,7 @@ export default function LightRays({
   lightSpread = 0.1,
   rayLength = 2,
   pulsating = false,
-  fadeDistance = 2,
+  fadeDistance = 10,
   saturation = 0.4,
   followMouse = true,
   mouseInfluence = 0.4,

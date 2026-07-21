@@ -62,7 +62,7 @@ export default function GuidesGrid({ resources, lang, t }: GuidesGridProps) {
           </Link>
         </article>
       ))}
-      <div className="relative w-full mx-auto flex flex-col items-center justify-center gap-4 p-5.5 rounded-2xl bg-surface-card/20 transition-colors duration-200 text-center overflow-hidden sm:min-h-[22rem] lg:col-span-2 lg:max-w-[40rem]">
+      <div className="relative w-full mx-auto flex flex-col items-center justify-center gap-4 p-5.5 rounded-2xl bg-surface-card/20 transition-colors duration-200 text-center overflow-hidden min-h-[22rem] lg:col-span-2 lg:max-w-[40rem]">
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none"
           fill="none"

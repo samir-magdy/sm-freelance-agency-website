@@ -102,7 +102,7 @@ export default function Footer({ lang }: FooterProps) {
         </nav>
 
         <div className="mt-14 md:mt-20 pt-6 border-t border-border-subtle">
-          <div className="flex flex-col items-center justify-center gap-4 text-content-muted">
+          <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 text-content-muted">
             <address
               dir="ltr"
               className="not-italic flex flex-wrap items-center justify-center gap-y-3"
@@ -117,7 +117,7 @@ export default function Footer({ lang }: FooterProps) {
                 className="inline-flex items-center gap-1.5 hover:text-content-heading transition-colors"
               >
                 <Phone className="w-4 h-4" aria-hidden="true" />
-                <span className="text-base pb-0.5">{PHONE_DISPLAY}</span>
+                <span className="text-sm sm:text-base pb-0.5">{PHONE_DISPLAY}</span>
               </a>
               <span
                 className="inline-block w-1 h-1 rounded-full bg-content-muted mx-2.5 sm:mx-3.5"
@@ -141,7 +141,7 @@ export default function Footer({ lang }: FooterProps) {
                     d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
                   />
                 </svg>
-                <span className="text-base pb-0.5">{CONTACT_EMAIL}</span>
+                <span className="text-sm sm:text-base pb-0.5">{CONTACT_EMAIL}</span>
               </a>
 
               <span
@@ -155,7 +155,7 @@ export default function Footer({ lang }: FooterProps) {
                 className="inline-flex items-center gap-1.5 hover:text-content-heading transition-colors"
               >
                 <MapPin className="w-4 h-4" aria-hidden="true" />
-                <span className="text-base pb-0.5">
+                <span className="text-sm sm:text-base pb-0.5">
                   {footer.labels.location[lang]}
                 </span>
               </a>

@@ -319,7 +319,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
 
             <div
               id="mobile-mockup"
-              className="aspect-11/19.5 w-[205px] sm:w-[230px] md:w-[260px] lg:w-[300px] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="aspect-11/19.5 w-[240px] sm:w-[230px] md:w-[260px] lg:w-[300px] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
               <div className="absolute -left-[2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />

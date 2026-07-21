@@ -7,7 +7,7 @@ const resource: Guide = {
   dateModified: new Date(),
   title: {
     en: `How Much Does a Website Cost in Egypt? (${CURRENT_YEAR})`,
-    ar: `اسعار تصميم المواقع الالكترونية في مصر (${CURRENT_YEAR})`,
+    ar: `اسعار تصميم المواقع الإلكترونية في مصر (${CURRENT_YEAR})`,
   },
   metaTitle: {
     en: `How Much Does a Website Cost In Egypt (${CURRENT_YEAR})`,
@@ -76,7 +76,7 @@ const resource: Guide = {
   <li><strong>Maintenance and technical support:</strong> Periodic maintenance contracts (monthly or yearly) are an additional cost that ensures the site keeps running efficiently and any post-delivery issues are fixed without surprise fees.</li>
 </ul>
 <h2 style="margin-bottom: 0.4rem">Website Price Calculator</h2>
-<p style="margin-bottom: 0">Choose your website type, content size, and required add-ons to see an instant estimate:</p>
+<p style="margin-bottom: 0">Choose your site type, content size, and add-ons to see an estimate:</p>
 <!-- PRICING_ESTIMATOR_SLOT -->
 <h2 style="margin-top: 0.5rem">The Trap of Cheap Websites: Hidden Risks and How to Avoid Them</h2>
 <p>For serious businesses, a cheap website usually causes more harm than good. Here is the typical failure pattern we see in the Egyptian market:</p>
