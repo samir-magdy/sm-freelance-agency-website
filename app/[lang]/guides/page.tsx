@@ -43,7 +43,7 @@ export async function generateMetadata({
           url: `${SITE_URL}/open-graph.webp`,
           width: 1200,
           height: 630,
-          alt: "SM Web Design Studio – Web Design Company in Egypt",
+          alt: `${SITE_NAME} – Web Design Company in Egypt`,
         },
       ],
     },
@@ -96,7 +96,7 @@ export default function GuidesPage({
   ];
 
   return (
-    <div dir={dir} className="bg-background pt-18 sm:pt-26 pb-20 px-5">
+    <div dir={dir} className="bg-background pt-18 sm:pt-26 pb-14 px-5">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

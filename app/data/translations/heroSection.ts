@@ -1,4 +1,5 @@
 import type { Localized } from "@/app/types";
+import { SITE_NAME } from "@/app/constants";
 
 const hero: {
   eyebrow: Localized;
@@ -8,23 +9,23 @@ const hero: {
   subheading: Localized;
 } = {
   eyebrow: {
-    en: "SM Web Design Studio · Egypt",
-    ar: "خدمات إنشاء و تصميم مواقع · مصر",
+    en: `${SITE_NAME} · Egypt`,
+    ar: "شركة تصميم مواقع في مصر",
   },
   name: {
-    en: 'Every great business has a website to <span class="text-gold">prove it</span>.',
-    ar: 'وراء كل عمل ناجح موقع <span class="text-gold">يثبت جدارته</span>.',
+    en: 'Great <span class="text-gold">businesses</span> deserve great <span class="text-gold">websites</span>.',
+    ar: 'لكل عمل ناجح موقع <span class="text-gold">يُثبت جدارته</span>.',
   },
   primaryCta: {
-    en: "Request a Quote",
-    ar: "استشارة مجانية",
+    en: "Get a Quote",
+    ar: "تواصل معنا",
   },
   secondaryCta: {
     en: "See Our Work",
     ar: "شاهد أعمالنا",
   },
   subheading: {
-    en: "We build modern websites that <strong>validate your brand's true value</strong>.",
+    en: "We build professional websites that <strong><em>validate</em></strong> your <strong><em>brand</em></strong><em>'s</em> true value.",
     ar: "نصمم مواقع مخصصة <strong>تعكس قيمة شركتك الحقيقية</strong> وتثبت مكانتك في السوق.",
   },
 };

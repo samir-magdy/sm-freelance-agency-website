@@ -5,8 +5,8 @@ import { SITE_URL, SITE_NAME } from "@/app/constants";
 import type { Lang, LangParams } from "@/app/types";
 
 const metaDescription: Record<Lang, string> = {
-  en: "Read the terms of service for SM Web Design Studio. Learn about your rights and obligations when using our web design and development services.",
-  ar: "اطّلع على شروط الخدمة الخاصة بـ SM Web Design Studio وتعرّف على حقوقك والتزاماتك عند استخدام خدمات تصميم المواقع لدينا.",
+  en: `Read the terms of service for ${SITE_NAME}. Learn about your rights and obligations when using our web design and development services.`,
+  ar: `اطّلع على شروط الخدمة الخاصة بـ ${SITE_NAME} وتعرّف على حقوقك والتزاماتك عند استخدام خدمات تصميم المواقع لدينا.`,
 };
 
 export async function generateMetadata({
@@ -44,7 +44,7 @@ export async function generateMetadata({
           url: `${SITE_URL}/open-graph.webp`,
           width: 1200,
           height: 630,
-          alt: "SM Web Design Studio – Web Design Company in Egypt",
+          alt: `${SITE_NAME} – Web Design Company in Egypt`,
         },
       ],
     },
@@ -64,7 +64,7 @@ export default function TermsPage({
   return (
     <div
       dir={dir}
-      className="min-h-screen pt-22 sm:pt-32 pb-16 px-6 bg-background"
+      className="min-h-dvh pt-22 sm:pt-32 pb-16 px-6 bg-background"
     >
       <div className="max-w-6xl mx-auto">
         <header className="mb-12 border-b border-neutral-800 pb-8 text-start">

@@ -1,4 +1,5 @@
 import type { Localized } from "@/app/types";
+import { SITE_NAME, CONTACT_EMAIL } from "@/app/constants";
 
 interface LegalItem {
   title: Localized;
@@ -17,8 +18,8 @@ const privacyPolicy: LegalDocument = {
     ar: "سياسة الخصوصية",
   },
   subheading: {
-    en: "Last Updated: June 4th 2026. Welcome to SM Web Design Studio. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website and use our services.",
-    ar: "آخر تحديث: 4 يونيو 2026. مرحبًا بك في SM Web Design Studio. نحن ملتزمون بحماية معلوماتك الشخصية وحقك في الخصوصية. تشرح سياسة الخصوصية هذه كيف نقوم بجمع واستخدام وحماية معلوماتك عند زيارة موقعنا واستخدام خدماتنا.",
+    en: `Last Updated: June 4th 2026. Welcome to ${SITE_NAME}. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website and use our services.`,
+    ar: `آخر تحديث: 4 يونيو 2026. مرحبًا بك في ${SITE_NAME}. نحن ملتزمون بحماية معلوماتك الشخصية وحقك في الخصوصية. تشرح سياسة الخصوصية هذه كيف نقوم بجمع واستخدام وحماية معلوماتك عند زيارة موقعنا واستخدام خدماتنا.`,
   },
   items: [
     {
@@ -77,8 +78,8 @@ const privacyPolicy: LegalDocument = {
         ar: "6. حقوقك",
       },
       content: {
-        en: "Under Egypt's Personal Data Protection Law (Law No. 151 of 2020) and applicable international standards, you have the right to: access the personal data we hold about you; request correction of inaccurate data; request deletion of your data; object to or restrict our processing of your data; and withdraw any consent you have given at any time.\n\nTo exercise any of these rights, contact us at studio@samirmagdy.com. We will respond within a reasonable timeframe.",
-        ar: "بموجب قانون حماية البيانات الشخصية المصري (القانون رقم 151 لسنة 2020) والمعايير الدولية المعمول بها، يحق لك: الوصول إلى البيانات الشخصية التي نحتفظ بها عنك؛ طلب تصحيح البيانات غير الدقيقة؛ طلب حذف بياناتك؛ الاعتراض على معالجتنا لبياناتك أو تقييدها؛ وسحب أي موافقة قدمتها في أي وقت.\n\nللممارسة أي من هذه الحقوق، تواصل معنا على studio@samirmagdy.com. وسنرد في غضون وقت معقول.",
+        en: `Under Egypt's Personal Data Protection Law (Law No. 151 of 2020) and applicable international standards, you have the right to: access the personal data we hold about you; request correction of inaccurate data; request deletion of your data; object to or restrict our processing of your data; and withdraw any consent you have given at any time.\n\nTo exercise any of these rights, contact us at ${CONTACT_EMAIL}. We will respond within a reasonable timeframe.`,
+        ar: `بموجب قانون حماية البيانات الشخصية المصري (القانون رقم 151 لسنة 2020) والمعايير الدولية المعمول بها، يحق لك: الوصول إلى البيانات الشخصية التي نحتفظ بها عنك؛ طلب تصحيح البيانات غير الدقيقة؛ طلب حذف بياناتك؛ الاعتراض على معالجتنا لبياناتك أو تقييدها؛ وسحب أي موافقة قدمتها في أي وقت.\n\nللممارسة أي من هذه الحقوق، تواصل معنا على ${CONTACT_EMAIL}. وسنرد في غضون وقت معقول.`,
       },
     },
     {
@@ -87,8 +88,8 @@ const privacyPolicy: LegalDocument = {
         ar: "7. تواصل معنا",
       },
       content: {
-        en: "If you have questions or concerns about this Privacy Policy or how we handle your data, you may email us at studio@samirmagdy.com or use the contact form on our website. We are committed to resolving any privacy concerns promptly and transparently.",
-        ar: "إذا كانت لديك أسئلة أو مخاوف بشأن سياسة الخصوصية هذه أو طريقة تعاملنا مع بياناتك، يمكنك مراسلتنا على studio@samirmagdy.com أو استخدام نموذج التواصل على موقعنا. نحن ملتزمون بمعالجة أي مخاوف تتعلق بالخصوصية بسرعة وشفافية.",
+        en: `If you have questions or concerns about this Privacy Policy or how we handle your data, you may email us at ${CONTACT_EMAIL} or use the contact form on our website. We are committed to resolving any privacy concerns promptly and transparently.`,
+        ar: `إذا كانت لديك أسئلة أو مخاوف بشأن سياسة الخصوصية هذه أو طريقة تعاملنا مع بياناتك، يمكنك مراسلتنا على ${CONTACT_EMAIL} أو استخدام نموذج التواصل على موقعنا. نحن ملتزمون بمعالجة أي مخاوف تتعلق بالخصوصية بسرعة وشفافية.`,
       },
     },
   ],

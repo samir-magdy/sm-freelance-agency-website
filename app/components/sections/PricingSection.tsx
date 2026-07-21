@@ -12,7 +12,7 @@ export default function PricingSection({ lang }: PricingSectionProps) {
   return (
     <section
       id="pricing"
-      className="relative flex py-4 px-4 md:px-6 min-h-screen items-start"
+      className="relative flex py-4 px-4 sm:px-12 md:px-24 min-h-dvh items-start"
       aria-labelledby="pricing-cards-heading"
       dir={isRtl ? "rtl" : "ltr"}
     >
@@ -34,7 +34,7 @@ export default function PricingSection({ lang }: PricingSectionProps) {
             <a
               key={card.id}
               href="#contact"
-              className="max-w-4xl reveal-element group flex flex-col p-6 sm:p-8 lg:p-10 rounded-4xl border border-border-subtle bg-surface-card hover:border-gold/40 hover:bg-surface-low hover:shadow-2xl hover:shadow-gold/5 transition-all duration-500 ease-out hover:-translate-y-1.5"
+              className="max-w-4xl reveal-element group flex flex-col p-6 sm:p-8 lg:p-10 rounded-4xl border border-border-subtle bg-surface-card hover:border-gold/20 hover:shadow-lg hover:shadow-white/10 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:-translate-x-1"
             >
               <div className="flex-1 mb-6">
                 <h3 className="font-bold text-subheading lg:text-heading text-content-heading leading-snug mb-2">
@@ -47,10 +47,10 @@ export default function PricingSection({ lang }: PricingSectionProps) {
               </div>
 
               <div className="mt-auto pt-4 border-t border-border-subtle/50">
-                <div className="flex flex-col gap-1">
+                <div className="flex items-end justify-between gap-4">
                   {card.price ? (
-                    <>
-                      <span className="text-xs mb-1 sm:text-xs font-bold uppercase tracking-[0.2em] text-content-muted/70 leading-none">
+                    <div className="flex flex-col gap-1">
+                      <span className="text-xs font-bold uppercase tracking-[0.2em] text-content-muted/70 leading-none">
                         {t.startsAt[lang]}
                       </span>
                       <div className="flex items-baseline gap-1.5">
@@ -60,53 +60,32 @@ export default function PricingSection({ lang }: PricingSectionProps) {
                         <span className="text-caption font-medium text-content-muted">
                           {t.currency[lang]}
                         </span>
-                        <span className="ms-auto inline-flex items-center gap-2 text-sm font-semibold text-content-body group-hover:text-gold transition-colors duration-300">
-                          {t.cta[lang]}
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 16 16"
-                            fill="none"
-                            aria-hidden="true"
-                            className="rotate-90"
-                          >
-                            <path
-                              d="M3.333 8h9.334M8.667 4l4 4-4 4"
-                              stroke="currentColor"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </span>
                       </div>
-                    </>
-                  ) : (
-                    <div className="flex items-center">
-                      <span className="text-subheading md:text-heading font-bold text-gold tracking-tight leading-none pb-1">
-                        {t.customPriceLabel[lang]}
-                      </span>
-                      <span className="ms-auto inline-flex items-center gap-2 text-sm font-semibold text-content-body group-hover:text-gold transition-colors duration-300">
-                        {t.cta[lang]}
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          fill="none"
-                          aria-hidden="true"
-                          className="rotate-90"
-                        >
-                          <path
-                            d="M3.333 8h9.334M8.667 4l4 4-4 4"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </span>
                     </div>
+                  ) : (
+                    <span className="text-subheading md:text-heading font-bold text-gold tracking-tight leading-none">
+                      {t.customPriceLabel[lang]}
+                    </span>
                   )}
+                  <span className="inline-flex items-center gap-2 text-base font-semibold text-content-body group-hover:text-content-heading transition-colors duration-300">
+                    {t.cta[lang]}
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      aria-hidden="true"
+                      className="rotate-90"
+                    >
+                      <path
+                        d="M3.333 8h9.334M8.667 4l4 4-4 4"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
                 </div>
               </div>
             </a>
@@ -118,7 +97,7 @@ export default function PricingSection({ lang }: PricingSectionProps) {
           </span>
           <a
             href={`/${lang}/guides/website-cost-in-egypt#pricing-calculator`}
-            className="group inline-flex items-center gap-3 px-6 py-3 rounded-2xl border border-gold/30 bg-surface-card hover:bg-surface-low hover:border-gold/60 text-content-heading font-semibold text-base sm:text-lg transition-all duration-300"
+            className="group inline-flex items-center gap-3 px-6 py-3 rounded-2xl border border-gold/15 bg-surface-card hover:border-gold/40 text-content-heading font-semibold text-base sm:text-lg transition-all duration-300"
           >
             <svg
               width="20"

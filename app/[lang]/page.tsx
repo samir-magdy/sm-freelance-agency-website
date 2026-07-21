@@ -17,17 +17,17 @@ import {
 import { isLang, type Lang, type LangParams } from "@/app/types";
 
 const META_DESCRIPTION: Record<Lang, string> = {
-  en: `${SITE_NAME} builds professional, affordable websites that help businesses reach more customers and strengthen their online presence.`,
-  ar: `${SITE_NAME} تصمم مواقع احترافية واقتصادية تساعد الشركات على الوصول لعملاء أكثر وتعزيز وجودها الرقمي.`,
+  en: `${SITE_NAME} builds professional, affordable websites that help businesses reach more customers and strengthen their online presence. Get your quote today.`,
+  ar: `${SITE_NAME} .تصمم مواقع إلكترونية احترافية واقتصادية تساعد الشركات على جذب المزيد من العملاء وتعزيز حضورها الرقمي. أحصل على عرض سعر اليوم`,
 };
 
 const meta: Record<Lang, { title: string; description: string }> = {
   en: {
-    title: `${SITE_NAME} · Egypt | Reach More Customers Online`,
+    title: `${SITE_NAME} · Egypt | Attract More Customers Online`,
     description: META_DESCRIPTION.en,
   },
   ar: {
-    title: `خدمات إنشاء و تصميم مواقع · مصر | ${SITE_NAME}`,
+    title: `شركة تصميم مواقع في مصر | ${SITE_NAME}`,
     description: META_DESCRIPTION.ar,
   },
 };
@@ -40,7 +40,7 @@ export async function generateMetadata({
   const { lang } = await params;
   const canonicalUrl = lang === "en" ? SITE_URL : `${SITE_URL}/${lang}`;
   const currentMeta =
-    meta[lang] || { title: "Page Not Found | SM Web Design Studio", description: "" };
+    meta[lang] || { title: `Page Not Found | ${SITE_NAME}`, description: "" };
   return {
     title: currentMeta.title,
     description: currentMeta.description,
@@ -69,7 +69,7 @@ function buildStructuredData(lang: Lang) {
     name: SITE_NAME,
     inLanguage: "en",
     description:
-      "SM Web Design Studio is a professional web design company in Egypt specializing in custom websites that deliver exceptional user experiences and measurable ROI. Every website is built using modern technologies like Next.js, creating high-performance, SEO-friendly websites that traditional or AI-powered website builders simply can't match.",
+      `${SITE_NAME} is a web design company in Egypt specializing in custom websites that deliver exceptional user experiences and measurable ROI. Every website is built using modern technologies like Next.js, resulting in high-performance, SEO-friendly websites that traditional or AI-powered website builders simply can't match.`,
     url: SITE_URL,
     telephone: PHONE_NUMBER,
     email: CONTACT_EMAIL,
@@ -184,7 +184,6 @@ function buildStructuredData(lang: Lang) {
     "@type": "WebSite",
     "@id": `${SITE_URL}#website`,
     name: SITE_NAME,
-    alternateName: ["SM Web Design", "SM Web Studio"],
     url: SITE_URL,
     inLanguage: ["en", "ar"],
     publisher: {
@@ -211,7 +210,7 @@ function buildStructuredData(lang: Lang) {
     alternateName: "سمير مجدي",
     jobTitle: "Founder, Web Designer & Developer",
     description:
-      "Samir Magdy is a web developer & founder of SM Web Design Studio in Cairo, Egypt. He specializes in high-performance, custom web development using Next.js and TypeScript.",
+      `Samir Magdy is a web developer & founder of ${SITE_NAME} in Cairo, Egypt. He specializes in custom web design and development using Next.js and TypeScript.`,
     nationality: { "@type": "Country", name: "Egypt" },
     url: SITE_URL,
     image: `${SITE_URL}/profilePhoto.jpg`,
@@ -246,7 +245,7 @@ export default async function Page({
   const mainStructuredData = buildStructuredData(lang);
 
   return (
-    <div className="relative min-h-screen bg-background text-content-heading flex flex-col gap-40 md:gap-72">
+    <div className="relative bg-background text-content-heading flex flex-col gap-40 md:gap-72">
       <HeroSection lang={lang} />
       <PortfolioSection key={lang} lang={lang} />
       <PricingSection lang={lang} />

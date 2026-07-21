@@ -1,4 +1,5 @@
 import type { Localized } from "@/app/types";
+import { SITE_NAME } from "@/app/constants";
 
 interface LegalItem {
   title: Localized;
@@ -37,8 +38,8 @@ const termsOfService: LegalDocument = {
         ar: "2. الخدمات المقدمة",
       },
       content: {
-        en: "SM Web Design Studio provides digital services including, but not limited to, web design, development, and branding for various industries. The specific scope, deliverables, timeline, and cost of any project will be outlined in a separate, mutually agreed-upon formal proposal or contract, which supersedes these general terms where they conflict.",
-        ar: "تقدم SM Web Design Studio خدمات رقمية تشمل، على سبيل المثال لا الحصر، تصميم وتطوير مواقع الويب وبناء الهوية البصرية لمختلف القطاعات. سيتم تحديد النطاق الدقيق والمخرجات والجدول الزمني والتكلفة الخاصة بأي مشروع في عرض أو عقد رسمي منفصل متفق عليه بين الطرفين، ويُقدَّم هذا العرض على هذه الشروط العامة عند أي تعارض بينهما.",
+        en: `${SITE_NAME} provides digital services including, but not limited to, web design, development, and branding for various industries. The specific scope, deliverables, timeline, and cost of any project will be outlined in a separate, mutually agreed-upon formal proposal or contract, which supersedes these general terms where they conflict.`,
+        ar: `تقدم ${SITE_NAME} خدمات رقمية تشمل، على سبيل المثال لا الحصر، تصميم وتطوير مواقع الويب وبناء الهوية البصرية لمختلف القطاعات. سيتم تحديد النطاق الدقيق والمخرجات والجدول الزمني والتكلفة الخاصة بأي مشروع في عرض أو عقد رسمي منفصل متفق عليه بين الطرفين، ويُقدَّم هذا العرض على هذه الشروط العامة عند أي تعارض بينهما.`,
       },
     },
     {
@@ -77,8 +78,8 @@ const termsOfService: LegalDocument = {
         ar: "6. الملكية الفكرية وحقوق معرض الأعمال",
       },
       content: {
-        en: "Upon receipt of full payment, you will own the final digital products and deliverables as outlined in your project contract. Ownership does not transfer until the final balance is paid in full.\n\nUnless a Non-Disclosure Agreement (NDA) is explicitly signed before the commencement of a project, SM Web Design Studio reserves the right to feature completed projects, screenshots, and case studies in our portfolio and marketing materials.",
-        ar: "عند استلام الدفع الكامل، ستمتلك المنتجات الرقمية النهائية والمخرجات كما هو موضح في عقد مشروعك. لا تنتقل الملكية إلا بعد سداد الرصيد النهائي بالكامل.\n\nما لم يتم توقيع اتفاقية عدم إفشاء (NDA) صراحةً قبل بدء المشروع، تحتفظ SM Web Design Studio بالحق في عرض المشاريع المكتملة ولقطات الشاشة ودراسات الحالة في معرض أعمالها ومواد التسويق.",
+        en: `Upon receipt of full payment, you will own the final digital products and deliverables as outlined in your project contract. Ownership does not transfer until the final balance is paid in full.\n\nUnless a Non-Disclosure Agreement (NDA) is explicitly signed before the commencement of a project, ${SITE_NAME} reserves the right to feature completed projects, screenshots, and case studies in our portfolio and marketing materials.`,
+        ar: `عند استلام الدفع الكامل، ستمتلك المنتجات الرقمية النهائية والمخرجات كما هو موضح في عقد مشروعك. لا تنتقل الملكية إلا بعد سداد الرصيد النهائي بالكامل.\n\nما لم يتم توقيع اتفاقية عدم إفشاء (NDA) صراحةً قبل بدء المشروع، تحتفظ ${SITE_NAME} بالحق في عرض المشاريع المكتملة ولقطات الشاشة ودراسات الحالة في معرض أعمالها ومواد التسويق.`,
       },
     },
     {
@@ -97,8 +98,8 @@ const termsOfService: LegalDocument = {
         ar: "8. حدود المسؤولية",
       },
       content: {
-        en: "In no event will SM Web Design Studio, or our directors, employees, or agents, be liable to you or any third party for any direct, indirect, consequential, exemplary, incidental, special, or punitive damages arising from your use of the site or our services, even if we have been advised of the possibility of such damages.",
-        ar: "لن تتحمل SM Web Design Studio بأي حال من الأحوال، ولا مديرونا أو موظفونا أو وكلاؤنا، المسؤولية تجاهك أو تجاه أي طرف ثالث عن أي أضرار مباشرة أو غير مباشرة أو تبعية أو تأديبية أو عرضية أو خاصة أو جزائية تنشأ عن استخدامك للموقع أو خدماتنا، حتى لو تم إبلاغنا باحتمالية حدوث مثل هذه الأضرار.",
+        en: `In no event will ${SITE_NAME}, or our directors, employees, or agents, be liable to you or any third party for any direct, indirect, consequential, exemplary, incidental, special, or punitive damages arising from your use of the site or our services, even if we have been advised of the possibility of such damages.`,
+        ar: `لن تتحمل ${SITE_NAME} بأي حال من الأحوال، ولا مديرونا أو موظفونا أو وكلاؤنا، المسؤولية تجاهك أو تجاه أي طرف ثالث عن أي أضرار مباشرة أو غير مباشرة أو تبعية أو تأديبية أو عرضية أو خاصة أو جزائية تنشأ عن استخدامك للموقع أو خدماتنا، حتى لو تم إبلاغنا باحتمالية حدوث مثل هذه الأضرار.`,
       },
     },
     {

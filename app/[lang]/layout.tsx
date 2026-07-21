@@ -6,6 +6,7 @@ import HeroNav, { type HeroNavStrings } from "../components/nav/HeroNav";
 import nav, { langToggle } from "../data/translations/nav";
 import a11y from "../data/translations/a11y";
 import Footer from "../components/nav/Footer";
+import LightRaysBackground from "../components/ui/LightRaysBackground";
 import { SITE_URL, SITE_NAME } from "@/app/constants";
 import type { Lang } from "@/app/types";
 
@@ -71,9 +72,8 @@ export default async function LangLayout({
     nav: {
       portfolio: t.nav.portfolio[lang],
       pricing: t.nav.pricing[lang],
-      FAQs: t.nav.FAQs[lang],
+      faq: t.nav.faq[lang],
       contact: t.nav.contact[lang],
-      guides: t.nav.guides[lang],
       about: t.nav.about[lang],
     },
     a11y: {
@@ -102,13 +102,17 @@ export default async function LangLayout({
           {skipLabel}
         </a>
 
-        <HeroNav lang={lang} strings={heroNavStrings} />
+        <LightRaysBackground />
 
-        <main id="main-content" className="md:flex-1 md:flex md:flex-col">
-          {children}
-        </main>
+        <div className="relative z-10 flex flex-col min-h-svh">
+          <HeroNav lang={lang} strings={heroNavStrings} />
 
-        <Footer lang={lang} />
+          <main id="main-content" className="md:flex-1 md:flex md:flex-col">
+            {children}
+          </main>
+
+          <Footer lang={lang} />
+        </div>
       </body>
       <GoogleTagManager gtmId="GTM-W9S847HD" />
     </html>

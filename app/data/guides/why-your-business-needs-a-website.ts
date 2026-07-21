@@ -1,3 +1,4 @@
+import { CURRENT_YEAR } from "@/app/constants";
 import type { Guide } from "./types";
 
 const resource: Guide = {
@@ -5,12 +6,12 @@ const resource: Guide = {
   datePublished: "2026-03-10",
   dateModified: new Date(),
   title: {
-    en: "Why Your Business Needs a Website",
+    en: "Does Your Business Need a Website?",
     ar: "ضرورة الموقع الإلكتروني لشركتك",
   },
   metaTitle: {
-    en: "Do I Need a Website for My Business? (2026)",
-    ar: "هل مشروعي محتاج موقع إلكتروني؟ (2026)",
+    en: `Do I Need a Website for My Business? (${CURRENT_YEAR})`,
+    ar: `هل مشروعي محتاج موقع إلكتروني؟ (${CURRENT_YEAR})`,
   },
   excerpt: {
     en: "When you hear about a company or service you are considering, what is the first thing you do? You open Google or ChatGPT and search for it. Your customers do exactly the same thing, if they don't find you and find a competitor instead, you've most likely lost the sale. In this guide we explain why having a website is crucial for this scenario.",
@@ -58,7 +59,7 @@ const resource: Guide = {
 <p>This does not mean stop running ads. A website makes your ads more effective: when a customer lands on it, they trust you faster and are more likely to buy, so your ad spend stops going to waste. If you want to know what this actually costs, read our guide on <a href='/en/guides/website-cost-in-egypt'>website costs in Egypt</a>.</p>
 
 <h2>The Bottom Line</h2>
-<p>Operating a business in 2026 without a website is like running a store without a sign. You are actively handing your customers over to competitors who look more professional. A website is not a luxury; it is the most important investment you can make to protect your business and grow your name in the market.</p>`,
+<p>Operating a business in ${CURRENT_YEAR} without a website is like running a store without a sign. You are actively handing your customers over to competitors who look more professional. A website is not a luxury; it is the most important investment you can make to protect your business and grow your name in the market.</p>`,
 
     ar: `
 <p>لما بتسمع عن شركة أو خدمة جديدة، أول حاجة بتعملها إيه؟  تلقائياً بتفتح جوجل وتكتب اسمها علشان تطمن وتشوف تفاصيلها. العميل اللي بيدور على شركتك بيعمل نفس الشىء، ولو دخل يدور عليك ومالقاش ليك موقع، وفي نفس الوقت لقى موقع إحترافي لمنافس ليك، بنسبة كبيرة إنت خسرت العميل للمنافس قبل حتى ما تاخد فرصة تعرض عليه شغلك. الموقع الإلكتروني الاحترافي هو بمثابة "عقد الثقة" والمقر الرسمي لشركتك على الإنترنت؛ أول ما العميل بيدخله، بيعرف فوراً إنه بيتعامل مع كيان حقيقي، مستقر، ووراه براند قوي يقدر يثق فيه ويدفعله وهو مطمن.</p>
@@ -98,11 +99,11 @@ const resource: Guide = {
   </tbody>
 </table>
 
-<p>ده مش معناه إنك توقف إعلانات، بالعكس؛ الموقع بيخلي إعلاناتك تنجح أكتر لأن العميل لما بيدخله بيثق فيك ويشتري أسرع، وبكده مش بتضيع فلوس إعلاناتك على الفاضي. لو عايز تعرف التكلفة الفعلية، اقرأ <a href='/ar/guides/website-cost-in-egypt'>دليل تكلفة المواقع في مصر (2026)</a>.</p>`,
+<p>ده مش معناه إنك توقف إعلانات، بالعكس؛ الموقع بيخلي إعلاناتك تنجح أكتر لأن العميل لما بيدخله بيثق فيك ويشتري أسرع، وبكده مش بتضيع فلوس إعلاناتك على الفاضي. لو عايز تعرف التكلفة الفعلية، اقرأ <a href='/ar/guides/website-cost-in-egypt'>دليل تكلفة المواقع في مصر (${CURRENT_YEAR})</a>.</p>`,
   },
   metaDescription: {
-    en: "Discover why your business in Egypt needs a website in 2026: real credibility, Google visibility, and ROI that Instagram and Facebook simply cannot match.",
-    ar: "هل فعلاً محتاج موقع إلكتروني في مصر في 2026؟ اكتشف فوايد حقيقية: المصداقية، التحكم، الظهور في جوجل، والعائد بالجنيه. وليه إنستجرام وفيسبوك مش كفاية.",
+    en: `Discover why your business in Egypt needs a website in ${CURRENT_YEAR}: real credibility, Google visibility, and ROI that Instagram and Facebook simply cannot match.`,
+    ar: `هل فعلاً محتاج موقع إلكتروني في مصر في ${CURRENT_YEAR}؟ اكتشف فوايد حقيقية: المصداقية، التحكم، الظهور في جوجل، والعائد بالجنيه. وليه إنستجرام وفيسبوك مش كفاية.`,
   },
 };
 

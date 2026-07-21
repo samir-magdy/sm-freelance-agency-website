@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { use } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar, Clock } from "lucide-react";
 import { SITE_URL, SITE_NAME } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guides";
@@ -56,7 +56,7 @@ export async function generateMetadata({
           url: `${SITE_URL}/open-graph.webp`,
           width: 1200,
           height: 630,
-          alt: "SM Web Design Studio – Web Design Company in Egypt",
+          alt: `${SITE_NAME} – Web Design Company in Egypt`,
         },
       ],
     },
@@ -74,6 +74,7 @@ export default function GuidePage({
 
   const t = guidesTranslations;
   const dir = lang === "ar" ? "rtl" : "ltr";
+  const relatedGuides = guides.filter((g) => g.slug !== slug);
 
   const canonical = `${SITE_URL}/${lang}/guides/${slug}`;
 
@@ -150,7 +151,7 @@ export default function GuidePage({
   return (
     <div
       dir={dir}
-      className="min-h-screen bg-background pt-22 sm:pt-28 pb-14 sm:pb-20 px-5 overflow-x-hidden"
+      className="min-h-dvh bg-background pt-22 sm:pt-28 pb-14 sm:pb-20 px-5 overflow-x-hidden"
     >
       <script
         type="application/ld+json"
@@ -161,7 +162,7 @@ export default function GuidePage({
       <div className="max-w-7xl mx-auto flex flex-col gap-6 sm:gap-8">
         <Link
           href={`/${lang}/guides`}
-          className="hover:bg-white/90 hover:border-white/90 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.9rem,1.3vw,1.2rem)] font-medium transition-all duration-500"
+          className="hover:border-white/30 hover:text-white/80 border-border-strong border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.9rem,1.3vw,1.2rem)] font-medium transition-all duration-500"
         >
           <ArrowLeft
             className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}
@@ -217,31 +218,53 @@ export default function GuidePage({
             </p>
             <Link
               href={`/${lang}#contact`}
-              className="cta-primary justify-center shrink-0 inline-flex items-center gap-2.5 py-3 px-8 rounded-lg text-gray-900 text-base font-medium tracking-wide whitespace-nowrap"
+              className="cta-primary justify-center shrink-0 py-3 px-8 rounded-lg text-gray-900 text-base sm:text-xl font-medium tracking-wide whitespace-nowrap"
             >
               {t.articleCtaButton[lang]}
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                className={lang === "ar" ? "rotate-180" : ""}
-                aria-hidden="true"
-              >
-                <path
-                  d="M3.333 8h9.334M8.667 4l4 4-4 4"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+         
             </Link>
           </div>
         </div>
+        {relatedGuides.length > 0 && (
+          <section
+            aria-labelledby="related-heading"
+            className="mt-2 sm:mt-4"
+          >
+            <h2
+              id="related-heading"
+              className="text-content-heading font-bold text-[clamp(1.25rem,3vw,1.75rem)] leading-snug rtl:leading-loose mb-6 sm:mb-8"
+            >
+              {t.relatedHeading[lang]}
+            </h2>
+            <ul className="grid grid-cols-1 md:grid-cols-3 gap-5 list-none p-0">
+              {relatedGuides.map((g) => (
+                <li key={g.slug}>
+                  <Link
+                    href={`/${lang}/guides/${g.slug}`}
+                    className="group flex flex-col gap-3 h-full p-5 rounded-2xl border-2 border-border-strong bg-surface-card/50 hover:border-white/20 transition-colors duration-200"
+                  >
+                    <h3 className="text-content-heading font-semibold text-subheading leading-snug rtl:leading-loose">
+                      {g.title[lang]}
+                    </h3>
+                    <p className="text-content-muted text-base leading-relaxed rtl:leading-loose line-clamp-3">
+                      {g.excerpt[lang]}
+                    </p>
+                    <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-content-body transition-colors duration-200">
+                      {t.readMore[lang]}
+                      <ArrowRight
+                        className="size-4 rtl:rotate-180 transition-transform duration-200 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
+                        aria-hidden
+                      />
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
         <Link
           href={`/${lang}/guides`}
-          className="hover:bg-white/90 hover:border-white/90 hover:text-black/90 border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.9rem,1.3vw,1.2rem)] font-medium transition-all duration-500"
+          className="hover:border-white/30 sm:mt-2 hover:text-white/80 border border-border-strong w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.9rem,1.3vw,1.2rem)] font-medium transition-all duration-500"
         >
           <ArrowLeft
             className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}

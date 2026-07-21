@@ -6,8 +6,9 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import LanguageToggle from "../ui/LanguageToggle";
-import { navLinks, type NavKey } from "@/app/data/translations/nav";
+import { navItems, type NavKey } from "@/app/data/translations/nav";
 import type { Lang } from "@/app/types";
+import { SITE_NAME } from "@/app/constants";
 
 interface MobileMenuProps {
   lang: Lang;
@@ -28,8 +29,6 @@ export default function MobileMenu({
 }: MobileMenuProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
-
-  const contactItem = navLinks[navLinks.length - 1];
 
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -89,7 +88,7 @@ export default function MobileMenu({
           >
             <Image
               src="/brand.svg"
-              alt="SM Web Design Studio – Website Design Company in Egypt"
+              alt={`${SITE_NAME} – Website Design Company in Egypt`}
               width={50}
               height={42}
               priority
@@ -133,63 +132,42 @@ export default function MobileMenu({
       <div
         onClick={closeMenu}
         inert={!isMenuOpen}
-        className={`pt-10 fixed inset-0 z-40 flex flex-col items-center justify-center transition-[opacity,visibility] duration-250ms ease-out ${
+        className={`pt-10 fixed inset-0 z-40 flex flex-col items-center justify-center transition-[opacity,visibility] ease-out ${
           isMenuOpen
             ? "opacity-100 visible pointer-events-auto"
             : "opacity-0 invisible pointer-events-none"
         }`}
       >
         <ul
-          className="flex flex-col items-center gap-8"
+          className="flex flex-col items-center gap-8 font-semibold text-content-heading text-3xl tracking-wide"
           onClick={(e) => e.stopPropagation()}
         >
-          {navLinks.slice(0, -1).map((item) => (
-            <li key={item}>
-              <Link
-                href={`/${lang}#${item}`}
-                onClick={(e) => handleNavClick(e, item)}
-                className="font-semibold text-content-heading text-3xl tracking-wide"
-              >
-                {nav[item]}
-              </Link>
-            </li>
-          ))}
-          <li onClick={(e) => e.stopPropagation()}>
-            <Link
-              href={`/${lang}/guides`}
-              onClick={pathname === `/${lang}/guides` ? closeMenu : undefined}
-              className="font-semibold text-content-heading text-3xl tracking-wide"
-            >
-              {nav.guides}
-            </Link>
-          </li>
-          <li onClick={(e) => e.stopPropagation()}>
-            <Link
-              href={`/${lang}/about`}
-              onClick={pathname === `/${lang}/about` ? closeMenu : undefined}
-              className="font-semibold text-content-heading text-3xl tracking-wide"
-            >
-              {nav.about}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={`/${lang}#FAQs`}
-              onClick={(e) => handleNavClick(e, "FAQs")}
-              className="font-semibold text-content-heading text-3xl tracking-wide"
-            >
-              {nav.FAQs}
-            </Link>
-          </li>
-          <li key={contactItem}>
-            <Link
-              href={`/${lang}#${contactItem}`}
-              onClick={(e) => handleNavClick(e, contactItem)}
-              className="font-semibold text-content-heading text-3xl tracking-wide"
-            >
-              {nav[contactItem]}
-            </Link>
-          </li>
+          {navItems.map((item) => {
+            if (item.kind === "hash") {
+              return (
+                <li key={item.key}>
+                  <Link
+                    href={`/${lang}#${item.target}`}
+                    onClick={(e) => handleNavClick(e, item.target)}
+                  >
+                    {nav[item.key]}
+                  </Link>
+                </li>
+              );
+            }
+
+            const routeHref = `/${lang}/${item.path}`;
+            return (
+              <li key={item.key} onClick={(e) => e.stopPropagation()}>
+                <Link
+                  href={routeHref}
+                  onClick={pathname === routeHref ? closeMenu : undefined}
+                >
+                  {nav[item.key]}
+                </Link>
+              </li>
+            );
+          })}
           <li
             onClick={(e) => e.stopPropagation()}
             className="pt-4 [&_svg]:block [&_a]:text-[1.25rem]"

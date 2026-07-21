@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/portfolio", destination: "/#portfolio", permanent: true },
+      // Redirects for updated slugs, remove when new pages have been fully indexed and old ones removed.
       {
         source: "/portfolio/dental-clinic-site-demo",
         destination: "/portfolio/healthcare-website-design",

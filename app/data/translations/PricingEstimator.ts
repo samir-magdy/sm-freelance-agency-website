@@ -58,8 +58,8 @@ const pricingEstimator: PricingEstimatorData = {
   estimateLabel: { en: "Estimate:", ar: "تقدير السعر:" },
   cta: { en: "Get an Official Quote", ar: "احصل على عرض سعر رسمي" },
   disclaimer: {
-    en: "Rough estimate only. Final pricing is confirmed after consultation.",
-    ar: "السعر المعروض تقدير تقريبي. السعر النهائي بيتحدد بعد الإستشارة.",
+    en: "Final pricing is confirmed after consultation.",
+    ar: "السعر المعروض تقدير تقريبي. نعرض السعر النهائي عند التواصل.",
   },
 
   bases: [

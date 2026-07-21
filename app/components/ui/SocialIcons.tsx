@@ -1,6 +1,6 @@
 import WhatsAppIcon from "../utils/WhatsAppIcon";
 import LinkedInIcon from "../utils/LinkedInIcon";
-import { SOCIAL_LINKS } from "@/app/constants";
+import { SOCIAL_LINKS, SITE_NAME } from "@/app/constants";
 
 export { WhatsAppIcon };
 
@@ -8,7 +8,7 @@ export default function SocialIcons() {
   return (
     <ul
       dir="ltr"
-      className="flex items-center gap-3 me-0.5"
+      className="flex items-center gap-3 me-0.5 text-content-muted"
       aria-label="Social media links"
     >
       <li>
@@ -16,8 +16,8 @@ export default function SocialIcons() {
           href={SOCIAL_LINKS.instagram}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Visit SM Web Design Studio on Instagram"
-          className="text-content-muted hover:text-content-heading"
+          aria-label={`Visit ${SITE_NAME} on Instagram`}
+          className="hover:text-content-heading"
         >
           <svg
             className="w-5 h-5"
@@ -35,8 +35,8 @@ export default function SocialIcons() {
           href={SOCIAL_LINKS.facebook}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Visit SM Web Design Studio on Facebook"
-          className="text-content-muted hover:text-content-heading"
+          aria-label={`Visit ${SITE_NAME} on Facebook`}
+          className="hover:text-content-heading"
         >
           <svg
             className="w-5 h-5"
@@ -54,8 +54,8 @@ export default function SocialIcons() {
           href={SOCIAL_LINKS.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Contact SM Web Design Studio on WhatsApp"
-          className="text-content-muted hover:text-content-heading"
+          aria-label={`Contact ${SITE_NAME} on WhatsApp`}
+          className="hover:text-content-heading"
         >
           <WhatsAppIcon className="w-5 h-5" />
         </a>
@@ -65,8 +65,8 @@ export default function SocialIcons() {
           href={SOCIAL_LINKS.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Visit SM Web Design Studio on LinkedIn"
-          className="text-content-muted hover:text-content-heading"
+          aria-label={`Visit ${SITE_NAME} on LinkedIn`}
+          className="hover:text-content-heading"
         >
           <LinkedInIcon className="w-5 h-5 rounded-sm" />
         </a>

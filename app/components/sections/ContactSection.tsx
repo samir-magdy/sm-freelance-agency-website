@@ -112,7 +112,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="pt-4 sm:pt-0 pb-12 sm:pb-8 px-4"
+      className="pt-4 sm:pt-16 pb-12 sm:pb-8 px-4"
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="max-w-3xl mx-auto">
@@ -140,12 +140,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
               <div className="col-span-1">
                 <label htmlFor="name" className={labelClass}>
                   {t.form.name[lang]}
-                  <span
-                    className="text-warning opacity-90"
-                    aria-label="required"
-                  >
-                    *
-                  </span>
+                  <span aria-label="required">&nbsp;*</span>
                 </label>
                 <input
                   type="text"
@@ -163,12 +158,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
               <div>
                 <label htmlFor="contactMethod" className={labelClass}>
                   {t.form.contactMethod[lang]}{" "}
-                  <span
-                    className="text-warning opacity-90"
-                    aria-label="required"
-                  >
-                    *
-                  </span>
+                  <span aria-label="required">*</span>
                 </label>
                 <div className="relative">
                   <select
@@ -207,12 +197,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
                 <div className="col-span-2">
                   <label htmlFor="phone" className={labelClass}>
                     {t.form.phone[lang]}{" "}
-                    <span
-                      className="text-warning opacity-90"
-                      aria-label="required"
-                    >
-                      *
-                    </span>
+                    <span aria-label="required">*</span>
                   </label>
                   <input
                     type="tel"
@@ -240,12 +225,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
                 <div className="col-span-2">
                   <label htmlFor="email" className={labelClass}>
                     {t.form.emailAddress[lang]}{" "}
-                    <span
-                      className="text-warning opacity-90"
-                      aria-label="required"
-                    >
-                      *
-                    </span>
+                    <span aria-label="required">*</span>
                   </label>
                   <input
                     type="email"
@@ -275,7 +255,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
                   id="message"
                   rows={2}
                   placeholder={t.form.messagePlaceholder[lang]}
-                  className="resize-none leading-relaxed placeholder:text-content-muted text-base w-full px-4 py-3 rounded-lg border-2 border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-strong outline-none"
+                  className="resize-none leading-relaxed placeholder:text-content-muted text-base w-full px-4 py-3 rounded-lg border-2 border-transparent bg-surface-low text-content-heading focus:border-border-strong outline-none"
                   value={formData.message}
                   onChange={(e) =>
                     setFormData((prev) => ({
@@ -303,9 +283,9 @@ export default function ContactSection({ lang }: ContactSectionProps) {
             disabled={status !== "idle"}
             className={`reveal-element z-20 mt-4 w-full mx-auto block tracking-wide font-bold text-base py-4 rounded-lg disabled:cursor-not-allowed transition-all duration-300 relative overflow-hidden ${
               status === "success"
-                ? "mt-3.5 w-full border border-green-500/75 bg-green-500/50 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-lg font-bold text-base"
+                ? "mt-3.5 border border-green-500/75 bg-green-500/50 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2"
                 : status === "error"
-                  ? "mt-3.5 w-full border border-danger/40 bg-danger/20 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-lg font-bold text-base"
+                  ? "mt-3.5 border border-red-500/75 bg-red-500/50 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2"
                   : "cta-primary cursor-pointer bg-linear-to-b from-gold to-gold-dark text-gray-900 disabled:opacity-50"
             }`}
           >
@@ -327,7 +307,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
           <div className="reveal-element">
             <div className="flex items-center gap-3 mt-4">
               <span className="flex-1 h-px bg-border-subtle" />
-              <span className="text-content-muted text-body font-bold">
+              <span className="text-content-muted text-base font-bold">
                 {t.form.orWhatsapp[lang]}
               </span>
               <span className="flex-1 h-px bg-border-subtle" />
@@ -337,7 +317,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
               href={SOCIAL_LINKS.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3.5 w-full border border-green-500/40 bg-green-500/20 hover:bg-green-500/40 transition-colors duration-200 py-4 px-6 text-content-body flex items-center justify-center gap-2 rounded-lg font-bold text-base"
+              className="mt-3.5 border w-full border-green-500/40 bg-green-500/60 hover:bg-green-500/65 transition-colors duration-200 py-4 px-10 text-content-heading flex items-center justify-center mx-auto gap-2 rounded-lg font-bold text-base"
             >
               <WhatsAppIcon className="size-5" fill="currentColor" />
               {t.form.chatInstead[lang]}

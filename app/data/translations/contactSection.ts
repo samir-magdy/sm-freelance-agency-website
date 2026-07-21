@@ -3,7 +3,7 @@ import type { Localized } from "@/app/types";
 export const contactSection: Record<"heading" | "subheading", Localized> = {
   heading: {
     en: "Get In Touch",
-    ar: "تواصل معنا",
+    ar: "طلب استشارة",
   },
   subheading: {
     en: "Share a few details and we'll reach out",

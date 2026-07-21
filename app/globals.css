@@ -13,7 +13,7 @@
   --color-surface-card: oklch(22.8% 0.0158 266.9);
   --color-content-heading: oklch(92% 0.0051 267.4);
   --color-content-body: oklch(82.2% 0.0116 267.3);
-  --color-content-muted: oklch(73.8% 0.0173 267.3);
+  --color-content-muted: oklch(76% 0.0173 267.3);
   --color-border-subtle: oklch(100% 0 0 / 0.07);
   --color-border-strong: oklch(100% 0 0 / 0.14);
   --color-icon: oklch(68.4% 0.0252 267.2);
@@ -68,9 +68,6 @@ section {
   html,
   body {
     scroll-behavior: smooth;
-  }
-
-  body {
     background-color: var(--color-background);
   }
 }
@@ -79,6 +76,26 @@ section {
    6. Hero Section — "The Proof"
    Editorial-luxury, start-aligned, bilingual.
    ══════════════════════════════════════ */
+
+/* LTR: bold gold words contrast the roman without going full black.
+   Vertical gradient wash gives the gold optical depth. */
+#hero-title .text-gold {
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  background: linear-gradient(
+    180deg,
+    var(--color-gold-light) 0%,
+    var(--color-gold) 55%,
+    var(--color-gold-dark) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+[dir="rtl"] #hero-title .text-gold {
+  line-height: 1.6;
+}
 
 /* ── Bottom-edge fade: dissolve the hero's texture into the
       page background so it flows seamlessly into Portfolio.
@@ -195,36 +212,20 @@ section {
   color: var(--color-gold-light);
 }
 
-@property --cta-hover-mix {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 0%;
-}
-
 .cta-primary {
-  position: relative;
-  overflow: hidden;
-  --cta-hover-mix: 0%;
-  background-image: linear-gradient(
+  background: linear-gradient(
     to bottom,
-    color-mix(
-      in oklch,
-      var(--color-gold-light) var(--cta-hover-mix),
-      var(--color-gold)
-    ),
-    color-mix(
-      in oklch,
-      var(--color-gold) var(--cta-hover-mix),
-      var(--color-gold-dark)
-    )
+    var(--color-gold),
+    var(--color-gold-dark)
   );
   transition:
-    --cta-hover-mix 0.5s ease,
-    opacity 0.3s ease;
+    transform 0.5s ease,
+    filter 0.3s ease;
+}
 
-  @variant hover {
-    --cta-hover-mix: 100%;
-  }
+.cta-primary:hover {
+  transform: translateY(-0.125rem);
+  filter: brightness(1.08);
 }
 
 .table-wrap {
@@ -258,13 +259,11 @@ section {
 @keyframes reveal-in {
   from {
     opacity: 0;
-    scale: 0.9;
-    translate: 0 2rem;
+    transform: translateY(2rem) scale(0.9);
   }
   to {
     opacity: 1;
-    scale: 1;
-    translate: 0 0;
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -299,22 +298,22 @@ section {
   #pricing-calculator button * {
     font-size: 0.875rem; /* text-sm */
   }
-    #pricing-calculator {
-      scroll-margin-top: 12rem;
-    }
-    .safari-hero-padding {
-      padding-top: 10rem;
-    }
-    [dir="rtl"] #hero-title {
-      font-size: clamp(2rem, 9vw, 5.25rem);
-    }
-    #portfolio-genre {
-      font-size: 0.75rem;
-    }
-    [dir="rtl"] #portfolio-genre {
-      font-size: 1rem;
-    }
-    .mobile-portfolio-buttons{
-      font-size: 1.1rem;
-    }
+  #pricing-calculator {
+    scroll-margin-top: 12rem;
+  }
+  .safari-hero-padding {
+    padding-top: 10rem;
+  }
+  [dir="rtl"] #hero-title {
+    font-size: clamp(2rem, 9vw, 5.25rem);
+  }
+  #portfolio-genre {
+    font-size: 0.75rem;
+  }
+  [dir="rtl"] #portfolio-genre {
+    font-size: 1rem;
+  }
+  .mobile-portfolio-buttons {
+    font-size: 1.1rem;
+  }
 }

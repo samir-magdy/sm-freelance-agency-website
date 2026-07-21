@@ -3,7 +3,7 @@
 import type { MouseEvent } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { navLinks, type NavKey } from "@/app/data/translations/nav";
+import { navItems, type NavKey } from "@/app/data/translations/nav";
 
 interface DesktopNavLinksProps {
   nav: Record<NavKey, string>;
@@ -16,9 +16,6 @@ export default function DesktopNavLinks({ nav }: DesktopNavLinksProps) {
 
   const isHome = segments.length <= 1;
 
-  const contactItem = navLinks[navLinks.length - 1];
-  const contactDestination = `/${lang}#${contactItem}`;
-
   const handleHashClick = (
     e: MouseEvent<HTMLAnchorElement>,
     targetId: string,
@@ -29,52 +26,33 @@ export default function DesktopNavLinks({ nav }: DesktopNavLinksProps) {
   };
 
   return (
-    <ul className="flex w-full justify-around xl:px-36 lg:px-16">
-      {navLinks.slice(0, -1).map((item, i) => (
-        <li key={i}>
-          <Link
-            href={`/${lang}#${item}`}
-            onClick={(e) => handleHashClick(e, item)}
-            className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
-          >
-            {nav[item]}
-          </Link>
-        </li>
-      ))}
-      <li>
-        <Link
-          href={`/${lang}/guides`}
-          className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
-        >
-          {nav.guides}
-        </Link>
-      </li>
-      <li>
-        <Link
-          href={`/${lang}/about`}
-          className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
-        >
-          {nav.about}
-        </Link>
-      </li>
-      <li>
-        <Link
-          href={`/${lang}#FAQs`}
-          onClick={(e) => handleHashClick(e, "FAQs")}
-          className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
-        >
-          {nav.FAQs}
-        </Link>
-      </li>
-      <li>
-        <Link
-          href={contactDestination}
-          onClick={(e) => handleHashClick(e, contactItem)}
-          className="nav-link-underline text-subheading font-medium tracking-wider text-content-body hover:text-content-heading transition-colors duration-500"
-        >
-          {nav[contactItem]}
-        </Link>
-      </li>
+    <ul className="flex w-full justify-around xl:px-44 lg:px-16 text-subheading font-medium tracking-wider text-content-body">
+      {navItems.map((item) => {
+        const linkClass =
+          "nav-link-underline hover:text-content-heading transition-colors duration-500";
+
+        if (item.kind === "hash") {
+          return (
+            <li key={item.key}>
+              <Link
+                href={`/${lang}#${item.target}`}
+                onClick={(e) => handleHashClick(e, item.target)}
+                className={linkClass}
+              >
+                {nav[item.key]}
+              </Link>
+            </li>
+          );
+        }
+
+        return (
+          <li key={item.key}>
+            <Link href={`/${lang}/${item.path}`} className={linkClass}>
+              {nav[item.key]}
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   );
 }

@@ -1,3 +1,4 @@
+import { CURRENT_YEAR } from "@/app/constants";
 import type { Guide } from "./types";
 
 const resource: Guide = {
@@ -9,8 +10,8 @@ const resource: Guide = {
     ar: "ازاي تختار أفضل شركة تصميم مواقع في مصر؟",
   },
   metaTitle: {
-    en: "Choosing the Best Web Design Company in Egypt (2026)",
-    ar: "ازاي تختار أفضل شركة تصميم مواقع في مصر؟ (2026)",
+    en: `Choosing the Best Web Design Company in Egypt (${CURRENT_YEAR})`,
+    ar: `ازاي تختار أفضل شركة تصميم مواقع في مصر؟ (${CURRENT_YEAR})`,
   },
   excerpt: {
     en: "A competent web design company has a portfolio of real websites you can visit and explore, asks about your goals, is transparent about pricing, and communicates clearly from the start. Should you even hire a company? or a freelancer? Read this guide to get a clearer picture of your options and how to choose correctly.",
@@ -119,8 +120,8 @@ const resource: Guide = {
 <p> الشركة الصح هي اللي عندها سابقة أعمال معروضة تقدر تجربها، مهتمة تعرف عن شغلك  وأهدافك، شفافة في أسعارها، وواضحة في تواصلها. مش لازم يكونوا الأرخص ولا الأكبر، لازم يكونوا الأنسب لشغلك. الشفافية والتواصل الواضح والشراكة الحقيقية دي نفس المعايير اللي بنلتزم بيها مع كل عميل، تقدر تعرف أكتر عن <a href="/ar/about">طريقتنا في الشغل</a>. لو بتفكر تعمل موقعك بنفسك من خلال المنصات الجاهزة، اقرأ دليلنا عن <a href="/ar/guides/diy-vs-professional-web-design"> المقارنة بين المنصات الجاهزة والتصميم الاحترافي</a>.</p>`,
   },
   metaDescription: {
-    en: "Choosing the wrong web design company in Egypt costs more than money. Learn the key questions to ask, red flags to spot, and how to choose right in 2026.",
-    ar: "اختيار شركة تصميم مواقع غلط في مصر مكلف: تأخير، رسوم خفية بالدولار، ومواقع مبتفتحش. اعرف الأسئلة اللي تسألها، العلامات التحذيرية، ومعايير اختيار فريلانسر، استوديو، أو شركة في 2026.",
+    en: `Choosing the wrong web design company in Egypt costs more than money. Learn the key questions to ask, red flags to spot, and how to choose right in ${CURRENT_YEAR}.`,
+    ar: `اختيار شركة تصميم مواقع غلط في مصر مكلف: تأخير، رسوم خفية بالدولار، ومواقع مبتفتحش. اعرف الأسئلة اللي تسألها، العلامات التحذيرية، ومعايير اختيار فريلانسر، استوديو، أو شركة في ${CURRENT_YEAR}.`,
   },
 };
 

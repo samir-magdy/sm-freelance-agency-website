@@ -2,6 +2,7 @@ import { Resend } from "resend";
 import { ipAddress } from "@vercel/functions";
 import { NextResponse, type NextRequest } from "next/server";
 import { redis } from "@/lib/redis";
+import { SITE_NAME } from "@/app/constants";
 
 export const runtime = "edge";
 
@@ -103,7 +104,7 @@ export async function POST(request: NextRequest) {
     }
 
     const data = await resend.emails.send({
-      from: "SM Web Design Studio <noreply@mail.samirmagdy.com>",
+      from: `${SITE_NAME} <noreply@mail.samirmagdy.com>`,
       to: process.env.CONTACT_EMAIL ?? "",
       subject: "Website Consultation Request",
       text: [

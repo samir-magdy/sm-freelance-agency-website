@@ -7,6 +7,7 @@ import pricingEstimator, {
 } from "@/app/data/translations/PricingEstimator";
 import WhatsAppIcon from "./WhatsAppIcon";
 import type { Lang } from "@/app/types";
+import { SOCIAL_LINKS } from "@/app/constants";
 
 const BASE_ICONS: Record<BaseId, LucideIcon> = {
   landing: Layout,
@@ -114,7 +115,7 @@ The Calculated Data:
 - Add-ons: ${addonNames}
 - Calculated Price: ${totalEGP.toLocaleString()} ${currencySymbol}`;
 
-    return `https://wa.me/201274613331?text=${encodeURIComponent(message)}`;
+    return `${SOCIAL_LINKS.whatsapp}?text=${encodeURIComponent(message)}`;
   }, [
     lang,
     isRtl,
@@ -295,6 +296,9 @@ The Calculated Data:
             </div>
           </div>
         </div>
+        <p className="text-center text-content-muted/80 text-xs sm:text-base max-w-2xl mx-auto mt-4 sm:mt-6 px-4 leading-relaxed">
+          {t.disclaimer[lang]}
+        </p>
       </div>
     </>
   );

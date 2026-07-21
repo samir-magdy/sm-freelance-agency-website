@@ -3,6 +3,7 @@ import LanguageToggle from "../ui/LanguageToggle";
 import MobileMenu from "./MobileMenu";
 import DesktopNavLinks from "./DesktopNavLinks";
 import type { Lang } from "@/app/types";
+import { SITE_NAME } from "@/app/constants";
 import type { NavKey } from "@/app/data/translations/nav";
 
 export interface HeroNavStrings {
@@ -33,7 +34,7 @@ export default function HeroNav({ lang, strings }: HeroNavProps) {
           <a href={`/${lang}`} aria-label="Samir Magdy Web Studio - Home">
             <Image
               src="/brand.svg"
-              alt="SM Web Design Studio – Website Design Company in Egypt"
+              alt={`${SITE_NAME} – Website Design Company in Egypt`}
               width={80}
               height={69}
               style={{ height: "auto" }}

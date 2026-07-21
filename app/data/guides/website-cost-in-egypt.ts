@@ -1,3 +1,4 @@
+import { CURRENT_YEAR } from "@/app/constants";
 import type { Guide } from "./types";
 
 const resource: Guide = {
@@ -5,12 +6,12 @@ const resource: Guide = {
   datePublished: "2026-03-18",
   dateModified: new Date(),
   title: {
-    en: "How Much Does a Website Cost in Egypt? (2026)",
-    ar: "اسعار تصميم المواقع الالكترونية في مصر (2026)",
+    en: `How Much Does a Website Cost in Egypt? (${CURRENT_YEAR})`,
+    ar: `اسعار تصميم المواقع الالكترونية في مصر (${CURRENT_YEAR})`,
   },
   metaTitle: {
-    en: "How Much Does a Website Cost In Egypt (2026)",
-    ar: "سعر تصميم موقع إلكتروني في مصر (2026)",
+    en: `How Much Does a Website Cost In Egypt (${CURRENT_YEAR})`,
+    ar: `سعر تصميم موقع إلكتروني في مصر (${CURRENT_YEAR})`,
   },
   excerpt: {
     en: "Prices for websites in Egypt typically start at around EGP 5,000 and can exceed EGP 100,000, depending on the project's size, features, and complexity. In this guide we tell you what these factors drive pricing so that you know what you're paying for when making your investment.",
@@ -89,7 +90,7 @@ const resource: Guide = {
 <p>The <strong>bottom line</strong> is that the right question isn't "what is the cheapest website I can get?" but rather "what is the minimum investment that will generate a positive return for my business?"</p>`,
 
 ar: `
-<p><strong>تبدأ تكلفة تصميم المواقع الإلكترونية في مصر من حوالي 5,000 جنيه مصري، وممكن تتجاوز الـ 100,000 جنيه مصري حسب حجم المشروع والميزات المطلوبة ومستوى التخصيص</strong>. من خلال قرايتك للدليل ده، هتكتشف أنواع المواقع المختلفة، ونطاق السعر المتوقع لكل نوع، وهتعرف إيه هي العوامل الأساسية اللي بتحدد سعر الموقع في السوق علشان تتجنب إنك تدفع أكتر من اللازم أو تختار أرخص حاجة وتندم بعدين.</p>
+<p><strong>تبدأ تكلفة تصميم المواقع الإلكترونية في مصر من حوالي 5,000 جنيه مصري، وممكن تتجاوز الـ 100,000 جنيه مصري حسب حجم المشروع والميزات المطلوبة ومستوى التخصيص</strong>. من خلال قرايتك للدليل ده، هتكتشف أنواع المواقع المختلفة، ونطاق السعر المتوقع لكل نوع، وهتعرف إيه هي العوامل الأساسية اللي بتحدد سعر الموقع في السوق علشان تتجنب إنك تدفع أكتر من اللازم أو تختار أرخص عرض وتندم بعدين.</p>
 
 <h2>إيه التكلفة المتوقعة حسب نوع الموقع؟</h2>
 <p>السعر المتوقع حسب نوع الموقع:</p>
@@ -161,7 +162,7 @@ ar: `
 <p>في النهاية، السؤال الصحيح مش «إيه أرخص موقع ممكن أعمله؟» لكن «إيه أقل استثمار هيحقق عائد إيجابي لعملي؟»</p>`,
 },
   metaDescription: {
-    en: "Find out how much a professional website costs in Egypt in 2026. An honest EGP breakdown of what drives the price for landing pages, business sites, and online stores.",
+    en: `Find out how much a professional website costs in Egypt in ${CURRENT_YEAR}. An honest EGP breakdown of what drives the price for landing pages, business sites, and online stores.`,
     ar: "عايز تعرف موقعك هيكلفك كام؟ احسب تكلفة الموقع فوراً باستخدام حاسبة الأسعار الذكية، واكتشف العوامل اللي بتحدد الأسعار.",
   },
 };

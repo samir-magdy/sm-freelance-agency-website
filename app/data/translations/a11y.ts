@@ -1,4 +1,5 @@
 import type { Localized } from "@/app/types";
+import { SITE_NAME } from "@/app/constants";
 
 const a11y: Record<
   | "openMenu"
@@ -15,8 +16,8 @@ const a11y: Record<
   mobileNav: { en: "Mobile navigation", ar: "قائمة الهاتف" },
   contactForm: { en: "Contact form", ar: "نموذج التواصل" },
   screenshotOf: {
-    en: "Website design by SM Web Design Studio –",
-    ar: "تصميم موقع من SM Web Design Studio –",
+    en: `Website design by ${SITE_NAME} –`,
+    ar: `تصميم موقع من ${SITE_NAME} –`,
   },
 };
 

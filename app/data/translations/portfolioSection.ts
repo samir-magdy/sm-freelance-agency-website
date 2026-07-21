@@ -1,23 +1,27 @@
 import type { Localized } from "@/app/types";
 
 export const projectsSection: Record<
-  "heading" | "subheading" | "viewProject" | "primaryCta",
+  "heading" | "subheading" | "viewDemo" | "viewLiveSite" | "primaryCta",
   Localized
 > = {
   heading: {
-    en: "Our Portfolio",
-    ar: "معرض أعمالنا",
+    en: "Our Work",
+    ar: "معرض الأعمال",
   },
   subheading: {
     en: "Explore our featured projects",
     ar: "استعرض أحدث مشاريعنا",
   },
-  viewProject: {
+  viewDemo: {
+    en: "View Demo",
+    ar: "استعرض النموذج",
+  },
+  viewLiveSite: {
     en: "View Site",
-    ar: "استعرض الموقع",
+    ar: "زيارة الموقع",
   },
   primaryCta: {
-    en: "Start a Project",
+    en: "Get in Touch",
     ar: "إبدأ موقعك",
   },
 };

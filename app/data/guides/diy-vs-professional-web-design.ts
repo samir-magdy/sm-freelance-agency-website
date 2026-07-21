@@ -1,3 +1,4 @@
+import { CURRENT_YEAR } from "@/app/constants";
 import type { Guide } from "./types";
 
 const resource: Guide = {
@@ -9,8 +10,8 @@ const resource: Guide = {
     ar: "تبني موقعك بنفسك أم تستعين بشركة تصميم؟",
   },
   metaTitle: {
-    en: "DIY Website Builders vs Hiring a Developer (2026)",
-    ar: "(2026) منصات إنشاء المواقع أم توظيف مصمم مواقع؟",
+    en: `DIY Website Builders vs Hiring a Developer (${CURRENT_YEAR})`,
+    ar: `(${CURRENT_YEAR}) منصات إنشاء المواقع أم توظيف مصمم مواقع؟`,
   },
   excerpt: {
     en: "Website builders like Wix or Squarespace can work if you need something fairly simple. But they come with significant drawbacks that aren't immediately obvious and tend to surface over time. In this guide you'll learn the drawbacks of using these platforms, including the hidden costs and limitations.",
@@ -73,7 +74,7 @@ const resource: Guide = {
 <p>The DIY cost trap is that the low monthly USD subscription hides two much larger costs: the value of your time and years of compounding foreign-currency fees. The main appeal of DIY platforms is the low starting price, but neither of these costs is visible up front. The first is the value of your time: the hours you spend wrestling with layouts and fixing technical issues are hours away from running your business. The second is the compounding USD subscription. Most platforms cost $20–$50/month, and over two years, that's roughly 30,000–80,000 EGP at current exchange rates. A professional build, paid once in EGP, will typically cost less than 30,000. For a full breakdown of what professional builds cost, read our <a href='/en/guides/website-cost-in-egypt'>guide on website costs in Egypt</a>.</p>
 
 <h2>The Bottom Line</h2>
-<p>Building your own site is a reasonable choice if you're still testing a new idea and your budget is very tight. But if you have a real business and want to grow and compete in 2026, professional web design is the foundation you need. The pattern is consistent: businesses that invest in professional design from the start avoid the rebuild trap entirely.</p>`,
+<p>Building your own site is a reasonable choice if you're still testing a new idea and your budget is very tight. But if you have a real business and want to grow and compete in ${CURRENT_YEAR}, professional web design is the foundation you need. The pattern is consistent: businesses that invest in professional design from the start avoid the rebuild trap entirely.</p>`,
 
     ar: `
 <p>الحقيقة إن المنصات الجاهزة ليها عيوب كتير هنوضحها قريباً. العيوب دي مابتظهرش في البداية، لكنها بتبدأ تبان بوضوح مع مرور الزمن أو لما تحتاج تعديلات مخصصة برة القيود اللي المنصات دي بتفرضها عليك. خلينا نبدأ بمقارنة واضحة بين الأتنين.</p>
@@ -131,7 +132,7 @@ const resource: Guide = {
 <p>فخ تكلفة المنصات الجاهزة هو إن الاشتراك الشهري القليل بالدولار بيخفي تكلفتين أكبر بكتير: قيمة وقتك، وسنين من الاشتراك بالدولار اللي بيتراكم. الميزة الأساسية في المنصات الجاهزة هي السعر القليل في البداية، بس التكلفتين دول مش ظاهرين من البداية. الأولى: قيمة وقتك، الساعات اللي بتضيعها علشان تظبط شكل الصفحة أو تحل مشكلة تقنية. التانية: الاشتراك بالدولار بيتراكم. أغلب المنصات بتكلف 20-50 دولار في الشهر، على مدار سنتين، ده تقريباً 30,000-80,000 جنيه بسعر الصرف الحالي، مقارنةً <a href='/ar/guides/website-cost-in-egypt'> بتكلفة الموقع الإحترافي في مصر </a> اللي بتدفعه مرة واحدة بالجنيه وغالباً هيكون أرخص من 30،000. في المحصلة، المنصات الجاهزة هتكلفك أضعاف التصميم الإحترافي على المدى الطويل.</p>
 
 <h2>الخاتمة</h2>
-<p>لو عندك بزنس حقيقي وعايز تكبر وتنافس في 2026، الموقع الاحترافي هو الأساس اللي هتبني عليه نجاحك. النمط الثابت هو أن الشركات اللي بتستثمر في التصميم الاحترافي من البداية بتتجنب فخ إعادة البناء تماماً.</p>`,
+<p>لو عندك بزنس حقيقي وعايز تكبر وتنافس في ${CURRENT_YEAR}، الموقع الاحترافي هو الأساس اللي هتبني عليه نجاحك. النمط الثابت هو أن الشركات اللي بتستثمر في التصميم الاحترافي من البداية بتتجنب فخ إعادة البناء تماماً.</p>`,
   },
   metaDescription: {
     en: "Should you build your own website on Wix or Squarespace, or hire a professional? Compare real costs (including hidden USD subscriptions), risks, and long-term tradeoffs.",

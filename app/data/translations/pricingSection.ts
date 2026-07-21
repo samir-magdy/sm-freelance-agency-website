@@ -21,8 +21,8 @@ interface PricingCards {
 
 export const pricingCards: PricingCards = {
   heading: {
-    en: "Website Pricing",
-    ar: "أسعار تصميم المواقع",
+    en: "Services & Pricing",
+    ar: "الخدمات والأسعار",
   },
   subheading: {
     en: "Pick what best suits your needs",
@@ -45,7 +45,7 @@ export const pricingCards: PricingCards = {
     ar: "جنيه مصري",
   },
   cta: {
-    en: "Start a Project",
+    en: "Get in Touch",
     ar: "طلب استشارة",
   },
   customPriceLabel: {

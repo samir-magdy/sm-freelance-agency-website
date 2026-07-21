@@ -8,9 +8,8 @@ const guidesTranslations: Record<
   | "readMore"
   | "backToGuides"
   | "articleCta"
-  | "articleCtaSub"
   | "articleCtaButton"
-  | "by",
+  | "relatedHeading",
   Localized
 > = {
   pageTitle: {
@@ -32,15 +31,11 @@ const guidesTranslations: Record<
     en: "Ready to build your website?",
     ar: "جاهز تبني موقعك؟",
   },
-  articleCtaSub: {
-    en: "Custom websites for Entrepreneurs in Egypt",
-    ar: "مواقع مخصصة لأصحاب المشاريع في مصر.",
-  },
   articleCtaButton: {
     en: "Get In Touch",
     ar: "تواصل معنا",
   },
-  by: { en: "Author:", ar: "الكاتب:" },
+  relatedHeading: { en: "Related guides:", ar: "أدلة ذات صلة:" },
 };
 
 export default guidesTranslations;

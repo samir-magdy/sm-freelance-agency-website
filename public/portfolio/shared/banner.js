@@ -40,10 +40,10 @@
     const ctaIcon  = internalBanner.querySelector('.cta-icon');
     const ctaLink  = internalBanner.querySelector('.banner-cta');
     if (backText) backText.textContent = 'العودة';
-    if (ctaText)  ctaText.textContent  = 'احصل على موقعك';
+    if (ctaText)  ctaText.textContent  = 'تواصل معنا';
     if (backIcon) backIcon.style.transform = 'rotate(180deg)';
     if (ctaIcon)  ctaIcon.style.transform  = 'rotate(180deg)';
-    if (ctaLink)  ctaLink.href = 'https://smwebdesign.studio/ar#contact';
+    if (ctaLink)  ctaLink.href = 'https://smweb.studio/ar#contact';
   }
 
   const backBtn = internalBanner?.querySelector('.banner-back');

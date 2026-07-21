@@ -1,4 +1,5 @@
 import type { Localized } from "@/app/types";
+import { SITE_NAME } from "@/app/constants";
 
 interface Pillar {
   title: Localized;
@@ -30,8 +31,8 @@ const aboutSection: AboutSection = {
       ar: "",
     },
     {
-      en: "SM Web Design Studio was built on a simple belief, every business deserves honest guidance, professional work, and fair pricing.",
-      ar: "إحنا فريق صغير ومتخصص، مكون من مبرمج، ومصمم، وكاتب محتوى. أسسنا الاستوديو الخاص بنا على مبدأ بسيط: ان جميع الشركات والأفراد من حقهم يحصلوا على توجيه صادق، عمل احترافي، وأسعار عادلة.",
+      en: `${SITE_NAME} was built on a simple belief, every business deserves honest guidance, professional work, and fair pricing.`,
+      ar: "نحن فريق صغير ومتخصص، مٌكون من مطور، ومصمم، وكاتب محتوى. أسسنا الاستوديو الخاص بنا على مبدأ بسيط: أن جميع الشركات والأفراد من حقهم يحصلوا على توجيه صادق، عمل احترافي، وأسعار عادلة.",
     },
     {
       en: "After seeing people struggle with incompetent providers, we realized the problem wasn't building the website, it was trust & communication.",
@@ -55,13 +56,13 @@ const aboutSection: AboutSection = {
         ar: "خيارات واضحة وأسعار عادلة.",
       },
     },
-    {
-      title: { en: "Communication", ar: "التواصل" },
-      desc: {
-        en: "Honest guidance every step of the way.",
-        ar: "إرشاد بصدق في كل خطوة.",
-      },
-    },
+ {
+  title: { en: "Quality", ar: "الجودة" },
+  desc: {
+    en: "High standards in every detail.",
+    ar: "معايير عالية في التصميم والأداء.",
+  },
+},
     {
       title: { en: "Partnership", ar: "الشراكة" },
       desc: {
@@ -80,8 +81,8 @@ const aboutSection: AboutSection = {
     ar: "المؤسس والمطور الرئيسي",
   },
   ctaContact: {
-    en: "Start a Project",
-    ar: "ابدأ مشروعك",
+    en: "Get in Touch",
+    ar: "تواصل معنا",
   },
   ctaLinkedIn: {
     en: "LinkedIn",

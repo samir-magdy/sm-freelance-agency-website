@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://smwebdesign.studio/sitemap.xml
+Sitemap: https://smweb.studio/sitemap.xml

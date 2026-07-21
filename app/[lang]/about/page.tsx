@@ -4,7 +4,7 @@ import Link from "next/link";
 import profilePhoto from "@/public/profilePhoto.jpg";
 import aboutSection from "@/app/data/translations/aboutSection";
 import { notFound } from "next/navigation";
-import { SITE_URL, SITE_NAME } from "@/app/constants";
+import { SITE_URL, SITE_NAME, CONTACT_EMAIL } from "@/app/constants";
 import { Eye, MessagesSquare, Handshake, Mail, type LucideIcon } from "lucide-react";
 import WhatsAppIcon from "@/app/components/utils/WhatsAppIcon";
 import LinkedInIcon from "@/app/components/utils/LinkedInIcon";
@@ -17,10 +17,10 @@ const meta: Record<Lang, { title: string; description: string }> = {
   en: {
     title: "Website Designer & Developer in Egypt | Samir Magdy",
     description:
-      "Samir Magdy is a web designer & developer & the founder of SM Web Design Studio, specializing in high-performance, custom web development.",
+      `Samir Magdy is a web designer & developer & the founder of ${SITE_NAME}, specializing in high-performance, custom web development.`,
   },
   ar: {
-    title: "مبرمج ومصمم مواقع إلكترونية في مصر | سمير مجدي",
+    title: "مبرمج ومصمم مواقع في مصر | سمير مجدي",
     description:
       "سمير مجدي هو مصمم ومطور مواقع في مصر ومؤسس شركة إس إم ويب ستوديو. متخصص في خدمات تصميم المواقع المخصصة للشركات والأفراد.",
   },
@@ -59,7 +59,7 @@ export async function generateMetadata({
           url: `${SITE_URL}/open-graph.webp`,
           width: 1200,
           height: 630,
-          alt: "SM Web Design Studio – Web Design Company in Egypt",
+          alt: `${SITE_NAME} – Web Design Company in Egypt`,
         },
       ],
     },
@@ -86,7 +86,7 @@ export default async function AboutPage({
     alternateName: "سمير مجدي",
     jobTitle: "Founder, Web Designer & Developer",
     description:
-      "Samir Magdy is a web designer & developer & the founder of SM Web Design Studio, specializing in high-performance, custom web development.",
+      `Samir Magdy is a web designer & developer & the founder of ${SITE_NAME}, specializing in high-performance, custom web development.`,
     nationality: { "@type": "Country", name: "Egypt" },
     url: `${SITE_URL}/${lang}/about`,
     image: `${SITE_URL}/profilePhoto.jpg`,
@@ -104,7 +104,7 @@ export default async function AboutPage({
   return (
     <div
       dir={dir}
-      className="relative isolate bg-background px-8 py-16 md:flex-1 md:pt-28 md:pb-28"
+      className="relative isolate bg-background px-8 py-16 md:flex-1 md:pt-28 md:pb-20"
     >
       <script
         type="application/ld+json"
@@ -116,7 +116,7 @@ export default async function AboutPage({
         <header className="reveal-element text-center">
           <h1
             id="about-title"
-            className="text-content-heading font-bold text-[clamp(1.8rem,5vw,2.75rem)] tracking-wide rtl:tracking-normal"
+            className="text-content-heading font-bold text-[clamp(1.8rem,5vw,2.75rem)] tracking-wide"
           >
             {t.eyebrow[lang]}
           </h1>
@@ -138,7 +138,7 @@ export default async function AboutPage({
             aria-hidden="true"
             className="h-px w-8 bg-linear-to-r rtl:bg-linear-to-l from-transparent to-gold/50"
           />
-          <p className="text-base font-semibold uppercase tracking-[0.28em] rtl:text-subheading rtl:tracking-normal text-content-muted">
+          <p className="text-base font-semibold uppercase tracking-[0.28em] rtl:text-subheading text-content-muted">
             {t.pillarsLabel[lang]}
           </p>
           <span
@@ -146,7 +146,7 @@ export default async function AboutPage({
             className="h-px w-8 bg-linear-to-r rtl:bg-linear-to-l from-gold/50 to-transparent"
           />
         </div>
-        <ul className="mt-8 grid gap-6 text-center sm:grid-cols-3 sm:gap-5 max-w-4xl mx-auto">
+        <ul className="mt-8 grid gap-6 text-center md:grid-cols-3 sm:gap-5 max-w-4xl mx-auto">
           {t.pillars.map((p, i) => {
             const Icon = pillarIcons[i] ?? pillarIcons[0];
             return (
@@ -156,12 +156,12 @@ export default async function AboutPage({
               >
                 <span
                   aria-hidden="true"
-                  className="relative mx-auto  mb-5 flex items-center justify-center text-gold/90 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:scale-120 group-hover:text-gold-light"
+                  className="relative mx-auto mb-5 flex items-center justify-center text-gold/90 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:scale-120 group-hover:text-gold-light"
                 >
                   <Icon className="size-10" strokeWidth={1.5} />
                 </span>
 
-                <h3 className="relative text-[1.05rem] sm:text-[clamp(1rem,5vw,1.2rem)] font-semibold uppercase tracking-[0.1em] rtl:tracking-normal text-gold">
+                <h3 className="relative text-[1.05rem] sm:text-[clamp(1rem,5vw,1.2rem)] font-semibold uppercase tracking-widest text-gold">
                   {p.title[lang]}
                 </h3>
 
@@ -193,19 +193,19 @@ export default async function AboutPage({
 
         <div className="reveal-element mt-20 flex max-w-4xl mx-auto flex-col items-center text-center md:mt-16 md:flex-row md:items-center md:justify-center md:gap-12 md:text-start">
           <span
-            className="h-px w-full max-w-[8rem] bg-border-subtle md:hidden"
+            className="h-px w-full max-w-32 bg-border-subtle md:hidden"
             aria-hidden="true"
           />
-          <p className="sm:hidden mt-5 text-[clamp(2rem,5vw,1.55rem)] font-semibold text-content-heading md:mt-0 md:text-[clamp(1.8rem,2.4vw,2.4rem)] md:leading-tight">
+          <p className="sm:hidden mt-5 text-[clamp(2rem,5vw,1.55rem)] font-semibold text-content-heading">
             {t.founderName[lang]}
           </p>
-          <p className="sm:hidden mt-1.5 text-content-muted text-[clamp(1.2rem,4vw,1.55rem)] md:mt-3 md:text-[0.78rem] md:font-semibold md:uppercase md:tracking-[0.2em] md:text-gold/85">
+          <p className="sm:hidden mt-1.5 text-content-muted text-[clamp(1.2rem,4vw,1.55rem)]">
             {t.founderRole[lang]}
           </p>
           <div className="mt-10 shrink-0 overflow-hidden rounded-4xl border border-border-strong shadow-[0_18px_40px_-18px_rgba(0,0,0,0.8)] md:mt-0 md:w-62">
             <Image
               src={profilePhoto}
-              alt="Photo of Samir Magdy, Founder of SM Web Design Studio"
+              alt={`Photo of Samir Magdy, Founder of ${SITE_NAME}`}
               className="size-full object-cover object-top"
               placeholder="blur"
             />
@@ -225,20 +225,20 @@ export default async function AboutPage({
             </p>
 
             <div className="mt-9 flex w-full flex-col gap-3 md:mt-8">
-              <div className="flex flex-col gap-3 sm:flex-row">
+              <div className="flex flex-col gap-3 sm:flex-row text-base font-medium text-content-body">
                 <a
                   href={SOCIAL_LINKS.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-1 items-center justify-center gap-2.5 rounded-2xl border border-border-strong px-6 py-3 text-base font-medium text-content-body transition-all duration-250 hover:border-white/30"
+                  className="flex flex-1 items-center justify-center gap-2.5 rounded-2xl border border-border-strong px-6 py-3 transition-all duration-250 hover:border-white/30"
                 >
                   <WhatsAppIcon className="size-5 shrink-0 text-[#25D366]" />
                   {t.ctaWhatsApp[lang]}
                 </a>
 
                 <a
-                  href="mailto:studio@samirmagdy.com"
-                  className="flex flex-1 items-center justify-center gap-2.5 rounded-2xl border border-border-strong px-6 py-3 text-base font-medium text-content-body transition-all duration-250 hover:border-white/30"
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="flex flex-1 items-center justify-center gap-2.5 rounded-2xl border border-border-strong px-6 py-3 transition-all duration-250 hover:border-white/30"
                 >
                   <Mail
                     className="size-5 shrink-0 text-white/80"
@@ -251,7 +251,7 @@ export default async function AboutPage({
                   href="https://www.linkedin.com/in/samir-magdy-/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-1 items-center justify-center gap-2.5 rounded-2xl border border-border-strong px-6 py-3 text-base font-medium text-content-body transition-all duration-250 hover:border-white/30"
+                  className="flex flex-1 items-center justify-center gap-2.5 rounded-2xl border border-border-strong px-6 py-3 transition-all duration-250 hover:border-white/30"
                 >
                   <LinkedInIcon className="size-5 shrink-0 text-[#0A66C2]" />
                   {t.ctaLinkedIn[lang]}

@@ -27,12 +27,16 @@ function NavArrow({ direction, disabled, onClick }: NavArrowProps) {
     <button
       onClick={onClick}
       aria-label={direction === "prev" ? "Previous project" : "Next project"}
-      className="hidden group sm:flex items-center justify-center w-11 h-11 rounded-full shrink-0 p-0 transition-all duration-300 ease-out border bg-white/[0.1] border-white/[0.12] text-content-heading cursor-pointer hover:border-white/20"
+      className="hidden group sm:flex items-center justify-center w-12 h-12 rounded-full shrink-0 p-0 transition-all duration-300 ease-out border bg-white/[0.1] border-white/[0.12] text-content-heading cursor-pointer hover:border-white/20"
     >
       <Icon
         size={18}
         strokeWidth={2.5}
-        className="transition-transform duration-100 ease-out"
+        className={`transition-transform duration-500 ease-out ${
+          direction === "prev"
+            ? "group-hover:-translate-x-0.5 rtl:group-hover:translate-x-0.5"
+            : "group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
+        }`}
       />
     </button>
   );
@@ -202,6 +206,9 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
 
   const ctaHref = project.liveUrl;
   const handleCtaClick = handleDemoClick;
+  const ctaLabel = project.clientSite
+    ? t.viewLiveSite[lang]
+    : t.viewDemo[lang];
 
   const isRtl = lang === "ar";
 
@@ -211,7 +218,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
       className="flex flex-col items-center justify-center min-h-[calc(100svh-var(--nav-h))] relative select-none px-5"
       aria-labelledby="portfolio-heading"
     >
-      <div className="text-center relative z-2 px-5 md:mb-12">
+      <div className="text-center relative z-2 px-5 md:mb-4 lg:mb-8">
         <h2
           id="portfolio-heading"
           className="reveal-element font-bold text-heading"
@@ -226,10 +233,20 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
       <ul className="sr-only">
         {projects.map((proj) => {
           const projCopy = projectData[proj.id];
+          const isExternal = !proj.liveUrl.startsWith("/portfolio/");
           return (
             <li key={proj.id}>
               <h3>{isRtl ? proj.genreAr : proj.genre}</h3>
-              <h4>{projCopy.title[lang]}</h4>
+              <h4>
+                <a
+                  href={proj.liveUrl}
+                  {...(isExternal
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
+                  {projCopy.title[lang]}
+                </a>
+              </h4>
               <p>{projCopy.description[lang]}</p>
             </li>
           );
@@ -259,23 +276,25 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
               {pd.description[lang]}
             </p>
 
-            <div className="portfolio-info-enter hidden lg:flex items-center gap-3">
+            <div className="hidden lg:flex items-center justify-start gap-3 w-full pe-4">
               <Link
                 id="pricing-cta"
                 onClick={handleCtaClick}
                 href={ctaHref}
-                className="inline-flex items-center gap-2 py-3 px-6 rounded-xl border border-border-strong text-content-body hover:text-content-heading text-[clamp(0.7rem,1.5vw,1.2rem)] font-semibold tracking-wide transition-colors duration-200"
-                aria-label={`${t.viewProject[lang]} – ${pd.title[lang]}`}
+                className="group w-full inline-flex justify-center items-center gap-4 py-3 px-6 rounded-xl border border-border-strong text-content-body hover:text-content-heading text-[clamp(0.7rem,1.5vw,1.25rem)] font-semibold tracking-wide transition-colors duration-200"
+                aria-label={`${ctaLabel} – ${pd.title[lang]}`}
               >
-                {t.viewProject[lang]}
-                <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
+                {ctaLabel}
+                <ArrowRight
+                  className="size-4 rtl:rotate-180 transition-transform duration-200 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
+                  aria-hidden
+                />
               </Link>
               <a
                 href="#contact"
-                className="cta-primary inline-flex items-center gap-2 py-3 px-6 rounded-xl text-gray-900 text-[clamp(0.7rem,1.5vw,1.2rem)] font-semibold tracking-wide"
+                className="cta-primary w-full inline-flex justify-center items-center gap-2 py-3 px-6 rounded-xl text-gray-900 text-[clamp(0.7rem,1.5vw,1.25rem)] font-semibold tracking-wide"
               >
                 {t.primaryCta[lang]}
-                <ArrowRight className="size-4 rotate-90" aria-hidden />
               </a>
             </div>
           </div>
@@ -286,7 +305,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
             id="portfolio-genre"
             aria-hidden="true"
             key={`genre-${project.id}`}
-            className="lg:hidden inline-flex items-center px-4 py-1.5 rounded-xl text-[0.6rem] rtl:text-xs font-semibold uppercase tracking-[0.1em] border border-border-subtle text-content-heading bg-surface-card"
+            className="lg:hidden inline-flex items-center px-4 py-1.5 rounded-xl text-[clamp(0.7rem,3vw,1rem)] font-semibold uppercase tracking-[0.1em] border border-border-subtle text-content-heading bg-surface-card"
           >
             {isRtl ? project.genreAr : project.genre}
           </h3>
@@ -300,7 +319,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
 
             <div
               id="mobile-mockup"
-              className="phone-outer aspect-11/19.5 w-[66vw] sm:w-[50vw] md:w-[35vw] lg:w-[25vw] xl:w-[17.2vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="aspect-11/19.5 w-[205px] sm:w-[230px] md:w-[260px] lg:w-[300px] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
               <div className="absolute -left-[2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -372,22 +391,24 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
             ))}
           </div>
 
-          <div className="flex items-center gap-3 lg:hidden">
+          <div className="flex items-center gap-3 lg:hidden w-full text-[clamp(0.6rem,4vw,1.4rem)] tracking-wide whitespace-nowrap">
             <Link
               onClick={handleCtaClick}
               href={ctaHref}
-              className="mobile-portfolio-buttons inline-flex items-center gap-2 whitespace-nowrap py-2.5 px-5 rounded-xl border border-border-strong text-content-body hover:text-content-heading text-sm sm:text-[3.5vw] font-semibold tracking-wide transition-colors duration-200"
-              aria-label={`${t.viewProject[lang]} – ${pd.title[lang]}`}
+              className="mobile-portfolio-buttons w-full justify-center group inline-flex items-center gap-2 py-2.5 px-5 rounded-xl border border-border-strong text-content-body hover:text-content-heading transition-colors duration-200"
+              aria-label={`${ctaLabel} – ${pd.title[lang]}`}
             >
-              {t.viewProject[lang]}
-              <ArrowRight className="size-4 rtl:rotate-180" aria-hidden />
+              {ctaLabel}
+              <ArrowRight
+                className="size-4 rtl:rotate-180 transition-transform duration-200 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
+                aria-hidden
+              />
             </Link>
             <a
               href="#contact"
-              className="mobile-portfolio-buttons cta-primary relative overflow-hidden inline-flex items-center gap-2 whitespace-nowrap py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900 text-sm sm:text-[3.5vw] font-semibold tracking-wide"
+              className="mobile-portfolio-buttons w-full justify-center cta-primary relative overflow-hidden inline-flex items-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900"
             >
               {t.primaryCta[lang]}
-              <ArrowRight className="size-4 rotate-90" aria-hidden />
             </a>
           </div>
         </div>

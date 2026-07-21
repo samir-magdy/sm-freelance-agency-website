@@ -21,7 +21,7 @@ interface GuidesGridProps {
 
 export default function GuidesGrid({ resources, lang, t }: GuidesGridProps) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {resources.map((guide) => (
         <article
           key={guide.slug}
@@ -62,7 +62,7 @@ export default function GuidesGrid({ resources, lang, t }: GuidesGridProps) {
           </Link>
         </article>
       ))}
-      <div className="relative flex flex-col items-center justify-center gap-4 p-8 rounded-2xl bg-surface-card/20 transition-all sm:col-span-2 max-w-[40rem] duration-50 min-h-[23rem] text-center overflow-hidden sm:w-full mx-auto">
+      <div className="relative w-full mx-auto flex flex-col items-center justify-center gap-4 p-5.5 rounded-2xl bg-surface-card/20 transition-colors duration-200 text-center overflow-hidden sm:min-h-[22rem] lg:col-span-2 lg:max-w-[40rem]">
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none"
           fill="none"
@@ -86,7 +86,7 @@ export default function GuidesGrid({ resources, lang, t }: GuidesGridProps) {
             {lang === "ar" ? "ترقب المزيد" : "Stay Tuned"}
           </h3>
           <p
-            className={`text-content-muted text-subheading max-w-[300px] mx-auto leading-relaxed ${lang === "ar" ? "font-arabic" : ""}`}
+            className="text-content-muted text-subheading max-w-[300px] mx-auto leading-relaxed"
             dir={lang === "ar" ? "rtl" : "ltr"}
           >
             {lang === "ar"
@@ -95,7 +95,7 @@ export default function GuidesGrid({ resources, lang, t }: GuidesGridProps) {
           </p>
         </div>
 
-        <div className="flex gap-2 mt-2">
+        <div className="flex gap-2 mt-2 relative z-10">
           <span className="w-3 h-3 rounded-full bg-gold-light/80 animate-pulse [animation-delay:-0.3s]"></span>
           <span className="w-3 h-3 rounded-full bg-gold-light/80 animate-pulse [animation-delay:-0.20s]"></span>
           <span className="w-3 h-3 rounded-full bg-gold-light/80 animate-pulse"></span>
