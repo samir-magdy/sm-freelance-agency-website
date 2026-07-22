@@ -39,22 +39,12 @@ const faqSection: FAQSection = {
   items: [
     {
       question: {
-        en: "What is the process for getting my website?",
-        ar: "إيه هي خطوات تنفيذ الموقع؟",
+        en: "What's included in the base price?",
+        ar: "إيه اللي مشمول في السعر الأساسي؟",
       },
       answer: {
-        en: "First, we learn about your business and understand your vision. Next, we design a visual mockup for your review. Once approved, we develop and launch your fully functional website after a final review.",
-        ar: "بنبدأ بالتواصل علشان نفهم شغلك ومتطلباتك من الموقع. بعدين بنعمل تصور لتصميم الموقع للمراجعه، واخيراً بنطور التصميم لموقع إلكتروني فعلي.",
-      },
-    },
-{
-      question: {
-        en: "What's included in the base price shown above?",
-        ar: "إيه اللي مشمول في السعر الأساسي المعروض؟",
-      },
-      answer: {
-        en: "Every project includes a custom, ~5 page website (Landing pages are one page). First-year hosting, domain setup, a 90-day post-launch warranty are also included. The following are not included in the base build unless your project requires it: an admin panel to create/update/delete content yourself, SEO (keyword resarch and technical on-page), copywriting, and localized bilingual support.",
-        ar: "كل مشروع يشمل موقع مخصص في حدود 5 صفحات (صفحات الهبوط صفحة واحدة)، استضافة السنة الأولى، إعداد الدومين، وضمان 90 يوم بعد الإطلاق. الخدمات التالية غير مشمولة في البناء الأساسي إلا إذا يتطلب مشروعك: لوحة تحكم علشان تعمل/تعدل/تحذف محتوى بنفسك، SEO (بحث الكلمات المفتاحية والتحسين التقني المباشر)، كتابة المحتوى، والدعم المحلي بلغتين.",
+        en: "Every project includes a custom site of up to 5 pages, 1st-year hosting, domain setup & a 90-day post-launch warranty. The following are NOT included in the base price & are available as paid add-ons: an admin panel (modify content yourself), SEO (keyword research & technical on-page), copywriting (strategic content writing) & localized bilingual support (SEO-friendly). See <a href='#pricing'>pricing</a> for reference.",
+        ar: "كل مشروع بيشمل موقع مخصص بحد أقصى 5 صفحات، استضافة السنة الأولى، إعداد الدومين، وضمان لمدة 90 يوم بعد الإطلاق. الخدمات التالية غير مشمولة في السعر الأساسي وتقدم بتكلفة إضافية: لوحة تحكم (تعديل المحتوى بنفسك)، SEO (بحث الكلمات المفتاحية والتحسين التقني)، كتابة المحتوى، ودعم محلي بلغتين. اطلع على <a href='#pricing'>الأسعار</a> للمرجع.",
       },
     },
     {
@@ -69,52 +59,12 @@ const faqSection: FAQSection = {
     },
     {
       question: {
-        en: "What do I need to provide to get started?",
-        ar: "إيه اللي محتاج أجهزه علشان نبدأ؟",
+        en: "What is the process for getting my website?",
+        ar: "إيه هي خطوات تنفيذ الموقع؟",
       },
       answer: {
-        en: "Your basic brand assets like your logo, the text content for each page, and any high-quality photos or videos you want to showcase.",
-        ar: "كل اللي بنحتاجه منك هو أساسيات الهوية الخاصة بيك، زي اللوجو، والنصوص اللي عايزها تظهر في كل قسم، و صور أو فيديوهات بجودة كويسة تحب تعرضها على الموقع.",
-      },
-    },
-    {
-      question: {
-        en: "Will I be able to edit my website myself?",
-        ar: "هعرف أعدل في محتوى الموقع بنفسي؟",
-      },
-      answer: {
-        en: "If you choose to include a CMS (Admin Panel), then yes. We'll explain how it works before handover; it's user-friendly and requires zero technical knowledge.",
-        ar: "لو موقعك فيه لوحة تحكم (نظام إدارة المحتوى CMS)، طبعاً هتعرف. قبل ما نسلمك الموقع، بنشرحلك إزاي تستخدم اللوحة دي ببساطة، ومش هتحتاج أي خبرة تقنية علشان تدير المحتوى بتاعك.",
-      },
-    },
-    {
-      question: {
-        en: "Can I add more to my website later on?",
-        ar: "ممكن أضيف مميزات للموقع في المستقبل؟",
-      },
-      answer: {
-        en: "Absolutely. We can expand your site with new pages, features, or an admin panel at any time without having to rebuild it from scratch.",
-        ar: "أكيد طبعاً، سواء عايز تضيف صفحات جديدة، أو أقسام تانية، أو حتى لوحة تحكم لإدارة المحتوى، نقدر نوسع ونطور الموقع في أي وقت ومن غير ما نضطر نبدأ من الصفر.",
-      },
-    },
-    {
-      question: {
-        en: "Do you handle hosting and maintenance?",
-        ar: "بتوفروا الاستضافة والصيانة؟",
-      },
-      answer: {
-        en: "Yes, we help you set up hosting under your own account, and the cost is covered in the initial price for the first year. We also offer an ongoing maintenance plan to ensure your website stays secure, fast, and up to date.",
-        ar: "بنساعدك في إعداد الاستضافة تحت حسابك الخاص، والتكلفة بتكون مشمولة في السعر المبدئي للسنة الأولى. كمان بنوفر خطة صيانة مستمرة علشان نضمن إن موقعك يفضل آمن، سريع، ومتحدث أول بأول.",
-      },
-    },
-    {
-      question: {
-        en: "Do I get the source code?",
-        ar: "هستلم الكود المصدري للموقع؟",
-      },
-      answer: {
-        en: "Yes, you completely own the code. We recommend that you create a <a href='https://github.com' target='_blank'>GitHub</a> account so we can transfer the repository directly to you, giving you full control to host it anywhere or hand it off to another developer in the future.",
-        ar: "الموقع بيبقى ملكك بالكامل بعد التسليم، بما في ذلك الكود المصدري. تقدر تستضيفه في أي مكان أو تسلمه الي مطور أخر.",
+        en: "First, we learn about your business and understand your vision. Next, we design a visual mockup for your review. Once approved, we develop your fully functional website and launch after a final review.",
+        ar: "بنبدأ بالتواصل علشان نفهم شغلك ومتطلباتك من الموقع. بعدين بنعمل تصور لتصميم الموقع للمراجعه، واخيراً بنطور التصميم لموقع إلكتروني فعلي.",
       },
     },
     {
@@ -129,22 +79,62 @@ const faqSection: FAQSection = {
     },
     {
       question: {
+        en: "What do I need to provide to get started?",
+        ar: "إيه اللي محتاج أجهزه علشان نبدأ؟",
+      },
+      answer: {
+        en: "Your basic brand assets like your logo, the text content for each page, and any high-quality photos or videos you want to showcase.",
+        ar: "كل اللي بنحتاجه منك هو أساسيات الهوية الخاصة بيك، زي اللوجو، والنصوص اللي عايزها تظهر في كل قسم، واى صور أو فيديوهات تحب تعرضها على الموقع.",
+      },
+    },
+    {
+      question: {
         en: "How many rounds of revisions are included?",
         ar: "هقدر اطلب تعديلات خلال مراحل التصميم والتطوير؟",
       },
       answer: {
-        en: "You get one round of revisions on the initial design and another round before final delivery. Any additional revisions will be added to the final cost.",
+        en: "You get one round of revision on the initial design and another round before final delivery. Any additional revisions will be added to the final cost.",
         ar: "بنوفر تعديل بعد مرحلة التصميم البدائية، وتعديل اخر قبل التسليم النهائي، أي تعديلات إضافية هيتم إضافتها على التكلفة النهائية.",
       },
     },
     {
       question: {
-        en: "Is SEO included?",
-        ar: "تحسين محركات البحث (SEO) مشمول؟",
+        en: "Will I be able to edit my website myself?",
+        ar: "هعرف أعدل في محتوى الموقع بنفسي؟",
       },
       answer: {
-        en: "SEO isn't included in the basic build, but we can add it as an extra service to help your site rank better on Google and reach the right audience.",
-        ar: "تحسين محركات البحث غير مشمول في الباقة الأساسية، لكن نقدر نضيفه كخدمة إضافية علشان موقعك يظهر بشكل أفضل على جوجل ويوصل للجمهور المناسب.",
+        en: "If you choose to include a CMS (Admin Panel), then yes. We'll explain how it works before handover; it's user-friendly and requires zero technical knowledge.",
+        ar: "لو موقعك فيه لوحة تحكم (نظام إدارة المحتوى CMS)، طبعاً هتعرف. قبل ما نسلمك الموقع، بنشرحلك إزاي تستخدم اللوحة دي ببساطة، ومش هتحتاج أي خبرة تقنية علشان تدير المحتوى بتاعك.",
+      },
+    },
+    {
+      question: {
+        en: "Do I get the source code?",
+        ar: "هستلم الكود المصدري للموقع؟",
+      },
+      answer: {
+        en: "Yes. We recommend that you create a <a href='https://github.com' target='_blank'>GitHub</a> account so we can transfer the repository directly to you, giving you full control to host it anywhere or hand it off to another developer in the future.",
+        ar: "الموقع بيبقى ملكك بالكامل بعد التسليم، بما في ذلك الكود المصدري. تقدر تستضيفه في أي مكان أو تسلمه الي مطور أخر.",
+      },
+    },
+    {
+      question: {
+        en: "Do you handle hosting and maintenance?",
+        ar: "بتوفروا الاستضافة والصيانة؟",
+      },
+      answer: {
+        en: "Yes, we handle all the technical details to deploy and keep your site live. The first year is included in the initial price, after that there will be a yearly charge to keep your site live. We also offer an ongoing maintenance plan (monthly/annually) to ensure your website stays secure, fast, and up to date.",
+        ar: "بنساعدك في إعداد الاستضافة تحت حسابك الخاص، والتكلفة بتكون مشمولة في السعر المبدئي للسنة الأولى. كمان بنوفر خطة صيانة مستمرة علشان نضمن إن موقعك يفضل آمن، سريع، ومتحدث أول بأول.",
+      },
+    },
+    {
+      question: {
+        en: "Can I add more to my website later on?",
+        ar: "ممكن أضيف مميزات للموقع في المستقبل؟",
+      },
+      answer: {
+        en: "Absolutely. We can expand your site with new pages, features, or an admin panel at any time without having to rebuild it from scratch.",
+        ar: "أكيد طبعاً، سواء عايز تضيف صفحات جديدة، أو أقسام تانية، أو حتى لوحة تحكم لإدارة المحتوى، نقدر نوسع ونطور الموقع في أي وقت ومن غير ما نضطر نبدأ من الصفر.",
       },
     },
     {
@@ -163,18 +153,8 @@ const faqSection: FAQSection = {
         ar: "بتساعدوا في تسجيل الدومين؟",
       },
       answer: {
-        en: "Yes, we recommend creating an account with a domain registrar so we can transfer full ownership and DNS control directly to you. We will handle the technical setup steps so you don't have to deal with them yourself.",
-        ar: "إحنا هنتولى خطوات الإعداد التقني بالكامل، بننصحك بإنشاء حساب لدى شركة تسجيل نطاقات علشان ننقل ملكية الدومين والتحكم الكامل ليك مباشرة.",
-      },
-    },
-    {
-      question: {
-        en: "Do you write the content for my website?",
-        ar: "بتكتبوا محتوى الموقع؟",
-      },
-      answer: {
-        en: "Copywriting isn't included in the basic build, but we can add it as an extra service if you'd like our marketing expert to handle it.",
-        ar: "كتابة المحتوى غير مشمولة في الباقة الأساسية، لكن نقدر نضيفها كخدمة إضافية.",
+        en: "Yes, we recommend creating an account with a trusted domain registrar such as <a href='https://www.namecheap.com' target='_blank'>Namecheap</a> or <a href='https://www.godaddy.com' target='_blank'>GoDaddy</a> so we can transfer full ownership and DNS control directly to you. We will handle the technical setup steps so you don't have to deal with them yourself.",
+        ar: "إحنا هنتولى خطوات الإعداد التقني بالكامل، بننصحك بإنشاء حساب لدى شركة تسجيل نطاقات موثوقة زي <a href='https://www.namecheap.com' target='_blank'>Namecheap</a> أو <a href='https://www.godaddy.com' target='_blank'>GoDaddy</a> علشان ننقل ملكية الدومين والتحكم الكامل ليك مباشرة.",
       },
     },
   ],

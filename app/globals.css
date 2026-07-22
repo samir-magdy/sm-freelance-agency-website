@@ -298,8 +298,11 @@ section {
   #pricing-calculator button * {
     font-size: 0.875rem; /* text-sm */
   }
+  [dir="rtl"] #pricing-calculator {
+    scroll-margin-top: 10.5rem;
+  }
   #pricing-calculator {
-    scroll-margin-top: 12rem;
+    scroll-margin-top: 10rem;
   }
   .safari-hero-padding {
     padding-top: 10rem;

@@ -20,22 +20,27 @@ interface NavArrowProps {
 }
 
 function NavArrow({ direction, disabled, onClick }: NavArrowProps) {
-  if (disabled) return <div className="hidden sm:block w-11 h-11 shrink-0" />;
-
   const Icon = direction === "prev" ? ArrowLeft : ArrowRight;
   return (
     <button
       onClick={onClick}
+      disabled={disabled}
       aria-label={direction === "prev" ? "Previous project" : "Next project"}
-      className="hidden group sm:flex items-center justify-center w-12 h-12 rounded-full shrink-0 p-0 transition-all duration-300 ease-out border bg-white/[0.1] border-white/[0.12] text-content-heading cursor-pointer hover:border-white/20"
+      className={`hidden group sm:flex items-center justify-center w-12 h-12 rounded-full shrink-0 p-0 transition-all duration-300 ease-out border ${
+        disabled
+          ? "bg-white/[0.03] border-white/[0.06] text-content-heading/30 cursor-not-allowed"
+          : "bg-white/[0.1] border-white/[0.12] text-content-heading cursor-pointer hover:border-white/20"
+      }`}
     >
       <Icon
         size={18}
         strokeWidth={2.5}
         className={`transition-transform duration-500 ease-out ${
-          direction === "prev"
-            ? "group-hover:-translate-x-0.5 rtl:group-hover:translate-x-0.5"
-            : "group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
+          disabled
+            ? ""
+            : direction === "prev"
+              ? "group-hover:-translate-x-0.5 rtl:group-hover:translate-x-0.5"
+              : "group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
         }`}
       />
     </button>

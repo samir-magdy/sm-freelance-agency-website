@@ -33,8 +33,8 @@ export const pricingCards: PricingCards = {
     ar: "حابب تقدير سعر فورى لمشروعك؟",
   },
   estimatorCta: {
-    en: "Calculate your investment",
-    ar: "احسب تكلفة الموقع",
+    en: "Estimate your investment",
+    ar: "قدر تكلفة الموقع",
   },
   startsAt: {
     en: "Starts at",

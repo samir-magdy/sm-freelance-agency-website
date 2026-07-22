@@ -116,7 +116,7 @@ export default async function AboutPage({
         <header className="reveal-element text-center">
           <h1
             id="about-title"
-            className="text-content-heading font-bold text-[clamp(1.8rem,5vw,2.75rem)] tracking-wide"
+            className="text-content-heading font-bold text-heading tracking-wide"
           >
             {t.eyebrow[lang]}
           </h1>

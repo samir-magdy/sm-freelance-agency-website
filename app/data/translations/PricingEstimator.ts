@@ -52,15 +52,15 @@ interface PricingEstimatorData {
 const pricingEstimator: PricingEstimatorData = {
   baseLabel: { en: "Website Type:", ar: "نوع الموقع" },
   scopeLabelByBase: {
-    landing: { en: "Content Size <span class='text-content-muted font-normal'>(no. of pages)</span>", ar: "حجم المحتوى <span class='text-content-muted font-normal'>(عدد الصفحات)</span>" },
-    business: { en: "Content Size <span class='text-content-muted font-normal'>(no. of pages)</span>", ar: "حجم المحتوى <span class='text-content-muted font-normal'>(عدد الصفحات)</span>" },
+    landing: { en: "Size", ar: "الحجم" },
+    business: { en: "Size <span class='text-content-muted font-normal'>(no. of pages)</span>", ar: "الحجم <span class='text-content-muted font-normal'>(عدد الصفحات)</span>" },
   },
   addonsLabel: { en: "Add-ons:", ar: "الإضافات" },
   estimateLabel: { en: "Estimate:", ar: "تقدير السعر:" },
   cta: { en: "Get an Official Quote", ar: "احصل على عرض سعر رسمي" },
   disclaimer: {
-    en: "The price displayed is an estimate. Final pricing is confirmed after consultation.",
-    ar: "السعر المعروض تقدير تقريبي. نعرض السعر النهائي عند التواصل.",
+    en: "Final pricing is confirmed after consultation.",
+    ar: "نُحدد السعر النهائي عند التواصل.",
   },
 
   bases: [
@@ -92,24 +92,24 @@ const pricingEstimator: PricingEstimatorData = {
       },
       {
         name: { en: "Full", ar: "شامل" },
-        description: { en: "30+ pages", ar: "أكثر من 30 صفحة" },
+        description: { en: "15+ pages", ar: "أكثر من 15 صفحة" },
         multiplier: 0.4,
       },
     ],
     business: [
       {
         name: { en: "Essential", ar: "أساسي" },
-        description: { en: "Under 5 pages", ar: "أقل من 5 صفحات" },
+        description: { en: "< 5 pages", ar: "أقل من 5 صفحات" },
         multiplier: 0,
       },
       {
         name: { en: "Standard", ar: "قياسي" },
-        description: { en: "6-10 pages", ar: "من 6 إلى 10 صفحات" },
+        description: { en: "6-10 pages", ar: "من 5 إلى 10 صفحات" },
         multiplier: 0.2,
       },
       {
         name: { en: "Full", ar: "شامل" },
-        description: { en: "30+ pages", ar: "أكثر من 30 صفحة" },
+        description: { en: "30+ pages", ar: "أكثر من 15 صفحة" },
         multiplier: 0.4,
       },
     ],

@@ -159,7 +159,7 @@ export default function GuidePage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="max-w-7xl mx-auto flex flex-col gap-6 sm:gap-8">
+      <div className="max-w-7xl mx-auto flex flex-col gap-4 sm:gap-8">
         <Link
           href={`/${lang}/guides`}
           className="hover:border-white/30 hover:text-white/80 border-border-strong border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.9rem,1.3vw,1.2rem)] font-medium transition-all duration-500"

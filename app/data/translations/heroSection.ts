@@ -10,7 +10,7 @@ const hero: {
 } = {
   eyebrow: {
     en: `${SITE_NAME} · Egypt`,
-    ar: "شركة تصميم مواقع في مصر",
+    ar: "تصميم وتطوير مواقع إلكترونية في مصر",
   },
   name: {
     en: 'Great <span class="text-gold">businesses</span> deserve great <span class="text-gold">websites</span>.',
@@ -26,7 +26,7 @@ const hero: {
   },
   subheading: {
     en: "We build professional websites that <strong><em>validate</em></strong> your <strong><em>brand</em></strong><em>'s</em> true value.",
-    ar: "نصمم مواقع مخصصة <strong>تعكس قيمة شركتك الحقيقية</strong> وتثبت مكانتك في السوق.",
+    ar: "نصمم مواقع مخصصة <strong>تعكس قيمة شركتك الحقيقية</strong> وتُثَبت مكانتك في السوق.",
   },
 };
 

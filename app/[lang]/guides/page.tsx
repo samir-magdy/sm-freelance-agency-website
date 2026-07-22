@@ -103,9 +103,9 @@ export default function GuidesPage({
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="max-w-7xl mx-auto flex flex-col gap-6 sm:gap-8">
+      <div className="max-w-7xl mx-auto flex flex-col gap-2 sm:gap-8">
         <header className="text-center flex flex-col">
-          <h1 className="text-[clamp(1.4rem,1.75vw,2.3rem)] font-bold text-content-heading rtl:mb-1">
+          <h1 className="text-heading font-bold text-content-heading rtl:mb-1">
             {t.pageTitle[lang]}
           </h1>
         </header>

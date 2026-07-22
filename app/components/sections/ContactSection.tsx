@@ -112,10 +112,10 @@ export default function ContactSection({ lang }: ContactSectionProps) {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="pt-4 sm:pt-16 pb-12 sm:pb-8 px-4"
+      className="pt-4 pb-12 sm:pb-8 px-4"
       dir={isRtl ? "rtl" : "ltr"}
     >
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-2xl mx-auto">
         <div className="mb-8">
           <h2
             id="contact-heading"

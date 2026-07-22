@@ -34,7 +34,7 @@ export default function PricingSection({ lang }: PricingSectionProps) {
             <a
               key={card.id}
               href="#contact"
-              className="max-w-4xl reveal-element group flex flex-col p-6 sm:p-8 lg:p-10 rounded-4xl border border-border-subtle bg-surface-card hover:border-gold/20 hover:shadow-lg hover:shadow-white/10 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:-translate-x-1"
+              className="max-w-4xl reveal-element group flex flex-col p-6 sm:p-8 lg:p-10 rounded-4xl border border-border-subtle bg-surface-card hover:border-gold/20 hover:shadow-lg hover:shadow-white/10 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:-translate-x-1 rtl:hover:translate-x-1"
             >
               <div className="flex-1 mb-6">
                 <h3 className="font-bold text-subheading lg:text-heading text-content-heading leading-snug mb-2">

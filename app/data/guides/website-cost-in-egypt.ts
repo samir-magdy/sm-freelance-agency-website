@@ -28,7 +28,7 @@ const resource: Guide = {
     <tr>
       <th scope="col">Website Type</th>
       <th scope="col">Price Range (EGP)</th>
-      <th scope="col">Target Audience</th>
+      <th scope="col">Best for</th>
     </tr>
   </thead>
   <tbody>
@@ -45,7 +45,7 @@ const resource: Guide = {
         <strong>Business Website</strong>
         <br><small style="color: #bfbfbf;">A multi-page informational site to showcase your services and complete company details</small>
       </td>
-      <td>8,000 – 25,000</td>
+      <td>8,000 – 30,000</td>
       <td>Established Businesses</td>
     </tr>
     <tr>
@@ -53,12 +53,12 @@ const resource: Guide = {
         <strong>E-commerce Store</strong>
         <br><small style="color: #bfbfbf;">A site to display your products for sale, supports online payments and inventory management</small>
       </td>
-      <td>20,000 – 100,000</td>
+      <td>15,000 – 50,000</td>
       <td>Brands & Retailers</td>
     </tr>
   </tbody>
 </table>
-<p><small style="font-size: 1.05rem"><strong>Note</strong>: These prices are an estimate and reflect the needs of small businesses. Every agency has its own pricing strategy and larger corporate projects are priced individually.</small></p>
+<p><small style="font-size: 1.05rem"><strong>Note</strong>: <em>These prices are an estimate and reflect the needs of small businesses. Every agency has its own pricing strategy and larger corporate projects are priced individually.</em></small></p>
 
 
 <h2>What factors determine the price of a website?</h2>
@@ -75,10 +75,10 @@ const resource: Guide = {
   <li><strong>Hosting:</strong> Shared hosting is cheap but can make the site slow under heavy traffic or even crash it, unlike private hosting which guarantees higher performance.</li>
   <li><strong>Maintenance and technical support:</strong> Periodic maintenance contracts (monthly or yearly) are an additional cost that ensures the site keeps running efficiently and any post-delivery issues are fixed without surprise fees.</li>
 </ul>
-<h2 style="margin-bottom: 0.4rem">Website Price Calculator</h2>
-<p style="margin-bottom: 0">Choose your site type, content size, and add-ons to see an estimate:</p>
+<h2 style="margin-bottom: 0.4rem">Website Price Estimator</h2>
+<p style="margin-bottom: 0">Choose site type, size, and add-ons.</p>
 <!-- PRICING_ESTIMATOR_SLOT -->
-<h2 style="margin-top: 0.5rem">The Trap of Cheap Websites: Hidden Risks and How to Avoid Them</h2>
+<h2 style="margin-top: 0.5rem">Cheap Websites: Hidden Risks and How to Avoid Them</h2>
 <p>For serious businesses, a cheap website usually causes more harm than good. Here is the typical failure pattern we see in the Egyptian market:</p>
 <ul>
   <li>The cheap website is often extremely slow, which frustrates customers and ruins your Google rankings.</li>
@@ -116,7 +116,7 @@ ar: `
         <strong>موقع شركة</strong>
         <br><small style="color: #bfbfbf;">موقع تعريفي، متعدد الصفحات لعرض خدماتك، وتفاصيل الشركة بالكامل</small>
       </td>
-      <td>8,000 – 25,000</td>
+      <td>8,000 – 30,000</td>
       <td>الشركات المستقرة</td>
     </tr>
     <tr>
@@ -124,12 +124,12 @@ ar: `
         <strong>متجر إلكتروني</strong>
         <br><small style="color: #bfbfbf;">موقع يعرض منتجاتك للبيع، بيدعم الدفع الإلكتروني وإدارة المخزون</small>
       </td>
-      <td>20,000 – 100,000</td>
+      <td>15,000 – 50,000</td>
       <td>البراندات والتجار</td>
     </tr>
   </tbody>
 </table>
-<p><small style="font-size: 1.1rem"><strong>ملحوظة:</strong> الأسعار المذكورة تقريبية وتعكس احتياجات الشركات الصغيرة. لكل شركة تصميم سياسة تسعير خاصة بها، أما المشاريع الكبيرة فيتم تسعيرها بشكل مخصص.</small></p>
+<p><small style="font-size: 1.1rem"><strong>ملحوظة:</strong><em> الأسعار المذكورة تقريبية وتعكس احتياجات الشركات الصغيرة. لكل شركة تصميم سياسة تسعير خاصة بها، أما المشاريع الكبيرة فيتم تسعيرها بشكل مخصص.</em></small></p>
 
 <h2>إيه اللي بيحدد سعر أي موقع إلكتروني؟</h2>
 <p>العوامل التالية هي اللي بتحدد سعر أي موقع إلكتروني. ودي طريقة تأثير كل عامل على ميزانيتك:</p>
@@ -146,8 +146,8 @@ ar: `
   <li><strong>الصيانة والدعم الفني:</strong> عقود الصيانة الدورية (الشهرية أو السنوية) بتعتبر تكلفة إضافية، لكنها بتضمن إن الموقع يفضل شغال بكفاءة وإن أي مشكلة تظهر بعد التسليم تتحل بدون تكاليف مفاجئة.</li>
 </ul>
 
-<h2 style="margin-bottom: 0.4rem">حاسبة تكلفة المواقع الإلكترونية</h2>
-<p style="margin-bottom: 0">اختار نوع الموقع، حجم المحتوى، والإضافات اللي محتاجها، وهتشوف تقدير سعر فوري:</p>
+<h2 style="margin-bottom: 0.4rem">تقدير سعر المواقع الإلكترونية</h2>
+<p style="margin-bottom: 0">اختر نوع الموقع، الحجم، والإضافات.</p>
 <!-- PRICING_ESTIMATOR_SLOT -->
 
 <h2 style="margin-top: 0.5rem">فخ الموقع الرخيص: المخاطر الخفية وإزاي تتجنبها</h2>

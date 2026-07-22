@@ -13,8 +13,8 @@ const guidesTranslations: Record<
   Localized
 > = {
   pageTitle: {
-    en: "Web Guides for Entrepreneurs",
-    ar: "أدلة ويب لأصحاب المشاريع",
+    en: "Guides & Resources",
+    ar: "الأدلة والموارد",
   },
   metaTitle: {
     en: "Web Guides for Entrepreneurs in Egypt",

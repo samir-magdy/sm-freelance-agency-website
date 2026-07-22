@@ -442,7 +442,7 @@ void main() {
   return (
     <div
       ref={containerRef}
-      className={`light-rays-container ${className}`.trim()}
+      className={`light-rays-container absolute inset-0 ${className}`.trim()}
     />
   );
 }

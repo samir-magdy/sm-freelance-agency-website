@@ -131,9 +131,9 @@ The Calculated Data:
     <>
       <div
         id="pricing-calculator"
-        className="scroll-mt-56 sm:scroll-mt-76 ltr:sm:scroll-mt-72 relative max-w-360 w-full mx-auto px-3 py-2 sm:py-3.5 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-strong flex flex-col sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0 sm:mb-16"
+        className="scroll-mt-36 rtl:scroll-mt-39 sm:scroll-mt-54 sm:rtl:scroll-mt-58 relative max-w-360 w-full mx-auto px-3 py-2 sm:py-3.5 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-strong flex flex-col sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0 mb-8 sm:mb-16"
       >
-        <div className="flex flex-col md:grid md:grid-cols-12 md:gap-8 w-full sm:py-4">
+        <div className="flex flex-col md:grid md:grid-cols-12 md:gap-8 w-full sm:pb-4">
           <div className="md:col-span-7 flex flex-col gap-1 sm:gap-3.5 md:bg-surface-card/50 md:shadow-xl md:shadow-black/30 md:border-2 md:border-border-strong md:rounded-3xl md:p-6 md:pt-4">
             <div className="flex flex-col gap-2">
               <label className="ms-1 rtl:mb-1 sm:mb-2 text-content-heading font-bold text-base lg:text-[1.2rem] block">
@@ -184,7 +184,7 @@ The Calculated Data:
                     <button
                       key={index}
                       onClick={() => setScopeIndex(index)}
-                      className={`cursor-pointer flex-1 flex flex-col items-center justify-around gap-1.5 md:gap-0 px-3 py-2.5 rounded-2xl border text-sm transition-all ${
+                      className={`cursor-pointer flex-1 flex flex-col items-center justify-around gap-1.5 sm:gap-2 px-3 py-2.5 rounded-2xl border text-sm transition-all ${
                         isSelected
                           ? "bg-black/40 shadow-md border-white/60 border-2"
                           : "border-2 border-border-subtle hover:border-border-strong bg-black/15"
@@ -195,9 +195,11 @@ The Calculated Data:
                       >
                         {scope.name[lang]}
                       </span>
-                      <span className="hidden sm:block text-xs lg:text-[1.05rem] text-content-muted/90 leading-snug">
-                        <bdi>{scope.description[lang]}</bdi>
-                      </span>
+                      {baseId !== "landing" && (
+                        <span className="text-xs lg:text-[1.05rem] text-content-muted/90 leading-snug">
+                          <bdi>{scope.description[lang]}</bdi>
+                        </span>
+                      )}
                     </button>
                   );
                 })}
@@ -292,7 +294,7 @@ The Calculated Data:
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3.5 w-[95%] mx-auto border border-green-500/40 bg-green-500/20 hover:bg-green-500/40 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-2xl font-bold text-base"
+                className="mt-3.5 w-[95%] mx-auto border border-green-500/40 bg-green-500/40 hover:bg-green-500/50 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-2xl font-bold text-base"
               >
                 <WhatsAppIcon className="w-6 h-6" />
                 <span>{t.cta[lang]}</span>
@@ -300,7 +302,7 @@ The Calculated Data:
             </div>
           </div>
         </div>
-        <p className="text-center text-content-muted/80 text-xs sm:text-base max-w-2xl mx-auto mt-4 sm:mt-6 px-4 leading-relaxed">
+        <p className="text-center text-content-muted/80 text-xs sm:text-base max-w-2xl mx-auto my-0.5 sm:my-0 px-4 leading-relaxed">
           {t.disclaimer[lang]}
         </p>
       </div>
