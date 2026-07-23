@@ -52,11 +52,6 @@ export async function generateMetadata({
         "x-default": SITE_URL,
       },
     },
-    openGraph: {
-      title: currentMeta.title,
-      description: currentMeta.description,
-      url: canonicalUrl,
-    },
   };
 }
 

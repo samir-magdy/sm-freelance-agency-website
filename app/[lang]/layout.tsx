@@ -23,38 +23,46 @@ const cairoFull = Cairo({
   preload: false,
 });
 
-// Static base metadata: Next.js will merge the dynamic title/description from page.tsx into this template
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  icons: {
-    icon: [
-      { url: "/favicon.png", type: "image/png", sizes: "96x96" },
-      { url: "/favicon.ico", type: "image/x-icon", sizes: "48x48" },
-      { url: "/favicon-light.svg", type: "image/svg+xml", sizes: "any" },
-      {
-        url: "/favicon-dark.svg",
-        type: "image/svg+xml",
-        sizes: "any",
-        media: "(prefers-color-scheme: dark)",
-      },
-    ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
-  },
-  title: { template: `%s | ${SITE_NAME}`, default: SITE_NAME },
-  authors: [{ name: "Samir Magdy", url: SITE_URL }],
-  openGraph: {
-    siteName: SITE_NAME,
-    type: "website",
-    images: [
-      {
-        url: "/open-graph.webp",
-        width: 1200,
-        height: 630,
-        alt: `${SITE_NAME} Logo`,
-      },
-    ],
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    metadataBase: new URL(SITE_URL),
+    icons: {
+      icon: [
+        { url: "/favicon.png", type: "image/png", sizes: "96x96" },
+        { url: "/favicon.ico", type: "image/x-icon", sizes: "48x48" },
+        { url: "/favicon-light.svg", type: "image/svg+xml", sizes: "any" },
+        {
+          url: "/favicon-dark.svg",
+          type: "image/svg+xml",
+          sizes: "any",
+          media: "(prefers-color-scheme: dark)",
+        },
+      ],
+      apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    },
+    title: { template: `%s | ${SITE_NAME}`, default: SITE_NAME },
+    authors: [{ name: "Samir Magdy", url: SITE_URL }],
+    openGraph: {
+      siteName: SITE_NAME,
+      type: "website",
+      locale: lang === "ar" ? "ar_EG" : "en_US",
+      alternateLocale: lang === "ar" ? "en_US" : "ar_EG",
+      images: [
+        {
+          url: "/open-graph.webp",
+          width: 1200,
+          height: 630,
+          alt: `${SITE_NAME} Logo`,
+        },
+      ],
+    },
+  };
+}
 
 export function generateStaticParams() {
   return [{ lang: "en" }, { lang: "ar" }];

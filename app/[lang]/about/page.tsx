@@ -46,23 +46,6 @@ export async function generateMetadata({
         "x-default": `${SITE_URL}/en/about`,
       },
     },
-    openGraph: {
-      title: m.title,
-      description: m.description,
-      url: canonical,
-      type: "profile",
-      siteName: SITE_NAME,
-      locale: lang === "en" ? "en_US" : "ar_EG",
-      alternateLocale: lang === "en" ? "ar_EG" : "en_US",
-      images: [
-        {
-          url: `${SITE_URL}/open-graph.webp`,
-          width: 1200,
-          height: 630,
-          alt: `${SITE_NAME} – Web Design Company in Egypt`,
-        },
-      ],
-    },
   };
 }
 

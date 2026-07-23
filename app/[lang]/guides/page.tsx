@@ -30,23 +30,6 @@ export async function generateMetadata({
         "x-default": `${SITE_URL}/en/guides`,
       },
     },
-    openGraph: {
-      title: t.metaTitle[lang],
-      description: t.metaDescription[lang],
-      url: canonical,
-      type: "website",
-      siteName: SITE_NAME,
-      locale: lang === "en" ? "en_US" : "ar_EG",
-      alternateLocale: lang === "en" ? "ar_EG" : "en_US",
-      images: [
-        {
-          url: `${SITE_URL}/open-graph.webp`,
-          width: 1200,
-          height: 630,
-          alt: `${SITE_NAME} – Web Design Company in Egypt`,
-        },
-      ],
-    },
   };
 }
 
