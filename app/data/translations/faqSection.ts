@@ -23,7 +23,7 @@ const faqSection: FAQSection = {
   },
 
   browseGuides: {
-    en: "Browse all web guides",
+    en: "browse resources & guides",
     ar: "تصفح أدلة تصميم المواقع",
   },
 
@@ -43,8 +43,8 @@ const faqSection: FAQSection = {
         ar: "إيه اللي مشمول في السعر الأساسي؟",
       },
       answer: {
-        en: "Every project includes a custom site of up to 5 pages, 1st-year hosting, domain setup & a 90-day post-launch warranty. The following are NOT included in the base price & are available as paid add-ons: an admin panel (modify content yourself), SEO (keyword research & technical on-page), copywriting (strategic content writing) & localized bilingual support (SEO-friendly). See <a href='#pricing'>pricing</a> for reference.",
-        ar: "كل مشروع بيشمل موقع مخصص بحد أقصى 5 صفحات، استضافة السنة الأولى، إعداد الدومين، وضمان لمدة 90 يوم بعد الإطلاق. الخدمات التالية غير مشمولة في السعر الأساسي وتقدم بتكلفة إضافية: لوحة تحكم (تعديل المحتوى بنفسك)، SEO (بحث الكلمات المفتاحية والتحسين التقني)، كتابة المحتوى، ودعم محلي بلغتين. اطلع على <a href='#pricing'>الأسعار</a> للمرجع.",
+        en: "Every project includes a custom site of up to 5 pages, 1st-year hosting, domain setup & a guarantee. The following are NOT included in the base price: an admin panel (modify content yourself), SEO (keyword research & technical on-page), copywriting (strategic content writing) & localized bilingual support (SEO-friendly). See <a href='#pricing'>pricing</a> or use our <a href='/en/guides/website-cost-in-egypt#pricing-calculator'>pricing estimator</a> for reference.",
+        ar: "كل مشروع بيشمل موقع مخصص بحد أقصى 5 صفحات، استضافة السنة الأولى، إعداد الدومين، وضمان لمدة 90 يوم بعد الإطلاق. الخدمات التالية غير مشمولة في السعر الأساسي: لوحة تحكم (تعديل المحتوى بنفسك)، SEO (بحث الكلمات المفتاحية والتحسين التقني)، كتابة المحتوى، ودعم محلي بلغتين. اطلع على <a href='#pricing'>الأسعار</a> أو استخدم <a href='/ar/guides/website-cost-in-egypt#pricing-calculator'>حاسبة الأسعار</a> للمرجع.",
       },
     },
     {
@@ -139,21 +139,11 @@ const faqSection: FAQSection = {
     },
     {
       question: {
-        en: "Do you offer any sort of guarantee after launch?",
-        ar: "بتوفروا دعم بعد إطلاق الموقع؟",
-      },
-      answer: {
-        en: "Yes, every project comes with a 90-day warranty period after launch, during which we fix any bugs or issues that arise at no extra cost.",
-        ar: "كل مشروع بيجي معاه فترة ضمان 90 يوم بعد الإطلاق، بنصلح فيها أي مشاكل أو أخطاء ممكن تظهر في الموقع من غير أي تكلفة إضافية.",
-      },
-    },
-    {
-      question: {
         en: "Do you help with domain registration?",
         ar: "بتساعدوا في تسجيل الدومين؟",
       },
       answer: {
-        en: "Yes, we recommend creating an account with a trusted domain registrar such as <a href='https://www.namecheap.com' target='_blank'>Namecheap</a> or <a href='https://www.godaddy.com' target='_blank'>GoDaddy</a> so we can transfer full ownership and DNS control directly to you. We will handle the technical setup steps so you don't have to deal with them yourself.",
+        en: "Yes, we can handle the technical setup steps so you don't have to deal with them yourself. We recommend creating an account with a trusted domain registrar such as <a href='https://www.namecheap.com' target='_blank'>Namecheap</a> or <a href='https://www.godaddy.com' target='_blank'>GoDaddy</a> so we can transfer full ownership and DNS control directly to you.",
         ar: "إحنا هنتولى خطوات الإعداد التقني بالكامل، بننصحك بإنشاء حساب لدى شركة تسجيل نطاقات موثوقة زي <a href='https://www.namecheap.com' target='_blank'>Namecheap</a> أو <a href='https://www.godaddy.com' target='_blank'>GoDaddy</a> علشان ننقل ملكية الدومين والتحكم الكامل ليك مباشرة.",
       },
     },

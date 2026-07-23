@@ -18,7 +18,7 @@ import { isLang, type Lang, type LangParams } from "@/app/types";
 
 const META_DESCRIPTION: Record<Lang, string> = {
   en: `${SITE_NAME} builds professional, affordable websites that help businesses reach more customers and strengthen their online presence. Get your quote today.`,
-  ar: `${SITE_NAME} .تصمم مواقع إلكترونية احترافية واقتصادية تساعد الشركات على جذب المزيد من العملاء وتعزيز حضورها الرقمي. أحصل على عرض سعر اليوم`,
+  ar: `${SITE_NAME} تصمم مواقع إلكترونية احترافية واقتصادية تساعد الشركات على جذب المزيد من العملاء وتعزيز حضورها الرقمي. احصل على عرض سعر اليوم.`,
 };
 
 const meta: Record<Lang, { title: string; description: string }> = {

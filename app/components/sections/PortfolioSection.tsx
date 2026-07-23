@@ -411,7 +411,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
             </Link>
             <a
               href="#contact"
-              className="mobile-portfolio-buttons w-full justify-center cta-primary relative overflow-hidden inline-flex items-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900"
+              className="mobile-portfolio-buttons w-full font-semibold justify-center cta-primary relative overflow-hidden inline-flex items-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900"
             >
               {t.primaryCta[lang]}
             </a>

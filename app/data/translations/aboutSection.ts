@@ -27,7 +27,7 @@ const aboutSection: AboutSection = {
 
   paragraphs: [
     {
-      en: "We are a small, focused team made up of a developer, a UI/UX designer, and a content writer, working closely together on every project.",
+      en: `${SITE_NAME} is small, focused team made up of a developer, a UI/UX designer, and a content writer, working closely together on every project.`,
       ar: "",
     },
     {
@@ -39,7 +39,7 @@ const aboutSection: AboutSection = {
       ar: "بعد ما شفنا أصحاب مشاريع كتير بيعانوا من التعامل مع جهات غير مؤهلة، أدركنا إن الأزمة الحقيقية مش في تنفيذ الموقع، الأزمة في الثقة والتواصل.",
     },
     {
-      en: "We're not here to sell you a site you don't need. We're here to help you understand your options, plan your budget, and build you a website that serves both of our interests.",
+      en: "We're not here to sell you a site you don't need. We're here to help you understand your options, plan your budget, and build you a website that serves your best interests.",
       ar: "إحنا مش هنا علشان نبيعلك موقع إنت مش محتاجه، هدفنا نساعدك تفهم كل خياراتك، تخطط ميزانيتك بشكل صحيح، ونبني لك موقع يحقق أهدافك ويخدم مصلحة الطرفين.",
     },
   ],

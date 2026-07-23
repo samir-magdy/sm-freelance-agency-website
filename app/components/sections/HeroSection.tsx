@@ -19,7 +19,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
             aria-hidden="true"
             className="flex-none h-px w-[clamp(2rem,4vw,3rem)] rounded-full bg-linear-to-r rtl:bg-linear-to-l from-transparent to-white/70"
           />
-          <span className="ps-0.5 font-semibold uppercase sm:tracking-[0.12em] tracking-widest leading-none text-[clamp(0.8rem,3vw,1.1rem)] text-content-muted rtl:normal-case rtl:leading-normal">
+          <span className="ps-0.5 font-semibold uppercase sm:tracking-[0.12em] tracking-widest leading-none text-[clamp(0.8rem,3vw,1.1rem)] rtl:text-[clamp(0.7rem,3vw,1.1rem)] text-content-muted rtl:normal-case rtl:leading-normal">
             {hero.eyebrow[lang]}
           </span>
           <span
@@ -30,7 +30,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
 
         <h2
           id="hero-title"
-          className="mt-6 mb-3 sm:mt-5 sm:mb-4 text-content-heading font-medium tracking-[-2px] leading-[1.04] text-[clamp(2.5rem,12vw,4.5rem)] rtl:text-[clamp(2.25rem,10vw,4rem)] rtl:leading-snug max-w-[16ch] sm:tracking-[-4px] sm:max-w-[14ch]"
+          className="mt-6 rtl:mt-4 mb-3 sm:my-8 text-content-heading font-medium tracking-[-2px] leading-[1.15] text-[clamp(2.25rem,11.5vw,4.5rem)] rtl:text-[clamp(2.25rem,10vw,4rem)] rtl:leading-relaxed max-w-[16ch] sm:tracking-[-4px] sm:max-w-[14ch]"
           dangerouslySetInnerHTML={{ __html: hero.name[lang] }}
         />
 
@@ -42,14 +42,14 @@ export default function HeroSection({ lang }: HeroSectionProps) {
         <div className="px-6 sm:px-0 flex flex-col sm:flex-row sm:rtl:flex-row-reverse items-stretch justify-center w-full sm:max-w-[24rem] gap-3 mt-8">
           <a
             href="#contact"
-            className="cta-primary inline-flex sm:flex-1 items-center justify-center rounded-[0.9rem] px-[1vw] py-[1.25vh] text-[clamp(0.7rem,4.5vw,1.4rem)] font-semibold text-gray-900 pb-3"
+            className="cta-primary inline-flex sm:flex-1 items-center justify-center rounded-[0.9rem] px-[1vw] py-3 text-[clamp(0.7rem,4.5vw,1.4rem)] font-semibold text-gray-900"
           >
             {hero.primaryCta[lang]}
           </a>
 
           <a
             href="#portfolio"
-            className="hover:-translate-y-0.5 duration-500 inline-flex sm:flex-1 items-center justify-center rounded-[0.9rem] border border-border-strong backdrop-blur-sm bg-white/2 px-[1vw] py-[1.25vh] text-[clamp(0.7rem,4.5vw,1.4rem)] font-semibold text-content-body transition-all hover:text-content-heading hover:border-white/20 pb-3"
+            className="hover:-translate-y-0.5 duration-500 inline-flex sm:flex-1 items-center justify-center rounded-[0.9rem] border border-border-strong backdrop-blur-sm bg-white/2 px-[1vw] py-3 text-[clamp(0.7rem,4.5vw,1.4rem)] font-semibold text-content-body transition-all hover:text-content-heading hover:border-white/20"
           >
             {hero.secondaryCta[lang]}
           </a>

@@ -14,7 +14,7 @@ const hero: {
   },
   name: {
     en: 'Great <span class="text-gold">businesses</span> deserve great <span class="text-gold">websites</span>.',
-    ar: 'لكل عمل ناجح موقع <span class="text-gold">يُثبت جدارته</span>.',
+    ar: 'لكل عمل ناجح موقع <span class="text-gold">يُثْبِتُ جَدَارَتَهُ</span>.',
   },
   primaryCta: {
     en: "Get a Quote",

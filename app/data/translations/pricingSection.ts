@@ -61,7 +61,7 @@ export const pricingCards: PricingCards = {
       },
       tagline: {
         en: "A single-page website built to drive one action like a WhatsApp message, a booking, or filling out a form. <em>Perfect for startups, freelancers and marketing campaigns.</em>",
-        ar: "صفحة واحدة هدفها تخلي العميل ياخد قرار سريع زى التواصل عبر الواتساب أو حجز معاد. <em>مثالية للفريلانسرز، ومقدمي الخدمات.</em>",
+        ar: "صفحة واحدة مصممة لتدفع العميل لإتخاذ قرار سريع مثل التواصل عبر الواتساب أو حجز مَوعِد. <em>مثالية للشركات الناشئة، الفريلانسرز، ومقدمي الخدمات.</em>",
       },
       price: "5,999",
     },
@@ -73,7 +73,7 @@ export const pricingCards: PricingCards = {
       },
       tagline: {
         en: "A multi-page website that presents your company in full detail. <em>Ideal for more established businesses and entities that have a lot to show and tell.</em>",
-        ar: "موقع متعدد الصفحات بيعرض شركتك، خدماتك، أعمالك، وبيانات التواصل بشكل احترافي. <em>مثالي للشركات المستقرة، والشركات اللي محتاجة وجود قوي على جوجل.</em>",
+        ar: "موقع تعريفي متعدد الصفحات يعرض شركتك بشكل كامل. <em>مثالي للشركات المستقرة، والشركات اللتي تحتاج وجود قوي على جوجل.</em>",
       },
       price: "8,999",
     },
@@ -85,7 +85,7 @@ export const pricingCards: PricingCards = {
       },
       tagline: {
         en: "A fully custom-built web application designed around your exact requirements, from online stores and booking systems to client portals. <em>Ideal for businesses with specific needs that require custom solutions.</em>",
-        ar: "تطبيق ويب مبني بالكامل من الصفر حسب متطلبات مشروعك — من المتاجر الإلكترونية وأنظمة الحجز للوحات التحكم الداخلية. <em>مثالي للمشاريع اللي محتاجة حل مخصص مش قالب جاهز.</em>",
+        ar: "تطبيق ويب مبني حسب متطلبات عملك. من المتاجر الإلكترونية وأنظمة الحجز، للوحات التحكم الداخلية. <em>مثالي للمشاريع اللتي تحتاج لحل مخصص.</em>",
       },
       price: null,
     },

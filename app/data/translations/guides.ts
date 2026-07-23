@@ -1,3 +1,4 @@
+import { CURRENT_YEAR } from "@/app/constants";
 import type { Localized } from "@/app/types";
 
 const guidesTranslations: Record<
@@ -17,11 +18,11 @@ const guidesTranslations: Record<
     ar: "الأدلة والموارد",
   },
   metaTitle: {
-    en: "Web Guides for Entrepreneurs in Egypt",
-    ar: "أدلة تصميم المواقع لأصحاب المشاريع في مصر",
+    en: `Web Guides & Resources for Egyptians (${CURRENT_YEAR})`,
+    ar: `أدلة وموارد الويب للسوق المصري (${CURRENT_YEAR})`,
   },
   metaDescription: {
-    en: "Useful guides for Egyptian business owners and freelancers. Covering topics like how websites are priced and online website builders vs hiring a pro.",
+    en: "Useful guides for Egyptian business owners and freelancers. Covering topics like 'how websites are priced' and 'website builders vs hiring a professional developer'.",
     ar: "أدلة عملية لأصحاب الأعمال والمستقلين في مصر. اكتشف تكلفة المواقع، مقارنة بين إنشاء موقعك بنفسك أو توظيف محترف، وكيفية اختيار شريكك الرقمي المناسب.",
   },
   minRead: { en: "min read", ar: "دقايق قراءة" },

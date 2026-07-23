@@ -45,6 +45,14 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: SITE_NAME,
     type: "website",
+    images: [
+      {
+        url: "/open-graph.webp",
+        width: 1200,
+        height: 630,
+        alt: `${SITE_NAME} Logo`,
+      },
+    ],
   },
 };
 

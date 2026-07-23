@@ -45,7 +45,7 @@ section {
 }
 
 #portfolio {
-  --nav-h: 4rem;
+  --nav-h: 5rem;
 }
 [dir="rtl"] #portfolio {
   --nav-h: 3rem;
@@ -304,17 +304,9 @@ section {
   #pricing-calculator {
     scroll-margin-top: 10rem;
   }
-  .safari-hero-padding {
-    padding-top: 10rem;
-  }
-  [dir="rtl"] #hero-title {
-    font-size: clamp(2rem, 9vw, 5.25rem);
-  }
   #portfolio-genre {
-    font-size: 0.75rem;
-  }
-  [dir="rtl"] #portfolio-genre {
-    font-size: 1rem;
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.5rem !important;
   }
   .mobile-portfolio-buttons {
     font-size: 1.1rem;

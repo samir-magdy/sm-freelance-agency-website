@@ -15,12 +15,12 @@ const pillarIcons: LucideIcon[] = [Eye, MessagesSquare, Handshake];
 
 const meta: Record<Lang, { title: string; description: string }> = {
   en: {
-    title: "Website Designer & Developer in Egypt | Samir Magdy",
+    title: "Web Designer & Developer in Egypt | Samir Magdy",
     description:
       `Samir Magdy is a web designer & developer & the founder of ${SITE_NAME}, specializing in high-performance, custom web development.`,
   },
   ar: {
-    title: "مبرمج ومصمم مواقع في مصر | سمير مجدي",
+    title: "مصمم ومطور مواقع في مصر | سمير مجدي",
     description:
       "سمير مجدي هو مصمم ومطور مواقع في مصر ومؤسس شركة إس إم ويب ستوديو. متخصص في خدمات تصميم المواقع المخصصة للشركات والأفراد.",
   },
