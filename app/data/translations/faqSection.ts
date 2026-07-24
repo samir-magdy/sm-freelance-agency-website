@@ -137,7 +137,7 @@ items: [
       ar: "أكيد طبعاً، سواء عايز تضيف صفحات جديدة، أو أقسام تانية، أو حتى لوحة تحكم لإدارة المحتوى، نقدر نوسع ونطور الموقع في أي وقت ومن غير ما نضطر نبدأ من الصفر.",
     },
   },
-  // for vercel
+  // for vercel again
   {
     question: {
       en: "Do you help with domain registration?",
