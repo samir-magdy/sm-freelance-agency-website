@@ -28,8 +28,8 @@ function NavArrow({ direction, disabled, onClick }: NavArrowProps) {
       aria-label={direction === "prev" ? "Previous project" : "Next project"}
       className={`hidden group sm:flex items-center justify-center w-12 h-12 rounded-full shrink-0 p-0 transition-all duration-300 ease-out border ${
         disabled
-          ? "bg-white/[0.03] border-white/[0.06] text-content-heading/30 cursor-not-allowed"
-          : "bg-white/[0.1] border-white/[0.12] text-content-heading cursor-pointer hover:border-white/20"
+          ? "bg-white/3 border-white/6 text-content-heading/30 cursor-not-allowed"
+          : "bg-white/10 border-white/12 text-content-heading cursor-pointer hover:border-white/20"
       }`}
     >
       <Icon
@@ -39,8 +39,8 @@ function NavArrow({ direction, disabled, onClick }: NavArrowProps) {
           disabled
             ? ""
             : direction === "prev"
-              ? "group-hover:-translate-x-0.5 rtl:group-hover:translate-x-0.5"
-              : "group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
+              ? "group-hover:-translate-x-px"
+              : "group-hover:translate-x-px"
         }`}
       />
     </button>
@@ -51,13 +51,13 @@ function DynamicIsland() {
   return (
     <div
       aria-hidden
-      className="absolute top-[4px] sm:top-[5px] left-1/2 -translate-x-1/2 z-20
-                 w-[34%] h-[24px] sm:h-[25px] rounded-full bg-black
-                 flex items-center justify-end pr-[7px] sm:pr-[9px]"
+      className="absolute top-1 sm:top-1.25 left-1/2 -translate-x-1/2 z-20
+                 w-[34%] h-6 sm:h-6.25 rounded-full bg-black
+                 flex items-center justify-end pr-1.75 sm:pr-2.25"
       style={{ boxShadow: "inset 0 0 0 0.75px rgba(255,255,255,0.07)" }}
     >
       <div
-        className="w-[14px] h-[14px] sm:w-[16px] sm:h-[16px] rounded-full shrink-0
+        className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full shrink-0
                    flex items-center justify-center"
         style={{
           background: "radial-gradient(circle at 38% 38%, #1c1c22, #080808)",
@@ -65,7 +65,7 @@ function DynamicIsland() {
         }}
       >
         <div
-          className="w-[8px] h-[8px] sm:w-[9px] sm:h-[9px] rounded-full"
+          className="w-2 h-2 sm:w-2.25 sm:h-2.25 rounded-full"
           style={{
             background: "radial-gradient(circle at 33% 33%, #20215a, #0a0b1e)",
             boxShadow: "0 0 5px 2px rgba(50,70,210,0.22)",
@@ -90,7 +90,7 @@ function StatusBar() {
     >
       <span className="inline-block mt-0.5">9:41</span>
       <div className="flex-1" />
-      <div className="flex gap-[2px] sm:gap-1 sm:items-center">
+      <div className="flex gap-0.5 sm:gap-1 sm:items-center">
         <svg width="15" height="10" viewBox="0 0 16 12" fill="none" aria-hidden>
           <rect x="0" y="8" width="3" height="4" rx="0.5" fill="white" />
           <rect x="4.5" y="5" width="3" height="7" rx="0.5" fill="white" />
@@ -226,7 +226,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
       <div className="text-center relative z-2 px-5 md:mb-4 lg:mb-8">
         <h2
           id="portfolio-heading"
-          className="reveal-element font-bold text-heading"
+          className="reveal-element font-bold text-heading sm:rtl:mb-3"
         >
           {t.heading[lang]}
         </h2>
@@ -310,7 +310,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
             id="portfolio-genre"
             aria-hidden="true"
             key={`genre-${project.id}`}
-            className="lg:hidden inline-flex items-center px-4 py-1.5 rounded-xl text-[clamp(0.7rem,3vw,1rem)] font-semibold uppercase tracking-[0.1em] border border-border-subtle text-content-heading bg-surface-card"
+            className="lg:hidden inline-flex items-center px-4 py-1.5 rounded-xl text-[clamp(0.7rem,3vw,1rem)] font-semibold uppercase tracking-widest border border-border-subtle text-content-heading bg-surface-card"
           >
             {isRtl ? project.genreAr : project.genre}
           </h3>
@@ -324,10 +324,10 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
 
             <div
               id="mobile-mockup"
-              className="aspect-11/19.5 w-[240px] sm:w-[230px] md:w-[260px] lg:w-[280px] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="aspect-11/19.5 w-60 sm:w-57.5 md:w-65 lg:w-70 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
-              <div className="absolute -left-[2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
-              <div className="absolute -left-[2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
+              <div className="absolute left-[-2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
+              <div className="absolute left-[-2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
               <div className="absolute -right-0.75 top-35 w-0.75 h-15 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-r-xs" />
 
               <div className="w-full h-full rounded-[43px] overflow-hidden relative bg-[#0e0e0e]">
@@ -338,7 +338,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
 
                 <div
                   ref={snapRef}
-                  className="portfolio-snap flex overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] mt-8 sm:mt-9 w-full h-full bg-black"
+                  className="portfolio-snap flex overflow-x-auto snap-x snap-mandatory scrollbar-none mt-8 sm:mt-9 w-full h-full bg-black"
                   dir="ltr"
                 >
                   {projects.map((proj) => (
@@ -346,7 +346,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
                       key={proj.id}
                       className="min-w-full w-full snap-start snap-always h-full"
                     >
-                      <div className="phone-scroll overflow-y-auto h-full [scrollbar-width:none]">
+                      <div className="phone-scroll overflow-y-auto h-full scrollbar-none">
                         {proj.screenshot ? (
                           <Image
                             src={proj.screenshot}
@@ -400,12 +400,12 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
             <Link
               onClick={handleCtaClick}
               href={ctaHref}
-              className="mobile-portfolio-buttons w-full justify-center group inline-flex items-center gap-2 py-2.5 px-5 rounded-xl border border-border-strong text-content-body hover:text-content-heading transition-colors duration-200"
+              className="mobile-portfolio-buttons w-full justify-center inline-flex items-center gap-2 py-2.5 px-5 rounded-xl border border-border-strong text-content-body"
               aria-label={`${ctaLabel} – ${pd.title[lang]}`}
             >
               {ctaLabel}
               <ArrowRight
-                className="size-4 rtl:rotate-180 transition-transform duration-200 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
+                className="size-4 rtl:rotate-180"
                 aria-hidden
               />
             </Link>

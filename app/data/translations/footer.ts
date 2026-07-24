@@ -7,7 +7,7 @@ const footer = {
   columns: {
     studio: { en: "Studio", ar: "الاستوديو" },
     work: { en: "Work", ar: "أعمالنا" },
-    resources: { en: "Resources", ar: "موارد" },
+    resources: { en: "Resources", ar: "الأدلة" },
   },
   labels: {
     privacy: { en: "Privacy Policy", ar: "سياسة الخصوصية" },
@@ -17,7 +17,7 @@ const footer = {
   pages: {
     pricing: { en: "Services & Pricing", ar: "الخدمات والأسعار" },
     faq: { en: "FAQs", ar: "الأسئلة الشائعة" },
-    about: { en: `About ${SITE_NAME}`, ar: "من نحن" },
+    about: { en: `About`, ar: "من نحن" },
     contact: { en: "Contact Us", ar: "تواصل معنا" },
   },
 } satisfies {

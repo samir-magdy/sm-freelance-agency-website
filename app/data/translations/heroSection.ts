@@ -21,11 +21,11 @@ const hero: {
     ar: "تواصل معنا",
   },
   secondaryCta: {
-    en: "See Our Work",
+    en: "View Our Work",
     ar: "شاهد أعمالنا",
   },
   subheading: {
-    en: "We build professional websites that <strong><em>validate</em></strong> your <strong><em>brand</em></strong><em>'s</em> true value.",
+    en: "Designed to build <strong>trust</strong>, attract <strong>customers</strong>, and <strong>grow</strong>.",
     ar: "نصمم مواقع مخصصة <strong>تعكس قيمة شركتك الحقيقية</strong> وتُثَبت مكانتك في السوق.",
   },
 };

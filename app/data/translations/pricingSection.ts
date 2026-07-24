@@ -73,7 +73,7 @@ export const pricingCards: PricingCards = {
       },
       tagline: {
         en: "A multi-page website that presents your company in full detail. <em>Ideal for more established businesses and entities that have a lot to show and tell.</em>",
-        ar: "موقع تعريفي متعدد الصفحات يعرض شركتك بشكل كامل. <em>مثالي للشركات المستقرة، والشركات اللتي تحتاج وجود قوي على جوجل.</em>",
+        ar: "موقع تعريفي متعدد الصفحات يعرض شركتك بشكل كامل. <em>مثالي للشركات المستقرة، والشركات التي تحتاج وجود قوي على جوجل.</em>",
       },
       price: "8,999",
     },
@@ -85,7 +85,7 @@ export const pricingCards: PricingCards = {
       },
       tagline: {
         en: "A fully custom-built web application designed around your exact requirements, from online stores and booking systems to client portals. <em>Ideal for businesses with specific needs that require custom solutions.</em>",
-        ar: "تطبيق ويب مبني حسب متطلبات عملك. من المتاجر الإلكترونية وأنظمة الحجز، للوحات التحكم الداخلية. <em>مثالي للمشاريع اللتي تحتاج لحل مخصص.</em>",
+        ar: "تطبيق ويب مبني حسب متطلبات عملك. من المتاجر الإلكترونية وأنظمة الحجز، للوحات التحكم الداخلية. <em>مثالي للمشاريع التي تحتاج لحل مخصص.</em>",
       },
       price: null,
     },

@@ -104,12 +104,12 @@ const pricingEstimator: PricingEstimatorData = {
       },
       {
         name: { en: "Standard", ar: "قياسي" },
-        description: { en: "6-10 pages", ar: "من 5 إلى 10 صفحات" },
+        description: { en: "6-10 pages", ar: "من 6 إلى 10 صفحات" },
         multiplier: 0.2,
       },
       {
         name: { en: "Full", ar: "شامل" },
-        description: { en: "30+ pages", ar: "أكثر من 15 صفحة" },
+        description: { en: "15+ pages", ar: "أكثر من 15 صفحة" },
         multiplier: 0.4,
       },
     ],
@@ -120,8 +120,8 @@ const pricingEstimator: PricingEstimatorData = {
       id: "bilingual",
       name: { en: "Bilingual", ar: "ثنائي اللغة" },
       description: {
-        en: "Full Bilingual support",
-        ar: "دعم كامل لللغتين",
+        en: "Full bilingual support",
+        ar: "دعم كامل للغتين",
       },
       appliesTo: ["landing", "business"],
       isMultiplier: true,

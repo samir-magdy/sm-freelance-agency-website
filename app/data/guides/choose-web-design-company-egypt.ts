@@ -7,11 +7,11 @@ const resource: Guide = {
   dateModified: new Date(),
   title: {
     en: "How to Choose a Web Design Company in Egypt",
-    ar: "ازاي تختار أفضل شركة تصميم مواقع في مصر؟",
+    ar: "إزاي تختار أفضل شركة تصميم مواقع في مصر؟",
   },
   metaTitle: {
     en: `Choosing the Best Web Design Company in Egypt (${CURRENT_YEAR})`,
-    ar: `ازاي تختار أفضل شركة تصميم مواقع في مصر؟ (${CURRENT_YEAR})`,
+    ar: `إزاي تختار أفضل شركة تصميم مواقع في مصر؟ (${CURRENT_YEAR})`,
   },
   excerpt: {
     en: "A competent web design company has a portfolio of real websites you can visit and explore, asks about your goals, is transparent about pricing, and communicates clearly from the start. Should you even hire a company? or a freelancer? Read this guide to get a clearer picture of your options and how to choose correctly.",
@@ -52,7 +52,7 @@ const resource: Guide = {
 <p>The right choice depends entirely on your needs and budget. Once you have settled on a type, the criteria below apply to all three.</p>
 
 <h2>What should you check before hiring?</h2>
-<p>The most important thing to check is their own website and their portfolio. First their website, is the design professional? Is it fast? Are there buttons that don't work or links that go nowhere? Inspect their site carefully. If you find obvious problems, look elsewhere. A company that cannot keep its own website in order will not do better work on yours. You also need to check their portfolio to see if it contains real client projects that you can test yourself. Some companies showcase ready-made templates that they did not actually build, which might look legitimate because they are hosted on real domains. To be sure, check the contact details on those portfolio sites; if you find fake information, that is a red flag. If you are still in doubt, try reaching out to that client directly to verify if the company actually built their website. As a reference for what a working portfolio looks like, you can browse <a href="/en/#portfolio">our web design portfolio</a>; every project links to a live, working website you can inspect yourself.</p>
+<p>The most important thing to check is their own website and their portfolio. Start with their website: is the design professional? Is it fast? Are there buttons that don't work or links that go nowhere? Inspect their site carefully. If you find obvious problems, look elsewhere. A company that cannot keep its own website in order will not do better work on yours. You also need to check their portfolio to see if it contains real client projects that you can test yourself. Some companies showcase ready-made templates that they did not actually build, which might look legitimate because they are hosted on real domains. To be sure, check the contact details on those portfolio sites; if you find fake information, that is a red flag. If you are still in doubt, try reaching out to that client directly to verify if the company actually built their website. As a reference for what a working portfolio looks like, you can browse <a href="/en/#portfolio">our web design portfolio</a>; every project links to a live, working website you can inspect yourself.</p>
 
 <h2>What are the red flags to watch for?</h2>
 <p>The main red flags are no live portfolio, unrealistic promises, vague or USD-only pricing, no interest in your business, and prices that are unusually cheap or unusually high. Walk away from any provider showing these signs:</p>
@@ -94,7 +94,7 @@ const resource: Guide = {
     <tr>
       <td>الشركة الكبيرة</td>
       <td>المشاريع الكبيرة وعملاء المؤسسات</td>
-      <td>أضعاف تكلفة المستقل أو ألستوديو</td>
+      <td>أضعاف تكلفة المستقل أو الاستوديو</td>
     </tr>
   </tbody>
 </table>
@@ -104,7 +104,7 @@ const resource: Guide = {
 <h2>إيه اللي لازم تفحصه قبل التعامل؟</h2>
 <p>أهم عامل تختار بيه هو موقعهم هما شخصياً. هل تصميمه محترف؟ هل سريع؟ هل نماذج التواصل شغالة ولا مجرد منظر؟ هل في زراير أو صفحات مش شغالة؟ لازم تفحص موقعهم بدقة، لو لقيت غلطات، دور على حد تانى. لو الشركة مش عارفة تظبط موقعها، تفتكر هتظبط موقعك إزاي؟
 
-كمان لازم تشوف سابقة أعمالهم، وهل فيها مشاريع حقيقية لعملاء تقدر تجربها بنفسك؟ بعض الشركات بتعرض قوالب جاهزة مش هما اللي مصممنها، وبتظن إنها حقيقية لمجرد إنها شغالة على رابط موقع حقيقي. عشان تتأكد، بص على بيانات التواصل في المواقع دي؛ لو لقيت بيانات وهمية احذر. ولو لسه شاكك، جرب تتصل بالعميل ده بنفسك وتسأله لو هما فعلاً اللي عملوا الموقع. كمرجع لشكل سابقة الأعمال الاحترافية، يمكنك تصفح سابقة أعمالنا <a href="/ar/#portfolio">سابقة أعمالنا في تصميم المواقع</a> حيث يربط كل مشروع بموقع إلكتروني حي وشغال يمكنك فحصه بنفسك.</p>
+كمان لازم تشوف سابقة أعمالهم، وهل فيها مشاريع حقيقية لعملاء تقدر تجربها بنفسك؟ بعض الشركات بتعرض قوالب جاهزة مش هما اللي مصممينها، وبتظن إنها حقيقية لمجرد إنها شغالة على رابط موقع حقيقي. عشان تتأكد، بص على بيانات التواصل في المواقع دي؛ لو لقيت بيانات وهمية احذر. ولو لسه شاكك، جرب تتصل بالعميل ده بنفسك وتسأله لو هما فعلاً اللي عملوا الموقع. كمرجع لشكل سابقة الأعمال الاحترافية، يمكنك تصفح <a href="/ar/#portfolio">سابقة أعمالنا في تصميم المواقع</a>، حيث يرتبط كل مشروع بموقع إلكتروني حي وشغال تقدر تفحصه بنفسك.</p>
 
 <h2>العلامات التحذيرية اللي لازم تنتبه ليها</h2>
 <p>أهم العلامات التحذيرية هي: مفيش سابقة أعمال حقيقية، وعود خيالية، أسعار غامضة أو بالدولار من غير توضيح بالجنيه، عدم الاهتمام بشغلك، وأسعار مبالغ فيها سواء رخيصة أو غالية. ابعد عن أي جهة بتظهر العلامات دي:</p>
@@ -112,11 +112,11 @@ const resource: Guide = {
   <li><strong>مفيش سابقة أعمال أو عارضين صور فقط :</strong> لو مش قادرين يوروك مواقع حقيقية وشغالة على الإنترنت، فاحذر. صور التصاميم مش دليل على إنهم بيعرفوا يبنوا موقع فعلي.</li>
   <li><strong>وعود خيالية:</strong> زي "هخليك رقم 1 في جوجل في أسبوع" أو "تعديلات غير محدودة". الكلام ده غير واقعي ومجرد تسويق رخيص.</li>
   <li><strong>أسعار غامضة وغير مفصلة:</strong> المحترف بيقدر يشرحلك كل جنيه هتدفعه رايح فين، وبتفصيل واضح. التهرب من الأسعار، أو التسعير بالدولار من غير ما يوضح الرقم بالجنيه، علامة خطر.</li>
-  <li><strong>مش مهتمين يعرفوا حاجة عن شغلك:</strong> لو الشركة إدتك سعر من غير ما تسألك عن أهدافك، جمهورك، ومنافسيك، يبقوا بيبيعوا لك قالب جاهز ومش هيكون في أى عائد من الموقع.</li>
-  <li><strong>أسعار مبالغ فيها (رخيصة أو غالية):</strong> السعر الرخيص زيادة معناه شغل قوالب وأساس تقني ضعيف. والأسعار الخرافية ممكن تكون استغلال، شفنا شركات في مصر بتطلب 50,000 جنيه في موقع ووردبريس بسيط، وده رقم غير منطقي. اقرأ دليلنا عن <a href='/ar/guides/website-cost-in-egypt'>تكلفة الموقع إلكتروني في مصر: تحليل حقيقي للأسعار</a> علشان تفهم السعر بيتحدد إزاى.</li>
+  <li><strong>مش مهتمين يعرفوا حاجة عن شغلك:</strong> لو الشركة إدتك سعر من غير ما تسألك عن أهدافك، جمهورك، ومنافسيك، يبقوا بيبيعوا لك قالب جاهز ومش هيكون في أي عائد من الموقع.</li>
+  <li><strong>أسعار مبالغ فيها (رخيصة أو غالية):</strong> السعر الرخيص زيادة معناه شغل قوالب وأساس تقني ضعيف. والأسعار الخرافية ممكن تكون استغلال، شفنا شركات في مصر بتطلب 50,000 جنيه في موقع ووردبريس بسيط، وده رقم غير منطقي. اقرأ دليلنا عن <a href='/ar/guides/website-cost-in-egypt'>تكلفة الموقع الإلكتروني في مصر: تحليل حقيقي للأسعار</a> علشان تفهم السعر بيتحدد إزاي.</li>
 </ul>
 
-<h2>وجهة نظرنا: ازاي تختار شركة تصميم مواقع صح</h2>
+<h2>وجهة نظرنا: إزاي تختار شركة تصميم مواقع صح</h2>
 <p> الشركة الصح هي اللي عندها سابقة أعمال معروضة تقدر تجربها، مهتمة تعرف عن شغلك  وأهدافك، شفافة في أسعارها، وواضحة في تواصلها. مش لازم يكونوا الأرخص ولا الأكبر، لازم يكونوا الأنسب لشغلك. الشفافية والتواصل الواضح والشراكة الحقيقية دي نفس المعايير اللي بنلتزم بيها مع كل عميل، تقدر تعرف أكتر عن <a href="/ar/about">طريقتنا في الشغل</a>. لو بتفكر تعمل موقعك بنفسك من خلال المنصات الجاهزة، اقرأ دليلنا عن <a href="/ar/guides/diy-vs-professional-web-design"> المقارنة بين المنصات الجاهزة والتصميم الاحترافي</a>.</p>`,
   },
   metaDescription: {

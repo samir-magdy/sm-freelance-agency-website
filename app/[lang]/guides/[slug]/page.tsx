@@ -211,7 +211,7 @@ export default function GuidePage({
             />
           </>
         )}
-        <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-surface-low mb-6">
+        <div className="relative overflow-hidden rounded-2xl border border-white/8 bg-surface-low mb-6">
           <div className="relative text-center sm:text-start flex flex-col sm:flex-row sm:items-center gap-7 sm:gap-12 px-7 py-9 sm:px-11 sm:py-11">
             <p className="flex-1 text-[clamp(1.2rem,4vw,2.2rem)] font-semibold text-content-heading leading-tight rtl:leading-loose">
               {t.articleCta[lang]}

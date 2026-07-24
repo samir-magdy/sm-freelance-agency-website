@@ -45,7 +45,7 @@ const linkGroups: NotFoundGroup[] = [
     links: [
       {
         href: "/portfolio/travel-tourism-website-design",
-        label: "Travel & tourism",
+        label: "Travel & Tourism",
       },
       {
         href: "/portfolio/healthcare-website-design",
@@ -53,11 +53,11 @@ const linkGroups: NotFoundGroup[] = [
       },
       {
         href: "/portfolio/interior-design-website-design",
-        label: "Interior design & Decor",
+        label: "Interior Design & Decor",
       },
       {
         href: "/portfolio/petcare-website-design",
-        label: "Petcare & Veterinary",
+        label: "Pet Care & Veterinary",
       },
     ],
   },
@@ -176,7 +176,7 @@ export default function NotFoundContent() {
           <p className="nf-code" aria-hidden="true">404</p>
           <h1 id="nf-title" className="nf-title">Page Not Found</h1>
           <p className="nf-text">
-            Seems like you&apos;ve gotten yourself lost. Here's a map:
+            Seems like you&apos;ve gotten yourself lost. Here&apos;s a map:
           </p>
         </section>
 

@@ -89,6 +89,7 @@ export default async function LangLayout({
       portfolio: t.nav.portfolio[lang],
       pricing: t.nav.pricing[lang],
       faq: t.nav.faq[lang],
+      guides: t.nav.guides[lang],
       contact: t.nav.contact[lang],
       about: t.nav.about[lang],
     },

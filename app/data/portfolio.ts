@@ -95,11 +95,11 @@ export const projects: Project[] = [
     id: "PetcareWebsite",
     liveUrl: "/portfolio/petcare-website-design",
     screenshot: petcareImg,
-    schemaName: "Petcare Website Design – Egypt",
+    schemaName: "Pet Care Website Design – Egypt",
     schemaNameAr: "تصميم موقع رعاية الحيوانات – مصر",
     description:
-      `A petcare website demo by ${SITE_NAME} designed to build trust with pet owners in Egypt and drive appointment bookings through a warm, professional online presence.`,
-    genre: "Petcare",
+      `A pet care website demo by ${SITE_NAME} designed to build trust with pet owners in Egypt and drive appointment bookings through a warm, professional online presence.`,
+    genre: "Pet Care",
     genreAr: "رعاية الحيوانات",
   },
 ];
@@ -113,7 +113,7 @@ export const projectsStructuredData = {
   "@type": "ItemList",
   name: `Web Design Portfolio – ${SITE_NAME} Cairo`,
   description:
-    `Custom-coded websites built by ${SITE_NAME} for small businesses in Cairo and Egypt. Specializing in landing pages, single-page websites, ecommerce and bilingual Arabic/English web design.`,
+    `Custom-coded websites built by ${SITE_NAME} for small businesses in Cairo and Egypt. Specializing in landing pages, single-page websites, e-commerce and bilingual Arabic/English web design.`,
   numberOfItems: projects.length,
   itemListElement: projects.map((project, index) => {
     const liveUrl = project.liveUrl.startsWith("http")

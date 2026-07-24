@@ -27,12 +27,12 @@ const aboutSection: AboutSection = {
 
   paragraphs: [
     {
-      en: `${SITE_NAME} is small, focused team made up of a developer, a UI/UX designer, and a content writer, working closely together on every project.`,
+      en: `${SITE_NAME} is a small, focused team made up of a developer, a UI/UX designer, and a content writer, working closely together on every project.`,
       ar: "",
     },
     {
-      en: `${SITE_NAME} was built on a simple belief, every business deserves honest guidance, professional work, and fair pricing.`,
-      ar: "نحن فريق صغير ومتخصص، مٌكون من مطور، ومصمم، وكاتب محتوى. أسسنا الاستوديو الخاص بنا على مبدأ بسيط: أن جميع الشركات والأفراد من حقهم يحصلوا على توجيه صادق، عمل احترافي، وأسعار عادلة.",
+      en: `${SITE_NAME} was built on a simple belief: every business deserves honest guidance, professional work, and fair pricing.`,
+      ar: "نحن فريق صغير ومتخصص، مكوَّن من مطور، ومصمم، وكاتب محتوى. أسسنا الاستوديو الخاص بنا على مبدأ بسيط: أن جميع الشركات والأفراد من حقهم يحصلوا على توجيه صادق، عمل احترافي، وأسعار عادلة.",
     },
     {
       en: "After seeing people struggle with incompetent providers, we realized the problem wasn't building the website, it was trust & communication.",

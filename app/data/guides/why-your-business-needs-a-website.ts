@@ -14,12 +14,12 @@ const resource: Guide = {
     ar: `هل مشروعي محتاج موقع إلكتروني؟ (${CURRENT_YEAR})`,
   },
   excerpt: {
-    en: "When you hear about a company or service you are considering, what is the first thing you do? You open Google or ChatGPT and search for it. Your customers do exactly the same thing, if they don't find you and find a competitor instead, you've most likely lost the sale. In this guide we explain why having a website is crucial for this scenario.",
-    ar: "لما بتسمع عن شركة أو خدمة جديدة، أول حاجة بتعملها إيه؟ تلقائياً بتفتح جوجل أو شات جي بي تي وتكتب اسمها علشان تطمن وتشوف تفاصيلها. العميل اللي بيدور على شركتك بيعمل نفس الشىء.",
+    en: "The first thing a potential customer does is search for you online, most likely using Google or an AI like ChatGPT. If they find your competitors instead of you, or if ChatGPT doesn't mention you, you've likely lost the sale before you've even had a chance. In this guide we explain why having a website is crucial for this scenario.",
+    ar: "لما بتسمع عن شركة أو خدمة جديدة، أول حاجة بتعملها إيه؟ تلقائياً بتفتح جوجل أو شات جي بي تي وتكتب اسمها علشان تطمن وتشوف تفاصيلها. العميل اللي بيدور على شركتك بيعمل نفس الشيء.",
   },
   content: {
     en: `
-<p>A professional website is your official address online. The moment a customer lands on it, they know they are dealing with something real, established, and worth trusting. Imagine the following scenario, you hear about a company or service you are considering dealing with, what is the first thing you do? You open Google or ChatGPT and search for it to make sure it is legitimate. Your customers do exactly the same thing, if they search for your business and find no website, they will instead find your competitor's site, in that case you have very likely already lost that client before you had a chance. This is the reality of the digital landascape today.</p>
+<p>A professional website is your official address online. The moment a customer lands on it, they know they are dealing with something real, established, and worth trusting. Imagine the following scenario: you hear about a company or service you are considering dealing with. What is the first thing you do? You open Google or ChatGPT and search for it to make sure it is legitimate. Your customers do exactly the same thing. If they search for your business and find no website, they will instead find your competitor's site, and in that case you have very likely already lost that client before you even had a chance. This is the reality of the digital landscape today.</p>
 
 <h2>Why a Facebook or Instagram page is not enough</h2>
 <p>Social media is great for getting discovered, but it should not be the home of your business. Here is why relying on it alone puts you at risk:</p>
@@ -62,7 +62,7 @@ const resource: Guide = {
 <p>Operating a business in ${CURRENT_YEAR} without a website is like running a store without a sign. You are actively handing your customers over to competitors who look more professional. A website is not a luxury; it is the most important investment you can make to protect your business and grow your name in the market.</p>`,
 
     ar: `
-<p>لما بتسمع عن شركة أو خدمة جديدة، أول حاجة بتعملها إيه؟  تلقائياً بتفتح جوجل وتكتب اسمها علشان تطمن وتشوف تفاصيلها. العميل اللي بيدور على شركتك بيعمل نفس الشىء، ولو دخل يدور عليك ومالقاش ليك موقع، وفي نفس الوقت لقى موقع إحترافي لمنافس ليك، بنسبة كبيرة إنت خسرت العميل للمنافس قبل حتى ما تاخد فرصة تعرض عليه شغلك. الموقع الإلكتروني الاحترافي هو بمثابة "عقد الثقة" والمقر الرسمي لشركتك على الإنترنت؛ أول ما العميل بيدخله، بيعرف فوراً إنه بيتعامل مع كيان حقيقي، مستقر، ووراه براند قوي يقدر يثق فيه ويدفعله وهو مطمن.</p>
+<p>لما بتسمع عن شركة أو خدمة جديدة، أول حاجة بتعملها إيه؟  تلقائياً بتفتح جوجل وتكتب اسمها علشان تطمن وتشوف تفاصيلها. العميل اللي بيدور على شركتك بيعمل نفس الشيء، ولو دخل يدور عليك ومالقاش ليك موقع، وفي نفس الوقت لقى موقع إحترافي لمنافس ليك، بنسبة كبيرة إنت خسرت العميل للمنافس قبل حتى ما تاخد فرصة تعرض عليه شغلك. الموقع الإلكتروني الاحترافي هو بمثابة "عقد الثقة" والمقر الرسمي لشركتك على الإنترنت؛ أول ما العميل بيدخله، بيعرف فوراً إنه بيتعامل مع كيان حقيقي، مستقر، ووراه براند قوي يقدر يثق فيه ويدفعله وهو مطمن.</p>
 <h2>ليه صفحة الفيسبوك أو الإنستجرام مش كفاية؟</h2>
 <p>السوشيال ميديا ممتازة علشان الناس تعرفك، لكنها متصلحش تكون المقر الأساسي لشغلك. الجدول ده بيوضحلك الفرق والخطورة لو معتمد على السوشيال ميديا بس:</p>
 

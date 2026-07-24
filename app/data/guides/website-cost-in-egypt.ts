@@ -7,14 +7,14 @@ const resource: Guide = {
   dateModified: new Date(),
   title: {
     en: `How Much Does a Website Cost in Egypt? (${CURRENT_YEAR})`,
-    ar: `اسعار تصميم المواقع الإلكترونية في مصر (${CURRENT_YEAR})`,
+    ar: `أسعار تصميم المواقع الإلكترونية في مصر (${CURRENT_YEAR})`,
   },
   metaTitle: {
     en: `How Much Does a Website Cost In Egypt (${CURRENT_YEAR})`,
     ar: `سعر تصميم موقع إلكتروني في مصر (${CURRENT_YEAR})`,
   },
   excerpt: {
-    en: "Prices for websites in Egypt typically start at around EGP 5,000 and can exceed EGP 100,000, depending on the project's size, features, and complexity. In this guide we tell you what these factors drive pricing so that you know what you're paying for when making your investment.",
+    en: "Prices for websites in Egypt typically start at around EGP 5,000 and can exceed EGP 100,000, depending on the project's size, features, and complexity. In this guide we explain what these factors are and how they drive pricing, so that you know what you're paying for when making your investment.",
     ar: "تبدأ تكلفة تصميم المواقع الإلكترونية في مصر من حوالي 5,000 جنيه مصري، وقد تتجاوز الـ 100,000 جنيه مصري حسب حجم المشروع والميزات المطلوبة ومستوى التخصيص.",
   },
   content: {
@@ -58,7 +58,7 @@ const resource: Guide = {
     </tr>
   </tbody>
 </table>
-<p><small style="font-size: 1.05rem"><strong>Note</strong>: <em>These prices are an estimate and reflect the needs of small businesses. Every agency has its own pricing strategy and larger corporate projects are priced individually.</em></small></p>
+<p><small style="font-size: 1.05rem"><strong>Note</strong>: <em>These prices are estimates and reflect the needs of small businesses. Every agency has its own pricing strategy, and larger corporate projects are priced individually.</em></small></p>
 
 
 <h2>What factors determine the price of a website?</h2>

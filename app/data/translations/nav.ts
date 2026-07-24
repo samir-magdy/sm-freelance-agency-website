@@ -5,6 +5,7 @@ export type NavKey =
   | "pricing"
   | "faq"
   | "about"
+  | "guides"
   | "contact";
 
 const nav: Record<NavKey, Localized> = {
@@ -12,6 +13,7 @@ const nav: Record<NavKey, Localized> = {
   pricing: { en: "Services", ar: "الخدمات والأسعار" },
   faq: { en: "FAQs", ar: "الأسئلة الشائعة" },
   about: { en: "About", ar: "من نحن" },
+  guides: { en: "Guides", ar: "الأدلة" },
   contact: { en: "Contact", ar: "تواصل معنا" },
 };
 
@@ -26,6 +28,7 @@ export const navItems: readonly NavItem[] = [
   { key: "pricing", kind: "hash", target: "pricing" },
   { key: "faq", kind: "hash", target: "FAQs" },
   { key: "about", kind: "route", path: "about" },
+  { key: "guides", kind: "route", path: "guides" },
   { key: "contact", kind: "hash", target: "contact" },
 ];
 

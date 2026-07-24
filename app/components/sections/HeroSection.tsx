@@ -30,16 +30,16 @@ export default function HeroSection({ lang }: HeroSectionProps) {
 
         <h2
           id="hero-title"
-          className="mt-6 rtl:mt-4 mb-3 sm:my-8 text-content-heading font-medium tracking-[-2px] leading-[1.15] text-[clamp(2.25rem,11.5vw,4.5rem)] rtl:text-[clamp(2.25rem,10vw,4rem)] rtl:leading-relaxed max-w-[16ch] sm:tracking-[-4px] sm:max-w-[14ch]"
+          className="mt-6 sm:mt-8 text-content-heading font-medium tracking-[-2px] leading-[1.12] text-[clamp(2.25rem,11.5vw,4.5rem)] rtl:text-[clamp(2.25rem,10vw,4rem)] rtl:leading-relaxed max-w-[16ch] sm:tracking-[-4px] sm:max-w-[14ch]"
           dangerouslySetInnerHTML={{ __html: hero.name[lang] }}
         />
 
         <p
-          className="rtl:mt-0 mt-[clamp(0.5rem,3vw,1.75rem)] sm:mt-0 text-content-body text-[clamp(1.1rem,5vw,1.6rem)] rtl:text-[clamp(0.9rem,4vw,1.5rem)] sm:leading-[1.6] rtl:leading-[2.15] sm:rtl:leading-loose max-w-120 px-2"
+          className="mt-6 sm:mt-8 text-content-body text-[clamp(1.1rem,5vw,1.6rem)] rtl:text-[clamp(0.9rem,4vw,1.5rem)] sm:leading-[1.6] rtl:leading-[2.15] sm:rtl:leading-loose max-w-120 ltr:sm:max-w-100 px-2"
           dangerouslySetInnerHTML={{ __html: hero.subheading[lang] }}
         />
 
-        <div className="px-6 sm:px-0 flex flex-col sm:flex-row sm:rtl:flex-row-reverse items-stretch justify-center w-full sm:max-w-[24rem] gap-3 mt-8">
+        <div className="px-6 sm:px-0 flex flex-col sm:flex-row sm:rtl:flex-row-reverse items-stretch justify-center w-full sm:max-w-[24rem] gap-3 mt-8 sm:mt-10">
           <a
             href="#contact"
             className="cta-primary inline-flex sm:flex-1 items-center justify-center rounded-[0.9rem] px-[1vw] py-3 text-[clamp(0.7rem,4.5vw,1.4rem)] font-semibold text-gray-900"

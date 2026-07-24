@@ -58,7 +58,7 @@ export const projectData: Record<ProjectId, ProjectCopy> = {
       ar: "السياحة والسفر",
     },
     description: {
-      en: "Built for Sky Way Travel - a travel agency in Cairo specializing in trips to Dahab, Sinai. This website showcases their tours and destinations making it easy for visitors to find what they want and giving them the confidence to make the booking.",
+      en: "Built for Sky Way Travel, a travel agency in Cairo specializing in trips to Dahab and Sinai. This website showcases their tours and destinations, making it easy for visitors to find what they want and giving them the confidence to book.",
       ar: "غالباً ما يميل المسافرون لاختيار الوكالات التي تعكس صورة احترافية ومُلهمة. يعمل هذا التصميم على عرض رحلاتك ووجهاتك بأسلوب بصري جذاب، مما يمنح الزوار الثقة الكاملة لحجز رحلتهم القادمة عبر وكالتك.",
     },
   },
@@ -69,7 +69,7 @@ export const projectData: Record<ProjectId, ProjectCopy> = {
       ar: "الرعاية الصحية والعيادات",
     },
     description: {
-      en: "Patients always choose the clinic they trust most. This site presents your clinic in a way that makes you the obvious choice. In addition to a built-in booking system you can track, making you independent of platforms like Vezeeta.",
+      en: "Patients always choose the clinic they trust most. This site presents your clinic in a way that makes you the obvious choice, and includes a built-in booking system you can track, making you independent of platforms like Vezeeta.",
       ar: "المريض يختار العيادة التي تبدو أكثر ثقة واحترافية على الإنترنت قبل أن يتصل. هذا التصميم يعرض علاجاتك وخبرتك وعيادتك بأسلوب يجعل اختيار عيادتك القرار البديهي.",
     },
   },
@@ -102,7 +102,7 @@ export const projectData: Record<ProjectId, ProjectCopy> = {
       ar: "تصميم وهوية بصرية",
     },
     description: {
-      en: "A design & branding agency in Cairo - Specializing in brand identity, strategy, and visual design. We built their website with an inspiring and playful vibe that showcases their creative work and lets it take center stage.",
+      en: "A design & branding agency in Cairo, specializing in brand identity, strategy, and visual design. We built their website with an inspiring and playful vibe that showcases their creative work and lets it take center stage.",
       ar: "شركة تصميم وهوية بصرية مقرها القاهرة، متخصصة في الهوية الاستراتيجية والتصميم البصري. بنينا موقعهم بأسلوب أنيق يعتمد على التايبوغرافي ليضع أعمالهم الإبداعية في قلب تجربة الزائر.",
     },
   },
@@ -113,8 +113,8 @@ export const projectData: Record<ProjectId, ProjectCopy> = {
       ar: "الدروس الخاصة",
     },
     description: {
-      en: "A landing page built for Ms Hadeer Nabil, a private english tutor based in Cairo, Egypt. It highlights one-on-one lessons, courses available, and an interactive placement quiz designed to convert visitors into students.",
-      ar: "صفحة هبوط مميزة تم تصميمها للأستاذة هدير نبيل، مدرسة لغة إنجليزية في القاهرة. الموقع يبرز مميزات الدروس الفردية، وباقات الكورسات المتاحة، مع اختبار تحديد مستوى تفاعلي صُمم خصيصاً لتحوّيل الزوار لطلاب.",
+      en: "A landing page built for Ms Hadeer Nabil, a private English tutor based in Cairo, Egypt. It highlights one-on-one lessons, available courses, and an interactive placement quiz designed to convert visitors into students.",
+      ar: "صفحة هبوط مميزة تم تصميمها للأستاذة هدير نبيل، مدرسة لغة إنجليزية في القاهرة. الموقع يبرز مميزات الدروس الفردية، وباقات الكورسات المتاحة، مع اختبار تحديد مستوى تفاعلي صُمم خصيصاً لتحويل الزوار لطلاب.",
     },
   },
 };

@@ -62,7 +62,7 @@ export default function GuidesGrid({ resources, lang, t }: GuidesGridProps) {
           </Link>
         </article>
       ))}
-      <div className="relative w-full mx-auto flex flex-col items-center justify-center gap-4 p-5.5 rounded-2xl bg-surface-card/20 transition-colors duration-200 text-center overflow-hidden min-h-[22rem] lg:col-span-2 lg:max-w-[40rem]">
+      <div className="relative w-full mx-auto flex flex-col items-center justify-center gap-4 p-5.5 rounded-2xl bg-surface-card/20 transition-colors duration-200 text-center overflow-hidden min-h-88 lg:col-span-2 lg:max-w-160">
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none"
           fill="none"
@@ -86,7 +86,7 @@ export default function GuidesGrid({ resources, lang, t }: GuidesGridProps) {
             {lang === "ar" ? "ترقب المزيد" : "Stay Tuned"}
           </h3>
           <p
-            className="text-content-muted text-subheading max-w-[300px] mx-auto leading-relaxed"
+            className="text-content-muted text-subheading max-w-75 mx-auto leading-relaxed"
             dir={lang === "ar" ? "rtl" : "ltr"}
           >
             {lang === "ar"
