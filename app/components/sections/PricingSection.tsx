@@ -55,7 +55,7 @@ export default function PricingSection({ lang }: PricingSectionProps) {
                       </span>
                       <div className="flex items-baseline gap-1.5">
                         <span className="text-heading font-bold text-gold tracking-tighter leading-none">
-                          {card.price}
+                          {card.price.toLocaleString()}
                         </span>
                         <span className="text-caption font-medium text-content-muted">
                           {t.currency[lang]}

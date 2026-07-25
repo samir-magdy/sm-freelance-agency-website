@@ -211,9 +211,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
 
   const ctaHref = project.liveUrl;
   const handleCtaClick = handleDemoClick;
-  const ctaLabel = project.clientSite
-    ? t.viewLiveSite[lang]
-    : t.viewDemo[lang];
+  const ctaLabel = t.viewLiveSite[lang];
 
   const isRtl = lang === "ar";
 

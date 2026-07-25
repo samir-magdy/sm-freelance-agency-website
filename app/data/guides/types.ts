@@ -9,4 +9,5 @@ export interface Guide {
   excerpt: Localized;
   metaDescription: Localized;
   content: Localized;
+  readingMinutes: Localized<number>;
 }

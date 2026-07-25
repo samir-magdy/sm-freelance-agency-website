@@ -105,6 +105,7 @@ const resource: Guide = {
     en: `Discover why your business in Egypt needs a website in ${CURRENT_YEAR}: real credibility, Google visibility, and ROI that Instagram and Facebook simply cannot match.`,
     ar: `هل فعلاً محتاج موقع إلكتروني في مصر في ${CURRENT_YEAR}؟ اكتشف فوايد حقيقية: المصداقية، التحكم، الظهور في جوجل، والعائد بالجنيه. وليه إنستجرام وفيسبوك مش كفاية.`,
   },
+  readingMinutes: { en: 4, ar: 3 },
 };
 
 export default resource;  

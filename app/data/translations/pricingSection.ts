@@ -1,10 +1,11 @@
 import type { Localized } from "@/app/types";
+import { BASE_PRICES } from "./PricingEstimator";
 
 interface PricingCard {
   id: "landing" | "business" | "custom-app";
   name: Localized;
   tagline: Localized;
-  price: string | null;
+  price: number | null;
 }
 
 interface PricingCards {
@@ -61,9 +62,9 @@ export const pricingCards: PricingCards = {
       },
       tagline: {
         en: "A single-page website built to drive one action like a WhatsApp message, a booking, or filling out a form. <em>Perfect for startups, freelancers and marketing campaigns.</em>",
-        ar: "صفحة واحدة مصممة لتدفع العميل لاتخاذ قرار سريع مثل التواصل عبر الواتساب أو حجز مَوعِد. <em>مثالية للشركات الناشئة، الفريلانسرز، ومقدمي الخدمات.</em>",
+        ar: "صفحة واحدة مصممة لتدفع العميل لاتخاذ قرار سريع مثل التواصل عبر الواتساب أو تعبئة نموذج. <em>مثالية للشركات الناشئة، الفريلانسرز، ومقدمي الخدمات.</em>",
       },
-      price: "5,999",
+      price: BASE_PRICES.landing,
     },
     {
       id: "business",
@@ -73,9 +74,9 @@ export const pricingCards: PricingCards = {
       },
       tagline: {
         en: "A multi-page website that presents your company in full detail. <em>Ideal for more established businesses and entities that have a lot to show and tell.</em>",
-        ar: "موقع تعريفي متعدد الصفحات يعرض شركتك بشكل كامل. <em>مثالي للشركات المستقرة، والشركات التي تحتاج وجود قوي على جوجل.</em>",
+        ar: "موقع تعريفي متعدد الصفحات يعرض شركتك بشكل كامل. <em>مثالي للشركات المستقرة، والشركات التي تحتاج وجود قوي على محركات البحث مثل جوجل.</em>",
       },
-      price: "8,999",
+      price: BASE_PRICES.business,
     },
     {
       id: "custom-app",

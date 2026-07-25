@@ -2,6 +2,11 @@ import type { Localized } from "@/app/types";
 
 export type BaseId = "landing" | "business";
 
+export const BASE_PRICES: Record<BaseId, number> = {
+  landing: 5999,
+  business: 8999,
+};
+
 export interface EstimatorBase {
   id: BaseId;
   name: Localized;
@@ -68,13 +73,13 @@ const pricingEstimator: PricingEstimatorData = {
       id: "landing",
       name: { en: "Landing Page", ar: "صفحة هبوط" },
       description: { en: "One page, one goal", ar: " موقع صفحة واحدة" },
-      price: 5999,
+      price: BASE_PRICES.landing,
     },
     {
       id: "business",
       name: { en: "Business Site", ar: "موقع شركة" },
       description: { en: "Multi-page website", ar: "موقع متعدد الصفحات" },
-      price: 8999,
+      price: BASE_PRICES.business,
     },
   ],
 

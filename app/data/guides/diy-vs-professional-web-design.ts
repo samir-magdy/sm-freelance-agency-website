@@ -138,6 +138,7 @@ const resource: Guide = {
     en: "Should you build your own website on Wix or Squarespace, or hire a professional? Compare real costs (including hidden USD subscriptions), risks, and long-term tradeoffs.",
     ar: "تعمل موقعك بنفسك على Wix أو Squarespace، ولا توظف محترف؟ قارن التكاليف الحقيقية (بما فيها الاشتراكات الخفية بالدولار)، المخاطر، والفروق على المدى البعيد.",
   },
+  readingMinutes: { en: 3, ar: 2 },
 };
 
 export default resource;

@@ -43,9 +43,19 @@ items: [
       ar: "ما الذي يشمله السعر الأساسي؟",
     },
    answer: {
-  en: "Every project includes a custom site of up to 5 pages, 1st-year hosting, domain setup & a post-launch 90 day guarantee. The following are NOT included in the base price: an admin panel (modify content yourself), SEO (keyword research & technical on-page), copywriting (strategic content writing) & localized bilingual support (SEO-friendly). See <a href='#pricing'>pricing</a> or use our <a href='/en/guides/website-cost-in-egypt#pricing-calculator'>pricing estimator</a> for reference. Don't hesitate to <a href='#contact'>contact us</a> if you have any questions.",
-  ar: "كل مشروع بيشمل موقع مخصص بحد أقصى 5 صفحات، استضافة السنة الأولى، إعداد الدومين، وضمان لمدة 90 يوم بعد الإطلاق. الخدمات التالية غير مشمولة في السعر الأساسي: لوحة تحكم (لتعديل المحتوى بنفسك)، وتحسين محركات البحث (بحث الكلمات المفتاحية والتحسين التقني)، وكتابة المحتوى، ودعم محلي بلغتين. اطلع على <a href='#pricing'>الأسعار</a> أو استخدم <a href='/ar/guides/website-cost-in-egypt#pricing-calculator'>حاسبة الأسعار</a> للمرجع. لا تتردد في <a href='#contact'>التواصل معنا</a> إذا كان لديك أي استفسار.",
+  en: "Every project includes a custom site of up to 5 pages (landing pages are one page), 1st-year hosting, domain setup & a post-launch 90 day guarantee. The following will add to the base price: an admin panel (modify content yourself), SEO (keyword research & technical on-page), branding (logo design, visual identity, content writing and more) & localized bilingual support (SEO-friendly). Use our <a href='/en/guides/website-cost-in-egypt#pricing-calculator'>pricing estimator</a> for reference or <a href='#contact'>contact us</a> if you have any questions.",
+  ar: "كل مشروع بيشمل موقع مخصص بحد أقصى 5 صفحات (صفحة الهبوط صفحة واحدة)، استضافة السنة الأولى، إعداد الدومين، وضمان لمدة 90 يوم بعد الإطلاق. الخدمات التالية غير مشمولة في السعر الأساسي: لوحة تحكم (لتعديل المحتوى بنفسك)، وتحسين محركات البحث (بحث الكلمات المفتاحية والتحسين التقني)، والهوية (تصميم اللوجو، الهوية البصرية، كتابة المحتوى وأكتر)، ودعم محلي بلغتين. استخدم <a href='/ar/guides/website-cost-in-egypt#pricing-calculator'>حاسبة الأسعار</a> للمرجع أو <a href='#contact'>تواصل معنا</a> إذا كان لديك أي استفسار.",
 },
+  },
+  {
+    question: {
+      en: "Do you work with clients outside Egypt?",
+      ar: "هل تعملون مع عملاء من خارج مصر؟",
+    },
+    answer: {
+      en: "Yes. We're based in Egypt but work remotely with clients worldwide. Everything from initial consultation to delivery is handled online.",
+      ar: "أيوة. إحنا مقرنا في مصر، لكن بنشتغل عن بُعد مع عملاء من أي مكان في العالم. كل حاجة من الاستشارة الأولى للتسليم بتتم أونلاين.",
+    },
   },
   {
     question: {
@@ -53,8 +63,8 @@ items: [
       ar: "ما المدة التي يستغرقها إنجاز الموقع؟",
     },
     answer: {
-      en: "Landing pages typically take 5–7 days, business websites take 1–2 weeks, and e-commerce platforms take around 2–3 weeks.",
-      ar: "صفحات الهبوط عادةً بتخلص خلال أسبوع، مواقع الشركات خلال أسبوع إلى أسبوعين، والمتاجر الإلكترونية خلال أسبوعين إلى 3 أسابيع.",
+      en: "Landing pages typically take 5–7 days, business websites take 1–3 weeks, and custom web apps take 3+ weeks depending on project complexity.",
+      ar: "صفحات الهبوط عادةً بتخلص خلال أسبوع، مواقع الشركات خلال أسبوع إلى 3 أسابيع، وتطبيقات الويب المخصصة بتاخد 3 أسابيع أو أكتر حسب تعقيد المشروع.",
     },
   },
   {
@@ -64,7 +74,7 @@ items: [
     },
     answer: {
       en: "First, we learn about your business and understand your vision. Next, we design a visual mockup for your review. Once approved, we develop your fully functional website and launch after a final review.",
-      ar: "بنبدأ بالتواصل علشان نفهم شغلك ومتطلباتك من الموقع. بعدين بنعمل تصور لتصميم الموقع للمراجعه، واخيراً بنطور التصميم لموقع إلكتروني فعلي.",
+      ar: "بنبدأ بالتواصل علشان نفهم شغلك ومتطلباتك من الموقع. بعدين بنعمل تصور لتصميم الموقع للمراجعة. وبعد الموافقة، بنطور موقعك بشكل كامل وبنطلقه بعد مراجعة نهائية.",
     },
   },
   {
@@ -84,7 +94,7 @@ items: [
     },
     answer: {
       en: "Your basic brand assets like your logo, the text content for each page, and any high-quality photos or videos you want to showcase.",
-      ar: "كل اللي بنحتاجه منك هو أساسيات الهوية الخاصة بيك، زي اللوجو، والنصوص اللي عايزها تظهر في كل قسم، وأي صور أو فيديوهات تحب تعرضها على الموقع.",
+      ar: "كل اللي بنحتاجه منك هو أساسيات الهوية الخاصة بيك، زي اللوجو، والنصوص اللي عايزها تظهر في كل صفحة، وأي صور أو فيديوهات تحب تعرضها على الموقع.",
     },
   },
   {
@@ -93,7 +103,7 @@ items: [
       ar: "هل يمكنني طلب تعديلات للتصميم؟",
     },
     answer: {
-      en: "You get two rounds of revision on the during the design phase. Any additional revisions will be added to the final cost.",
+      en: "You get two rounds of revision during the design phase. Any additional revisions will be added to the final cost.",
       ar: "نوفر تعديلين خلال مرحلة التصميم. أي تعديلات إضافية سوف يتم إضافتها إلى التكلفة النهائية.",
     },
   },
@@ -104,7 +114,7 @@ items: [
     },
     answer: {
       en: "If you choose to include a CMS (Admin Panel), then yes. We'll explain how it works before handover; it's user-friendly and requires zero technical knowledge.",
-      ar: "لو موقعك فيه لوحة تحكم (نظام إدارة المحتوى CMS)، طبعاً هتعرف. قبل ما نسلمك الموقع، بنشرحلك إزاي تستخدم اللوحة دي ببساطة، ومش هتحتاج أي خبرة تقنية علشان تدير المحتوى بتاعك.",
+      ar: "لو اخترت تضيف لوحة تحكم (نظام إدارة المحتوى CMS)، فأيوة. قبل ما نسلمك الموقع، بنشرحلك إزاي تستخدم اللوحة دي ببساطة، ومش هتحتاج أي خبرة تقنية علشان تدير المحتوى بتاعك.",
     },
   },
   {
@@ -113,8 +123,8 @@ items: [
       ar: "هل سأستلم الكود الخاص بالموقع؟",
     },
     answer: {
-      en: "Yes. We recommend that you create a <a href='https://github.com' target='_blank'>GitHub</a> account so we can transfer the repository directly to you, giving you full control to host it anywhere or hand it off to another developer in the future.",
-      ar: "الموقع بيبقى ملكك بالكامل بعد التسليم، بما في ذلك الكود المصدري. تقدر تستضيفه في أي مكان أو تسلمه إلى مطور آخر.",
+      en: "Yes. The site is fully yours after delivery, source code included.",
+      ar: "أيوة. الموقع ملكك بالكامل بعد التسليم، بما فيه الكود المصدري.",
     },
   },
   {
@@ -124,7 +134,7 @@ items: [
     },
     answer: {
       en: "Yes, we handle all the technical details to deploy and keep your site live. The first year is included in the initial price, after that there will be a yearly charge to keep your site live. We also offer an ongoing maintenance plan (monthly/annually) to ensure your website stays secure, fast, and up to date.",
-      ar: "بنساعدك في إعداد الاستضافة تحت حسابك الخاص، والتكلفة بتكون مشمولة في السعر المبدئي للسنة الأولى. كمان بنوفر خطة صيانة مستمرة علشان نضمن إن موقعك يفضل آمن، سريع، ومحدَّث أول بأول.",
+      ar: "أيوة، بنتولى كل التفاصيل التقنية لإطلاق موقعك واستمرار عمله. تكلفة السنة الأولى مشمولة في السعر المبدئي، وبعد كده فيه رسوم سنوية علشان الموقع يفضل شغال. كمان بنوفر خطة صيانة مستمرة (شهرية/سنوية) علشان نضمن إن موقعك يفضل آمن، سريع، ومحدَّث أول بأول.",
     },
   },
   {
@@ -134,7 +144,7 @@ items: [
     },
     answer: {
       en: "Absolutely. We can expand your site with new pages, features, or an admin panel at any time without having to rebuild it from scratch.",
-      ar: "أكيد طبعاً، سواء عايز تضيف صفحات جديدة، أو أقسام تانية، أو حتى لوحة تحكم لإدارة المحتوى، نقدر نوسع ونطور الموقع في أي وقت ومن غير ما نضطر نبدأ من الصفر.",
+      ar: "أكيد طبعاً، سواء عايز تضيف صفحات جديدة، أو مزايا جديدة، أو حتى لوحة تحكم لإدارة المحتوى، نقدر نوسع ونطور الموقع في أي وقت ومن غير ما نضطر نبدأ من الصفر.",
     },
   },
   // for vercel again

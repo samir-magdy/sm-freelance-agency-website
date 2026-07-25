@@ -1,7 +1,7 @@
 import type { Localized } from "@/app/types";
 
 export const projectsSection: Record<
-  "heading" | "subheading" | "viewDemo" | "viewLiveSite" | "primaryCta",
+  "heading" | "subheading" | "viewLiveSite" | "primaryCta",
   Localized
 > = {
   heading: {
@@ -11,10 +11,6 @@ export const projectsSection: Record<
   subheading: {
     en: "Explore our featured projects",
     ar: "استعرض أحدث مشاريعنا",
-  },
-  viewDemo: {
-    en: "View Demo",
-    ar: "استعرض النموذج",
   },
   viewLiveSite: {
     en: "View Site",

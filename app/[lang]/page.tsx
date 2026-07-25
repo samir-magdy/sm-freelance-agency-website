@@ -23,11 +23,11 @@ const META_DESCRIPTION: Record<Lang, string> = {
 
 const meta: Record<Lang, { title: string; description: string }> = {
   en: {
-    title: `Web Design & Development in Egypt | ${SITE_NAME}`,
+    title: `Web Design & Development | ${SITE_NAME}`,
     description: META_DESCRIPTION.en,
   },
   ar: {
-    title: `تصميم وتطوير مواقع إلكترونية في مصر | ${SITE_NAME}`,
+    title: `تصميم وتطوير مواقع إلكترونية | ${SITE_NAME}`,
     description: META_DESCRIPTION.ar,
   },
 };
@@ -93,7 +93,7 @@ function buildStructuredData(lang: Lang) {
           description: card.tagline.en,
         },
         ...(card.price
-          ? { price: card.price.replace(/,/g, ""), priceCurrency: "EGP" }
+          ? { price: String(card.price), priceCurrency: "EGP" }
           : {}),
       })),
     },
@@ -111,7 +111,7 @@ function buildStructuredData(lang: Lang) {
       "Web Design",
       "تصميم مواقع إلكترونية",
       "Web Development",
-      "تطوير وبرمجة المواقع",
+      "تطوير المواقع",
       "E-commerce Development",
       "تصميم متجر إلكتروني",
       "Clinic Booking System",
@@ -120,10 +120,10 @@ function buildStructuredData(lang: Lang) {
       "إنشاء إيميل رسمي للشركة",
       "Company Profile Website",
       "تصميم موقع تعريفي للشركة",
-      "Search Engine Optimization (SEO)",
-      "ظهور الموقع في جوجل",
+      "Search Engine Optimization",
+      "تحسين محركات البحث",
       "Custom Website Design & Development",
-      "تصميم وبرمجة مواقع إلكترونية مخصصة",
+      "تصميم وتطوير مواقع إلكترونية مخصصة",
     ],
   };
 

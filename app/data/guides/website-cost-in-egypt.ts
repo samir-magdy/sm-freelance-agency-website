@@ -165,6 +165,7 @@ ar: `
     en: `Find out how much a professional website costs in Egypt in ${CURRENT_YEAR}. An honest EGP breakdown of what drives the price for landing pages, business sites, and online stores.`,
     ar: "عايز تعرف موقعك هيكلفك كام؟ احسب تكلفة الموقع فوراً باستخدام حاسبة الأسعار الذكية، واكتشف العوامل اللي بتحدد الأسعار.",
   },
+  readingMinutes: { en: 6, ar: 5 },
 };
 
 export default resource;

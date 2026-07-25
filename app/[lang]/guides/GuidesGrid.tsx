@@ -3,11 +3,6 @@ import { Calendar, Clock } from "lucide-react";
 import type { Lang, Localized } from "@/app/types";
 import type { Guide } from "@/app/data/guides/types";
 
-function readingMinutes(content: string): number {
-  const words = content.replace(/<[^>]+>/g, " ").trim().split(/\s+/).length;
-  return Math.max(1, Math.ceil(words / 135));
-}
-
 interface GuidesGridStrings {
   minRead: Localized;
   readMore: Localized;
@@ -43,7 +38,7 @@ export default function GuidesGrid({ resources, lang, t }: GuidesGridProps) {
               </time>
               <span className="inline-flex items-center gap-1.5 text-sm text-content-muted border border-border-subtle rounded-lg px-3 py-1">
                 <Clock size={13} aria-hidden />
-                {readingMinutes(guide.content[lang])} {t.minRead[lang]}
+                {guide.readingMinutes[lang]} {t.minRead[lang]}
               </span>
             </div>
           </div>

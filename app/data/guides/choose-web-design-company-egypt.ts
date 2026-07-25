@@ -123,6 +123,7 @@ const resource: Guide = {
     en: `Choosing the wrong web design company in Egypt costs more than money. Learn the key questions to ask, red flags to spot, and how to choose right in ${CURRENT_YEAR}.`,
     ar: `اختيار شركة تصميم مواقع غلط في مصر مكلف: تأخير، رسوم خفية بالدولار، ومواقع مبتفتحش. اعرف الأسئلة اللي تسألها، العلامات التحذيرية، ومعايير اختيار فريلانسر، استوديو، أو شركة في ${CURRENT_YEAR}.`,
   },
+  readingMinutes: { en: 5, ar: 4 },
 };
 
 export default resource;

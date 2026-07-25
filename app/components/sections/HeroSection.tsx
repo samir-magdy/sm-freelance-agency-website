@@ -19,7 +19,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
             aria-hidden="true"
             className="flex-none h-px w-[clamp(2rem,4vw,3rem)] rounded-full bg-linear-to-r rtl:bg-linear-to-l from-transparent to-white/70"
           />
-          <span className="ps-0.5 font-semibold uppercase sm:tracking-[0.12em] tracking-widest leading-none text-[clamp(0.8rem,3vw,1.1rem)] rtl:text-[clamp(0.7rem,3vw,1.1rem)] text-content-muted rtl:normal-case rtl:leading-normal">
+          <span className="ps-0.5 font-semibold uppercase sm:tracking-[0.12em] tracking-widest leading-none text-[clamp(0.7rem,3vw,1.1rem)] text-content-muted rtl:normal-case rtl:leading-normal">
             {hero.eyebrow[lang]}
           </span>
           <span

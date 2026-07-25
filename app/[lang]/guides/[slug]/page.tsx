@@ -16,11 +16,6 @@ export function generateStaticParams() {
   ]);
 }
 
-function readingMinutes(content: string): number {
-  const words = content.replace(/<[^>]+>/g, " ").trim().split(/\s+/).length;
-  return Math.max(1, Math.ceil(words / 135));
-}
-
 export async function generateMetadata({
   params,
 }: {
@@ -186,7 +181,7 @@ export default function GuidePage({
             </time>
             <span className="inline-flex items-center gap-1.5 text-sm sm:text-base text-content-muted border border-border-subtle rounded-lg px-3 py-1">
               <Clock size={13} aria-hidden />
-              {readingMinutes(guide.content[lang])} {t.minRead[lang]}
+              {guide.readingMinutes[lang]} {t.minRead[lang]}
             </span>
           </div>
         </header>

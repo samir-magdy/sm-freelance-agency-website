@@ -42,6 +42,10 @@ const aboutSection: AboutSection = {
       en: "We're not here to sell you a site you don't need. We're here to help you understand your options, plan your budget, and build you a website that serves your best interests.",
       ar: "إحنا مش هنا علشان نبيعلك موقع إنت مش محتاجه، هدفنا نساعدك تفهم كل خياراتك، تخطط ميزانيتك بشكل صحيح، ونبني لك موقع يحقق أهدافك ويخدم مصلحة الطرفين.",
     },
+    {
+      en: "Based in Egypt, we work with clients locally and remotely worldwide.",
+      ar: "مقرنا في مصر، ونشتغل مع عملاء محليين وعن بُعد حول العالم.",
+    },
   ],
 
   pillarsLabel: {
