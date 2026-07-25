@@ -54,10 +54,10 @@ export async function generateMetadata({
       alternateLocale: lang === "ar" ? "en_US" : "ar_EG",
       images: [
         {
-          url: "/open-graph.webp",
+          url: "/open-graph.png",
           width: 1200,
           height: 630,
-          alt: `${SITE_NAME} Logo`,
+          alt: `${SITE_NAME} - Web Design Company in Egypt`,
         },
       ],
     },

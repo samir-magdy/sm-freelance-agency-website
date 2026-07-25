@@ -26,7 +26,7 @@ export default function DesktopNavLinks({ nav }: DesktopNavLinksProps) {
   };
 
   return (
-    <ul className="flex w-full justify-around xl:px-28 lg:px-16 text-subheading font-medium tracking-wider text-content-body">
+    <ul className="flex w-full justify-around xl:px-20 lg:px-16 text-subheading font-medium tracking-wider text-content-body">
       {navItems.map((item) => {
         const linkClass =
           "nav-link-underline hover:text-content-heading transition-colors duration-500";

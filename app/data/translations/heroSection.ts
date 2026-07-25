@@ -9,8 +9,8 @@ const hero: {
   subheading: Localized;
 } = {
   eyebrow: {
-    en: `${SITE_NAME} · Egypt`,
-    ar: "تصميم وتطوير مواقع إلكترونية في مصر",
+    en: `Web Design & Development`,
+    ar: "تصميم وتطوير مواقع إلكترونية",
   },
   name: {
     en: 'Great <span class="text-gold">businesses</span> deserve great <span class="text-gold">websites</span>.',

@@ -87,7 +87,7 @@ const css = `
     align-items: center;
     justify-content: center;
     gap: 4rem;
-    padding: 5rem 1.5rem;
+    padding: 1.5rem;
     text-align: center;
   }
   .nf-code {

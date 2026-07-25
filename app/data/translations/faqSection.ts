@@ -23,13 +23,13 @@ const faqSection: FAQSection = {
   },
 
   browseGuides: {
-    en: "browse resources & guides",
+    en: "Browse Guides & Resources",
     ar: "تصفح أدلة تصميم المواقع",
   },
 
   ctaHeading: {
     en: "Still have questions?",
-    ar: "لسا عندك أسئلة؟",
+    ar: "لديك أسئلة آخرى؟",
   },
 
   cta: {
@@ -42,15 +42,15 @@ items: [
       en: "What's included in the base price?",
       ar: "ما الذي يشمله السعر الأساسي؟",
     },
-    answer: {
-      en: "Every project includes a custom site of up to 5 pages, 1st-year hosting, domain setup & a guarantee. The following are NOT included in the base price: an admin panel (modify content yourself), SEO (keyword research & technical on-page), copywriting (strategic content writing) & localized bilingual support (SEO-friendly). See <a href='#pricing'>pricing</a> or use our <a href='/en/guides/website-cost-in-egypt#pricing-calculator'>pricing estimator</a> for reference.",
-      ar: "كل مشروع بيشمل موقع مخصص بحد أقصى 5 صفحات، استضافة السنة الأولى، إعداد الدومين، وضمان لمدة 90 يوم بعد الإطلاق. الخدمات التالية غير مشمولة في السعر الأساسي: لوحة تحكم (تعديل المحتوى بنفسك)، SEO (بحث الكلمات المفتاحية والتحسين التقني)، كتابة المحتوى، ودعم محلي بلغتين. اطلع على <a href='#pricing'>الأسعار</a> أو استخدم <a href='/ar/guides/website-cost-in-egypt#pricing-calculator'>حاسبة الأسعار</a> للمرجع.",
-    },
+   answer: {
+  en: "Every project includes a custom site of up to 5 pages, 1st-year hosting, domain setup & a post-launch 90 day guarantee. The following are NOT included in the base price: an admin panel (modify content yourself), SEO (keyword research & technical on-page), copywriting (strategic content writing) & localized bilingual support (SEO-friendly). See <a href='#pricing'>pricing</a> or use our <a href='/en/guides/website-cost-in-egypt#pricing-calculator'>pricing estimator</a> for reference. Don't hesitate to <a href='#contact'>contact us</a> if you have any questions.",
+  ar: "كل مشروع بيشمل موقع مخصص بحد أقصى 5 صفحات، استضافة السنة الأولى، إعداد الدومين، وضمان لمدة 90 يوم بعد الإطلاق. الخدمات التالية غير مشمولة في السعر الأساسي: لوحة تحكم (لتعديل المحتوى بنفسك)، وتحسين محركات البحث (بحث الكلمات المفتاحية والتحسين التقني)، وكتابة المحتوى، ودعم محلي بلغتين. اطلع على <a href='#pricing'>الأسعار</a> أو استخدم <a href='/ar/guides/website-cost-in-egypt#pricing-calculator'>حاسبة الأسعار</a> للمرجع. لا تتردد في <a href='#contact'>التواصل معنا</a> إذا كان لديك أي استفسار.",
+},
   },
   {
     question: {
       en: "How long does it take to create a website?",
-      ar: "ما هي المدة المستغرقة لإنجاز الموقع الإلكتروني؟",
+      ar: "ما المدة التي يستغرقها إنجاز الموقع؟",
     },
     answer: {
       en: "Landing pages typically take 5–7 days, business websites take 1–2 weeks, and e-commerce platforms take around 2–3 weeks.",
@@ -60,7 +60,7 @@ items: [
   {
     question: {
       en: "What is the process for getting my website?",
-      ar: "ما هي خطوات تنفيذ الموقع الإلكتروني؟",
+      ar: "ما هي خطوات تنفيذ الموقع؟",
     },
     answer: {
       en: "First, we learn about your business and understand your vision. Next, we design a visual mockup for your review. Once approved, we develop your fully functional website and launch after a final review.",
@@ -80,7 +80,7 @@ items: [
   {
     question: {
       en: "What do I need to provide to get started?",
-      ar: "ما هي المتطلبات اللازم توفيرها للبدء في العمل؟",
+      ar: "ما هي المتطلبات اللازمة للبدء في العمل؟",
     },
     answer: {
       en: "Your basic brand assets like your logo, the text content for each page, and any high-quality photos or videos you want to showcase.",
@@ -90,17 +90,17 @@ items: [
   {
     question: {
       en: "How many rounds of revisions are included?",
-      ar: "هل يمكنني طلب تعديلات خلال مرحلتي التصميم والتطوير؟",
+      ar: "هل يمكنني طلب تعديلات للتصميم؟",
     },
     answer: {
-      en: "You get one round of revision on the initial design and another round before final delivery. Any additional revisions will be added to the final cost.",
-      ar: "بنوفر تعديل بعد مرحلة التصميم البدائية، وتعديل آخر قبل التسليم النهائي، أي تعديلات إضافية هيتم إضافتها على التكلفة النهائية.",
+      en: "You get two rounds of revision on the during the design phase. Any additional revisions will be added to the final cost.",
+      ar: "نوفر تعديلين خلال مرحلة التصميم. أي تعديلات إضافية سوف يتم إضافتها إلى التكلفة النهائية.",
     },
   },
   {
     question: {
       en: "Will I be able to edit my website myself?",
-      ar: "هل سيمكنني تعديل محتوى الموقع بنفسي لاحقاً؟",
+      ar: "هل سيمكنني تعديل محتوى الموقع بنفسي؟",
     },
     answer: {
       en: "If you choose to include a CMS (Admin Panel), then yes. We'll explain how it works before handover; it's user-friendly and requires zero technical knowledge.",
@@ -110,7 +110,7 @@ items: [
   {
     question: {
       en: "Do I get the source code?",
-      ar: "هل سأستلم الكود المصدري (Source Code) الخاص بالموقع؟",
+      ar: "هل سأستلم الكود الخاص بالموقع؟",
     },
     answer: {
       en: "Yes. We recommend that you create a <a href='https://github.com' target='_blank'>GitHub</a> account so we can transfer the repository directly to you, giving you full control to host it anywhere or hand it off to another developer in the future.",
@@ -130,7 +130,7 @@ items: [
   {
     question: {
       en: "Can I add more to my website later on?",
-      ar: "هل يمكنني إضافة ميزات أو صفحات جديدة للموقع في المستقبل؟",
+      ar: "هل يمكنني تطوير الموقع في المستقبل؟",
     },
     answer: {
       en: "Absolutely. We can expand your site with new pages, features, or an admin panel at any time without having to rebuild it from scratch.",
@@ -141,7 +141,7 @@ items: [
   {
     question: {
       en: "Do you help with domain registration?",
-      ar: "هل تساعدون في تسجيل ونقل ملكية اسم النطاق (الدومين)؟",
+      ar: "هل تساعدون في تسجيل الدومين؟",
     },
     answer: {
       en: "Yes, we can handle the technical setup steps so you don't have to deal with them yourself. We recommend creating an account with a trusted domain registrar such as <a href='https://www.namecheap.com' target='_blank'>Namecheap</a> or <a href='https://www.godaddy.com' target='_blank'>GoDaddy</a> so we can transfer full ownership and DNS control directly to you.",

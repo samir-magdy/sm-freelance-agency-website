@@ -35,7 +35,7 @@ const aboutSection: AboutSection = {
       ar: "نحن فريق صغير ومتخصص، مكوَّن من مطور، ومصمم، وكاتب محتوى. أسسنا الاستوديو الخاص بنا على مبدأ بسيط: أن جميع الشركات والأفراد من حقهم يحصلوا على توجيه صادق، عمل احترافي، وأسعار عادلة.",
     },
     {
-      en: "After seeing people struggle with incompetent providers, we realized the problem wasn't building the website, it was trust & communication.",
+      en: "After seeing clients struggle with unreliable providers, we realized the hard part isn't building the site — it's trust and communication.",
       ar: "بعد ما شفنا أصحاب مشاريع كتير بيعانوا من التعامل مع جهات غير مؤهلة، أدركنا إن الأزمة الحقيقية مش في تنفيذ الموقع، الأزمة في الثقة والتواصل.",
     },
     {

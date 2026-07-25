@@ -53,7 +53,7 @@ export async function generateMetadata({
       alternateLocale: lang === "en" ? "ar_EG" : "en_US",
       images: [
         {
-          url: `${SITE_URL}/open-graph.webp`,
+          url: `${SITE_URL}/open-graph.png`,
           width: 1200,
           height: 630,
           alt: `${SITE_NAME} – Web Design Company in Egypt`,
@@ -88,7 +88,7 @@ export default function GuidePage({
       "@id": `${canonical}#article`,
       headline: guide.title[lang],
       description: guide.metaDescription[lang],
-      image: [`${SITE_URL}${guide.ogImage || "/open-graph.webp"}`],
+      image: `${SITE_URL}/open-graph.png`,
       inLanguage: lang,
       url: canonical,
       datePublished: guide.datePublished,

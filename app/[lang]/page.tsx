@@ -68,7 +68,7 @@ function buildStructuredData(lang: Lang) {
     url: SITE_URL,
     telephone: PHONE_NUMBER,
     email: CONTACT_EMAIL,
-    image: `${SITE_URL}/open-graph.webp`,
+    image: `${SITE_URL}/open-graph.png`,
     logo: `${SITE_URL}/business-logo.png`,
     address: {
       "@type": "PostalAddress",

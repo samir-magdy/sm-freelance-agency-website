@@ -60,7 +60,7 @@ const pricingEstimator: PricingEstimatorData = {
   cta: { en: "Get an Official Quote", ar: "احصل على عرض سعر رسمي" },
   disclaimer: {
     en: "Final pricing is confirmed after consultation.",
-    ar: "نُحدد السعر النهائي عند الإستشارة.",
+    ar: "نُحدد السعر النهائي عند الاستشارة.",
   },
 
   bases: [

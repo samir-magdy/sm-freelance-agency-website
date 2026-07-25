@@ -61,7 +61,7 @@ export const pricingCards: PricingCards = {
       },
       tagline: {
         en: "A single-page website built to drive one action like a WhatsApp message, a booking, or filling out a form. <em>Perfect for startups, freelancers and marketing campaigns.</em>",
-        ar: "صفحة واحدة مصممة لتدفع العميل لإتخاذ قرار سريع مثل التواصل عبر الواتساب أو حجز مَوعِد. <em>مثالية للشركات الناشئة، الفريلانسرز، ومقدمي الخدمات.</em>",
+        ar: "صفحة واحدة مصممة لتدفع العميل لاتخاذ قرار سريع مثل التواصل عبر الواتساب أو حجز مَوعِد. <em>مثالية للشركات الناشئة، الفريلانسرز، ومقدمي الخدمات.</em>",
       },
       price: "5,999",
     },
