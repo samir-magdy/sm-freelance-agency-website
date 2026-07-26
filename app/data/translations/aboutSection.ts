@@ -27,24 +27,16 @@ const aboutSection: AboutSection = {
 
   paragraphs: [
     {
-      en: `${SITE_NAME} is a small, focused team made up of a developer, a UI/UX designer, and a content writer, working closely together on every project.`,
-      ar: "",
+      en: `${SITE_NAME} is a focused team made up of a developer, a designer, and a content writer, working closely together on every project. The studio was built on a simple belief: every business deserves honest guidance, professional work, and fair pricing.`,
+      ar: "نحن فريق متخصص يضم مطور ومصمم وكاتب محتوى، نعمل معًا عن قرب في كل مشروع. تأسس الاستوديو على مبدأ بسيط: أن جميع العملاء تستحق توجيه صادق، عمل احترافي، وأسعار عادلة.",
     },
     {
-      en: `${SITE_NAME} was built on a simple belief: every business deserves honest guidance, professional work, and fair pricing.`,
-      ar: "نحن فريق صغير ومتخصص، مكوَّن من مطور، ومصمم، وكاتب محتوى. أسسنا الاستوديو الخاص بنا على مبدأ بسيط: أن جميع الشركات والأفراد من حقهم يحصلوا على توجيه صادق، عمل احترافي، وأسعار عادلة.",
+      en: "After seeing clients struggle with unreliable providers, we realized the hard part isn't building the site — it's trust and communication. We're not here to sell you a site you don't need, but to help you understand your options, plan your budget, and build a website that serves your best interests.",
+      ar: "بعد ملاحظة معاناة أصحاب المشاريع مع جهات غير مؤهلة، أدركنا أن التحدي الحقيقي مش في تنفيذ الموقع، بل في الثقة والتواصل. لسنا هنا لنبيع لك موقع لا تحتاجه، بل نساعدك تفهم خياراتك، وتخطط ميزانيتك بذكاء، ونبني لك موقع يحقق أهدافك.",
     },
-    {
-      en: "After seeing clients struggle with unreliable providers, we realized the hard part isn't building the site — it's trust and communication.",
-      ar: "بعد ما شفنا أصحاب مشاريع كتير بيعانوا من التعامل مع جهات غير مؤهلة، أدركنا إن الأزمة الحقيقية مش في تنفيذ الموقع، الأزمة في الثقة والتواصل.",
-    },
-    {
-      en: "We're not here to sell you a site you don't need. We're here to help you understand your options, plan your budget, and build you a website that serves your best interests.",
-      ar: "إحنا مش هنا علشان نبيعلك موقع إنت مش محتاجه، هدفنا نساعدك تفهم كل خياراتك، تخطط ميزانيتك بشكل صحيح، ونبني لك موقع يحقق أهدافك ويخدم مصلحة الطرفين.",
-    },
-    {
-      en: "Based in Egypt, we work with clients locally and remotely worldwide.",
-      ar: "مقرنا في مصر، ونشتغل مع عملاء محليين وعن بُعد حول العالم.",
+     {
+      en: "Based in Cairo, Egypt, we work with clients locally and remotely worldwide.",
+      ar: "مقرنا في القاهرة، مصر، ونعمل مع عملاء محليين وعن بُعد حول العالم.",
     },
   ],
 
@@ -60,13 +52,13 @@ const aboutSection: AboutSection = {
         ar: "خيارات واضحة وأسعار عادلة.",
       },
     },
- {
-  title: { en: "Quality", ar: "الجودة" },
-  desc: {
-    en: "High standards in every detail.",
-    ar: "معايير عالية في التصميم والأداء.",
-  },
-},
+    {
+      title: { en: "Quality", ar: "الجودة" },
+      desc: {
+        en: "High standards in every detail.",
+        ar: "معايير عالية في التصميم والأداء.",
+      },
+    },
     {
       title: { en: "Partnership", ar: "الشراكة" },
       desc: {

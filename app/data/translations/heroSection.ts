@@ -25,7 +25,7 @@ const hero: {
     ar: "شاهد أعمالنا",
   },
   subheading: {
-    en: "Websites built to earn <strong>trust</strong> and turn visitors into <strong>customers</strong>.",
+    en: "Establish <strong>credibility</strong> and turn visitors into <strong>customers</strong>.",
     ar: "نصمم مواقع مخصصة <strong>تعكس قيمة شركتك الحقيقية</strong> وتُثَبت مكانتك في السوق.",
   },
 };

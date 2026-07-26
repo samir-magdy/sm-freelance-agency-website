@@ -18,8 +18,8 @@ const guidesTranslations: Record<
     ar: "الأدلة والموارد",
   },
   metaTitle: {
-    en: `Web Guides & Resources for Egyptians (${CURRENT_YEAR})`,
-    ar: `أدلة وموارد الويب للسوق المصري (${CURRENT_YEAR})`,
+    en: `Web Design Guides for Egyptian Businesses (${CURRENT_YEAR})`,
+    ar: `أدلة تصميم المواقع للسوق المصري (${CURRENT_YEAR})`,
   },
   metaDescription: {
     en: "Useful guides for Egyptian business owners and freelancers. Covering topics like 'how websites are priced' and 'website builders vs hiring a professional developer'.",

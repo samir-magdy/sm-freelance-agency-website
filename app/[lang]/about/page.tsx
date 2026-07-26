@@ -5,7 +5,13 @@ import profilePhoto from "@/public/profilePhoto.jpg";
 import aboutSection from "@/app/data/translations/aboutSection";
 import { notFound } from "next/navigation";
 import { SITE_URL, SITE_NAME, CONTACT_EMAIL } from "@/app/constants";
-import { Eye, MessagesSquare, Handshake, Mail, type LucideIcon } from "lucide-react";
+import {
+  Eye,
+  MessagesSquare,
+  Handshake,
+  Mail,
+  type LucideIcon,
+} from "lucide-react";
 import WhatsAppIcon from "@/app/components/utils/WhatsAppIcon";
 import LinkedInIcon from "@/app/components/utils/LinkedInIcon";
 import { SOCIAL_LINKS } from "../../constants";
@@ -15,12 +21,11 @@ const pillarIcons: LucideIcon[] = [Eye, MessagesSquare, Handshake];
 
 const meta: Record<Lang, { title: string; description: string }> = {
   en: {
-    title: "Web Designer & Developer in Egypt | Samir Magdy",
-    description:
-      `Samir Magdy is a web designer & developer & the founder of ${SITE_NAME}, specializing in high-performance, custom web development.`,
+    title: "Website Designer & Developer in Egypt",
+    description: `Samir Magdy is a web designer, developer & the founder of ${SITE_NAME}, specializing in high-performance, custom web development.`,
   },
   ar: {
-    title: "مصمم ومطور مواقع في مصر | سمير مجدي",
+    title: "مصمم ومطور مواقع إلكترونية في مصر",
     description:
       "سمير مجدي هو مصمم ومطور مواقع في مصر ومؤسس شركة إس إم ويب ستوديو. متخصص في خدمات تصميم المواقع المخصصة للشركات والأفراد.",
   },
@@ -68,8 +73,7 @@ export default async function AboutPage({
     name: "Samir Magdy",
     alternateName: "سمير مجدي",
     jobTitle: "Founder, Web Designer & Developer",
-    description:
-      `Samir Magdy is a web designer & developer & the founder of ${SITE_NAME}, specializing in high-performance, custom web development.`,
+    description: `Samir Magdy is a web designer & developer & the founder of ${SITE_NAME}, specializing in high-performance, custom web development.`,
     nationality: { "@type": "Country", name: "Egypt" },
     url: `${SITE_URL}/${lang}/about`,
     image: `${SITE_URL}/profilePhoto.jpg`,
@@ -95,28 +99,20 @@ export default async function AboutPage({
           __html: JSON.stringify(personSchema).replace(/</g, "\\u003c"),
         }}
       />
-      <article className="relative z-10 mx-auto max-w-6xl">
+      <article className="relative z-10 mx-auto max-w-4xl">
         <header className="reveal-element text-center">
           <h1
-            id="about-title"
-            className="text-content-heading font-bold text-heading tracking-wide"
+            className="text-content-heading font-bold text-heading tracking-wide mb-6 md:mb-12"
           >
             {t.eyebrow[lang]}
           </h1>
         </header>
 
-        {t.paragraphs.slice(0, 2).map((para, i) =>
-          para[lang] ? (
-            <p
-              key={`pre-${i}`}
-              className="reveal-element mx-auto mt-8 max-w-4xl text-center leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)]"
-            >
-              {para[lang]}
-            </p>
-          ) : null,
-        )}
+        <p className="reveal-element text-center leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)]">
+          {t.paragraphs[0][lang]}
+        </p>
 
-        <div className="reveal-element mt-12 flex items-center justify-center gap-4">
+        <div className="reveal-element mt-8 flex items-center justify-center gap-4">
           <span
             aria-hidden="true"
             className="h-px w-8 bg-linear-to-r rtl:bg-linear-to-l from-transparent to-gold/50"
@@ -129,7 +125,7 @@ export default async function AboutPage({
             className="h-px w-8 bg-linear-to-r rtl:bg-linear-to-l from-gold/50 to-transparent"
           />
         </div>
-        <ul className="mt-8 grid gap-6 text-center md:grid-cols-3 sm:gap-5 max-w-4xl mx-auto">
+        <ul className="mt-8 mb-10 grid gap-6 text-center md:grid-cols-3 sm:gap-5 max-w-4xl mx-auto">
           {t.pillars.map((p, i) => {
             const Icon = pillarIcons[i] ?? pillarIcons[0];
             return (
@@ -160,20 +156,12 @@ export default async function AboutPage({
             );
           })}
         </ul>
-
-        {t.paragraphs.slice(2).map((para, i) =>
-          para[lang] ? (
-            <p
-              key={`post-${i}`}
-              className={`reveal-element mx-auto max-w-4xl text-center leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)] ${
-                i === 0 ? "mt-16" : "mt-8"
-              }`}
-            >
-              {para[lang]}
-            </p>
-          ) : null,
-        )}
-
+        <p className="reveal-element text-center leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)]">
+          {t.paragraphs[1][lang]}
+        </p>
+         <p className="reveal-element mt-8 text-center leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)]">
+          {t.paragraphs[2][lang]}
+        </p>
         <div className="reveal-element mt-20 flex max-w-4xl mx-auto flex-col items-center text-center md:mt-16 md:flex-row md:items-center md:justify-center md:gap-12 md:text-start">
           <span
             className="h-px w-full max-w-32 bg-border-subtle md:hidden"
