@@ -39,7 +39,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
           dangerouslySetInnerHTML={{ __html: hero.subheading[lang] }}
         />
 
-        <div className="px-6 sm:px-0 flex flex-col sm:flex-row sm:rtl:flex-row-reverse items-stretch justify-center w-full sm:max-w-[24rem] gap-3 mt-6 rtl:mt-4 sm:mt-8 rtl:sm:mt-8">
+        <div className="px-6 sm:px-0 flex flex-col sm:flex-row sm:rtl:flex-row-reverse items-stretch justify-center w-full sm:max-w-[24rem] gap-3 mt-6 sm:mt-8">
           <a
             href="#contact"
             className="cta-primary inline-flex sm:flex-1 items-center justify-center rounded-[0.9rem] px-[1vw] py-3 text-[clamp(0.7rem,4.5vw,1.4rem)] font-semibold text-gray-900"

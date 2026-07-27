@@ -54,7 +54,7 @@ export async function generateMetadata({
       alternateLocale: lang === "ar" ? "en_US" : "ar_EG",
       images: [
         {
-          url: "/open-graph.png",
+          url: lang === "ar" ? "/open-graph-ar.png" : "/open-graph.png",
           width: 1200,
           height: 630,
           alt: `${SITE_NAME} - Web Design Company in Egypt`,

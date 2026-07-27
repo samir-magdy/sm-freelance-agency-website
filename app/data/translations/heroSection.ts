@@ -26,7 +26,7 @@ const hero: {
   },
   subheading: {
     en: "Establish <strong>credibility</strong> and turn visitors into <strong>customers</strong>.",
-    ar: "نصمم مواقع مخصصة <strong>تعكس قيمة شركتك الحقيقية</strong> وتُثَبت مكانتك في السوق.",
+    ar: "مواقع إلكترونية مخصصة <strong>تعكس قيمة شركتك الحقيقية</strong> وتُثَبت مكانتك في السوق.",
   },
 };
 
