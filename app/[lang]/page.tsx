@@ -13,8 +13,10 @@ import {
   PHONE_NUMBER,
   CONTACT_EMAIL,
   SOCIAL_LINKS,
+  SCHEMA_IDS,
 } from "@/app/constants";
 import { isLang, type Lang, type LangParams } from "@/app/types";
+import { homeUrl, homeAlternates } from "@/lib/urls";
 
 const META_DESCRIPTION: Record<Lang, string> = {
   en: `Professional, affordable websites that help you attract more customers and strengthen your online presence. Get your quote today.`,
@@ -38,31 +40,23 @@ export async function generateMetadata({
   params: Promise<LangParams>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  const canonicalUrl = lang === "en" ? SITE_URL : `${SITE_URL}/${lang}`;
   const currentMeta =
     meta[lang] || { title: `Page Not Found | ${SITE_NAME}`, description: "" };
   return {
     title: currentMeta.title,
     description: currentMeta.description,
-    alternates: {
-      canonical: canonicalUrl,
-      languages: {
-        en: SITE_URL,
-        ar: `${SITE_URL}/ar`,
-        "x-default": SITE_URL,
-      },
-    },
+    alternates: homeAlternates(lang),
   };
 }
 
 function buildStructuredData(lang: Lang) {
-  const pageUrl = lang === "en" ? SITE_URL : `${SITE_URL}/${lang}`;
+  const pageUrl = homeUrl(lang);
 
   const businessSchema = {
     "@type": "ProfessionalService",
-    "@id": `${SITE_URL}#business`,
+    "@id": SCHEMA_IDS.business,
     name: SITE_NAME,
-    inLanguage: "en",
+    inLanguage: ["en", "ar"],
     description:
       `${SITE_NAME} is a web design company specializing in custom websites that deliver exceptional user experiences and measurable ROI. Every website is built using modern technologies like Next.js, resulting in high-performance, SEO-friendly websites that traditional or AI-powered website builders simply can't match.`,
     url: SITE_URL,
@@ -112,7 +106,7 @@ function buildStructuredData(lang: Lang) {
       SOCIAL_LINKS.gbp,
       SOCIAL_LINKS.linkedin,
     ],
-    founder: { "@id": `${SITE_URL}#founder` },
+    founder: { "@id": SCHEMA_IDS.founder },
     knowsLanguage: ["en", "ar"],
   };
 
@@ -122,7 +116,7 @@ function buildStructuredData(lang: Lang) {
     name: card.name.en,
     alternateName: card.name.ar,
     description: card.tagline.en.replace(/<\/?em>/g, ""),
-    provider: { "@id": `${SITE_URL}#business` },
+    provider: { "@id": SCHEMA_IDS.business },
     inLanguage: ["en", "ar"],
     ...(card.price
       ? {
@@ -137,13 +131,11 @@ function buildStructuredData(lang: Lang) {
 
   const websiteSchema = {
     "@type": "WebSite",
-    "@id": `${SITE_URL}#website`,
+    "@id": SCHEMA_IDS.website,
     name: SITE_NAME,
     url: SITE_URL,
     inLanguage: ["en", "ar"],
-    publisher: {
-      "@id": `${SITE_URL}#business`,
-    },
+    publisher: { "@id": SCHEMA_IDS.business },
   };
 
   const webPageSchema = {
@@ -153,14 +145,12 @@ function buildStructuredData(lang: Lang) {
     name: meta[lang].title,
     description: meta[lang].description,
     inLanguage: lang,
-    isPartOf: {
-      "@id": `${SITE_URL}#website`,
-    },
+    isPartOf: { "@id": SCHEMA_IDS.website },
   };
 
   const founderSchema = {
     "@type": "Person",
-    "@id": `${SITE_URL}#founder`,
+    "@id": SCHEMA_IDS.founder,
     name: "Samir Magdy",
     alternateName: "سمير مجدي",
     jobTitle: "Founder, Web Designer & Developer",
@@ -173,7 +163,7 @@ function buildStructuredData(lang: Lang) {
       "https://www.linkedin.com/in/samir-magdy-/",
       "https://github.com/samir-magdy",
     ],
-    worksFor: { "@id": `${SITE_URL}#business` },
+    worksFor: { "@id": SCHEMA_IDS.business },
   };
 
   return {

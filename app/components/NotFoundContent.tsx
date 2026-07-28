@@ -55,10 +55,6 @@ const linkGroups: NotFoundGroup[] = [
         href: "/portfolio/interior-design-website-design",
         label: "Interior Design & Decor",
       },
-      {
-        href: "/portfolio/petcare-website-design",
-        label: "Pet Care & Veterinary",
-      },
     ],
   },
 ];

@@ -22,7 +22,7 @@ export const projectsSection: Record<
   },
 };
 
-export interface ProjectCopy {
+interface ProjectCopy {
   title: Localized;
   description: Localized;
 }
@@ -32,7 +32,6 @@ export type ProjectId =
   | "TravelTourismWebsite"
   | "HealthcareWebsite"
   | "InteriorDesignWebsite"
-  | "PetcareWebsite"
   | "ButterDesign"
   | "HadeerEnglish";
 
@@ -78,17 +77,6 @@ export const projectData: Record<ProjectId, ProjectCopy> = {
     description: {
       en: "Clients hire the interior designer whose portfolio inspires confidence and elegance before the first meeting. This site showcases your projects with the visual impact needed to attract clients willing to invest in quality interior design.",
       ar: "العميل يختار المصمم الذي يُلهمه بورتفوليو قبل أول اجتماع. هذا الموقع يعرض مشاريعك بتأثير بصري يجذب العملاء الجادين المستعدين للاستثمار في التصميم الراقي.",
-    },
-  },
-
-  PetcareWebsite: {
-    title: {
-      en: "Pet Care & Veterinary",
-      ar: "رعاية الحيوانات والبيطرة",
-    },
-    description: {
-      en: "Pet owners trust the vet clinic with the most professional and reassuring online presence. This web design communicates care, expertise, and warmth, turning first-time visitors into loyal clients for your clinic.",
-      ar: "أصحاب الحيوانات الأليفة يثقون في العيادة التي تعكس الاحترافية والاطمئنان عبر الإنترنت. هذا التصميم يوصل الاهتمام والخبرة والدفء، ويحول الزيارة الأولى إلى علاقة طويلة مع عيادتك.",
     },
   },
 

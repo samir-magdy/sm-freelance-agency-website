@@ -1,6 +1,5 @@
 "use client";
 
-import type { MouseEvent } from "react";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -32,28 +31,6 @@ export default function MobileMenu({
 
   const closeMenu = () => {
     setIsMenuOpen(false);
-  };
-
-  const handleNavClick = (
-    e: MouseEvent<HTMLAnchorElement>,
-    targetId: string,
-  ) => {
-    const isHome =
-      pathname === `/${lang}` ||
-      pathname === `/${lang}/` ||
-      pathname === "/";
-
-    if (isHome) {
-      e.preventDefault();
-      closeMenu();
-
-      setTimeout(() => {
-        const targetEl = document.getElementById(targetId);
-        if (targetEl) {
-          targetEl.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 200);
-    }
   };
 
   useEffect(() => {
@@ -146,9 +123,11 @@ export default function MobileMenu({
             if (item.kind === "hash") {
               return (
                 <li key={item.key}>
+                  {/* pathname doesn't include the hash, so the pathname-effect
+                      won't fire on same-page hash nav — close explicitly. */}
                   <Link
                     href={`/${lang}#${item.target}`}
-                    onClick={(e) => handleNavClick(e, item.target)}
+                    onClick={closeMenu}
                   >
                     {nav[item.key]}
                   </Link>

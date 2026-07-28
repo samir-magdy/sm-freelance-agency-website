@@ -2,8 +2,6 @@ import WhatsAppIcon from "../utils/WhatsAppIcon";
 import LinkedInIcon from "../utils/LinkedInIcon";
 import { SOCIAL_LINKS, SITE_NAME } from "@/app/constants";
 
-export { WhatsAppIcon };
-
 export default function SocialIcons() {
   return (
     <ul

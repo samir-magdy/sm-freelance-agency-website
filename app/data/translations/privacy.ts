@@ -1,16 +1,5 @@
-import type { Localized } from "@/app/types";
 import { SITE_NAME, CONTACT_EMAIL } from "@/app/constants";
-
-interface LegalItem {
-  title: Localized;
-  content: Localized;
-}
-
-interface LegalDocument {
-  heading: Localized;
-  subheading: Localized;
-  items: LegalItem[];
-}
+import type { LegalDocument } from "./legal";
 
 const privacyPolicy: LegalDocument = {
   heading: {

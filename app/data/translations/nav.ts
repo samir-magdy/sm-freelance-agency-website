@@ -17,7 +17,7 @@ const nav: Record<NavKey, Localized> = {
   contact: { en: "Contact", ar: "تواصل معنا" },
 };
 
-export type NavItem =
+type NavItem =
   | { key: NavKey; kind: "hash"; target: string }
   | { key: NavKey; kind: "route"; path: string };
 

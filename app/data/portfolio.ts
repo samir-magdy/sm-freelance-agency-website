@@ -4,15 +4,13 @@ import travelImg from "../../public/project-screenshots/travel.webp";
 import butterDesignImg from "../../public/project-screenshots/butter-design.webp";
 import healthcareImg from "../../public/project-screenshots/dental.webp";
 import interiorImg from "../../public/project-screenshots/interior.webp";
-import petcareImg from "../../public/project-screenshots/pet.webp";
 import hadeerImg from "../../public/project-screenshots/hadeer.webp";
 
-import { SITE_URL, SITE_NAME } from "../constants";
+import { SITE_URL, SITE_NAME, SCHEMA_IDS } from "../constants";
 import type { ProjectId } from "./translations/portfolioSection";
 
-export interface Project {
+interface Project {
   id: ProjectId;
-  clientSite?: boolean;
   liveUrl: string;
   screenshot: StaticImageData;
   schemaName: string;
@@ -25,7 +23,6 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "ButterDesign",
-    clientSite: true,
     liveUrl: "https://butterdesignbureau.com",
     screenshot: butterDesignImg,
     schemaName: "Design Agency Portfolio Website – Egypt",
@@ -59,7 +56,6 @@ export const projects: Project[] = [
   },
   {
     id: "HadeerEnglish",
-    clientSite: true,
     liveUrl: "https://hadeernabil.site",
     screenshot: hadeerImg,
     schemaName: "Private English Tutor Website – Egypt",
@@ -91,22 +87,9 @@ export const projects: Project[] = [
     genre: "Interior Design",
     genreAr: "تصميم داخلي",
   },
-  {
-    id: "PetcareWebsite",
-    liveUrl: "/portfolio/petcare-website-design",
-    screenshot: petcareImg,
-    schemaName: "Pet Care Website Design – Egypt",
-    schemaNameAr: "تصميم موقع رعاية الحيوانات – مصر",
-    description:
-      `A pet care website demo by ${SITE_NAME} designed to build trust with pet owners in Egypt and drive appointment bookings through a warm, professional online presence.`,
-    genre: "Pet Care",
-    genreAr: "رعاية الحيوانات",
-  },
 ];
 
-const smWebStudio = {
-  "@id": `${SITE_URL}#business`,
-};
+const smWebStudio = { "@id": SCHEMA_IDS.business };
 
 export const projectsStructuredData = {
   "@context": "https://schema.org",

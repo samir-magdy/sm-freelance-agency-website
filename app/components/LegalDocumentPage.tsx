@@ -1,0 +1,40 @@
+import type { Lang } from "@/app/types";
+import type { LegalDocument } from "@/app/data/translations/legal";
+
+interface LegalDocumentPageProps {
+  document: LegalDocument;
+  lang: Lang;
+}
+
+export default function LegalDocumentPage({
+  document,
+  lang,
+}: LegalDocumentPageProps) {
+  return (
+    <div className="min-h-dvh pt-22 sm:pt-32 pb-16 px-6 bg-background">
+      <div className="max-w-6xl mx-auto">
+        <header className="mb-12 border-b border-neutral-800 pb-8 text-start">
+          <h1 className="text-heading font-bold tracking-tight text-content-heading mb-4">
+            {document.heading[lang] || document.heading.en}
+          </h1>
+          <p className="text-base text-content-muted font-medium leading-relaxed">
+            {document.subheading[lang] || document.subheading.en}
+          </p>
+        </header>
+
+        <article className="space-y-10">
+          {document.items.map((item, index) => (
+            <section key={index} className="scroll-mt-24 text-start">
+              <h2 className="text-subheading font-bold text-content-heading mb-3">
+                {item.title[lang] || item.title.en}
+              </h2>
+              <p className="text-base text-content-body leading-relaxed whitespace-pre-line">
+                {item.content[lang] || item.content.en}
+              </p>
+            </section>
+          ))}
+        </article>
+      </div>
+    </div>
+  );
+}

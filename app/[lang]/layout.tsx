@@ -8,7 +8,8 @@ import a11y from "../data/translations/a11y";
 import Footer from "../components/nav/Footer";
 import LightRaysBackground from "../components/ui/LightRaysBackground";
 import { SITE_URL, SITE_NAME } from "@/app/constants";
-import type { Lang } from "@/app/types";
+import { isLang, type Lang } from "@/app/types";
+import { notFound } from "next/navigation";
 
 const cairoLatin = Cairo({
   variable: "--font-cairo",
@@ -78,28 +79,28 @@ export default async function LangLayout({
   params,
 }: LangLayoutProps) {
   const { lang: rawLang } = await params;
-  const lang = rawLang as Lang; 
+  if (!isLang(rawLang)) notFound();
+  const lang: Lang = rawLang;
 
   const font = lang === "ar" ? cairoFull : cairoLatin;
   const skipLabel = lang === "ar" ? "تخطى إلى المحتوى" : "Skip to main content";
-  const t = { nav, a11y, langToggle };
 
   const heroNavStrings: HeroNavStrings = {
     nav: {
-      portfolio: t.nav.portfolio[lang],
-      pricing: t.nav.pricing[lang],
-      faq: t.nav.faq[lang],
-      guides: t.nav.guides[lang],
-      contact: t.nav.contact[lang],
-      about: t.nav.about[lang],
+      portfolio: nav.portfolio[lang],
+      pricing: nav.pricing[lang],
+      faq: nav.faq[lang],
+      guides: nav.guides[lang],
+      contact: nav.contact[lang],
+      about: nav.about[lang],
     },
     a11y: {
-      desktopNav: t.a11y.desktopNav[lang],
-      mobileNav: t.a11y.mobileNav[lang],
-      openMenu: t.a11y.openMenu[lang],
-      closeMenu: t.a11y.closeMenu[lang],
+      desktopNav: a11y.desktopNav[lang],
+      mobileNav: a11y.mobileNav[lang],
+      openMenu: a11y.openMenu[lang],
+      closeMenu: a11y.closeMenu[lang],
     },
-    langToggleLabel: lang === "ar" ? t.langToggle.en : t.langToggle.ar,
+    langToggleLabel: lang === "ar" ? langToggle.en : langToggle.ar,
   };
 
   return (

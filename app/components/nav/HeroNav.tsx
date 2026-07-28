@@ -1,10 +1,13 @@
+// Server component: only MobileMenu and LanguageToggle ship JS; hash-link
+// smooth-scroll is handled by CSS `scroll-behavior` + Next's router.
+
 import Image from "next/image";
+import Link from "next/link";
 import LanguageToggle from "../ui/LanguageToggle";
 import MobileMenu from "./MobileMenu";
-import DesktopNavLinks from "./DesktopNavLinks";
 import type { Lang } from "@/app/types";
 import { SITE_NAME } from "@/app/constants";
-import type { NavKey } from "@/app/data/translations/nav";
+import { navItems, type NavKey } from "@/app/data/translations/nav";
 
 export interface HeroNavStrings {
   nav: Record<NavKey, string>;
@@ -24,6 +27,9 @@ interface HeroNavProps {
 
 export default function HeroNav({ lang, strings }: HeroNavProps) {
   const { nav, a11y } = strings;
+  const linkClass =
+    "nav-link-underline hover:text-content-heading transition-colors duration-500";
+
   return (
     <header>
       <nav
@@ -41,7 +47,22 @@ export default function HeroNav({ lang, strings }: HeroNavProps) {
               priority
             />
           </a>
-          <DesktopNavLinks nav={nav} />
+          <ul className="flex w-full justify-around xl:px-20 lg:px-16 text-subheading font-medium tracking-wider text-content-body">
+            {navItems.map((item) => (
+              <li key={item.key}>
+                <Link
+                  href={
+                    item.kind === "hash"
+                      ? `/${lang}#${item.target}`
+                      : `/${lang}/${item.path}`
+                  }
+                  className={linkClass}
+                >
+                  {nav[item.key]}
+                </Link>
+              </li>
+            ))}
+          </ul>
           <LanguageToggle lang={lang} label={strings.langToggleLabel} />
         </div>
       </nav>

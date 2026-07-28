@@ -48,9 +48,10 @@ export default function Footer({ lang }: FooterProps) {
       href: "/portfolio/interior-design-website-design",
       label: { en: "Interior Design", ar: "التصميم الداخلي" },
     },
+    // OLD DOMAIN, UPDATE SOON
     {
-      href: "/portfolio/petcare-website-design",
-      label: { en: "Pet Care & Vet", ar: "رعاية الحيوانات" },
+      href: "https://ecommerce.smwebdesign.studio",
+      label: { en: "Fashion E-commerce", ar: "التجارة الإلكترونية للأزياء" },
     },
   ];
 

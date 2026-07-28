@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { use } from "react";
-import { SITE_URL, SITE_NAME } from "@/app/constants";
+import { SCHEMA_IDS } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guides";
 import GuidesGrid from "./GuidesGrid";
 import type { LangParams } from "@/app/types";
+import { homeUrl, pageUrl, pageAlternates } from "@/lib/urls";
 
 export function generateStaticParams() {
   return [{ lang: "en" }, { lang: "ar" }];
@@ -17,19 +18,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const t = guidesTranslations;
-  const canonical = `${SITE_URL}/${lang}/guides`;
-
   return {
     title: t.metaTitle[lang],
     description: t.metaDescription[lang],
-    alternates: {
-      canonical,
-      languages: {
-        en: `${SITE_URL}/en/guides`,
-        ar: `${SITE_URL}/ar/guides`,
-        "x-default": `${SITE_URL}/en/guides`,
-      },
-    },
+    alternates: pageAlternates(lang, "/guides"),
   };
 }
 
@@ -41,9 +33,7 @@ export default function GuidesPage({
   const { lang } = use(params);
   const t = guidesTranslations;
   const dir = lang === "ar" ? "rtl" : "ltr";
-  const canonical = `${SITE_URL}/${lang}/guides`;
-
-  const homeUrl = lang === "en" ? SITE_URL : `${SITE_URL}/ar`;
+  const canonical = pageUrl(lang, "/guides");
 
   const jsonLd = [
     {
@@ -54,8 +44,8 @@ export default function GuidesPage({
       description: t.metaDescription[lang],
       url: canonical,
       inLanguage: lang,
-      isPartOf: { "@id": `${SITE_URL}#website` },
-      publisher: { "@id": `${SITE_URL}#business` },
+      isPartOf: { "@id": SCHEMA_IDS.website },
+      publisher: { "@id": SCHEMA_IDS.business },
     },
     {
       "@context": "https://schema.org",
@@ -66,7 +56,7 @@ export default function GuidesPage({
           "@type": "ListItem",
           position: 1,
           name: lang === "ar" ? "الرئيسية" : "Home",
-          item: homeUrl,
+          item: homeUrl(lang),
         },
         {
           "@type": "ListItem",

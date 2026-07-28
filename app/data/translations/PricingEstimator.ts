@@ -7,14 +7,14 @@ export const BASE_PRICES: Record<BaseId, number> = {
   business: 8999,
 };
 
-export interface EstimatorBase {
+interface EstimatorBase {
   id: BaseId;
   name: Localized;
   description: Localized;
   price: number;
 }
 
-export interface EstimatorScope {
+interface EstimatorScope {
   name: Localized;
   description: Localized;
   multiplier: number;
@@ -27,20 +27,20 @@ interface AddonBase {
   appliesTo: BaseId[];
 }
 
-export interface MultiplierAddon extends AddonBase {
+interface MultiplierAddon extends AddonBase {
   isMultiplier: true;
   multiplierByBase: Record<BaseId, number>;
   price: number;
   scalesWithScope: false;
 }
 
-export interface FlatAddon extends AddonBase {
+interface FlatAddon extends AddonBase {
   isMultiplier: false;
   price: number;
   scalesWithScope: boolean;
 }
 
-export type Addon = MultiplierAddon | FlatAddon;
+type Addon = MultiplierAddon | FlatAddon;
 
 interface PricingEstimatorData {
   baseLabel: Localized;

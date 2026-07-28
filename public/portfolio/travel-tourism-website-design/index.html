@@ -55,12 +55,7 @@
     />
     <link rel="apple-touch-icon" href="/apple-icon.png" />
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preload" href="/portfolio/shared/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/portfolio/shared/fonts/cairo-latin.woff2" as="font" type="font/woff2" crossorigin /><style>@font-face{font-family:"Inter";src:url("/portfolio/shared/fonts/Inter-Variable.woff2") format("woff2");font-weight:100 900;font-display:swap}</style>
     <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="/portfolio/shared/banner.css" />
@@ -609,56 +604,18 @@
             >SM Web Studio</a
           >. All rights reserved.
         </p>
-        <div id="banner-external" class="demo-banner" style="display: none">
+        <div class="demo-banner">
           <span class="banner-brand"
             >Live Demo By<a
               href="https://smweb.studio/"
               target="_blank"
               rel="noopener"
-              class="shimmer ms-2 font-medium shadow-lg py-0.5 px-3 rounded-md bg-gradient-to-b from-[#f3c25c] to-[#b78f47] text-gray-900 tracking-normal"
+              class="banner-link"
               >SM Web Studio</a
             ></span
           >
         </div>
-        <div id="banner-internal" class="demo-banner" style="display: none">
-          <button
-            class="banner-back"
-            aria-label="Back to SM Web Studio portfolio"
-          >
-            <svg
-              class="back-icon"
-              width="14"
-              height="12"
-              viewBox="0 0 14 12"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M12 6H2M6 1L2 6L6 11"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="square"
-                stroke-linejoin="miter"
-              /></svg><span class="back-text">Back</span></button
-          ><a class="banner-cta" href="https://smweb.studio/en#contact"
-            ><span class="cta-text">Contact us</span
-            ><svg
-              class="cta-icon"
-              width="14"
-              height="12"
-              viewBox="0 0 14 12"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M2 6H12M8 1L12 6L8 11"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="square"
-                stroke-linejoin="miter"
-              /></svg></a>
-        </div>
-      </footer>
+        </footer>
     </div>
     <div id="mobile-nav" class="fixed inset-0 z-50" aria-hidden="true">
       <div id="mobile-nav-overlay" class="absolute"></div>
@@ -833,6 +790,6 @@
     /></a>
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
-    <script src="/portfolio/shared/banner.js" defer></script>
+    
   </body>
 </html>

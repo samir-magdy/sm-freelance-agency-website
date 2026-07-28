@@ -1,10 +1,8 @@
 "use client";
 
-import type { MouseEvent } from "react";
 import { useState, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { projects } from "@/app/data/portfolio";
 import {
   projectsSection,
@@ -186,20 +184,6 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
     return () => el.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleDemoClick = useCallback(
-    (e: MouseEvent<HTMLAnchorElement>) => {
-      e.preventDefault();
-      const proj = projects[active];
-      const url = new URL(proj.liveUrl, window.location.origin);
-      if (!proj.clientSite) {
-        url.searchParams.set("ref", "smws");
-        url.searchParams.set("lang", lang);
-      }
-      window.open(url.toString(), "_blank", "noopener");
-    },
-    [active, lang],
-  );
-
   const scrollToProject = useCallback((idx: number) => {
     const el = snapRef.current;
     if (!el || idx < 0 || idx >= projects.length) return;
@@ -210,7 +194,6 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
   const pd = projectData[project.id];
 
   const ctaHref = project.liveUrl;
-  const handleCtaClick = handleDemoClick;
   const ctaLabel = t.viewLiveSite[lang];
 
   const isRtl = lang === "ar";
@@ -280,10 +263,11 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
             </p>
 
             <div className="hidden lg:flex items-center justify-start gap-3 w-full pe-4">
-              <Link
+              <a
                 id="pricing-cta"
-                onClick={handleCtaClick}
                 href={ctaHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group w-full inline-flex justify-center items-center gap-4 py-3 px-6 rounded-xl border border-border-strong text-content-body hover:text-content-heading text-[clamp(0.7rem,1.5vw,1.25rem)] font-semibold tracking-wide transition-colors duration-200"
                 aria-label={`${ctaLabel} – ${pd.title[lang]}`}
               >
@@ -292,7 +276,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
                   className="size-4 rtl:rotate-180 transition-transform duration-200 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
                   aria-hidden
                 />
-              </Link>
+              </a>
               <a
                 href="#contact"
                 className="cta-primary w-full inline-flex justify-center items-center gap-2 py-3 px-6 rounded-xl text-gray-900 text-[clamp(0.7rem,1.5vw,1.25rem)] font-semibold tracking-wide"
@@ -395,9 +379,10 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
           </div>
 
           <div className="flex items-center gap-3 lg:hidden w-full text-[clamp(0.6rem,4vw,1.4rem)] tracking-wide whitespace-nowrap">
-            <Link
-              onClick={handleCtaClick}
+            <a
               href={ctaHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mobile-portfolio-buttons w-full justify-center inline-flex items-center gap-2 py-2.5 px-5 rounded-xl border border-border-strong text-content-body"
               aria-label={`${ctaLabel} – ${pd.title[lang]}`}
             >
@@ -406,7 +391,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
                 className="size-4 rtl:rotate-180"
                 aria-hidden
               />
-            </Link>
+            </a>
             <a
               href="#contact"
               className="mobile-portfolio-buttons w-full font-semibold justify-center cta-primary relative overflow-hidden inline-flex items-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900"

@@ -4,7 +4,8 @@ import Link from "next/link";
 import profilePhoto from "@/public/profilePhoto.jpg";
 import aboutSection from "@/app/data/translations/aboutSection";
 import { notFound } from "next/navigation";
-import { SITE_URL, SITE_NAME, CONTACT_EMAIL } from "@/app/constants";
+import { SITE_URL, SITE_NAME, CONTACT_EMAIL, SCHEMA_IDS } from "@/app/constants";
+import { pageAlternates, pageUrl } from "@/lib/urls";
 import {
   Eye,
   MessagesSquare,
@@ -38,19 +39,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const m = meta[lang] ?? meta.en;
-  const canonical = `${SITE_URL}/${lang}/about`;
 
   return {
     title: m.title,
     description: m.description,
-    alternates: {
-      canonical,
-      languages: {
-        en: `${SITE_URL}/en/about`,
-        ar: `${SITE_URL}/ar/about`,
-        "x-default": `${SITE_URL}/en/about`,
-      },
-    },
+    alternates: pageAlternates(lang, "/about"),
   };
 }
 
@@ -69,13 +62,13 @@ export default async function AboutPage({
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": `${SITE_URL}#founder`,
+    "@id": SCHEMA_IDS.founder,
     name: "Samir Magdy",
     alternateName: "سمير مجدي",
     jobTitle: "Founder, Web Designer & Developer",
     description: `Samir Magdy is a web designer & developer & the founder of ${SITE_NAME}, specializing in high-performance, custom web development.`,
     nationality: { "@type": "Country", name: "Egypt" },
-    url: `${SITE_URL}/${lang}/about`,
+    url: pageUrl(lang, "/about"),
     image: `${SITE_URL}/profilePhoto.jpg`,
     sameAs: [
       "https://www.linkedin.com/in/samir-magdy-/",
@@ -83,7 +76,7 @@ export default async function AboutPage({
     ],
     worksFor: {
       "@type": "ProfessionalService",
-      "@id": `${SITE_URL}#business`,
+      "@id": SCHEMA_IDS.business,
       name: SITE_NAME,
     },
   };

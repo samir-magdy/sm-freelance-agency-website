@@ -3,11 +3,32 @@ import { use } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Calendar, Clock } from "lucide-react";
-import { SITE_URL, SITE_NAME } from "@/app/constants";
+import { SITE_NAME, SCHEMA_IDS } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guides";
 import PricingEstimator from "@/app/components/utils/PricingEstimator";
-import type { LangSlugParams } from "@/app/types";
+import type { Lang, LangSlugParams } from "@/app/types";
+import {
+  homeUrl,
+  pageUrl,
+  pageAlternates,
+  ogImage,
+} from "@/lib/urls";
+
+function BackToGuidesLink({ lang, label }: { lang: Lang; label: string }) {
+  return (
+    <Link
+      href={`/${lang}/guides`}
+      className="hover:border-white/30 hover:text-white/80 border-border-strong border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.9rem,1.3vw,1.2rem)] font-medium transition-all duration-500"
+    >
+      <ArrowLeft
+        className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}
+        aria-hidden
+      />
+      {label}
+    </Link>
+  );
+}
 
 export function generateStaticParams() {
   return guides.flatMap((r) => [
@@ -25,19 +46,13 @@ export async function generateMetadata({
   const guide = guides.find((r) => r.slug === slug);
   if (!guide) return {};
 
-  const canonical = `${SITE_URL}/${lang}/guides/${slug}`;
+  const path = `/guides/${slug}`;
+  const canonical = pageUrl(lang, path);
 
   return {
     title: (guide.metaTitle ?? guide.title)[lang],
     description: guide.metaDescription[lang],
-    alternates: {
-      canonical,
-      languages: {
-        en: `${SITE_URL}/en/guides/${slug}`,
-        ar: `${SITE_URL}/ar/guides/${slug}`,
-        "x-default": `${SITE_URL}/en/guides/${slug}`,
-      },
-    },
+    alternates: pageAlternates(lang, path),
     openGraph: {
       title: guide.title[lang],
       description: guide.metaDescription[lang],
@@ -48,7 +63,7 @@ export async function generateMetadata({
       alternateLocale: lang === "en" ? "ar_EG" : "en_US",
       images: [
         {
-          url: `${SITE_URL}/open-graph${lang === "ar" ? "-ar" : ""}.png`,
+          url: ogImage(lang),
           width: 1200,
           height: 630,
           alt: `${SITE_NAME} – Web Design Company in Egypt`,
@@ -71,10 +86,8 @@ export default function GuidePage({
   const dir = lang === "ar" ? "rtl" : "ltr";
   const relatedGuides = guides.filter((g) => g.slug !== slug);
 
-  const canonical = `${SITE_URL}/${lang}/guides/${slug}`;
-
-  const homeUrl = lang === "en" ? SITE_URL : `${SITE_URL}/ar`;
-  const guidesUrl = `${SITE_URL}/${lang}/guides`;
+  const canonical = pageUrl(lang, `/guides/${slug}`);
+  const guidesUrl = pageUrl(lang, "/guides");
 
   const jsonLd = [
     {
@@ -83,14 +96,14 @@ export default function GuidePage({
       "@id": `${canonical}#article`,
       headline: guide.title[lang],
       description: guide.metaDescription[lang],
-      image: `${SITE_URL}/open-graph${lang === "ar" ? "-ar" : ""}.png`,
+      image: ogImage(lang),
       inLanguage: lang,
       url: canonical,
       datePublished: guide.datePublished,
       dateModified: guide.dateModified,
-      author: { "@id": `${SITE_URL}#founder`, name: "Samir Magdy" },
-      publisher: { "@id": `${SITE_URL}#business` },
-      isPartOf: { "@id": `${SITE_URL}#website` },
+      author: { "@id": SCHEMA_IDS.founder, name: "Samir Magdy" },
+      publisher: { "@id": SCHEMA_IDS.business },
+      isPartOf: { "@id": SCHEMA_IDS.website },
       mainEntityOfPage: { "@id": `${canonical}#webpage` },
     },
     {
@@ -102,7 +115,7 @@ export default function GuidePage({
           "@type": "ListItem",
           position: 1,
           name: lang === "ar" ? "الرئيسية" : "Home",
-          item: homeUrl,
+          item: homeUrl(lang),
         },
         {
           "@type": "ListItem",
@@ -155,16 +168,7 @@ export default function GuidePage({
         }}
       />
       <div className="max-w-7xl mx-auto flex flex-col gap-4 sm:gap-8">
-        <Link
-          href={`/${lang}/guides`}
-          className="hover:border-white/30 hover:text-white/80 border-border-strong border w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.9rem,1.3vw,1.2rem)] font-medium transition-all duration-500"
-        >
-          <ArrowLeft
-            className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}
-            aria-hidden
-          />
-          {t.backToGuides[lang]}
-        </Link>
+        <BackToGuidesLink lang={lang} label={t.backToGuides[lang]} />
         <header>
           <h1 className="text-[clamp(1.5rem,5vw,2.8rem)] font-bold text-content-heading leading-tight rtl:leading-loose">
             {guide.title[lang]}
@@ -257,16 +261,9 @@ export default function GuidePage({
             </ul>
           </section>
         )}
-        <Link
-          href={`/${lang}/guides`}
-          className="hover:border-white/30 sm:mt-2 hover:text-white/80 border border-border-strong w-fit rounded-lg px-5 py-2 group tracking-wide flex items-center gap-2.5 text-content-muted text-[clamp(0.9rem,1.3vw,1.2rem)] font-medium transition-all duration-500"
-        >
-          <ArrowLeft
-            className={`size-3 sm:size-5 transition-transform duration-300 ${lang === "ar" ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`}
-            aria-hidden
-          />
-          {t.backToGuides[lang]}
-        </Link>
+        <div className="sm:mt-2">
+          <BackToGuidesLink lang={lang} label={t.backToGuides[lang]} />
+        </div>
       </div>
     </div>
   );

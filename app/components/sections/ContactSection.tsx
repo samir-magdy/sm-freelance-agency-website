@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { WhatsAppIcon } from "@/app/components/ui/SocialIcons";
+import WhatsAppIcon from "@/app/components/utils/WhatsAppIcon";
 import { contactSection, form } from "@/app/data/translations/contactSection";
 import a11y from "@/app/data/translations/a11y";
 import { SOCIAL_LINKS } from "../../constants";

@@ -3,12 +3,9 @@
 import { useRef, useEffect, useState } from "react";
 import { Renderer, Program, Triangle, Mesh } from "ogl";
 
-export type RaysOrigin =
-  | "right"
-  | "left"
+type RaysOrigin = "right" | "left";
 
-
-export interface LightRaysProps {
+interface LightRaysProps {
   raysOrigin?: RaysOrigin;
   raysColor?: string;
   raysSpeed?: number;
