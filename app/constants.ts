@@ -2,7 +2,7 @@ export const SITE_URL = new URL("https://smweb.studio").origin;
 export const SITE_NAME = "SM Web Studio";
 export const PHONE_NUMBER = "+201233386157";
 export const PHONE_DISPLAY = "+20 123 338 6157";
-export const CONTACT_EMAIL = "samirmagdy@smweb.studio";
+export const CONTACT_EMAIL = "info@smweb.studio";
 
 export const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/smweb.studio",

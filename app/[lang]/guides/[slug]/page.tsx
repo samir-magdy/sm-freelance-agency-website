@@ -83,7 +83,6 @@ export default function GuidePage({
   if (!guide) notFound();
 
   const t = guidesTranslations;
-  const dir = lang === "ar" ? "rtl" : "ltr";
   const relatedGuides = guides.filter((g) => g.slug !== slug);
 
   const canonical = pageUrl(lang, `/guides/${slug}`);
@@ -142,7 +141,7 @@ export default function GuidePage({
     [&_ul]:list-disc [&_ul]:ps-7 [&_ul]:mb-6 [&_ul]:space-y-3
     [&_ol]:list-decimal [&_ol]:ps-7 [&_ol]:mb-6 [&_ol]:space-y-3
     [&_li]:text-content-body [&_li]:text-subheading [&_li]:leading-relaxed
-    [&_strong]:text-content-heading [&_strong]:font-semibold [&[dir=rtl]_*]:leading-loose
+    [&_strong]:text-content-heading [&_strong]:font-semibold rtl:[&_*]:leading-loose
     [&_table]:w-full [&_table]:min-w-[600px] [&_table]:table-fixed [&_table]:border-separate [&_table]:border-spacing-0
     [&_thead]:bg-white/5 [&_tbody_tr]:transition-colors [&_tbody_tr]:hover:bg-white/4
     [&_th]:text-content-heading [&_th]:font-semibold [&_th]:text-center [&_th]:p-3 [&_th]:text-base [&_th]:border-b [&_th]:border-e [&_th]:border-white/15 [&_th]:align-middle sm:[&_th]:p-4 sm:[&_th]:text-subheading
@@ -157,10 +156,7 @@ export default function GuidePage({
   const parts = guide.content[lang].split(SLOT);
 
   return (
-    <div
-      dir={dir}
-      className="min-h-dvh bg-background pt-22 sm:pt-28 pb-14 sm:pb-20 px-5 overflow-x-hidden"
-    >
+    <div className="min-h-dvh bg-background pt-22 sm:pt-28 pb-14 sm:pb-20 px-5 overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -191,20 +187,17 @@ export default function GuidePage({
         </header>
         {parts.length === 1 ? (
           <article
-            dir={dir}
             className={articleClassName}
             dangerouslySetInnerHTML={{ __html: wrapTables(parts[0]) }}
           />
         ) : (
           <>
             <article
-              dir={dir}
               className={articleClassName}
               dangerouslySetInnerHTML={{ __html: wrapTables(parts[0]) }}
             />
             <PricingEstimator lang={lang} />
             <article
-              dir={dir}
               className={articleClassName}
               dangerouslySetInnerHTML={{ __html: wrapTables(parts[1]) }}
             />
@@ -261,7 +254,7 @@ export default function GuidePage({
             </ul>
           </section>
         )}
-        <div className="sm:mt-2">
+        <div className="sm:mt-4">
           <BackToGuidesLink lang={lang} label={t.backToGuides[lang]} />
         </div>
       </div>

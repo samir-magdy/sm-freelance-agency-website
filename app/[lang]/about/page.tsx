@@ -57,8 +57,6 @@ export default async function AboutPage({
   const lang: Lang = rawLang;
 
   const t = aboutSection;
-  const dir = lang === "ar" ? "rtl" : "ltr";
-
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -82,10 +80,7 @@ export default async function AboutPage({
   };
 
   return (
-    <div
-      dir={dir}
-      className="relative isolate bg-background px-8 py-16 md:flex-1 md:pt-28 md:pb-20"
-    >
+    <div className="relative isolate bg-background px-8 py-16 md:flex-1 md:pt-28 md:pb-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

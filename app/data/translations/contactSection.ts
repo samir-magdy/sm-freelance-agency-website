@@ -63,8 +63,8 @@ export const form: Record<FormKey, Localized> = {
   submit: { en: "Send My Request", ar: "أرسل الطلب" },
   sending: { en: "Sending...", ar: "جاري الإرسال..." },
   success: {
-    en: "Thank you. We have received your request.",
-    ar: "شكراً لك. لقد استلمنا طلبك وسنتواصل معك قريباً.",
+    en: "Request recieved. We will contact you soon.",
+    ar: "لقد استلمنا طلبك وسنتواصل معك قريباً.",
   },
   errorRateLimit: {
     en: "Wait a few minutes to send another request.",

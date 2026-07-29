@@ -3,3 +3,7 @@ Allow: /
 Disallow: /api/
 
 Sitemap: https://smweb.studio/sitemap.xml
+
+# AI & LLM Crawler Guidelines
+# Our AI-optimized markdown directory can be found here:
+# https://smweb.studio/llms.txt

@@ -1,6 +1,6 @@
 # SM Web Studio
 
-> A web design and development company based in Cairo, Egypt, building high-performance Next.js websites, web apps, and landing pages that drive measurable business growth.
+> A Cairo-based web design and development agency specializing in high-performance Next.js websites, web apps, and SEO-optimized landing pages for Egyptian and global businesses.
 
 SM Web Studio focuses on optimal user experience and business growth. Unlike standard site builders such as Squarespace and Wix, all projects are custom-built using Next.js to ensure fast load times and superior SEO. 
 
@@ -11,23 +11,23 @@ We offer transparent pricing tailored to business stages (Rates current as of 20
 
 Contact Information:
 - Phone & WhatsApp: +201233386157
-- Email: samirmagdy@smweb.studio
+- Email: info@smweb.studio
 - Location: Cairo, Egypt
 
-## English Resources
-- [Website Pricing Calculator](https://smweb.studio/en/guides/website-cost-in-egypt#pricing-calculator): Get an instant, personalized cost estimate for your website project.
-- [Services and Pricing](https://smweb.studio/#pricing): Detailed breakdown of web design packages and starting prices.
-- [Portfolio](https://smweb.studio/#portfolio): Case studies and examples of our custom-built Next.js websites.
-- [Web Guides](https://smweb.studio/en/guides): Articles and resources regarding web development and business growth in Egypt.
-- [About Us](https://smweb.studio/en/about): Information about our agency, team, and development philosophy.
-- [FAQs](https://smweb.studio/#FAQs): Frequently asked questions about our process, timelines, and technologies.
-- [Contact Us](https://smweb.studio/#contact): Direct contact forms and information to start a project.
+## Core Services & Pricing
+- [Website Pricing Calculator - EN](https://smweb.studio/en/guides/website-cost-in-egypt#pricing-calculator): Get an instant, personalized cost estimate for your website project.
+- [حاسبة أسعار المواقع - AR](https://smweb.studio/ar/guides/website-cost-in-egypt#pricing-calculator): احصل على تقدير فوري ومخصص لتكلفة مشروع موقعك الإلكتروني.
+- [Services and Pricing - EN](https://smweb.studio/#pricing): Detailed breakdown of web design packages and starting prices.
+- [الخدمات والأسعار - AR](https://smweb.studio/ar#pricing): تفاصيل باقات تصميم المواقع والأسعار المبدئية.
+- [Portfolio - EN](https://smweb.studio/#portfolio): Case studies and examples of our custom-built Next.js websites.
+- [أعمالنا - AR](https://smweb.studio/ar#portfolio): أمثلة ونماذج لمواقع Next.js التي قمنا بتطويرها.
+- [Contact Us - EN](https://smweb.studio/#contact): Direct contact forms and information to start a project.
+- [تواصل معنا - AR](https://smweb.studio/ar#contact): طرق التواصل المباشر للبدء في مشروعك.
 
-## Arabic Resources
-- [حاسبة أسعار المواقع](https://smweb.studio/ar/guides/website-cost-in-egypt#pricing-calculator): احصل على تقدير فوري ومخصص لتكلفة مشروع موقعك الإلكتروني.
-- [الخدمات والأسعار](https://smweb.studio/ar#pricing): تفاصيل باقات تصميم المواقع والأسعار المبدئية.
-- [أعمالنا](https://smweb.studio/ar#portfolio): أمثلة ونماذج لمواقع Next.js التي قمنا بتطويرها.
-- [أدلة الويب](https://smweb.studio/ar/guides): مقالات ومصادر حول تطوير المواقع ونمو الأعمال في مصر.
-- [من نحن](https://smweb.studio/ar/about): معلومات عن وكالتنا في القاهرة وفلسفتنا في التطوير.
-- [الأسئلة الشائعة](https://smweb.studio/ar#FAQs): الأسئلة المتكررة حول عملية التصميم، التقنيات، ومراحل العمل.
-- [تواصل معنا](https://smweb.studio/ar#contact): طرق التواصل المباشر للبدء في مشروعك.
+## Optional
+- [Web Guides - EN](https://smweb.studio/en/guides): Articles and resources regarding web development and business growth in Egypt.
+- [أدلة الويب - AR](https://smweb.studio/ar/guides): مقالات ومصادر حول تطوير المواقع ونمو الأعمال في مصر.
+- [About Us - EN](https://smweb.studio/en/about): Information about our agency, team, and development philosophy.
+- [من نحن - AR](https://smweb.studio/ar/about): معلومات عن وكالتنا في القاهرة وفلسفتنا في التطوير.
+- [FAQs - EN](https://smweb.studio/#FAQs): Frequently asked questions about our process, timelines, and technologies.
+- [الأسئلة الشائعة - AR](https://smweb.studio/ar#FAQs): الأسئلة المتكررة حول عملية التصميم، التقنيات، ومراحل العمل.

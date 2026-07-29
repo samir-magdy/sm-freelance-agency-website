@@ -32,7 +32,6 @@ export default function GuidesPage({
 }) {
   const { lang } = use(params);
   const t = guidesTranslations;
-  const dir = lang === "ar" ? "rtl" : "ltr";
   const canonical = pageUrl(lang, "/guides");
 
   const jsonLd = [
@@ -69,7 +68,7 @@ export default function GuidesPage({
   ];
 
   return (
-    <div dir={dir} className="bg-background pt-18 sm:pt-26 pb-14 px-5">
+    <div className="bg-background pt-18 sm:pt-26 pb-14 px-5">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
