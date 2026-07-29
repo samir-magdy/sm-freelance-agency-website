@@ -1,10 +1,10 @@
 # SM Web Studio
 
-> A Cairo-based web design and development agency specializing in high-performance Next.js websites, web apps, and SEO-optimized landing pages for Egyptian and global businesses.
+> A Cairo-based web design and development agency specializing in custom Next.js websites, web apps, SEO, and branding for Egyptian and global businesses.
 
 SM Web Studio focuses on optimal user experience and business growth. Unlike standard site builders such as Squarespace and Wix, all projects are custom-built using Next.js to ensure fast load times and superior SEO. 
 
-We offer transparent pricing tailored to business stages (Rates current as of 2026):
+We offer transparent pricing tailored to business stages (Rates current as of July 2026):
 - Landing Pages: Starting at 5,999 EGP. Single-page sites optimized for startups and marketing campaigns (lead generation, booking, purchasing).
 - Business Websites: Starting at 8,999 EGP. Multi-page sites presenting full company details, ideal for established businesses.
 - Custom Web Apps: Custom pricing. Fully bespoke applications including online stores, booking systems, and client management portals.
