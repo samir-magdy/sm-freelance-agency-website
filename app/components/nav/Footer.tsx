@@ -96,16 +96,25 @@ export default function Footer({ lang }: FooterProps) {
                 {col.title[lang]}
               </h2>
               <ul className="space-y-3 text-[0.95rem] leading-relaxed">
-                {col.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-content-body hover:text-content-heading transition-colors duration-300"
-                    >
-                      {link.label[lang]}
-                    </Link>
-                  </li>
-                ))}
+                {col.links.map((link) => {
+                  const className =
+                    "text-content-body hover:text-content-heading transition-colors duration-300";
+                  // Plain <a> for hash links: Next Link to a same-page hash
+                  // sometimes fails to scroll on first click.
+                  return (
+                    <li key={link.href}>
+                      {link.href.includes("#") ? (
+                        <a href={link.href} className={className}>
+                          {link.label[lang]}
+                        </a>
+                      ) : (
+                        <Link href={link.href} className={className}>
+                          {link.label[lang]}
+                        </Link>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

@@ -123,14 +123,16 @@ export default function MobileMenu({
             if (item.kind === "hash") {
               return (
                 <li key={item.key}>
-                  {/* pathname doesn't include the hash, so the pathname-effect
+                  {/* Plain <a>: Next Link to a same-page hash sometimes fails
+                      to scroll on first click. Native anchor nav is reliable.
+                      pathname doesn't include the hash, so the pathname-effect
                       won't fire on same-page hash nav — close explicitly. */}
-                  <Link
+                  <a
                     href={`/${lang}#${item.target}`}
                     onClick={closeMenu}
                   >
                     {nav[item.key]}
-                  </Link>
+                  </a>
                 </li>
               );
             }

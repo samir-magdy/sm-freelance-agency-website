@@ -7,7 +7,8 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: [process.env.DEV_LOCAL!],
   async redirects() {
     return [
-      { source: "/portfolio", destination: "/#portfolio", permanent: true },
+      { source: "/", destination: "/en", permanent: true },
+      { source: "/portfolio", destination: "/en#portfolio", permanent: true },
       // Redirects for updated slugs, remove when new pages have been fully indexed and old ones removed.
       {
         source: "/portfolio/dental-clinic-site-demo",
@@ -29,7 +30,6 @@ const nextConfig: NextConfig = {
 
   async rewrites() {
     return [
-      { source: "/", destination: "/en" },
       { source: "/portfolio/:slug", destination: "/portfolio/:slug/index.html" },
     ];
   },

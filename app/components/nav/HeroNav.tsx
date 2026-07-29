@@ -48,20 +48,23 @@ export default function HeroNav({ lang, strings }: HeroNavProps) {
             />
           </a>
           <ul className="flex w-full justify-around xl:px-20 lg:px-16 text-subheading font-medium tracking-wider text-content-body">
-            {navItems.map((item) => (
-              <li key={item.key}>
-                <Link
-                  href={
-                    item.kind === "hash"
-                      ? `/${lang}#${item.target}`
-                      : `/${lang}/${item.path}`
-                  }
-                  className={linkClass}
-                >
-                  {nav[item.key]}
-                </Link>
-              </li>
-            ))}
+            {navItems.map((item) =>
+              item.kind === "hash" ? (
+                <li key={item.key}>
+                  {/* Plain <a>: Next Link to a same-page hash sometimes fails
+                      to scroll on first click. Native anchor nav is reliable. */}
+                  <a href={`/${lang}#${item.target}`} className={linkClass}>
+                    {nav[item.key]}
+                  </a>
+                </li>
+              ) : (
+                <li key={item.key}>
+                  <Link href={`/${lang}/${item.path}`} className={linkClass}>
+                    {nav[item.key]}
+                  </Link>
+                </li>
+              ),
+            )}
           </ul>
           <LanguageToggle lang={lang} label={strings.langToggleLabel} />
         </div>

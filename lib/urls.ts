@@ -1,11 +1,12 @@
 import { SITE_URL } from "@/app/constants";
 import type { Lang } from "@/app/types";
 
-// English lives at the site root; Arabic is /ar. Every non-home page is prefixed
-// with /<lang>/…, so pageUrl always uses the language segment.
+// Both languages live under /<lang>/… — `/` 301-redirects to `/en` (see
+// next.config.ts). Keeping the pattern symmetric makes hreflang, canonicals,
+// and hash-link navigation predictable.
 
 export function homeUrl(lang: Lang): string {
-  return lang === "en" ? SITE_URL : `${SITE_URL}/${lang}`;
+  return `${SITE_URL}/${lang}`;
 }
 
 export function pageUrl(lang: Lang, path: string): string {
