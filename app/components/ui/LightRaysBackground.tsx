@@ -13,21 +13,22 @@ export default function LightRaysBackground() {
   }, []);
 
   if (!isDesktop) return null;
-  if (/^\/[^/]+\/guides(\/|$)/.test(pathname ?? "")) return null;
+
+  // Toggle visibility via CSS instead of unmounting on /guides. Unmounting
+  // tears down the WebGL context; remounting on the next nav re-inits it,
+  // causing a bright flash. Keep the canvas alive across navigations.
+  const hidden = /^\/[^/]+\/guides(\/|$)/.test(pathname ?? "");
 
   return (
     <div
       aria-hidden
-      className="fixed inset-0 z-11 pointer-events-none mix-blend-screen"
+      className={`fixed inset-0 z-11 pointer-events-none mix-blend-screen transition-opacity duration-300 ${hidden ? "opacity-0" : "opacity-100"}`}
     >
       <div className="absolute inset-0">
-        <LightRays
-        />
+        <LightRays />
       </div>
       <div className="absolute inset-0">
-        <LightRays
-          raysOrigin="left"
-        />
+        <LightRays raysOrigin="left" />
       </div>
     </div>
   );
