@@ -10,6 +10,7 @@ import LightRaysBackground from "../components/ui/LightRaysBackground";
 import { SITE_URL, SITE_NAME } from "@/app/constants";
 import { isLang, type Lang } from "@/app/types";
 import { notFound } from "next/navigation";
+import ChatWidget from "../components/chat/ChatWidget";
 
 const cairoLatin = Cairo({
   variable: "--font-cairo",
@@ -128,7 +129,7 @@ export default async function LangLayout({
           <main id="main-content" className="md:flex-1 md:flex md:flex-col">
             {children}
           </main>
-
+          <ChatWidget lang={lang} />
           <Footer lang={lang} />
         </div>
       </body>

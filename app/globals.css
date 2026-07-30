@@ -246,6 +246,13 @@ section {
   display: none;
 }
 
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
 @keyframes dash-march {
   to {
     stroke-dashoffset: -14;
@@ -273,6 +280,119 @@ section {
     animation-duration: auto;
     animation-timeline: view();
     animation-range: entry 0% cover 25%;
+  }
+}
+
+/* ══════════════════════════════════════
+   Nollie — AI assistant avatar & prompt bubble
+   ══════════════════════════════════════ */
+
+.nollie-avatar {
+  filter: drop-shadow(0 6px 14px oklch(0% 0 0 / 0.45))
+    drop-shadow(0 0 12px oklch(from var(--color-gold) l c h / 0.18));
+}
+
+.nollie-avatar .nollie-aura-ring {
+  transform-origin: 32px 32px;
+  transform-box: fill-box;
+}
+
+.nollie-avatar.is-animated .nollie-aura-ring {
+  animation: nollie-breathe 4.2s ease-in-out infinite;
+}
+
+/* Gaze — driven by --nollie-eye-x/y CSS variables set from JS on mouse move. */
+.nollie-avatar .nollie-eyes {
+  transform: translate(var(--nollie-eye-x, 0), var(--nollie-eye-y, 0));
+  transition: transform 220ms ease-out;
+}
+
+.nollie-avatar .nollie-eye {
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.nollie-avatar.is-animated .nollie-eye {
+  animation: nollie-blink 6.4s ease-in-out infinite;
+}
+
+.nollie-avatar .nollie-gleam-sweep {
+  opacity: 0;
+}
+
+.nollie-avatar.is-animated .nollie-gleam-sweep {
+  animation: nollie-gleam 5.5s ease-in-out infinite;
+  animation-delay: 1.4s;
+}
+
+/* Wink one eye when the launcher is hovered — a small moment of delight */
+.nollie-launcher:hover .nollie-avatar .nollie-eye-l {
+  animation: nollie-wink 0.55s ease-in-out;
+}
+
+/* Calm Nollie down on touch-primary devices: no hover means the animations
+   only ever read as unsolicited motion competing with page content. Keep
+   her present, just not attention-grabbing. */
+@media (hover: none) and (pointer: coarse) {
+  .nollie-avatar {
+    filter: drop-shadow(0 4px 10px oklch(0% 0 0 / 0.35));
+  }
+  .nollie-avatar.is-animated .nollie-aura-ring {
+    animation: none;
+    opacity: 0.5;
+  }
+  .nollie-avatar.is-animated .nollie-gleam-sweep {
+    animation: none;
+  }
+}
+
+@keyframes nollie-breathe {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes nollie-blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.08);
+  }
+}
+
+@keyframes nollie-wink {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.08);
+  }
+}
+
+@keyframes nollie-gleam {
+  0% {
+    transform: translateX(0) rotate(-20deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(76px) rotate(-20deg);
+    opacity: 0;
   }
 }
 

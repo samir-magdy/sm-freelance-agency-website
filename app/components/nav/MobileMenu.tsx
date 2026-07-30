@@ -51,7 +51,7 @@ export default function MobileMenu({
     <nav
       id="mobile-menu"
       aria-label={a11y.mobileNav}
-      className="lg:hidden fixed top-0 inset-x-0 z-50 pointer-events-none"
+      className="lg:hidden fixed top-0 inset-x-0 z-51 pointer-events-none"
     >
       <div
         className="absolute top-0 inset-x-0 w-full py-1 z-50 backdrop-blur-xl pointer-events-auto"

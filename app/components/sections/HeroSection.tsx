@@ -19,7 +19,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
             aria-hidden="true"
             className="flex-none h-px w-[clamp(2rem,4vw,3rem)] rounded-full bg-linear-to-r rtl:bg-linear-to-l from-transparent to-white/70"
           />
-          <span className="ps-0.5 font-semibold uppercase sm:tracking-[0.12em] tracking-widest leading-none text-[clamp(0.7rem,3.5vw,1.1rem)] text-content-muted rtl:normal-case rtl:leading-normal">
+          <span className="ps-0.5 font-semibold uppercase sm:tracking-[0.12em] tracking-widest leading-none text-[clamp(0.7rem,3.3vw,1.1rem)] text-content-muted rtl:normal-case rtl:leading-normal">
             {hero.eyebrow[lang]}
           </span>
           <span
@@ -35,7 +35,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
         />
 
         <p
-          className="mt-4 rtl:mt-2.5 rtl:sm:mt-4 sm:mt-6 text-content-body text-[clamp(1.1rem,5vw,1.6rem)] rtl:text-[clamp(0.9rem,4vw,1.5rem)] sm:leading-[1.6] rtl:leading-[2.15] sm:rtl:leading-loose max-w-120 ltr:sm:max-w-100 px-4"
+          className="mt-4 rtl:mt-2.5 rtl:sm:mt-4 sm:mt-6 text-content-body text-[clamp(1.1rem,5vw,1.6rem)] rtl:text-[clamp(0.9rem,4vw,1.5rem)] sm:leading-[1.6] rtl:leading-[2.15] sm:rtl:leading-loose max-w-120 ltr:max-w-80 ltr:sm:max-w-100 px-4"
           dangerouslySetInnerHTML={{ __html: hero.subheading[lang] }}
         />
 
