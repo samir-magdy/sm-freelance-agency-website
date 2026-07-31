@@ -19,6 +19,7 @@ interface LightRaysProps {
   noiseAmount?: number;
   distortion?: number;
   className?: string;
+  onReady?: () => void;
 }
 
 
@@ -79,6 +80,7 @@ export default function LightRays({
   noiseAmount = 0.2,
   distortion = 0.0,
   className = "opacity-0 sm:opacity-100",
+  onReady,
 }: LightRaysProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const uniformsRef = useRef<Uniforms | null>(null);
@@ -90,6 +92,12 @@ export default function LightRays({
   const cleanupFunctionRef = useRef<(() => void) | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const hasCalledReadyRef = useRef(false);
+  const onReadyRef = useRef(onReady);
+
+  useEffect(() => {
+    onReadyRef.current = onReady;
+  }, [onReady]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -318,6 +326,10 @@ void main() {
 
         try {
           rendererRef.current.render({ scene: meshRef.current });
+          if (!hasCalledReadyRef.current) {
+            hasCalledReadyRef.current = true;
+            onReadyRef.current?.();
+          }
           animationIdRef.current = requestAnimationFrame(loop);
         } catch (error) {
           console.warn("WebGL rendering error:", error);
