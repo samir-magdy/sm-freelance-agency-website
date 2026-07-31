@@ -6,7 +6,7 @@ const resource: Guide = {
   datePublished: "2026-03-25",
   dateModified: new Date(),
   title: {
-    en: "Website Builders vs Hiring a Professional",
+    en: "DIY Website Builders vs Hiring a Professional",
     ar: "تبني موقعك بنفسك أم تستعين بشركة تصميم؟",
   },
   metaTitle: {

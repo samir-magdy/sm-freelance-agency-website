@@ -6,6 +6,7 @@ import { DefaultChatTransport } from "ai";
 import { ArrowUp, X } from "lucide-react";
 import type { Lang } from "@/app/types";
 import t from "@/app/data/translations/chatWidget";
+import guides from "@/app/data/guides";
 import NollieAvatar from "./NollieAvatar";
 import NolliePromptBubble from "./NolliePromptBubble";
 
@@ -16,11 +17,11 @@ interface ChatWidgetProps {
 // Whitelist of markdown link targets the model is allowed to emit. Anything
 // else renders as literal `[label](target)` text so a hallucinated URL
 // degrades gracefully instead of turning into a broken link.
-const LINK_TARGETS = new Set([
+const LINK_TARGETS = new Set<string>([
   "#contact",
   "#portfolio",
-  "/guides/website-cost-in-egypt",
   "/guides/website-cost-in-egypt#pricing-calculator",
+  ...guides.map((g) => `/guides/${g.slug}`),
 ]);
 
 const MARKDOWN_LINK = /\[([^\]]+)\]\(([^)]+)\)/g;
@@ -144,14 +145,14 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
         onClick={() => setOpen(true)}
         aria-label={t.a11y.open[lang]}
         aria-expanded={open}
-        className={`nollie-launcher fixed bottom-5 end-5 z-50 grid size-12 sm:size-14 cursor-pointer
+        className={`nollie-launcher fixed bottom-5 inset-e-5 z-50 grid size-12 sm:size-14 cursor-pointer
           place-items-center rounded-full transition-transform duration-300 ease-out
           hover:scale-105
           ${open ? "pointer-events-none opacity-0" : "opacity-100"}`}
       >
         <NollieAvatar
           animated={!open}
-          className="size-[54px] sm:size-[62px]"
+          className="size-13.5 sm:size-15.5"
         />
       </button>
 
@@ -160,7 +161,7 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
         <section
           aria-label={t.title[lang]}
           onKeyDown={(e) => e.key === "Escape" && setOpen(false)}
-          className="fixed bottom-5 end-5 z-50 flex h-[min(32rem,calc(100dvh-2.5rem))]
+          className="fixed bottom-5 inset-e-5 z-50 flex h-[min(32rem,calc(100dvh-2.5rem))]
             w-[min(24rem,calc(100vw-2.5rem))] flex-col overflow-hidden rounded-2xl
             border-2 border-border-subtle bg-surface-card shadow-2xl shadow-black/50"
         >
