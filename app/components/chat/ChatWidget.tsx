@@ -3,6 +3,7 @@
 import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
+import Link from "next/link";
 import { ArrowUp, X } from "lucide-react";
 import type { Lang } from "@/app/types";
 import t from "@/app/data/translations/chatWidget";
@@ -51,14 +52,14 @@ function renderMessage(
 
     if (LINK_TARGETS.has(target)) {
       nodes.push(
-        <a
+        <Link
           key={`${i}-link`}
           href={`/${lang}${target}`}
           onClick={onNavigate}
           className="text-gold-light underline underline-offset-2 hover:text-gold"
         >
           {label}
-        </a>,
+        </Link>,
       );
     } else {
       nodes.push(

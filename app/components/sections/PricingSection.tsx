@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { pricingCards } from "@/app/data/translations/pricingSection";
 import type { Lang } from "@/app/types";
 
@@ -95,7 +96,7 @@ export default function PricingSection({ lang }: PricingSectionProps) {
           <span className="text-content-muted text-base sm:text-lg font-medium">
             {t.estimatorLead[lang]}
           </span>
-          <a
+          <Link
             href={`/${lang}/guides/website-cost-in-egypt#pricing-calculator`}
             className="group inline-flex items-center gap-3 px-6 py-3 rounded-2xl border border-gold/15 bg-surface-card hover:border-gold/40 text-content-heading font-semibold text-base sm:text-lg transition-all duration-300"
           >
@@ -149,7 +150,7 @@ export default function PricingSection({ lang }: PricingSectionProps) {
                 strokeLinejoin="round"
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

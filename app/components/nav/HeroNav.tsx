@@ -37,7 +37,7 @@ export default function HeroNav({ lang, strings }: HeroNavProps) {
         className="hidden lg:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl px-8 pe-10 py-1 pt-1.5"
       >
         <div className="relative flex items-center w-full">
-          <a href={`/${lang}`} aria-label="Samir Magdy Web Studio - Home">
+          <Link href={`/${lang}`} aria-label="Samir Magdy Web Studio - Home">
             <Image
               src="/brand.svg"
               alt={`${SITE_NAME} – Website Design Company in Egypt`}
@@ -46,16 +46,14 @@ export default function HeroNav({ lang, strings }: HeroNavProps) {
               style={{ height: "auto" }}
               priority
             />
-          </a>
+          </Link>
           <ul className="flex w-full justify-around xl:px-20 lg:px-16 text-subheading font-medium tracking-wider text-content-body">
             {navItems.map((item) =>
               item.kind === "hash" ? (
                 <li key={item.key}>
-                  {/* Plain <a>: Next Link to a same-page hash sometimes fails
-                      to scroll on first click. Native anchor nav is reliable. */}
-                  <a href={`/${lang}#${item.target}`} className={linkClass}>
+                  <Link href={`/${lang}#${item.target}`} className={linkClass}>
                     {nav[item.key]}
-                  </a>
+                  </Link>
                 </li>
               ) : (
                 <li key={item.key}>

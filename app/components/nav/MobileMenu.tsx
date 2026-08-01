@@ -58,7 +58,7 @@ export default function MobileMenu({
         dir="ltr"
       >
         <div className="flex justify-between items-center px-3">
-          <a
+          <Link
             href={`/${lang}`}
             aria-label="Samir Magdy Web Studio - Home"
             onClick={closeMenu}
@@ -70,7 +70,7 @@ export default function MobileMenu({
               height={42}
               priority
             />
-          </a>
+          </Link>
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -123,16 +123,14 @@ export default function MobileMenu({
             if (item.kind === "hash") {
               return (
                 <li key={item.key}>
-                  {/* Plain <a>: Next Link to a same-page hash sometimes fails
-                      to scroll on first click. Native anchor nav is reliable.
-                      pathname doesn't include the hash, so the pathname-effect
+                  {/* pathname doesn't include the hash, so the pathname-effect
                       won't fire on same-page hash nav — close explicitly. */}
-                  <a
+                  <Link
                     href={`/${lang}#${item.target}`}
                     onClick={closeMenu}
                   >
                     {nav[item.key]}
-                  </a>
+                  </Link>
                 </li>
               );
             }
