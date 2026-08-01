@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { GoogleTagManager } from "@next/third-parties/google";
 import { Cairo } from "next/font/google";
 import "../globals.css";
 import HeroNav, { type HeroNavStrings } from "../components/nav/HeroNav";
@@ -133,7 +132,6 @@ export default async function LangLayout({
           <Footer lang={lang} />
         </div>
       </body>
-      <GoogleTagManager gtmId="GTM-W9S847HD" />
     </html>
   );
 }
