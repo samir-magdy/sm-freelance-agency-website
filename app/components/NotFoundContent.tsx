@@ -102,16 +102,6 @@ const css = `
     font-size: clamp(1.175rem, 1rem + 0.65vw, 1.5rem);
     color: var(--body);
   }
-  .nf-cta {
-    display: inline-block;
-    font-weight: 600;
-    color: #111827;
-    font-size: 1.5rem;
-    background: linear-gradient(to bottom, var(--gold), var(--gold-dark));
-    padding: 1rem 2rem;
-    border-radius: 1rem;
-    text-decoration: none;
-  }
   .nf-sitemap {
     width: 100%;
     max-width: 80rem;

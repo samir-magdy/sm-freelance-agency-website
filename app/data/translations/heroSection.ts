@@ -4,29 +4,34 @@ import { SITE_NAME } from "@/app/constants";
 const hero: {
   eyebrow: Localized;
   name: Localized;
+  nameMobile: Localized;
   primaryCta: Localized;
   secondaryCta: Localized;
   subheading: Localized;
 } = {
   eyebrow: {
-    en: `Web Design & Development`,
+    en: `Website Design & Development`,
     ar: "تصميم وتطوير مواقع إلكترونية",
   },
   name: {
-    en: 'Great <span class="text-gold">businesses</span> deserve great <span class="text-gold">websites</span>',
-    ar: 'لكل عمل ناجح موقع <span class="text-gold">يُثْبِتُ جَدَارَتَهُ</span>',
+    en: '<span class="text-content-heading/95">We build the stage.</span><br class="block" /> You take <span class="text-gold">the spotlight</span>.',
+    ar: 'نحن نبني المسرح.<br class="hidden sm:block" /> وأنت تخطف <span class="text-gold">الأضواء</span>.',
+  },
+  nameMobile: {
+    en: '<span class="text-content-heading/95">Your Brand.</span><br />In <span class="text-gold">the Spotlight</span>.',
+    ar: 'علامتك التجارية.<br />في <span class="text-gold">الأضواء</span>.',
   },
   primaryCta: {
-    en: "Get a Quote",
+    en: "Start a Project",
     ar: "تواصل معنا",
   },
   secondaryCta: {
-    en: "View Our Work",
+    en: "See Our Work",
     ar: "شاهد أعمالنا",
   },
   subheading: {
-    en: "Establish online <strong>credibility</strong> and turn visitors into <strong>customers</strong>",
-    ar: "مواقع إلكترونية مخصصة <strong>تعكس قيمة شركتك الحقيقية</strong> وتُثَبت مكانتك في السوق",
+    en: 'Build <span class="font-[630]">instant trust</span>, outshine competitors, and turn website visits into <span class="font-[630]">real revenue</span>.',
+    ar: 'مواقع إلكترونية مخصصة <span class="font-[630]">تعكس قيمة شركتك الحقيقية</span> وتُثَبت مكانتك في السوق الرقمي.',
   },
 };
 

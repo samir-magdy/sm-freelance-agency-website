@@ -41,10 +41,10 @@ export default function FAQSection({ lang }: FAQSectionProps) {
                   focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border-strong focus-visible:ring-offset-4 focus-visible:ring-offset-background rounded-sm
                 `}
               >
-                <div className="relative shrink-0 w-5 h-5 me-5">
+                <span className="relative inline-block shrink-0 w-5 h-5 me-5" aria-hidden="true">
                   <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-0.5 rounded-full bg-icon" />
                   <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-3 rounded-full bg-icon [details[open]_&]:rotate-90" />
-                </div>
+                </span>
 
                 <h3 className="text-content-heading font-normal tracking-wide text-base sm:text-subheading">
                   {item.question[lang]}
@@ -67,7 +67,7 @@ export default function FAQSection({ lang }: FAQSectionProps) {
           <div className="flex flex-col items-center gap-2.5 sm:gap-4">
             <a
               href="#contact"
-              className="cta-primary rtl:pb-3 mb-2 sm:mb-0 shrink-0 py-2.5 px-6 rounded-lg text-gray-900 text-[clamp(1rem,4.5vw,1.3rem)] font-semibold tracking-wide"
+              className="cta-primary rtl:pb-3 mb-2 sm:mb-0 shrink-0 py-2.5 px-6 rounded-lg text-background text-[clamp(1rem,4.5vw,1.3rem)] font-semibold tracking-wide"
             >
               {t.cta[lang]}
             </a>

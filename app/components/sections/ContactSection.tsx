@@ -140,7 +140,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
               <div className="col-span-1">
                 <label htmlFor="name" className={labelClass}>
                   {t.form.name[lang]}
-                  <span aria-label="required">&nbsp;*</span>
+                  <span aria-hidden="true">&nbsp;*</span>
                 </label>
                 <input
                   type="text"
@@ -158,7 +158,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
               <div>
                 <label htmlFor="contactMethod" className={labelClass}>
                   {t.form.contactMethod[lang]}{" "}
-                  <span aria-label="required">*</span>
+                  <span aria-hidden="true">*</span>
                 </label>
                 <div className="relative">
                   <select
@@ -197,7 +197,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
                 <div className="col-span-2">
                   <label htmlFor="phone" className={labelClass}>
                     {t.form.phone[lang]}{" "}
-                    <span aria-label="required">*</span>
+                    <span aria-hidden="true">*</span>
                   </label>
                   <input
                     type="tel"
@@ -225,7 +225,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
                 <div className="col-span-2">
                   <label htmlFor="email" className={labelClass}>
                     {t.form.emailAddress[lang]}{" "}
-                    <span aria-label="required">*</span>
+                    <span aria-hidden="true">*</span>
                   </label>
                   <input
                     type="email"
@@ -286,7 +286,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
                 ? "mt-3.5 border border-green-500/75 bg-green-500/50 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2"
                 : status === "error"
                   ? "mt-3.5 border border-red-500/75 bg-red-500/50 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2"
-                  : "cta-primary cursor-pointer bg-linear-to-b from-gold to-gold-dark text-gray-900 disabled:opacity-50"
+                  : "cta-primary cursor-pointer bg-linear-to-b from-gold to-gold-dark text-background disabled:opacity-50"
             }`}
           >
             <span key={status === "loading" ? "default" : status}>

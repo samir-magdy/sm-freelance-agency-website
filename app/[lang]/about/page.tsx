@@ -128,9 +128,9 @@ export default async function AboutPage({
                   <Icon className="size-10" strokeWidth={1.5} />
                 </span>
 
-                <h3 className="relative text-[1.05rem] sm:text-[clamp(1rem,5vw,1.2rem)] font-semibold uppercase tracking-widest text-gold">
+                <p className="relative text-[1.05rem] sm:text-[clamp(1rem,5vw,1.2rem)] font-semibold uppercase tracking-widest text-gold">
                   {p.title[lang]}
-                </h3>
+                </p>
 
                 <span
                   aria-hidden="true"
@@ -219,7 +219,7 @@ export default async function AboutPage({
 
               <Link
                 href={`/${lang}#contact`}
-                className="w-full cta-primary whitespace-nowrap rounded-2xl px-7 py-3 text-center text-base font-semibold text-gray-900 transition-all duration-300 hover:border-gold/50 sm:mt-1"
+                className="w-full cta-primary whitespace-nowrap rounded-2xl px-7 py-3 text-center text-base font-semibold text-background transition-all duration-300 hover:border-gold/50 sm:mt-1"
               >
                 {t.ctaContact[lang]}
               </Link>

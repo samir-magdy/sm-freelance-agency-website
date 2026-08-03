@@ -21,8 +21,8 @@ const resource: Guide = {
     en: `
 <p>DIY website builders like Wix or Squarespace can work if you need something fairly simple. But they come with significant drawbacks that aren't immediately obvious and tend to surface over time, or the moment you need customizations that go beyond what the platform allows. Let's start with a clear comparison.</p>
 
-<h2>DIY vs. Professional: A Side-by-Side Comparison</h2>
-<p>DIY builders win on up-front cost. Professional builds win on time, design uniqueness, speed, SEO, local payment integration, and long-term scalability. Here is the side-by-side breakdown:</p>
+<h2>DIY vs. Hiring a Professional</h2>
+<p>Here is the side-by-side breakdown:</p>
 <table>
   <thead>
     <tr>
@@ -79,7 +79,7 @@ const resource: Guide = {
     ar: `
 <p>الحقيقة إن المنصات الجاهزة ليها عيوب كتير هنوضحها قريباً. العيوب دي مابتظهرش في البداية، لكنها بتبدأ تبان بوضوح مع مرور الزمن أو لما تحتاج تعديلات مخصصة برة القيود اللي المنصات دي بتفرضها عليك. خلينا نبدأ بمقارنة واضحة بين الأتنين.</p>
 
-<h2>مقارنة بين المنصات الجاهزة والتصميم الاحترافي:</h2>
+<h2>المقارنة بين المنصات الجاهزة والتصميم الاحترافي:</h2>
 <p> مقارنة بالتفصيل بين بناء الموقع بنفسك و الاستعانة بمصمم محترف:</p>
 <table>
   <thead>

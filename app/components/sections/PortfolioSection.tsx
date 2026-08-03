@@ -279,7 +279,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
               </a>
               <a
                 href="#contact"
-                className="cta-primary w-full inline-flex justify-center items-center gap-2 py-3 px-6 rounded-xl text-gray-900 text-[clamp(0.7rem,1.5vw,1.25rem)] font-semibold tracking-wide"
+                className="cta-primary w-full inline-flex justify-center items-center gap-2 py-3 px-6 rounded-xl text-background text-[clamp(0.7rem,1.5vw,1.25rem)] font-semibold tracking-wide"
               >
                 {t.primaryCta[lang]}
               </a>
@@ -359,14 +359,14 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
           <div
             dir="ltr"
             className="flex items-center gap-1.5 mt-0.5 mb-0.5"
-            role="tablist"
+            role="group"
             aria-label="Project slides"
           >
             {projects.map((proj, i) => (
               <button
                 key={proj.id}
-                role="tab"
-                aria-selected={i === active}
+                type="button"
+                aria-current={i === active ? "true" : undefined}
                 aria-label={`Go to project ${i + 1}`}
                 onClick={() => scrollToProject(i)}
                 className={`rounded-full transition-all duration-300 ${
@@ -394,7 +394,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
             </a>
             <a
               href="#contact"
-              className="mobile-portfolio-buttons w-full font-semibold justify-center cta-primary relative overflow-hidden inline-flex items-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-gray-900"
+              className="mobile-portfolio-buttons w-full font-semibold justify-center cta-primary relative overflow-hidden inline-flex items-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-background"
             >
               {t.primaryCta[lang]}
             </a>

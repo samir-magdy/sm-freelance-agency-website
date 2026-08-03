@@ -156,7 +156,7 @@ The Calculated Data:
                       <Icon
                         className={`w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 shrink-0 transition-colors ${isSelected ? "text-content-heading" : "text-icon"}`}
                       />
-                      <div className="flex flex-col gap-2">
+                      <span className="flex flex-col gap-2">
                         <span
                           className={`text-xs sm:text-base font-semibold leading-tight transition-colors ${isSelected ? "text-content-heading" : "text-content-heading/95"}`}
                         >
@@ -165,7 +165,7 @@ The Calculated Data:
                         <span className="hidden sm:block text-xs lg:text-[1.2rem] text-content-muted/90 leading-snug">
                           {base.description[lang]}
                         </span>
-                      </div>
+                      </span>
                     </button>
                   );
                 })}

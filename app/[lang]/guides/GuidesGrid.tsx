@@ -51,7 +51,7 @@ export default function GuidesGrid({ resources, lang, t }: GuidesGridProps) {
 
           <Link
             href={`/${lang}/guides/${guide.slug}`}
-            className="cta-primary inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-xl text-gray-900 text-base sm:text-[clamp(1rem,3vw,1.3rem)] font-semibold tracking-wide"
+            className="cta-primary inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-xl text-background text-base sm:text-[clamp(1rem,3vw,1.3rem)] font-semibold tracking-wide"
           >
             {t.readMore[lang]}
           </Link>

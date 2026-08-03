@@ -210,7 +210,7 @@ export default function GuidePage({
             </p>
             <Link
               href={`/${lang}#contact`}
-              className="cta-primary justify-center shrink-0 py-3 px-8 rounded-lg text-gray-900 text-base sm:text-xl font-medium tracking-wide whitespace-nowrap"
+              className="cta-primary justify-center shrink-0 py-3 px-8 rounded-lg text-background text-base sm:text-xl font-medium tracking-wide whitespace-nowrap"
             >
               {t.articleCtaButton[lang]}
          

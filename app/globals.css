@@ -79,7 +79,8 @@ section {
 
 /* LTR: bold gold words contrast the roman without going full black.
    Vertical gradient wash gives the gold optical depth. */
-#hero-title .text-gold {
+#hero-title .text-gold,
+#hero-title-mobile .text-gold {
   font-weight: 650;
   letter-spacing: -0.03em;
   background: linear-gradient(
@@ -93,7 +94,8 @@ section {
   color: transparent;
 }
 
-[dir="rtl"] #hero-title .text-gold {
+[dir="rtl"] #hero-title .text-gold,
+[dir="rtl"] #hero-title-mobile .text-gold {
   line-height: 1.6;
 }
 
@@ -226,6 +228,192 @@ section {
 .cta-primary:hover {
   transform: translateY(-0.125rem);
   filter: brightness(1.08);
+}
+
+.cta-secondary {
+  border: 1px solid var(--color-border-strong);
+  background-color: oklch(100% 0 0 / 0.02);
+  backdrop-filter: blur(8px);
+  color: var(--color-content-body);
+  transition:
+    transform 0.5s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cta-secondary:hover {
+    transform: translateY(-0.125rem);
+    color: var(--color-content-heading);
+    border-color: oklch(100% 0 0 / 0.2);
+  }
+}
+
+/* ── Hero typography ── */
+.hero-eyebrow {
+  padding-inline-start: 0.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  font-size: clamp(0.7rem, 3vw, 0.8rem);
+  color: oklch(from var(--color-content-muted) l c h / 0.9);
+}
+
+@media (width >= 40rem) {
+  .hero-eyebrow {
+    letter-spacing: 0.12em;
+    font-size: clamp(0.7rem, 3.5vw, 1rem);
+  }
+}
+
+[dir="rtl"] .hero-eyebrow {
+  text-transform: none;
+  line-height: 1.5;
+  font-size: clamp(0.7rem, 4vw, 1.2rem);
+}
+
+.hero-eyebrow-rule {
+  display: none;
+  flex: none;
+  height: 1px;
+  width: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: 9999px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    oklch(100% 0 0 / 0.7)
+  );
+}
+
+.hero-eyebrow-rule--end {
+  background-image: linear-gradient(
+    to right,
+    oklch(100% 0 0 / 0.7),
+    transparent
+  );
+}
+
+[dir="rtl"] .hero-eyebrow-rule {
+  background-image: linear-gradient(
+    to left,
+    transparent,
+    oklch(100% 0 0 / 0.7)
+  );
+}
+
+[dir="rtl"] .hero-eyebrow-rule--end {
+  background-image: linear-gradient(
+    to left,
+    oklch(100% 0 0 / 0.7),
+    transparent
+  );
+}
+
+@media (width >= 40rem) {
+  .hero-eyebrow-rule {
+    display: block;
+  }
+}
+
+.hero-title-mobile {
+  margin-top: 1.25rem;
+  color: var(--color-content-heading);
+  font-weight: 500;
+  letter-spacing: -2px;
+  line-height: 1.4;
+  font-size: clamp(2rem, 14vw, 5rem);
+}
+
+.hero-title {
+  color: var(--color-content-heading);
+  font-weight: 500;
+  line-height: 1.25;
+  font-size: clamp(2rem, 10vw, 5rem);
+  max-width: 16ch;
+  letter-spacing: -4px;
+}
+
+[dir="rtl"] .hero-title {
+  margin-top: 0.625rem;
+  font-size: clamp(2.25rem, 10vw, 4.5rem);
+  line-height: 2;
+}
+
+@media (width >= 40rem) {
+  .hero-title {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  [dir="rtl"] .hero-title {
+    line-height: 1.625;
+  }
+}
+
+.hero-subheading {
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-content-muted);
+  font-weight: 400;
+  text-wrap: pretty;
+  font-size: clamp(1.1rem, 5vw, 1.6rem);
+  line-height: 1.55;
+  max-width: 35rem;
+}
+
+[dir="rtl"] .hero-subheading {
+  margin-top: 0.625rem;
+  font-size: clamp(0.9rem, 4vw, 1.5rem);
+  line-height: 2.15;
+}
+
+@media (width >= 40rem) {
+  .hero-subheading {
+    margin-top: 1.5rem;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  [dir="rtl"] .hero-subheading {
+    margin-top: 1rem;
+    line-height: 2;
+  }
+}
+
+/* Desktop (lg+): trim hero typography ~10% for a tighter editorial feel. */
+@media (width >= 64rem) {
+  .hero-eyebrow {
+    font-size: clamp(0.7rem, 3.5vw, 0.9rem);
+  }
+
+  [dir="rtl"] .hero-eyebrow {
+    font-size: clamp(0.7rem, 4vw, 1.08rem);
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 4.5rem);
+  }
+
+  [dir="rtl"] .hero-title {
+    font-size: clamp(2.25rem, 10vw, 4.05rem);
+  }
+
+  .hero-subheading {
+    font-size: clamp(1.1rem, 5vw, 1.44rem);
+      margin-bottom: 0.25rem;
+      max-width: 35rem;
+
+  }
+
+  [dir="rtl"] .hero-subheading {
+    font-size: clamp(0.9rem, 4vw, 1.35rem);
+  }
+
+  .hero .cta-primary,
+  .hero .cta-secondary {
+    font-size: clamp(0.7rem, 4.5vw, 1.26rem);
+  }
 }
 
 .table-wrap {

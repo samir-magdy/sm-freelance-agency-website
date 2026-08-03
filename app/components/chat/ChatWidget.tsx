@@ -102,11 +102,25 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
     inputRef.current?.focus();
   }, [open]);
 
+  // Prevent the messages list from chaining scroll into the page while the
+  // widget is open. `overscroll-contain` on the list is unreliable on iOS,
+  // so lock overscroll at the body — but only while open, so pull-to-refresh
+  // still works everywhere else.
+  useEffect(() => {
+    if (!open) return;
+    document.body.style.overscrollBehavior = "none";
+    return () => {
+      document.body.style.overscrollBehavior = "";
+    };
+  }, [open]);
+
   // Follow the stream, but only while the user hasn't scrolled up.
+  // Also fires when `open` flips true, so reopening the widget lands at the
+  // bottom instead of scrollTop=0 on the freshly-mounted messages node.
   useEffect(() => {
     const el = scrollRef.current;
     if (el && stickToBottom.current) el.scrollTop = el.scrollHeight;
-  }, [messages, status]);
+  }, [messages, status, open]);
 
   function handleScroll() {
     const el = scrollRef.current;
@@ -189,7 +203,7 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
             role="log"
             aria-label={t.a11y.log[lang]}
             aria-live="polite"
-            className="flex flex-1 flex-col gap-3 overflow-y-auto scrollbar-none p-4"
+            className="flex flex-1 flex-col gap-3 overflow-y-auto scrollbar-none overscroll-contain p-4"
           >
             <p className="max-w-[92%] self-start text-base leading-relaxed text-content-body rtl:leading-loose">
               {t.greeting[lang]}
@@ -261,7 +275,7 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
               disabled={busy || !input.trim()}
               aria-label={t.a11y.send[lang]}
               className="cta-primary grid size-11 shrink-0 cursor-pointer place-items-center
-                rounded-xl text-gray-900 disabled:cursor-not-allowed disabled:opacity-50"
+                rounded-xl text-background disabled:cursor-not-allowed disabled:opacity-50"
             >
               <ArrowUp className="size-5" aria-hidden />
             </button>

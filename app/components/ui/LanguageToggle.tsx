@@ -17,7 +17,6 @@ export default function LanguageToggle({ lang, label }: LanguageToggleProps) {
   const nextPath = segments.join("/");
   return (
     <Link
-      id="language-toggler"
       href={nextPath}
       aria-label={`Switch to ${lang === "ar" ? "English" : "Arabic"}`}
       className="flex items-center px-2 md:p-0 gap-1.5 text-base md:text-[1.25rem] font-bold font-cairo text-content-muted hover:text-content-heading text-center"
