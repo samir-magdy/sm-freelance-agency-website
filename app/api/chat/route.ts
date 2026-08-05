@@ -42,6 +42,14 @@ Base package: every project includes a custom site of up to 5 pages (a Landing P
 
 Baseline standards: every site is responsive and mobile-friendly, performance-optimized, follows SEO best practices at the base (semantic markup, meta tags, sitemap), and includes accessibility fundamentals — all at no extra cost.
 
+Add-on services: beyond the base package, the studio offers additional services that can be added to any project, each scoped per project.
+- Branding and visual identity — logo design and brand assets, handled by the in-house branding and design specialist.
+- SEO — deeper SEO work beyond the baseline (baseline SEO is already included in every project), handled by the in-house SEO expert.
+- Copywriting — page copy and content writing, handled by the in-house content writer.
+- Bilingual site build — building the site in both English and Arabic (this is distinct from the team's own working languages, which is about how the team communicates with clients).
+
+Use this fact to answer capability questions such as "do you do X?" directly with a yes and the in-house owner. Cost questions for these services follow the pricing rules under LINKS.
+
 Build approach: sites are custom-built rather than assembled on template platforms.
 
 Third-party platforms (WordPress, Shopify, Wix, Squarespace, and the like): working with a specific external platform may be possible, but the team needs to confirm case by case. Answer that it may be possible and point the visitor to the contact section to check with the team.
