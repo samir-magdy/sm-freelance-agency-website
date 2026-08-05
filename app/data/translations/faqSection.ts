@@ -43,8 +43,8 @@ const faqSection: FAQSection = {
         ar: "ما الذي يشمله السعر الأساسي؟",
       },
       answer: {
-        en: "Every project includes a custom site of up to 5 pages (landing pages are one page), 1st-year hosting, domain setup & a post-launch 90 day guarantee. The following will add to the base price: an admin panel (modify content yourself), SEO (keyword research & technical on-page), branding (logo design, visual identity, content writing and more) & localized bilingual support (SEO-friendly). Use our <a href='/en/guides/website-cost-in-egypt#pricing-calculator'>pricing estimator</a> for reference or <a href='#contact'>contact us</a> if you have any questions.",
-        ar: "كل مشروع بيشمل موقع مخصص بحد أقصى 5 صفحات (صفحة الهبوط صفحة واحدة)، استضافة السنة الأولى، إعداد الدومين، وضمان لمدة 90 يوم بعد الإطلاق. الخدمات التالية غير مشمولة في السعر الأساسي: لوحة تحكم (لتعديل المحتوى بنفسك)، وتحسين محركات البحث (بحث الكلمات المفتاحية والتحسين التقني)، والهوية (تصميم اللوجو، الهوية البصرية، كتابة المحتوى وأكتر)، ودعم محلي بلغتين. استخدم <a href='/ar/guides/website-cost-in-egypt#pricing-calculator'>حاسبة الأسعار</a> للمرجع أو <a href='#contact'>تواصل معنا</a> إذا كان لديك أي استفسار.",
+        en: "Every project includes a custom site of up to 5 pages (landing pages are one page), an admin panel so you can edit your own content, 1st-year hosting, domain setup & a post-launch 90 day guarantee. For a breakdown of optional add-ons and pricing, use our <a href='/en/guides/website-cost-in-egypt#pricing-calculator'>pricing estimator</a> or <a href='#contact'>contact us</a> if you have any questions.",
+        ar: "كل مشروع بيشمل موقع مخصص بحد أقصى 5 صفحات (صفحة الهبوط صفحة واحدة)، لوحة تحكم لتعديل المحتوى بنفسك، استضافة السنة الأولى، إعداد الدومين، وضمان لمدة 90 يوم بعد الإطلاق. لمعرفة الإضافات الاختيارية والأسعار، استخدم <a href='/ar/guides/website-cost-in-egypt#pricing-calculator'>حاسبة الأسعار</a> أو <a href='#contact'>تواصل معنا</a> إذا كان لديك أي استفسار.",
       },
     },
 
@@ -104,8 +104,8 @@ const faqSection: FAQSection = {
         ar: "هل سيمكنني تعديل محتوى الموقع بنفسي؟",
       },
       answer: {
-        en: "If you choose to include a CMS (Admin Panel), then yes. We'll explain how it works before handover; it's user-friendly and requires zero technical knowledge.",
-        ar: "لو اخترت تضيف لوحة تحكم (نظام إدارة المحتوى CMS)، فأيوة. قبل ما نسلمك الموقع، بنشرحلك إزاي تستخدم اللوحة دي ببساطة، ومش هتحتاج أي خبرة تقنية علشان تدير المحتوى بتاعك.",
+        en: "Yes. Every site ships with a built-in admin panel so you can edit your own content. We'll walk you through it before handover; it's user-friendly and requires zero technical knowledge.",
+        ar: "أيوة. كل موقع بيتسلم ومعاه لوحة تحكم مدمجة علشان تقدر تعدّل المحتوى بنفسك. قبل ما نسلمك الموقع، بنشرحلك إزاي تستخدمها ببساطة، ومش هتحتاج أي خبرة تقنية علشان تدير المحتوى بتاعك.",
       },
     },
     {
@@ -134,8 +134,8 @@ const faqSection: FAQSection = {
         ar: "هل يمكنني تطوير الموقع في المستقبل؟",
       },
       answer: {
-        en: "Absolutely. We can expand your site with new pages, features, or an admin panel at any time without having to rebuild it from scratch.",
-        ar: "أكيد طبعاً، سواء عايز تضيف صفحات جديدة، أو مزايا جديدة، أو حتى لوحة تحكم لإدارة المحتوى، نقدر نوسع ونطور الموقع في أي وقت ومن غير ما نضطر نبدأ من الصفر.",
+        en: "Absolutely. We can expand your site with new pages or features at any time without having to rebuild it from scratch.",
+        ar: "أكيد طبعاً، سواء عايز تضيف صفحات جديدة أو مزايا جديدة، نقدر نوسع ونطور الموقع في أي وقت ومن غير ما نضطر نبدأ من الصفر.",
       },
     },
     // for vercel again

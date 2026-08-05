@@ -3,8 +3,8 @@ import type { Localized } from "@/app/types";
 export type BaseId = "landing" | "business";
 
 export const BASE_PRICES: Record<BaseId, number> = {
-  landing: 5999,
-  business: 8999,
+  landing: 6999,
+  business: 9999,
 };
 
 interface EstimatorBase {
@@ -157,18 +157,6 @@ const pricingEstimator: PricingEstimatorData = {
       isMultiplier: false,
       price: 2500,
       scalesWithScope: true,
-    },
-    {
-      id: "cms",
-      name: { en: "Admin Panel", ar: "لوحة تحكم" },
-      description: {
-        en: "Edit content yourself",
-        ar: "تعديل المحتوى بنفسك",
-      },
-      appliesTo: ["landing", "business"],
-      isMultiplier: false,
-      price: 3000,
-      scalesWithScope: false,
     },
   ],
 };
