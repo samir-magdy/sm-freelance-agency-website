@@ -4,7 +4,7 @@ import travelImg from "../../public/project-screenshots/travel.webp";
 import butterDesignImg from "../../public/project-screenshots/butter-design.webp";
 import healthcareImg from "../../public/project-screenshots/dental.webp";
 import interiorImg from "../../public/project-screenshots/interior.webp";
-import hadeerImg from "../../public/project-screenshots/hadeer.webp";
+import hadeerImg from "../../public/project-screenshots/hadeer.png";
 
 import { SITE_URL, SITE_NAME, SCHEMA_IDS } from "../constants";
 import type { ProjectId } from "./translations/portfolioSection";

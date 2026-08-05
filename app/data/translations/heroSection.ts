@@ -10,7 +10,7 @@ const hero: {
   subheading: Localized;
 } = {
   eyebrow: {
-    en: `Website Design & Development`,
+    en: `Web Design & Development`,
     ar: "تصميم وتطوير مواقع إلكترونية",
   },
   name: {

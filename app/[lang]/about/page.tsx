@@ -137,7 +137,7 @@ export default async function AboutPage({
                   className="relative mx-auto my-8 sm:my-4 block h-px w-8 bg-content-muted/40 transition-all duration-500 group-hover:w-14 group-hover:bg-gold/70"
                 />
 
-                <p className="relative leading-[1.7] rtl:leading-loose text-content-muted text-lg sm:text-[clamp(1rem,4vw,1.2rem)]">
+                <p className="relative text-pretty leading-[1.7] rtl:leading-loose text-content-muted text-lg sm:text-[clamp(1rem,4vw,1.2rem)]">
                   {p.desc[lang]}
                 </p>
               </li>
@@ -216,13 +216,6 @@ export default async function AboutPage({
                   {t.ctaLinkedIn[lang]}
                 </Link>
               </div>
-
-              <Link
-                href={`/${lang}#contact`}
-                className="w-full cta-primary whitespace-nowrap rounded-2xl px-7 py-3 text-center text-base font-semibold text-background transition-all duration-300 hover:border-gold/50 sm:mt-1"
-              >
-                {t.ctaContact[lang]}
-              </Link>
             </div>
           </div>
         </div>

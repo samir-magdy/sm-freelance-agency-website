@@ -71,6 +71,7 @@ const resource: Guide = {
 </table>
 
 <h2>The DIY Cost Trap</h2>
+
 <p>The DIY cost trap is that the low monthly USD subscription hides two much larger costs: the value of your time and years of compounding foreign-currency fees. The main appeal of DIY platforms is the low starting price, but neither of these costs is visible up front. The first is the value of your time: the hours you spend wrestling with layouts and fixing technical issues are hours away from running your business. The second is the compounding USD subscription. Most platforms cost $20–$50/month, and over two years, that's roughly 30,000–80,000 EGP at current exchange rates. A professional build, paid once in EGP, will typically cost less than 30,000. For a full breakdown of what professional builds cost, read our <a href='/en/guides/website-cost-in-egypt'>guide on website costs in Egypt</a>.</p>
 
 <h2>The Bottom Line</h2>
@@ -129,6 +130,7 @@ const resource: Guide = {
 </table>
 
 <h2>فخ تكلفة المنصات الجاهزة</h2>
+
 <p>فخ تكلفة المنصات الجاهزة هو إن الاشتراك الشهري القليل بالدولار بيخفي تكلفتين أكبر بكتير: قيمة وقتك، وسنين من الاشتراك بالدولار اللي بيتراكم. الميزة الأساسية في المنصات الجاهزة هي السعر القليل في البداية، بس التكلفتين دول مش ظاهرين من البداية. الأولى: قيمة وقتك، الساعات اللي بتضيعها علشان تظبط شكل الصفحة أو تحل مشكلة تقنية. التانية: الاشتراك بالدولار بيتراكم. أغلب المنصات بتكلف 20-50 دولار في الشهر، على مدار سنتين، ده تقريباً 30,000-80,000 جنيه بسعر الصرف الحالي، مقارنةً <a href='/ar/guides/website-cost-in-egypt'> بتكلفة الموقع الاحترافي في مصر </a> اللي بتدفعه مرة واحدة بالجنيه وغالباً هيكون أرخص من 30,000. في المحصلة، المنصات الجاهزة هتكلفك أضعاف التصميم الاحترافي على المدى الطويل.</p>
 
 <h2>الخاتمة</h2>

@@ -14,7 +14,7 @@ const resource: Guide = {
     ar: `هل مشروعي محتاج موقع إلكتروني؟ (${CURRENT_YEAR})`,
   },
   excerpt: {
-    en: "The first thing a potential customer does is search for you online, most likely using Google or an AI like ChatGPT. If they find your competitors instead of you, or if ChatGPT doesn't mention you, you've likely lost the sale before you've even had a chance. In this guide we explain why having a website is crucial for this scenario.",
+    en: "The first thing a potential customer does is search for you online, most likely using Google or an AI like ChatGPT. If they find your competitors instead of you, you've likely lost the sale before you've even had a chance to present yourself. In this guide we explain why having a website is crucial for this scenario.",
     ar: "لما بتسمع عن شركة أو خدمة جديدة، أول حاجة بتعملها إيه؟ تلقائياً بتفتح جوجل أو شات جي بي تي وتكتب اسمها علشان تطمن وتشوف تفاصيلها. العميل اللي بيدور على شركتك بيعمل نفس الشيء.",
   },
   content: {
@@ -63,6 +63,7 @@ const resource: Guide = {
 
     ar: `
 <p>لما بتسمع عن شركة أو خدمة جديدة، أول حاجة بتعملها إيه؟  تلقائياً بتفتح جوجل وتكتب اسمها علشان تطمن وتشوف تفاصيلها. العميل اللي بيدور على شركتك بيعمل نفس الشيء، ولو دخل يدور عليك ومالقاش ليك موقع، وفي نفس الوقت لقى موقع احترافي لمنافس ليك، بنسبة كبيرة إنت خسرت العميل للمنافس قبل حتى ما تاخد فرصة تعرض عليه شغلك. الموقع الإلكتروني الاحترافي هو بمثابة "عقد الثقة" والمقر الرسمي لشركتك على الإنترنت؛ أول ما العميل بيدخله، بيعرف فوراً إنه بيتعامل مع كيان حقيقي، مستقر، ووراه براند قوي يقدر يثق فيه ويدفعله وهو مطمن.</p>
+
 <h2>ليه صفحة الفيسبوك أو الإنستجرام مش كفاية؟</h2>
 <p>السوشيال ميديا ممتازة علشان الناس تعرفك، لكنها متصلحش تكون المقر الأساسي لشغلك. الجدول ده بيوضحلك الفرق والخطورة لو معتمد على السوشيال ميديا بس:</p>
 
@@ -72,7 +73,6 @@ const resource: Guide = {
   <li><strong>الظهور في نتائج بحث جوجل:</strong> لما حد يكتب على جوجل "عيادة في مصر الجديدة" أو "مكتب ديكور في القاهرة"، جوجل بيظهر المواقع الإلكترونية في الأول مش صفحات الفيسبوك.</li>
   <li><strong>توفير وقتك ومجهودك:</strong> بدل ما تقضي يومك ترد على رسائل "بكام" و"التفاصيل"، موقعك بيعرض خدماتك وأسعارك بشكل منظم وبيجمع بيانات العملاء ومواعيد الحجز تلقائياً طول الـ 24 ساعة.</li>
 </ul>
-
 
 <h2>الحسبة المالية: الإعلانات المدفوعة ضد الموقع الإلكتروني</h2>
 <p>الإعلانات المدفوعة بتوقف تجيبلك عملاء بمجرد ما توقف الدفع، لكن الموقع الإلكتروني الاحترافي بيفضل يجيبلك زيارات مجانية من جوجل لسنين بعد تكلفة بناء مرة واحدة. أغلب أصحاب المشاريع بيعتمدوا بالكامل على إعلانات فيسبوك وإنستجرام المموله — دي المقارنة الاستثمارية بالتفصيل:</p>

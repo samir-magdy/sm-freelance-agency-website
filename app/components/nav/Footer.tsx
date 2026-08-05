@@ -181,7 +181,7 @@ export default function Footer({ lang }: FooterProps) {
             </address>
 
             <div className="flex items-center gap-2 sm:gap-3 mx-auto text-[0.7rem] sm:text-sm text-content-muted/80">
-              <small dir="ltr" className="inline-flex items-center text-[0.7rem]">
+              <small dir="ltr" className="inline-flex items-center text-[0.7rem] sm:text-sm">
                 <Copyright size={12} />
                 &nbsp;{CURRENT_YEAR} {SITE_NAME}
               </small>

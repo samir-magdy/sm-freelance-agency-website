@@ -13,7 +13,6 @@ interface AboutSection {
   pillars: Pillar[];
   founderName: Localized;
   founderRole: Localized;
-  ctaContact: Localized;
   ctaLinkedIn: Localized;
   ctaWhatsApp: Localized;
   ctaEmail: Localized;
@@ -21,7 +20,7 @@ interface AboutSection {
 
 const aboutSection: AboutSection = {
   eyebrow: {
-    en: "About the Studio",
+    en: `About the Studio`,
     ar: "عن الاستوديو",
   },
 
@@ -48,7 +47,7 @@ const aboutSection: AboutSection = {
     {
       title: { en: "Transparency", ar: "الشفافية" },
       desc: {
-        en: "Clear options, fair pricing and honest advice.",
+        en: "Clear options, fair pricing, honest advice.",
         ar: "خيارات واضحة وأسعار عادلة.",
       },
     },
@@ -75,10 +74,6 @@ const aboutSection: AboutSection = {
   founderRole: {
     en: "Founder & Lead Developer",
     ar: "المؤسس والمطور الرئيسي",
-  },
-  ctaContact: {
-    en: "Get in Touch",
-    ar: "تواصل معنا",
   },
   ctaLinkedIn: {
     en: "LinkedIn",
