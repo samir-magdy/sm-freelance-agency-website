@@ -359,7 +359,7 @@ section {
   text-wrap: pretty;
   font-size: clamp(1.1rem, 5vw, 1.6rem);
   line-height: 1.55;
-  max-width: 35rem;
+  max-width: 30rem;
 }
 
 [dir="rtl"] .hero-subheading {
@@ -402,7 +402,7 @@ section {
   .hero-subheading {
     font-size: clamp(1.1rem, 5vw, 1.44rem);
       margin-bottom: 0.25rem;
-      max-width: 35rem;
+      max-width: 30rem;
 
   }
 
@@ -582,6 +582,31 @@ section {
     transform: translateX(76px) rotate(-20deg);
     opacity: 0;
   }
+}
+
+/* ══════════════════════════════════════
+   FAQ Accordion — Native <details> height animation
+   Progressive enhancement: modern browsers animate,
+   older ones fall back to the instant open/close.
+   ══════════════════════════════════════ */
+
+html {
+  interpolate-size: allow-keywords;
+}
+
+#FAQs details::details-content {
+  block-size: 0;
+  overflow: clip;
+  opacity: 0;
+  transition:
+    block-size 220ms ease-out,
+    opacity 180ms ease-out,
+    content-visibility 220ms ease-out allow-discrete;
+}
+
+#FAQs details[open]::details-content {
+  block-size: auto;
+  opacity: 1;
 }
 
 /* ══════════════════════════════════════
