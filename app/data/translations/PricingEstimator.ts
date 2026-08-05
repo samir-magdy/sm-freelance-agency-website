@@ -158,6 +158,18 @@ const pricingEstimator: PricingEstimatorData = {
       price: 2500,
       scalesWithScope: true,
     },
+    {
+      id: "branding",
+      name: { en: "Branding", ar: "الهوية البصرية" },
+      description: {
+        en: "Logo & visual identity",
+        ar: "لوجو وهوية بصرية",
+      },
+      appliesTo: ["landing", "business"],
+      isMultiplier: false,
+      price: 3000,
+      scalesWithScope: false,
+    },
   ],
 };
 

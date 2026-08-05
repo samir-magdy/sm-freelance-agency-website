@@ -84,8 +84,8 @@ const faqSection: FAQSection = {
         ar: "ما هي المتطلبات اللازمة للبدء في العمل؟",
       },
       answer: {
-        en: "Your basic brand assets like your logo, the text content for each page, and any high-quality photos or videos you want to showcase.",
-        ar: "كل اللي بنحتاجه منك هو أساسيات الهوية الخاصة بيك، زي اللوجو، والنصوص اللي عايزها تظهر في كل صفحة، وأي صور أو فيديوهات تحب تعرضها على الموقع.",
+        en: "Your basic brand assets like your logo, the text content for each page, and any high-quality photos or videos you want to showcase. We also have a dedicated designer who can design them for you, as well as your full branding and visual identity.",
+        ar: "كل اللي بنحتاجه منك هو أساسيات الهوية الخاصة بيك، زي اللوجو، والنصوص اللي عايزها تظهر في كل صفحة، وأي صور أو فيديوهات تحب تعرضها على الموقع. وعندنا مصمم متخصص يقدر يصممهم لك، وكمان يعملك هوية بصرية كاملة.",
       },
     },
     {
