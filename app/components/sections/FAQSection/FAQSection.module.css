@@ -1,21 +1,42 @@
 /* ══════════════════════════════════════
-   FAQ Accordion — Native <details> height animation
-   Progressive enhancement: modern browsers animate,
-   older ones fall back to the instant open/close.
-   Requires `html { interpolate-size: allow-keywords }` set in globals.css.
+   FAQ Accordion — Cross-browser height animation
+   Uses the grid-template-rows 0fr↔1fr trick so we don't
+   depend on interpolate-size (Chromium-only). Works in
+   iOS Safari, Firefox, and Chromium.
    ══════════════════════════════════════ */
 
+/* Keep collapsed content in the layout tree so grid-rows can animate.
+   Overrides `content-visibility: hidden` on ::details-content (newer engines).
+   Older engines' `display: none` on non-summary children is overridden by
+   the `.collapsible` class rule below. */
 .accordion details::details-content {
-  block-size: 0;
-  overflow: clip;
-  opacity: 0;
-  transition:
-    block-size 420ms cubic-bezier(0.22, 0.61, 0.36, 1),
-    opacity 260ms ease-out,
-    content-visibility 420ms cubic-bezier(0.22, 0.61, 0.36, 1) allow-discrete;
+  content-visibility: visible;
+  display: block;
 }
 
-.accordion details[open]::details-content {
-  block-size: auto;
+.accordion .collapsible {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 500ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 400ms ease-out;
+}
+
+.accordion details[open] .collapsible {
+  grid-template-rows: 1fr;
   opacity: 1;
+}
+
+.accordion .collapsibleInner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+@media (min-width: 640px) {
+  .accordion .collapsible {
+    transition:
+      grid-template-rows 420ms cubic-bezier(0.22, 0.61, 0.36, 1),
+      opacity 260ms ease-out;
+  }
 }

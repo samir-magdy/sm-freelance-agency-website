@@ -44,7 +44,7 @@ export default function FAQSection({ lang }: FAQSectionProps) {
               >
                 <span className="relative inline-block shrink-0 w-5 h-5 me-5" aria-hidden="true">
                   <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-0.5 rounded-full bg-icon" />
-                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-3 rounded-full bg-icon transition-transform duration-[420ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] [details[open]_&]:rotate-90" />
+                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-3 rounded-full bg-icon transition-transform duration-[700ms] sm:duration-[420ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] [details[open]_&]:rotate-90" />
                 </span>
 
                 <h3 className="text-content-heading font-normal tracking-wide text-base sm:text-subheading">
@@ -52,11 +52,15 @@ export default function FAQSection({ lang }: FAQSectionProps) {
                 </h3>
               </summary>
 
-              <div className="pb-6 md:pb-7 ps-10">
-                <p
-                  className="html-content text-base sm:text-xl text-content-muted/95 leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: item.answer[lang] }}
-                />
+              <div className={styles.collapsible}>
+                <div className={styles.collapsibleInner}>
+                  <div className="pb-6 md:pb-7 ps-10">
+                    <p
+                      className="html-content text-base sm:text-xl text-content-muted/95 leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: item.answer[lang] }}
+                    />
+                  </div>
+                </div>
               </div>
             </details>
           ))}

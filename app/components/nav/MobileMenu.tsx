@@ -102,9 +102,9 @@ export default function MobileMenu({
       <div
         onClick={closeMenu}
         inert={!isMenuOpen}
-        className={`fixed inset-0 z-40 bg-black/90 transition-opacity duration-250 ease-out ${
+        className={`fixed inset-0 z-40 bg-background/70 transition-opacity duration-250 ease-out ${
           isMenuOpen
-            ? "opacity-100 backdrop-blur-md pointer-events-auto"
+            ? "opacity-100 backdrop-blur-xl pointer-events-auto"
             : "opacity-0 backdrop-blur-none pointer-events-none"
         }`}
       />
