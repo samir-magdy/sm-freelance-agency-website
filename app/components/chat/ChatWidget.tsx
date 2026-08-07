@@ -28,6 +28,10 @@ const LINK_TARGETS = new Set<string>([
 
 const MARKDOWN_LINK = /\[([^\]]+)\]\(([^)]+)\)/g;
 
+// Dispatch this on `window` to force the chat panel closed — used by the
+// mobile menu so opening it dismisses the widget behind it.
+export const CHAT_CLOSE_EVENT = "chat:close";
+
 function renderMessage(
   parts: { type: string; text?: string }[],
   lang: Lang,
@@ -92,7 +96,6 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
 
   const inputRef = useRef<HTMLInputElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const stickToBottom = useRef(true);
 
   // Autofocus the input when the panel opens — but only on devices with a
   // real pointer. On touch-primary devices, focusing raises the software
@@ -103,56 +106,37 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
     inputRef.current?.focus();
   }, [open]);
 
-  // Lock body scroll on mobile only. On desktop the widget is a small
-  // floating panel and locking the page behind it is annoying UX. On touch
-  // devices, `overscroll-behavior: none` alone doesn't stop iOS from
-  // scrolling the body when a touch inside the widget lands on a non-
-  // scrollable region (header, input, or a messages list with no overflow
-  // yet), so we pin the body with `position: fixed` and restore scrollY on
-  // close.
+  // Lock page scroll on mobile while the panel is open. On desktop the widget
+  // is a small floating panel and locking the page behind it would be
+  // annoying UX.
   useEffect(() => {
     if (!open) return;
     if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
-    const scrollY = window.scrollY;
-    const { body } = document;
-    body.style.overscrollBehavior = "none";
-    body.style.position = "fixed";
-    body.style.top = `-${scrollY}px`;
-    body.style.width = "100%";
+    const html = document.documentElement;
+    html.style.overflow = "hidden";
     return () => {
-      body.style.overscrollBehavior = "";
-      body.style.position = "";
-      body.style.top = "";
-      body.style.width = "";
-      window.scrollTo(0, scrollY);
+      html.style.overflow = "";
     };
   }, [open]);
 
-  // Reset stick-to-bottom on open so reopening always lands at the newest
-  // message, even if the user had scrolled up before closing.
-  useEffect(() => {
-    if (open) stickToBottom.current = true;
-  }, [open]);
-
-  // Follow the stream, but only while the user hasn't scrolled up.
-  // Also fires when `open` flips true, so reopening the widget lands at the
-  // bottom instead of scrollTop=0 on the freshly-mounted messages node.
+  // Always follow the log to the bottom on new messages, status changes, and
+  // reopen. The chat is short-lived enough that snapping beats tracking
+  // whether the user scrolled up.
   useEffect(() => {
     const el = scrollRef.current;
-    if (el && stickToBottom.current) el.scrollTop = el.scrollHeight;
+    if (el) el.scrollTop = el.scrollHeight;
   }, [messages, status, open]);
 
-  function handleScroll() {
-    const el = scrollRef.current;
-    if (!el) return;
-    stickToBottom.current =
-      el.scrollHeight - el.scrollTop - el.clientHeight < 80;
-  }
+  // Close on external request (e.g. mobile menu opening).
+  useEffect(() => {
+    const close = () => setOpen(false);
+    window.addEventListener(CHAT_CLOSE_EVENT, close);
+    return () => window.removeEventListener(CHAT_CLOSE_EVENT, close);
+  }, []);
 
   function submit(text: string) {
     const trimmed = text.trim();
     if (!trimmed || busy) return;
-    stickToBottom.current = true;
     sendMessage({ text: trimmed });
     setInput("");
   }
@@ -224,7 +208,6 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
           {/* Messages */}
           <div
             ref={scrollRef}
-            onScroll={handleScroll}
             role="log"
             aria-label={translations.a11y.log[lang]}
             aria-live="polite"

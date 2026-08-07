@@ -37,7 +37,7 @@ export default function HeroNav({ lang, strings }: HeroNavProps) {
         className="hidden lg:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl px-8 pe-10 py-1 pt-1.5"
       >
         <div className="relative flex items-center w-full">
-          <Link href={`/${lang}`} aria-label="Samir Magdy Web Studio - Home">
+          <a href={`/${lang}`} aria-label="Samir Magdy Web Studio - Home">
             <Image
               src="/brand.svg"
               alt={`${SITE_NAME} – Website Design Company in Egypt`}
@@ -46,7 +46,7 @@ export default function HeroNav({ lang, strings }: HeroNavProps) {
               style={{ height: "auto" }}
               priority
             />
-          </Link>
+          </a>
           <ul className="flex w-full justify-around xl:px-20 lg:px-16 text-subheading font-medium tracking-wider text-content-body">
             {navItems.map((item) =>
               item.kind === "hash" ? (

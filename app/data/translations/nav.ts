@@ -9,10 +9,10 @@ export type NavKey =
   | "contact";
 
 const navTranslations: Record<NavKey, Localized> = {
-  portfolio: { en: "Portfolio", ar: "سابقة الأعمال" },
-  services: { en: "Services", ar: "الخدمات والأسعار" },
+  portfolio: { en: "Portfolio", ar: "الأعمال" },
+  services: { en: "Services", ar: "الخدمات" },
   faq: { en: "FAQs", ar: "الأسئلة الشائعة" },
-  about: { en: "About", ar: "من نحن" },
+  about: { en: "About", ar: "الاستوديو" },
   guides: { en: "Guides", ar: "الأدلة" },
   contact: { en: "Contact", ar: "تواصل معنا" },
 };

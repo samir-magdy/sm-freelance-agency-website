@@ -8,6 +8,7 @@ import LanguageToggle from "@/app/components/ui/LanguageToggle";
 import { navItems, type NavKey } from "@/app/data/translations/nav";
 import type { Lang } from "@/app/types";
 import { SITE_NAME } from "@/app/constants";
+import { CHAT_CLOSE_EVENT } from "@/app/components/chat/ChatWidget";
 
 interface MobileMenuProps {
   lang: Lang;
@@ -58,7 +59,7 @@ export default function MobileMenu({
         dir="ltr"
       >
         <div className="flex justify-between items-center px-3">
-          <Link
+          <a
             href={`/${lang}`}
             aria-label="Samir Magdy Web Studio - Home"
             onClick={closeMenu}
@@ -70,11 +71,13 @@ export default function MobileMenu({
               height={42}
               priority
             />
-          </Link>
+          </a>
           <button
             onClick={(e) => {
               e.stopPropagation();
-              setIsMenuOpen(!isMenuOpen);
+              const next = !isMenuOpen;
+              setIsMenuOpen(next);
+              if (next) window.dispatchEvent(new Event(CHAT_CLOSE_EVENT));
             }}
             className="block p-4"
             aria-label={isMenuOpen ? a11y.closeMenu : a11y.openMenu}
@@ -99,9 +102,9 @@ export default function MobileMenu({
       <div
         onClick={closeMenu}
         inert={!isMenuOpen}
-        className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-250 ease-out ${
+        className={`fixed inset-0 z-40 bg-black/90 transition-opacity duration-250 ease-out ${
           isMenuOpen
-            ? "opacity-100 backdrop-blur-3xl pointer-events-auto"
+            ? "opacity-100 backdrop-blur-md pointer-events-auto"
             : "opacity-0 backdrop-blur-none pointer-events-none"
         }`}
       />

@@ -53,10 +53,10 @@ const contactSection: ContactSection = {
       ar: "اختار الطريقة",
     },
     whatsapp: { en: "WhatsApp", ar: "واتساب" },
-    phoneCall: { en: "Phone Call", ar: "مكالمة تليفونية" },
+    phoneCall: { en: "Phone Call", ar: "موبايل" },
     contactMethodEmail: { en: "Email", ar: "الإيميل" },
     emailAddress: { en: "Email", ar: "البريد الإلكتروني" },
-    emailPlaceholder: { en: "your@email.com", ar: "your@email.com" },
+    emailPlaceholder: { en: "salma@gmail.com", ar: "salma@gmail.com" },
     message: { en: "Message", ar: "تفاصيل المشروع" },
     messageOptional: { en: "optional", ar: "اختياري" },
     messagePlaceholder: {
@@ -78,7 +78,7 @@ const contactSection: ContactSection = {
       ar: "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
     },
     orDivider: { en: "OR", ar: "أو" },
-    whatsappCta: { en: "Reach Us On WhatsApp", ar: "تواصل عبر الواتساب" },
+    whatsappCta: { en: "Chat On WhatsApp", ar: "تواصل عبر الواتساب" },
   },
 };
 
