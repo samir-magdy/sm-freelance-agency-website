@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
-import "../globals.css";
-import HeroNav, { type HeroNavStrings } from "../components/nav/HeroNav";
-import nav, { langToggle } from "../data/translations/nav";
-import a11y from "../data/translations/a11y";
-import Footer from "../components/nav/Footer";
-import LightRaysBackground from "../components/ui/LightRaysBackground";
+import "@/app/globals.css";
+import HeroNav, { type HeroNavStrings } from "@/app/components/nav/HeroNav";
+import navTranslations, { langToggle } from "@/app/data/translations/nav";
+import a11y from "@/app/data/translations/a11y";
+import Footer from "@/app/components/nav/Footer";
+import LightRaysBackground from "@/app/components/ui/LightRaysBackground";
 import { SITE_URL, SITE_NAME } from "@/app/constants";
 import { isLang, type Lang } from "@/app/types";
 import { notFound } from "next/navigation";
-import ChatWidget from "../components/chat/ChatWidget";
+import ChatWidget from "@/app/components/chat/ChatWidget";
 
 const cairoLatin = Cairo({
   variable: "--font-cairo",
@@ -87,12 +87,12 @@ export default async function LangLayout({
 
   const heroNavStrings: HeroNavStrings = {
     nav: {
-      portfolio: nav.portfolio[lang],
-      pricing: nav.pricing[lang],
-      faq: nav.faq[lang],
-      guides: nav.guides[lang],
-      contact: nav.contact[lang],
-      about: nav.about[lang],
+      portfolio: navTranslations.portfolio[lang],
+      services: navTranslations.services[lang],
+      faq: navTranslations.faq[lang],
+      guides: navTranslations.guides[lang],
+      contact: navTranslations.contact[lang],
+      about: navTranslations.about[lang],
     },
     a11y: {
       desktopNav: a11y.desktopNav[lang],

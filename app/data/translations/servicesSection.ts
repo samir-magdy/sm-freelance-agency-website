@@ -1,29 +1,29 @@
 import type { Localized } from "@/app/types";
-import { BASE_PRICES } from "./PricingEstimator";
+import { BASE_PRICES } from "./pricingEstimator";
 
-interface PricingCard {
-  id: "landing" | "business" | "custom-app";
+interface ServiceCard {
+  id: "landing" | "business" | "customApp";
   name: Localized;
   tagline: Localized;
   price: number | null;
 }
 
-interface PricingCards {
+interface ServicesSectionTranslations {
   heading: Localized;
   subheading: Localized;
   estimatorLead: Localized;
   estimatorCta: Localized;
   startsAt: Localized;
   currency: Localized;
-  cta: Localized;
+  contactCta: Localized;
   customPriceLabel: Localized;
-  cards: PricingCard[];
+  cards: ServiceCard[];
 }
 
-export const pricingCards: PricingCards = {
+export const servicesSectionTranslations: ServicesSectionTranslations = {
   heading: {
-    en: "Services & Pricing",
-    ar: "الخدمات والأسعار",
+    en: "Our Services",
+    ar: "خدماتنا",
   },
   subheading: {
     en: "Pick what best suits your needs",
@@ -45,7 +45,7 @@ export const pricingCards: PricingCards = {
     en: "EGP",
     ar: "جنيه مصري",
   },
-  cta: {
+  contactCta: {
     en: "Get in Touch",
     ar: "طلب استشارة",
   },
@@ -79,7 +79,7 @@ export const pricingCards: PricingCards = {
       price: BASE_PRICES.business,
     },
     {
-      id: "custom-app",
+      id: "customApp",
       name: {
         en: "Custom Web App",
         ar: "تطبيق ويب",

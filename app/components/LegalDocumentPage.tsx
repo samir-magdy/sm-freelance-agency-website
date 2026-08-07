@@ -23,13 +23,13 @@ export default function LegalDocumentPage({
             </p>
           </header>
 
-          {document.items.map((item, index) => (
+          {document.sections.map((section, index) => (
             <section key={index} className="scroll-mt-24 text-start">
               <h2 className="text-subheading font-bold text-content-heading mb-3">
-                {item.title[lang] || item.title.en}
+                {section.title[lang] || section.title.en}
               </h2>
               <p className="text-base text-content-body leading-relaxed whitespace-pre-line">
-                {item.content[lang] || item.content.en}
+                {section.content[lang] || section.content.en}
               </p>
             </section>
           ))}

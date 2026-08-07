@@ -1,0 +1,21 @@
+/* ══════════════════════════════════════
+   FAQ Accordion — Native <details> height animation
+   Progressive enhancement: modern browsers animate,
+   older ones fall back to the instant open/close.
+   Requires `html { interpolate-size: allow-keywords }` set in globals.css.
+   ══════════════════════════════════════ */
+
+.accordion details::details-content {
+  block-size: 0;
+  overflow: clip;
+  opacity: 0;
+  transition:
+    block-size 220ms ease-out,
+    opacity 180ms ease-out,
+    content-visibility 220ms ease-out allow-discrete;
+}
+
+.accordion details[open]::details-content {
+  block-size: auto;
+  opacity: 1;
+}

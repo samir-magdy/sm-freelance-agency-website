@@ -1,0 +1,117 @@
+/* ══════════════════════════════════════
+   Nollie avatar — visual + animation
+   Shared module: imported by NollieAvatar (owns .avatar and descendants)
+   and ChatWidget (owns .launcher). Same import → same generated class hashes,
+   so the cross-component selector `.launcher:hover .avatar .eyeL` resolves.
+   ══════════════════════════════════════ */
+
+.avatar {
+  filter: drop-shadow(0 6px 14px oklch(0% 0 0 / 0.45))
+    drop-shadow(0 0 12px oklch(from var(--color-gold) l c h / 0.18));
+}
+
+.avatar .auraRing {
+  transform-origin: 32px 32px;
+  transform-box: fill-box;
+}
+
+.avatar.isAnimated .auraRing {
+  animation: breathe 4.2s ease-in-out infinite;
+}
+
+/* Gaze — driven by --nollie-eye-x/y CSS variables set from JS on mouse move.
+   CSS variable names are not scoped by CSS Modules, so the JS setter in
+   NollieAvatar.tsx and the selector below reference the same identifier. */
+.avatar .eyes {
+  transform: translate(var(--nollie-eye-x, 0), var(--nollie-eye-y, 0));
+  transition: transform 220ms ease-out;
+}
+
+.avatar .eye {
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.avatar.isAnimated .eye {
+  animation: blink 6.4s ease-in-out infinite;
+}
+
+.avatar .gleamSweep {
+  opacity: 0;
+}
+
+.avatar.isAnimated .gleamSweep {
+  animation: gleam 5.5s ease-in-out infinite;
+  animation-delay: 1.4s;
+}
+
+/* Wink one eye when the launcher is hovered — a small moment of delight */
+.launcher:hover .avatar .eyeL {
+  animation: wink 0.55s ease-in-out;
+}
+
+/* Calm Nollie down on touch-primary devices: no hover means the animations
+   only ever read as unsolicited motion competing with page content. Keep
+   her present, just not attention-grabbing. */
+@media (hover: none) and (pointer: coarse) {
+  .avatar {
+    filter: drop-shadow(0 4px 10px oklch(0% 0 0 / 0.35));
+  }
+  .avatar.isAnimated .auraRing {
+    animation: none;
+    opacity: 0.5;
+  }
+  .avatar.isAnimated .gleamSweep {
+    animation: none;
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.08);
+  }
+}
+
+@keyframes wink {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.08);
+  }
+}
+
+@keyframes gleam {
+  0% {
+    transform: translateX(0) rotate(-20deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(76px) rotate(-20deg);
+    opacity: 0;
+  }
+}

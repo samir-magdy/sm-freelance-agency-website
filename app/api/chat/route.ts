@@ -222,7 +222,7 @@ export async function POST(req: Request) {
     model: groq("qwen/qwen3.6-27b"),
     system: buildPrompt(pageLang),
     messages: await convertToModelMessages(history),
-    maxOutputTokens: 200,
+    maxOutputTokens: 120,
     providerOptions: {
       groq: { reasoningEffort: "none" },
     },

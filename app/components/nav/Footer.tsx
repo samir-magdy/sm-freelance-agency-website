@@ -1,4 +1,4 @@
-import SocialIcons from "../ui/SocialIcons";
+import SocialIcons from "@/app/components/ui/SocialIcons";
 import { Copyright, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
 import {
@@ -30,7 +30,7 @@ interface FooterProps {
 export default function Footer({ lang }: FooterProps) {
   const studioLinks: FooterLink[] = [
     { href: `/${lang}/about`, label: footer.pages.about },
-    { href: `/${lang}#pricing`, label: footer.pages.pricing },
+    { href: `/${lang}#services`, label: footer.pages.services },
     { href: `/${lang}#FAQs`, label: footer.pages.faq },
     { href: `/${lang}#contact`, label: footer.pages.contact },
   ];
@@ -69,8 +69,8 @@ export default function Footer({ lang }: FooterProps) {
   ];
 
   const legalLinks: FooterLink[] = [
-    { href: `/${lang}/privacy`, label: footer.labels.privacy },
-    { href: `/${lang}/terms`, label: footer.labels.terms },
+    { href: `/${lang}/privacy`, label: footer.legal.privacy },
+    { href: `/${lang}/terms`, label: footer.legal.terms },
   ];
 
   return (
@@ -83,19 +83,27 @@ export default function Footer({ lang }: FooterProps) {
           aria-label={footer.sitemapLabel[lang]}
           className="grid grid-cols-2 sm:grid-cols-3 gap-y-10 gap-x-10 md:gap-x-14"
         >
-          {columns.map((col) => (
+          {columns.map((col) => {
+            const labelId = `footer-col-${col.title.en.toLowerCase()}`;
+            return (
             <div
               key={col.title.en}
               className="last:col-span-2 sm:last:col-span-1"
             >
-              <h2 className="mb-6 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-content-muted/90 font-medium">
+              <p
+                id={labelId}
+                className="mb-6 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-content-muted/90 font-medium"
+              >
                 <span
                   aria-hidden="true"
                   className="inline-block h-px w-3 bg-gold/50"
                 />
                 {col.title[lang]}
-              </h2>
-              <ul className="space-y-3 text-[0.95rem] leading-relaxed">
+              </p>
+              <ul
+                aria-labelledby={labelId}
+                className="space-y-3 text-[0.95rem] leading-relaxed"
+              >
                 {col.links.map((link) => {
                   const className =
                     "text-content-body hover:text-content-heading transition-colors duration-300";
@@ -117,7 +125,8 @@ export default function Footer({ lang }: FooterProps) {
                 })}
               </ul>
             </div>
-          ))}
+            );
+          })}
         </nav>
 
         <div className="mt-14 md:mt-20 pt-6 border-t border-border-subtle">
@@ -175,7 +184,7 @@ export default function Footer({ lang }: FooterProps) {
               >
                 <MapPin className="w-4 h-4" aria-hidden="true" />
                 <span className="pb-0.5">
-                  {footer.labels.location[lang]}
+                  {footer.location[lang]}
                 </span>
               </a>
             </address>

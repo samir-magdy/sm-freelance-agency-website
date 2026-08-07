@@ -1,6 +1,6 @@
 import type { Localized } from "@/app/types";
 
-export const projectsSection: Record<
+export const portfolioSectionTranslations: Record<
   "heading" | "subheading" | "viewLiveSite" | "primaryCta",
   Localized
 > = {
@@ -28,15 +28,15 @@ interface ProjectCopy {
 }
 
 export type ProjectId =
-  | "Ecommerce"
-  | "TravelTourismWebsite"
-  | "HealthcareWebsite"
-  | "InteriorDesignWebsite"
-  | "ButterDesign"
-  | "HadeerEnglish";
+  | "ecommerce"
+  | "travelTourism"
+  | "healthcare"
+  | "interiorDesign"
+  | "butterDesign"
+  | "hadeerEnglish";
 
-export const projectData: Record<ProjectId, ProjectCopy> = {
-  Ecommerce: {
+export const projectTranslations: Record<ProjectId, ProjectCopy> = {
+  ecommerce: {
     title: {
       en: "Fashion E-commerce",
       ar: "متجر إلكتروني للأزياء",
@@ -47,7 +47,7 @@ export const projectData: Record<ProjectId, ProjectCopy> = {
     },
   },
 
-  TravelTourismWebsite: {
+  travelTourism: {
     title: {
       en: "Travel & Tourism",
       ar: "السياحة والسفر",
@@ -58,7 +58,7 @@ export const projectData: Record<ProjectId, ProjectCopy> = {
     },
   },
 
-  HealthcareWebsite: {
+  healthcare: {
     title: {
       en: "Healthcare & Clinics",
       ar: "الرعاية الصحية والعيادات",
@@ -69,7 +69,7 @@ export const projectData: Record<ProjectId, ProjectCopy> = {
     },
   },
 
-  InteriorDesignWebsite: {
+  interiorDesign: {
     title: {
       en: "Interior Design & Decor",
       ar: "التصميم الداخلي والديكور",
@@ -80,7 +80,7 @@ export const projectData: Record<ProjectId, ProjectCopy> = {
     },
   },
 
-  ButterDesign: {
+  butterDesign: {
     title: {
       en: "Design & Branding Agency",
       ar: "تصميم وهوية بصرية",
@@ -91,7 +91,7 @@ export const projectData: Record<ProjectId, ProjectCopy> = {
     },
   },
 
-  HadeerEnglish: {
+  hadeerEnglish: {
     title: {
       en: "Private English Tutoring",
       ar: "الدروس الخاصة",

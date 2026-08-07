@@ -1,25 +1,27 @@
 import type { Localized } from "@/app/types";
 import { SITE_NAME } from "@/app/constants";
 
-interface Pillar {
+interface ValueCard {
+  id: string;
   title: Localized;
   desc: Localized;
 }
 
-interface AboutSection {
-  eyebrow: Localized;
+interface AboutPage {
+  h1PageTitle: Localized;
   paragraphs: Localized[];
-  pillarsLabel: Localized;
-  pillars: Pillar[];
+  valuesEyebrow: Localized;
+  valueCards: ValueCard[];
   founderName: Localized;
   founderRole: Localized;
-  ctaLinkedIn: Localized;
-  ctaWhatsApp: Localized;
-  ctaEmail: Localized;
+  founderPhotoAlt: Localized;
+  linkLinkedIn: Localized;
+  linkWhatsApp: Localized;
+  linkEmail: Localized;
 }
 
-const aboutSection: AboutSection = {
-  eyebrow: {
+const aboutPage: AboutPage = {
+  h1PageTitle: {
     en: `About the Studio`,
     ar: "عن الاستوديو",
   },
@@ -39,12 +41,13 @@ const aboutSection: AboutSection = {
     },
   ],
 
-  pillarsLabel: {
+  valuesEyebrow: {
     en: "Our Values",
     ar: "قيمنا",
   },
-  pillars: [
+  valueCards: [
     {
+      id: "transparency",
       title: { en: "Transparency", ar: "الشفافية" },
       desc: {
         en: "Clear options, fair pricing, honest advice.",
@@ -52,6 +55,7 @@ const aboutSection: AboutSection = {
       },
     },
     {
+      id: "quality",
       title: { en: "Quality", ar: "الجودة" },
       desc: {
         en: "High standards in every detail.",
@@ -59,6 +63,7 @@ const aboutSection: AboutSection = {
       },
     },
     {
+      id: "partnership",
       title: { en: "Partnership", ar: "الشراكة" },
       desc: {
         en: "A professional site built around your goals.",
@@ -75,18 +80,22 @@ const aboutSection: AboutSection = {
     en: "Founder & Lead Developer",
     ar: "المؤسس والمطور الرئيسي",
   },
-  ctaLinkedIn: {
+  founderPhotoAlt: {
+    en: `Photo of Samir Magdy, Founder of ${SITE_NAME}`,
+    ar: `صورة سمير مجدي، مؤسس ${SITE_NAME}`,
+  },
+  linkLinkedIn: {
     en: "LinkedIn",
     ar: "لينكد إن",
   },
-  ctaWhatsApp: {
+  linkWhatsApp: {
     en: "WhatsApp",
     ar: "واتساب",
   },
-  ctaEmail: {
+  linkEmail: {
     en: "Email",
     ar: "الإيميل",
   },
 };
 
-export default aboutSection;
+export default aboutPage;

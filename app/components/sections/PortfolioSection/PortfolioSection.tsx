@@ -5,11 +5,12 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { projects } from "@/app/data/portfolio";
 import {
-  projectsSection,
-  projectData,
+  portfolioSectionTranslations,
+  projectTranslations,
 } from "@/app/data/translations/portfolioSection";
 import a11y from "@/app/data/translations/a11y";
 import type { Lang } from "@/app/types";
+import styles from "./PortfolioSection.module.css";
 
 interface NavArrowProps {
   direction: "prev" | "next";
@@ -152,7 +153,7 @@ interface PortfolioSectionProps {
 }
 
 export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
-  const t = projectsSection;
+  const translations = portfolioSectionTranslations;
   const [mounted, setMounted] = useState(false);
   const [active, setActive] = useState(0);
   const snapRef = useRef<HTMLDivElement>(null);
@@ -191,10 +192,10 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
   }, []);
 
   const project = projects[active];
-  const pd = projectData[project.id];
+  const pd = projectTranslations[project.id];
 
   const ctaHref = project.liveUrl;
-  const ctaLabel = t.viewLiveSite[lang];
+  const ctaLabel = translations.viewLiveSite[lang];
 
   const isRtl = lang === "ar";
 
@@ -209,16 +210,16 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
           id="portfolio-heading"
           className="reveal-element font-bold text-heading sm:rtl:mb-3"
         >
-          {t.heading[lang]}
+          {translations.heading[lang]}
         </h2>
         <p className="reveal-element hidden sm:block text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
-          {t.subheading[lang]}
+          {translations.subheading[lang]}
         </p>
       </div>
 
       <ul className="sr-only">
         {projects.map((proj) => {
-          const projCopy = projectData[proj.id];
+          const projCopy = projectTranslations[proj.id];
           const isExternal = !proj.liveUrl.startsWith("/portfolio/");
           return (
             <li key={proj.id}>
@@ -281,7 +282,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
                 href="#contact"
                 className="cta-primary w-full inline-flex justify-center items-center gap-2 py-3 px-6 rounded-xl text-background text-[clamp(0.7rem,1.5vw,1.25rem)] font-semibold tracking-wide"
               >
-                {t.primaryCta[lang]}
+                {translations.primaryCta[lang]}
               </a>
             </div>
           </div>
@@ -289,10 +290,9 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
 
         <div className="reveal-element flex flex-col items-center gap-2.5">
           <h3
-            id="portfolio-genre"
             aria-hidden="true"
             key={`genre-${project.id}`}
-            className="lg:hidden inline-flex items-center px-4 py-1.5 rounded-xl text-[clamp(0.7rem,3vw,1rem)] font-semibold uppercase tracking-widest border border-border-subtle text-content-heading bg-surface-card"
+            className={`${styles.genre} lg:hidden inline-flex items-center px-4 py-1.5 rounded-xl text-[clamp(0.7rem,3vw,1rem)] font-semibold uppercase tracking-widest border border-border-subtle text-content-heading bg-surface-card`}
           >
             {isRtl ? project.genreAr : project.genre}
           </h3>
@@ -306,7 +306,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
 
             <div
               id="mobile-mockup"
-              className="aspect-11/19.5 w-60 sm:w-57.5 md:w-65 lg:w-70 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="aspect-11/19.5 w-60 sm:w-57 md:w-63 lg:w-68 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               <div className="absolute left-[-2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
               <div className="absolute left-[-2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -320,7 +320,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
 
                 <div
                   ref={snapRef}
-                  className="portfolio-snap flex overflow-x-auto snap-x snap-mandatory scrollbar-none mt-8 sm:mt-9 w-full h-full bg-black"
+                  className={`${styles.snap} flex overflow-x-auto snap-x snap-mandatory scrollbar-none mt-8 sm:mt-9 w-full h-full bg-black`}
                   dir="ltr"
                 >
                   {projects.map((proj) => (
@@ -328,11 +328,11 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
                       key={proj.id}
                       className="min-w-full w-full snap-start snap-always h-full"
                     >
-                      <div className="phone-scroll overflow-y-auto h-full scrollbar-none">
+                      <div className={`${styles.phoneScroll} overflow-y-auto h-full scrollbar-none`}>
                         {proj.screenshot ? (
                           <Image
                             src={proj.screenshot}
-                            alt={`${a11y.screenshotOf[lang]} ${projectData[proj.id].title[lang]}`}
+                            alt={`${a11y.imageAltPrefix[lang]} ${projectTranslations[proj.id].title[lang]}`}
                             className="w-full h-auto block"
                             sizes="(max-width: 639px) 64vw, (max-width: 767px) 63vw, (max-width: 1023px) 70.5vw, (max-width: 1279px) 75vw, 18.5vw"
                             placeholder="blur"
@@ -383,7 +383,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
               href={ctaHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="mobile-portfolio-buttons w-full justify-center inline-flex items-center gap-2 py-2.5 px-5 rounded-xl border border-border-strong text-content-body"
+              className={`${styles.mobileButtons} w-full justify-center inline-flex items-center gap-2 py-2.5 px-5 rounded-xl border border-border-strong text-content-body`}
               aria-label={`${ctaLabel} – ${pd.title[lang]}`}
             >
               {ctaLabel}
@@ -394,9 +394,9 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
             </a>
             <a
               href="#contact"
-              className="mobile-portfolio-buttons w-full font-semibold justify-center cta-primary relative overflow-hidden inline-flex items-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-background"
+              className={`${styles.mobileButtons} w-full font-semibold justify-center cta-primary relative overflow-hidden inline-flex items-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-background`}
             >
-              {t.primaryCta[lang]}
+              {translations.primaryCta[lang]}
             </a>
           </div>
         </div>

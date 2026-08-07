@@ -43,32 +43,32 @@ interface FlatAddon extends AddonBase {
 type Addon = MultiplierAddon | FlatAddon;
 
 interface PricingEstimatorData {
-  baseLabel: Localized;
+  websiteTypeLabel: Localized;
   scopeLabelByBase: Record<BaseId, Localized>;
   addonsLabel: Localized;
   estimateLabel: Localized;
-  cta: Localized;
+  quoteCta: Localized;
   disclaimer: Localized;
-  bases: EstimatorBase[];
+  baseOptions: EstimatorBase[];
   scopesByBase: Record<BaseId, EstimatorScope[]>;
   addons: Addon[];
 }
 
 const pricingEstimator: PricingEstimatorData = {
-  baseLabel: { en: "Website Type:", ar: "نوع الموقع" },
+  websiteTypeLabel: { en: "Website Type:", ar: "نوع الموقع" },
   scopeLabelByBase: {
     landing: { en: "Size", ar: "الحجم" },
     business: { en: "Size <span class='text-content-muted font-normal'>(no. of pages)</span>", ar: "الحجم <span class='text-content-muted font-normal'>(عدد الصفحات)</span>" },
   },
   addonsLabel: { en: "Add-ons:", ar: "الإضافات" },
   estimateLabel: { en: "Estimate:", ar: "تقدير السعر:" },
-  cta: { en: "Get an Official Quote", ar: "احصل على عرض سعر رسمي" },
+  quoteCta: { en: "Get an Official Quote", ar: "احصل على عرض سعر رسمي" },
   disclaimer: {
     en: "Final pricing is confirmed after consultation.",
     ar: "نُحدد السعر النهائي عند الاستشارة.",
   },
 
-  bases: [
+  baseOptions: [
     {
       id: "landing",
       name: { en: "Landing Page", ar: "صفحة هبوط" },

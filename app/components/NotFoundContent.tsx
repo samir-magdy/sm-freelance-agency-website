@@ -1,4 +1,4 @@
-import { SITE_NAME, CURRENT_YEAR } from "../constants";
+import { SITE_NAME, CURRENT_YEAR } from "@/app/constants";
 
 interface NotFoundLink {
   href: string;

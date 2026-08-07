@@ -7,7 +7,7 @@ const a11y: Record<
   | "desktopNav"
   | "mobileNav"
   | "contactForm"
-  | "screenshotOf",
+  | "imageAltPrefix",
   Localized
 > = {
   openMenu: { en: "Open menu", ar: "فتح القائمة" },
@@ -15,7 +15,7 @@ const a11y: Record<
   desktopNav: { en: "Desktop navigation", ar: "قائمة سطح المكتب" },
   mobileNav: { en: "Mobile navigation", ar: "قائمة الهاتف" },
   contactForm: { en: "Contact form", ar: "نموذج التواصل" },
-  screenshotOf: {
+  imageAltPrefix: {
     en: `Website design by ${SITE_NAME} –`,
     ar: `تصميم موقع من ${SITE_NAME} –`,
   },

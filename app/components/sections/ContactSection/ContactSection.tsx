@@ -2,9 +2,9 @@
 
 import { useState, useEffect, useRef } from "react";
 import WhatsAppIcon from "@/app/components/utils/WhatsAppIcon";
-import { contactSection, form } from "@/app/data/translations/contactSection";
+import contactSection from "@/app/data/translations/contactSection";
 import a11y from "@/app/data/translations/a11y";
-import { SOCIAL_LINKS } from "../../constants";
+import { SOCIAL_LINKS } from "@/app/constants";
 import type { Lang } from "@/app/types";
 import type { ContactMethod, ContactPayload } from "@/app/api/contact/route";
 
@@ -49,7 +49,7 @@ interface ContactSectionProps {
 }
 
 export default function ContactSection({ lang }: ContactSectionProps) {
-  const t = { contactSection, form, a11y };
+  const translations = { contactSection, a11y };
   const isRtl = lang === "ar";
 
   const [formData, setFormData] = useState<FormData>(EMPTY_FORM);
@@ -90,8 +90,8 @@ export default function ContactSection({ lang }: ContactSectionProps) {
       const code = error instanceof Error ? error.message : "server_error";
       const errorMsg =
         code === "rate_limit"
-          ? t.form.errorRateLimit[lang]
-          : t.form.errorGeneric[lang];
+          ? translations.contactSection.form.errorRateLimit[lang]
+          : translations.contactSection.form.errorGeneric[lang];
       setStatus("error");
       setErrorMessage(errorMsg);
       statusTimerRef.current = setTimeout(() => {
@@ -121,32 +121,32 @@ export default function ContactSection({ lang }: ContactSectionProps) {
             id="contact-heading"
             className="reveal-element font-bold text-heading text-center mb-2"
           >
-            {t.contactSection.heading[lang]}
+            {translations.contactSection.heading[lang]}
           </h2>
           <p className="reveal-element text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)]">
-            {t.contactSection.subheading[lang]}
+            {translations.contactSection.subheading[lang]}
           </p>
         </div>
 
         <form
           className="text-start relative sm:min-h-140"
           onSubmit={handleSubmit}
-          aria-label={t.a11y.contactForm[lang]}
+          aria-label={translations.a11y.contactForm[lang]}
         >
           <fieldset className="border-none p-0 m-0">
-            <legend className="sr-only">{t.form.legend[lang]}</legend>
+            <legend className="sr-only">{translations.contactSection.form.legend[lang]}</legend>
 
             <div className="reveal-element grid grid-cols-2 gap-4 md:gap-x-3">
               <div className="col-span-1">
                 <label htmlFor="name" className={labelClass}>
-                  {t.form.name[lang]}
+                  {translations.contactSection.form.name[lang]}
                   <span aria-hidden="true">&nbsp;*</span>
                 </label>
                 <input
                   type="text"
                   id="name"
                   required
-                  placeholder={t.form.namePlaceholder[lang]}
+                  placeholder={translations.contactSection.form.namePlaceholder[lang]}
                   className="placeholder:text-content-muted text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-strong outline-none"
                   value={formData.name}
                   onChange={(e) =>
@@ -157,7 +157,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
 
               <div>
                 <label htmlFor="contactMethod" className={labelClass}>
-                  {t.form.contactMethod[lang]}{" "}
+                  {translations.contactSection.form.contactMethod[lang]}{" "}
                   <span aria-hidden="true">*</span>
                 </label>
                 <div className="relative">
@@ -178,13 +178,13 @@ export default function ContactSection({ lang }: ContactSectionProps) {
                     }}
                   >
                     <option value="">
-                      {t.form.contactMethodPlaceholder[lang]}
+                      {translations.contactSection.form.contactMethodPlaceholder[lang]}
                     </option>
-                    <option value="whatsapp">{t.form.whatsapp[lang]}</option>
+                    <option value="whatsapp">{translations.contactSection.form.whatsapp[lang]}</option>
                     <option value="phone-call">
-                      {t.form.phoneCall[lang]}
+                      {translations.contactSection.form.phoneCall[lang]}
                     </option>
-                    <option value="email">{t.form.email[lang]}</option>
+                    <option value="email">{translations.contactSection.form.contactMethodEmail[lang]}</option>
                   </select>
                   <div className="pointer-events-none absolute inset-y-0 inset-e-4 flex items-center text-content-muted">
                     <ChevronDown />
@@ -196,7 +196,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
                 formData.contactMethod === "phone-call") && (
                 <div className="col-span-2">
                   <label htmlFor="phone" className={labelClass}>
-                    {t.form.phone[lang]}{" "}
+                    {translations.contactSection.form.phone[lang]}{" "}
                     <span aria-hidden="true">*</span>
                   </label>
                   <input
@@ -204,7 +204,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
                     id="phone"
                     dir="ltr"
                     required
-                    placeholder={t.form.phonePlaceholder[lang]}
+                    placeholder={translations.contactSection.form.phonePlaceholder[lang]}
                     pattern="^01[0125]\d{8}$"
                     title="Egyptian mobile number"
                     className={`placeholder:text-content-muted text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-strong outline-none ${
@@ -224,14 +224,14 @@ export default function ContactSection({ lang }: ContactSectionProps) {
               {formData.contactMethod === "email" && (
                 <div className="col-span-2">
                   <label htmlFor="email" className={labelClass}>
-                    {t.form.emailAddress[lang]}{" "}
+                    {translations.contactSection.form.emailAddress[lang]}{" "}
                     <span aria-hidden="true">*</span>
                   </label>
                   <input
                     type="email"
                     id="email"
                     required
-                    placeholder={t.form.emailPlaceholder[lang]}
+                    placeholder={translations.contactSection.form.emailPlaceholder[lang]}
                     className="placeholder:text-content-muted text-base w-full h-14 px-4 rounded-lg border border-transparent bg-surface-low text-content-heading focus:border-2 focus:border-border-strong outline-none"
                     value={formData.email}
                     onChange={(e) =>
@@ -246,15 +246,15 @@ export default function ContactSection({ lang }: ContactSectionProps) {
 
               <div className="col-span-2">
                 <label htmlFor="message" className={labelClass}>
-                  {t.form.message[lang]}{" "}
+                  {translations.contactSection.form.message[lang]}{" "}
                   <span className="text-content-muted font-normal">
-                    ({t.form.messageOptional[lang]})
+                    ({translations.contactSection.form.messageOptional[lang]})
                   </span>
                 </label>
                 <textarea
                   id="message"
                   rows={2}
-                  placeholder={t.form.messagePlaceholder[lang]}
+                  placeholder={translations.contactSection.form.messagePlaceholder[lang]}
                   className="resize-none leading-relaxed placeholder:text-content-muted text-base w-full px-4 py-3 rounded-lg border-2 border-transparent bg-surface-low text-content-heading focus:border-border-strong outline-none"
                   value={formData.message}
                   onChange={(e) =>
@@ -270,9 +270,9 @@ export default function ContactSection({ lang }: ContactSectionProps) {
 
           <span role="status" aria-live="polite" className="sr-only">
             {status === "loading"
-              ? t.form.sending[lang]
+              ? translations.contactSection.form.sending[lang]
               : status === "success"
-                ? t.form.success[lang]
+                ? translations.contactSection.form.success[lang]
                 : status === "error"
                   ? errorMessage
                   : ""}
@@ -291,26 +291,26 @@ export default function ContactSection({ lang }: ContactSectionProps) {
           >
             <span key={status === "loading" ? "default" : status}>
               {status === "loading" ? (
-                t.form.sending[lang]
+                translations.contactSection.form.sending[lang]
               ) : status === "success" ? (
                 <span className="flex items-center justify-center gap-1">
-                  {t.form.success[lang]}
+                  {translations.contactSection.form.success[lang]}
                 </span>
               ) : status === "error" ? (
                 errorMessage
               ) : (
-                t.form.submit[lang]
+                translations.contactSection.form.submit[lang]
               )}
             </span>
           </button>
 
           <div className="reveal-element">
             <div className="flex items-center gap-3 mt-4">
-              <span className="flex-1 h-px bg-border-subtle" />
+              <div aria-hidden="true" className="flex-1 h-px bg-border-subtle" />
               <span className="text-content-muted text-base font-bold">
-                {t.form.orWhatsapp[lang]}
+                {translations.contactSection.form.orDivider[lang]}
               </span>
-              <span className="flex-1 h-px bg-border-subtle" />
+              <div aria-hidden="true" className="flex-1 h-px bg-border-subtle" />
             </div>
 
             <a
@@ -320,7 +320,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
               className="mt-3.5 border w-full border-green-500/40 bg-green-500/60 hover:bg-green-500/65 transition-colors duration-200 py-4 px-10 text-content-heading flex items-center justify-center mx-auto gap-2 rounded-lg font-bold text-base"
             >
               <WhatsAppIcon className="size-5" fill="currentColor" />
-              {t.form.chatInstead[lang]}
+              {translations.contactSection.form.whatsappCta[lang]}
             </a>
           </div>
         </form>

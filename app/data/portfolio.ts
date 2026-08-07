@@ -1,12 +1,12 @@
 import type { StaticImageData } from "next/image";
-import ecommerceImg from "../../public/project-screenshots/e-commerce.webp";
-import travelImg from "../../public/project-screenshots/travel.webp";
-import butterDesignImg from "../../public/project-screenshots/butter-design.webp";
-import healthcareImg from "../../public/project-screenshots/dental.webp";
-import interiorImg from "../../public/project-screenshots/interior.webp";
-import hadeerImg from "../../public/project-screenshots/hadeer.png";
+import ecommerceImg from "@/public/project-screenshots/e-commerce.webp";
+import travelImg from "@/public/project-screenshots/travel.webp";
+import butterDesignImg from "@/public/project-screenshots/butter-design.webp";
+import healthcareImg from "@/public/project-screenshots/dental.webp";
+import interiorImg from "@/public/project-screenshots/interior.webp";
+import hadeerImg from "@/public/project-screenshots/hadeer.png";
 
-import { SITE_URL, SITE_NAME, SCHEMA_IDS } from "../constants";
+import { SITE_URL, SITE_NAME, SCHEMA_IDS } from "@/app/constants";
 import type { ProjectId } from "./translations/portfolioSection";
 
 interface Project {
@@ -22,7 +22,7 @@ interface Project {
 
 export const projects: Project[] = [
   {
-    id: "ButterDesign",
+    id: "butterDesign",
     liveUrl: "https://butterdesignbureau.com",
     screenshot: butterDesignImg,
     schemaName: "Design Agency Portfolio Website – Egypt",
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     genreAr: "استوديو تصميم وهوية بصرية",
   },
   {
-    id: "TravelTourismWebsite",
+    id: "travelTourism",
     liveUrl: "/portfolio/travel-tourism-website-design",
     screenshot: travelImg,
     schemaName: "Travel & Tourism Website Design – Egypt",
@@ -44,7 +44,7 @@ export const projects: Project[] = [
     genreAr: "سياحة وسفر",
   },
   {
-    id: "Ecommerce",
+    id: "ecommerce",
     liveUrl: "https://ecommerce.smwebdesign.studio",
     screenshot: ecommerceImg,
     schemaName: "Fashion E-commerce – Egypt",
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     genreAr: "التجارة الإلكترونية للأزياء",
   },
   {
-    id: "HadeerEnglish",
+    id: "hadeerEnglish",
     liveUrl: "https://hadeernabil.site",
     screenshot: hadeerImg,
     schemaName: "Private English Tutor Website – Egypt",
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     genreAr: "دروس خاصة",
   },
   {
-    id: "HealthcareWebsite",
+    id: "healthcare",
     liveUrl: "/portfolio/healthcare-website-design",
     screenshot: healthcareImg,
     schemaName: "Healthcare Website Design – Egypt",
@@ -77,7 +77,7 @@ export const projects: Project[] = [
     genreAr: "رعاية صحية",
   },
   {
-    id: "InteriorDesignWebsite",
+    id: "interiorDesign",
     liveUrl: "/portfolio/interior-design-website-design",
     screenshot: interiorImg,
     schemaName: "Interior Design Website Design – Egypt",

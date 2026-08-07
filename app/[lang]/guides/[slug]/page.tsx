@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Calendar, Clock } from "lucide-react";
 import { SITE_NAME, SCHEMA_IDS } from "@/app/constants";
 import guides from "@/app/data/guides";
-import guidesTranslations from "@/app/data/translations/guides";
+import guidesTranslations from "@/app/data/translations/guidesShared";
 import PricingEstimator from "@/app/components/utils/PricingEstimator";
 import type { Lang, LangSlugParams } from "@/app/types";
 import {
@@ -82,7 +82,7 @@ export default function GuidePage({
   const guide = guides.find((r) => r.slug === slug);
   if (!guide) notFound();
 
-  const t = guidesTranslations;
+  const translations = guidesTranslations;
   const relatedGuides = guides.filter((g) => g.slug !== slug);
 
   const canonical = pageUrl(lang, `/guides/${slug}`);
@@ -164,7 +164,7 @@ export default function GuidePage({
         }}
       />
       <div className="max-w-7xl mx-auto flex flex-col gap-4 sm:gap-8">
-        <BackToGuidesLink lang={lang} label={t.backToGuides[lang]} />
+        <BackToGuidesLink lang={lang} label={translations.backToGuides[lang]} />
         <header>
           <h1 className="text-[clamp(1.5rem,5vw,2.8rem)] font-bold text-content-heading leading-tight rtl:leading-loose">
             {guide.title[lang]}
@@ -181,7 +181,7 @@ export default function GuidePage({
             </time>
             <span className="inline-flex items-center gap-1.5 text-sm sm:text-base text-content-muted border border-border-subtle rounded-lg px-3 py-1">
               <Clock size={13} aria-hidden />
-              {guide.readingMinutes[lang]} {t.minRead[lang]}
+              {guide.readingMinutes[lang]} {translations.minRead[lang]}
             </span>
           </div>
         </header>
@@ -206,13 +206,13 @@ export default function GuidePage({
         <div className="relative overflow-hidden rounded-2xl border border-white/8 bg-surface-low mb-6">
           <div className="relative text-center sm:text-start flex flex-col sm:flex-row sm:items-center gap-7 sm:gap-12 px-7 py-9 sm:px-11 sm:py-11">
             <p className="flex-1 text-[clamp(1.2rem,4vw,2.2rem)] font-semibold text-content-heading leading-tight rtl:leading-loose">
-              {t.articleCta[lang]}
+              {translations.articleCta[lang]}
             </p>
             <Link
               href={`/${lang}#contact`}
               className="cta-primary justify-center shrink-0 py-3 px-8 rounded-lg text-background text-base sm:text-xl font-medium tracking-wide whitespace-nowrap"
             >
-              {t.articleCtaButton[lang]}
+              {translations.articleCtaButton[lang]}
          
             </Link>
           </div>
@@ -226,7 +226,7 @@ export default function GuidePage({
               id="related-heading"
               className="text-content-heading font-bold text-[clamp(1.25rem,3vw,1.75rem)] leading-snug rtl:leading-loose mb-6 sm:mb-8"
             >
-              {t.relatedHeading[lang]}
+              {translations.relatedHeading[lang]}
             </h2>
             <ul className="grid grid-cols-1 md:grid-cols-3 gap-5 list-none p-0">
               {relatedGuides.map((g) => (
@@ -242,7 +242,7 @@ export default function GuidePage({
                       {g.excerpt[lang]}
                     </p>
                     <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-content-body transition-colors duration-200">
-                      {t.readMore[lang]}
+                      {translations.readGuideButton[lang]}
                       <ArrowRight
                         className="size-4 rtl:rotate-180 transition-transform duration-200 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
                         aria-hidden
@@ -254,8 +254,8 @@ export default function GuidePage({
             </ul>
           </section>
         )}
-        <div className="sm:mt-4">
-          <BackToGuidesLink lang={lang} label={t.backToGuides[lang]} />
+        <div className="mt-2.5 sm:mt-3.5">
+          <BackToGuidesLink lang={lang} label={translations.backToGuides[lang]} />
         </div>
       </div>
     </div>

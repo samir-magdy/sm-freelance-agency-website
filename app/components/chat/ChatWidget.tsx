@@ -6,10 +6,11 @@ import { DefaultChatTransport } from "ai";
 import Link from "next/link";
 import { ArrowUp, X } from "lucide-react";
 import type { Lang } from "@/app/types";
-import t from "@/app/data/translations/chatWidget";
+import translations from "@/app/data/translations/chatWidget";
 import guides from "@/app/data/guides";
 import NollieAvatar from "./NollieAvatar";
-import NolliePromptBubble from "./NolliePromptBubble";
+import ChatPromptBubble from "./ChatPromptBubble";
+import styles from "./Nollie.module.css";
 
 interface ChatWidgetProps {
   lang: Lang;
@@ -102,16 +103,35 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
     inputRef.current?.focus();
   }, [open]);
 
-  // Prevent the messages list from chaining scroll into the page while the
-  // widget is open. `overscroll-contain` on the list is unreliable on iOS,
-  // so lock overscroll at the body — but only while open, so pull-to-refresh
-  // still works everywhere else.
+  // Lock body scroll on mobile only. On desktop the widget is a small
+  // floating panel and locking the page behind it is annoying UX. On touch
+  // devices, `overscroll-behavior: none` alone doesn't stop iOS from
+  // scrolling the body when a touch inside the widget lands on a non-
+  // scrollable region (header, input, or a messages list with no overflow
+  // yet), so we pin the body with `position: fixed` and restore scrollY on
+  // close.
   useEffect(() => {
     if (!open) return;
-    document.body.style.overscrollBehavior = "none";
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    const scrollY = window.scrollY;
+    const { body } = document;
+    body.style.overscrollBehavior = "none";
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.width = "100%";
     return () => {
-      document.body.style.overscrollBehavior = "";
+      body.style.overscrollBehavior = "";
+      body.style.position = "";
+      body.style.top = "";
+      body.style.width = "";
+      window.scrollTo(0, scrollY);
     };
+  }, [open]);
+
+  // Reset stick-to-bottom on open so reopening always lands at the newest
+  // message, even if the user had scrolled up before closing.
+  useEffect(() => {
+    if (open) stickToBottom.current = true;
   }, [open]);
 
   // Follow the stream, but only while the user hasn't scrolled up.
@@ -139,28 +159,28 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
 
   const errorLabel = error
     ? /429|rate limit/i.test(error.message)
-      ? t.rateLimited[lang]
-      : t.error[lang]
+      ? translations.rateLimited[lang]
+      : translations.error[lang]
     : null;
 
   return (
     <>
       {/* ── Prompt bubble (auto-appears above the launcher) ── */}
-      <NolliePromptBubble
+      <ChatPromptBubble
         lang={lang}
         hidden={open}
         onOpen={() => setOpen(true)}
-        prompt={t.prompt[lang]}
-        dismissLabel={t.a11y.dismissPrompt[lang]}
+        prompt={translations.bubbleNudge[lang]}
+        dismissLabel={translations.a11y.dismissBubbleNudge[lang]}
       />
 
       {/* ── Launcher ── */}
       <button
         type="button"
         onClick={() => setOpen(true)}
-        aria-label={t.a11y.open[lang]}
+        aria-label={translations.a11y.open[lang]}
         aria-expanded={open}
-        className={`nollie-launcher fixed bottom-5 inset-e-5 z-50 grid size-12 sm:size-14 cursor-pointer
+        className={`${styles.launcher} fixed bottom-5 inset-e-5 z-50 grid size-12 sm:size-14 cursor-pointer
           place-items-center rounded-full transition-transform duration-300 ease-out
           hover:scale-105
           ${open ? "pointer-events-none opacity-0" : "opacity-100"}`}
@@ -173,8 +193,10 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
 
       {/* ── Panel ── */}
       {open && (
-        <section
-          aria-label={t.title[lang]}
+        <div
+          role="dialog"
+          aria-modal="false"
+          aria-labelledby="chat-panel-title"
           onKeyDown={(e) => e.key === "Escape" && setOpen(false)}
           className="fixed bottom-5 inset-e-5 z-50 flex h-[min(32rem,calc(100dvh-2.5rem))]
             w-[min(24rem,calc(100vw-2.5rem))] flex-col overflow-hidden rounded-2xl
@@ -183,13 +205,16 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
           {/* Header */}
           <header className="flex items-center gap-3 border-b border-border-subtle px-4 py-3">
             <NollieAvatar animated className="size-10 sm:size-11" />
-            <h2 className="min-w-0 flex-1 truncate text-base font-bold text-content-heading">
-              {t.title[lang]}
-            </h2>
+            <p
+              id="chat-panel-title"
+              className="min-w-0 flex-1 truncate text-base font-bold text-content-heading"
+            >
+              {translations.title[lang]}
+            </p>
             <button
               type="button"
               onClick={() => setOpen(false)}
-              aria-label={t.a11y.close[lang]}
+              aria-label={translations.a11y.close[lang]}
               className="cursor-pointer rounded-lg p-1 text-content-muted transition-colors duration-200 hover:text-content-heading"
             >
               <X className="size-5" aria-hidden />
@@ -201,12 +226,12 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
             ref={scrollRef}
             onScroll={handleScroll}
             role="log"
-            aria-label={t.a11y.log[lang]}
+            aria-label={translations.a11y.log[lang]}
             aria-live="polite"
             className="flex flex-1 flex-col gap-3 overflow-y-auto scrollbar-none overscroll-contain p-4"
           >
             <p className="max-w-[92%] self-start text-base leading-relaxed text-content-body rtl:leading-loose">
-              {t.greeting[lang]}
+              {translations.greeting[lang]}
             </p>
 
             {messages.map((message) => (
@@ -238,18 +263,22 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
 
           {/* Suggestions — only before the first message */}
           {messages.length === 0 && (
-            <div className="flex flex-wrap gap-2 px-4 pb-3">
-              {t.suggestions.map((suggestion) => (
-                <button
-                  key={suggestion.en}
-                  type="button"
-                  onClick={() => submit(suggestion[lang])}
-                  className="cursor-pointer rounded-xl border border-border-subtle px-3 py-1.5 text-base sm:text-[1.1rem] text-content-muted transition-colors duration-200 hover:border-border-strong hover:text-content-body"
-                >
-                  {suggestion[lang]}
-                </button>
+            <ul
+              aria-label={translations.a11y.suggestions[lang]}
+              className="flex flex-wrap gap-2 px-4 pb-3"
+            >
+              {translations.suggestions.map((suggestion) => (
+                <li key={suggestion.en}>
+                  <button
+                    type="button"
+                    onClick={() => submit(suggestion[lang])}
+                    className="cursor-pointer rounded-xl border border-border-subtle px-3 py-1.5 text-base sm:text-[1.1rem] text-content-muted transition-colors duration-200 hover:border-border-strong hover:text-content-body"
+                  >
+                    {suggestion[lang]}
+                  </button>
+                </li>
               ))}
-            </div>
+            </ul>
           )}
 
           {/* Input */}
@@ -264,7 +293,8 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
               ref={inputRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder={t.placeholder[lang]}
+              placeholder={translations.placeholder[lang]}
+              aria-label={translations.a11y.messageInput[lang]}
               maxLength={1000}
               className="h-11 min-w-0 flex-1 rounded-xl bg-surface-low px-3.5 text-base
                 text-content-body outline-none placeholder:text-content-muted
@@ -273,14 +303,14 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
             <button
               type="submit"
               disabled={busy || !input.trim()}
-              aria-label={t.a11y.send[lang]}
+              aria-label={translations.a11y.send[lang]}
               className="cta-primary grid size-11 shrink-0 cursor-pointer place-items-center
                 rounded-xl text-background disabled:cursor-not-allowed disabled:opacity-50"
             >
               <ArrowUp className="size-5" aria-hidden />
             </button>
           </form>
-        </section>
+        </div>
       )}
     </>
   );

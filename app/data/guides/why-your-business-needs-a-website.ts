@@ -19,47 +19,47 @@ const resource: Guide = {
   },
   content: {
     en: `
-<p>A professional website is your official address online. The moment a customer lands on it, they know they are dealing with something real, established, and worth trusting. Imagine the following scenario: you hear about a company or service you are considering dealing with. What is the first thing you do? You open Google or ChatGPT and search for it to make sure it is legitimate. Your customers do exactly the same thing. If they search for your business and find no website, they will instead find your competitor's site, and in that case you have very likely already lost that client before you even had a chance. This is the reality of the digital landscape today.</p>
+<p>A professional website is your official address online. The moment a customer lands on it, they know they are dealing with something real, established, and worth trusting. Imagine the following scenario: you hear about a company or service you are considering dealing with. What is the first thing you do? You open Google or ChatGPT and search for it to make sure it is legitimate. Your customers do exactly the same thing. If they search for your business and find no website, they will instead find your competitor's site, and in that case you have very likely already lost that client before you've even had a chance to present yourself. This is the reality of the digital landscape today.</p>
 
 <h2>Why a Facebook or Instagram page is not enough</h2>
 <p>Social media is great for getting discovered, but it should not be the home of your business. Here is why relying on it alone puts you at risk:</p>
 
 <ul>
-  <li><strong>Instant Trust:</strong> Anyone can set up a free Instagram page in two minutes. A dedicated website shows customers that you have invested in your brand and are here to stay.</li>
-  <li><strong>Total Ownership:</strong> Social media platforms change their rules constantly. Your page can get hacked, shadowbanned, or shut down overnight by an algorithm. You own your website completely, and no one can take it away from you.</li>
-  <li><strong>Be Found on Google:</strong> When someone searches for a "clinic in Heliopolis" or a "graphic designer in Egypt", Google shows websites first, not social media profiles.</li>
-  <li><strong>Save Time and Automate:</strong> Instead of spending hours replying to "Price please" in your DMs, your website can display your services, take bookings, and collect client details automatically 24/7.</li>
+  <li><strong>Instant trust:</strong> Anyone can set up a free Instagram page in two minutes. A dedicated website shows customers that you have invested in your brand and are here to stay.</li>
+  <li><strong>Total ownership:</strong> Social media platforms change their rules constantly. Your page can get hacked, shadowbanned, or shut down overnight by an algorithm. You own your website completely, and no one can take it away from you.</li>
+  <li><strong>Be found on Google:</strong> When someone searches for a "clinic in Heliopolis" or a "graphic designer in Egypt", Google shows websites first, not social media profiles.</li>
+  <li><strong>Save time and automate:</strong> Instead of spending hours replying to "Price please" in your DMs, your website can display your services, take bookings, and collect client details automatically 24/7.</li>
 </ul>
 
-<h2>The Financial Reality: Ads vs. A Website</h2>
-<p>Paid ads stop bringing customers the moment you stop paying, while a professional website keeps bringing free Google traffic for years after a single one-time build cost. Most small business owners rely entirely on paid Facebook and Instagram ads — here is the investment difference side by side:</p>
+<h2>Paid ads vs. a website</h2>
+<p>Paid advertising is an essential part of growing a business online. Facebook, Instagram, and Google Ads can help you reach the right customers quickly and generate leads when you need them. But relying entirely on paid ads means paying for every opportunity. A professional website adds another channel by allowing potential customers to discover your business through organic Google searches, bringing in leads without paying for every click. Here is how the two investments compare side by side:</p>
 
 <table>
   <thead>
     <tr>
       <th>Marketing Channel</th>
       <th>Cost Structure</th>
-      <th>What Happens When You Stop Spending?</th>
+      <th>What Happens When You Stop Paying?</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><strong>Paid Social Media Ads</strong></td>
-      <td>Continuous, expensive daily budget</td>
-      <td>Your leads and traffic drop to zero immediately.</td>
+      <td>24/7, expensive daily budget</td>
+      <td>Traffic stops immediately</td>
     </tr>
     <tr>
       <td><strong>A Professional Website</strong></td>
-      <td>One-time setup cost (Paid in EGP)</td>
-      <td>It keeps bringing you free traffic from Google for years.</td>
+      <td>24/7, one-time cost</td>
+      <td>Free traffic from Google forever</td>
     </tr>
   </tbody>
 </table>
 
-<p>This does not mean stop running ads. A website makes your ads more effective: when a customer lands on it, they trust you faster and are more likely to buy, so your ad spend stops going to waste. If you want to know what this actually costs, read our guide on <a href='/en/guides/website-cost-in-egypt'>website costs in Egypt</a>.</p>
+<p>A website makes your ads more effective: when a customer lands on it, they trust you faster and are more likely to buy, so your ad spend stops going to waste.</p>
 
-<h2>The Bottom Line</h2>
-<p>Operating a business in ${CURRENT_YEAR} without a website is like running a store without a sign. You are actively handing your customers over to competitors who look more professional. A website is not a luxury; it is the most important investment you can make to protect your business and grow your name in the market.</p>`,
+<h2>The bottom line</h2>
+<p>Running a business in ${CURRENT_YEAR} without a website means losing customers before they ever get the chance to know you. People search online to compare options, check credibility, and decide who they trust. If your business is not there, a competitor probably is. A professional website helps you build trust, attract more customers, and strengthen your presence in the market.</p>`,
 
     ar: `
 <p>لما بتسمع عن شركة أو خدمة جديدة، أول حاجة بتعملها إيه؟  تلقائياً بتفتح جوجل وتكتب اسمها علشان تطمن وتشوف تفاصيلها. العميل اللي بيدور على شركتك بيعمل نفس الشيء، ولو دخل يدور عليك ومالقاش ليك موقع، وفي نفس الوقت لقى موقع احترافي لمنافس ليك، بنسبة كبيرة إنت خسرت العميل للمنافس قبل حتى ما تاخد فرصة تعرض عليه شغلك. الموقع الإلكتروني الاحترافي هو بمثابة "عقد الثقة" والمقر الرسمي لشركتك على الإنترنت؛ أول ما العميل بيدخله، بيعرف فوراً إنه بيتعامل مع كيان حقيقي، مستقر، ووراه براند قوي يقدر يثق فيه ويدفعله وهو مطمن.</p>

@@ -5,7 +5,7 @@ interface ChatWidgetStrings {
   greeting: Localized;
   placeholder: Localized;
   suggestions: Localized[];
-  prompt: Localized;
+  bubbleNudge: Localized;
   error: Localized;
   rateLimited: Localized;
   a11y: {
@@ -13,7 +13,9 @@ interface ChatWidgetStrings {
     close: Localized;
     send: Localized;
     log: Localized;
-    dismissPrompt: Localized;
+    messageInput: Localized;
+    suggestions: Localized;
+    dismissBubbleNudge: Localized;
   };
 }
 
@@ -23,8 +25,8 @@ const chatWidget: ChatWidgetStrings = {
     ar: "تحدث مع مساعدنا الذكي",
   },
   greeting: {
-    en: "Hi, I'm Nollie, SM Web Studio's AI Assistant. How can I help?",
-    ar: "مرحبًا! أنا نولي، مساعدك الذكي. العربية ليست لغتي الأولى، لذا قد أرتكب بعض الأخطاء. كيف يمكنني مساعدتك؟",
+    en: "Hello, I'm Nollie. How can I help you?",
+    ar: "مرحبًا! أنا نولي. العربية ليست لغتي الأولى، لذا قد أرتكب بعض الأخطاء اللغوية. كيف يمكنني مساعدتك؟",
   },
   placeholder: {
     en: "Type your question…",
@@ -34,7 +36,7 @@ const chatWidget: ChatWidgetStrings = {
     { en: "How much does a website cost?", ar: "كم تكلفة الموقع؟" },
     { en: "How long does a project take?", ar: "ما هي مدة تنفيذ الموقع؟" },
   ],
-  prompt: {
+  bubbleNudge: {
     en: "Hi, I'm Nollie 👋",
     ar: "مرحبًا، أنا نولي 👋",
   },
@@ -51,7 +53,9 @@ const chatWidget: ChatWidgetStrings = {
     close: { en: "Close chat", ar: "أغلق المحادثة" },
     send: { en: "Send message", ar: "أرسل الرسالة" },
     log: { en: "Chat messages", ar: "رسائل المحادثة" },
-    dismissPrompt: { en: "Dismiss", ar: "تجاهل" },
+    messageInput: { en: "Type your question", ar: "اكتب سؤالك" },
+    suggestions: { en: "Suggested questions", ar: "أسئلة مقترحة" },
+    dismissBubbleNudge: { en: "Dismiss", ar: "تجاهل" },
   },
 };
 

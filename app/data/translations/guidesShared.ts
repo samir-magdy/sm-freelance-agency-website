@@ -6,7 +6,7 @@ const guidesTranslations: Record<
   | "metaTitle"
   | "metaDescription"
   | "minRead"
-  | "readMore"
+  | "readGuideButton"
   | "backToGuides"
   | "articleCta"
   | "articleCtaButton"
@@ -26,7 +26,7 @@ const guidesTranslations: Record<
     ar: "أدلة عملية لأصحاب الأعمال والمستقلين في مصر. اكتشف تكلفة المواقع، مقارنة بين إنشاء موقعك بنفسك أو توظيف محترف، وكيفية اختيار شريكك الرقمي المناسب.",
   },
   minRead: { en: "min read", ar: "دقايق قراءة" },
-  readMore: { en: "Read Guide", ar: "اقرأ الدليل" },
+  readGuideButton: { en: "Read Guide", ar: "اقرأ الدليل" },
   backToGuides: { en: "All Guides", ar: "جميع الأدلة" },
   articleCta: {
     en: "Ready to build your website?",

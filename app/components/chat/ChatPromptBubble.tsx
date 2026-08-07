@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import type { Lang } from "@/app/types";
 
-interface NolliePromptBubbleProps {
+interface ChatPromptBubbleProps {
   lang: Lang;
   hidden: boolean;
   onOpen: () => void;
@@ -14,15 +14,15 @@ interface NolliePromptBubbleProps {
 
 const APPEAR_DELAY_MS = 12_000;
 const VISIBLE_MS = 8_000;
-const STORAGE_KEY = "nollie-bubble-shown";
+const STORAGE_KEY = "chat-bubble-shown";
 
-export default function NolliePromptBubble({
+export default function ChatPromptBubble({
   lang,
   hidden,
   onOpen,
   prompt,
   dismissLabel,
-}: NolliePromptBubbleProps) {
+}: ChatPromptBubbleProps) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {

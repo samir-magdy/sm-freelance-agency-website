@@ -4,7 +4,7 @@ import { useState, useMemo, useCallback } from "react";
 import { Globe, Layout, type LucideIcon } from "lucide-react";
 import pricingEstimator, {
   type BaseId,
-} from "@/app/data/translations/PricingEstimator";
+} from "@/app/data/translations/pricingEstimator";
 import WhatsAppIcon from "./WhatsAppIcon";
 import type { Lang } from "@/app/types";
 import { SOCIAL_LINKS } from "@/app/constants";
@@ -19,22 +19,22 @@ interface PricingEstimatorProps {
 }
 
 export default function PricingEstimator({ lang }: PricingEstimatorProps) {
-  const t = pricingEstimator;
+  const translations = pricingEstimator;
   const isRtl = lang === "ar";
   const currencySymbol = isRtl ? "ج.م" : "EGP";
 
-  const [baseId, setBaseId] = useState<BaseId>(t.bases[0].id);
+  const [baseId, setBaseId] = useState<BaseId>(translations.baseOptions[0].id);
   const [scopeIndex, setScopeIndex] = useState(0);
   const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
 
   const baseType = useMemo(
-    () => t.bases.find((b) => b.id === baseId) ?? t.bases[0],
-    [baseId, t.bases],
+    () => translations.baseOptions.find((b) => b.id === baseId) ?? translations.baseOptions[0],
+    [baseId, translations.baseOptions],
   );
 
   const currentScopes = useMemo(
-    () => t.scopesByBase[baseId],
-    [baseId, t.scopesByBase],
+    () => translations.scopesByBase[baseId],
+    [baseId, translations.scopesByBase],
   );
   const currentScope = useMemo(
     () => currentScopes[scopeIndex] ?? currentScopes[0],
@@ -42,8 +42,8 @@ export default function PricingEstimator({ lang }: PricingEstimatorProps) {
   );
 
   const availableAddons = useMemo(
-    () => t.addons.filter((addon) => addon.appliesTo.includes(baseId)),
-    [baseId, t.addons],
+    () => translations.addons.filter((addon) => addon.appliesTo.includes(baseId)),
+    [baseId, translations.addons],
   );
 
   const handleBaseTypeChange = useCallback((id: BaseId) => {
@@ -63,7 +63,7 @@ export default function PricingEstimator({ lang }: PricingEstimatorProps) {
     let totalMultiplier = 1;
 
     selectedAddons.forEach((addonId) => {
-      const addon = t.addons.find((a) => a.id === addonId);
+      const addon = translations.addons.find((a) => a.id === addonId);
       if (!addon) return;
 
       if (addon.isMultiplier) {
@@ -86,14 +86,14 @@ export default function PricingEstimator({ lang }: PricingEstimatorProps) {
     baseType.price,
     currentScope.multiplier,
     selectedAddons,
-    t.addons,
+    translations.addons,
   ]);
 
   const whatsappUrl = useMemo(() => {
     const addonNames =
       selectedAddons.length > 0
         ? selectedAddons
-            .map((id) => t.addons.find((a) => a.id === id)?.name[lang])
+            .map((id) => translations.addons.find((a) => a.id === id)?.name[lang])
             .join(isRtl ? "، " : ", ")
         : isRtl
           ? "بدون إضافات"
@@ -124,7 +124,7 @@ The Calculated Data:
     selectedAddons,
     totalEGP,
     currencySymbol,
-    t.addons,
+    translations.addons,
   ]);
 
   return (
@@ -137,10 +137,10 @@ The Calculated Data:
           <div className="md:col-span-7 flex flex-col gap-1 sm:gap-3.5 md:bg-surface-card/50 md:shadow-xl md:shadow-black/30 md:border-2 md:border-border-strong md:rounded-3xl md:p-6 md:pt-4">
             <div className="flex flex-col gap-2">
               <label className="ms-1 rtl:mb-1 sm:mb-2 text-content-heading font-bold text-base lg:text-[1.2rem] block">
-                {t.baseLabel[lang]}
+                {translations.websiteTypeLabel[lang]}
               </label>
               <div className="flex sm:grid sm:grid-cols-2 gap-2 sm:gap-2.5 sm:justify-between items-center">
-                {t.bases.map((base) => {
+                {translations.baseOptions.map((base) => {
                   const Icon = BASE_ICONS[base.id];
                   const isSelected = baseId === base.id;
                   return (
@@ -175,7 +175,7 @@ The Calculated Data:
             <div className="flex flex-col gap-2">
               <label
                 className="ms-1 rtl:mb-1 sm:mb-2 text-content-heading font-bold text-base lg:text-[1.2rem] block"
-                dangerouslySetInnerHTML={{ __html: t.scopeLabelByBase[baseId][lang] }}
+                dangerouslySetInnerHTML={{ __html: translations.scopeLabelByBase[baseId][lang] }}
               />
               <div className="flex flex-wrap gap-2 ">
                 {currentScopes.map((scope, index) => {
@@ -208,7 +208,7 @@ The Calculated Data:
 
             <div className="flex flex-col gap-2 mb-2 lg:mb-0">
               <label className="ms-1 rtl:mb-1 sm:mb-2 text-content-heading font-bold text-base lg:text-[1.2rem] block">
-                {t.addonsLabel[lang]}
+                {translations.addonsLabel[lang]}
               </label>
               <div className="grid grid-cols-2 gap-3 md:min-h-20 max-sm:[&>button:last-child:nth-child(odd)]:col-span-2 sm:grid-cols-12 sm:[&>button]:col-span-3 sm:[&:has(>button:nth-child(3):last-child)>button]:col-span-4">
                 {availableAddons.map((addon) => {
@@ -250,7 +250,7 @@ The Calculated Data:
             >
               <div className="flex items-end gap-2 justify-center">
                 <span className="text-[0.9rem] font-semibold uppercase tracking-widest text-content-muted pb-0.5">
-                  {t.estimateLabel[lang]}
+                  {translations.estimateLabel[lang]}
                 </span>
                 <div className="flex items-baseline gap-1.5">
                   <span className="text-[2.25rem] font-bold text-white tracking-tight leading-none">
@@ -270,7 +270,7 @@ The Calculated Data:
               className="sm:hidden my-2 mt-2.5 w-[98%] mx-auto border border-green-500/40 bg-green-500/20 hover:bg-green-500/40 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-2xl font-bold text-base"
             >
               <WhatsAppIcon className="w-5 h-5" />
-              <span>{t.cta[lang]}</span>
+              <span>{translations.quoteCta[lang]}</span>
             </a>
           </div>
 
@@ -278,7 +278,7 @@ The Calculated Data:
             <div className="h-full sticky top-24 flex flex-col px-4 pt-6 pb-6 rounded-3xl border-2 border-border-strong bg-black/35 shadow-lg shadow-black/30">
               <div className="flex-1 flex flex-col items-center justify-center gap-4 py-6">
                 <span className="text-sm lg:text-base font-semibold uppercase tracking-[0.25em] text-content-muted/90">
-                  {t.estimateLabel[lang]}
+                  {translations.estimateLabel[lang]}
                 </span>
                 <div className="flex items-baseline gap-2">
                   <span className="md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-none">
@@ -297,13 +297,13 @@ The Calculated Data:
                 className="mt-3.5 w-[95%] mx-auto border border-green-500/40 bg-green-500/40 hover:bg-green-500/50 transition-colors duration-200 py-3 px-6 text-content-body flex items-center justify-center gap-2 rounded-2xl font-bold text-base"
               >
                 <WhatsAppIcon className="w-6 h-6" />
-                <span>{t.cta[lang]}</span>
+                <span>{translations.quoteCta[lang]}</span>
               </a>
             </div>
           </div>
         </div>
         <p className="text-center text-content-muted/80 text-xs sm:text-base max-w-2xl mx-auto my-0.5 sm:my-0 px-4 leading-relaxed">
-          {t.disclaimer[lang]}
+          {translations.disclaimer[lang]}
         </p>
       </div>
     </>

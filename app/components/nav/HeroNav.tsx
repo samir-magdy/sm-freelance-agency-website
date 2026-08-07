@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import LanguageToggle from "../ui/LanguageToggle";
+import LanguageToggle from "@/app/components/ui/LanguageToggle";
 import MobileMenu from "./MobileMenu";
 import type { Lang } from "@/app/types";
 import { SITE_NAME } from "@/app/constants";

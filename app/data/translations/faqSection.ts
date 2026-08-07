@@ -9,7 +9,8 @@ interface FAQSection {
   heading: Localized;
   subheading: Localized;
   browseGuides: Localized;
-  ctaHeading: Localized;
+  ctaLabel: Localized;
+  orDivider: Localized;
   cta: Localized;
   items: FAQItem[];
 }
@@ -27,7 +28,7 @@ const faqSection: FAQSection = {
     ar: "تصفح أدلة تصميم المواقع",
   },
 
-  ctaHeading: {
+  ctaLabel: {
     en: "Still have questions?",
     ar: "لديك أسئلة آخرى؟",
   },
@@ -36,6 +37,11 @@ const faqSection: FAQSection = {
     en: "Request a Consultation",
     ar: "اطلب استشارة مجانية",
   },
+
+  orDivider: {
+    en: "or",
+    ar: "أو",
+  },
   items: [
     {
       question: {
@@ -43,8 +49,8 @@ const faqSection: FAQSection = {
         ar: "ما الذي يشمله السعر الأساسي؟",
       },
       answer: {
-        en: "Every project includes a custom site of up to 5 pages (landing pages are one page), an admin panel so you can edit your own content, 1st-year hosting, domain setup & a post-launch 90 day guarantee. For a breakdown of optional add-ons and pricing, use our <a href='/en/guides/website-cost-in-egypt#pricing-calculator'>pricing estimator</a> or <a href='#contact'>contact us</a> if you have any questions.",
-        ar: "كل مشروع بيشمل موقع مخصص بحد أقصى 5 صفحات (صفحة الهبوط صفحة واحدة)، لوحة تحكم لتعديل المحتوى بنفسك، استضافة السنة الأولى، إعداد الدومين، وضمان لمدة 90 يوم بعد الإطلاق. لمعرفة الإضافات الاختيارية والأسعار، استخدم <a href='/ar/guides/website-cost-in-egypt#pricing-calculator'>حاسبة الأسعار</a> أو <a href='#contact'>تواصل معنا</a> إذا كان لديك أي استفسار.",
+        en: "Every project includes a custom-built, responsive site with baseline SEO, an admin panel to edit your own content (we walk you through it at handover), a design mockup to review before build, two rounds of design revisions, first-year hosting, domain setup, and a 90-day post-launch guarantee. For a breakdown of optional add-ons and pricing, use our <a href='/en/guides/website-cost-in-egypt#pricing-calculator'>pricing estimator</a> or <a href='#contact'>contact us</a> if you have any questions.",
+        ar: "كل مشروع بيشمل موقع مخصص ومتجاوب مع كل الأجهزة مع تهيئة أساسية لمحركات البحث، لوحة تحكم لتعديل المحتوى بنفسك (بنشرحلك إزاي تستخدمها قبل التسليم)، عرض تصميم للمراجعة قبل التنفيذ، جولتين تعديلات على التصميم، استضافة السنة الأولى، إعداد الدومين، وضمان لمدة 90 يوم بعد الإطلاق. لمعرفة الإضافات الاختيارية والأسعار، استخدم <a href='/ar/guides/website-cost-in-egypt#pricing-calculator'>حاسبة الأسعار</a> أو <a href='#contact'>تواصل معنا</a> إذا كان لديك أي استفسار.",
       },
     },
 

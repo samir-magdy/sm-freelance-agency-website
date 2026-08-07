@@ -10,7 +10,7 @@ const resource: Guide = {
     ar: `أسعار تصميم المواقع الإلكترونية في مصر (${CURRENT_YEAR})`,
   },
   metaTitle: {
-    en: `How Much Does a Website Cost In Egypt (${CURRENT_YEAR})`,
+    en: `How Much Does a Website Cost in Egypt (${CURRENT_YEAR})`,
     ar: `سعر تصميم موقع إلكتروني في مصر (${CURRENT_YEAR})`,
   },
   excerpt: {
@@ -28,7 +28,7 @@ const resource: Guide = {
     <tr>
       <th scope="col">Website Type</th>
       <th scope="col">Price Range (EGP)</th>
-      <th scope="col">Best for</th>
+      <th scope="col">Best For</th>
     </tr>
   </thead>
   <tbody>
@@ -38,7 +38,7 @@ const resource: Guide = {
         <br><small style="color: #bfbfbf;">A single page that drives the visitor to take action (fill a form or contact via WhatsApp)</small>
       </td>
       <td>5,000 – 20,000</td>
-      <td>Freelancers & Startups</td>
+      <td>Freelancers, startups & marketing campaigns</td>
     </tr>
     <tr>
       <td>
@@ -46,7 +46,7 @@ const resource: Guide = {
         <br><small style="color: #bfbfbf;">A multi-page informational site to showcase your services and complete company details</small>
       </td>
       <td>8,000 – 30,000</td>
-      <td>Established Businesses</td>
+      <td>Established businesses</td>
     </tr>
     <tr>
       <td>
@@ -54,7 +54,7 @@ const resource: Guide = {
         <br><small style="color: #bfbfbf;">A site to display your products for sale, supports online payments and inventory management</small>
       </td>
       <td>15,000 – 50,000</td>
-      <td>Brands & Retailers</td>
+      <td>Brands & retailers</td>
     </tr>
   </tbody>
 </table>
@@ -75,19 +75,20 @@ const resource: Guide = {
   <li><strong>Hosting:</strong> Shared hosting is cheap but can make the site slow under heavy traffic or even crash it, unlike private hosting which guarantees higher performance.</li>
   <li><strong>Maintenance and technical support:</strong> Periodic maintenance contracts (monthly or yearly) are an additional cost that ensures the site keeps running efficiently and any post-delivery issues are fixed without surprise fees.</li>
 </ul>
-<h2 style="margin-bottom: 0.4rem">Website Price Estimator</h2>
-<p style="margin-bottom: 0">Choose site type, size, and add-ons.</p>
+<h2 style="margin-bottom: 0.4rem">Website price estimator</h2>
+<p style="margin-bottom: 0">Get a quick estimate for your project:</p>
 <!-- PRICING_ESTIMATOR_SLOT -->
-<h2 style="margin-top: 0.5rem">Cheap Websites: Hidden Risks and How to Avoid Them</h2>
-<p>For serious businesses, a cheap website usually causes more harm than good. Here is the typical failure pattern we see in the Egyptian market:</p>
+<h2 style="margin-top: 0.5rem">Cheap websites: hidden risks and how to avoid them</h2>
+<p>For serious businesses, a cheap website usually causes more harm than good. Here is the typical failure pattern we see:</p>
 <ul>
-  <li>The cheap website is often extremely slow, which frustrates customers and ruins your Google rankings.</li>
-  <li>The design is repetitive and unprofessional, making it impossible to stand out from competitors using the same templates.</li>
-  <li>The website doesn't work well on mobile devices, causing visitors to leave. In Egypt, the vast majority of traffic is mobile.</li>
+  <li>The cheap website is often slow, which frustrates customers and ruins your Google rankings.</li>
+  <li>The design is repetitive and unprofessional, making it impossible to stand out from competitors.</li>
+  <li>The website doesn't work well on mobile devices, causing visitors to leave. The vast majority of global traffic is mobile.</li>
   <li>Eventually, you will have to pay again to fix it, and it's often easier to rebuild from scratch.</li>
 </ul>
+<h2>The bottom line</h2>
 <p>Don't repeat the mistakes of others. Read our guide on <a href='/en/guides/choose-web-design-company-egypt'>how to choose the best web design company in Egypt</a> for additional information on how to protect yourself and choose wisely.</p>
-<p>The <strong>bottom line</strong> is that the right question isn't "what is the cheapest website I can get?" but rather "what is the minimum investment that will generate a positive return for my business?"</p>`,
+<p>The right question isn't "what is the cheapest website I can get?" but rather "what is the minimum investment that will generate a positive return for my business?"</p>`,
 
 ar: `
 <p><strong>تبدأ تكلفة تصميم المواقع الإلكترونية في مصر من حوالي 5,000 جنيه مصري، وممكن تتجاوز الـ 100,000 جنيه مصري حسب حجم المشروع والميزات المطلوبة ومستوى التخصيص</strong>. من خلال قرايتك للدليل ده، هتكتشف أنواع المواقع المختلفة، ونطاق السعر المتوقع لكل نوع، وهتعرف إيه هي العوامل الأساسية اللي بتحدد سعر الموقع في السوق علشان تتجنب إنك تدفع أكتر من اللازم أو تختار أرخص عرض وتندم بعدين.</p>
@@ -165,7 +166,7 @@ ar: `
     en: `Find out how much a professional website costs in Egypt in ${CURRENT_YEAR}. An honest EGP breakdown of what drives the price for landing pages, business sites, and online stores.`,
     ar: "عايز تعرف موقعك هيكلفك كام؟ احسب تكلفة الموقع فوراً باستخدام حاسبة الأسعار الذكية، واكتشف العوامل اللي بتحدد الأسعار.",
   },
-  readingMinutes: { en: 6, ar: 5 },
+  readingMinutes: { en: 5, ar: 5 },
 };
 
 export default resource;

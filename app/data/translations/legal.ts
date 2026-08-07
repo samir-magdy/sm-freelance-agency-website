@@ -1,6 +1,6 @@
 import type { Localized } from "@/app/types";
 
-export interface LegalItem {
+export interface LegalSection {
   title: Localized;
   content: Localized;
 }
@@ -8,5 +8,5 @@ export interface LegalItem {
 export interface LegalDocument {
   heading: Localized;
   subheading: Localized;
-  items: LegalItem[];
+  sections: LegalSection[];
 }

@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import profilePhoto from "@/public/profilePhoto.jpg";
-import aboutSection from "@/app/data/translations/aboutSection";
+import aboutPage from "@/app/data/translations/aboutPage";
 import { notFound } from "next/navigation";
-import { SITE_URL, SITE_NAME, CONTACT_EMAIL, SCHEMA_IDS } from "@/app/constants";
+import {
+  SITE_URL,
+  SITE_NAME,
+  CONTACT_EMAIL,
+  SCHEMA_IDS,
+  SOCIAL_LINKS,
+  FOUNDER_LINKS,
+} from "@/app/constants";
 import { pageAlternates, pageUrl } from "@/lib/urls";
 import {
   Eye,
@@ -15,10 +21,13 @@ import {
 } from "lucide-react";
 import WhatsAppIcon from "@/app/components/utils/WhatsAppIcon";
 import LinkedInIcon from "@/app/components/utils/LinkedInIcon";
-import { SOCIAL_LINKS } from "../../constants";
 import { isLang, type Lang, type LangParams } from "@/app/types";
 
-const pillarIcons: LucideIcon[] = [Eye, MessagesSquare, Handshake];
+const valueCardIcons: Record<string, LucideIcon> = {
+  transparency: Eye,
+  quality: MessagesSquare,
+  partnership: Handshake,
+};
 
 const meta: Record<Lang, { title: string; description: string }> = {
   en: {
@@ -56,7 +65,7 @@ export default async function AboutPage({
   if (!isLang(rawLang)) notFound();
   const lang: Lang = rawLang;
 
-  const t = aboutSection;
+  const translations = aboutPage;
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -68,10 +77,7 @@ export default async function AboutPage({
     nationality: { "@type": "Country", name: "Egypt" },
     url: pageUrl(lang, "/about"),
     image: `${SITE_URL}/profilePhoto.jpg`,
-    sameAs: [
-      "https://www.linkedin.com/in/samir-magdy-/",
-      "https://github.com/samir-magdy",
-    ],
+    sameAs: [FOUNDER_LINKS.linkedin, FOUNDER_LINKS.github],
     worksFor: {
       "@type": "ProfessionalService",
       "@id": SCHEMA_IDS.business,
@@ -88,16 +94,12 @@ export default async function AboutPage({
         }}
       />
       <article className="relative z-10 mx-auto max-w-4xl">
-        <header className="reveal-element text-center">
-          <h1
-            className="text-content-heading font-bold text-heading tracking-wide mb-6 md:mb-12"
-          >
-            {t.eyebrow[lang]}
-          </h1>
-        </header>
+        <h1 className="reveal-element text-center text-content-heading font-bold text-heading tracking-wide mb-6 md:mb-12">
+          {translations.h1PageTitle[lang]}
+        </h1>
 
         <p className="reveal-element text-center leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)]">
-          {t.paragraphs[0][lang]}
+          {translations.paragraphs[0][lang]}
         </p>
 
         <div className="reveal-element mt-8 flex items-center justify-center gap-4">
@@ -106,7 +108,7 @@ export default async function AboutPage({
             className="h-px w-8 bg-linear-to-r rtl:bg-linear-to-l from-transparent to-gold/50"
           />
           <p className="text-base font-semibold uppercase tracking-[0.28em] rtl:text-subheading text-content-muted">
-            {t.pillarsLabel[lang]}
+            {translations.valuesEyebrow[lang]}
           </p>
           <span
             aria-hidden="true"
@@ -114,41 +116,41 @@ export default async function AboutPage({
           />
         </div>
         <ul className="mt-8 mb-10 grid gap-6 text-center md:grid-cols-3 sm:gap-5 max-w-4xl mx-auto">
-          {t.pillars.map((p, i) => {
-            const Icon = pillarIcons[i] ?? pillarIcons[0];
+          {translations.valueCards.map((card) => {
+            const Icon = valueCardIcons[card.id];
             return (
               <li
-                key={p.title.en}
+                key={card.id}
                 className="reveal-element group relative overflow-hidden rounded-3xl border border-border-subtle bg-linear-to-b from-surface-card/80 to-surface-card/40 px-6 py-10 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-gold/40"
               >
-                <span
+                <div
                   aria-hidden="true"
                   className="relative mx-auto mb-5 flex items-center justify-center text-gold/90 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:scale-120 group-hover:text-gold-light"
                 >
                   <Icon className="size-10" strokeWidth={1.5} />
-                </span>
+                </div>
 
                 <p className="relative text-[1.05rem] sm:text-[clamp(1rem,5vw,1.2rem)] font-semibold uppercase tracking-widest text-gold">
-                  {p.title[lang]}
+                  {card.title[lang]}
                 </p>
 
-                <span
+                <div
                   aria-hidden="true"
-                  className="relative mx-auto my-8 sm:my-4 block h-px w-8 bg-content-muted/40 transition-all duration-500 group-hover:w-14 group-hover:bg-gold/70"
+                  className="relative mx-auto my-8 sm:my-4 h-px w-8 bg-content-muted/40 transition-all duration-500 group-hover:w-14 group-hover:bg-gold/70"
                 />
 
                 <p className="relative text-pretty leading-[1.7] rtl:leading-loose text-content-muted text-lg sm:text-[clamp(1rem,4vw,1.2rem)]">
-                  {p.desc[lang]}
+                  {card.desc[lang]}
                 </p>
               </li>
             );
           })}
         </ul>
         <p className="reveal-element text-center leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)]">
-          {t.paragraphs[1][lang]}
+          {translations.paragraphs[1][lang]}
         </p>
          <p className="reveal-element mt-8 text-center leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)]">
-          {t.paragraphs[2][lang]}
+          {translations.paragraphs[2][lang]}
         </p>
         <div className="reveal-element mt-20 flex max-w-4xl mx-auto flex-col items-center text-center md:mt-16 md:flex-row md:items-center md:justify-center md:gap-12 md:text-start">
           <span
@@ -156,15 +158,15 @@ export default async function AboutPage({
             aria-hidden="true"
           />
           <p className="sm:hidden mt-5 text-[clamp(2rem,5vw,1.55rem)] font-semibold text-content-heading">
-            {t.founderName[lang]}
+            {translations.founderName[lang]}
           </p>
           <p className="sm:hidden mt-1.5 text-content-muted text-[clamp(1.2rem,4vw,1.55rem)]">
-            {t.founderRole[lang]}
+            {translations.founderRole[lang]}
           </p>
           <div className="mt-10 shrink-0 overflow-hidden rounded-4xl border border-border-strong shadow-[0_18px_40px_-18px_rgba(0,0,0,0.8)] md:mt-0 md:w-62">
             <Image
               src={profilePhoto}
-              alt={`Photo of Samir Magdy, Founder of ${SITE_NAME}`}
+              alt={translations.founderPhotoAlt[lang]}
               className="size-full object-cover object-top"
               placeholder="blur"
             />
@@ -177,10 +179,10 @@ export default async function AboutPage({
 
           <div className="flex flex-col w-full px-2 items-center md:items-start">
             <p className="hidden sm:block mt-5 text-[clamp(1.3rem,1rem+1.1vw,1.55rem)] font-semibold text-content-heading md:mt-0 md:text-[clamp(1.8rem,2.4vw,2.4rem)] md:leading-tight">
-              {t.founderName[lang]}
+              {translations.founderName[lang]}
             </p>
             <p className="hidden sm:block text-content-muted text-[1.1rem] mt-3 rtl:mt-5 rtl:text-[1.2rem] md:font-semibold md:uppercase md:tracking-[0.2em] md:text-gold/85">
-              {t.founderRole[lang]}
+              {translations.founderRole[lang]}
             </p>
 
             <div className="mt-9 flex w-full flex-col gap-3 md:mt-8">
@@ -192,7 +194,7 @@ export default async function AboutPage({
                   className="flex flex-1 items-center justify-center gap-2.5 rounded-2xl border border-border-strong px-6 py-3 transition-all duration-250 hover:border-white/30"
                 >
                   <WhatsAppIcon className="size-5 shrink-0 text-[#25D366]" />
-                  {t.ctaWhatsApp[lang]}
+                  {translations.linkWhatsApp[lang]}
                 </a>
 
                 <a
@@ -203,18 +205,18 @@ export default async function AboutPage({
                     className="size-5 shrink-0 text-white/80"
                     strokeWidth={2}
                   />
-                  {t.ctaEmail[lang]}
+                  {translations.linkEmail[lang]}
                 </a>
 
-                <Link
-                  href="https://www.linkedin.com/in/samir-magdy-/"
+                <a
+                  href={FOUNDER_LINKS.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-1 items-center justify-center gap-2.5 rounded-2xl border border-border-strong px-6 py-3 transition-all duration-250 hover:border-white/30"
                 >
                   <LinkedInIcon className="size-5 shrink-0 text-[#0A66C2]" />
-                  {t.ctaLinkedIn[lang]}
-                </Link>
+                  {translations.linkLinkedIn[lang]}
+                </a>
               </div>
             </div>
           </div>

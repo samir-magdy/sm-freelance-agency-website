@@ -10,7 +10,7 @@ const privacyPolicy: LegalDocument = {
     en: `Last Updated: June 4, 2026. Welcome to ${SITE_NAME}. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website and use our services.`,
     ar: `آخر تحديث: 4 يونيو 2026. مرحبًا بك في ${SITE_NAME}. نحن ملتزمون بحماية معلوماتك الشخصية وحقك في الخصوصية. تشرح سياسة الخصوصية هذه كيف نقوم بجمع واستخدام وحماية معلوماتك عند زيارة موقعنا واستخدام خدماتنا.`,
   },
-  items: [
+  sections: [
     {
       title: {
         en: "1. Information We Collect",

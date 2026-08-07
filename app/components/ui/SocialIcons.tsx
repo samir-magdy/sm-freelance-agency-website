@@ -1,5 +1,5 @@
-import WhatsAppIcon from "../utils/WhatsAppIcon";
-import LinkedInIcon from "../utils/LinkedInIcon";
+import WhatsAppIcon from "@/app/components/utils/WhatsAppIcon";
+import LinkedInIcon from "@/app/components/utils/LinkedInIcon";
 import { SOCIAL_LINKS, SITE_NAME } from "@/app/constants";
 
 export default function SocialIcons() {

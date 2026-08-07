@@ -19,9 +19,9 @@ const resource: Guide = {
   },
   content: {
     en: `
-<p>DIY website builders like Wix or Squarespace can work if you need something fairly simple. But they come with significant drawbacks that aren't immediately obvious and tend to surface over time, or the moment you need customizations that go beyond what the platform allows. Let's start with a clear comparison.</p>
+<p>DIY website builders like Wix or Squarespace can work if you need something fairly simple. But they come with significant drawbacks that aren't immediately obvious and tend to surface over time, or the moment you need customizations that go beyond the platform's limitations. Let's start with a clear comparison.</p>
 
-<h2>DIY vs. Hiring a Professional</h2>
+<h2>What's the difference?</h2>
 <p>Here is the side-by-side breakdown:</p>
 <table>
   <thead>
@@ -34,48 +34,48 @@ const resource: Guide = {
   <tbody>
     <tr>
       <td>Up-front Cost</td>
-      <td>Monthly subscription in USD</td>
-      <td>Higher one-time investment in EGP</td>
+      <td>Monthly subscription (Low)</td>
+      <td>One-time investment (High)</td>
+    </tr>
+    <tr>
+      <td>Long-term Cost</td>
+      <td>Compounds (High)</td>
+      <td>Minimal recurring fees (Low)</td>
     </tr>
     <tr>
       <td>Your Time</td>
       <td>A lot (days / weeks)</td>
-      <td>Minimal (review and feedback only)</td>
+      <td>Minimal (Feedback only)</td>
     </tr>
     <tr>
-      <td>Design Uniqueness</td>
+      <td>Design</td>
       <td>Templated, common</td>
-      <td>Custom to your brand</td>
+      <td>Unique design</td>
     </tr>
     <tr>
       <td>Speed &amp; Performance</td>
-      <td>Often slower</td>
-      <td>Optimized for high performance</td>
+      <td>Often slower, suboptimal</td>
+      <td>Optimized for performance</td>
     </tr>
     <tr>
-      <td>SEO Foundation</td>
+      <td>SEO</td>
       <td>Limited and generic</td>
-      <td>Optimized for maximum reach</td>
-    </tr>
-    <tr>
-      <td>Local Payments (Paymob / Fawry)</td>
-      <td>Limited or unavailable</td>
-      <td>Native integration</td>
+      <td>Optimized for max visibility</td>
     </tr>
     <tr>
       <td>Scalability</td>
       <td>Hard to expand, locked in</td>
-      <td>Built to grow with your business</td>
+      <td>Built to scale</td>
     </tr>
   </tbody>
 </table>
 
-<h2>The DIY Cost Trap</h2>
+<h2>The DIY cost trap</h2>
 
-<p>The DIY cost trap is that the low monthly USD subscription hides two much larger costs: the value of your time and years of compounding foreign-currency fees. The main appeal of DIY platforms is the low starting price, but neither of these costs is visible up front. The first is the value of your time: the hours you spend wrestling with layouts and fixing technical issues are hours away from running your business. The second is the compounding USD subscription. Most platforms cost $20–$50/month, and over two years, that's roughly 30,000–80,000 EGP at current exchange rates. A professional build, paid once in EGP, will typically cost less than 30,000. For a full breakdown of what professional builds cost, read our <a href='/en/guides/website-cost-in-egypt'>guide on website costs in Egypt</a>.</p>
+<p>The DIY cost trap is that the low monthly subscription hides two much larger costs, the value of your time and years of compounding fees. The main appeal of DIY platforms is the low starting price, but neither of these costs is visible up front. The hours you spend wrestling with layouts and fixing technical issues are hours away from running your business, and most platforms cost $20-$50/month. By the first year, you have usually surpassed the cost of hiring a professional for a one-time fee. For a full breakdown of what professional builds can cost, read our <a href='/en/guides/website-cost-in-egypt'>guide on website pricing</a>.</p>
 
-<h2>The Bottom Line</h2>
-<p>Building your own site is a reasonable choice if you're still testing a new idea and your budget is very tight. But if you have a real business and want to grow and compete in ${CURRENT_YEAR}, professional web design is the foundation you need. The pattern is consistent: businesses that invest in professional design from the start avoid the rebuild trap entirely.</p>`,
+<h2>The bottom line</h2>
+<p>Building your own site is a reasonable choice if you have free time and your budget is tight. But if you have a real business and want to grow and compete in ${CURRENT_YEAR}, professional web design is the foundation you need. Businesses that invest in professional design from the start avoid the DIY cost trap entirely.</p>`,
 
     ar: `
 <p>الحقيقة إن المنصات الجاهزة ليها عيوب كتير هنوضحها قريباً. العيوب دي مابتظهرش في البداية، لكنها بتبدأ تبان بوضوح مع مرور الزمن أو لما تحتاج تعديلات مخصصة برة القيود اللي المنصات دي بتفرضها عليك. خلينا نبدأ بمقارنة واضحة بين الأتنين.</p>
@@ -95,6 +95,11 @@ const resource: Guide = {
       <td>التكلفة الابتدائية</td>
       <td>اشتراك شهري بالدولار</td>
       <td>استثمار أعلى مرة واحدة بالجنيه</td>
+    </tr>
+    <tr>
+      <td>التكلفة على المدى البعيد</td>
+      <td>بتتراكم بالدولار (30-80 ألف جنيه في سنتين)</td>
+      <td>بتتدفع مرة واحدة والموقع ملكك</td>
     </tr>
     <tr>
       <td>الوقت المطلوب منك</td>
@@ -117,11 +122,6 @@ const resource: Guide = {
       <td>مبني من الأساس</td>
     </tr>
     <tr>
-      <td>الدفع المحلي (انستا باي / فوري)</td>
-      <td>محدود أو غير متاح</td>
-      <td>مدمج بشكل أساسي</td>
-    </tr>
-    <tr>
       <td>القابلية للنمو</td>
       <td>صعب التوسع أو النقل</td>
       <td>مبني علشان يكبر مع شركتك</td>
@@ -140,7 +140,7 @@ const resource: Guide = {
     en: "Should you build your own website on Wix or Squarespace, or hire a professional? Compare real costs (including hidden USD subscriptions), risks, and long-term tradeoffs.",
     ar: "تعمل موقعك بنفسك على Wix أو Squarespace، ولا توظف محترف؟ قارن التكاليف الحقيقية (بما فيها الاشتراكات الخفية بالدولار)، المخاطر، والفروق على المدى البعيد.",
   },
-  readingMinutes: { en: 3, ar: 2 },
+  readingMinutes: { en: 2, ar: 2 },
 };
 
 export default resource;

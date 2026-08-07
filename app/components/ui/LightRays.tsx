@@ -301,12 +301,12 @@ void main() {
         uniforms.rayDir.value = dir;
       };
 
-      const loop = (t: number) => {
+      const loop = (timestampMs: number) => {
         if (!rendererRef.current || !uniformsRef.current || !meshRef.current) {
           return;
         }
 
-        uniforms.iTime.value = t * 0.001;
+        uniforms.iTime.value = timestampMs * 0.001;
 
         if (followMouse && mouseInfluence > 0.0) {
           const smoothing = 0.92;

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import LanguageToggle from "../ui/LanguageToggle";
+import LanguageToggle from "@/app/components/ui/LanguageToggle";
 import { navItems, type NavKey } from "@/app/data/translations/nav";
 import type { Lang } from "@/app/types";
 import { SITE_NAME } from "@/app/constants";

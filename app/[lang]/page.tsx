@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import HeroSection from "../components/sections/HeroSection";
-import PortfolioSection from "../components/sections/PortfolioSection";
-import PricingSection from "../components/sections/PricingSection";
-import FAQSection from "../components/sections/FAQSection";
-import ContactSection from "../components/sections/ContactSection";
+import HeroSection from "@/app/components/sections/HeroSection/HeroSection";
+import PortfolioSection from "@/app/components/sections/PortfolioSection/PortfolioSection";
+import ServicesSection from "@/app/components/sections/ServicesSection/ServicesSection";
+import FAQSection from "@/app/components/sections/FAQSection/FAQSection";
+import ContactSection from "@/app/components/sections/ContactSection/ContactSection";
 import { notFound } from "next/navigation";
-import { projectsStructuredData } from "../data/portfolio";
-import { pricingCards } from "../data/translations/pricingSection";
+import { projectsStructuredData } from "@/app/data/portfolio";
+import { servicesSectionTranslations } from "@/app/data/translations/servicesSection";
 import {
   SITE_URL,
   SITE_NAME,
@@ -110,7 +110,7 @@ function buildStructuredData(lang: Lang) {
     knowsLanguage: ["en", "ar"],
   };
 
-  const services = pricingCards.cards.map((card) => ({
+  const services = servicesSectionTranslations.cards.map((card) => ({
     "@type": "Service",
     "@id": `${SITE_URL}#service-${card.id}`,
     name: card.name.en,
@@ -193,7 +193,7 @@ export default async function Page({
     <div className="relative bg-background text-content-heading flex flex-col gap-40 md:gap-72">
       <HeroSection lang={lang} />
       <PortfolioSection key={lang} lang={lang} />
-      <PricingSection lang={lang} />
+      <ServicesSection lang={lang} />
       <FAQSection lang={lang} />
       <ContactSection lang={lang} />
 

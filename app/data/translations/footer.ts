@@ -1,21 +1,20 @@
-import { SITE_NAME } from "@/app/constants";
 import type { Localized } from "@/app/types";
 
 const footer = {
   sitemapLabel: { en: "Sitemap", ar: "خريطة الموقع" },
   legalLabel: { en: "Legal", ar: "روابط قانونية" },
+  location: { en: "Cairo, Egypt", ar: "القاهرة، مصر" },
   columns: {
     studio: { en: "Studio", ar: "الاستوديو" },
     work: { en: "Work", ar: "أعمالنا" },
     resources: { en: "Resources", ar: "الأدلة" },
   },
-  labels: {
+  legal: {
     privacy: { en: "Privacy Policy", ar: "سياسة الخصوصية" },
     terms: { en: "Terms of Service", ar: "شروط الخدمة" },
-    location: { en: "Cairo, Egypt", ar: "القاهرة، مصر" },
   },
   pages: {
-    pricing: { en: "Services & Pricing", ar: "الخدمات والأسعار" },
+    services: { en: "Our Services", ar: "خدماتنا" },
     faq: { en: "FAQs", ar: "الأسئلة الشائعة" },
     about: { en: `About`, ar: "من نحن" },
     contact: { en: "Contact Us", ar: "تواصل معنا" },
@@ -23,12 +22,10 @@ const footer = {
 } satisfies {
   sitemapLabel: Localized;
   legalLabel: Localized;
+  location: Localized;
   columns: Record<"studio" | "work" | "resources", Localized>;
-  labels: Record<
-    "privacy" | "terms" | "location",
-    Localized
-  >;
-  pages: Record<"pricing" | "faq" | "about" | "contact", Localized>;
+  legal: Record<"privacy" | "terms", Localized>;
+  pages: Record<"services" | "faq" | "about" | "contact", Localized>;
 };
 
 export default footer;

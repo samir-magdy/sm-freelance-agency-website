@@ -1,37 +1,37 @@
 import Link from "next/link";
-import { pricingCards } from "@/app/data/translations/pricingSection";
+import { servicesSectionTranslations } from "@/app/data/translations/servicesSection";
 import type { Lang } from "@/app/types";
 
-interface PricingSectionProps {
+interface ServicesSectionProps {
   lang: Lang;
 }
 
-export default function PricingSection({ lang }: PricingSectionProps) {
-  const t = pricingCards;
+export default function ServicesSection({ lang }: ServicesSectionProps) {
+  const translations = servicesSectionTranslations;
   const isRtl = lang === "ar";
 
   return (
     <section
-      id="pricing"
+      id="services"
       className="relative flex py-4 px-4 sm:px-12 md:px-24 min-h-dvh items-start"
-      aria-labelledby="pricing-cards-heading"
+      aria-labelledby="services-cards-heading"
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="reveal-element flex flex-col items-center w-full max-w-7xl mx-auto">
         <div className="mb-6 md:mb-10  text-center">
           <h2
-            id="pricing-cards-heading"
+            id="services-cards-heading"
             className="font-bold text-heading mb-2 rtl:mb-3 leading-tight"
           >
-            {t.heading[lang]}
+            {translations.heading[lang]}
           </h2>
           <p className="text-center text-content-muted text-[clamp(1.2rem,2vw,1.6rem)] max-w-2xl mx-auto">
-            {t.subheading[lang]}
+            {translations.subheading[lang]}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 lg:gap-8">
-          {t.cards.map((card) => (
+          {translations.cards.map((card) => (
             <a
               key={card.id}
               href="#contact"
@@ -52,24 +52,24 @@ export default function PricingSection({ lang }: PricingSectionProps) {
                   {card.price ? (
                     <div className="flex flex-col gap-1">
                       <span className="text-xs font-bold uppercase tracking-[0.2em] text-content-muted/70 leading-none">
-                        {t.startsAt[lang]}
+                        {translations.startsAt[lang]}
                       </span>
                       <div className="flex items-baseline gap-1.5">
                         <span className="text-heading font-bold text-gold tracking-tighter leading-none">
                           {card.price.toLocaleString()}
                         </span>
                         <span className="text-caption font-medium text-content-muted">
-                          {t.currency[lang]}
+                          {translations.currency[lang]}
                         </span>
                       </div>
                     </div>
                   ) : (
                     <span className="text-subheading md:text-heading font-bold text-gold tracking-tight leading-none">
-                      {t.customPriceLabel[lang]}
+                      {translations.customPriceLabel[lang]}
                     </span>
                   )}
                   <span className="inline-flex items-center gap-2 text-base font-semibold text-content-body group-hover:text-content-heading transition-colors duration-300">
-                    {t.cta[lang]}
+                    {translations.contactCta[lang]}
                     <svg
                       width="16"
                       height="16"
@@ -94,7 +94,7 @@ export default function PricingSection({ lang }: PricingSectionProps) {
         </div>
         <div className="reveal-element mt-8 sm:mt-12 flex flex-col items-center gap-3">
           <span className="text-content-muted text-base sm:text-lg font-medium">
-            {t.estimatorLead[lang]}
+            {translations.estimatorLead[lang]}
           </span>
           <Link
             href={`/${lang}/guides/website-cost-in-egypt#pricing-calculator`}
@@ -133,7 +133,7 @@ export default function PricingSection({ lang }: PricingSectionProps) {
               <line x1="12" y1="15" x2="12" y2="15" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
               <line x1="16" y1="15" x2="16" y2="18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
             </svg>
-            {t.estimatorCta[lang]}
+            {translations.estimatorCta[lang]}
             <svg
               width="16"
               height="16"

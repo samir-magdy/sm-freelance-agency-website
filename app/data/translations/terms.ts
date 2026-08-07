@@ -10,7 +10,7 @@ const termsOfService: LegalDocument = {
     en: "Last Updated: June 4, 2026. Please read these terms and conditions carefully before using Our Service.",
     ar: "آخر تحديث: 4 يونيو 2026. يرجى قراءة هذه الشروط والأحكام بعناية قبل استخدام خدمتنا.",
   },
-  items: [
+  sections: [
     {
       title: {
         en: "1. Agreement to Terms",

@@ -5,16 +5,16 @@ import type { Guide } from "@/app/data/guides/types";
 
 interface GuidesGridStrings {
   minRead: Localized;
-  readMore: Localized;
+  readGuideButton: Localized;
 }
 
 interface GuidesGridProps {
   resources: Guide[];
   lang: Lang;
-  t: GuidesGridStrings;
+  translations: GuidesGridStrings;
 }
 
-export default function GuidesGrid({ resources, lang, t }: GuidesGridProps) {
+export default function GuidesGrid({ resources, lang, translations }: GuidesGridProps) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {resources.map((guide) => (
@@ -38,7 +38,7 @@ export default function GuidesGrid({ resources, lang, t }: GuidesGridProps) {
               </time>
               <span className="inline-flex items-center gap-1.5 text-sm text-content-muted border border-border-subtle rounded-lg px-3 py-1">
                 <Clock size={13} aria-hidden />
-                {guide.readingMinutes[lang]} {t.minRead[lang]}
+                {guide.readingMinutes[lang]} {translations.minRead[lang]}
               </span>
             </div>
           </div>
@@ -53,7 +53,7 @@ export default function GuidesGrid({ resources, lang, t }: GuidesGridProps) {
             href={`/${lang}/guides/${guide.slug}`}
             className="cta-primary inline-flex items-center justify-center gap-2 py-2.5 px-5 rounded-xl text-background text-base sm:text-[clamp(1rem,3vw,1.3rem)] font-semibold tracking-wide"
           >
-            {t.readMore[lang]}
+            {translations.readGuideButton[lang]}
           </Link>
         </article>
       ))}

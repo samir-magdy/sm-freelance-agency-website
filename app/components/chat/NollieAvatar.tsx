@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import styles from "./Nollie.module.css";
 
 interface NollieAvatarProps {
   animated?: boolean;
@@ -103,7 +104,7 @@ export default function NollieAvatar({
     <svg
       ref={svgRef}
       viewBox="0 0 64 64"
-      className={`nollie-avatar ${animated ? "is-animated" : ""} ${className ?? ""}`}
+      className={`${styles.avatar} ${animated ? styles.isAnimated : ""} ${className ?? ""}`}
       style={{ overflow: "visible" }}
       aria-hidden
     >
@@ -137,7 +138,7 @@ export default function NollieAvatar({
         cy="32"
         r="30"
         fill="url(#nollie-aura)"
-        className="nollie-aura-ring"
+        className={styles.auraRing}
       />
 
       {/* Gold ring (the "frame") */}
@@ -151,7 +152,7 @@ export default function NollieAvatar({
           width="18"
           height="80"
           fill="url(#nollie-gleam)"
-          className="nollie-gleam-sweep"
+          className={styles.gleamSweep}
           transform="rotate(-20 0 32)"
         />
       </g>
@@ -160,10 +161,10 @@ export default function NollieAvatar({
       <circle cx="32" cy="32" r="16.75" fill="var(--color-background)" />
 
       {/* Eyes — vertical gold capsules with a soft specular highlight.
-          The parent .nollie-eyes group receives the gaze translate via CSS
-          variables; each inner .nollie-eye group carries the blink scaleY. */}
-      <g className="nollie-eyes">
-        <g className="nollie-eye nollie-eye-l">
+          The parent `.eyes` group receives the gaze translate via CSS
+          variables; each inner `.eye` group carries the blink scaleY. */}
+      <g className={styles.eyes}>
+        <g className={`${styles.eye} ${styles.eyeL}`}>
           <rect
             x="24.75"
             y="27"
@@ -181,7 +182,7 @@ export default function NollieAvatar({
             opacity="0.75"
           />
         </g>
-        <g className="nollie-eye nollie-eye-r">
+        <g className={`${styles.eye} ${styles.eyeR}`}>
           <rect
             x="36.25"
             y="27"

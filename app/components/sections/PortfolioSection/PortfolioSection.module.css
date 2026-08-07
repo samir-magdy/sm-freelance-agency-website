@@ -1,0 +1,39 @@
+/* ══════════════════════════════════════
+   Portfolio Showcase — Scroll-Snap
+   ══════════════════════════════════════ */
+
+/* `--nav-h` is consumed by the sticky sub-nav; must live on the section root
+   so descendants read it via var(). `:global()` because #portfolio is a
+   hash-navigation target and must stay unhashed in the DOM. */
+:global(#portfolio) {
+  --nav-h: 5rem;
+}
+
+[dir="rtl"] :global(#portfolio) {
+  --nav-h: 3rem;
+}
+
+@media (min-width: 1280px) {
+  :global(#portfolio) {
+    --nav-h: 2.2rem;
+  }
+}
+
+.snap::-webkit-scrollbar {
+  display: none;
+}
+
+.phoneScroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* iOS-only: -webkit-touch-callout supports check gates these tweaks to iOS Safari. */
+@supports (-webkit-touch-callout: none) {
+  .genre {
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .mobileButtons {
+    font-size: 1.1rem;
+  }
+}

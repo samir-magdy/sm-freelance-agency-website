@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { use } from "react";
 import { SCHEMA_IDS } from "@/app/constants";
 import guides from "@/app/data/guides";
-import guidesTranslations from "@/app/data/translations/guides";
+import guidesTranslations from "@/app/data/translations/guidesShared";
 import GuidesGrid from "./GuidesGrid";
 import type { LangParams } from "@/app/types";
 import { homeUrl, pageUrl, pageAlternates } from "@/lib/urls";
@@ -17,10 +17,10 @@ export async function generateMetadata({
   params: Promise<LangParams>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  const t = guidesTranslations;
+  const translations = guidesTranslations;
   return {
-    title: t.metaTitle[lang],
-    description: t.metaDescription[lang],
+    title: translations.metaTitle[lang],
+    description: translations.metaDescription[lang],
     alternates: pageAlternates(lang, "/guides"),
   };
 }
@@ -31,7 +31,7 @@ export default function GuidesPage({
   params: Promise<LangParams>;
 }) {
   const { lang } = use(params);
-  const t = guidesTranslations;
+  const translations = guidesTranslations;
   const canonical = pageUrl(lang, "/guides");
 
   const jsonLd = [
@@ -39,8 +39,8 @@ export default function GuidesPage({
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "@id": `${canonical}#webpage`,
-      name: t.pageTitle[lang],
-      description: t.metaDescription[lang],
+      name: translations.pageTitle[lang],
+      description: translations.metaDescription[lang],
       url: canonical,
       inLanguage: lang,
       isPartOf: { "@id": SCHEMA_IDS.website },
@@ -60,7 +60,7 @@ export default function GuidesPage({
         {
           "@type": "ListItem",
           position: 2,
-          name: t.pageTitle[lang],
+          name: translations.pageTitle[lang],
           item: canonical,
         },
       ],
@@ -78,11 +78,11 @@ export default function GuidesPage({
       <div className="max-w-7xl mx-auto flex flex-col gap-2 sm:gap-8">
         <header className="text-center flex flex-col">
           <h1 className="text-heading font-bold text-content-heading rtl:mb-1">
-            {t.pageTitle[lang]}
+            {translations.pageTitle[lang]}
           </h1>
         </header>
 
-        <GuidesGrid resources={guides} lang={lang} t={t} />
+        <GuidesGrid resources={guides} lang={lang} translations={translations} />
       </div>
     </div>
   );

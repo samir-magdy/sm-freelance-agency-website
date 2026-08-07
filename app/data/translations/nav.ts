@@ -2,15 +2,15 @@ import type { Localized } from "@/app/types";
 
 export type NavKey =
   | "portfolio"
-  | "pricing"
+  | "services"
   | "faq"
   | "about"
   | "guides"
   | "contact";
 
-const nav: Record<NavKey, Localized> = {
+const navTranslations: Record<NavKey, Localized> = {
   portfolio: { en: "Portfolio", ar: "سابقة الأعمال" },
-  pricing: { en: "Services", ar: "الخدمات والأسعار" },
+  services: { en: "Services", ar: "الخدمات والأسعار" },
   faq: { en: "FAQs", ar: "الأسئلة الشائعة" },
   about: { en: "About", ar: "من نحن" },
   guides: { en: "Guides", ar: "الأدلة" },
@@ -25,7 +25,7 @@ type NavItem =
 // both the desktop nav and the mobile menu.
 export const navItems: readonly NavItem[] = [
   { key: "portfolio", kind: "hash", target: "portfolio" },
-  { key: "pricing", kind: "hash", target: "pricing" },
+  { key: "services", kind: "hash", target: "services" },
   { key: "faq", kind: "hash", target: "FAQs" },
   { key: "about", kind: "route", path: "about" },
   { key: "guides", kind: "route", path: "guides" },
@@ -34,4 +34,4 @@ export const navItems: readonly NavItem[] = [
 
 export const langToggle: Localized = { en: "EN", ar: "عربي" };
 
-export default nav;
+export default navTranslations;

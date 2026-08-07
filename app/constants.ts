@@ -12,6 +12,11 @@ export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/company/sm-web-design-studio-egypt/",
 } as const;
 
+export const FOUNDER_LINKS = {
+  linkedin: "https://www.linkedin.com/in/samir-magdy-/",
+  github: "https://github.com/samir-magdy",
+} as const;
+
 export const CURRENT_YEAR = new Date().getFullYear();
 
 export const SCHEMA_IDS = {
