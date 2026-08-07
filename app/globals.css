@@ -57,6 +57,13 @@ section {
     scroll-behavior: smooth;
     background-color: var(--color-background);
   }
+
+  @media (max-width: 767px) {
+    html,
+    body {
+      scroll-behavior: auto;
+    }
+  }
 }
 
 /* ══════════════════════════════════════
@@ -203,6 +210,21 @@ section {
    Currently used by the FAQ accordion's <details> height animation. */
 html {
   interpolate-size: allow-keywords;
+}
+
+/* ══════════════════════════════════════
+   Mobile menu — Staggered item entrance
+   ══════════════════════════════════════ */
+
+@keyframes menu-item-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ══════════════════════════════════════

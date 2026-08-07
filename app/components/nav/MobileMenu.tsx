@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback, type CSSProperties } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -21,6 +21,8 @@ interface MobileMenuProps {
   langToggleLabel: string;
 }
 
+const EASE_OUT_EXPO = "cubic-bezier(0.16, 1, 0.3, 1)";
+
 export default function MobileMenu({
   lang,
   nav,
@@ -28,11 +30,11 @@ export default function MobileMenu({
   langToggleLabel,
 }: MobileMenuProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [origin, setOrigin] = useState({ x: "100%", y: "0%" });
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
   const pathname = usePathname();
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+  const closeMenu = () => setIsMenuOpen(false);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -47,6 +49,36 @@ export default function MobileMenu({
       document.body.style.overflow = "";
     };
   }, [isMenuOpen]);
+
+  const captureOrigin = useCallback(() => {
+    if (!buttonRef.current) return;
+    const rect = buttonRef.current.getBoundingClientRect();
+    setOrigin({
+      x: `${rect.left + rect.width / 2}px`,
+      y: `${rect.top + rect.height / 2}px`,
+    });
+  }, []);
+
+  const handleToggle = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    captureOrigin();
+    const next = !isMenuOpen;
+    setIsMenuOpen(next);
+    if (next) window.dispatchEvent(new Event(CHAT_CLOSE_EVENT));
+  };
+
+  const clipPath = `circle(${isMenuOpen ? 150 : 0}% at ${origin.x} ${origin.y})`;
+  const clipDuration = 2000;
+
+  const itemLift = (index: number): CSSProperties => {
+    const openDelay = 220 + index * 60;
+    return {
+      animation: isMenuOpen
+        ? `menu-item-in 550ms ${EASE_OUT_EXPO} ${openDelay}ms both`
+        : "none",
+      willChange: "transform, opacity",
+    };
+  };
 
   return (
     <nav
@@ -73,12 +105,8 @@ export default function MobileMenu({
             />
           </a>
           <button
-            onClick={(e) => {
-              e.stopPropagation();
-              const next = !isMenuOpen;
-              setIsMenuOpen(next);
-              if (next) window.dispatchEvent(new Event(CHAT_CLOSE_EVENT));
-            }}
+            ref={buttonRef}
+            onClick={handleToggle}
             className="block p-4"
             aria-label={isMenuOpen ? a11y.closeMenu : a11y.openMenu}
             aria-expanded={isMenuOpen}
@@ -102,30 +130,23 @@ export default function MobileMenu({
       <div
         onClick={closeMenu}
         inert={!isMenuOpen}
-        className={`fixed inset-0 z-40 bg-background/70 transition-opacity duration-250 ease-out ${
-          isMenuOpen
-            ? "opacity-100 backdrop-blur-xl pointer-events-auto"
-            : "opacity-0 backdrop-blur-none pointer-events-none"
+        className={`pt-10 fixed inset-0 z-40 flex flex-col items-center justify-center bg-background/85 backdrop-blur-2xl ${
+          isMenuOpen ? "pointer-events-auto" : "pointer-events-none"
         }`}
-      />
-
-      <div
-        onClick={closeMenu}
-        inert={!isMenuOpen}
-        className={`pt-10 fixed inset-0 z-40 flex flex-col items-center justify-center transition-[opacity,visibility] ease-out ${
-          isMenuOpen
-            ? "opacity-100 visible pointer-events-auto"
-            : "opacity-0 invisible pointer-events-none"
-        }`}
+        style={{
+          clipPath,
+          WebkitClipPath: clipPath,
+          transition: `clip-path ${clipDuration}ms ${EASE_OUT_EXPO}, -webkit-clip-path ${clipDuration}ms ${EASE_OUT_EXPO}`,
+        }}
       >
         <ul
           className="flex flex-col items-center gap-8 font-semibold text-content-heading text-3xl tracking-wide"
           onClick={(e) => e.stopPropagation()}
         >
-          {navItems.map((item) => {
+          {navItems.map((item, i) => {
             if (item.kind === "hash") {
               return (
-                <li key={item.key}>
+                <li key={item.key} style={itemLift(i)}>
                   {/* pathname doesn't include the hash, so the pathname-effect
                       won't fire on same-page hash nav — close explicitly. */}
                   <Link
@@ -140,7 +161,11 @@ export default function MobileMenu({
 
             const routeHref = `/${lang}/${item.path}`;
             return (
-              <li key={item.key} onClick={(e) => e.stopPropagation()}>
+              <li
+                key={item.key}
+                onClick={(e) => e.stopPropagation()}
+                style={itemLift(i)}
+              >
                 <Link
                   href={routeHref}
                   onClick={pathname === routeHref ? closeMenu : undefined}
@@ -153,6 +178,7 @@ export default function MobileMenu({
           <li
             onClick={(e) => e.stopPropagation()}
             className="pt-4 [&_svg]:block [&_a]:text-[1.25rem]"
+            style={itemLift(navItems.length)}
           >
             <LanguageToggle lang={lang} label={langToggleLabel} />
           </li>
