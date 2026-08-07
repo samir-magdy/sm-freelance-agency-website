@@ -15,7 +15,6 @@ interface ChatWidgetStrings {
     log: Localized;
     messageInput: Localized;
     suggestions: Localized;
-    dismissBubbleNudge: Localized;
   };
 }
 
@@ -25,8 +24,8 @@ const chatWidget: ChatWidgetStrings = {
     ar: "تحدث مع مساعدنا الذكي",
   },
   greeting: {
-    en: "Hello, I'm Nollie. How can I help you?",
-    ar: "مرحبًا! أنا نولي. العربية ليست لغتي الأولى، لذا قد أرتكب بعض الأخطاء اللغوية. كيف يمكنني مساعدتك؟",
+    en: "Hello, I'm Nollie. How can I help you today?",
+    ar: "مرحبًا، أنا نولي. العربية ليست لغتي الأولى، لذا قد أرتكب بعض الأخطاء اللغوية. كيف يمكنني مساعدتك؟",
   },
   placeholder: {
     en: "Type your question…",
@@ -55,7 +54,6 @@ const chatWidget: ChatWidgetStrings = {
     log: { en: "Chat messages", ar: "رسائل المحادثة" },
     messageInput: { en: "Type your question", ar: "اكتب سؤالك" },
     suggestions: { en: "Suggested questions", ar: "أسئلة مقترحة" },
-    dismissBubbleNudge: { en: "Dismiss", ar: "تجاهل" },
   },
 };
 

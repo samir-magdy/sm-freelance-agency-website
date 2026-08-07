@@ -155,7 +155,6 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
         hidden={open}
         onOpen={() => setOpen(true)}
         prompt={translations.bubbleNudge[lang]}
-        dismissLabel={translations.a11y.dismissBubbleNudge[lang]}
       />
 
       {/* ── Launcher ── */}

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { X } from "lucide-react";
 import type { Lang } from "@/app/types";
 
 interface ChatPromptBubbleProps {
@@ -9,11 +8,10 @@ interface ChatPromptBubbleProps {
   hidden: boolean;
   onOpen: () => void;
   prompt: string;
-  dismissLabel: string;
 }
 
 const APPEAR_DELAY_MS = 12_000;
-const VISIBLE_MS = 8_000;
+const VISIBLE_MS = 4_500;
 const STORAGE_KEY = "chat-bubble-shown";
 
 export default function ChatPromptBubble({
@@ -21,7 +19,6 @@ export default function ChatPromptBubble({
   hidden,
   onOpen,
   prompt,
-  dismissLabel,
 }: ChatPromptBubbleProps) {
   const [visible, setVisible] = useState(false);
 
@@ -68,18 +65,9 @@ export default function ChatPromptBubble({
             setVisible(false);
             onOpen();
           }}
-          className="block w-full cursor-pointer rounded-2xl px-4 py-3 pe-9 text-start text-base leading-snug text-content-body transition-colors hover:text-content-heading"
+          className="block w-full cursor-pointer rounded-2xl px-4 py-3 text-start text-base leading-snug text-content-body transition-colors hover:text-content-heading"
         >
           {prompt}
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setVisible(false)}
-          aria-label={dismissLabel}
-          className="absolute inset-e-2 top-2 grid size-6 cursor-pointer place-items-center rounded-full text-content-muted transition-colors hover:bg-surface-low hover:text-content-heading"
-        >
-          <X className="size-3.5" aria-hidden />
         </button>
 
         {/* Tail — filled triangle covers the parent border, stroked slants match it */}

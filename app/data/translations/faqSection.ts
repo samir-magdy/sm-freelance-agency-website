@@ -49,8 +49,8 @@ const faqSection: FAQSection = {
         ar: "ما الذي يشمله السعر الأساسي؟",
       },
       answer: {
-        en: "Every project includes a custom-built, responsive site with baseline SEO, an admin panel to edit your own content (we walk you through it at handover), a design mockup to review before build, two rounds of design revisions, first-year hosting, domain setup, and a 90-day post-launch guarantee. For a breakdown of optional add-ons and pricing, use our <a href='/en/guides/website-cost-in-egypt#pricing-calculator'>pricing estimator</a> or <a href='#contact'>contact us</a> if you have any questions.",
-        ar: "كل مشروع بيشمل موقع مخصص ومتجاوب مع كل الأجهزة مع تهيئة أساسية لمحركات البحث، لوحة تحكم لتعديل المحتوى بنفسك (بنشرحلك إزاي تستخدمها قبل التسليم)، عرض تصميم للمراجعة قبل التنفيذ، جولتين تعديلات على التصميم، استضافة السنة الأولى، إعداد الدومين، وضمان لمدة 90 يوم بعد الإطلاق. لمعرفة الإضافات الاختيارية والأسعار، استخدم <a href='/ar/guides/website-cost-in-egypt#pricing-calculator'>حاسبة الأسعار</a> أو <a href='#contact'>تواصل معنا</a> إذا كان لديك أي استفسار.",
+        en: "Every project includes a custom-built, responsive site with baseline SEO, an admin panel to edit your own content, a design mockup to review before build, two rounds of design revisions, first-year hosting, domain setup, and a 90-day post-launch guarantee.",
+        ar: "كل مشروع بيشمل موقع مخصص ومتجاوب مع كل الأجهزة مع تهيئة أساسية لمحركات البحث، لوحة تحكم لتعديل المحتوى بنفسك، عرض تصميم للمراجعة قبل التنفيذ، جولتين تعديلات على التصميم، استضافة السنة الأولى، إعداد الدومين، وضمان لمدة 90 يوم بعد الإطلاق.",
       },
     },
 
@@ -92,16 +92,6 @@ const faqSection: FAQSection = {
       answer: {
         en: "Your basic brand assets like your logo, the text content for each page, and any high-quality photos or videos you want to showcase. We also have a dedicated designer who can design them for you, as well as your full branding and visual identity.",
         ar: "كل اللي بنحتاجه منك هو أساسيات الهوية الخاصة بيك، زي اللوجو، والنصوص اللي عايزها تظهر في كل صفحة، وأي صور أو فيديوهات تحب تعرضها على الموقع. وعندنا مصمم متخصص يقدر يصممهم لك، وكمان يعملك هوية بصرية كاملة.",
-      },
-    },
-    {
-      question: {
-        en: "How many rounds of revisions are included?",
-        ar: "هل يمكنني طلب تعديلات للتصميم؟",
-      },
-      answer: {
-        en: "You get two rounds of revision during the design phase. Any additional revisions will be added to the final cost.",
-        ar: "نوفر تعديلين خلال مرحلة التصميم. أي تعديلات إضافية سوف يتم إضافتها إلى التكلفة النهائية.",
       },
     },
     {
@@ -151,7 +141,7 @@ const faqSection: FAQSection = {
         ar: "هل تساعدون في تسجيل الدومين؟",
       },
       answer: {
-        en: "Yes, we can handle the technical setup steps so you don't have to deal with them yourself. We recommend creating an account with a trusted domain registrar such as <a href='https://www.namecheap.com' target='_blank'>Namecheap</a> or <a href='https://www.godaddy.com' target='_blank'>GoDaddy</a> so we can transfer full ownership and DNS control directly to you.",
+        en: "Yes, we can handle the technical setup steps so you don't have to deal with them yourself. We recommend creating an account with a trusted domain registrar such as <a href='https://www.namecheap.com' target='_blank'>Namecheap</a> or <a href='https://www.godaddy.com' target='_blank'>GoDaddy</a> so we can transfer full ownership directly to you.",
         ar: "إحنا هنتولى خطوات الإعداد التقني بالكامل، بننصحك بإنشاء حساب لدى شركة تسجيل نطاقات موثوقة زي <a href='https://www.namecheap.com' target='_blank'>Namecheap</a> أو <a href='https://www.godaddy.com' target='_blank'>GoDaddy</a> علشان ننقل ملكية الدومين والتحكم الكامل ليك مباشرة.",
       },
     },
@@ -161,7 +151,7 @@ const faqSection: FAQSection = {
         ar: "هل تعملون مع عملاء من خارج مصر؟",
       },
       answer: {
-        en: "Yes. We're based in Egypt but work remotely with clients worldwide. Everything from initial consultation to delivery is handled online.",
+        en: "Yes. We're based in Egypt but work remotely with clients worldwide. Everything from initial consultation to delivery can be handled online.",
         ar: "أيوة. إحنا مقرنا في مصر، لكن بنشتغل عن بُعد مع عملاء من أي مكان في العالم. كل حاجة من الاستشارة الأولى للتسليم بتتم أونلاين.",
       },
     },
