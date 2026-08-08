@@ -16,7 +16,7 @@ const footer = {
   pages: {
     services: { en: "Our Services", ar: "خدماتنا" },
     faq: { en: "FAQs", ar: "الأسئلة الشائعة" },
-    about: { en: `About`, ar: "من نحن" },
+    about: { en: `About`, ar: "عن الاستوديو" },
     contact: { en: "Contact Us", ar: "تواصل معنا" },
   },
 } satisfies {

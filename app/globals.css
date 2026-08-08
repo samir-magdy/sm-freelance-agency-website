@@ -227,21 +227,6 @@ html {
   }
 }
 
-/* ══════════════════════════════════════
-   Reduced Motion — Accessibility
-   ══════════════════════════════════════ */
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-delay: 0ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
 /* ── iOS only ──────────────────────────────────────────
    -webkit-touch-callout is only honoured by iOS Safari,
    not by desktop Safari or any other browser.          */

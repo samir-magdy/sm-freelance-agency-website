@@ -1,27 +1,5 @@
-// 1. Lazy-load Lightbox Library dependencies on-demand
-let glightboxLoaded = false;
-function loadGLightbox() {
-  return new Promise((resolve) => {
-    if (glightboxLoaded) return resolve();
-
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href =
-      "https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css";
-    document.head.appendChild(link);
-
-    const script = document.createElement("script");
-    script.src =
-      "https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js";
-    script.onload = () => {
-      glightboxLoaded = true;
-      resolve();
-    };
-    document.head.appendChild(script);
-  });
-}
-
-// 2. Main UI Engine
+// 1. Main UI Engine
+// GLightbox is lazy-loaded via window.loadGLightbox() from shared/glightbox.js.
 document.addEventListener("DOMContentLoaded", () => {
   const mobileNav = document.getElementById("mobile-nav");
   const navOverlay = document.getElementById("mobile-nav-overlay");
@@ -182,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }));
 
       card.querySelector(".dest-photos-btn")?.addEventListener("click", () => {
-        loadGLightbox().then(() => GLightbox({ elements: imagesArray }).open());
+        window.openImageGallery(imagesArray);
       });
     });
   }

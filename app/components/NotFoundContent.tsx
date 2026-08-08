@@ -48,10 +48,6 @@ const linkGroups: NotFoundGroup[] = [
         label: "Travel & Tourism",
       },
       {
-        href: "/portfolio/healthcare-website-design",
-        label: "Healthcare & Clinics",
-      },
-      {
         href: "/portfolio/interior-design-website-design",
         label: "Interior Design & Decor",
       },

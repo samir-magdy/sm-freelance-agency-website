@@ -27,7 +27,6 @@ export default function NollieAvatar({
     if (!animated) return;
     const svg = svgRef.current;
     if (!svg) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     // Max eye offset in CSS pixels — small enough to feel like a glance,
     // large enough to register at both mobile and desktop display sizes.

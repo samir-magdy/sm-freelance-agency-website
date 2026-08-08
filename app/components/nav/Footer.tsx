@@ -41,17 +41,13 @@ export default function Footer({ lang }: FooterProps) {
       label: { en: "Travel & Tourism", ar: "السياحة والسفر" },
     },
     {
-      href: "/portfolio/healthcare-website-design",
-      label: { en: "Healthcare & Clinics", ar: "الرعاية الصحية" },
-    },
-    {
       href: "/portfolio/interior-design-website-design",
-      label: { en: "Interior Design", ar: "التصميم الداخلي" },
+      label: { en: "Interior Design", ar: "الديكور والتصميم" },
     },
     // OLD DOMAIN, UPDATE SOON
     {
       href: "https://ecommerce.smwebdesign.studio",
-      label: { en: "Fashion E-commerce", ar: "التجارة الإلكترونية للأزياء" },
+      label: { en: "Fashion E-commerce", ar: "متجر للأزياء" },
     },
   ];
 

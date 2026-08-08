@@ -2,7 +2,6 @@ import type { StaticImageData } from "next/image";
 import ecommerceImg from "@/public/project-screenshots/e-commerce.webp";
 import travelImg from "@/public/project-screenshots/travel.webp";
 import butterDesignImg from "@/public/project-screenshots/butter-design.webp";
-import healthcareImg from "@/public/project-screenshots/dental.webp";
 import interiorImg from "@/public/project-screenshots/interior.webp";
 import hadeerImg from "@/public/project-screenshots/hadeer.png";
 
@@ -64,17 +63,6 @@ export const projects: Project[] = [
       "A landing page built for Ms Hadeer Nabil, a private English tutor based in Cairo, Egypt. It highlights one-on-one lessons, courses available, and an interactive placement quiz designed to convert visitors into students.",
     genre: "Private English Tutoring",
     genreAr: "دروس خاصة",
-  },
-  {
-    id: "healthcare",
-    liveUrl: "/portfolio/healthcare-website-design",
-    screenshot: healthcareImg,
-    schemaName: "Healthcare Website Design – Egypt",
-    schemaNameAr: "تصميم موقع رعاية صحية – مصر",
-    description:
-      `A healthcare website demo by ${SITE_NAME} built to attract more patients in Egypt with a professional, trust-building web presence that highlights treatments, expertise, and clinic facilities.`,
-    genre: "Healthcare",
-    genreAr: "رعاية صحية",
   },
   {
     id: "interiorDesign",

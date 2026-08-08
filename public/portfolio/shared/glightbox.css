@@ -1,0 +1,15 @@
+/* Shared GLightbox UI overrides for portfolio demos.
+   Pins prev/next arrows to the viewport edges at a consistent vertical
+   position, with a transparent background so the theme shows through. */
+.glightbox-clean .gnext,
+.glightbox-clean .gprev {
+  top: 45% !important;
+  background-color: transparent;
+}
+.glightbox-clean .gnext {
+  right: 10px !important;
+  color: #000;
+}
+.glightbox-clean .gprev {
+  left: 10px !important;
+}

@@ -141,7 +141,7 @@ export default function GuidePage({
     [&_ul]:list-disc [&_ul]:ps-7 [&_ul]:mb-6 [&_ul]:space-y-3
     [&_ol]:list-decimal [&_ol]:ps-7 [&_ol]:mb-6 [&_ol]:space-y-3
     [&_li]:text-content-body [&_li]:text-subheading [&_li]:leading-relaxed
-    [&_strong]:text-content-heading [&_strong]:font-semibold rtl:[&_*]:leading-loose
+    [&_strong]:text-content-heading [&_strong]:font-semibold rtl:[&_*]:!leading-loose
     [&_table]:w-full [&_table]:min-w-[600px] [&_table]:table-fixed [&_table]:border-separate [&_table]:border-spacing-0
     [&_thead]:bg-white/5 [&_tbody_tr]:transition-colors [&_tbody_tr]:hover:bg-white/4
     [&_th]:text-content-heading [&_th]:font-semibold [&_th]:text-center [&_th]:p-3 [&_th]:text-base [&_th]:border-b [&_th]:border-e [&_th]:border-white/15 [&_th]:align-middle sm:[&_th]:p-4 sm:[&_th]:text-subheading

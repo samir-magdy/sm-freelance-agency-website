@@ -30,7 +30,6 @@ interface ProjectCopy {
 export type ProjectId =
   | "ecommerce"
   | "travelTourism"
-  | "healthcare"
   | "interiorDesign"
   | "butterDesign"
   | "hadeerEnglish";
@@ -55,17 +54,6 @@ export const projectTranslations: Record<ProjectId, ProjectCopy> = {
     description: {
       en: "Built for Sky Way Travel, a travel agency in Cairo specializing in trips to Dahab and Sinai. This website showcases their tours and destinations, making it easy for visitors to find what they want and giving them the confidence to book.",
       ar: "غالباً ما يميل المسافرون لاختيار الوكالات التي تعكس صورة احترافية ومُلهمة. يعمل هذا التصميم على عرض رحلاتك ووجهاتك بأسلوب بصري جذاب، مما يمنح الزوار الثقة الكاملة لحجز رحلتهم القادمة عبر وكالتك.",
-    },
-  },
-
-  healthcare: {
-    title: {
-      en: "Healthcare & Clinics",
-      ar: "الرعاية الصحية والعيادات",
-    },
-    description: {
-      en: "Patients always choose the clinic they trust most. This site presents your clinic in a way that makes you the obvious choice, and includes a built-in booking system you can track, making you independent of platforms like Vezeeta.",
-      ar: "المريض يختار العيادة التي تبدو أكثر ثقة واحترافية على الإنترنت قبل أن يتصل. هذا التصميم يعرض علاجاتك وخبرتك وعيادتك بأسلوب يجعل اختيار عيادتك القرار البديهي.",
     },
   },
 

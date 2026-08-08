@@ -50,7 +50,7 @@ const contactSection: ContactSection = {
     },
     contactMethodPlaceholder: {
       en: "Select method",
-      ar: "اختار الطريقة",
+      ar: "اختر الطريقة",
     },
     whatsapp: { en: "WhatsApp", ar: "واتساب" },
     phoneCall: { en: "Phone Call", ar: "موبايل" },

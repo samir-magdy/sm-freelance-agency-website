@@ -254,12 +254,12 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
           >
             <h3
               aria-hidden="true"
-              className="text-[clamp(1.8rem,2.2vw,2.2rem)] font-bold text-content-heading hidden lg:block"
+              className={`${styles.fadeIn} text-[clamp(1.8rem,2.2vw,2.2rem)] font-bold text-content-heading hidden lg:block`}
             >
               {pd.title[lang]}
             </h3>
 
-            <p className="text-content-body text-[clamp(1.2rem,2.5vw,1.25rem)] rtl:text-[clamp(1.5rem,2.5vw,1.3rem)] leading-relaxed rtl:leading-loose hidden lg:block mb-4">
+            <p className={`${styles.fadeIn} text-content-body text-[clamp(1.2rem,2.5vw,1.25rem)] rtl:text-[clamp(1.5rem,2.5vw,1.3rem)] leading-relaxed rtl:leading-loose hidden lg:block mb-4`}>
               {pd.description[lang]}
             </p>
 

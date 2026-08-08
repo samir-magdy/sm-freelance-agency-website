@@ -33,7 +33,7 @@ const aboutPage: AboutPage = {
     },
     {
       en: "After seeing clients struggle with unreliable providers, we realized the hard part isn't building the site — it's trust and communication. We're not here to sell you a site you don't need, but to help you understand your options, plan your budget, and build a website that serves your best interests.",
-      ar: "بعد ملاحظة معاناة أصحاب المشاريع مع جهات غير مؤهلة، أدركنا أن التحدي الحقيقي مش في تنفيذ الموقع، بل في الثقة والتواصل. لسنا هنا لنبيع لك موقع لا تحتاجه، بل نساعدك تفهم خياراتك، وتخطط ميزانيتك بذكاء، ونبني لك موقع يحقق أهدافك.",
+      ar: "بعد ملاحظة معاناة أصحاب المشاريع مع جهات غير مؤهلة، أدركنا أن التحدي الحقيقي ليس في تنفيذ الموقع، بل في الثقة والتواصل. نحن لسنا هنا لنبيع لك موقع لا تحتاجه، بل لنساعدك على فهم خياراتك، وتخطيط ميزانيتك بذكاء، وبناء موقع يحقق أهدافك.",
     },
      {
       en: "Based in Cairo, Egypt, we work with clients locally and remotely worldwide.",

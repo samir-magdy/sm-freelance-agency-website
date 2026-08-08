@@ -27,15 +27,15 @@ export const servicesSectionTranslations: ServicesSectionTranslations = {
   },
   subheading: {
     en: "Pick what best suits your needs",
-    ar: "اختار الموقع اللي يناسب احتياجاتك",
+    ar: "اختر الموقع الذي يناسب احتياجاتك",
   },
   estimatorLead: {
-    en: "Want a personalized estimate for your site?",
-    ar: "حابب تقدير سعر فورى لمشروعك؟",
+    en: "Want an instant estimate?",
+    ar: "ترغب في تقدير سعر فوري؟",
   },
   estimatorCta: {
     en: "Estimate your investment",
-    ar: "قدر تكلفة الموقع",
+    ar: "قدِّر تكلفة موقعك",
   },
   startsAt: {
     en: "Starts at",
