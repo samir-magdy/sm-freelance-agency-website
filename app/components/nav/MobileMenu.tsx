@@ -69,6 +69,7 @@ export default function MobileMenu({
 
   const clipPath = `circle(${isMenuOpen ? 150 : 0}% at ${origin.x} ${origin.y})`;
   const clipDuration = 2000;
+  const clipDelay = isMenuOpen ? 0 : 250;
 
   const itemLift = (index: number): CSSProperties => {
     const openDelay = 220 + index * 60;
@@ -87,7 +88,7 @@ export default function MobileMenu({
       className="lg:hidden fixed top-0 inset-x-0 z-51 pointer-events-none"
     >
       <div
-        className="absolute top-0 inset-x-0 w-full py-1 z-50 backdrop-blur-xl pointer-events-auto"
+        className="absolute top-0 inset-x-0 w-full py-1 z-50 pointer-events-auto"
         dir="ltr"
       >
         <div className="flex justify-between items-center px-3">
@@ -130,13 +131,13 @@ export default function MobileMenu({
       <div
         onClick={closeMenu}
         inert={!isMenuOpen}
-        className={`pt-10 fixed inset-0 z-40 flex flex-col items-center justify-center bg-background/85 backdrop-blur-2xl ${
+        className={`pt-10 fixed inset-0 z-40 flex flex-col items-center justify-center bg-background ${
           isMenuOpen ? "pointer-events-auto" : "pointer-events-none"
         }`}
         style={{
           clipPath,
           WebkitClipPath: clipPath,
-          transition: `clip-path ${clipDuration}ms ${EASE_OUT_EXPO}, -webkit-clip-path ${clipDuration}ms ${EASE_OUT_EXPO}`,
+          transition: `clip-path ${clipDuration}ms ${EASE_OUT_EXPO} ${clipDelay}ms, -webkit-clip-path ${clipDuration}ms ${EASE_OUT_EXPO} ${clipDelay}ms`,
         }}
       >
         <ul
