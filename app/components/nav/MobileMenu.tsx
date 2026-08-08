@@ -123,18 +123,38 @@ export default function MobileMenu({
         </div>
       </div>
 
+      {/* Decorative reveal — clip-path lives here, never a click target.
+          Chrome Android's hit-testing on a clip-path element mid-transition
+          drops the first tap, so we split visual from interactive. */}
+      <div
+        aria-hidden
+        className="lg:hidden fixed inset-0 z-40 bg-background pointer-events-none"
+        style={{
+          clipPath,
+          WebkitClipPath: clipPath,
+          willChange: "clip-path",
+          transition: `clip-path 2000ms ${EASE_OUT_EXPO} ${clipDelay}ms, -webkit-clip-path 2000ms ${EASE_OUT_EXPO} ${clipDelay}ms`,
+        }}
+      />
+
       <nav
         id="mobile-menu"
         aria-label={a11y.mobileNav}
         onClick={closeMenu}
         inert={!isMenuOpen}
-        className={`lg:hidden pt-10 fixed inset-0 z-40 flex flex-col items-center justify-center bg-background ${
-          isMenuOpen ? "pointer-events-auto" : "pointer-events-none"
+        className={`lg:hidden pt-10 fixed inset-0 z-40 flex flex-col items-center justify-center ${
+          isMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
         style={{
           clipPath,
           WebkitClipPath: clipPath,
-          transition: `clip-path 2000ms ${EASE_OUT_EXPO} ${clipDelay}ms, -webkit-clip-path 2000ms ${EASE_OUT_EXPO} ${clipDelay}ms`,
+          // On open: no clip-path transition (snaps to full) so Chrome Android
+          // hit-testing stays reliable while the menu is interactive.
+          // On close: mirror the bg's clip-path animation so items sweep away
+          // with the reveal — safe because the nav is pointer-events-none.
+          transition: isMenuOpen
+            ? "opacity 0s"
+            : `clip-path 2000ms ${EASE_OUT_EXPO} ${clipDelay}ms, -webkit-clip-path 2000ms ${EASE_OUT_EXPO} ${clipDelay}ms, opacity 0s 2000ms`,
         }}
       >
         <ul

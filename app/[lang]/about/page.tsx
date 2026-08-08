@@ -98,7 +98,7 @@ export default async function AboutPage({
           {translations.h1PageTitle[lang]}
         </h1>
 
-        <p className="reveal-element text-center leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)]">
+        <p className="reveal-element text-pretty leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)]">
           {translations.paragraphs[0][lang]}
         </p>
 
@@ -146,10 +146,10 @@ export default async function AboutPage({
             );
           })}
         </ul>
-        <p className="reveal-element text-center leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)]">
+        <p className="reveal-element text-pretty leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)]">
           {translations.paragraphs[1][lang]}
         </p>
-         <p className="reveal-element mt-8 text-center leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)]">
+         <p className="reveal-element mt-8 text-pretty leading-[1.7] rtl:leading-[1.9] text-content-body text-[clamp(1.1rem,1.6vw,1.35rem)]">
           {translations.paragraphs[2][lang]}
         </p>
         <div className="reveal-element mt-20 flex max-w-4xl mx-auto flex-col items-center text-center md:mt-16 md:flex-row md:items-center md:justify-center md:gap-12 md:text-start">
