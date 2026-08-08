@@ -2,10 +2,15 @@
 
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
-import LightRays from "./LightRays";
+import dynamic from "next/dynamic";
+
+// Lazy import so the ~40KB LightRays + ogl chunk never ships to viewports
+// that will be gated out below. Fetch is triggered by first render, which
+// only happens once the media query passes.
+const LightRays = dynamic(() => import("./LightRays"), { ssr: false });
 
 const READY_FALLBACK_MS = 1200;
-const DESKTOP_MEDIA_QUERY = "(min-width: 768px)";
+const DESKTOP_MEDIA_QUERY = "(min-width: 1024px)";
 
 function subscribeDesktop(callback: () => void) {
   const mql = window.matchMedia(DESKTOP_MEDIA_QUERY);
