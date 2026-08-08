@@ -20,7 +20,7 @@ const guidesTranslations: Record<
   },
   pageSubtitle: {
     en: "Learn the basics before investing",
-    ar: "افهم الويب قبل أن تستثمر",
+    ar: "تعلم الأساسيات قبل أن تستثمر",
   },
   metaTitle: {
     en: `Web Design Guides for Egyptian Businesses (${CURRENT_YEAR})`,

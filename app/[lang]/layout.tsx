@@ -5,6 +5,7 @@ import HeroNav, { type HeroNavStrings } from "@/app/components/nav/HeroNav";
 import navTranslations, { langToggle } from "@/app/data/translations/nav";
 import a11y from "@/app/data/translations/a11y";
 import Footer from "@/app/components/nav/Footer";
+import HashUrlStripper from "@/app/components/nav/HashUrlStripper";
 import LightRaysBackground from "@/app/components/ui/LightRaysBackground";
 import { SITE_URL, SITE_NAME } from "@/app/constants";
 import { isLang, type Lang } from "@/app/types";
@@ -121,6 +122,7 @@ export default async function LangLayout({
         </a>
 
         <LightRaysBackground />
+        <HashUrlStripper />
 
         <div className="relative z-10 flex flex-col min-h-svh">
           <HeroNav lang={lang} strings={heroNavStrings} />

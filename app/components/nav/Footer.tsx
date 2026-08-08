@@ -61,10 +61,11 @@ export default function Footer({ lang }: FooterProps) {
   ];
 
   const resourceLinks: FooterLink[] = [
-    ...guides.map((g) => ({
+    ...guides.slice(0, 4).map((g) => ({
       href: `/${lang}/guides/${g.slug}`,
       label: g.title,
     })),
+    { href: `/${lang}/guides`, label: footer.allGuides },
   ];
 
   const columns: FooterColumn[] = [

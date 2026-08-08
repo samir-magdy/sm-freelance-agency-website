@@ -8,7 +8,7 @@ interface ServiceCard {
   price: number | null;
 }
 
-export type SpecializedServiceId = "branding" | "copywriting" | "seo" | "bilingual";
+export type SpecializedServiceId = "branding" | "copywriting" | "seo" | "maintenance";
 
 interface SpecializedService {
   id: SpecializedServiceId;
@@ -118,8 +118,8 @@ export const servicesSectionTranslations: ServicesSectionTranslations = {
       name: { en: "SEO Setup", ar: "إعداد SEO" },
     },
     {
-      id: "bilingual",
-      name: { en: "Bilingual", ar: "ثنائي اللغة" },
+      id: "maintenance",
+      name: { en: "Maintenance", ar: "الصيانة" },
     },
   ],
 };

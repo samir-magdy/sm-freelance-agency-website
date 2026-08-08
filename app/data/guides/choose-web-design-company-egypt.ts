@@ -14,7 +14,7 @@ const resource: Guide = {
     ar: `كيف تختار أفضل شركة تصميم مواقع إلكترونية في مصر؟ (${CURRENT_YEAR})`,
   },
   excerpt: {
-    en: "A competent web design company has a well-designed, fully functional website, a portfolio of websites you can visit, is transparent about pricing, and communicates clearly. Should you even hire a company or a freelancer? Read this guide to get a clearer picture of your options and how to choose correctly.",
+    en: "A competent web design company has a well-designed, fully functional website, a portfolio of websites you can visit, is transparent about pricing, and communicates clearly. Read this guide to get a clearer picture of your options and how to choose correctly.",
     ar: "الشركة المناسبة في مصر تمتلك سابقة أعمال من مواقع حقيقية يمكنك زيارتها وتجربتها بنفسك، وتسأل عن أهدافك، وتكون واضحة في تسعيرها، وتتواصل معك بوضوح خلال مرحلة الاتفاق.",
   },
   content: {

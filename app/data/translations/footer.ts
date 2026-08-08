@@ -13,6 +13,7 @@ const footer = {
     privacy: { en: "Privacy Policy", ar: "سياسة الخصوصية" },
     terms: { en: "Terms of Service", ar: "شروط الخدمة" },
   },
+  allGuides: { en: "All Guides", ar: "كل الأدلة" },
   pages: {
     services: { en: "Services", ar: "خدماتنا" },
     specializedServices: { en: "Extra Services", ar: "خدمات إضافية" },
@@ -26,6 +27,7 @@ const footer = {
   location: Localized;
   columns: Record<"studio" | "work" | "resources", Localized>;
   legal: Record<"privacy" | "terms", Localized>;
+  allGuides: Localized;
   pages: Record<"services" | "specializedServices" | "faq" | "about" | "contact", Localized>;
 };
 

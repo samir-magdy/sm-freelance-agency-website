@@ -335,7 +335,6 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
                             alt={`${a11y.imageAltPrefix[lang]} ${projectTranslations[proj.id].title[lang]}`}
                             className="w-full h-auto block"
                             sizes="(max-width: 639px) 64vw, (max-width: 767px) 63vw, (max-width: 1023px) 70.5vw, (max-width: 1279px) 75vw, 18.5vw"
-                            placeholder="blur"
                           />
                         ) : (
                           <div className="w-full h-full bg-surface-card" />

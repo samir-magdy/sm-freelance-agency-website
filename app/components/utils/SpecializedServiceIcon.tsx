@@ -33,11 +33,17 @@ const PATHS: Record<SpecializedServiceId, ReactNode> = {
       />
     </>
   ),
-  bilingual: (
+  maintenance: (
     <>
-      <circle cx="12" cy="12" r="8.5" />
-      <ellipse cx="12" cy="12" rx="3.5" ry="8.5" />
-      <line x1="3.5" y1="12" x2="20.5" y2="12" />
+      <path
+        d="M12 3 L4 6 V12 C4 16.5 7.5 20 12 21 C16.5 20 20 16.5 20 12 V6 Z"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8.5 12 L11 14.5 L15.5 10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </>
   ),
 };

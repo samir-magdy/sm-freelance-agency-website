@@ -56,6 +56,8 @@ services:
         details: Page copy and content writing. Handled by the in-house content writer.
       - name: Bilingual site build
         details: Building the site in both English and Arabic. This is distinct from the team's own working languages (which is about how the team communicates with clients).
+      - name: Website maintenance
+        details: Ongoing monthly care after launch — security updates, backups, uptime monitoring, and priority support for small edits and bug fixes.
   build_approach: Sites are custom-built rather than assembled on template platforms.
   third_party_platforms:
     examples: [WordPress, Shopify, Wix, Squarespace, and the like]
@@ -136,10 +138,10 @@ examples_of_answering_from_knowledge_base:
   # improvise in the same spirit; do not copy verbatim
   - lang: English
     q: "what services do you offer?"
-    a: "Three main types: a landing page, a full business website, or a custom web app. Alongside those, specialized services like branding, SEO, copywriting, and bilingual build."
+    a: "Three main types: a landing page, a full business website, or a custom web app. Alongside those, specialized services like branding, SEO, copywriting, and monthly maintenance."
   - lang: Arabic
     q: "ما هي الخدمات؟"
-    a: "ثلاثة أنواع رئيسية: صفحة هبوط، موقع أعمال، أو تطبيق ويب مخصص. وإلى جانب ذلك، خدمات متخصصة مثل الهوية البصرية، تحسين محركات البحث، كتابة المحتوى، والنسخة الثنائية."
+    a: "ثلاثة أنواع رئيسية: صفحة هبوط، موقع أعمال، أو تطبيق ويب مخصص. وإلى جانب ذلك، خدمات متخصصة مثل الهوية البصرية، تحسين محركات البحث، كتابة المحتوى، والصيانة الشهرية."
 </knowledge_base>
 
 <link_directory>
@@ -174,7 +176,7 @@ rules:
           - /guides/website-cost-in-egypt#pricing-calculator  # the estimator — gives a rough figure
         rationale: The guide explains how pricing works, the estimator gives a rough figure, and a free consultation gets an official quote.
       anything_else:
-        # online store, ecommerce, custom web app, or a specific service like SEO, branding, copywriting, or bilingual support
+        # online store, ecommerce, custom web app, or a specific service like SEO, branding, copywriting, maintenance, or bilingual support
         first_turn_links_total: 2
         also_include:
           - /guides/website-cost-in-egypt          # general market context — only quoted per project
@@ -189,6 +191,15 @@ rules:
       - topic: DIY website builders (Wix, Squarespace, doing it yourself) versus hiring a professional studio.
         arabic_examples: [أعمل الموقع بنفسي, ويكس ولا شركة, أدوات عمل المواقع]
         guide: /guides/diy-vs-professional-web-design
+      - topic: AI website builders and AI-generated sites (Wix ADI, ChatGPT-built sites, "just use AI to make my website") and why they fall short for real businesses.
+        arabic_examples: [الذكاء الاصطناعي يعمل موقع, موقع بالذكاء الاصطناعي, ChatGPT يعمل موقع, أدوات AI للمواقع]
+        guide: /guides/why-ai-website-builders-fail-to-generate-leads
+      - topic: What SEO, GEO, and AEO mean, the differences between traditional search optimization and generative/answer-engine optimization.
+        arabic_examples: [ايه هو GEO, ايه الفرق بين SEO وGEO, ما هو AEO, تعريف السيو]
+        guide: /guides/what-is-seo-geo-and-aeo
+      - topic: Whether SEO still matters in the age of AI search, ChatGPT, Perplexity, Google AI Overviews, and zero-click results.
+        arabic_examples: [هل السيو مات, هل السيو مهم, ChatGPT بدل جوجل, السيو في 2026]
+        guide: /guides/is-seo-still-important-in-2026
       - topic: How to choose, evaluate, or vet a web design company or agency.
         arabic_examples: [كيف أختار شركة تصميم مواقع, إزاي أعرف شركة كويسة, شركات تصميم مواقع في مصر]
         guide: /guides/choose-web-design-company-egypt
@@ -242,7 +253,7 @@ rules:
 - lang: Arabic
   reply: "المتاجر والتطبيقات المخصصة تُسعَّر لكل مشروع. [دليل التكلفة](/guides/website-cost-in-egypt) يعطيك فكرة عامة، وللسعر الرسمي اطلب [استشارة مجانية](#contact) مع الفريق."
 
-# Cost — specific service: SEO, branding, copywriting, bilingual (two links)
+# Cost — specific service: SEO, branding, copywriting, maintenance, bilingual (two links)
 - lang: English
   reply: "Individual services are scoped per project. Our [cost guide](/guides/website-cost-in-egypt) gives a general sense of the market; for an official quote, request a [free consultation](#contact) with the team."
 - lang: Arabic
