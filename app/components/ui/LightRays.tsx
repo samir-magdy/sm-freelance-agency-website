@@ -88,15 +88,15 @@ export default function LightRays({
   raysColor = "#fff1d1",
   raysSpeed = 0,
   lightSpread = 0.05,
-  rayLength = 4,
+  rayLength = 6,
   pulsating = false,
   fadeDistance = 10,
-  saturation = 0.4,
+  saturation = 0.6,
   followMouse = true,
   mouseInfluence = 0.4,
   noiseAmount = 0.1,
   distortion = 0.0,
-  className = "opacity-0 sm:opacity-100",
+  className = "",
   onReady,
 }: LightRaysProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);

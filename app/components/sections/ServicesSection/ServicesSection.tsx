@@ -35,7 +35,7 @@ export default function ServicesSection({ lang }: ServicesSectionProps) {
             <a
               key={card.id}
               href="#contact"
-              className="max-w-4xl reveal-element group flex flex-col p-6 sm:p-8 lg:p-10 rounded-4xl border border-border-subtle bg-surface-card hover:border-gold/20 hover:shadow-lg hover:shadow-white/10 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:-translate-x-1 rtl:hover:translate-x-1"
+              className="max-w-4xl reveal-element group flex flex-col p-6 sm:p-8 lg:p-10 rounded-4xl border border-border-subtle bg-surface-card hover:border-white/10 hover:shadow-lg hover:shadow-gold/5 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:-translate-x-1 rtl:hover:translate-x-1"
             >
               <div className="flex-1 mb-6">
                 <h3 className="font-bold text-subheading lg:text-heading text-content-heading leading-snug mb-2">
@@ -107,7 +107,7 @@ export default function ServicesSection({ lang }: ServicesSectionProps) {
                   href={`/${lang}/services#${svc.id}`}
                   className="group inline-flex flex-col items-center gap-4 text-center outline-none transition-transform duration-300"
                 >
-                  <span className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl sm:rounded-3xl border border-border-subtle bg-surface-card/50 text-gold transition-all duration-300 group-hover:border-gold/30 group-hover:bg-surface-card group-focus-visible:border-gold/40">
+                  <span className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl sm:rounded-3xl border border-border-subtle bg-surface-card/50 text-gold transition-all duration-300 group-hover:border-border-strong group-hover:bg-surface-card group-focus-visible:border-gold/40">
                     <SpecializedServiceIcon id={svc.id} className="size-8 sm:size-10" />
                   </span>
                   <span className="ms-2.5 inline-flex items-center gap-2.5 text-base font-medium text-content-body leading-tight transition-colors duration-300 group-hover:text-content-heading group-focus-visible:text-content-heading">

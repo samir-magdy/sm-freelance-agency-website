@@ -51,7 +51,7 @@ export default function LightRaysBackground() {
   return (
     <div
       aria-hidden
-      className={`fixed inset-0 z-11 pointer-events-none mix-blend-screen transition-opacity duration-300 ${visible ? "opacity-65" : "opacity-0"}`}
+      className={`fixed inset-0 z-11 pointer-events-none mix-blend-screen transition-opacity duration-500 ${visible ? "opacity-60" : "opacity-0"}`}
     >
       {/* One instance now draws both ray origins (left + right) in a single
           canvas / shader pass — halving contexts, compiles, and fill. */}
