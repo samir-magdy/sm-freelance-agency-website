@@ -4,7 +4,7 @@
   --font-cairo: var(--font-cairo), sans-serif;
 
   --text-heading: clamp(1.5rem, 1.1rem + 1.7vw, 2.25rem);
-  --text-subheading: clamp(1.175rem, 1rem + 0.65vw, 1.5rem);
+  --text-subheading: clamp(1.175rem, 1rem + 0.8vw, 1.6rem);
   --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   --text-caption: clamp(0.7rem, 1vw, 1rem);
 

@@ -14,7 +14,8 @@ const footer = {
     terms: { en: "Terms of Service", ar: "شروط الخدمة" },
   },
   pages: {
-    services: { en: "Our Services", ar: "خدماتنا" },
+    services: { en: "Services", ar: "خدماتنا" },
+    specializedServices: { en: "Extra Services", ar: "خدمات إضافية" },
     faq: { en: "FAQs", ar: "الأسئلة الشائعة" },
     about: { en: `About`, ar: "عن الاستوديو" },
     contact: { en: "Contact Us", ar: "تواصل معنا" },
@@ -25,7 +26,7 @@ const footer = {
   location: Localized;
   columns: Record<"studio" | "work" | "resources", Localized>;
   legal: Record<"privacy" | "terms", Localized>;
-  pages: Record<"services" | "faq" | "about" | "contact", Localized>;
+  pages: Record<"services" | "specializedServices" | "faq" | "about" | "contact", Localized>;
 };
 
 export default footer;

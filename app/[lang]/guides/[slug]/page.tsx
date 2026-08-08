@@ -156,14 +156,14 @@ export default function GuidePage({
   const parts = guide.content[lang].split(SLOT);
 
   return (
-    <div className="min-h-dvh bg-background pt-22 sm:pt-28 pb-14 sm:pb-20 px-5 overflow-x-hidden">
+    <div className="min-h-dvh bg-background pt-22 sm:pt-28 pb-14 sm:pb-20 px-5 sm:px-0 overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <div className="max-w-7xl mx-auto flex flex-col gap-4 sm:gap-8">
+      <div className="max-w-340 mx-auto flex flex-col gap-4 sm:gap-8">
         <BackToGuidesLink lang={lang} label={translations.backToGuides[lang]} />
         <header>
           <h1 className="text-[clamp(1.5rem,5vw,2.8rem)] font-bold text-content-heading leading-tight rtl:leading-loose">

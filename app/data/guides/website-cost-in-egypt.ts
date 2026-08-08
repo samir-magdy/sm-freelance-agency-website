@@ -14,7 +14,7 @@ const resource: Guide = {
     ar: `كم تكلفة تصميم موقع إلكتروني احترافي في مصر؟ (${CURRENT_YEAR})`,
   },
   excerpt: {
-    en: "Prices for websites in Egypt typically start at around EGP 5,000 and can exceed EGP 100,000 depending on the project's size, features, and complexity. In this guide we explain all the factors that drive pricing, so that you know what you're paying for when making your investment.",
+    en: "Prices for websites in Egypt typically start at around EGP 5,000 and can exceed EGP 100,000 depending on the project's size, features, and complexity. After reading this guide, you will be able to understand what factors drive pricing, allowing you to make an informed decision when making your digital investment.",
     ar: "تبدأ تكلفة تصميم المواقع الإلكترونية في مصر من حوالي 5,000 جنيه مصري، وقد تتجاوز الـ 100,000 جنيه مصري حسب حجم المشروع والميزات المطلوبة ومستوى التخصيص.",
   },
   content: {

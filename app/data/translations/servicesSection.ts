@@ -8,9 +8,17 @@ interface ServiceCard {
   price: number | null;
 }
 
+export type SpecializedServiceId = "branding" | "copywriting" | "seo" | "bilingual";
+
+interface SpecializedService {
+  id: SpecializedServiceId;
+  name: Localized;
+}
+
 interface ServicesSectionTranslations {
   heading: Localized;
   subheading: Localized;
+  specializedServicesLabel: Localized;
   estimatorLead: Localized;
   estimatorCta: Localized;
   startsAt: Localized;
@@ -18,16 +26,21 @@ interface ServicesSectionTranslations {
   contactCta: Localized;
   customPriceLabel: Localized;
   cards: ServiceCard[];
+  specializedServices: SpecializedService[];
 }
 
 export const servicesSectionTranslations: ServicesSectionTranslations = {
   heading: {
     en: "Our Services",
-    ar: "خدماتنا",
+    ar: "الخدمات",
   },
   subheading: {
     en: "Pick what best suits your needs",
     ar: "اختر الموقع الذي يناسب احتياجاتك",
+  },
+  specializedServicesLabel: {
+    en: "Specialized services",
+    ar: "خدمات متخصصة",
   },
   estimatorLead: {
     en: "Want an instant estimate?",
@@ -89,6 +102,24 @@ export const servicesSectionTranslations: ServicesSectionTranslations = {
         ar: "تطبيق ويب مبني حسب متطلبات عملك. من المتاجر الإلكترونية وأنظمة الحجز، للوحات التحكم الداخلية. <em>مثالي للمشاريع التي تحتاج لحل مخصص.</em>",
       },
       price: null,
+    },
+  ],
+  specializedServices: [
+    {
+      id: "branding",
+      name: { en: "Branding", ar: "الهوية البصرية" },
+    },
+    {
+      id: "copywriting",
+      name: { en: "Copywriting", ar: "كتابة المحتوى" },
+    },
+    {
+      id: "seo",
+      name: { en: "SEO Setup", ar: "إعداد SEO" },
+    },
+    {
+      id: "bilingual",
+      name: { en: "Bilingual", ar: "ثنائي اللغة" },
     },
   ],
 };

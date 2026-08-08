@@ -3,6 +3,7 @@ import type { Localized } from "@/app/types";
 
 const guidesTranslations: Record<
   | "pageTitle"
+  | "pageSubtitle"
   | "metaTitle"
   | "metaDescription"
   | "minRead"
@@ -16,6 +17,10 @@ const guidesTranslations: Record<
   pageTitle: {
     en: "Guides & Resources",
     ar: "الأدلة والموارد",
+  },
+  pageSubtitle: {
+    en: "Understand before you invest",
+    ar: "افهم قبل أن تستثمر",
   },
   metaTitle: {
     en: `Web Design Guides for Egyptian Businesses (${CURRENT_YEAR})`,

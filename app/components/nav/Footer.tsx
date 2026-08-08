@@ -31,6 +31,7 @@ export default function Footer({ lang }: FooterProps) {
   const studioLinks: FooterLink[] = [
     { href: `/${lang}/about`, label: footer.pages.about },
     { href: `/${lang}#services`, label: footer.pages.services },
+    { href: `/${lang}/services`, label: footer.pages.specializedServices },
     { href: `/${lang}#FAQs`, label: footer.pages.faq },
     { href: `/${lang}#contact`, label: footer.pages.contact },
   ];
@@ -48,6 +49,14 @@ export default function Footer({ lang }: FooterProps) {
     {
       href: "https://ecommerce.smwebdesign.studio",
       label: { en: "Fashion E-commerce", ar: "متجر للأزياء" },
+    },
+    {
+      href: "https://hadeernabil.site",
+      label: { en: "Private Tutoring", ar: "دروس خصوصية" },
+    },
+    {
+      href: "https://butterdesignbureau.com",
+      label: { en: "Design & Branding", ar: "تصميم وهوية بصرية" },
     },
   ];
 
