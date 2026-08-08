@@ -32,7 +32,10 @@ export default function MobileMenu({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [origin, setOrigin] = useState({ x: "100%", y: "0%" });
   const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const toggleLockedUntil = useRef(0);
   const pathname = usePathname();
+
+  const TOGGLE_LOCKOUT_MS = 500;
 
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -61,6 +64,9 @@ export default function MobileMenu({
 
   const handleToggle = (e: React.MouseEvent) => {
     e.stopPropagation();
+    const now = performance.now();
+    if (now < toggleLockedUntil.current) return;
+    toggleLockedUntil.current = now + TOGGLE_LOCKOUT_MS;
     captureOrigin();
     const next = !isMenuOpen;
     setIsMenuOpen(next);
@@ -69,7 +75,7 @@ export default function MobileMenu({
 
   const clipPath = `circle(${isMenuOpen ? 150 : 0}% at ${origin.x} ${origin.y})`;
   const clipDuration = 2000;
-  const clipDelay = isMenuOpen ? 0 : 250;
+  const clipDelay = isMenuOpen ? 0 : 150;
 
   const itemLift = (index: number): CSSProperties => {
     const openDelay = 220 + index * 60;
@@ -88,13 +94,13 @@ export default function MobileMenu({
       className="lg:hidden fixed top-0 inset-x-0 z-51 pointer-events-none"
     >
       <div
-        className="absolute top-0 inset-x-0 w-full py-1 z-50 pointer-events-auto"
+        className="absolute top-0 inset-x-0 w-full py-1 z-50 backdrop-blur-lg pointer-events-auto"
         dir="ltr"
       >
         <div className="flex justify-between items-center px-3">
           <a
             href={`/${lang}`}
-            aria-label="Samir Magdy Web Studio - Home"
+            aria-label={`${SITE_NAME} - Home`}
             onClick={closeMenu}
           >
             <Image
