@@ -19,8 +19,8 @@ const guidesTranslations: Record<
     ar: "الأدلة والموارد",
   },
   pageSubtitle: {
-    en: "Understand before you invest",
-    ar: "افهم قبل أن تستثمر",
+    en: "Learn the basics before investing",
+    ar: "افهم الويب قبل أن تستثمر",
   },
   metaTitle: {
     en: `Web Design Guides for Egyptian Businesses (${CURRENT_YEAR})`,

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback, type CSSProperties } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -22,6 +22,7 @@ interface MobileMenuProps {
 }
 
 const EASE_OUT_EXPO = "cubic-bezier(0.16, 1, 0.3, 1)";
+const TOGGLE_LOCKOUT_MS = 500;
 
 export default function MobileMenu({
   lang,
@@ -31,11 +32,9 @@ export default function MobileMenu({
 }: MobileMenuProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [origin, setOrigin] = useState({ x: "100%", y: "0%" });
-  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const toggleLockedUntil = useRef(0);
   const pathname = usePathname();
-
-  const TOGGLE_LOCKOUT_MS = 500;
 
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -53,48 +52,38 @@ export default function MobileMenu({
     };
   }, [isMenuOpen]);
 
-  const captureOrigin = useCallback(() => {
-    if (!buttonRef.current) return;
-    const rect = buttonRef.current.getBoundingClientRect();
-    setOrigin({
-      x: `${rect.left + rect.width / 2}px`,
-      y: `${rect.top + rect.height / 2}px`,
-    });
-  }, []);
-
-  const handleToggle = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleToggle = () => {
     const now = performance.now();
     if (now < toggleLockedUntil.current) return;
     toggleLockedUntil.current = now + TOGGLE_LOCKOUT_MS;
-    captureOrigin();
+
+    const rect = buttonRef.current?.getBoundingClientRect();
+    if (rect) {
+      setOrigin({
+        x: `${rect.left + rect.width / 2}px`,
+        y: `${rect.top + rect.height / 2}px`,
+      });
+    }
+
     const next = !isMenuOpen;
     setIsMenuOpen(next);
     if (next) window.dispatchEvent(new Event(CHAT_CLOSE_EVENT));
   };
 
   const clipPath = `circle(${isMenuOpen ? 150 : 0}% at ${origin.x} ${origin.y})`;
-  const clipDuration = 2000;
   const clipDelay = isMenuOpen ? 0 : 150;
 
-  const itemLift = (index: number): CSSProperties => {
-    const openDelay = 220 + index * 60;
-    return {
-      animation: isMenuOpen
-        ? `menu-item-in 550ms ${EASE_OUT_EXPO} ${openDelay}ms both`
-        : "none",
-      willChange: "transform, opacity",
-    };
-  };
+  const itemStyle = (index: number) => ({
+    animation: isMenuOpen
+      ? `menu-item-in 550ms ${EASE_OUT_EXPO} ${220 + index * 60}ms both`
+      : "none",
+    willChange: "transform, opacity",
+  });
 
   return (
-    <nav
-      id="mobile-menu"
-      aria-label={a11y.mobileNav}
-      className="lg:hidden fixed top-0 inset-x-0 z-51 pointer-events-none"
-    >
+    <>
       <div
-        className="absolute top-0 inset-x-0 w-full py-1 z-50 backdrop-blur-lg pointer-events-auto"
+        className="lg:hidden fixed top-0 inset-x-0 w-full py-1 z-50 backdrop-blur-lg"
         dir="ltr"
       >
         <div className="flex justify-between items-center px-3">
@@ -134,16 +123,18 @@ export default function MobileMenu({
         </div>
       </div>
 
-      <div
+      <nav
+        id="mobile-menu"
+        aria-label={a11y.mobileNav}
         onClick={closeMenu}
         inert={!isMenuOpen}
-        className={`pt-10 fixed inset-0 z-40 flex flex-col items-center justify-center bg-background ${
+        className={`lg:hidden pt-10 fixed inset-0 z-40 flex flex-col items-center justify-center bg-background ${
           isMenuOpen ? "pointer-events-auto" : "pointer-events-none"
         }`}
         style={{
           clipPath,
           WebkitClipPath: clipPath,
-          transition: `clip-path ${clipDuration}ms ${EASE_OUT_EXPO} ${clipDelay}ms, -webkit-clip-path ${clipDuration}ms ${EASE_OUT_EXPO} ${clipDelay}ms`,
+          transition: `clip-path 2000ms ${EASE_OUT_EXPO} ${clipDelay}ms, -webkit-clip-path 2000ms ${EASE_OUT_EXPO} ${clipDelay}ms`,
         }}
       >
         <ul
@@ -153,13 +144,10 @@ export default function MobileMenu({
           {navItems.map((item, i) => {
             if (item.kind === "hash") {
               return (
-                <li key={item.key} style={itemLift(i)}>
+                <li key={item.key} style={itemStyle(i)}>
                   {/* pathname doesn't include the hash, so the pathname-effect
                       won't fire on same-page hash nav — close explicitly. */}
-                  <Link
-                    href={`/${lang}#${item.target}`}
-                    onClick={closeMenu}
-                  >
+                  <Link href={`/${lang}#${item.target}`} onClick={closeMenu}>
                     {nav[item.key]}
                   </Link>
                 </li>
@@ -168,11 +156,7 @@ export default function MobileMenu({
 
             const routeHref = `/${lang}/${item.path}`;
             return (
-              <li
-                key={item.key}
-                onClick={(e) => e.stopPropagation()}
-                style={itemLift(i)}
-              >
+              <li key={item.key} style={itemStyle(i)}>
                 <Link
                   href={routeHref}
                   onClick={pathname === routeHref ? closeMenu : undefined}
@@ -183,14 +167,13 @@ export default function MobileMenu({
             );
           })}
           <li
-            onClick={(e) => e.stopPropagation()}
             className="pt-4 [&_svg]:block [&_a]:text-[1.25rem]"
-            style={itemLift(navItems.length)}
+            style={itemStyle(navItems.length)}
           >
             <LanguageToggle lang={lang} label={langToggleLabel} />
           </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 }
