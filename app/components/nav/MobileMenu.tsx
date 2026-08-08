@@ -125,7 +125,7 @@ export default function MobileMenu({
 
       {/* Decorative reveal — clip-path lives here, never a click target.
           Chrome Android's hit-testing on a clip-path element mid-transition
-          drops the first tap, so we split visual from interactive. */}
+          drops the first tap, so we split visual from interactive.. */}
       <div
         aria-hidden
         className="lg:hidden fixed inset-0 z-40 bg-background pointer-events-none"
