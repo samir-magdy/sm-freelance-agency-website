@@ -1,16 +1,10 @@
 "use client";
 
-import {
-  useCallback,
-  useEffect,
-  useState,
-  useSyncExternalStore,
-} from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import LightRays from "./LightRays";
 
 const READY_FALLBACK_MS = 1200;
-const INSTANCE_COUNT = 2;
 const DESKTOP_MEDIA_QUERY = "(min-width: 768px)";
 
 function subscribeDesktop(callback: () => void) {
@@ -34,7 +28,7 @@ export default function LightRaysBackground() {
     getDesktopSnapshot,
     getDesktopServerSnapshot,
   );
-  const [readyCount, setReadyCount] = useState(0);
+  const [ready, setReady] = useState(false);
   const [fallbackFired, setFallbackFired] = useState(false);
 
   useEffect(() => {
@@ -46,29 +40,23 @@ export default function LightRaysBackground() {
     return () => clearTimeout(readyFallbackTimer);
   }, [isDesktop]);
 
-  const handleReady = useCallback(() => {
-    setReadyCount((c) => c + 1);
-  }, []);
-
   if (!isDesktop) return null;
 
   // Toggle visibility via CSS instead of unmounting on /guides. Unmounting
   // tears down the WebGL context; remounting on the next nav re-inits it,
   // causing a bright flash. Keep the canvas alive across navigations.
   const hidden = /^\/[^/]+\/guides(\/|$)/.test(pathname ?? "");
-  const ready = fallbackFired || readyCount >= INSTANCE_COUNT;
-  const visible = ready && !hidden;
+  const visible = (ready || fallbackFired) && !hidden;
 
   return (
     <div
       aria-hidden
-      className={`fixed inset-0 z-11 pointer-events-none mix-blend-screen transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0"}`}
+      className={`fixed inset-0 z-11 pointer-events-none mix-blend-screen transition-opacity duration-300 ${visible ? "opacity-65" : "opacity-0"}`}
     >
+      {/* One instance now draws both ray origins (left + right) in a single
+          canvas / shader pass — halving contexts, compiles, and fill. */}
       <div className="absolute inset-0">
-        <LightRays onReady={handleReady} />
-      </div>
-      <div className="absolute inset-0">
-        <LightRays raysOrigin="left" onReady={handleReady} />
+        <LightRays onReady={() => setReady(true)} />
       </div>
     </div>
   );

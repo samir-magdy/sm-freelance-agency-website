@@ -3,10 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import { Renderer, Program, Triangle, Mesh } from "ogl";
 
-type RaysOrigin = "right" | "left";
-
 interface LightRaysProps {
-  raysOrigin?: RaysOrigin;
   raysColor?: string;
   raysSpeed?: number;
   lightSpread?: number;
@@ -22,7 +19,6 @@ interface LightRaysProps {
   onReady?: () => void;
 }
 
-
 const hexToRgb = (hex: string): [number, number, number] => {
   const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return m
@@ -33,6 +29,8 @@ const hexToRgb = (hex: string): [number, number, number] => {
       ]
     : [1, 1, 1];
 };
+
+type RaysOrigin = "right" | "left";
 
 const getAnchorAndDir = (
   origin: RaysOrigin,
@@ -48,11 +46,25 @@ const getAnchorAndDir = (
   }
 };
 
+// Renderer strings that mean WebGL is being emulated on the CPU (no GPU).
+// Headless Chrome — which PageSpeed Insights / Lighthouse runs — reports
+// SwiftShader; GPU-less Linux reports llvmpipe/softpipe; Windows over RDP
+// reports "Microsoft Basic Render Driver". Rasterizing a full-screen
+// fragment shader in software blocks the main-thread pipeline for seconds,
+// so on these renderers the effect is skipped entirely.
+const SOFTWARE_GL = /swiftshader|llvmpipe|softpipe|software|basic render/i;
+
+// How close (in normalized viewport coords) the smoothed mouse position must
+// get to the raw position before the settle loop stops (~0.5px at 1280w).
+const MOUSE_SETTLE_EPS = 0.0004;
+
 type Uniforms = {
   iTime: { value: number };
   iResolution: { value: [number, number] };
-  rayPos: { value: [number, number] };
-  rayDir: { value: [number, number] };
+  rayPosA: { value: [number, number] };
+  rayDirA: { value: [number, number] };
+  rayPosB: { value: [number, number] };
+  rayDirB: { value: [number, number] };
   raysColor: { value: [number, number, number] };
   raysSpeed: { value: number };
   lightSpread: { value: number };
@@ -66,18 +78,23 @@ type Uniforms = {
   distortion: { value: number };
 };
 
+/**
+ * Draws BOTH ray bundles (right + left origin) in a single canvas / single
+ * shader pass. Previously this component drew one origin per instance and
+ * LightRaysBackground stacked two of them, doubling contexts, shader
+ * compiles, and per-frame fill.
+ */
 export default function LightRays({
-  raysOrigin = "right",
   raysColor = "#fff1d1",
   raysSpeed = 0,
-  lightSpread = 0.1,
-  rayLength = 2,
+  lightSpread = 0.05,
+  rayLength = 4,
   pulsating = false,
   fadeDistance = 10,
   saturation = 0.4,
   followMouse = true,
   mouseInfluence = 0.4,
-  noiseAmount = 0.2,
+  noiseAmount = 0.1,
   distortion = 0.0,
   className = "opacity-0 sm:opacity-100",
   onReady,
@@ -90,6 +107,7 @@ export default function LightRays({
   const animationIdRef = useRef<number | null>(null);
   const meshRef = useRef<Mesh | null>(null);
   const cleanupFunctionRef = useRef<(() => void) | null>(null);
+  const scheduleTickRef = useRef<(() => void) | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const hasCalledReadyRef = useRef(false);
@@ -128,6 +146,12 @@ export default function LightRays({
       cleanupFunctionRef.current = null;
     }
 
+    // Continuous 60fps rendering is only needed when a time-driven prop is
+    // active. With the defaults (speed 0, no pulse, no distortion) the image
+    // is static, so frames are rendered on demand: once at init, on resize,
+    // and while the mouse-follow easing settles after pointer movement.
+    const isAnimated = raysSpeed > 0 || pulsating || distortion > 0;
+
     const initializeWebGL = async () => {
       if (!containerRef.current) return;
 
@@ -135,13 +159,28 @@ export default function LightRays({
 
       if (!containerRef.current) return;
 
-      const renderer = new Renderer({
-        dpr: Math.min(window.devicePixelRatio, 2),
-        alpha: true,
-      });
+      // dpr locked to 1: this is a soft, blurred glow — supersampling it
+      // for retina displays is visually indistinguishable but quadruples
+      // the pixels shaded per frame.
+      const renderer = new Renderer({ dpr: 1, alpha: true });
+      const gl = renderer.gl;
+
+      // No GPU → skip the effect. The page simply renders without the glow.
+      const dbgInfo = gl.getExtension("WEBGL_debug_renderer_info");
+      const glRendererName = dbgInfo
+        ? String(gl.getParameter(dbgInfo.UNMASKED_RENDERER_WEBGL))
+        : "";
+      if (SOFTWARE_GL.test(glRendererName)) {
+        gl.getExtension("WEBGL_lose_context")?.loseContext();
+        if (!hasCalledReadyRef.current) {
+          hasCalledReadyRef.current = true;
+          onReadyRef.current?.(); // unblock the parent's fade-in logic
+        }
+        return;
+      }
+
       rendererRef.current = renderer;
 
-      const gl = renderer.gl;
       gl.canvas.style.width = "100%";
       gl.canvas.style.height = "100%";
 
@@ -163,8 +202,11 @@ void main() {
 uniform float iTime;
 uniform vec2  iResolution;
 
-uniform vec2  rayPos;
-uniform vec2  rayDir;
+uniform vec2  rayPosA;
+uniform vec2  rayDirA;
+uniform vec2  rayPosB;
+uniform vec2  rayDirB;
+
 uniform vec3  raysColor;
 uniform float raysSpeed;
 uniform float lightSpread;
@@ -209,9 +251,9 @@ float rayStrength(vec2 raySource, vec2 rayRefDirection, vec2 coord,
   return baseStrength * lengthFalloff * fadeFalloff * spreadFactor * pulse;
 }
 
-void mainImage(out vec4 fragColor, in vec2 fragCoord) {
-  vec2 coord = vec2(fragCoord.x, iResolution.y - fragCoord.y);
-
+// One full ray bundle (the pair of overlapping strengths the old shader
+// computed) emitted from a single origin.
+vec4 rayBundle(vec2 rayPos, vec2 rayDir, vec2 coord) {
   vec2 finalRayDir = rayDir;
   if (mouseInfluence > 0.0) {
     vec2 mouseScreenPos = mousePos * iResolution.xy;
@@ -226,10 +268,23 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
                rayStrength(rayPos, finalRayDir, coord, 22.3991, 18.0234,
                            1.1 * raysSpeed);
 
-  fragColor = rays1 * 0.5 + rays2 * 0.4;
+  return rays1 * 0.5 + rays2 * 0.4;
+}
+
+void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+  vec2 coord = vec2(fragCoord.x, iResolution.y - fragCoord.y);
+
+  vec4 bundleA = rayBundle(rayPosA, rayDirA, coord);
+  vec4 bundleB = rayBundle(rayPosB, rayDirB, coord);
+
+  // Screen-blend the two bundles in-shader — replaces the old second
+  // canvas that was composited via the parent's mix-blend-screen.
+  fragColor = 1.0 - (1.0 - bundleA) * (1.0 - bundleB);
 
   if (noiseAmount > 0.0) {
-    float n = noise(coord * 0.01 + iTime * 0.1);
+    // Static spatial grain. iTime was removed from this term so a rendered
+    // frame is genuinely still — required for on-demand rendering.
+    float n = noise(coord * 0.01);
     fragColor.rgb *= (1.0 - noiseAmount + noiseAmount * n);
   }
 
@@ -249,15 +304,17 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 void main() {
   vec4 color;
   mainImage(color, gl_FragCoord.xy);
-  gl_FragColor  = color;
+  gl_FragColor = color;
 }`;
 
       const uniforms: Uniforms = {
         iTime: { value: 0 },
         iResolution: { value: [1, 1] },
 
-        rayPos: { value: [0, 0] },
-        rayDir: { value: [0, 1] },
+        rayPosA: { value: [0, 0] },
+        rayDirA: { value: [0, 1] },
+        rayPosB: { value: [0, 0] },
+        rayDirB: { value: [0, 1] },
 
         raysColor: { value: hexToRgb(raysColor) },
         raysSpeed: { value: raysSpeed },
@@ -285,43 +342,44 @@ void main() {
       const updatePlacement = () => {
         if (!containerRef.current || !rendererRef.current) return;
 
-        rendererRef.current.dpr = Math.min(window.devicePixelRatio, 2);
-
         const { clientWidth: wCSS, clientHeight: hCSS } = containerRef.current;
         rendererRef.current.setSize(wCSS, hCSS);
 
-        const dpr = rendererRef.current.dpr;
+        const dpr = rendererRef.current.dpr; // locked to 1
         const w = wCSS * dpr;
         const h = hCSS * dpr;
 
         uniforms.iResolution.value = [w, h];
 
-        const { anchor, dir } = getAnchorAndDir(raysOrigin, w, h);
-        uniforms.rayPos.value = anchor;
-        uniforms.rayDir.value = dir;
+        const a = getAnchorAndDir("right", w, h);
+        const b = getAnchorAndDir("left", w, h);
+        uniforms.rayPosA.value = a.anchor;
+        uniforms.rayDirA.value = a.dir;
+        uniforms.rayPosB.value = b.anchor;
+        uniforms.rayDirB.value = b.dir;
       };
 
-      const loop = (timestampMs: number) => {
+      const tick = (timestampMs: number) => {
+        animationIdRef.current = null;
         if (!rendererRef.current || !uniformsRef.current || !meshRef.current) {
           return;
         }
 
         uniforms.iTime.value = timestampMs * 0.001;
 
+        let mouseSettling = false;
         if (followMouse && mouseInfluence > 0.0) {
           const smoothing = 0.92;
+          const s = smoothMouseRef.current;
+          const m = mouseRef.current;
 
-          smoothMouseRef.current.x =
-            smoothMouseRef.current.x * smoothing +
-            mouseRef.current.x * (1 - smoothing);
-          smoothMouseRef.current.y =
-            smoothMouseRef.current.y * smoothing +
-            mouseRef.current.y * (1 - smoothing);
+          s.x = s.x * smoothing + m.x * (1 - smoothing);
+          s.y = s.y * smoothing + m.y * (1 - smoothing);
+          uniforms.mousePos.value = [s.x, s.y];
 
-          uniforms.mousePos.value = [
-            smoothMouseRef.current.x,
-            smoothMouseRef.current.y,
-          ];
+          mouseSettling =
+            Math.abs(s.x - m.x) > MOUSE_SETTLE_EPS ||
+            Math.abs(s.y - m.y) > MOUSE_SETTLE_EPS;
         }
 
         try {
@@ -330,33 +388,66 @@ void main() {
             hasCalledReadyRef.current = true;
             onReadyRef.current?.();
           }
-          animationIdRef.current = requestAnimationFrame(loop);
         } catch (error) {
           console.warn("WebGL rendering error:", error);
           return;
         }
+
+        // Keep looping only while something can still change on screen:
+        // a time-driven animation prop, or the mouse easing mid-settle.
+        if (isAnimated || mouseSettling) {
+          animationIdRef.current = requestAnimationFrame(tick);
+        }
       };
 
-      window.addEventListener("resize", updatePlacement);
+      const scheduleTick = () => {
+        if (animationIdRef.current === null) {
+          animationIdRef.current = requestAnimationFrame(tick);
+        }
+      };
+      scheduleTickRef.current = scheduleTick;
+
+      const handleResize = () => {
+        updatePlacement();
+        scheduleTick();
+      };
+
+      const handleMouseMove = (e: MouseEvent) => {
+        if (!containerRef.current) return;
+        const rect = containerRef.current.getBoundingClientRect();
+        mouseRef.current = {
+          x: (e.clientX - rect.left) / rect.width,
+          y: (e.clientY - rect.top) / rect.height,
+        };
+        scheduleTick(); // (re)start the settle loop toward the new target
+      };
+
+      window.addEventListener("resize", handleResize);
+      if (followMouse && mouseInfluence > 0.0) {
+        window.addEventListener("mousemove", handleMouseMove, {
+          passive: true,
+        });
+      }
+
       updatePlacement();
-      animationIdRef.current = requestAnimationFrame(loop);
+      scheduleTick(); // first frame (also fires onReady)
 
       cleanupFunctionRef.current = () => {
-        if (animationIdRef.current) {
+        if (animationIdRef.current !== null) {
           cancelAnimationFrame(animationIdRef.current);
           animationIdRef.current = null;
         }
+        scheduleTickRef.current = null;
 
-        window.removeEventListener("resize", updatePlacement);
+        window.removeEventListener("resize", handleResize);
+        window.removeEventListener("mousemove", handleMouseMove);
 
         if (rendererRef.current) {
           try {
             const canvas = rendererRef.current.gl.canvas;
-            const loseContextExt =
-              rendererRef.current.gl.getExtension("WEBGL_lose_context");
-            if (loseContextExt) {
-              loseContextExt.loseContext();
-            }
+            rendererRef.current.gl
+              .getExtension("WEBGL_lose_context")
+              ?.loseContext();
 
             if (canvas && canvas.parentNode) {
               canvas.parentNode.removeChild(canvas);
@@ -382,7 +473,6 @@ void main() {
     };
   }, [
     isVisible,
-    raysOrigin,
     raysColor,
     raysSpeed,
     lightSpread,
@@ -416,14 +506,18 @@ void main() {
 
     const { clientWidth: wCSS, clientHeight: hCSS } = containerRef.current;
     const dpr = renderer.dpr;
-    const { anchor, dir } = getAnchorAndDir(raysOrigin, wCSS * dpr, hCSS * dpr);
-    u.rayPos.value = anchor;
-    u.rayDir.value = dir;
+    const a = getAnchorAndDir("right", wCSS * dpr, hCSS * dpr);
+    const b = getAnchorAndDir("left", wCSS * dpr, hCSS * dpr);
+    u.rayPosA.value = a.anchor;
+    u.rayDirA.value = a.dir;
+    u.rayPosB.value = b.anchor;
+    u.rayDirB.value = b.dir;
+
+    scheduleTickRef.current?.(); // repaint with the new values
   }, [
     raysColor,
     raysSpeed,
     lightSpread,
-    raysOrigin,
     rayLength,
     pulsating,
     fadeDistance,
@@ -432,21 +526,6 @@ void main() {
     noiseAmount,
     distortion,
   ]);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!containerRef.current || !rendererRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width;
-      const y = (e.clientY - rect.top) / rect.height;
-      mouseRef.current = { x, y };
-    };
-
-    if (followMouse) {
-      window.addEventListener("mousemove", handleMouseMove);
-      return () => window.removeEventListener("mousemove", handleMouseMove);
-    }
-  }, [followMouse]);
 
   return (
     <div
