@@ -51,7 +51,7 @@ export default function ChatPromptBubble({
 
   return (
     <div
-      className={`fixed bottom-22 sm:bottom-24 sm:inset-e-4 inset-e-2 z-50 max-w-[16rem] transition-all duration-500 ease-out
+      className={`fixed bottom-22 sm:bottom-24 sm:inset-e-4 inset-e-2 z-30 max-w-[16rem] transition-all duration-500 ease-out
         ${visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"}`}
       role="status"
       aria-live="polite"

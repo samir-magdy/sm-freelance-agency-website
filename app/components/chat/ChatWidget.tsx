@@ -163,7 +163,7 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
         onClick={() => setOpen(true)}
         aria-label={translations.a11y.open[lang]}
         aria-expanded={open}
-        className={`${styles.launcher} fixed bottom-5 inset-e-5 z-50 grid size-12 sm:size-14 cursor-pointer
+        className={`${styles.launcher} fixed bottom-5 inset-e-5 z-30 grid size-12 sm:size-14 cursor-pointer
           place-items-center rounded-full transition-transform duration-300 ease-out
           hover:scale-105
           ${open ? "pointer-events-none opacity-0" : "opacity-100"}`}
@@ -181,7 +181,7 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
           aria-modal="false"
           aria-labelledby="chat-panel-title"
           onKeyDown={(e) => e.key === "Escape" && setOpen(false)}
-          className="fixed bottom-5 inset-e-5 z-50 flex h-[min(32rem,calc(100dvh-2.5rem))]
+          className="fixed bottom-5 inset-e-5 z-30 flex h-[min(32rem,calc(100dvh-2.5rem))]
             w-[min(24rem,calc(100vw-2.5rem))] flex-col overflow-hidden rounded-2xl
             border-2 border-border-subtle bg-surface-card shadow-2xl shadow-black/50"
         >
