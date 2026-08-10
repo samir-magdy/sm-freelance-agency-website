@@ -14,7 +14,7 @@ export default function FAQSection({ lang }: FAQSectionProps) {
     <section
       id="FAQs"
       aria-labelledby="FAQs-heading"
-      className={`${styles.accordion} py-4 px-4`}
+      className={`${styles.accordion} py-4 px-4 sm:px-8`}
     >
       <div className="max-w-5xl mx-auto flex flex-col items-center">
         <div className="reveal-element mb-6 md:mb-12 text-center">

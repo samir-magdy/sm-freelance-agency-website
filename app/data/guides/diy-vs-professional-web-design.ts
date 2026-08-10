@@ -9,10 +9,6 @@ const resource: Guide = {
     en: "DIY Website Builders vs Hiring a Professional",
     ar: "تصمم موقعك بنفسك أم تستعين بمصمم محترف؟",
   },
-  metaTitle: {
-    en: `DIY Website Builders vs Hiring a Developer (${CURRENT_YEAR})`,
-    ar: ` استخدام منصات إنشاء المواقع الجاهزة أم الاستعانة بمصمم محترف؟ (${CURRENT_YEAR})`,
-  },
   excerpt: {
     en: "Website builders like Wix or Squarespace can work if you need something fairly simple. But they come with significant drawbacks that aren't immediately obvious and tend to surface over time. In this guide you'll learn the drawbacks of using these platforms, including the hidden costs and limitations.",
     ar: "إذا كنت تحتاج موقعًا بسيطًا، فقد تكفيك أدوات بناء المواقع الجاهزة مثل Wix أو Squarespace. لكن لها عيوبًا كثيرة سنوضّحها في هذا الدليل، وهي عيوب لا تظهر في البداية.",
@@ -135,10 +131,6 @@ const resource: Guide = {
 
 <h2>الخاتمة</h2>
 <p>إذا كنت تمتلك عملاً حقيقياً وتطمح للنمو والمنافسة بقوة في عام ${CURRENT_YEAR}، فإن الموقع الإلكتروني الاحترافي هو حجر الأساس الذي ستبني عليه نجاحك. القاعدة الثابتة هنا هي أن الشركات التي تستثمر في التصميم الاحترافي منذ البداية، تتجنب الوقوع في فخ إعادة بناء الموقع لاحقاً وتوفر على نفسها الكثير من الجهد والمال.</p>`,
-  },
-  metaDescription: {
-    en: "Should you build your own website on Wix or Squarespace, or hire a professional? Compare real costs (including hidden USD subscriptions), risks, and long-term tradeoffs.",
-    ar: "هل تصمم موقعك بنفسك على Wix أو Squarespace، أم تستعين بمحترف؟ قارن التكاليف الحقيقية (بما فيها الاشتراكات الخفية بالدولار)، والمخاطر، والفروق على المدى البعيد.",
   },
   readingMinutes: { en: 2, ar: 2 },
 };

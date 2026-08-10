@@ -1,0 +1,142 @@
+/* ══════════════════════════════════════
+   LightRays toggle — wall rocker switch
+   Portrait plate + recessed well + rocker that tilts on toggle.
+   The visible seam around the rocker and the inset shadow at the
+   sunken edge are what make it read as a real switch.
+   ══════════════════════════════════════ */
+
+.mount {
+  position: fixed;
+  bottom: 1.5rem;
+  inset-inline-start: 1.5rem;
+  z-index: 20;
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  transition: transform 120ms ease-out;
+}
+
+.mount:active {
+  transform: translateY(1px);
+}
+
+.mount:focus-visible {
+  box-shadow:
+    0 0 0 2px var(--color-background),
+    0 0 0 4px var(--color-gold-light);
+}
+
+/* Plate — dark charcoal portrait rectangle, sits quietly against the page */
+.plate {
+  position: relative;
+  width: 1.75rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  padding: 4px;
+  background: linear-gradient(
+    180deg,
+    var(--color-surface-card) 0%,
+    var(--color-surface-low) 100%
+  );
+  border: 1px solid var(--color-border-subtle);
+  box-shadow:
+    0 1px 0 oklch(100% 0 0 / 0.04) inset,
+    0 1px 1px oklch(0% 0 0 / 0.3),
+    0 6px 14px -4px oklch(0% 0 0 / 0.5);
+}
+
+/* Well — the recessed opening the rocker sits inside */
+.well {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 2.5px;
+  background: var(--color-background);
+  box-shadow:
+    inset 0 1px 1.5px oklch(0% 0 0 / 0.6),
+    inset 0 -0.5px 0 oklch(100% 0 0 / 0.05);
+  perspective: 160px;
+  overflow: hidden;
+}
+
+/* Rocker — fills the well with a hairline seam on each side */
+.rocker {
+  position: absolute;
+  inset: 1px;
+  border-radius: 2px;
+  background: linear-gradient(
+    180deg,
+    oklch(38% 0.014 267) 0%,
+    oklch(28% 0.012 267) 100%
+  );
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transition: transform 220ms cubic-bezier(0.6, 0.2, 0.1, 1);
+  will-change: transform;
+  box-shadow:
+    0 0.5px 0 oklch(100% 0 0 / 0.12) inset,
+    0 -0.5px 0 oklch(0% 0 0 / 0.25) inset;
+}
+
+.rockerOn {
+  /* Top edge sinks back, bottom edge comes forward → "on" */
+  transform: rotateX(-16deg);
+}
+
+.rockerOff {
+  transform: rotateX(16deg);
+}
+
+/* Depth cues inside the well — a shadow band at the pressed-in edge */
+.well::before,
+.well::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 220ms ease-out;
+}
+
+.well::before {
+  top: 0;
+  background: linear-gradient(
+    180deg,
+    oklch(0% 0 0 / 0.55) 0%,
+    transparent 100%
+  );
+}
+
+.well::after {
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    oklch(0% 0 0 / 0.55) 0%,
+    transparent 100%
+  );
+}
+
+/* ON → top edge of rocker is sunken → shadow at top of well */
+.wellOn::before {
+  opacity: 1;
+}
+
+/* OFF → bottom edge sunken → shadow at bottom of well */
+.wellOff::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rocker {
+    transition: none;
+  }
+  .well::before,
+  .well::after {
+    transition: none;
+  }
+}

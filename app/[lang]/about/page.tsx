@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import profilePhoto from "@/public/profilePhoto.jpg";
 import aboutPage from "@/app/data/translations/aboutPage";
+import pageMeta from "@/app/data/translations/pageMeta";
 import { notFound } from "next/navigation";
 import {
   SITE_URL,
@@ -29,29 +30,15 @@ const valueCardIcons: Record<string, LucideIcon> = {
   partnership: Handshake,
 };
 
-const meta: Record<Lang, { title: string; description: string }> = {
-  en: {
-    title: "Website Designer & Developer in Egypt",
-    description: `Samir Magdy is a web designer, developer & the founder of ${SITE_NAME}, specializing in high-performance, custom web development.`,
-  },
-  ar: {
-    title: "مصمم ومطور مواقع إلكترونية في مصر",
-    description:
-      "سمير مجدي هو مصمم ومطور مواقع في مصر ومؤسس شركة إس إم ويب ستوديو. متخصص في خدمات تصميم المواقع المخصصة للشركات والأفراد.",
-  },
-};
-
 export async function generateMetadata({
   params,
 }: {
   params: Promise<LangParams>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  const m = meta[lang] ?? meta.en;
-
   return {
-    title: m.title,
-    description: m.description,
+    title: pageMeta.about.title[lang],
+    description: pageMeta.about.description[lang],
     alternates: pageAlternates(lang, "/about"),
   };
 }

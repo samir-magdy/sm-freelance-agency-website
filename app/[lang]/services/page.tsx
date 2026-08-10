@@ -3,21 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import servicesPage from "@/app/data/translations/servicesPage";
+import pageMeta from "@/app/data/translations/pageMeta";
 import SpecializedServiceIcon from "@/app/components/utils/SpecializedServiceIcon";
-import { SITE_NAME } from "@/app/constants";
 import { pageAlternates } from "@/lib/urls";
 import { isLang, type Lang, type LangParams } from "@/app/types";
-
-const meta: Record<Lang, { title: string; description: string }> = {
-  en: {
-    title: "Specialized Services — Branding, Copywriting, SEO, Bilingual",
-    description: `Branding, copywriting, SEO setup, and full bilingual support from ${SITE_NAME}. Layer onto a website build, or hire on its own.`,
-  },
-  ar: {
-    title: "خدمات متخصصة — هوية بصرية، محتوى، SEO، ثنائي اللغة",
-    description: `هوية بصرية، كتابة محتوى، إعداد SEO، ودعم كامل ثنائي اللغة من ${SITE_NAME}. أضفها لمشروع موقع، أو استفد منها كمشروع مستقل.`,
-  },
-};
 
 export async function generateMetadata({
   params,
@@ -25,10 +14,9 @@ export async function generateMetadata({
   params: Promise<LangParams>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  const m = meta[lang] ?? meta.en;
   return {
-    title: m.title,
-    description: m.description,
+    title: pageMeta.services.title[lang],
+    description: pageMeta.services.description[lang],
     alternates: pageAlternates(lang, "/services"),
   };
 }
@@ -92,7 +80,7 @@ export default async function ServicesDetailPage({
                           >
                             <span
                               aria-hidden="true"
-                              className="mt-2 h-1.5 w-1.5 shrink-0 rotate-45 bg-gold/70"
+                              className="my-auto h-1.5 w-1.5 shrink-0 rotate-45 bg-gold/70"
                             />
                             <span>{item[lang]}</span>
                           </li>

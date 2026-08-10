@@ -14,7 +14,7 @@ export default function ServicesSection({ lang }: ServicesSectionProps) {
   return (
     <section
       id="services"
-      className="relative flex py-4 px-4 sm:px-12 md:px-24 min-h-dvh items-start"
+      className="relative flex py-4 px-4 sm:px-8 min-h-dvh items-start"
       aria-labelledby="services-cards-heading"
       dir={isRtl ? "rtl" : "ltr"}
     >
@@ -35,7 +35,7 @@ export default function ServicesSection({ lang }: ServicesSectionProps) {
             <a
               key={card.id}
               href="#contact"
-              className="max-w-4xl reveal-element group flex flex-col p-6 sm:p-8 lg:p-10 rounded-4xl border border-border-subtle bg-surface-card hover:border-white/10 hover:shadow-lg hover:shadow-gold/5 transition-all duration-500 ease-out hover:-translate-y-1.5 hover:-translate-x-1 rtl:hover:translate-x-1"
+              className="max-w-4xl reveal-element group flex flex-col p-6 sm:p-8 lg:p-10 rounded-4xl border border-border-subtle bg-surface-card hover:border-white/10 hover:shadow-lg hover:shadow-gold/5 transition-all duration-500 ease-out hover:-translate-y-1 hover:-translate-x-1 rtl:hover:translate-x-1"
             >
               <div className="flex-1 mb-6">
                 <h3 className="font-bold text-subheading lg:text-heading text-content-heading leading-snug mb-2">

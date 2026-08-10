@@ -1,4 +1,3 @@
-import { CURRENT_YEAR } from "@/app/constants";
 import type { Guide } from "./types";
 
 const resource: Guide = {
@@ -8,10 +7,6 @@ const resource: Guide = {
   title: {
     en: "How to Choose the Best Web Design Company",
     ar: "كيف تختار أفضل شركة تصميم مواقع في مصر؟",
-  },
-  metaTitle: {
-    en: `Choosing the Best Web Design Company (${CURRENT_YEAR})`,
-    ar: `كيف تختار أفضل شركة تصميم مواقع إلكترونية في مصر؟ (${CURRENT_YEAR})`,
   },
   excerpt: {
     en: "A competent web design company has a well-designed, fully functional website, a portfolio of websites you can visit, is transparent about pricing, and communicates clearly. Read this guide to get a clearer picture of your options and how to choose correctly.",
@@ -115,10 +110,6 @@ const resource: Guide = {
 
 <h2>وجهة نظرنا: كيف تختار شركة تصميم المواقع بشكل صحيح؟</h2>
 <p>الشركة المناسبة هي التي تمتلك سابقة أعمال معروضة يمكنك تجربتها، وتهتم بمعرفة تفاصيل عملك وأهدافك، وتتميز بالشفافية في أسعارها والوضوح في تواصلها. ليس بالضرورة أن يكونوا الأرخص أو الأكبر، بل يجب أن يكونوا الأنسب لعملك.</p>`,
-  },
-  metaDescription: {
-    en: `Choosing the wrong web design company in Egypt costs more than money. Learn the key questions to ask, red flags to spot, and how to choose right in ${CURRENT_YEAR}.`,
-    ar: `اختيار شركة تصميم مواقع غير مناسبة في مصر مكلف: تأخير، ورسوم خفية بالدولار، ومواقع لا تعمل. تعرف على الأسئلة التي يجب أن تطرحها، والعلامات التحذيرية، ومعايير اختيار فريلانسر أو استوديو أو شركة في ${CURRENT_YEAR}.`,
   },
   readingMinutes: { en: 3, ar: 4 },
 };

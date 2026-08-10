@@ -84,7 +84,7 @@ export default async function LangLayout({
   const lang: Lang = rawLang;
 
   const font = lang === "ar" ? cairoFull : cairoLatin;
-  const skipLabel = lang === "ar" ? "تخطى إلى المحتوى" : "Skip to main content";
+  const skipLabel = a11y.skipToContent[lang];
 
   const heroNavStrings: HeroNavStrings = {
     nav: {
@@ -102,6 +102,8 @@ export default async function LangLayout({
       closeMenu: a11y.closeMenu[lang],
     },
     langToggleLabel: lang === "ar" ? langToggle.en : langToggle.ar,
+    langToggleAriaLabel:
+      lang === "ar" ? a11y.switchToEnglish[lang] : a11y.switchToArabic[lang],
   };
 
   return (

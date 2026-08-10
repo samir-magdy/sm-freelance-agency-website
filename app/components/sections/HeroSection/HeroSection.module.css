@@ -168,7 +168,6 @@
 
 [dir="rtl"] .hook {
   margin-top: 0.625rem;
-  font-size: clamp(2.25rem, 10vw, 4.5rem);
   line-height: 2;
 }
 
@@ -225,10 +224,6 @@
 
   .hook {
     font-size: clamp(2rem, 10vw, 3.8rem);
-  }
-
-  [dir="rtl"] .hook {
-    font-size: clamp(2.25rem, 10vw, 4.05rem);
   }
 
   .valueProp {

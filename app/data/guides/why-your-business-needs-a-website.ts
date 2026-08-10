@@ -9,10 +9,6 @@ const resource: Guide = {
     en: "Does Your Business Need a Website?",
     ar: "لماذا يحتاج مشروعك إلى موقع إلكتروني؟",
   },
-  metaTitle: {
-    en: `Do I Need a Website for My Business? (${CURRENT_YEAR})`,
-    ar: `هل تحتاج شركتك إلى موقع إلكتروني؟ (${CURRENT_YEAR})`,
-  },
   excerpt: {
     en: "The first thing a potential customer does is search for you online, most likely using Google or an AI like ChatGPT. If they find your competitors instead of you, you've likely lost the sale before you've even had a chance to present yourself. In this guide we explain why having a website is crucial for this scenario.",
     ar: "عندما تسمع عن شركة أو خدمة جديدة، ما أول ما تفعله؟ غالبًا تفتح جوجل أو ChatGPT وتكتب اسمها لتطمئن وتطّلع على تفاصيلها. والعميل الذي يبحث عن شركتك يفعل الشيء نفسه تمامًا.",
@@ -99,10 +95,6 @@ const resource: Guide = {
 </table>
 
 <p>هذا لا يعني أن تتوقف عن إطلاق الإعلانات، بل على العكس؛ فالموقع الإلكتروني يزيد من نجاح إعلاناتك، لأن العميل عندما يزوره يثق بك ويتخذ قرار الشراء بشكل أسرع، وبذلك لا تضيع ميزانيتك الإعلانية سدىً. إذا كنت ترغب في معرفة التكلفة الفعلية، ننصحك بقراءة <a href='/ar/guides/website-cost-in-egypt'>دليل تكلفة المواقع الإلكترونية في مصر (${CURRENT_YEAR})</a>.</p>`,
-  },
-  metaDescription: {
-    en: `Discover why your business in Egypt needs a website in ${CURRENT_YEAR}: real credibility, Google visibility, and ROI that Instagram and Facebook simply cannot match.`,
-    ar: `هل تحتاج فعلاً إلى موقع إلكتروني في مصر في ${CURRENT_YEAR}؟ اكتشف الفوائد الحقيقية: المصداقية، والتحكم، والظهور في جوجل، والعائد بالجنيه. ولماذا لا يكفي وجودك على إنستجرام وفيسبوك.`,
   },
   readingMinutes: { en: 4, ar: 3 },
 };

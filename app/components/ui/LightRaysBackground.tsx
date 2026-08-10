@@ -3,6 +3,9 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import dynamic from "next/dynamic";
+import LightRaysToggle, { useLightRaysEnabled } from "./LightRaysToggle";
+import a11y from "@/app/data/translations/a11y";
+import { isLang } from "@/app/types";
 
 // Lazy import so the ~40KB LightRays + ogl chunk never ships to viewports
 // that will be gated out below. Fetch is triggered by first render, which
@@ -35,6 +38,7 @@ export default function LightRaysBackground() {
   );
   const [ready, setReady] = useState(false);
   const [fallbackFired, setFallbackFired] = useState(false);
+  const enabled = useLightRaysEnabled();
 
   useEffect(() => {
     if (!isDesktop) return;
@@ -50,19 +54,25 @@ export default function LightRaysBackground() {
   // Toggle visibility via CSS instead of unmounting on /guides. Unmounting
   // tears down the WebGL context; remounting on the next nav re-inits it,
   // causing a bright flash. Keep the canvas alive across navigations.
-  const hidden = /^\/[^/]+\/guides(\/|$)/.test(pathname ?? "");
-  const visible = (ready || fallbackFired) && !hidden;
+  const hidden = /^\/[^/]+\/(guides|privacy|terms)(\/|$)/.test(pathname ?? "");
+  const visible = (ready || fallbackFired) && !hidden && enabled;
+
+  const langSegment = pathname?.split("/")[1];
+  const lang = isLang(langSegment) ? langSegment : "en";
 
   return (
-    <div
-      aria-hidden
-      className={`fixed inset-0 z-11 pointer-events-none mix-blend-screen transition-opacity duration-500 ${visible ? "opacity-60" : "opacity-0"}`}
-    >
-      {/* One instance now draws both ray origins (left + right) in a single
-          canvas / shader pass — halving contexts, compiles, and fill. */}
-      <div className="absolute inset-0">
-        <LightRays onReady={() => setReady(true)} />
+    <>
+      <div
+        aria-hidden
+        className={`fixed inset-0 z-11 pointer-events-none mix-blend-screen transition-opacity duration-500 ${visible ? "opacity-60" : "opacity-0"}`}
+      >
+        {/* One instance now draws both ray origins (left + right) in a single
+            canvas / shader pass — halving contexts, compiles, and fill. */}
+        <div className="absolute inset-0">
+          <LightRays onReady={() => setReady(true)} />
+        </div>
       </div>
-    </div>
+      {!hidden && <LightRaysToggle label={a11y.toggleLightRays[lang]} />}
+    </>
   );
 }

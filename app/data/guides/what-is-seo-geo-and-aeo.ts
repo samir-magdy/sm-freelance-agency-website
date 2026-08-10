@@ -9,10 +9,6 @@ const resource: Guide = {
     en: "What is SEO, GEO, and AEO?",
     ar: "ما هو السيو (SEO)، والـ GEO، والـ AEO؟",
   },
-  metaTitle: {
-    en: `What is SEO, GEO, and AEO? (${CURRENT_YEAR} Guide)`,
-    ar: `ما هو السيو (SEO)، والـ GEO، والـ AEO؟ (${CURRENT_YEAR})`,
-  },
   excerpt: {
     en: "The world of search is expanding rapidly. Beyond traditional SEO, businesses now need to understand Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). Learn the differences and why your business needs a unified strategy for all three.",
     ar: "عالم البحث يتطور بسرعة. إلى جانب السيو التقليدي (SEO)، تحتاج الشركات الآن إلى فهم تحسين محركات التوليد (GEO) وتحسين محركات الإجابة (AEO). تعرف على الفروق بينها ولماذا تحتاج إلى استراتيجية موحدة تجمعهم معاً.",
@@ -148,10 +144,6 @@ const resource: Guide = {
 
 <h2>الخاتمة</h2>
 <p>أنت لست مضطراً لاختيار واحد فقط؛ بل في الواقع، يعتمد كل منها على الآخر. فالموقع الذي يعاني من ضعف في السيو التقني لن يزحف إليه جوجل، مما يعني أنه لن يتم اختياره أبداً كمقتطف مميز (AEO)، ولن تكتشفه روبوتات الذكاء الاصطناعي للاستشهاد به (GEO). للسيطرة على سوقك في ${CURRENT_YEAR}، تحتاج إلى استراتيجية موحدة: موقع سريع وسليم تقنياً (SEO)، وبيانات مهيكلة وإجابات واضحة للأسئلة (AEO)، ومحتوى أصلي وموثوق (GEO).</p>`,
-  },
-  metaDescription: {
-    en: "Confused by the new search landscape? Learn the differences between SEO (Search), AEO (Answer), and GEO (Generative) optimization, and how to master all three.",
-    ar: "عالم البحث تغير! تعرف على الفروق الأساسية بين السيو التقليدي (SEO)، وتحسين الإجابات (AEO)، وتحسين محركات الذكاء الاصطناعي (GEO) وكيفية تطبيقها في موقعك.",
   },
   readingMinutes: { en: 4, ar: 4 },
 };

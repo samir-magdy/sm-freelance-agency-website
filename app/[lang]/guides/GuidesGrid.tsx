@@ -6,6 +6,8 @@ import type { Guide } from "@/app/data/guides/types";
 interface GuidesGridStrings {
   minRead: Localized;
   readGuideButton: Localized;
+  stayTunedHeading: Localized;
+  stayTunedDescription: Localized;
 }
 
 interface GuidesGridProps {
@@ -78,15 +80,13 @@ export default function GuidesGrid({ resources, lang, translations }: GuidesGrid
 
         <div className="space-y-2 relative z-10">
           <h3 className="text-content-heading font-bold text-heading tracking-tight mb-4">
-            {lang === "ar" ? "ترقب المزيد" : "Stay Tuned"}
+            {translations.stayTunedHeading[lang]}
           </h3>
           <p
             className="text-content-muted text-subheading max-w-75 mx-auto leading-relaxed"
             dir={lang === "ar" ? "rtl" : "ltr"}
           >
-            {lang === "ar"
-              ? "نعمل على إعداد المزيد من الأدلة المميزة من أجلك."
-              : "We are working on more useful guides for you."}
+            {translations.stayTunedDescription[lang]}
           </p>
         </div>
 

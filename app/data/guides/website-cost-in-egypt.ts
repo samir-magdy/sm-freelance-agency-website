@@ -9,10 +9,6 @@ const resource: Guide = {
     en: `How Much Does a Website Cost in Egypt? (${CURRENT_YEAR})`,
     ar: `كم تكلفة تصميم موقع إلكتروني في مصر؟ (${CURRENT_YEAR})`,
   },
-  metaTitle: {
-    en: `How Much Does a Website Cost in Egypt (${CURRENT_YEAR})`,
-    ar: `كم تكلفة تصميم موقع إلكتروني احترافي في مصر؟ (${CURRENT_YEAR})`,
-  },
   excerpt: {
     en: "Prices for websites in Egypt typically start at around EGP 5,000 and can exceed EGP 100,000 depending on the project's size, features, and complexity. After reading this guide, you will be able to understand what factors drive pricing, allowing you to make an informed decision when making your digital investment.",
     ar: "تبدأ تكلفة تصميم المواقع الإلكترونية في مصر من حوالي 5,000 جنيه مصري، وقد تتجاوز الـ 100,000 جنيه مصري حسب حجم المشروع والميزات المطلوبة ومستوى التخصيص.",
@@ -161,10 +157,6 @@ ar: `<p><strong>تبدأ تكلفة تصميم المواقع الإلكترون
 <p>لا تكرر أخطاء الآخرين. اقرأ دليلنا: <a href="/ar/guides/choose-web-design-company-egypt">كيف تختار أفضل شركة تصميم مواقع في مصر</a>، لتعرف كيف تحمي نفسك وتختار الجهة المناسبة.</p>
 <p>في النهاية، السؤال الصحيح ليس «ما هو أرخص موقع يمكنني إنشاؤه؟» بل «ما هو أقل استثمار سيحقق عائداً إيجابياً لعملي؟»</p>`,
 },
-  metaDescription: {
-    en: `Find out how much a professional website costs in Egypt in ${CURRENT_YEAR}. An honest EGP breakdown of what drives the price for landing pages, business sites, and online stores.`,
-    ar: "هل تريد معرفة كم سيكلفك موقعك الإلكتروني؟ احسب تكلفة موقعك فوراً باستخدام حاسبة الأسعار الذكية، واكتشف العوامل التي تحدد الأسعار في مصر.",
-  },
   readingMinutes: { en: 5, ar: 5 },
 };
 

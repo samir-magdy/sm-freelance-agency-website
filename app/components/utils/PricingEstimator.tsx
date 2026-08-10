@@ -20,8 +20,7 @@ interface PricingEstimatorProps {
 
 export default function PricingEstimator({ lang }: PricingEstimatorProps) {
   const translations = pricingEstimator;
-  const isRtl = lang === "ar";
-  const currencySymbol = isRtl ? "ج.م" : "EGP";
+  const currencySymbol = translations.currencySymbol[lang];
 
   const [baseId, setBaseId] = useState<BaseId>(translations.baseOptions[0].id);
   const [scopeIndex, setScopeIndex] = useState(0);
@@ -94,44 +93,35 @@ export default function PricingEstimator({ lang }: PricingEstimatorProps) {
       selectedAddons.length > 0
         ? selectedAddons
             .map((id) => translations.addons.find((a) => a.id === id)?.name[lang])
-            .join(isRtl ? "، " : ", ")
-        : isRtl
-          ? "بدون إضافات"
-          : "None";
+            .join(translations.addonSeparator[lang])
+        : translations.noAddons[lang];
 
-    const message = isRtl
-      ? `أنا استخدمت حاسبة الأسعار من خلال موقعكم و حابب اعرف تفاصيل أكتر.
-
-البيانات المحسوبة:
-- نوع الموقع: ${baseType.name.ar}
-- حجم المحتوى: ${currentScope.name.ar}
-- الإضافات: ${addonNames}
-- التكلفة التقديرية: ${totalEGP.toLocaleString()} ${currencySymbol}`
-      : `Hello, I just used the price calculator on your website and would like to discuss my project.
-
-The Calculated Data:
-- Type: ${baseType.name.en}
-- Size: ${currentScope.name.en}
-- Add-ons: ${addonNames}
-- Calculated Price: ${totalEGP.toLocaleString()} ${currencySymbol}`;
+    const message = translations.whatsappMessageTemplate[lang]
+      .replace("{type}", baseType.name[lang])
+      .replace("{size}", currentScope.name[lang])
+      .replace("{addons}", addonNames)
+      .replace("{price}", totalEGP.toLocaleString())
+      .replace("{currency}", currencySymbol);
 
     return `${SOCIAL_LINKS.whatsapp}?text=${encodeURIComponent(message)}`;
   }, [
     lang,
-    isRtl,
     baseType,
     currentScope,
     selectedAddons,
     totalEGP,
     currencySymbol,
     translations.addons,
+    translations.addonSeparator,
+    translations.noAddons,
+    translations.whatsappMessageTemplate,
   ]);
 
   return (
     <>
       <div
         id="pricing-calculator"
-        className="scroll-mt-36 rtl:scroll-mt-39 sm:scroll-mt-54 sm:rtl:scroll-mt-58 relative max-w-360 w-full mx-auto px-3 py-2 sm:py-3.5 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-strong flex flex-col sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0 mb-8 sm:mb-16"
+        className="scroll-mt-36 rtl:scroll-mt-39 sm:scroll-mt-58 relative max-w-360 w-full mx-auto px-3 py-2 sm:py-3.5 rounded-3xl bg-surface-card/50 shadow-xl shadow-black/30 border-2 border-border-strong flex flex-col sm:gap-8 md:block md:bg-transparent md:shadow-none md:border-0 md:p-0 mb-8 sm:mb-16"
       >
         <div className="flex flex-col md:grid md:grid-cols-12 md:gap-8 w-full sm:pb-4">
           <div className="md:col-span-7 flex flex-col gap-1 sm:gap-3.5 md:bg-surface-card/50 md:shadow-xl md:shadow-black/30 md:border-2 md:border-border-strong md:rounded-3xl md:p-6 md:pt-4">

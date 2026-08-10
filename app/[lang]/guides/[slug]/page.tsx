@@ -6,6 +6,8 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from "lucide-react";
 import { SITE_NAME, SCHEMA_IDS } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guidesShared";
+import pageMeta from "@/app/data/translations/pageMeta";
+import navTranslations, { breadcrumbHome } from "@/app/data/translations/nav";
 import PricingEstimator from "@/app/components/utils/PricingEstimator";
 import type { Lang, LangSlugParams } from "@/app/types";
 import {
@@ -46,16 +48,17 @@ export async function generateMetadata({
   const guide = guides.find((r) => r.slug === slug);
   if (!guide) return {};
 
+  const meta = pageMeta.guideArticles[slug];
   const path = `/guides/${slug}`;
   const canonical = pageUrl(lang, path);
 
   return {
-    title: (guide.metaTitle ?? guide.title)[lang],
-    description: guide.metaDescription[lang],
+    title: (meta.title ?? guide.title)[lang],
+    description: meta.description[lang],
     alternates: pageAlternates(lang, path),
     openGraph: {
       title: guide.title[lang],
-      description: guide.metaDescription[lang],
+      description: meta.description[lang],
       url: canonical,
       type: "article",
       siteName: SITE_NAME,
@@ -82,6 +85,7 @@ export default function GuidePage({
   const guide = guides.find((r) => r.slug === slug);
   if (!guide) notFound();
 
+  const meta = pageMeta.guideArticles[slug];
   const translations = guidesTranslations;
   const relatedGuides = guides.filter((g) => g.slug !== slug);
 
@@ -94,7 +98,7 @@ export default function GuidePage({
       "@type": "Article",
       "@id": `${canonical}#article`,
       headline: guide.title[lang],
-      description: guide.metaDescription[lang],
+      description: meta.description[lang],
       image: ogImage(lang),
       inLanguage: lang,
       url: canonical,
@@ -113,13 +117,13 @@ export default function GuidePage({
         {
           "@type": "ListItem",
           position: 1,
-          name: lang === "ar" ? "الرئيسية" : "Home",
+          name: breadcrumbHome[lang],
           item: homeUrl(lang),
         },
         {
           "@type": "ListItem",
           position: 2,
-          name: lang === "ar" ? "الأدلة" : "Guides",
+          name: navTranslations.guides[lang],
           item: guidesUrl,
         },
         {
@@ -156,7 +160,7 @@ export default function GuidePage({
   const parts = guide.content[lang].split(SLOT);
 
   return (
-    <div className="min-h-dvh bg-background pt-22 sm:pt-28 pb-14 sm:pb-20 px-5 sm:px-0 overflow-x-hidden">
+    <div className="min-h-dvh bg-background pt-22 sm:pt-28 pb-14 sm:pb-20 px-4 overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

@@ -5,9 +5,7 @@ export interface Guide {
   datePublished: string;
   dateModified: Date;
   title: Localized;
-  metaTitle?: Localized;
   excerpt: Localized;
-  metaDescription: Localized;
   content: Localized;
   readingMinutes: Localized<number>;
 }

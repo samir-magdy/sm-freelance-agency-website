@@ -17,6 +17,8 @@ const navTranslations: Record<NavKey, Localized> = {
   contact: { en: "Contact", ar: "تواصل معنا" },
 };
 
+export const breadcrumbHome: Localized = { en: "Home", ar: "الرئيسية" };
+
 type NavItem =
   | { key: NavKey; kind: "hash"; target: string }
   | { key: NavKey; kind: "route"; path: string };

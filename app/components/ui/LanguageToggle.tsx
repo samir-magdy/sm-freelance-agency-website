@@ -7,9 +7,10 @@ import type { Lang } from "@/app/types";
 interface LanguageToggleProps {
   lang: Lang;
   label: string;
+  ariaLabel: string;
 }
 
-export default function LanguageToggle({ lang, label }: LanguageToggleProps) {
+export default function LanguageToggle({ lang, label, ariaLabel }: LanguageToggleProps) {
   const nextLang: Lang = lang === "ar" ? "en" : "ar";
   const pathname = usePathname();
   const segments = pathname.split("/");
@@ -18,7 +19,7 @@ export default function LanguageToggle({ lang, label }: LanguageToggleProps) {
   return (
     <Link
       href={nextPath}
-      aria-label={`Switch to ${lang === "ar" ? "English" : "Arabic"}`}
+      aria-label={ariaLabel}
       className="flex items-center px-2 md:p-0 gap-1.5 text-base md:text-[1.25rem] font-bold font-cairo text-content-muted hover:text-content-heading text-center"
     >
       <svg

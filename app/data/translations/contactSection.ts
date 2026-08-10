@@ -66,8 +66,8 @@ const contactSection: ContactSection = {
     submit: { en: "Send My Request", ar: "أرسل الطلب" },
     sending: { en: "Sending...", ar: "جاري الإرسال..." },
     success: {
-      en: "Request received. We will contact you soon.",
-      ar: "لقد استلمنا طلبك وسنتواصل معك قريباً.",
+      en: "Thanks! We'll reply soon.",
+      ar: "شكرًا لك! سنرد عليك قريبًا.",
     },
     errorRateLimit: {
       en: "Wait a few minutes to send another request.",

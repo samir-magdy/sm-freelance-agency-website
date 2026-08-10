@@ -19,6 +19,7 @@ interface MobileMenuProps {
     closeMenu: string;
   };
   langToggleLabel: string;
+  langToggleAriaLabel: string;
 }
 
 const EASE_OUT_EXPO = "cubic-bezier(0.16, 1, 0.3, 1)";
@@ -29,6 +30,7 @@ export default function MobileMenu({
   nav,
   a11y,
   langToggleLabel,
+  langToggleAriaLabel,
 }: MobileMenuProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [origin, setOrigin] = useState({ x: "100%", y: "0%" });
@@ -190,7 +192,11 @@ export default function MobileMenu({
             className="pt-4 [&_svg]:block [&_a]:text-[1.25rem]"
             style={itemStyle(navItems.length)}
           >
-            <LanguageToggle lang={lang} label={langToggleLabel} />
+            <LanguageToggle
+              lang={lang}
+              label={langToggleLabel}
+              ariaLabel={langToggleAriaLabel}
+            />
           </li>
         </ul>
       </nav>

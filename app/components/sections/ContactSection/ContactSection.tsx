@@ -293,7 +293,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
               {status === "loading" ? (
                 translations.contactSection.form.sending[lang]
               ) : status === "success" ? (
-                <span className="flex items-center justify-center gap-1">
+                <span className="flex items-center justify-center gap-1 text-base">
                   {translations.contactSection.form.success[lang]}
                 </span>
               ) : status === "error" ? (

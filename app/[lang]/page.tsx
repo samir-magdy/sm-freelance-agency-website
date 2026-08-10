@@ -7,6 +7,7 @@ import ContactSection from "@/app/components/sections/ContactSection/ContactSect
 import { notFound } from "next/navigation";
 import { projectsStructuredData } from "@/app/data/portfolio";
 import { servicesSectionTranslations } from "@/app/data/translations/servicesSection";
+import pageMeta from "@/app/data/translations/pageMeta";
 import {
   SITE_URL,
   SITE_NAME,
@@ -18,33 +19,15 @@ import {
 import { isLang, type Lang, type LangParams } from "@/app/types";
 import { homeUrl, homeAlternates } from "@/lib/urls";
 
-const META_DESCRIPTION: Record<Lang, string> = {
-  en: `Professional, affordable websites that help you attract more customers and strengthen your online presence. Get your quote today.`,
-  ar: `تصميم مواقع إلكترونية احترافية واقتصادية تساعدك على جذب المزيد من العملاء وتعزيز حضورك الرقمي. احصل على عرض سعر اليوم.`,
-};
-
-const meta: Record<Lang, { title: string; description: string }> = {
-  en: {
-    title: `Web Design & Development | ${SITE_NAME}`,
-    description: META_DESCRIPTION.en,
-  },
-  ar: {
-    title: `تصميم وتطوير مواقع إلكترونية | ${SITE_NAME}`,
-    description: META_DESCRIPTION.ar,
-  },
-};
-
 export async function generateMetadata({
   params,
 }: {
   params: Promise<LangParams>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  const currentMeta =
-    meta[lang] || { title: `Page Not Found | ${SITE_NAME}`, description: "" };
   return {
-    title: currentMeta.title,
-    description: currentMeta.description,
+    title: pageMeta.home.title[lang],
+    description: pageMeta.home.description[lang],
     alternates: homeAlternates(lang),
   };
 }
@@ -142,8 +125,8 @@ function buildStructuredData(lang: Lang) {
     "@type": "WebPage",
     "@id": `${pageUrl}#webpage`,
     url: pageUrl,
-    name: meta[lang].title,
-    description: meta[lang].description,
+    name: pageMeta.home.title[lang],
+    description: pageMeta.home.description[lang],
     inLanguage: lang,
     isPartOf: { "@id": SCHEMA_IDS.website },
   };

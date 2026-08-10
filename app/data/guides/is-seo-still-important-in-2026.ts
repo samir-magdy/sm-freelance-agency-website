@@ -9,10 +9,6 @@ const resource: Guide = {
     en: `Is SEO Still Important in ${CURRENT_YEAR}?`,
     ar: `هل السيو (SEO) لا يزال مهماً في ${CURRENT_YEAR}؟`,
   },
-  metaTitle: {
-    en: `Is SEO Still Important in ${CURRENT_YEAR}? (AI & GEO Guide)`,
-    ar: `هل السيو (SEO) لا يزال مهماً في ${CURRENT_YEAR}؟ (تأثير الذكاء الاصطناعي)`,
-  },
   excerpt: {
     en: "The rise of AI search engines like ChatGPT, Perplexity, and Google's AI Overviews has transformed how people find information. Does this mean traditional SEO is dead? Not quite, but the rules of the game have fundamentally changed.",
     ar: "أحدثت محركات البحث المدعومة بالذكاء الاصطناعي مثل ChatGPT ومراجعات جوجل (AI Overviews) ثورة في طريقة بحثنا عن المعلومات. هل هذا يعني أن الـ SEO قد مات؟ ليس تماماً، لكن قواعد اللعبة تغيرت جذرياً.",
@@ -127,10 +123,6 @@ const resource: Guide = {
 
 <h2>الخاتمة</h2>
 <p>السيو في ${CURRENT_YEAR} لم يعد يقتصر على جلب أعداد ضخمة من الزيارات العشوائية؛ بل أصبح يتعلق ببناء سلطة علامتك التجارية لتكون "الإجابة القاطعة" التي يثق بها الذكاء الاصطناعي. إذا قمت بتكييف استراتيجية المحتوى الخاصة بك لتزويد هذه المحركات بمعلومات واضحة، ومهيكلة، واحترافية، فستتمكن من جذب العملاء الجادين الذين يخسرهم منافسوك.</p>`,
-  },
-  metaDescription: {
-    en: `Discover why SEO is still crucial in ${CURRENT_YEAR} and how Generative Engine Optimization (GEO) and AI Overviews are changing the way businesses rank on Google.`,
-    ar: `اكتشف لماذا لا يزال السيو (SEO) أساسياً في ${CURRENT_YEAR}، وكيف يغير الذكاء الاصطناعي (AI Overviews) و (GEO) قواعد تصدر نتائج بحث جوجل للشركات.`,
   },
   readingMinutes: { en: 4, ar: 5 },
 };

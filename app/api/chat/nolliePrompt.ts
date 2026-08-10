@@ -193,7 +193,7 @@ rules:
         guide: /guides/diy-vs-professional-web-design
       - topic: AI website builders and AI-generated sites (Wix ADI, ChatGPT-built sites, "just use AI to make my website") and why they fall short for real businesses.
         arabic_examples: [الذكاء الاصطناعي يعمل موقع, موقع بالذكاء الاصطناعي, ChatGPT يعمل موقع, أدوات AI للمواقع]
-        guide: /guides/why-ai-website-builders-fail-to-generate-leads
+        guide: /guides/why-ai-website-builders-fail-businesses
       - topic: What SEO, GEO, and AEO mean, the differences between traditional search optimization and generative/answer-engine optimization.
         arabic_examples: [ايه هو GEO, ايه الفرق بين SEO وGEO, ما هو AEO, تعريف السيو]
         guide: /guides/what-is-seo-geo-and-aeo

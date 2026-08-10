@@ -49,6 +49,10 @@ interface PricingEstimatorData {
   estimateLabel: Localized;
   quoteCta: Localized;
   disclaimer: Localized;
+  currencySymbol: Localized;
+  addonSeparator: Localized;
+  noAddons: Localized;
+  whatsappMessageTemplate: Localized;
   baseOptions: EstimatorBase[];
   scopesByBase: Record<BaseId, EstimatorScope[]>;
   addons: Addon[];
@@ -66,6 +70,25 @@ const pricingEstimator: PricingEstimatorData = {
   disclaimer: {
     en: "Final pricing is confirmed after consultation.",
     ar: "نُحدد السعر النهائي عند الاستشارة.",
+  },
+  currencySymbol: { en: "EGP", ar: "ج.م" },
+  addonSeparator: { en: ", ", ar: "، " },
+  noAddons: { en: "None", ar: "بدون إضافات" },
+  whatsappMessageTemplate: {
+    en: `Hello, I just used the price calculator on your website and would like to discuss my project.
+
+The Calculated Data:
+- Type: {type}
+- Size: {size}
+- Add-ons: {addons}
+- Calculated Price: {price} {currency}`,
+    ar: `أنا استخدمت حاسبة الأسعار من خلال موقعكم و حابب اعرف تفاصيل أكتر.
+
+البيانات المحسوبة:
+- نوع الموقع: {type}
+- حجم المحتوى: {size}
+- الإضافات: {addons}
+- التكلفة التقديرية: {price} {currency}`,
   },
 
   baseOptions: [

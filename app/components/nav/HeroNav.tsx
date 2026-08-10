@@ -18,6 +18,7 @@ export interface HeroNavStrings {
     closeMenu: string;
   };
   langToggleLabel: string;
+  langToggleAriaLabel: string;
 }
 
 interface HeroNavProps {
@@ -64,7 +65,11 @@ export default function HeroNav({ lang, strings }: HeroNavProps) {
               ),
             )}
           </ul>
-          <LanguageToggle lang={lang} label={strings.langToggleLabel} />
+          <LanguageToggle
+            lang={lang}
+            label={strings.langToggleLabel}
+            ariaLabel={strings.langToggleAriaLabel}
+          />
         </div>
       </nav>
 
@@ -77,6 +82,7 @@ export default function HeroNav({ lang, strings }: HeroNavProps) {
           closeMenu: a11y.closeMenu,
         }}
         langToggleLabel={strings.langToggleLabel}
+        langToggleAriaLabel={strings.langToggleAriaLabel}
       />
     </header>
   );

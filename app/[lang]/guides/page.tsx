@@ -3,6 +3,8 @@ import { use } from "react";
 import { SCHEMA_IDS } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guidesShared";
+import pageMeta from "@/app/data/translations/pageMeta";
+import { breadcrumbHome } from "@/app/data/translations/nav";
 import GuidesGrid from "./GuidesGrid";
 import type { LangParams } from "@/app/types";
 import { homeUrl, pageUrl, pageAlternates } from "@/lib/urls";
@@ -17,10 +19,9 @@ export async function generateMetadata({
   params: Promise<LangParams>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  const translations = guidesTranslations;
   return {
-    title: translations.metaTitle[lang],
-    description: translations.metaDescription[lang],
+    title: pageMeta.guides.title[lang],
+    description: pageMeta.guides.description[lang],
     alternates: pageAlternates(lang, "/guides"),
   };
 }
@@ -40,7 +41,7 @@ export default function GuidesPage({
       "@type": "CollectionPage",
       "@id": `${canonical}#webpage`,
       name: translations.pageTitle[lang],
-      description: translations.metaDescription[lang],
+      description: pageMeta.guides.description[lang],
       url: canonical,
       inLanguage: lang,
       isPartOf: { "@id": SCHEMA_IDS.website },
@@ -54,7 +55,7 @@ export default function GuidesPage({
         {
           "@type": "ListItem",
           position: 1,
-          name: lang === "ar" ? "الرئيسية" : "Home",
+          name: breadcrumbHome[lang],
           item: homeUrl(lang),
         },
         {
@@ -68,7 +69,7 @@ export default function GuidesPage({
   ];
 
   return (
-    <div className="bg-background pt-16 sm:pt-26 pb-14 px-5 max-w-348 mx-auto">
+    <div className="bg-background pt-16 sm:pt-26 pb-14 px-4 max-w-348 mx-auto">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

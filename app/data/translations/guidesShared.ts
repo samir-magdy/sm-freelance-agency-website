@@ -1,13 +1,12 @@
-import { CURRENT_YEAR } from "@/app/constants";
 import type { Localized } from "@/app/types";
 
 const guidesTranslations: Record<
   | "pageTitle"
   | "pageSubtitle"
-  | "metaTitle"
-  | "metaDescription"
   | "minRead"
   | "readGuideButton"
+  | "stayTunedHeading"
+  | "stayTunedDescription"
   | "backToGuides"
   | "articleCta"
   | "articleCtaButton"
@@ -22,16 +21,13 @@ const guidesTranslations: Record<
     en: "Learn the basics before investing",
     ar: "تعلم الأساسيات قبل أن تستثمر",
   },
-  metaTitle: {
-    en: `Web Design Guides for Egyptian Businesses (${CURRENT_YEAR})`,
-    ar: `أدلة تصميم المواقع للسوق المصري (${CURRENT_YEAR})`,
-  },
-  metaDescription: {
-    en: "Useful guides for Egyptian business owners and freelancers. Covering topics like 'how websites are priced' and 'website builders vs hiring a professional developer'.",
-    ar: "أدلة عملية لأصحاب الأعمال والمستقلين في مصر. اكتشف تكلفة المواقع، مقارنة بين إنشاء موقعك بنفسك أو توظيف محترف، وكيفية اختيار شريكك الرقمي المناسب.",
-  },
   minRead: { en: "min read", ar: "دقايق قراءة" },
   readGuideButton: { en: "Read Guide", ar: "اقرأ الدليل" },
+  stayTunedHeading: { en: "Stay Tuned", ar: "ترقب المزيد" },
+  stayTunedDescription: {
+    en: "We are working on more useful guides for you.",
+    ar: "نعمل على إعداد المزيد من الأدلة المميزة من أجلك.",
+  },
   backToGuides: { en: "All Guides", ar: "جميع الأدلة" },
   articleCta: {
     en: "Ready to build your website?",
