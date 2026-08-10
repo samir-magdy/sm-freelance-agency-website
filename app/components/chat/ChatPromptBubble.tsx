@@ -23,10 +23,9 @@ export default function ChatPromptBubble({
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // If the chat is (or becomes) open, the user has engaged — mark shown
-    // so the prompt never surfaces later in this session.
     if (hidden) {
       sessionStorage.setItem(STORAGE_KEY, "1");
+      setVisible(false); // don't let stale `true` survive a hide/unhide cycle
       return;
     }
     if (sessionStorage.getItem(STORAGE_KEY)) return;
@@ -44,6 +43,7 @@ export default function ChatPromptBubble({
     return () => {
       clearTimeout(showTimer);
       clearTimeout(hideTimer);
+      setVisible(false); // cleanup cancels the timers, so also cancel the state they own
     };
   }, [hidden]);
 
