@@ -27,7 +27,7 @@ function StartingPrice({
     </span>
   );
   const symbolNode = (
-    <span className="text-base font-medium text-content-muted leading-none translate-y-[-6px]">
+    <span className="text-base sm:text-[clamp(1rem,1.4vw,1.5rem)] font-medium text-content-muted leading-none -translate-y-1">
       {price.symbol}
     </span>
   );
