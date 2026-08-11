@@ -69,7 +69,7 @@ export default function GuidesPage({
   ];
 
   return (
-    <div className="bg-background pt-16 sm:pt-26 pb-14 px-4 max-w-348 mx-auto">
+    <div className="bg-background pt-16 sm:pt-22 pb-14 px-4 max-w-348 mx-auto">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

@@ -126,7 +126,7 @@ export default async function LangLayout({
         <LightRaysBackground />
         <HashUrlStripper />
 
-        <div className="relative z-10 flex flex-col min-h-svh">
+        <div className="relative flex flex-col min-h-svh">
           <HeroNav lang={lang} strings={heroNavStrings} />
 
           <main id="main-content" className="md:flex-1 md:flex md:flex-col">

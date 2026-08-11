@@ -11,7 +11,7 @@ const resource: Guide = {
   },
   excerpt: {
     en: "The rise of AI search engines like ChatGPT, Perplexity, and Google's AI Overviews has transformed how people find information. Does this mean traditional SEO is dead? Not quite, but the rules of the game have fundamentally changed.",
-    ar: "أحدثت محركات البحث المدعومة بالذكاء الاصطناعي مثل ChatGPT ومراجعات جوجل (AI Overviews) ثورة في طريقة بحثنا عن المعلومات. هل هذا يعني أن الـ SEO قد مات؟ ليس تماماً، لكن قواعد اللعبة تغيرت جذرياً.",
+    ar: "أحدثت محركات البحث المدعومة بالذكاء الاصطناعي مثل ChatGPT وملخصات جوجل (AI Overviews) ثورة في طريقة بحثنا عن المعلومات. هل هذا يعني أن الـ SEO قد مات؟ ليس تماماً، لكن قواعد اللعبة تغيرت جذرياً.",
   },
   content: {
     en: `
@@ -70,7 +70,7 @@ const resource: Guide = {
 <p>SEO in ${CURRENT_YEAR} is no longer just about driving massive amounts of traffic; it is about brand authority and being the definitive answer that AI trusts. If you adapt your content strategy to feed these AI engines with clear, structured, and expert information, you will capture the high-intent customers that your competitors are losing.</p>`,
 
     ar: `
-<p>أحدثت محركات البحث المدعومة بالذكاء الاصطناعي، مثل ChatGPT وPerplexity ومراجعات جوجل (AI Overviews)، ثورة في طريقة بحثنا عن المعلومات على الإنترنت. اليوم، تنتهي نسبة كبيرة من عمليات البحث دون أن ينقر المستخدم على أي موقع، وهو ما يُعرف بـ "عمليات البحث الصفرية" (Zero-click searches). يقوم الذكاء الاصطناعي ببساطة بقراءة مصادر متعددة وتوليد إجابة ملخصة تظهر في أعلى صفحة النتائج. هذا التحول دفع العديد من أصحاب الأعمال للتساؤل: هل لا يزال الاستثمار في تحسين محركات البحث (SEO) مجدياً في عام ${CURRENT_YEAR}؟</p>
+<p>أحدثت محركات البحث المدعومة بالذكاء الاصطناعي، مثل ChatGPT وPerplexity وملخصات جوجل (AI Overviews)، ثورة في طريقة بحثنا عن المعلومات على الإنترنت. اليوم، تنتهي نسبة كبيرة من عمليات البحث دون أن ينقر المستخدم على أي موقع، وهو ما يُعرف بـ "عمليات البحث الصفرية" (Zero-click searches). يقوم الذكاء الاصطناعي ببساطة بقراءة مصادر متعددة وتوليد إجابة ملخصة تظهر في أعلى صفحة النتائج. هذا التحول دفع العديد من أصحاب الأعمال للتساؤل: هل لا يزال الاستثمار في تحسين محركات البحث (SEO) مجدياً في عام ${CURRENT_YEAR}؟</p>
 
 <h2>الخلاصة: السيو لم يمت، بل تطور</h2>
 <p>في الماضي، كان الهدف الرئيسي للسيو هو تصدر الروابط الزرقاء العشرة الأولى في جوجل. أما اليوم، فلم يعد الظهور في الصفحة الأولى كافياً إذا كان ملخص الذكاء الاصطناعي يجيب على سؤال المستخدم دون الإشارة إلى علامتك التجارية. المعيار الجديد في السوق يُعرف باسم <strong>تحسين محركات التوليد (GEO - Generative Engine Optimization)</strong>. الهدف من الـ GEO هو التأكد من أن نماذج الذكاء الاصطناعي تختار محتواك، وتلخصه، وتشير إليه كمصدر موثوق داخل إجاباتها.</p>

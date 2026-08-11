@@ -11,7 +11,7 @@ export default function LegalDocumentPage({
   lang,
 }: LegalDocumentPageProps) {
   return (
-    <div className="min-h-dvh pt-22 sm:pt-32 pb-16 px-6 bg-background">
+    <div className="min-h-dvh pt-22 pb-16 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         <article className="space-y-10">
           <header className="mb-12 border-b border-neutral-800 pb-8 text-start">

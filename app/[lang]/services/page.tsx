@@ -34,7 +34,7 @@ export default async function ServicesDetailPage({
 
   return (
     <div
-      className="relative isolate bg-background px-6 sm:px-10 md:px-16 py-16 md:pt-28 md:pb-24"
+      className="relative isolate bg-background px-6 sm:px-10 md:px-16 py-16 md:pt-22 md:pb-24"
       dir={isRtl ? "rtl" : "ltr"}
     >
       <article className="relative mx-auto max-w-5xl">

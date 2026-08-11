@@ -57,7 +57,7 @@ const resource: Guide = {
 <p>Google's algorithms are increasingly sophisticated at identifying unhelpful, AI-generated content. When an AI builder populates your site with generic industry fluff, you are practically guaranteed to rank poorly. Without strong SEO, potential clients will never find you in the first place, meaning zero leads.</p>
 
 <h2>The bottom line</h2>
-<p>If you want your website to be a business asset that actively brings in new clients, there is no substitute for professional web design, development, and expert copywriting. An AI can build a webpage, but it cannot build a valuable business assest that generates a return on investment.</p>`,
+<p>If you want your website to be a business asset that actively brings in new clients, there is no substitute for professional web design, development, and expert copywriting. An AI can build a webpage, but it cannot build a valuable business asset that generates a return on investment.</p>`,
 
     ar: `<p>اجتاحت أدوات بناء المواقع بالذكاء الاصطناعي الإنترنت مؤخراً، مع وعود بإنشاء موقع كامل وجاهز للإطلاق في بضع نقرات فقط. ورغم أنها قد تنتج صفحات مقبولة من الناحية الشكلية، إلا أنها تفشل باستمرار في تحقيق الهدف الأساسي لأي موقع تجاري: جذب العملاء المحتملين وتحويل الزوار إلى مشترين فعليين.</p>
 
@@ -98,8 +98,8 @@ const resource: Guide = {
   </tbody>
 </table>
 
-<h2>عقوبة الـ SEO للمحتوى المكرر</h2>
-<p>أصبحت خوارزميات جوجل أكثر تطوراً في تحديد المحتوى غير المفيد والمُولد بواسطة الذكاء الاصطناعي. عندما تقوم هذه الأدوات بملء موقعك بنصوص عامة ومكررة في مجالك، فإنك تضمن تقريباً عدم الظهور في نتائج البحث المتقدمة. وبدون ظهور قوي في جوجل (SEO)، لن يجدك العملاء المحتملون في المقام الأول، مما يعني انعدام الزيارات والمبيعات.</p>
+<h2>عقوبة الـ SEO للمحتوى العام</h2>
+<p>أصبحت خوارزميات جوجل أكثر تطوراً في تحديد المحتوى غير المفيد والمُولد بواسطة الذكاء الاصطناعي. عندما تقوم هذه الأدوات بملء موقعك بنصوص عامة ومكررة في مجالك، فإنك تضمن تقريباً عدم الظهور في النتائج الأولى. وبدون ظهور قوي في جوجل (SEO)، لن يجدك العملاء المحتملون في المقام الأول، مما يعني انعدام الزيارات والمبيعات.</p>
 
 <h2>الخاتمة</h2>
 <p>إذا كنت تريد أن يعمل موقعك كمندوب مبيعات متواجد على مدار الساعة لجذب عملاء جدد، فلا بديل عن الاستراتيجية الاحترافية، وكتابة المحتوى المقنع، والتصميم المدروس. الذكاء الاصطناعي يمكنه بناء صفحة ويب، لكنه لا يستطيع بناء عمل تجاري ناجح.</p>`,

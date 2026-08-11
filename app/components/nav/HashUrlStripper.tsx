@@ -44,7 +44,15 @@ export default function HashUrlStripper() {
 
       e.preventDefault();
       const id = decodeURIComponent(url.hash.slice(1));
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      // Match the CSS intent: smooth from the hamburger breakpoint up,
+      // instant below it. An explicit `behavior` here always overrides the
+      // `html { scroll-behavior }` CSS, so we mirror the same breakpoint.
+      const behavior: ScrollBehavior = window.matchMedia(
+        "(min-width: 1024px)",
+      ).matches
+        ? "smooth"
+        : "auto";
+      document.getElementById(id)?.scrollIntoView({ behavior });
     };
 
     document.addEventListener("click", onClick, true);

@@ -35,12 +35,15 @@
    ══════════════════════════════════════ */
 
 section {
-  scroll-margin-top: 3rem;
+  scroll-margin-top: 3.5rem;
 }
 
 @media (min-width: 1280px) {
-  section:not(#portfolio) {
-    scroll-margin-top: 6rem;
+  section {
+    scroll-margin-top: 4.5rem;
+  }
+  section#portfolio {
+    scroll-margin-top: 5rem;
   }
 }
 
@@ -58,7 +61,7 @@ section {
     background-color: var(--color-background);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     html,
     body {
       scroll-behavior: auto;

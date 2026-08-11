@@ -202,7 +202,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
   return (
     <section
       id="portfolio"
-      className="flex flex-col items-center justify-center min-h-[calc(100svh-var(--nav-h))] relative select-none px-5"
+      className="flex flex-col items-center justify-center min-h-[calc(100svh-var(--nav-h))] relative z-20 select-none px-5"
       aria-labelledby="portfolio-heading"
     >
       <div className="text-center relative z-2 px-5 md:mb-4 lg:mb-8">
