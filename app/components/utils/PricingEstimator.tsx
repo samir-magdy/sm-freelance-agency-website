@@ -3,11 +3,17 @@
 import { useState, useMemo, useCallback } from "react";
 import { Globe, Layout, type LucideIcon } from "lucide-react";
 import pricingEstimator, {
+  formatPrice,
   type BaseId,
 } from "@/app/data/translations/pricingEstimator";
 import WhatsAppIcon from "./WhatsAppIcon";
 import type { Lang } from "@/app/types";
 import { SOCIAL_LINKS } from "@/app/constants";
+
+// The estimator lives inside the Egypt cost guide, so it is intentionally
+// pinned to EGP regardless of visitor location. International visitors get a
+// consultation banner rendered by the guide page instead.
+const ESTIMATOR_REGION = "EG" as const;
 
 const BASE_ICONS: Record<BaseId, LucideIcon> = {
   landing: Layout,
@@ -20,7 +26,6 @@ interface PricingEstimatorProps {
 
 export default function PricingEstimator({ lang }: PricingEstimatorProps) {
   const translations = pricingEstimator;
-  const currencySymbol = translations.currencySymbol[lang];
 
   const [baseId, setBaseId] = useState<BaseId>(translations.baseOptions[0].id);
   const [scopeIndex, setScopeIndex] = useState(0);
@@ -57,7 +62,8 @@ export default function PricingEstimator({ lang }: PricingEstimatorProps) {
     );
   }, []);
 
-  const totalEGP = useMemo(() => {
+  const totalPrice = useMemo(() => {
+    const basePrice = baseType.price[ESTIMATOR_REGION];
     let flatAddonsCost = 0;
     let totalMultiplier = 1;
 
@@ -77,8 +83,8 @@ export default function PricingEstimator({ lang }: PricingEstimatorProps) {
       }
     });
 
-    const scopeCost = Math.round(baseType.price * currentScope.multiplier);
-    const subTotal = baseType.price + scopeCost;
+    const scopeCost = Math.round(basePrice * currentScope.multiplier);
+    const subTotal = basePrice + scopeCost;
     return Math.round(subTotal * totalMultiplier) + flatAddonsCost;
   }, [
     baseId,
@@ -87,6 +93,11 @@ export default function PricingEstimator({ lang }: PricingEstimatorProps) {
     selectedAddons,
     translations.addons,
   ]);
+
+  const formattedTotal = useMemo(
+    () => formatPrice(totalPrice, ESTIMATOR_REGION, lang),
+    [totalPrice, lang],
+  );
 
   const whatsappUrl = useMemo(() => {
     const addonNames =
@@ -100,8 +111,8 @@ export default function PricingEstimator({ lang }: PricingEstimatorProps) {
       .replace("{type}", baseType.name[lang])
       .replace("{size}", currentScope.name[lang])
       .replace("{addons}", addonNames)
-      .replace("{price}", totalEGP.toLocaleString())
-      .replace("{currency}", currencySymbol);
+      .replace("{price}", formattedTotal.amount)
+      .replace("{currency}", formattedTotal.code);
 
     return `${SOCIAL_LINKS.whatsapp}?text=${encodeURIComponent(message)}`;
   }, [
@@ -109,8 +120,7 @@ export default function PricingEstimator({ lang }: PricingEstimatorProps) {
     baseType,
     currentScope,
     selectedAddons,
-    totalEGP,
-    currencySymbol,
+    formattedTotal,
     translations.addons,
     translations.addonSeparator,
     translations.noAddons,
@@ -242,12 +252,12 @@ export default function PricingEstimator({ lang }: PricingEstimatorProps) {
                 <span className="text-[0.9rem] font-semibold uppercase tracking-widest text-content-muted pb-0.5">
                   {translations.estimateLabel[lang]}
                 </span>
-                <div className="flex items-baseline gap-1.5">
+                <div className="flex items-end gap-1.5">
                   <span className="text-[2.25rem] font-bold text-white tracking-tight leading-none">
-                    {totalEGP.toLocaleString()}
+                    {formattedTotal.amount}
                   </span>
-                  <span className="text-sm text-content-body font-medium">
-                    {currencySymbol}
+                  <span className="text-sm text-content-body font-medium leading-none translate-y-[-8px]">
+                    {formattedTotal.symbol}
                   </span>
                 </div>
               </div>
@@ -270,12 +280,12 @@ export default function PricingEstimator({ lang }: PricingEstimatorProps) {
                 <span className="text-sm lg:text-base font-semibold uppercase tracking-[0.25em] text-content-muted/90">
                   {translations.estimateLabel[lang]}
                 </span>
-                <div className="flex items-baseline gap-2">
+                <div className="flex items-end gap-2">
                   <span className="md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-none">
-                    {totalEGP.toLocaleString()}
+                    {formattedTotal.amount}
                   </span>
-                  <span className="text-2xl text-content-muted font-medium">
-                    {currencySymbol}
+                  <span className="text-2xl text-content-muted font-medium leading-none translate-y-[-10px]">
+                    {formattedTotal.symbol}
                   </span>
                 </div>
               </div>

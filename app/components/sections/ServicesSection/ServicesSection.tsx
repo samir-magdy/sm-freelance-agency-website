@@ -1,13 +1,60 @@
 import Link from "next/link";
 import { servicesSectionTranslations } from "@/app/data/translations/servicesSection";
+import {
+  BASE_PRICES,
+  formatPrice,
+  type FormattedPrice,
+} from "@/app/data/translations/pricingEstimator";
 import SpecializedServiceIcon from "@/app/components/utils/SpecializedServiceIcon";
 import type { Lang } from "@/app/types";
+import type { Region } from "@/lib/region";
 
 interface ServicesSectionProps {
   lang: Lang;
+  region: Region;
 }
 
-export default function ServicesSection({ lang }: ServicesSectionProps) {
+function StartingPrice({
+  price,
+  startsAtLabel,
+}: {
+  price: FormattedPrice;
+  startsAtLabel: string;
+}) {
+  const amountNode = (
+    <span className="text-heading font-bold text-gold tracking-tighter leading-none">
+      {price.amount}
+    </span>
+  );
+  const symbolNode = (
+    <span className="text-base font-medium text-content-muted leading-none translate-y-[-6px]">
+      {price.symbol}
+    </span>
+  );
+
+  return (
+    <div className="flex flex-col gap-1">
+      <span className="text-xs font-bold uppercase tracking-[0.2em] text-content-muted/70 leading-none">
+        {startsAtLabel}
+      </span>
+      <div className="flex items-end gap-1.5">
+        {price.position === "before" ? (
+          <>
+            {symbolNode}
+            {amountNode}
+          </>
+        ) : (
+          <>
+            {amountNode}
+            {symbolNode}
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default function ServicesSection({ lang, region }: ServicesSectionProps) {
   const translations = servicesSectionTranslations;
   const isRtl = lang === "ar";
 
@@ -31,7 +78,11 @@ export default function ServicesSection({ lang }: ServicesSectionProps) {
         </div>
 
         <div className="grid grid-cols-1 gap-6 lg:gap-8">
-          {translations.cards.map((card) => (
+          {translations.cards.map((card) => {
+            const price = card.priceBaseId
+              ? formatPrice(BASE_PRICES[card.priceBaseId][region], region, lang)
+              : null;
+            return (
             <a
               key={card.id}
               href="#contact"
@@ -49,20 +100,11 @@ export default function ServicesSection({ lang }: ServicesSectionProps) {
 
               <div className="mt-auto pt-4 border-t border-border-subtle/50">
                 <div className="flex items-end justify-between gap-4">
-                  {card.price ? (
-                    <div className="flex flex-col gap-1">
-                      <span className="text-xs font-bold uppercase tracking-[0.2em] text-content-muted/70 leading-none">
-                        {translations.startsAt[lang]}
-                      </span>
-                      <div className="flex items-baseline gap-1.5">
-                        <span className="text-heading font-bold text-gold tracking-tighter leading-none">
-                          {card.price.toLocaleString()}
-                        </span>
-                        <span className="text-caption font-medium text-content-muted">
-                          {translations.currency[lang]}
-                        </span>
-                      </div>
-                    </div>
+                  {price ? (
+                    <StartingPrice
+                      price={price}
+                      startsAtLabel={translations.startsAt[lang]}
+                    />
                   ) : (
                     <span className="text-subheading md:text-heading font-bold text-gold tracking-tight leading-none">
                       {translations.customPriceLabel[lang]}
@@ -90,7 +132,8 @@ export default function ServicesSection({ lang }: ServicesSectionProps) {
                 </div>
               </div>
             </a>
-          ))}
+            );
+          })}
         </div>
         <div className="reveal-element mt-12 w-full max-w-4xl flex flex-col items-center">
           <div className="flex items-center gap-4 w-full max-w-xs sm:max-w-md mb-4 sm:mb-1.5">

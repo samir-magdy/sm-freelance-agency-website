@@ -7,7 +7,7 @@ const resource: Guide = {
   dateModified: new Date(),
   title: {
     en: "What is SEO, GEO, and AEO?",
-    ar: "ما هو السيو (SEO)، والـ GEO، والـ AEO؟",
+    ar: "ما هو الـ SEO، والـ GEO، والـ AEO؟",
   },
   excerpt: {
     en: "The world of search is expanding rapidly. Beyond traditional SEO, businesses now need to understand Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). Learn the differences and why your business needs a unified strategy for all three.",

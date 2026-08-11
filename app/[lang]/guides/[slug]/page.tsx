@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { use } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Calendar, Clock } from "lucide-react";
@@ -16,6 +15,7 @@ import {
   pageAlternates,
   ogImage,
 } from "@/lib/urls";
+import { getRegion } from "@/lib/region";
 
 function BackToGuidesLink({ lang, label }: { lang: Lang; label: string }) {
   return (
@@ -76,14 +76,16 @@ export async function generateMetadata({
   };
 }
 
-export default function GuidePage({
+export default async function GuidePage({
   params,
 }: {
   params: Promise<LangSlugParams>;
 }) {
-  const { lang, slug } = use(params);
+  const { lang, slug } = await params;
   const guide = guides.find((r) => r.slug === slug);
   if (!guide) notFound();
+
+  const region = await getRegion();
 
   const meta = pageMeta.guideArticles[slug];
   const translations = guidesTranslations;
@@ -200,6 +202,24 @@ export default function GuidePage({
               className={articleClassName}
               dangerouslySetInnerHTML={{ __html: wrapTables(parts[0]) }}
             />
+            {region !== "EG" && (
+              <aside
+                role="note"
+                className="relative overflow-hidden rounded-2xl border border-white/8 bg-surface-low"
+              >
+                <div className="relative text-center sm:text-start flex flex-col sm:flex-row sm:items-center gap-7 sm:gap-12 px-7 py-9 sm:px-11 sm:py-11">
+                  <p className="flex-1 text-[clamp(1.05rem,3.5vw,1.8rem)] font-semibold text-content-heading leading-tight rtl:leading-loose">
+                    {translations.egyptPricingNotice[lang]}
+                  </p>
+                  <Link
+                    href={`/${lang}#contact`}
+                    className="cta-primary justify-center shrink-0 py-3 px-8 rounded-lg text-background text-base sm:text-xl font-medium tracking-wide whitespace-nowrap"
+                  >
+                    {translations.egyptPricingNoticeCta[lang]}
+                  </Link>
+                </div>
+              </aside>
+            )}
             <PricingEstimator lang={lang} />
             <article
               className={articleClassName}
