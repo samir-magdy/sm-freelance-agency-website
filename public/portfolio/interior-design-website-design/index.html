@@ -91,6 +91,9 @@
         font-weight: 100 900;
         font-display: swap;
       }
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         background-color: #f9f6f0;
         color: #1a1a1a;
@@ -611,6 +614,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="/portfolio/shared/glightbox.js"></script>
     <script>
+      document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          var targetId = link.getAttribute("href");
+          if (!targetId || targetId === "#") return;
+
+          var target = document.querySelector(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          history.pushState(null, "", targetId);
+        });
+      });
+
       document.querySelectorAll("[data-gallery]").forEach(function (card) {
         card.addEventListener("click", function () {
           var hrefs = JSON.parse(card.getAttribute("data-gallery"));
