@@ -37,18 +37,18 @@ export type ProjectId =
 export const projectTranslations: Record<ProjectId, ProjectCopy> = {
   ecommerce: {
     title: {
-      en: "Fashion E-commerce",
-      ar: "متجر إلكتروني للأزياء",
+      en: "Lunera",
+      ar: "متجر لونيرا للأزياء",
     },
     description: {
       en: "In the crowded fashion market, generic websites lose sales to bigger brands with better sites. This web design provides the optimal user experience and the elegant design you need to become the preferred choice for shoppers.",
-      ar: "في سوق الأزياء المليء بالمنافسة، قد تخسر المواقع التقليدية الكثير من فرص البيع لصالح العلامات التجارية التي تهتم بتجربة العميل. يساعدك هذا التصميم في تقديم واجهة احترافية وسلسة، تجعل من متجرك الاختيار المفضل والموثوق للمتسوقين.",
+      ar: "في سوق الأزياء، تخسر المواقع التقليدية الكثير من فرص البيع لصالح العلامات التجارية التي تهتم بتجربة العميل. هذا التصميم يقدم واجهة احترافية وسلسة لتجعل متجرك الاختيار الافضل.",
     },
   },
 
   travelTourism: {
     title: {
-      en: "Travel & Tourism",
+      en: "Sky-Way Travel",
       ar: "السياحة والسفر",
     },
     description: {
@@ -60,7 +60,7 @@ export const projectTranslations: Record<ProjectId, ProjectCopy> = {
   interiorDesign: {
     title: {
       en: "Interior Design & Decor",
-      ar: "التصميم الداخلي والديكور",
+      ar: "التصميم والديكور",
     },
     description: {
       en: "Clients hire the interior designer whose portfolio inspires confidence and elegance before the first meeting. This site showcases your projects with the visual impact needed to attract clients willing to invest in quality interior design.",
@@ -70,7 +70,7 @@ export const projectTranslations: Record<ProjectId, ProjectCopy> = {
 
   butterDesign: {
     title: {
-      en: "Design & Branding Agency",
+      en: "Butter Design Bureau",
       ar: "تصميم وهوية بصرية",
     },
     description: {
@@ -81,7 +81,7 @@ export const projectTranslations: Record<ProjectId, ProjectCopy> = {
 
   hadeerEnglish: {
     title: {
-      en: "Private English Tutoring",
+      en: "Private Tutoring",
       ar: "الدروس الخاصة",
     },
     description: {

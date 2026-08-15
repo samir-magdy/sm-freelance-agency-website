@@ -263,13 +263,13 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
               {pd.description[lang]}
             </p>
 
-            <div className="hidden lg:flex items-center justify-start gap-3 w-full pe-4">
+            <div className="hidden lg:flex items-center justify-start gap-3 pe-4">
               <a
                 id="pricing-cta"
                 href={ctaHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-full inline-flex justify-center items-center gap-4 py-3 px-6 rounded-xl border border-border-strong text-content-body hover:text-content-heading text-[clamp(0.7rem,1.5vw,1.25rem)] font-semibold tracking-wide transition-colors duration-200"
+                className="group cta-primary w-full inline-flex justify-center items-center gap-3 py-3 px-6 ps-8.5 rounded-xl text-background text-[clamp(0.7rem,1.5vw,1.25rem)] tracking-wide transition-colors duration-200"
                 aria-label={`${ctaLabel} – ${pd.title[lang]}`}
               >
                 {ctaLabel}
@@ -277,12 +277,6 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
                   className="size-4 rtl:rotate-180 transition-transform duration-200 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
                   aria-hidden
                 />
-              </a>
-              <a
-                href="#contact"
-                className="cta-primary w-full inline-flex justify-center items-center gap-2 py-3 px-6 rounded-xl text-background text-[clamp(0.7rem,1.5vw,1.25rem)] font-semibold tracking-wide"
-              >
-                {translations.primaryCta[lang]}
               </a>
             </div>
           </div>
@@ -377,12 +371,12 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
             ))}
           </div>
 
-          <div className="flex items-center gap-3 lg:hidden w-full text-[clamp(0.6rem,4vw,1.4rem)] tracking-wide whitespace-nowrap">
+          <div className="flex items-center gap-3 lg:hidden text-[clamp(0.6rem,4vw,1.4rem)] tracking-wide whitespace-nowrap">
             <a
               href={ctaHref}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${styles.mobileButtons} w-full justify-center inline-flex items-center gap-2 py-2.5 px-5 rounded-xl border border-border-strong text-content-body`}
+              className={`${styles.mobileButtons} w-full justify-center inline-flex items-center gap-2 py-2.5 px-5 ps-7.5 rounded-xl border border-border-strong text-content-body`}
               aria-label={`${ctaLabel} – ${pd.title[lang]}`}
             >
               {ctaLabel}
@@ -390,12 +384,6 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
                 className="size-4 rtl:rotate-180"
                 aria-hidden
               />
-            </a>
-            <a
-              href="#contact"
-              className={`${styles.mobileButtons} w-full font-semibold justify-center cta-primary relative overflow-hidden inline-flex items-center gap-2 py-2.5 px-5 rounded-xl bg-linear-to-b from-gold to-gold-dark text-background`}
-            >
-              {translations.primaryCta[lang]}
             </a>
           </div>
         </div>

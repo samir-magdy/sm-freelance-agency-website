@@ -23,7 +23,7 @@ interface MobileMenuProps {
 }
 
 const EASE_OUT_EXPO = "cubic-bezier(0.16, 1, 0.3, 1)";
-const TOGGLE_LOCKOUT_MS = 500;
+const TOGGLE_LOCKOUT_MS = 800;
 
 export default function MobileMenu({
   lang,

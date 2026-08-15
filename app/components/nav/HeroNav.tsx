@@ -35,7 +35,7 @@ export default function HeroNav({ lang, strings }: HeroNavProps) {
     <header>
       <nav
         aria-label={a11y.desktopNav}
-        className="hidden lg:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-xl sm:bg-background/5 px-8 pe-10 py-1 pt-1.5"
+        className="hidden lg:flex fixed top-0 left-0 right-0 z-50 backdrop-blur-lg sm:bg-background/1 px-8 pe-10 py-1 pt-1.5"
       >
         <div className="relative flex items-center w-full">
           <a href={`/${lang}`} aria-label="Samir Magdy Web Studio - Home">

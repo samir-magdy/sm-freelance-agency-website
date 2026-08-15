@@ -101,7 +101,7 @@ ar: `<p><strong>تبدأ تكلفة تصميم المواقع الإلكترون
   <tbody>
     <tr>
       <td>
-        <strong>صفحة هبوط (Landing Page)</strong>
+        <strong>صفحة هبوط</strong>
         <br><small style="color: #bfbfbf;">صفحة واحدة تعريفية تدفع الزائر لاتخاذ إجراء مُعين (مثل تعبئة نموذج أو إرسال رسالة عبر واتساب)</small>
       </td>
       <td>5,000 – 20,000</td>

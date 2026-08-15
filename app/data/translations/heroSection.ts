@@ -29,10 +29,10 @@ const hero: {
     en: "See Our Work",
     ar: "شاهد أعمالنا",
   },
-  valueProp: {
-    en: 'Build <span class="font-[630]">instant trust</span>, outshine competitors, and turn website visits into <span class="font-[630]">real revenue</span>.',
-    ar: 'مواقع إلكترونية مخصصة <span class="font-[630]">تعكس قيمة شركتك الحقيقية</span> وتُثَبت مكانتك في السوق الرقمي.',
-  },
+ valueProp: {
+  en: 'Build instant trust, outshine competitors, and turn <span class="font-[630]">website visits</span> into <span class="font-[630]">real revenue</span>.',
+  ar: 'ابنِ ثقة فورية من أول لحظة، تفوق على منافسيك، وحوّل <span class="font-[630]">زيارات موقعك</span> إلى <span class="font-[630]">أرباح حقيقية</span>.',
+},
 };
 
 export default hero;

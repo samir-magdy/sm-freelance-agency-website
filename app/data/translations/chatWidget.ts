@@ -36,8 +36,8 @@ const chatWidget: ChatWidgetStrings = {
     { en: "How long does a project take?", ar: "ما هي مدة تنفيذ الموقع؟" },
   ],
   bubbleNudge: {
-    en: "Hi, I'm Nollie 👋",
-    ar: "مرحبًا، أنا نولي 👋",
+    en: "Need help? ✨",
+    ar: "محتاج مساعدة؟ ✨",
   },
   error: {
     en: "Something went wrong. Please try again.",

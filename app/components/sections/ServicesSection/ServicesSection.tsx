@@ -106,7 +106,7 @@ export default function ServicesSection({ lang, region }: ServicesSectionProps) 
                       startsAtLabel={translations.startsAt[lang]}
                     />
                   ) : (
-                    <span className="text-subheading md:text-heading font-bold text-gold tracking-tight leading-none">
+                    <span className="text-xl rtl:text-lg sm:text-3xl rtl:sm:text-2xl font-bold text-gold tracking-tight leading-none pb-0.5 rtl:pb-1">
                       {translations.customPriceLabel[lang]}
                     </span>
                   )}
@@ -161,7 +161,7 @@ export default function ServicesSection({ lang, region }: ServicesSectionProps) 
                       viewBox="0 0 16 16"
                       fill="none"
                       aria-hidden="true"
-                      className="shrink-0 text-content-muted/70 rtl:rotate-180 transition-all duration-300 group-hover:text-gold group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 group-focus-visible:text-gold"
+                      className="shrink-0 text-content-muted/70 rtl:rotate-180 transition-all duration-300 group-hover:text-white/80 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5 group-focus-visible:text-gold"
                     >
                       <path
                         d="M3.333 8h9.334M8.667 4l4 4-4 4"

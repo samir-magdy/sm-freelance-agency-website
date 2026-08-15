@@ -163,14 +163,14 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
         onClick={() => setOpen(true)}
         aria-label={translations.a11y.open[lang]}
         aria-expanded={open}
-        className={`${styles.launcher} fixed bottom-2 inset-e-4 z-30 grid size-12 sm:size-14 cursor-pointer
+        className={`${styles.launcher} fixed bottom-0 sm:bottom-1 inset-e-2 z-30 grid size-12 sm:size-14 cursor-pointer
           place-items-center rounded-full transition-transform duration-300 ease-out
           hover:scale-105
           ${open ? "pointer-events-none opacity-0" : "opacity-100"}`}
       >
         <NollieAvatar
           animated={!open}
-          className="size-13.5"
+          className="size-12"
         />
       </button>
 

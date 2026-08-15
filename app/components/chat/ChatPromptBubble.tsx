@@ -10,8 +10,8 @@ interface ChatPromptBubbleProps {
   prompt: string;
 }
 
-const APPEAR_DELAY_MS = 12_000;
-const VISIBLE_MS = 4_500;
+const APPEAR_DELAY_MS = 10_000;
+const VISIBLE_MS = 3000;
 const STORAGE_KEY = "chat-bubble-shown";
 
 export default function ChatPromptBubble({
@@ -50,49 +50,28 @@ export default function ChatPromptBubble({
   if (hidden) return null;
 
   return (
-    <div
-      className={`fixed bottom-22 sm:bottom-24 sm:inset-e-4 inset-e-2 z-30 max-w-[16rem] transition-all duration-500 ease-out
-        ${visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"}`}
-      role="status"
-      aria-live="polite"
-      aria-hidden={!visible}
-      lang={lang}
-    >
-      <div className="relative rounded-2xl border border-white/10 bg-surface-card/95 shadow-xl shadow-black/40 backdrop-blur-sm">
-        <button
-          type="button"
-          onClick={() => {
-            setVisible(false);
-            onOpen();
-          }}
-          className="block w-full cursor-pointer rounded-2xl px-4 py-3 text-start text-base leading-snug text-content-body transition-colors hover:text-content-heading"
-        >
-          {prompt}
-        </button>
-
-        {/* Tail — filled triangle covers the parent border, stroked slants match it */}
-        <svg
-          className="pointer-events-none absolute -bottom-2.25 inset-e-8"
-          width="18"
-          height="10"
-          viewBox="0 0 18 10"
-          aria-hidden
-          style={{ overflow: "visible" }}
-        >
-          <path
-            d="M -0.5 -1 L 9 9 L 18.5 -1 Z"
-            fill="var(--color-surface-card)"
-          />
-          <path
-            d="M 0 0 L 9 9 L 18 0"
-            fill="none"
-            stroke="white"
-            strokeOpacity="0.1"
-            strokeWidth="1"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </div>
+  <div
+    className={`fixed bottom-16 sm:bottom-18 inset-e-12 z-30 max-w-[18rem] transition-all duration-500 ease-out
+      ${visible ? "translate-y-0 scale-100 opacity-100" : "pointer-events-none translate-y-4 scale-95 opacity-0"}`}
+    role="status"
+    aria-live="polite"
+    aria-hidden={!visible}
+    lang={lang}
+  >
+    {/* Asymmetrical border radius: 3 large corners, 1 sharp corner to act as the "tail" */}
+    <div className="relative rounded-2xl rounded-ee-sm border border-white/10 bg-surface-card/95 shadow-xl shadow-black/40 backdrop-blur-sm">
+      <button
+        type="button"
+        onClick={() => {
+          setVisible(false);
+          onOpen();
+        }}
+        // Added flex layout, slightly adjusted padding, and an active scale effect
+        className="flex w-full cursor-pointer items-center p-4 text-start text-sm leading-relaxed text-content-body transition-all hover:text-content-heading active:scale-[0.98]"
+      >
+        <span>{prompt}</span>
+      </button>
     </div>
-  );
+  </div>
+);
 }
