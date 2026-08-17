@@ -77,8 +77,8 @@ const privacyPolicy: LegalDocument = {
         ar: "7. تواصل معنا",
       },
       content: {
-        en: `If you have questions or concerns about this Privacy Policy or how we handle your data, you may email us at ${CONTACT_EMAIL} or use the contact form on our website. We are committed to resolving any privacy concerns promptly and transparently.`,
-        ar: `إذا كانت لديك أسئلة أو مخاوف بشأن سياسة الخصوصية هذه أو طريقة تعاملنا مع بياناتك، يمكنك مراسلتنا على ${CONTACT_EMAIL} أو استخدام نموذج التواصل على موقعنا. نحن ملتزمون بمعالجة أي مخاوف تتعلق بالخصوصية بسرعة وشفافية.`,
+        en: `If you have questions or concerns about this Privacy Policy or how we handle your data, you may email us at ${CONTACT_EMAIL}. We are committed to resolving any privacy concerns promptly and transparently.`,
+        ar: `إذا كانت لديك أسئلة أو مخاوف بشأن سياسة الخصوصية هذه أو طريقة تعاملنا مع بياناتك، يمكنك مراسلتنا على ${CONTACT_EMAIL}. نحن ملتزمون بمعالجة أي مخاوف تتعلق بالخصوصية بسرعة وشفافية.`,
       },
     },
   ],

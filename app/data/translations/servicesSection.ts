@@ -1,5 +1,5 @@
 import type { Localized } from "@/app/types";
-import type { BaseId } from "./pricingEstimator";
+import type { BaseId } from "./regionPricing";
 
 interface ServiceCard {
   id: "landing" | "business" | "customApp";
@@ -42,12 +42,12 @@ export const servicesSectionTranslations: ServicesSectionTranslations = {
     ar: "خدمات متخصصة",
   },
   estimatorLead: {
-    en: "Want an instant estimate?",
-    ar: "ترغب في تقدير سعر فوري؟",
+    en: "Want an exact cost for your project?",
+    ar: "ترغب في سعر مُفصل؟",
   },
   estimatorCta: {
-    en: "Estimate your investment",
-    ar: "قدِّر تكلفة موقعك",
+    en: "Request a Custom Quote",
+    ar: "احصل على عرض سعر",
   },
   startsAt: {
     en: "Starts at",

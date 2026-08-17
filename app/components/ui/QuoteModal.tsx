@@ -1,0 +1,390 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import { ChevronDown, ClipboardCheck, X } from "lucide-react";
+import type { Lang } from "@/app/types";
+import {
+  quoteQuestions,
+  quoteFormStrings as t,
+  type QuoteQuestion,
+} from "@/app/data/translations/quoteForm";
+import { CHAT_CLOSE_EVENT } from "@/app/components/chat/ChatWidget";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
+
+export const QUOTE_OPEN_EVENT = "quote:open";
+
+type Answers = Record<string, string | string[]>;
+type ContactMethod = "whatsapp" | "phone-call" | "email";
+
+interface QuoteModalProps {
+  lang: Lang;
+}
+
+const EMPTY_CONTACT = {
+  name: "",
+  method: "" as ContactMethod | "",
+  phone: "",
+  email: "",
+};
+
+export default function QuoteModal({ lang }: QuoteModalProps) {
+  const [open, setOpen] = useState(false);
+  const [started, setStarted] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const [stepIndex, setStepIndex] = useState(0);
+  const [contact, setContact] = useState(EMPTY_CONTACT);
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // Open on the global event; dispatched from the hero CTA (and anywhere else later).
+  useEffect(() => {
+    const handleOpen = () => {
+      window.dispatchEvent(new Event(CHAT_CLOSE_EVENT)); // close chat if open, avoid overlap
+      setOpen(true);
+    };
+    window.addEventListener(QUOTE_OPEN_EVENT, handleOpen);
+    return () => window.removeEventListener(QUOTE_OPEN_EVENT, handleOpen);
+  }, []);
+
+  // Open directly via a shareable link, e.g. /en?quote=open — no dedicated
+  // route needed. Strips the param immediately so refresh/close doesn't
+  // reopen it and the URL doesn't linger looking like a permanent page.
+  useEffect(() => {
+    if (searchParams.get("quote") === "open") {
+      window.dispatchEvent(new Event(CHAT_CLOSE_EVENT));
+      setOpen(true);
+      router.replace(pathname, { scroll: false });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Lock page scroll while open (matches MobileMenu's approach).
+  useEffect(() => {
+    if (!open) return;
+    document.documentElement.style.overflow = "hidden";
+    return () => {
+      document.documentElement.style.overflow = "";
+    };
+  }, [open]);
+
+  function reset() {
+    setStarted(false);
+    setAnswers({});
+    setStepIndex(0);
+    setContact(EMPTY_CONTACT);
+    setStatus("idle");
+  }
+
+  function close() {
+    setOpen(false);
+    // Delay reset past the close transition so content doesn't visibly jump.
+    setTimeout(reset, 300);
+  }
+
+  const visibleQuestions = useMemo(
+    () => quoteQuestions.filter((q) => !q.showIf || q.showIf(answers)),
+    [answers],
+  );
+  const totalSteps = visibleQuestions.length + 1;
+  const isContactStep = stepIndex === visibleQuestions.length;
+  const current: QuoteQuestion | undefined = visibleQuestions[stepIndex];
+
+  function setAnswer(id: string, value: string | string[]) {
+    setAnswers((prev) => ({ ...prev, [id]: value }));
+  }
+  function goNext() {
+    setStepIndex((i) => Math.min(i + 1, totalSteps - 1));
+  }
+  function goBack() {
+    setStepIndex((i) => Math.max(i - 1, 0));
+  }
+
+  async function handleSubmit() {
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ answers, contact, lang }),
+      });
+      if (!res.ok)
+        throw new Error(res.status === 429 ? "rate_limit" : "server_error");
+      setStatus("success");
+    } catch (err) {
+      setStatus(
+        err instanceof Error && err.message === "rate_limit"
+          ? "error"
+          : "error",
+      );
+    }
+  }
+
+  if (!open) return null;
+
+  const optionBtnClass = (selected: boolean) =>
+    `cursor-pointer text-start px-4 py-3.5 sm:py-3 rounded-xl border-2 transition-all w-full text-[clamp(1rem,0.85rem+0.9vw,1.5rem)] ${
+      selected
+        ? "border-white/60 bg-black/40 text-content-heading"
+        : "border-border-subtle hover:border-border-strong bg-black/15 text-content-body"
+    }`;
+
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      onKeyDown={(e) => e.key === "Escape" && close()}
+      className="fixed inset-0 z-50 grid place-items-center p-3 sm:p-4"
+    >
+      {/* Backdrop */}
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-black/20 backdrop-blur-sm"
+      />
+
+      {/* Panel — full-screen sheet on mobile, centered card from sm: up */}
+      <div
+        className="relative z-10 flex h-[82dvh] md:h-[85dvh] w-full sm:w-1/2
+          flex-col overflow-hidden rounded-2xl border-2 border-border-subtle
+          bg-surface-card shadow-2xl shadow-black/50"
+      >
+        <div className="flex justify-end px-3 pt-3 shrink-0">
+          <button
+            type="button"
+            onClick={close}
+            aria-label={t.close[lang]}
+            className="cursor-pointer rounded-lg p-1.5 text-content-muted hover:text-content-heading transition-colors"
+          >
+            <X className="size-5" aria-hidden />
+          </button>
+        </div>
+
+        <div className="flex-1 overflow-y-auto scrollbar-none px-5 pb-5 sm:px-6">
+          {status === "success" ? (
+            <p className="text-center text-content-body text-[clamp(1.125rem,1rem+0.6vw,1.375rem)] py-10">
+              {t.success[lang]}
+            </p>
+          ) : !started ? (
+            <div className="flex h-full flex-col items-center justify-center gap-4 sm:gap-8 text-center">
+              <ClipboardCheck className="size-20 sm:size-22 text-gold" aria-hidden />
+              <p className="text-content-body text-balance text-[clamp(1rem,0.7rem+2vw,1.875rem)] leading-relaxed sm:max-w-80 md:max-w-120 safari:px-6 px-2 sm:px-0">
+                {t.introBody[lang]}
+              </p>
+            </div>
+          ) : (
+            <>
+              <div className="mb-4">
+                <p className="text-[clamp(0.875rem,0.8rem+0.3vw,1rem)] text-content-muted mb-2">
+                  {t.stepLabel[lang]} {stepIndex + 1} {t.ofLabel[lang]}{" "}
+                  {totalSteps}
+                </p>
+                <div className="h-1.5 w-full rounded-full bg-white/10 overflow-hidden">
+                  <div
+                    className="h-full bg-linear-to-r from-gold to-gold-dark transition-all duration-300"
+                    style={{
+                      width: `${((stepIndex + 1) / totalSteps) * 100}%`,
+                    }}
+                  />
+                </div>
+              </div>
+
+              {!isContactStep && current && (
+                <div>
+                  <p className="text-heading font-bold safari:my-6 text-content-heading mb-2 leading-snug">
+                    {current.question[lang]}
+                  </p>
+                  {current.helper && (
+                    <p className="text-content-muted text-[clamp(0.875rem,0.8rem+0.3vw,1rem)] mb-4">
+                      {current.helper[lang]}
+                    </p>
+                  )}
+
+                  {current.type === "single" && (
+                    <div className="flex flex-col safari:gap-3 gap-2 md:gap-3 mt-4">
+                      {current.options!.map((opt) => (
+                        <button
+                          key={opt.value}
+                          type="button"
+                          onClick={() => {
+                            setAnswer(current.id, opt.value);
+                            goNext();
+                          }}
+                          className={optionBtnClass(
+                            answers[current.id] === opt.value,
+                          )}
+                        >
+                          {opt.label[lang]}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
+                  {current.type === "multi" && (
+                    <div className="flex flex-col gap-2.5 mt-4">
+                      {current.options!.map((opt) => {
+                        const list = (answers[current.id] as string[]) ?? [];
+                        const selected = list.includes(opt.value);
+                        return (
+                          <button
+                            key={opt.value}
+                            type="button"
+                            onClick={() => {
+                              const next = selected
+                                ? list.filter((v) => v !== opt.value)
+                                : [...list, opt.value];
+                              setAnswer(current.id, next);
+                            }}
+                            className={optionBtnClass(selected)}
+                          >
+                            {opt.label[lang]}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+
+                  {current.type === "text" && (
+                    <textarea
+                      rows={3}
+                      placeholder={current.placeholder?.[lang]}
+                      value={(answers[current.id] as string) ?? ""}
+                      onChange={(e) => setAnswer(current.id, e.target.value)}
+                      className="mt-4 w-full resize-none rounded-lg border-2 border-transparent bg-surface-low px-4 py-3 text-base text-content-heading placeholder:text-content-muted outline-none focus:border-border-strong"
+                    />
+                  )}
+                </div>
+              )}
+
+              {isContactStep && (
+                <div>
+                  <h2 className="text-[clamp(1.125rem,1rem+1vw,1.6rem)] font-bold text-content-heading mb-5 leading-snug">
+                    {t.contactHeading[lang]}
+                  </h2>
+                  <div className="flex flex-col gap-3.5">
+                    <input
+                      placeholder={t.namePlaceholder[lang]}
+                      value={contact.name}
+                      onChange={(e) =>
+                        setContact((p) => ({ ...p, name: e.target.value }))
+                      }
+                      className="h-13 px-4 rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted outline-none border-2 border-transparent focus:border-border-strong"
+                    />
+                    <div className="relative">
+                      <select
+                        value={contact.method}
+                        onChange={(e) =>
+                          setContact((p) => ({
+                            ...p,
+                            method: e.target.value as ContactMethod,
+                          }))
+                        }
+                        className="h-13 w-full ps-4 pe-10 rounded-lg bg-surface-low text-base text-content-heading outline-none border-2 border-transparent focus:border-border-strong appearance-none"
+                      >
+                        <option value="">{t.contactMethod[lang]}</option>
+                        <option value="whatsapp">{t.whatsapp[lang]}</option>
+                        <option value="phone-call">{t.phoneCall[lang]}</option>
+                        <option value="email">{t.email[lang]}</option>
+                      </select>
+                      <ChevronDown
+                        className="pointer-events-none absolute inset-e-4 top-1/2 size-4 -translate-y-1/2 text-content-muted"
+                        aria-hidden
+                      />
+                    </div>
+                    {(contact.method === "whatsapp" ||
+                      contact.method === "phone-call") && (
+                      <input
+                        dir="ltr"
+                        placeholder={t.phonePlaceholder[lang]}
+                        value={contact.phone}
+                        onChange={(e) =>
+                          setContact((p) => ({ ...p, phone: e.target.value }))
+                        }
+                        className="h-13 px-4 rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted outline-none border-2 border-transparent focus:border-border-strong"
+                      />
+                    )}
+                    {contact.method === "email" && (
+                      <input
+                        placeholder={t.emailPlaceholder[lang]}
+                        value={contact.email}
+                        onChange={(e) =>
+                          setContact((p) => ({ ...p, email: e.target.value }))
+                        }
+                        className="h-13 px-4 rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted outline-none border-2 border-transparent focus:border-border-strong"
+                      />
+                    )}
+                  </div>
+                  {status === "error" && (
+                    <p className="text-red-400 text-[clamp(0.875rem,0.8rem+0.3vw,1rem)] mt-3">
+                      {t.error[lang]}
+                    </p>
+                  )}
+                </div>
+              )}
+            </>
+          )}
+        </div>
+
+        {status !== "success" && !started && (
+          <div className="border-t border-border-subtle px-5 py-6 sm:py-4 shrink-0">
+            <button
+              type="button"
+              onClick={() => setStarted(true)}
+              className="cta-primary w-full px-6 py-2.5 rounded-lg text-background font-semibold text-base cursor-pointer"
+            >
+              {t.start[lang]}
+            </button>
+          </div>
+        )}
+
+        {status !== "success" && started && (
+          <div className="flex items-center justify-between gap-3 border-t border-border-subtle px-5 py-6 sm:py-4 shrink-0">
+            <button
+              type="button"
+              onClick={goBack}
+              disabled={stepIndex === 0}
+              className="text-content-muted hover:text-content-heading disabled:opacity-0 transition-colors text-base cursor-pointer"
+            >
+              {t.back[lang]}
+            </button>
+
+            <div className="flex items-center gap-3">
+              {!isContactStep &&
+                (current?.type === "multi" || current?.type === "text") && (
+                  <button
+                    type="button"
+                    onClick={goNext}
+                    disabled={
+                      !current.optional &&
+                      (current.type === "multi"
+                        ? !((answers[current.id] as string[])?.length > 0)
+                        : !answers[current.id])
+                    }
+                    className="cta-primary px-6 py-2.5 rounded-lg text-background font-semibold text-base disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+                  >
+                    {t.next[lang]}
+                  </button>
+                )}
+
+              {isContactStep && (
+                <button
+                  type="button"
+                  onClick={handleSubmit}
+                  disabled={
+                    status === "loading" || !contact.name || !contact.method
+                  }
+                  className="cta-primary px-6 py-2.5 rounded-lg text-background font-semibold text-base disabled:opacity-40 cursor-pointer"
+                >
+                  {status === "loading" ? t.submitting[lang] : t.submit[lang]}
+                </button>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

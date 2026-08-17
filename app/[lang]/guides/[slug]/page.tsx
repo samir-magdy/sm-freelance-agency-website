@@ -7,7 +7,6 @@ import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guidesShared";
 import pageMeta from "@/app/data/translations/pageMeta";
 import navTranslations, { breadcrumbHome } from "@/app/data/translations/nav";
-import PricingEstimator from "@/app/components/utils/PricingEstimator";
 import type { Lang, LangSlugParams } from "@/app/types";
 import {
   homeUrl,
@@ -138,7 +137,7 @@ export default async function GuidePage({
     },
   ];
 
-  const SLOT = "<!-- PRICING_ESTIMATOR_SLOT -->";
+  const SLOT = "<!-- REGION_NOTICE_SLOT -->";
   const articleClassName = `
     html-content
     [&_h2]:text-[clamp(1.25rem,5vw,2.5rem)] [&_h2]:font-bold [&_h2]:text-content-heading/95 [&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:leading-snug
@@ -198,10 +197,12 @@ export default async function GuidePage({
           />
         ) : (
           <>
-            <article
-              className={articleClassName}
-              dangerouslySetInnerHTML={{ __html: wrapTables(parts[0]) }}
-            />
+            {parts[0].trim() && (
+              <article
+                className={articleClassName}
+                dangerouslySetInnerHTML={{ __html: wrapTables(parts[0]) }}
+              />
+            )}
             {region !== "EG" && (
               <aside
                 role="note"
@@ -220,7 +221,6 @@ export default async function GuidePage({
                 </div>
               </aside>
             )}
-            <PricingEstimator lang={lang} />
             <article
               className={articleClassName}
               dangerouslySetInnerHTML={{ __html: wrapTables(parts[1]) }}

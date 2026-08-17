@@ -11,6 +11,8 @@ import { SITE_URL, SITE_NAME } from "@/app/constants";
 import { isLang, type Lang } from "@/app/types";
 import { notFound } from "next/navigation";
 import ChatWidget from "@/app/components/chat/ChatWidget";
+import QuoteModal from "@/app/components/ui/QuoteModal";
+import { Suspense } from "react";
 
 const cairoLatin = Cairo({
   variable: "--font-cairo",
@@ -133,6 +135,10 @@ export default async function LangLayout({
             {children}
           </main>
           <ChatWidget lang={lang} />
+          <Suspense fallback={null}>
+  <QuoteModal lang={lang} />
+</Suspense>
+
           <Footer lang={lang} />
         </div>
       </body>

@@ -51,7 +51,7 @@ export default function ChatPromptBubble({
 
   return (
   <div
-    className={`fixed bottom-16 sm:bottom-18 inset-e-12 z-30 max-w-[18rem] transition-all duration-500 ease-out
+    className={`fixed bottom-14 inset-e-14 sm:inset-e-16 z-30 max-w-[18rem] transition-all duration-500 ease-out
       ${visible ? "translate-y-0 scale-100 opacity-100" : "pointer-events-none translate-y-4 scale-95 opacity-0"}`}
     role="status"
     aria-live="polite"
@@ -67,7 +67,7 @@ export default function ChatPromptBubble({
           onOpen();
         }}
         // Added flex layout, slightly adjusted padding, and an active scale effect
-        className="flex w-full cursor-pointer items-center p-4 text-start text-sm leading-relaxed text-content-body transition-all hover:text-content-heading active:scale-[0.98]"
+        className="flex w-full cursor-pointer items-center px-4 py-2 text-start text-sm leading-relaxed text-content-body transition-all hover:text-content-heading active:scale-[0.98]"
       >
         <span>{prompt}</span>
       </button>

@@ -1,0 +1,102 @@
+import { Resend } from "resend";
+import { ipAddress } from "@vercel/functions";
+import { NextResponse, type NextRequest } from "next/server";
+import { redis } from "@/lib/redis";
+import { SITE_NAME } from "@/app/constants";
+import { isLang } from "@/app/types";
+import { formatAnswers } from "./formatAnswers";
+
+export const runtime = "edge";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+const MAX_SUBMISSIONS = 1;
+const WINDOW_SECONDS = 180;
+
+type ContactMethod = "whatsapp" | "phone-call" | "email";
+
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json();
+    const answers: Record<string, string | string[]> = body?.answers ?? {};
+    const contact: {
+      name?: string;
+      method?: ContactMethod | "";
+      phone?: string;
+      email?: string;
+    } = body?.contact ?? {};
+    const lang = isLang(body?.lang) ? body.lang : "en";
+
+    if (!contact.name || !contact.method) {
+      return NextResponse.json(
+        { error: "Name and contact method are required" },
+        { status: 400 },
+      );
+    }
+
+    const MAX_LENGTHS = { name: 50, phone: 20, email: 100 } as const;
+    if (
+      contact.name.length > MAX_LENGTHS.name ||
+      (contact.phone && contact.phone.length > MAX_LENGTHS.phone) ||
+      (contact.email && contact.email.length > MAX_LENGTHS.email)
+    ) {
+      return NextResponse.json(
+        { error: "One or more fields exceed the maximum allowed length." },
+        { status: 400 },
+      );
+    }
+
+    try {
+      if (redis) {
+        const userIdentifier = ipAddress(request);
+        if (userIdentifier) {
+          const key = `rate-limit:quote-form:${userIdentifier}`;
+          const count = await redis.incr(key);
+          if (count === 1) await redis.expire(key, WINDOW_SECONDS);
+          if (count > MAX_SUBMISSIONS) {
+            return NextResponse.json(
+              { error: "Please wait a few minutes before submitting again." },
+              { status: 429 },
+            );
+          }
+        }
+      }
+    } catch {
+      // Redis unavailable — skip rate limiting so the form still works
+    }
+
+    const answersText = formatAnswers(answers, lang);
+
+    const data = await resend.emails.send({
+      from: `${SITE_NAME} <noreply@mail.samirmagdy.com>`,
+      to: process.env.CONTACT_EMAIL ?? "",
+      subject: "Detailed Project Questionnaire Submission",
+      text: [
+        `Name: ${contact.name}`,
+        `Contact Method: ${contact.method}`,
+        contact.phone && `Phone: ${contact.phone}`,
+        contact.email && `Email: ${contact.email}`,
+        "",
+        "── Questionnaire Answers ──",
+        answersText,
+      ]
+        .filter(Boolean)
+        .join("\n"),
+    });
+
+    if (data.error) {
+      return NextResponse.json(
+        { error: data.error.message || "Failed to send email" },
+        { status: 500 },
+      );
+    }
+
+    return NextResponse.json({ success: true, id: data.data?.id });
+  } catch (error) {
+    console.error("QUOTE ROUTE ERROR:", error);
+    return NextResponse.json(
+      { error: "An unexpected error occurred. Please try again later." },
+      { status: 500 },
+    );
+  }
+}

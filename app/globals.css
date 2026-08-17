@@ -30,6 +30,12 @@
   }
 }
 
+@variant safari {
+  @supports (-webkit-touch-callout: none) {
+    @slot;
+  }
+}
+
 /* ══════════════════════════════════════
    2. Base & Reset
    ══════════════════════════════════════ */
@@ -230,17 +236,3 @@ html {
   }
 }
 
-/* ── iOS only ──────────────────────────────────────────
-   -webkit-touch-callout is only honoured by iOS Safari,
-   not by desktop Safari or any other browser.          */
-@supports (-webkit-touch-callout: none) {
-  #pricing-calculator button * {
-    font-size: 0.875rem; /* text-sm */
-  }
-  [dir="rtl"] #pricing-calculator {
-    scroll-margin-top: 10.5rem;
-  }
-  #pricing-calculator {
-    scroll-margin-top: 10rem;
-  }
-}

@@ -15,6 +15,7 @@ const resource: Guide = {
   },
   content: {
     en: `
+<!-- REGION_NOTICE_SLOT -->
 <p><strong>Prices for websites in Egypt typically start at around EGP 5,000 and can exceed EGP 100,000, depending on the project's size, features, and complexity.</strong> By reading this guide, you will discover the different types of websites, the expected price range for each, and the core factors that determine market price. With this new knowledge you will be able to avoid overpaying for your website, or choosing the cheapest option and regretting it later.</p>
 
 <h2>What is the expected cost by website type?</h2>
@@ -71,10 +72,7 @@ const resource: Guide = {
   <li><strong>Hosting:</strong> Shared hosting is cheap but can make the site slow under heavy traffic or even crash it, unlike private hosting which guarantees higher performance.</li>
   <li><strong>Maintenance and technical support:</strong> Periodic maintenance contracts (monthly or yearly) are an additional cost that ensures the site keeps running efficiently and any post-delivery issues are fixed without surprise fees.</li>
 </ul>
-<h2 style="margin-bottom: 0.4rem">Website price estimator</h2>
-<p style="margin-bottom: 0">Get a quick estimate for your project:</p>
-<!-- PRICING_ESTIMATOR_SLOT -->
-<h2 style="margin-top: 0.5rem">Cheap websites: hidden risks and how to avoid them</h2>
+<h2>Cheap websites: hidden risks and how to avoid them</h2>
 <p>For serious businesses, a cheap website usually causes more harm than good. Here is the typical failure pattern we see:</p>
 <ul>
   <li>The cheap website is often slow, which frustrates customers and ruins your Google rankings.</li>
@@ -86,7 +84,8 @@ const resource: Guide = {
 <p>Don't repeat the mistakes of others. Read our guide on <a href='/en/guides/choose-web-design-company-egypt'>how to choose the best web design company in Egypt</a> for additional information on how to protect yourself and choose wisely.</p>
 <p>The right question isn't "what is the cheapest website I can get?" but rather "what is the minimum investment that will generate a positive return for my business?"</p>`,
 
-ar: `<p><strong>تبدأ تكلفة تصميم المواقع الإلكترونية في مصر من حوالي 5,000 جنيه مصري، وقد تتجاوز 100,000 جنيه مصري حسب حجم المشروع، والميزات المطلوبة، ومستوى التخصيص</strong>. من خلال قراءتك لهذا الدليل، ستكتشف أنواع المواقع المختلفة، ونطاق السعر المتوقع لكل نوع، وستتعرف على العوامل الأساسية التي تحدد سعر الموقع في السوق لتتجنب دفع مبالغ زائدة أو اختيار أرخص عرض لتندم عليه لاحقاً.</p>
+ar: `<!-- REGION_NOTICE_SLOT -->
+<p><strong>تبدأ تكلفة تصميم المواقع الإلكترونية في مصر من حوالي 5,000 جنيه مصري، وقد تتجاوز 100,000 جنيه مصري حسب حجم المشروع، والميزات المطلوبة، ومستوى التخصيص</strong>. من خلال قراءتك لهذا الدليل، ستكتشف أنواع المواقع المختلفة، ونطاق السعر المتوقع لكل نوع، وستتعرف على العوامل الأساسية التي تحدد سعر الموقع في السوق لتتجنب دفع مبالغ زائدة أو اختيار أرخص عرض لتندم عليه لاحقاً.</p>
 
 <h2>ما هي التكلفة المتوقعة حسب نوع الموقع؟</h2>
 <p>إليك السعر المتوقع حسب نوع الموقع:</p>
@@ -142,11 +141,7 @@ ar: `<p><strong>تبدأ تكلفة تصميم المواقع الإلكترون
   <li><strong>الصيانة والدعم الفني:</strong> تُعتبر عقود الصيانة الدورية (الشهرية أو السنوية) تكلفة إضافية، لكنها تضمن أن يظل موقعك يعمل بكفاءة، وأن أي مشكلة قد تظهر بعد التسليم سيتم حلها دون تكاليف مفاجئة.</li>
 </ul>
 
-<h2 style="margin-bottom: 0.4rem">تقدير سعر المواقع الإلكترونية</h2>
-<p style="margin-bottom: 0">اختر نوع الموقع، الحجم، والإضافات.</p>
-<!-- PRICING_ESTIMATOR_SLOT -->
-
-<h2 style="margin-top: 0.5rem">فخ الموقع الرخيص: المخاطر الخفية وكيفية تجنبها</h2>
+<h2>فخ الموقع الرخيص: المخاطر الخفية وكيفية تجنبها</h2>
 <p>إذا كان عملك جاداً، فالموقع الرخيص غالباً سيضرك أكثر مما سيفيدك. هذا هو النمط الذي نراه يتكرر كثيراً في السوق المصري:</p>
 <ul>
   <li>غالباً ما يكون الموقع الرخيص بطيئاً جداً، مما يدفع العملاء لمغادرته سريعاً، ويؤثر سلباً على ظهوره في نتائج جوجل.</li>
@@ -157,7 +152,7 @@ ar: `<p><strong>تبدأ تكلفة تصميم المواقع الإلكترون
 <p>لا تكرر أخطاء الآخرين. اقرأ دليلنا: <a href="/ar/guides/choose-web-design-company-egypt">كيف تختار أفضل شركة تصميم مواقع في مصر</a>، لتعرف كيف تحمي نفسك وتختار الجهة المناسبة.</p>
 <p>في النهاية، السؤال الصحيح ليس «ما هو أرخص موقع يمكنني إنشاؤه؟» بل «ما هو أقل استثمار سيحقق عائداً إيجابياً لعملي؟»</p>`,
 },
-  readingMinutes: { en: 5, ar: 5 },
+  readingMinutes: { en: 3, ar: 5 },
 };
 
 export default resource;

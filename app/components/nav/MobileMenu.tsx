@@ -8,7 +8,6 @@ import LanguageToggle from "@/app/components/ui/LanguageToggle";
 import { navItems, type NavKey } from "@/app/data/translations/nav";
 import type { Lang } from "@/app/types";
 import { SITE_NAME } from "@/app/constants";
-import { CHAT_CLOSE_EVENT } from "@/app/components/chat/ChatWidget";
 
 interface MobileMenuProps {
   lang: Lang;
@@ -67,9 +66,7 @@ export default function MobileMenu({
       });
     }
 
-    const next = !isMenuOpen;
-    setIsMenuOpen(next);
-    if (next) window.dispatchEvent(new Event(CHAT_CLOSE_EVENT));
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const clipPath = `circle(${isMenuOpen ? 150 : 0}% at ${origin.x} ${origin.y})`;

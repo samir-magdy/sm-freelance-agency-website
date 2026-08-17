@@ -8,6 +8,7 @@ import { ArrowUp, X } from "lucide-react";
 import type { Lang } from "@/app/types";
 import translations from "@/app/data/translations/chatWidget";
 import guides from "@/app/data/guides";
+import { SOCIAL_LINKS } from "@/app/constants";
 import NollieAvatar from "./NollieAvatar";
 import ChatPromptBubble from "./ChatPromptBubble";
 import styles from "./Nollie.module.css";
@@ -16,13 +17,21 @@ interface ChatWidgetProps {
   lang: Lang;
 }
 
+// Special-cased link target for the quote questionnaire — opened in-app via
+// QuoteModal's QUOTE_OPEN_EVENT rather than routed to, since a query-param
+// navigation to the current page won't re-trigger QuoteModal's mount effect.
+// Mirrors the literal value of QuoteModal's QUOTE_OPEN_EVENT export; not
+// imported directly to avoid a circular import between the two modules.
+const QUOTE_SURVEY_TARGET = "?quote=open";
+const QUOTE_OPEN_EVENT = "quote:open";
+
 // Whitelist of markdown link targets the model is allowed to emit. Anything
 // else renders as literal `[label](target)` text so a hallucinated URL
 // degrades gracefully instead of turning into a broken link.
 const LINK_TARGETS = new Set<string>([
-  "#contact",
   "#portfolio",
-  "/guides/website-cost-in-egypt#pricing-calculator",
+  QUOTE_SURVEY_TARGET,
+  SOCIAL_LINKS.whatsapp,
   ...guides.map((g) => `/guides/${g.slug}`),
 ]);
 
@@ -55,7 +64,34 @@ function renderMessage(
     const target = segments[i + 2];
     if (label === undefined || target === undefined) continue;
 
-    if (LINK_TARGETS.has(target)) {
+    if (target === QUOTE_SURVEY_TARGET) {
+      nodes.push(
+        <button
+          key={`${i}-link`}
+          type="button"
+          onClick={() => {
+            window.dispatchEvent(new Event(QUOTE_OPEN_EVENT));
+            onNavigate();
+          }}
+          className="cursor-pointer text-gold-light underline underline-offset-2 hover:text-gold"
+        >
+          {label}
+        </button>,
+      );
+    } else if (target === SOCIAL_LINKS.whatsapp) {
+      nodes.push(
+        <a
+          key={`${i}-link`}
+          href={target}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={onNavigate}
+          className="text-gold-light underline underline-offset-2 hover:text-gold"
+        >
+          {label}
+        </a>,
+      );
+    } else if (LINK_TARGETS.has(target)) {
       nodes.push(
         <Link
           key={`${i}-link`}
@@ -96,6 +132,7 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
 
   const inputRef = useRef<HTMLInputElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
   // Autofocus the input when the panel opens — but only on devices with a
   // real pointer. On touch-primary devices, focusing raises the software
@@ -127,12 +164,22 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
     if (el) el.scrollTop = el.scrollHeight;
   }, [messages, status, open]);
 
-  // Close on external request (e.g. mobile menu opening).
+  // Close on external request (e.g. the quote modal opening).
   useEffect(() => {
     const close = () => setOpen(false);
     window.addEventListener(CHAT_CLOSE_EVENT, close);
     return () => window.removeEventListener(CHAT_CLOSE_EVENT, close);
   }, []);
+
+  // Close when tapping/clicking anywhere outside the panel.
+  useEffect(() => {
+    if (!open) return;
+    const handlePointerDown = (e: PointerEvent) => {
+      if (!panelRef.current?.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, [open]);
 
   function submit(text: string) {
     const trimmed = text.trim();
@@ -163,7 +210,7 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
         onClick={() => setOpen(true)}
         aria-label={translations.a11y.open[lang]}
         aria-expanded={open}
-        className={`${styles.launcher} fixed bottom-0 sm:bottom-1 inset-e-2 z-30 grid size-12 sm:size-14 cursor-pointer
+        className={`${styles.launcher} fixed bottom-3 sm:bottom-2 inset-e-4 z-30 grid size-12 sm:size-14 cursor-pointer
           place-items-center rounded-full transition-transform duration-300 ease-out
           hover:scale-105
           ${open ? "pointer-events-none opacity-0" : "opacity-100"}`}
@@ -177,6 +224,7 @@ export default function ChatWidget({ lang }: ChatWidgetProps) {
       {/* ── Panel ── */}
       {open && (
         <div
+          ref={panelRef}
           role="dialog"
           aria-modal="false"
           aria-labelledby="chat-panel-title"

@@ -6,7 +6,6 @@ const a11y: Record<
   | "closeMenu"
   | "desktopNav"
   | "mobileNav"
-  | "contactForm"
   | "imageAltPrefix"
   | "skipToContent"
   | "switchToEnglish"
@@ -18,7 +17,6 @@ const a11y: Record<
   closeMenu: { en: "Close menu", ar: "إغلاق القائمة" },
   desktopNav: { en: "Desktop navigation", ar: "قائمة سطح المكتب" },
   mobileNav: { en: "Mobile navigation", ar: "قائمة الهاتف" },
-  contactForm: { en: "Contact form", ar: "نموذج التواصل" },
   imageAltPrefix: {
     en: `Website design by ${SITE_NAME} –`,
     ar: `تصميم موقع من ${SITE_NAME} –`,

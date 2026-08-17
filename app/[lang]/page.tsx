@@ -19,7 +19,7 @@ import {
 import { isLang, type Lang, type LangParams } from "@/app/types";
 import { homeUrl, homeAlternates } from "@/lib/urls";
 import { getRegion, type Region } from "@/lib/region";
-import { BASE_PRICES, CURRENCIES } from "@/app/data/translations/pricingEstimator";
+import { BASE_PRICES, CURRENCIES } from "@/app/data/translations/regionPricing";
 
 export async function generateMetadata({
   params,

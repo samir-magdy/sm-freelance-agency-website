@@ -23,7 +23,7 @@ const hero: {
   },
   primaryCta: {
     en: "Start a Project",
-    ar: "تواصل معنا",
+    ar: "ابدأ مشروعك",
   },
   secondaryCta: {
     en: "See Our Work",

@@ -223,11 +223,11 @@
   }
 
   .hook {
-    font-size: clamp(2rem, 10vw, 3.5rem);
+    font-size: clamp(2rem, 11vw, 3.8rem);
   }
 
   .valueProp {
-    font-size: clamp(1.1rem, 5vw, 1.44rem);
+    font-size: clamp(1.1rem, 5vw, 1.6rem);
     margin-bottom: 0.25rem;
     max-width: 30rem;
   }
@@ -238,6 +238,6 @@
 
   .hero :global(.cta-primary),
   .hero :global(.cta-secondary) {
-    font-size: clamp(0.7rem, 4.5vw, 1.26rem);
+    font-size: clamp(0.7rem, 4.25vw, 1.26rem);
   }
 }
