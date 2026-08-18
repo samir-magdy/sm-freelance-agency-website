@@ -78,7 +78,7 @@ export default function FAQSection({ lang }: FAQSectionProps) {
             </a>
             <Link
               href={`/${lang}/guides`}
-              className="group flex items-center gap-1.5 text-content-body hover:text-content-heading text-base transition-colors duration-200"
+              className="ps-3 group flex items-center gap-1.5 text-content-body hover:text-content-heading text-base transition-colors duration-200"
             >
               <span className="text-content-muted/90">
                 {translations.orDivider[lang]}

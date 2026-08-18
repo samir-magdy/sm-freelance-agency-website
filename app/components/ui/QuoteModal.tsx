@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { ChevronDown, ClipboardCheck, X } from "lucide-react";
+import { ChevronDown, CircleCheckBig, ClipboardCheck, Plus, X } from "lucide-react";
 import type { Lang } from "@/app/types";
 import {
   quoteQuestions,
+  quoteCategories,
   quoteFormStrings as t,
   type QuoteQuestion,
 } from "@/app/data/translations/quoteForm";
@@ -12,6 +13,10 @@ import { CHAT_CLOSE_EVENT } from "@/app/components/chat/ChatWidget";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 
 export const QUOTE_OPEN_EVENT = "quote:open";
+
+export interface QuoteOpenDetail {
+  goal?: string;
+}
 
 type Answers = Record<string, string | string[]>;
 type ContactMethod = "whatsapp" | "phone-call" | "email";
@@ -42,9 +47,16 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
   const pathname = usePathname();
 
   // Open on the global event; dispatched from the hero CTA (and anywhere else later).
+  // Callers can optionally pass a `goal` in the event detail (e.g. from a
+  // service card) to pre-answer the first question and skip straight past it.
   useEffect(() => {
-    const handleOpen = () => {
+    const handleOpen = (e: Event) => {
       window.dispatchEvent(new Event(CHAT_CLOSE_EVENT)); // close chat if open, avoid overlap
+      const goal = (e as CustomEvent<QuoteOpenDetail>).detail?.goal;
+      if (goal) {
+        setAnswers({ goal });
+        setStepIndex(1);
+      }
       setOpen(true);
     };
     window.addEventListener(QUOTE_OPEN_EVENT, handleOpen);
@@ -94,8 +106,45 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
   const isContactStep = stepIndex === visibleQuestions.length;
   const current: QuoteQuestion | undefined = visibleQuestions[stepIndex];
 
+  // Grouped progress: which of the big categories (e.g. "Design & Content")
+  // the current question belongs to, shown as a segmented bar.
+  const activeCategoryId = isContactStep ? "contact" : current?.category;
+  const activeCategory =
+    quoteCategories.find((c) => c.id === activeCategoryId) ??
+    quoteCategories[0];
+  const macroIndex = quoteCategories.findIndex((c) => c.id === activeCategoryId) + 1;
+  const macroTotal = quoteCategories.length;
+  // Drives how far the active segment fills in — not shown as text, just
+  // makes the bar move continuously as questions within the category pass.
+  // Counts only questions already passed (not the one currently shown), so
+  // landing on a category's first question starts its segment empty rather
+  // than instantly full.
+  const categoryQuestions = visibleQuestions.filter(
+    (q) => q.category === activeCategoryId,
+  );
+  const activeSegmentFill = isContactStep
+    ? 1
+    : Math.max(categoryQuestions.findIndex((q) => q.id === current?.id), 0) /
+      Math.max(categoryQuestions.length, 1);
+
   function setAnswer(id: string, value: string | string[]) {
     setAnswers((prev) => ({ ...prev, [id]: value }));
+  }
+  function listValue(id: string): string[] {
+    const v = answers[id] as string[] | undefined;
+    return v && v.length > 0 ? v : [""];
+  }
+  function setListItem(id: string, index: number, value: string) {
+    const list = [...listValue(id)];
+    list[index] = value;
+    setAnswer(id, list);
+  }
+  function addListItem(id: string) {
+    setAnswer(id, [...listValue(id), ""]);
+  }
+  function removeListItem(id: string, index: number) {
+    const list = listValue(id).filter((_, i) => i !== index);
+    setAnswer(id, list.length > 0 ? list : [""]);
   }
   function goNext() {
     setStepIndex((i) => Math.min(i + 1, totalSteps - 1));
@@ -148,7 +197,7 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
 
       {/* Panel — full-screen sheet on mobile, centered card from sm: up */}
       <div
-        className="relative z-10 flex h-[82dvh] md:h-[85dvh] w-full sm:w-1/2
+        className="relative z-10 flex h-[82dvh] md:h-[85dvh] w-full sm:w-4/5 md:w-1/2
           flex-col overflow-hidden rounded-2xl border-2 border-border-subtle
           bg-surface-card shadow-2xl shadow-black/50"
       >
@@ -165,9 +214,12 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
 
         <div className="flex-1 overflow-y-auto scrollbar-none px-5 pb-5 sm:px-6">
           {status === "success" ? (
-            <p className="text-center text-content-body text-[clamp(1.125rem,1rem+0.6vw,1.375rem)] py-10">
-              {t.success[lang]}
-            </p>
+            <div className="flex h-full flex-col items-center justify-center gap-4 sm:gap-8 text-center">
+              <CircleCheckBig className="size-20 sm:size-22 text-gold" aria-hidden />
+              <p className="text-content-body text-balance text-[clamp(1rem,0.7rem+2vw,1.875rem)] leading-relaxed sm:max-w-80 md:max-w-120 safari:px-6 px-2 sm:px-0">
+                {t.success[lang]}
+              </p>
+            </div>
           ) : !started ? (
             <div className="flex h-full flex-col items-center justify-center gap-4 sm:gap-8 text-center">
               <ClipboardCheck className="size-20 sm:size-22 text-gold" aria-hidden />
@@ -178,17 +230,36 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
           ) : (
             <>
               <div className="mb-4">
-                <p className="text-[clamp(0.875rem,0.8rem+0.3vw,1rem)] text-content-muted mb-2">
-                  {t.stepLabel[lang]} {stepIndex + 1} {t.ofLabel[lang]}{" "}
-                  {totalSteps}
-                </p>
-                <div className="h-1.5 w-full rounded-full bg-white/10 overflow-hidden">
-                  <div
-                    className="h-full bg-linear-to-r from-gold to-gold-dark transition-all duration-300"
-                    style={{
-                      width: `${((stepIndex + 1) / totalSteps) * 100}%`,
-                    }}
-                  />
+                <div className="flex items-center justify-between gap-3 mb-2">
+                  <p className="text-[clamp(0.8rem,0.72rem+0.35vw,0.9375rem)] font-semibold text-gold uppercase tracking-wide">
+                    {activeCategory.name[lang]}
+                  </p>
+                  <p className="text-[clamp(0.75rem,0.7rem+0.2vw,0.8125rem)] text-content-muted shrink-0">
+                    {t.stepLabel[lang]} {macroIndex} {t.ofLabel[lang]}{" "}
+                    {macroTotal}
+                  </p>
+                </div>
+                <div className="flex gap-1.5">
+                  {quoteCategories.map((cat, i) => {
+                    const position = i + 1;
+                    const fillPercent =
+                      position < macroIndex
+                        ? 100
+                        : position === macroIndex
+                          ? activeSegmentFill * 100
+                          : 0;
+                    return (
+                      <div
+                        key={cat.id}
+                        className="h-1.5 flex-1 rounded-full bg-white/10 overflow-hidden"
+                      >
+                        <div
+                          className="h-full bg-linear-to-r from-gold to-gold-dark transition-all duration-300"
+                          style={{ width: `${fillPercent}%` }}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -255,6 +326,42 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
                       onChange={(e) => setAnswer(current.id, e.target.value)}
                       className="mt-4 w-full resize-none rounded-lg border-2 border-transparent bg-surface-low px-4 py-3 text-base text-content-heading placeholder:text-content-muted outline-none focus:border-border-strong"
                     />
+                  )}
+
+                  {current.type === "list" && (
+                    <div className="mt-4 flex flex-col gap-2.5">
+                      {listValue(current.id).map((val, i) => (
+                        <div key={i} className="flex items-center gap-2">
+                          <input
+                            dir="ltr"
+                            value={val}
+                            placeholder={current.placeholder?.[lang]}
+                            onChange={(e) =>
+                              setListItem(current.id, i, e.target.value)
+                            }
+                            className="h-13 flex-1 px-4 rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted outline-none border-2 border-transparent focus:border-border-strong"
+                          />
+                          {listValue(current.id).length > 1 && (
+                            <button
+                              type="button"
+                              onClick={() => removeListItem(current.id, i)}
+                              aria-label={t.close[lang]}
+                              className="shrink-0 cursor-pointer rounded-lg p-2.5 text-content-muted hover:text-content-heading transition-colors"
+                            >
+                              <X className="size-4" aria-hidden />
+                            </button>
+                          )}
+                        </div>
+                      ))}
+                      <button
+                        type="button"
+                        onClick={() => addListItem(current.id)}
+                        className="mt-1 flex items-center gap-1.5 self-start text-gold hover:text-gold-dark transition-colors text-[clamp(0.875rem,0.8rem+0.3vw,1rem)] font-medium cursor-pointer"
+                      >
+                        <Plus className="size-4" aria-hidden />
+                        {t.addAnother[lang]}
+                      </button>
+                    </div>
                   )}
                 </div>
               )}
@@ -353,14 +460,18 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
 
             <div className="flex items-center gap-3">
               {!isContactStep &&
-                (current?.type === "multi" || current?.type === "text") && (
+                (current?.type === "multi" ||
+                  current?.type === "text" ||
+                  current?.type === "list") && (
                   <button
                     type="button"
                     onClick={goNext}
                     disabled={
                       !current.optional &&
-                      (current.type === "multi"
-                        ? !((answers[current.id] as string[])?.length > 0)
+                      (current.type === "multi" || current.type === "list"
+                        ? !(answers[current.id] as string[])?.some(
+                            (v) => v.trim().length > 0,
+                          )
                         : !answers[current.id])
                     }
                     className="cta-primary px-6 py-2.5 rounded-lg text-background font-semibold text-base disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"

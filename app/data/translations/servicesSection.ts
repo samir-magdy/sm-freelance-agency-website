@@ -8,7 +8,13 @@ interface ServiceCard {
   priceBaseId: BaseId | null;
 }
 
-export type SpecializedServiceId = "branding" | "copywriting" | "seo" | "maintenance";
+export type SpecializedServiceId =
+  | "branding"
+  | "copywriting"
+  | "seo"
+  | "maintenance"
+  | "aiChatbot"
+  | "businessEmail";
 
 interface SpecializedService {
   id: SpecializedServiceId;
@@ -19,8 +25,6 @@ interface ServicesSectionTranslations {
   heading: Localized;
   subheading: Localized;
   specializedServicesLabel: Localized;
-  estimatorLead: Localized;
-  estimatorCta: Localized;
   startsAt: Localized;
   contactCta: Localized;
   customPriceLabel: Localized;
@@ -41,25 +45,17 @@ export const servicesSectionTranslations: ServicesSectionTranslations = {
     en: "Specialized services",
     ar: "خدمات متخصصة",
   },
-  estimatorLead: {
-    en: "Want an exact cost for your project?",
-    ar: "ترغب في سعر مُفصل؟",
-  },
-  estimatorCta: {
-    en: "Request a Custom Quote",
-    ar: "احصل على عرض سعر",
-  },
   startsAt: {
     en: "Starts at",
     ar: "يبدأ من",
   },
   contactCta: {
-    en: "Get in Touch",
+    en: "Request Quote",
     ar: "طلب استشارة",
   },
   customPriceLabel: {
     en: "Custom Pricing",
-    ar: "سعر حسب المشروع",
+    ar: "تسعير مخصص",
   },
   cards: [
     {
@@ -105,16 +101,24 @@ export const servicesSectionTranslations: ServicesSectionTranslations = {
       name: { en: "Branding", ar: "الهوية البصرية" },
     },
     {
-      id: "copywriting",
-      name: { en: "Copywriting", ar: "كتابة المحتوى" },
-    },
-    {
       id: "seo",
       name: { en: "SEO Setup", ar: "إعداد SEO" },
     },
     {
+      id: "copywriting",
+      name: { en: "Copywriting", ar: "كتابة المحتوى" },
+    },
+    {
+      id: "businessEmail",
+      name: { en: "Email Setup", ar: "إعداد الإيميل" },
+    },
+    {
       id: "maintenance",
       name: { en: "Maintenance", ar: "الصيانة" },
+    },
+    {
+      id: "aiChatbot",
+      name: { en: "AI Chatbot", ar: "مساعد ذكي" },
     },
   ],
 };

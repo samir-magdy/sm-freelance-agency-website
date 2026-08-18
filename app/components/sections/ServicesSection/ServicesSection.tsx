@@ -16,6 +16,14 @@ interface ServicesSectionProps {
   region: Region;
 }
 
+// Maps a service card to the matching `goal` answer in the quote form, so
+// clicking a card's CTA can pre-answer that question instead of asking again.
+const CARD_GOAL: Record<string, string> = {
+  landing: "landing",
+  business: "business",
+  customApp: "custom",
+};
+
 function StartingPrice({
   price,
   startsAtLabel,
@@ -24,12 +32,12 @@ function StartingPrice({
   startsAtLabel: string;
 }) {
   const amountNode = (
-    <span className="text-heading font-bold text-gold tracking-tighter leading-none">
+    <span className="text-[clamp(1.6rem,2vw,2rem)] font-bold text-gold tracking-tighter leading-none">
       {price.amount}
     </span>
   );
   const symbolNode = (
-    <span className="text-base sm:text-[clamp(1rem,1.4vw,1.5rem)] font-medium text-content-muted leading-none -translate-y-1">
+    <span className="text-base sm:text-[clamp(1rem,1.25vw,1.4rem)] font-medium text-content-muted leading-none -translate-y-0.5">
       {price.symbol}
     </span>
   );
@@ -86,10 +94,9 @@ export default function ServicesSection({
               ? formatPrice(BASE_PRICES[card.priceBaseId][region], region, lang)
               : null;
             return (
-              <a
+              <div
                 key={card.id}
-                href="#contact"
-                className="max-w-4xl reveal-element group flex flex-col p-6 sm:p-8 lg:p-10 rounded-4xl border border-border-subtle bg-surface-card hover:border-white/10 hover:shadow-lg hover:shadow-gold/5 transition-all duration-500 ease-out hover:-translate-y-1 hover:-translate-x-1 rtl:hover:translate-x-1"
+                className="max-w-4xl reveal-element flex flex-col p-6 sm:p-8 sm:pb-6  rounded-4xl border border-border-subtle bg-surface-card hover:border-white/10 hover:shadow-lg hover:shadow-gold/5 transition-all duration-500 ease-out hover:-translate-y-1 hover:-translate-x-1 rtl:hover:translate-x-1"
               >
                 <div className="flex-1 mb-6">
                   <h3 className="font-bold text-subheading lg:text-heading text-content-heading leading-snug mb-2">
@@ -102,51 +109,44 @@ export default function ServicesSection({
                 </div>
 
                 <div className="mt-auto pt-4 border-t border-border-subtle/50">
-                  <div className="flex items-end justify-between gap-4">
+                  <div className="flex items-center justify-between gap-4">
                     {price ? (
                       <StartingPrice
                         price={price}
                         startsAtLabel={translations.startsAt[lang]}
                       />
                     ) : (
-                      <span className="text-xl rtl:text-lg sm:text-3xl rtl:sm:text-2xl font-bold text-gold tracking-tight leading-none pb-0.5 rtl:pb-1">
+                      <span className="text-xl rtl:text-lg sm:text-3xl rtl:sm:text-2xl font-bold text-gold tracking-tight leading-none">
                         {translations.customPriceLabel[lang]}
                       </span>
                     )}
-                    <span className="inline-flex items-center gap-2 text-base font-semibold text-content-body group-hover:text-content-heading transition-colors duration-300">
-                      {translations.contactCta[lang]}
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
+                    <HeroPrimaryCta
+                      label={translations.contactCta[lang]}
+                      goal={CARD_GOAL[card.id]}
+                      className="inline-flex items-center gap-1.5 sm:gap-3 px-4 sm:px-6 py-3 rounded-2xl border border-border-subtle bg-surface-low hover:border-border-strong text-content-heading font-semibold text-base sm:text-lg transition-all duration-300 cursor-pointer shrink-0"
+                    >
+                      <Calculator
+                        size={20}
                         aria-hidden="true"
-                        className="rotate-90"
-                      >
-                        <path
-                          d="M3.333 8h9.334M8.667 4l4 4-4 4"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
+                        className="text-gold shrink-0"
+                      />
+                      {translations.contactCta[lang]}
+                    </HeroPrimaryCta>
                   </div>
                 </div>
-              </a>
+              </div>
             );
           })}
         </div>
         <div className="reveal-element mt-12 w-full max-w-4xl flex flex-col items-center">
           <div className="flex items-center gap-4 w-full max-w-xs sm:max-w-md mb-4 sm:mb-1.5">
             <span aria-hidden className="h-px flex-1 bg-border-subtle" />
-            <span className="text-caption font-bold uppercase tracking-[0.3em] text-content-muted/90 whitespace-nowrap">
+            <span className="text-caption safari:text-base font-bold uppercase tracking-[0.3em] text-content-muted/90 whitespace-nowrap">
               {translations.specializedServicesLabel[lang]}
             </span>
             <span aria-hidden className="h-px flex-1 bg-border-subtle" />
           </div>
-          <ul className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 gap-y-10 sm:gap-y-8 gap-x-4 sm:gap-x-12 w-full max-w-sm sm:max-w-none sm:w-fit">
+          <ul className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 gap-y-10 sm:gap-y-8 gap-x-2 w-full sm:w-3/4">
             {translations.specializedServices.map((svc) => (
               <li key={svc.id} className="flex justify-center">
                 <Link
@@ -159,7 +159,7 @@ export default function ServicesSection({
                       className="size-8 sm:size-10"
                     />
                   </span>
-                  <span className="ms-2.5 inline-flex items-center gap-2.5 text-base font-medium text-content-body leading-tight transition-colors duration-300 group-hover:text-content-heading group-focus-visible:text-content-heading">
+                  <span className="ms-2.5 inline-flex items-center gap-1.5 sm:gap-2.5 text-base font-medium text-content-body leading-tight transition-colors duration-300 group-hover:text-content-heading group-focus-visible:text-content-heading">
                     {svc.name[lang]}
                     <svg
                       width="14"
@@ -182,23 +182,6 @@ export default function ServicesSection({
               </li>
             ))}
           </ul>
-        </div>
-
-        <div className="reveal-element mt-10 sm:mt-14 flex flex-col items-center gap-3">
-          <span className="text-content-muted text-base sm:text-lg font-medium">
-            {translations.estimatorLead[lang]}
-          </span>
-          <HeroPrimaryCta
-            label={translations.estimatorCta[lang]}
-            className="group inline-flex items-center gap-3 px-6 pe-6.5 py-3 rounded-2xl border border-gold/15 bg-surface-card hover:border-gold/40 text-content-heading font-semibold text-base sm:text-lg transition-all duration-300 cursor-pointer"
-          >
-            <Calculator
-              size={20}
-              aria-hidden="true"
-              className="text-gold shrink-0"
-            />
-            {translations.estimatorCta[lang]}
-          </HeroPrimaryCta>
         </div>
       </div>
     </section>

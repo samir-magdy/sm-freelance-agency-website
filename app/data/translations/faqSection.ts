@@ -24,8 +24,8 @@ const faqSection: FAQSection = {
   },
 
   browseGuides: {
-    en: "Browse Guides & Resources",
-    ar: "تصفح أدلة تصميم المواقع",
+    en: "Browse Our Guides",
+    ar: "تصفح الأدلة",
   },
 
   ctaLabel: {
@@ -34,8 +34,8 @@ const faqSection: FAQSection = {
   },
 
   cta: {
-    en: "Request a Consultation",
-    ar: "اطلب استشارة مجانية",
+    en: "Get In Touch",
+    ar: "تواصل معنا",
   },
 
   orDivider: {

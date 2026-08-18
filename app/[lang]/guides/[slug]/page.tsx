@@ -15,6 +15,7 @@ import {
   ogImage,
 } from "@/lib/urls";
 import { getRegion } from "@/lib/region";
+import HeroPrimaryCta from "@/app/components/utils/HeroPrimaryCta";
 
 function BackToGuidesLink({ lang, label }: { lang: Lang; label: string }) {
   return (
@@ -212,12 +213,10 @@ export default async function GuidePage({
                   <p className="flex-1 text-[clamp(1.05rem,3.5vw,1.8rem)] font-semibold text-content-heading leading-tight rtl:leading-loose">
                     {translations.egyptPricingNotice[lang]}
                   </p>
-                  <Link
-                    href={`/${lang}#contact`}
-                    className="cta-primary justify-center shrink-0 py-3 px-8 rounded-lg text-background text-base sm:text-xl font-medium tracking-wide whitespace-nowrap"
-                  >
-                    {translations.egyptPricingNoticeCta[lang]}
-                  </Link>
+                  <HeroPrimaryCta
+                    label={translations.egyptPricingNoticeCta[lang]}
+                    className="cta-primary justify-center shrink-0 py-3 px-8 rounded-lg text-background text-base sm:text-xl font-medium tracking-wide whitespace-nowrap cursor-pointer"
+                  />
                 </div>
               </aside>
             )}
@@ -232,13 +231,10 @@ export default async function GuidePage({
             <p className="flex-1 text-[clamp(1.2rem,4vw,2.2rem)] font-semibold text-content-heading leading-tight rtl:leading-loose">
               {translations.articleCta[lang]}
             </p>
-            <Link
-              href={`/${lang}#contact`}
-              className="cta-primary justify-center shrink-0 py-3 px-8 rounded-lg text-background text-base sm:text-xl font-medium tracking-wide whitespace-nowrap"
-            >
-              {translations.articleCtaButton[lang]}
-         
-            </Link>
+            <HeroPrimaryCta
+              label={translations.articleCtaButton[lang]}
+              className="cta-primary justify-center shrink-0 py-3 px-8 rounded-lg text-background text-base sm:text-xl font-medium tracking-wide whitespace-nowrap cursor-pointer"
+            />
           </div>
         </div>
         {relatedGuides.length > 0 && (

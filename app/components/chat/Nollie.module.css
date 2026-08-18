@@ -46,8 +46,10 @@
 }
 
 /* Wink one eye when the launcher is hovered — a small moment of delight */
-.launcher:hover .avatar .eyeL {
-  animation: wink 0.55s ease-in-out;
+@media (hover: hover) and (pointer: fine) {
+  .launcher:hover .avatar .eyeL {
+    animation: wink 0.55s ease-in-out;
+  }
 }
 
 /* Calm Nollie down on touch-primary devices: no hover means the animations

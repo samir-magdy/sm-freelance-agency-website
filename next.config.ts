@@ -11,11 +11,6 @@ const nextConfig: NextConfig = {
       { source: "/portfolio", destination: "/en#portfolio", permanent: true },
       // Redirects for updated slugs, remove when new pages have been fully indexed and old ones removed.
       {
-        source: "/portfolio/dental-clinic-site-demo",
-        destination: "/portfolio/healthcare-website-design",
-        permanent: true,
-      },
-      {
         source: "/portfolio/interior-design-site-demo",
         destination: "/portfolio/interior-design-website-design",
         permanent: true,

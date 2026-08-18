@@ -1,6 +1,22 @@
 import type { Localized } from "@/app/types";
 
-export type QuestionType = "single" | "multi" | "text";
+export type QuestionType = "single" | "multi" | "text" | "list";
+
+// Macro grouping for the two-tier step indicator: every question belongs to
+// one of these; "contact" is a synthetic final category for the contact-info
+// step, which isn't part of quoteQuestions.
+export type CategoryId = "scope" | "design" | "features" | "timeline" | "contact";
+
+export const quoteCategories: { id: CategoryId; name: Localized }[] = [
+  { id: "scope", name: { en: "Project Scope", ar: "نطاق المشروع" } },
+  { id: "design", name: { en: "Design & Content", ar: "التصميم والمحتوى" } },
+  { id: "features", name: { en: "Features", ar: "الميزات" } },
+  {
+    id: "timeline",
+    name: { en: "Timeline & Extras", ar: "الجدول الزمني والتفاصيل الإضافية" },
+  },
+  { id: "contact", name: { en: "Contact Info", ar: "بيانات التواصل" } },
+];
 
 export interface QuestionOption {
   value: string;
@@ -10,6 +26,7 @@ export interface QuestionOption {
 export interface QuoteQuestion {
   id: string;
   type: QuestionType;
+  category: CategoryId;
   question: Localized;
   helper?: Localized;
   options?: QuestionOption[];
@@ -22,7 +39,12 @@ export const quoteQuestions: QuoteQuestion[] = [
   {
     id: "goal",
     type: "single",
+    category: "scope",
     question: { en: "What's your main goal?", ar: "ما هدفك الأساسي؟" },
+    helper: {
+      en: "Helps us recommend the best tech stack and project scope for your needs.",
+      ar: "يساعدنا في تحديد التقنيات ونطاق العمل الأنسب لاحتياجاتك.",
+    },
     options: [
       {
         value: "landing",
@@ -46,35 +68,152 @@ export const quoteQuestions: QuoteQuestion[] = [
           ar: "وظائف مخصصة (حجز، لوحة عملاء، إلخ)",
         },
       },
+    ],
+  },
+  {
+    id: "customScope",
+    type: "multi",
+    category: "scope",
+    question: {
+      en: "What does your custom application need to include?",
+      ar: "ما الذي يجب أن يتضمنه تطبيقك المخصص؟",
+    },
+    helper: {
+      en: "Select everything that applies — this shapes the features and integrations we plan for.",
+      ar: "اختر كل ما ينطبق — يساعدنا ذلك في تحديد الميزات والتكاملات المطلوبة.",
+    },
+    showIf: (a) => a.goal === "custom",
+    options: [
+      {
+        value: "onlineStore",
+        label: { en: "Online store / payments", ar: "متجر إلكتروني / دفع إلكتروني" },
+      },
+      {
+        value: "booking",
+        label: { en: "Booking / scheduling", ar: "نظام حجز / مواعيد" },
+      },
+      {
+        value: "clientPortal",
+        label: { en: "Client login / portal", ar: "حساب عملاء / لوحة تحكم" },
+      },
+      {
+        value: "other",
+        label: { en: "Something else", ar: "شيء آخر" },
+      },
+    ],
+  },
+  {
+    id: "storeScale",
+    type: "single",
+    category: "scope",
+    question: {
+      en: "Roughly how many products?",
+      ar: "كم عدد المنتجات تقريباً؟",
+    },
+    helper: {
+      en: "Determines the optimal e-commerce architecture and inventory setup.",
+      ar: "يساعد في اختيار النظام الأنسب لإدارة منتجاتك ومخزونك.",
+    },
+    showIf: (a) =>
+      a.goal === "store" ||
+      (Array.isArray(a.customScope) && a.customScope.includes("onlineStore")),
+    options: [
+      { value: "small", label: { en: "Under 20", ar: "أقل من 20" } },
+      { value: "medium", label: { en: "20–100", ar: "من 20 إلى 100" } },
+      { value: "large", label: { en: "100+", ar: "أكثر من 100" } },
+    ],
+  },
+  {
+    id: "sectionCount",
+    type: "single",
+    category: "scope",
+    question: {
+      en: "How large is your page likely to be?",
+      ar: "ما الحجم المتوقع لصفحتك؟",
+    },
+    helper: {
+      en: "An estimate is perfectly fine — we'll help define the exact section structure during planning. What counts as a section? Each distinct content block a visitor would scroll through — e.g. Hero, About, Services, Testimonials, Contact. Don't worry about being exact.",
+      ar: "التقدير التقريبي يكفي — سنساعدك على تحديد هيكل الأقسام بدقة أثناء التخطيط. ما الذي يُحتسب كقسم؟ كل جزء محتوى مستقل يمر به الزائر أثناء التمرير — مثل: الترحيب، من نحن، الخدمات، آراء العملاء، اتصل بنا. لا داعي للدقة الكاملة.",
+    },
+    showIf: (a) => a.goal === "landing",
+    options: [
+      {
+        value: "small",
+        label: { en: "Small — Up to 5 sections", ar: "صغير — حتى 5 أقسام" },
+      },
+      {
+        value: "medium",
+        label: {
+          en: "Medium — 6–10 sections",
+          ar: "متوسط — من 6 إلى 10 أقسام",
+        },
+      },
+      {
+        value: "large",
+        label: { en: "Large — 11–15 sections", ar: "كبير — 11–15 قسمًا" },
+      },
       {
         value: "notSure",
-        label: { en: "Not sure yet", ar: "لست متأكداً بعد" },
+        label: {
+          en: "Not sure — I'd like help estimating",
+          ar: "لست متأكداً — أرغب بالمساعدة في التقدير",
+        },
       },
     ],
   },
   {
     id: "pageCount",
     type: "single",
+    category: "scope",
     question: {
-      en: "Roughly how many pages or sections do you need?",
-      ar: "كم عدد الصفحات أو الأقسام التي تحتاجها تقريباً؟",
+      en: "How large is your website likely to be?",
+      ar: "ما الحجم المتوقع لموقعك؟",
     },
+    helper: {
+      en: "An estimate is perfectly fine — we'll help define the exact page structure during planning. What counts as a page? Each distinct piece of content a visitor would navigate to — e.g. About, Services, individual service pages, Case Studies, Contact. Don't worry about being exact.",
+      ar: "التقدير التقريبي يكفي — سنساعدك على تحديد هيكل الصفحات بدقة أثناء التخطيط. ما الذي يُحتسب كصفحة؟ كل جزء محتوى مستقل يتنقل إليه الزائر — مثل: من نحن، الخدمات، صفحات الخدمات الفردية، دراسات الحالة، اتصل بنا. لا داعي للدقة الكاملة.",
+    },
+    showIf: (a) => a.goal === "business",
     options: [
-      { value: "under5", label: { en: "Under 5", ar: "أقل من 5" } },
-      { value: "6to10", label: { en: "6–10", ar: "من 6 إلى 10" } },
-      { value: "15plus", label: { en: "15+", ar: "أكثر من 15" } },
+      {
+        value: "small",
+        label: { en: "Small — Up to 10 pages", ar: "صغير — حتى 10 صفحات" },
+      },
+      {
+        value: "medium",
+        label: { en: "Medium — 11–30 pages", ar: "متوسط — من 11 إلى 30 صفحة" },
+      },
+      {
+        value: "large",
+        label: { en: "Large — 31–75 pages", ar: "كبير — من 31 إلى 75 صفحة" },
+      },
+      {
+        value: "veryLarge",
+        label: {
+          en: "Very large — 76–150 pages",
+          ar: "كبير جداً — من 76 إلى 150 صفحة",
+        },
+      },
       {
         value: "notSure",
-        label: { en: "Not sure yet", ar: "لست متأكداً بعد" },
+        label: {
+          en: "Not sure — I'd like help estimating",
+          ar: "لست متأكداً — أرغب بالمساعدة في التقدير",
+        },
       },
     ],
   },
   {
     id: "designComplexity",
     type: "single",
+    category: "design",
     question: {
       en: "What level of design do you have in mind?",
       ar: "ما مستوى التصميم الذي تريده؟",
+    },
+    helper: {
+      en: "Custom animations enhance engagement and branding, but require extra development time.",
+      ar: "الحركات والتفاعلات المخصصة تمنح تجربة فريدة، وتتطلب وقتاً إضافياً في التطوير.",
     },
     options: [
       { value: "simple", label: { en: "Simple and clean", ar: "بسيط وأنيق" } },
@@ -94,9 +233,14 @@ export const quoteQuestions: QuoteQuestion[] = [
   {
     id: "brandAssets",
     type: "single",
+    category: "design",
     question: {
       en: "Do you have a logo and brand assets ready?",
       ar: "هل لديك لوجو وهوية بصرية جاهزة؟",
+    },
+    helper: {
+      en: "Includes high-res logo files, color palette guidelines, and brand fonts.",
+      ar: "يشمل ذلك ملفات الشعار عالية الدقة، ألوان الهوية، وتوجيهات الخطوط.",
     },
     options: [
       { value: "have", label: { en: "Yes, I have them", ar: "نعم، لدي" } },
@@ -109,9 +253,14 @@ export const quoteQuestions: QuoteQuestion[] = [
   {
     id: "contentReady",
     type: "single",
+    category: "design",
     question: {
       en: "Is your page content (text) ready?",
       ar: "هل نصوص المحتوى جاهزة؟",
+    },
+    helper: {
+      en: "Refers to the written text copy, headlines, and details for each page.",
+      ar: "يقصد بذلك النصوص المكتوبة، العناوين، والتفاصيل لكل صفحة.",
     },
     options: [
       {
@@ -127,9 +276,14 @@ export const quoteQuestions: QuoteQuestion[] = [
   {
     id: "bilingual",
     type: "single",
+    category: "design",
     question: {
       en: "Do you need the site in both English and Arabic?",
       ar: "هل تحتاج الموقع بلغتين، إنجليزي وعربي؟",
+    },
+    helper: {
+      en: "Includes dual-language layouts with full Right-to-Left (RTL) and Left-to-Right (LTR) support.",
+      ar: "يتضمن تصميم الواجهات باللغتين مع دعم كامل للاتجاهين (RTL) و(LTR).",
     },
     options: [
       { value: "yes", label: { en: "Yes, bilingual", ar: "نعم، ثنائي اللغة" } },
@@ -142,6 +296,7 @@ export const quoteQuestions: QuoteQuestion[] = [
   {
     id: "seoDepth",
     type: "single",
+    category: "features",
     question: {
       en: "Beyond the SEO basics included by default, do you want deeper SEO work?",
       ar: "هل تريد إعداد SEO أعمق بخلاف الأساسيات المشمولة؟",
@@ -162,37 +317,16 @@ export const quoteQuestions: QuoteQuestion[] = [
     ],
   },
   {
-    id: "onlineStore",
-    type: "single",
-    question: {
-      en: "Do you need online payments / an online store?",
-      ar: "هل تحتاج دفع إلكتروني أو متجراً إلكترونياً؟",
-    },
-    options: [
-      { value: "yes", label: { en: "Yes", ar: "نعم" } },
-      { value: "no", label: { en: "No", ar: "لا" } },
-    ],
-  },
-  {
-    id: "storeScale",
-    type: "single",
-    question: {
-      en: "Roughly how many products?",
-      ar: "كم عدد المنتجات تقريباً؟",
-    },
-    showIf: (a) => a.onlineStore === "yes",
-    options: [
-      { value: "small", label: { en: "Under 20", ar: "أقل من 20" } },
-      { value: "medium", label: { en: "20–100", ar: "من 20 إلى 100" } },
-      { value: "large", label: { en: "100+", ar: "أكثر من 100" } },
-    ],
-  },
-  {
     id: "aiChatbot",
     type: "single",
+    category: "features",
     question: {
       en: "Would you like an AI chatbot on your site?",
       ar: "هل ترغب بإضافة روبوت محادثة ذكي لموقعك؟",
+    },
+    helper: {
+      en: "Answers visitor questions automatically and captures leads 24/7 based on your site content.",
+      ar: "يجيب على استفسارات الزوار تلقائياً ويجمع بيانات التواصل على مدار الساعة.",
     },
     options: [
       { value: "yes", label: { en: "Yes", ar: "نعم" } },
@@ -202,9 +336,14 @@ export const quoteQuestions: QuoteQuestion[] = [
   {
     id: "contentFrequency",
     type: "single",
+    category: "features",
     question: {
       en: "Will you need to change content frequently after launch?",
       ar: "هل ستحتاج لتغيير المحتوى بشكل متكرر بعد الإطلاق؟",
+    },
+    helper: {
+      en: "Determines whether you need an easy Content Management System (CMS) like Sanity or Strapi.",
+      ar: "يحدد ما إذا كنت بحاجة لنظام لوحة تحكم وإدارة محتوى (CMS) سهل الاستخدام.",
     },
     options: [
       { value: "often", label: { en: "Yes, often", ar: "نعم، بشكل متكرر" } },
@@ -215,9 +354,14 @@ export const quoteQuestions: QuoteQuestion[] = [
   {
     id: "timeline",
     type: "single",
+    category: "timeline",
     question: {
       en: "When would you like the site live?",
       ar: "متى تريد إطلاق الموقع؟",
+    },
+    helper: {
+      en: "Helps us plan sprint milestones and schedule production resources effectively.",
+      ar: "يساعدنا في جدولة مراحل العمل وتخصيص فريق التطوير للالتزام بجدولك.",
     },
     options: [
       {
@@ -231,6 +375,7 @@ export const quoteQuestions: QuoteQuestion[] = [
   {
     id: "maintenancePlan",
     type: "single",
+    category: "timeline",
     question: {
       en: "Interested in an ongoing maintenance plan after launch?",
       ar: "هل تهتم بخطة صيانة مستمرة بعد الإطلاق؟",
@@ -246,14 +391,40 @@ export const quoteQuestions: QuoteQuestion[] = [
     ],
   },
   {
-    id: "notes",
-    type: "text",
+    id: "referenceWebsites",
+    type: "list",
+    category: "timeline",
     optional: true,
     question: {
-      en: "Anything else you want us to know?",
+      en: "Any reference websites whose style you like?",
+      ar: "هل توجد مواقع مرجعية يعجبك تصميمها؟",
+    },
+    helper: {
+      en: "Share one or two links — it helps us understand the look and feel you're going for.",
+      ar: "شارِك رابطاً أو رابطين — يساعدنا ذلك على فهم الطابع والمظهر الذي تريده.",
+    },
+    placeholder: {
+      en: "https://stripe.com",
+      ar: "https://stripe.com",
+    },
+  },
+  {
+    id: "notes",
+    type: "text",
+    category: "timeline",
+    optional: true,
+    question: {
+      en: "Anything else?",
       ar: "أي شيء آخر تريد إخبارنا به؟",
     },
-    placeholder: { en: "Optional", ar: "اختياري" },
+    helper: {
+      en: "Specific feature requests or technical requirements you'd like us to know about.",
+      ar: "أي ميزات خاصة ترغب بها أو متطلبات فنية تريد إخبارنا بها.",
+    },
+    placeholder: {
+      en: "I also want a reservation system integrated into the website",
+      ar: "أرغب أيضًا في دمج نظام للحجوزات في الموقع الإلكتروني",
+    },
   },
 ];
 
@@ -268,6 +439,7 @@ export const quoteFormStrings = {
   ofLabel: { en: "of", ar: "من" },
   back: { en: "Back", ar: "السابق" },
   next: { en: "Next", ar: "التالي" },
+  addAnother: { en: "Add another", ar: "إضافة رابط آخر" },
   submit: { en: "Submit", ar: "إرسال الاستبيان" },
   submitting: { en: "Submitting...", ar: "جاري الإرسال..." },
   success: {

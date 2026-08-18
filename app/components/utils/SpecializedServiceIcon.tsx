@@ -1,3 +1,4 @@
+import { BotMessageSquare, Mail, type LucideIcon } from "lucide-react";
 import type { SpecializedServiceId } from "@/app/data/translations/servicesSection";
 import type { ReactNode } from "react";
 
@@ -8,7 +9,17 @@ interface Props {
   className?: string;
 }
 
-const PATHS: Record<SpecializedServiceId, ReactNode> = {
+// The hand-drawn set below predates lucide-react's icon set being pulled in
+// for this project; newer services use lucide directly rather than adding a
+// bespoke path for something the library already covers well.
+const LUCIDE_ICONS = {
+  aiChatbot: BotMessageSquare,
+  businessEmail: Mail,
+} satisfies Partial<Record<SpecializedServiceId, LucideIcon>>;
+
+type DrawnServiceId = Exclude<SpecializedServiceId, keyof typeof LUCIDE_ICONS>;
+
+const PATHS: Record<DrawnServiceId, ReactNode> = {
   branding: (
     <path
       d="M12 3 L14 10 L21 12 L14 14 L12 21 L10 14 L3 12 L10 10 Z"
@@ -54,6 +65,21 @@ export default function SpecializedServiceIcon({
   strokeWidth = 1.4,
   className,
 }: Props) {
+  const LucideIconComponent = (
+    LUCIDE_ICONS as Partial<Record<SpecializedServiceId, LucideIcon>>
+  )[id];
+  if (LucideIconComponent) {
+    return (
+      <LucideIconComponent
+        width={size}
+        height={size}
+        strokeWidth={strokeWidth}
+        aria-hidden="true"
+        className={className}
+      />
+    );
+  }
+
   return (
     <svg
       width={size}
@@ -65,7 +91,7 @@ export default function SpecializedServiceIcon({
       aria-hidden="true"
       className={className}
     >
-      {PATHS[id]}
+      {PATHS[id as DrawnServiceId]}
     </svg>
   );
 }

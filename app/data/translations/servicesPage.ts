@@ -110,13 +110,49 @@ const servicesPage: ServicesPageTranslations = {
         ar: "أطلقت موقعك وتريد أن يظل بأفضل حالاته دون أن تشغل بالك — لا صفحات معطلة، ولا تحذيرات أمنية، ولا محتوى قديم يعطّل نموك.",
       },
     },
+    {
+      id: "aiChatbot",
+      name: { en: "AI Chatbot", ar: "روبوت محادثة ذكي" },
+      tagline: {
+        en: "We add a smart assistant to your website that talks to visitors, answers their questions, and captures leads for you — day and night.",
+        ar: "نضيف مساعداً ذكياً لموقعك يتحدث مع الزوار، يجيب على أسئلتهم، ويجمع بيانات العملاء المحتملين لك — ليلاً ونهاراً.",
+      },
+      included: [
+        { en: "A chat widget trained on your business content and FAQs", ar: "روبوت محادثة مدرَّب على محتوى موقعك والأسئلة الشائعة الخاصة بشركتك" },
+        { en: "Instant answers to common visitor questions, any time of day", ar: "إجابات فورية على استفسارات الزوار الشائعة في أي وقت" },
+        { en: "Automatic lead capture so no potential customer slips away", ar: "جمع تلقائي لبيانات العملاء المحتملين حتى لا تفوتك أي فرصة" },
+        { en: "Seamless design that matches your site's look and feel", ar: "تصميم متناسق يتماشى مع هوية موقعك ومظهره" },
+      ],
+      fit: {
+        en: "Perfect if you get repetitive questions, want to capture leads outside business hours, or simply want your site to feel more responsive and modern.",
+        ar: "مثالي إذا كنت تتلقى أسئلة متكررة، أو تريد جمع بيانات العملاء خارج أوقات العمل، أو ببساطة تريد أن يبدو موقعك أكثر تفاعلاً وحداثة.",
+      },
+    },
+    {
+      id: "businessEmail",
+      name: { en: "Business Email", ar: "بريد إلكتروني احترافي" },
+      tagline: {
+        en: "We set up professional email addresses on your own domain, so you look like an established business instead of a Gmail account.",
+        ar: "نجهز عناوين بريد إلكتروني احترافية على نطاق موقعك الخاص، لتبدو كشركة راسخة بدلاً من حساب جيميل عادي.",
+      },
+      included: [
+        { en: "Addresses like you@yourbusiness.com for you and your team", ar: "عناوين بريد بصيغة you@yourbusiness.com لك ولفريقك" },
+        { en: "Full setup on Google Workspace or a comparable provider", ar: "إعداد كامل عبر Google Workspace أو مزود مماثل" },
+        { en: "Mail, calendar, and file storage synced across your devices", ar: "بريد وتقويم وتخزين ملفات متزامن على كل أجهزتك" },
+        { en: "Correct domain records so your emails land in inboxes, not spam", ar: "إعداد صحيح لسجلات النطاق حتى تصل رسائلك للبريد الوارد وليس الرسائل غير المرغوبة" },
+      ],
+      fit: {
+        en: "Perfect if you or your team are still using personal Gmail or Hotmail addresses for business. It's a small change that instantly makes every email, invoice, and proposal look more credible.",
+        ar: "مثالي إذا كنت أنت أو فريقك ما زلتم تستخدمون عناوين جيميل أو هوتميل شخصية للعمل. تغيير بسيط يمنح كل إيميل وفاتورة وعرض سعر مصداقية أكبر فوراً.",
+      },
+    },
 ],
   articleCta: {
     en: "Ready to build your website?",
     ar: "جاهز تبني موقعك؟",
   },
   articleCtaButton: {
-    en: "Get In Touch",
+    en: "Request a Quote",
     ar: "تواصل معنا",
   },
   backLinkLabel: {

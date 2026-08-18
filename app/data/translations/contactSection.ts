@@ -10,14 +10,14 @@ interface ContactSection {
 const contactSection: ContactSection = {
   heading: {
     en: "Get In Touch",
-    ar: "طلب استشارة",
+    ar: "تواصل معنا",
   },
   subheading: {
-    en: "Chat on WhatsApp, or complete our project survey for a custom quote.",
+    en: "Ask us anything on WhatsApp or complete our project survey for a custom quote.",
     ar: "راسلنا مباشرة عبر واتساب، أو ابدأ استبيان المشروع السريع.",
   },
   whatsappCta: { en: "Chat On WhatsApp", ar: "تواصل عبر الواتساب" },
-  questionnaireCta: { en: "Get a Custom Quote", ar: "ابدأ الاستبيان" },
+  questionnaireCta: { en: "Get a Custom Quote", ar: "اطلب عرض سعر" },
 };
 
 export default contactSection;

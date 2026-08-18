@@ -43,7 +43,14 @@
 section {
   scroll-margin-top: 3.5rem;
 }
-
+@media (min-width: 758px) {
+  section {
+    scroll-margin-top: 5.5rem;
+  }
+  section#portfolio {
+    scroll-margin-top: 6rem;
+  }
+}
 @media (min-width: 1280px) {
   section {
     scroll-margin-top: 4.5rem;
@@ -107,11 +114,6 @@ section {
   transition: width 0.15s ease-in-out;
 }
 
-.nav-link-underline:hover::before {
-  width: 100%;
-  border-radius: 9999px;
-}
-
 [dir="rtl"] .nav-link-underline::before {
   background: linear-gradient(
     -90deg,
@@ -132,10 +134,6 @@ section {
   transition: color 0.2s ease;
 }
 
-.html-content a:hover {
-  color: var(--color-gold-light);
-}
-
 .cta-primary {
   background: linear-gradient(
     to bottom,
@@ -145,11 +143,6 @@ section {
   transition:
     transform 0.5s ease,
     filter 0.3s ease;
-}
-
-.cta-primary:hover {
-  transform: translateY(-0.125rem);
-  filter: brightness(1.08);
 }
 
 .cta-secondary {
@@ -163,7 +156,23 @@ section {
     border-color 0.3s ease;
 }
 
+/* Hover-only effects — gated in one place so touch devices (no real
+   pointer) never get a stuck `:hover` state from a tap. */
 @media (hover: hover) and (pointer: fine) {
+  .nav-link-underline:hover::before {
+    width: 100%;
+    border-radius: 9999px;
+  }
+
+  .html-content a:hover {
+    color: var(--color-gold-light);
+  }
+
+  .cta-primary:hover {
+    transform: translateY(-0.125rem);
+    filter: brightness(1.08);
+  }
+
   .cta-secondary:hover {
     transform: translateY(-0.125rem);
     color: var(--color-content-heading);

@@ -97,6 +97,7 @@ export default function MobileMenu({
               width={50}
               height={42}
               priority
+              className="sm:size-20"
             />
           </a>
           <button
@@ -157,7 +158,7 @@ export default function MobileMenu({
         }}
       >
         <ul
-          className="flex flex-col items-center gap-8 font-semibold text-content-heading text-3xl tracking-wide"
+          className="flex flex-col items-center gap-8 font-semibold text-content-heading text-3xl sm:text-5xl sm:gap-12 tracking-wide"
           onClick={(e) => e.stopPropagation()}
         >
           {navItems.map((item, i) => {
@@ -186,7 +187,7 @@ export default function MobileMenu({
             );
           })}
           <li
-            className="pt-4 [&_svg]:block [&_a]:text-[1.25rem]"
+            className="pt-4 [&_svg]:block [&_a]:text-[1.25rem] [&_a]:sm:text-2xl"
             style={itemStyle(navItems.length)}
           >
             <LanguageToggle

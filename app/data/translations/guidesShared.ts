@@ -36,8 +36,8 @@ const guidesTranslations: Record<
     ar: "جاهز تبني موقعك؟",
   },
   articleCtaButton: {
-    en: "Get In Touch",
-    ar: "تواصل معنا",
+    en: "Get Started",
+    ar: "ابدأ مشروعك",
   },
   relatedHeading: { en: "Related guides:", ar: "أدلة ذات صلة:" },
   egyptPricingNotice: {
@@ -45,7 +45,7 @@ const guidesTranslations: Record<
     ar: "خارج مصر؟ احصل على عرض سعر بعملتك المحلية.",
   },
   egyptPricingNoticeCta: {
-    en: "Request a consultation",
+    en: "Request a Consultation",
     ar: "اطلب استشارة",
   },
 };

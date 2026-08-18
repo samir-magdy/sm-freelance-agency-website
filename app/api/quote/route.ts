@@ -4,7 +4,8 @@ import { NextResponse, type NextRequest } from "next/server";
 import { redis } from "@/lib/redis";
 import { SITE_NAME } from "@/app/constants";
 import { isLang } from "@/app/types";
-import { formatAnswers } from "./formatAnswers";
+import { formatAnswers, isValidAnswers } from "./formatAnswers";
+import { buildQuoteEmailHtml } from "./emailTemplate";
 
 export const runtime = "edge";
 
@@ -18,7 +19,14 @@ type ContactMethod = "whatsapp" | "phone-call" | "email";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const answers: Record<string, string | string[]> = body?.answers ?? {};
+    const rawAnswers = body?.answers ?? {};
+    if (!isValidAnswers(rawAnswers)) {
+      return NextResponse.json(
+        { error: "Invalid answers format" },
+        { status: 400 },
+      );
+    }
+    const answers = rawAnswers;
     const contact: {
       name?: string;
       method?: ContactMethod | "";
@@ -82,6 +90,16 @@ export async function POST(request: NextRequest) {
       ]
         .filter(Boolean)
         .join("\n"),
+      html: buildQuoteEmailHtml(
+        {
+          name: contact.name,
+          method: contact.method,
+          phone: contact.phone,
+          email: contact.email,
+        },
+        answers,
+        lang,
+      ),
     });
 
     if (data.error) {
