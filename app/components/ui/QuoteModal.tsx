@@ -205,7 +205,7 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
           flex-col overflow-hidden rounded-2xl border-2 border-border-subtle
           bg-surface-card shadow-2xl shadow-black/50"
       >
-        <div className="flex justify-end px-3 pt-3 shrink-0 mb-1 xl:mb-14">
+        <div className="flex justify-end px-3 pt-3 shrink-0 mb-1 xl:mb-4">
           <button
             type="button"
             onClick={close}
