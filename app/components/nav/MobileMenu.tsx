@@ -97,7 +97,7 @@ export default function MobileMenu({
               width={50}
               height={42}
               priority
-              className="sm:size-20"
+              className="sm:size-19"
             />
           </a>
           <button
@@ -108,15 +108,15 @@ export default function MobileMenu({
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
           >
-            <span className="w-8 flex flex-col gap-1.5">
+            <span className="w-8 sm:w-14 flex flex-col gap-1.5 sm:gap-2">
               <span
-                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}
+                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "rotate-45 translate-y-2 sm:translate-y-2.5" : ""}`}
               />
               <span
                 className={`block h-0.5 bg-content-heading transition-all duration-500 ${isMenuOpen ? "opacity-0 scale-0" : ""}`}
               />
               <span
-                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+                className={`block h-0.5 bg-content-heading transition-transform duration-500 ${isMenuOpen ? "-rotate-45 -translate-y-2 sm:-translate-y-2.5" : ""}`}
               />
             </span>
           </button>
@@ -158,7 +158,7 @@ export default function MobileMenu({
         }}
       >
         <ul
-          className="flex flex-col items-center gap-8 font-semibold text-content-heading text-3xl sm:text-5xl sm:gap-12 tracking-wide"
+          className="flex flex-col items-center gap-8 font-semibold text-content-heading text-3xl sm:text-4xl sm:gap-12 tracking-wide"
           onClick={(e) => e.stopPropagation()}
         >
           {navItems.map((item, i) => {

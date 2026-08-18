@@ -5,6 +5,17 @@ interface ContactSection {
   subheading: Localized;
   whatsappCta: Localized;
   questionnaireCta: Localized;
+  formHeading: Localized;
+  namePlaceholder: Localized;
+  emailPlaceholder: Localized;
+  messagePlaceholder: Localized;
+  nameRequired: Localized;
+  emailInvalid: Localized;
+  messageRequired: Localized;
+  submitCta: Localized;
+  sendingCta: Localized;
+  successBody: Localized;
+  successWhatsapp: Localized;
 }
 
 const contactSection: ContactSection = {
@@ -12,12 +23,35 @@ const contactSection: ContactSection = {
     en: "Get In Touch",
     ar: "تواصل معنا",
   },
-  subheading: {
-    en: "Ask us anything on WhatsApp or complete our project survey for a custom quote.",
-    ar: "راسلنا مباشرة عبر واتساب، أو ابدأ استبيان المشروع السريع.",
-  },
-  whatsappCta: { en: "Chat On WhatsApp", ar: "تواصل عبر الواتساب" },
+ subheading: {
+  en: "Chat on WhatsApp for general inquiries or take our survey for a custom quote.",
+  ar: "تواصل معنا عبر واتساب للأسئلة العامة، أو أكمل الاستبيان للحصول على عرض سعر.",
+},
+  whatsappCta: { en: "WhatsApp", ar: "تواصل عبر الواتساب" },
   questionnaireCta: { en: "Get a Custom Quote", ar: "اطلب عرض سعر" },
+  formHeading: { en: "Or send us a message", ar: "أو أرسل لنا رسالة" },
+  namePlaceholder: { en: "Your name", ar: "اسمك" },
+  emailPlaceholder: { en: "Your email", ar: "بريدك الإلكتروني" },
+  messagePlaceholder: { en: "How can we help?", ar: "كيف يمكننا مساعدتك؟" },
+  nameRequired: { en: "Please enter your name", ar: "من فضلك أدخل اسمك" },
+  emailInvalid: {
+    en: "Please enter a valid email",
+    ar: "من فضلك أدخل بريدًا إلكترونيًا صحيحًا",
+  },
+  messageRequired: {
+    en: "Please enter a message",
+    ar: "من فضلك اكتب رسالتك",
+  },
+  submitCta: { en: "Send Message", ar: "إرسال الرسالة" },
+  sendingCta: { en: "Sending…", ar: "جارٍ الإرسال…" },
+  successBody: {
+    en: "Thanks for reaching out — we'll get back to you soon.",
+    ar: "شكراً لتواصلك معنا، سنرد عليك قريباً.",
+  },
+  successWhatsapp: {
+    en: "Need a faster response?",
+    ar: "بحاجة لرد أسرع؟",
+  },
 };
 
 export default contactSection;

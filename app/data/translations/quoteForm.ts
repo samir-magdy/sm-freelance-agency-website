@@ -5,7 +5,12 @@ export type QuestionType = "single" | "multi" | "text" | "list";
 // Macro grouping for the two-tier step indicator: every question belongs to
 // one of these; "contact" is a synthetic final category for the contact-info
 // step, which isn't part of quoteQuestions.
-export type CategoryId = "scope" | "design" | "features" | "timeline" | "contact";
+export type CategoryId =
+  | "scope"
+  | "design"
+  | "features"
+  | "timeline"
+  | "contact";
 
 export const quoteCategories: { id: CategoryId; name: Localized }[] = [
   { id: "scope", name: { en: "Project Scope", ar: "نطاق المشروع" } },
@@ -42,20 +47,20 @@ export const quoteQuestions: QuoteQuestion[] = [
     category: "scope",
     question: { en: "What's your main goal?", ar: "ما هدفك الأساسي؟" },
     helper: {
-      en: "Helps us recommend the best tech stack and project scope for your needs.",
-      ar: "يساعدنا في تحديد التقنيات ونطاق العمل الأنسب لاحتياجاتك.",
+      en: "Helps us suggest the best type of project for you",
+      ar: "يساعدنا في اقتراح نوع المشروع الأنسب لك",
     },
     options: [
       {
         value: "landing",
         label: {
-          en: "Drive a specific action (call, form)",
-          ar: "دفع الزائر لإجراء واحد (واتساب، اتصال، نموذج)",
+          en: "Capture direct leads",
+          ar: "دفع الزائر لإجراء محدد (واتساب، تعبئة نموذج)",
         },
       },
       {
         value: "business",
-        label: { en: "Showcase the full business", ar: "عرض الشركة بشكل كامل" },
+        label: { en: "Build brand trust", ar: "عرض الشركة وخدماتها بشكل كامل" },
       },
       {
         value: "store",
@@ -64,8 +69,8 @@ export const quoteQuestions: QuoteQuestion[] = [
       {
         value: "custom",
         label: {
-          en: "Custom application",
-          ar: "وظائف مخصصة (حجز، لوحة عملاء، إلخ)",
+          en: "Build a custom web app",
+          ar: "بناء تطبيق ويب مخصص",
         },
       },
     ],
@@ -75,18 +80,21 @@ export const quoteQuestions: QuoteQuestion[] = [
     type: "multi",
     category: "scope",
     question: {
-      en: "What does your custom application need to include?",
-      ar: "ما الذي يجب أن يتضمنه تطبيقك المخصص؟",
+      en: "What does your custom app need to include?",
+      ar: "ما الذي يتضمنه تطبيقك المخصص؟",
     },
     helper: {
-      en: "Select everything that applies — this shapes the features and integrations we plan for.",
-      ar: "اختر كل ما ينطبق — يساعدنا ذلك في تحديد الميزات والتكاملات المطلوبة.",
+      en: "Select everything that applies",
+      ar: "اختر كل ما ينطبق.",
     },
     showIf: (a) => a.goal === "custom",
     options: [
       {
         value: "onlineStore",
-        label: { en: "Online store / payments", ar: "متجر إلكتروني / دفع إلكتروني" },
+        label: {
+          en: "Online store / payments",
+          ar: "متجر إلكتروني / دفع إلكتروني",
+        },
       },
       {
         value: "booking",
@@ -110,17 +118,13 @@ export const quoteQuestions: QuoteQuestion[] = [
       en: "Roughly how many products?",
       ar: "كم عدد المنتجات تقريباً؟",
     },
-    helper: {
-      en: "Determines the optimal e-commerce architecture and inventory setup.",
-      ar: "يساعد في اختيار النظام الأنسب لإدارة منتجاتك ومخزونك.",
-    },
     showIf: (a) =>
       a.goal === "store" ||
       (Array.isArray(a.customScope) && a.customScope.includes("onlineStore")),
     options: [
       { value: "small", label: { en: "Under 20", ar: "أقل من 20" } },
-      { value: "medium", label: { en: "20–100", ar: "من 20 إلى 100" } },
-      { value: "large", label: { en: "100+", ar: "أكثر من 100" } },
+      { value: "medium", label: { en: "20 to 100", ar: "من 20 إلى 100" } },
+      { value: "large", label: { en: "More than 100", ar: "أكثر من 100" } },
     ],
   },
   {
@@ -128,35 +132,35 @@ export const quoteQuestions: QuoteQuestion[] = [
     type: "single",
     category: "scope",
     question: {
-      en: "How large is your page likely to be?",
+      en: "How many sections will you need on your page?",
       ar: "ما الحجم المتوقع لصفحتك؟",
     },
     helper: {
-      en: "An estimate is perfectly fine — we'll help define the exact section structure during planning. What counts as a section? Each distinct content block a visitor would scroll through — e.g. Hero, About, Services, Testimonials, Contact. Don't worry about being exact.",
-      ar: "التقدير التقريبي يكفي — سنساعدك على تحديد هيكل الأقسام بدقة أثناء التخطيط. ما الذي يُحتسب كقسم؟ كل جزء محتوى مستقل يمر به الزائر أثناء التمرير — مثل: الترحيب، من نحن، الخدمات، آراء العملاء، اتصل بنا. لا داعي للدقة الكاملة.",
+      en: "A section is each distinct content block a visitor would scroll through — e.g. About, Services, Contact.",
+      ar: "القسم هو كل جزء محتوى مستقل يمر به الزائر أثناء التمرير — مثل: من نحن، الخدمات، آراء العملاء، اتصل بنا.",
     },
     showIf: (a) => a.goal === "landing",
     options: [
       {
         value: "small",
-        label: { en: "Small — Up to 5 sections", ar: "صغير — حتى 5 أقسام" },
+        label: { en: "Up to 5 sections", ar: "حتى 5 أقسام" },
       },
       {
         value: "medium",
         label: {
-          en: "Medium — 6–10 sections",
-          ar: "متوسط — من 6 إلى 10 أقسام",
+          en: "6–10 sections",
+          ar: "من 6 إلى 10 أقسام",
         },
       },
       {
         value: "large",
-        label: { en: "Large — 11–15 sections", ar: "كبير — 11–15 قسمًا" },
+        label: { en: "11–15 sections", ar: "11–15 قسمًا" },
       },
       {
         value: "notSure",
         label: {
           en: "Not sure — I'd like help estimating",
-          ar: "لست متأكداً — أرغب بالمساعدة في التقدير",
+          ar: "لست متأكد",
         },
       },
     ],
@@ -170,29 +174,22 @@ export const quoteQuestions: QuoteQuestion[] = [
       ar: "ما الحجم المتوقع لموقعك؟",
     },
     helper: {
-      en: "An estimate is perfectly fine — we'll help define the exact page structure during planning. What counts as a page? Each distinct piece of content a visitor would navigate to — e.g. About, Services, individual service pages, Case Studies, Contact. Don't worry about being exact.",
-      ar: "التقدير التقريبي يكفي — سنساعدك على تحديد هيكل الصفحات بدقة أثناء التخطيط. ما الذي يُحتسب كصفحة؟ كل جزء محتوى مستقل يتنقل إليه الزائر — مثل: من نحن، الخدمات، صفحات الخدمات الفردية، دراسات الحالة، اتصل بنا. لا داعي للدقة الكاملة.",
+      en: "A page is each distinct piece of content a visitor would navigate to — e.g. About, Services, Portfolio, Contact.",
+      ar: "الصفحة هي كل جزء محتوى مستقل يتنقل إليه الزائر — مثل: من نحن، الخدمات، اتصل بنا.",
     },
     showIf: (a) => a.goal === "business",
     options: [
       {
         value: "small",
-        label: { en: "Small — Up to 10 pages", ar: "صغير — حتى 10 صفحات" },
+        label: { en: "Up to 10 pages", ar: "حتى 10 صفحات" },
       },
       {
         value: "medium",
-        label: { en: "Medium — 11–30 pages", ar: "متوسط — من 11 إلى 30 صفحة" },
+        label: { en: "11 to 30 pages", ar: "من 11 إلى 30 صفحة" },
       },
       {
         value: "large",
-        label: { en: "Large — 31–75 pages", ar: "كبير — من 31 إلى 75 صفحة" },
-      },
-      {
-        value: "veryLarge",
-        label: {
-          en: "Very large — 76–150 pages",
-          ar: "كبير جداً — من 76 إلى 150 صفحة",
-        },
+        label: { en: "'More than 30 pages", ar: "أكثر من 30 صفحة" },
       },
       {
         value: "notSure",
@@ -224,10 +221,6 @@ export const quoteQuestions: QuoteQuestion[] = [
           ar: "حركات وتفاعلات مخصصة",
         },
       },
-      {
-        value: "notSure",
-        label: { en: "Not sure — surprise me", ar: "لست متأكداً — فاجئني" },
-      },
     ],
   },
   {
@@ -235,18 +228,27 @@ export const quoteQuestions: QuoteQuestion[] = [
     type: "single",
     category: "design",
     question: {
-      en: "Do you have a logo and brand assets ready?",
-      ar: "هل لديك لوجو وهوية بصرية جاهزة؟",
+      en: "Will you provide your brand assets?",
+      ar: "هل ستوفر الملفات الخاصة بهويتك التجارية؟",
     },
     helper: {
-      en: "Includes high-res logo files, color palette guidelines, and brand fonts.",
-      ar: "يشمل ذلك ملفات الشعار عالية الدقة، ألوان الهوية، وتوجيهات الخطوط.",
+      en: "Includes logo, color palette, and typography.",
+      ar: "يشمل ذلك الشعا ، ألوان الهوية، والخطوط.",
     },
     options: [
-      { value: "have", label: { en: "Yes, I have them", ar: "نعم، لدي" } },
+      {
+        value: "have",
+        label: {
+          en: "Yes, I'll provide them",
+          ar: "نعم، سأقوم بتوفيرها",
+        },
+      },
       {
         value: "need",
-        label: { en: "No, I need those designed", ar: "لا، أحتاج تصميمها" },
+        label: {
+          en: "No, I need them designed",
+          ar: "لا، أحتاج تصميمها",
+        },
       },
     ],
   },
@@ -255,12 +257,12 @@ export const quoteQuestions: QuoteQuestion[] = [
     type: "single",
     category: "design",
     question: {
-      en: "Is your page content (text) ready?",
-      ar: "هل نصوص المحتوى جاهزة؟",
+      en: "Will you provide the page content?",
+      ar: "هل ستوفر نصوص المحتوى؟",
     },
     helper: {
-      en: "Refers to the written text copy, headlines, and details for each page.",
-      ar: "يقصد بذلك النصوص المكتوبة، العناوين، والتفاصيل لكل صفحة.",
+      en: "Refers to the written text copy, headlines, and details for each page or section.",
+      ar: "يقصد بذلك النصوص المكتوبة، العناوين، والتفاصيل لكل صفحة أو قسم.",
     },
     options: [
       {
@@ -278,12 +280,8 @@ export const quoteQuestions: QuoteQuestion[] = [
     type: "single",
     category: "design",
     question: {
-      en: "Do you need the site in both English and Arabic?",
-      ar: "هل تحتاج الموقع بلغتين، إنجليزي وعربي؟",
-    },
-    helper: {
-      en: "Includes dual-language layouts with full Right-to-Left (RTL) and Left-to-Right (LTR) support.",
-      ar: "يتضمن تصميم الواجهات باللغتين مع دعم كامل للاتجاهين (RTL) و(LTR).",
+      en: "Do you need bilingual functionality?",
+      ar: "هل تحتاج الموقع بلغتين؟",
     },
     options: [
       { value: "yes", label: { en: "Yes, bilingual", ar: "نعم، ثنائي اللغة" } },
@@ -298,12 +296,12 @@ export const quoteQuestions: QuoteQuestion[] = [
     type: "single",
     category: "features",
     question: {
-      en: "Beyond the SEO basics included by default, do you want deeper SEO work?",
-      ar: "هل تريد إعداد SEO أعمق بخلاف الأساسيات المشمولة؟",
+      en: "Do you require advanced SEO setup?",
+      ar: "هل تحتاج إلى إعداد متقدم لتحسين محركات البحث (SEO)؟",
     },
     helper: {
-      en: "SEO (search engine optimization) helps your site rank higher on Google so more people find you.",
-      ar: "تحسين محركات البحث (SEO) يساعد موقعك على الظهور في مراتب أعلى على جوجل ليجدك عدد أكبر من الناس.",
+      en: "SEO (search engine optimization) is the process of optimizing your site so it ranks higher on Google.",
+      ar: "تحسين محركات البحث (SEO) هو عملية تهيئة موقعك ليظهر في مراتب أعلى على جوجل.",
     },
     options: [
       {
@@ -322,10 +320,10 @@ export const quoteQuestions: QuoteQuestion[] = [
     category: "features",
     question: {
       en: "Would you like an AI chatbot on your site?",
-      ar: "هل ترغب بإضافة روبوت محادثة ذكي لموقعك؟",
+      ar: "هل ترغب بإضافة تشات بوت ذكي لموقعك؟",
     },
     helper: {
-      en: "Answers visitor questions automatically and captures leads 24/7 based on your site content.",
+      en: "An AI chatbot that provides 24/7 customer support.",
       ar: "يجيب على استفسارات الزوار تلقائياً ويجمع بيانات التواصل على مدار الساعة.",
     },
     options: [
@@ -338,17 +336,24 @@ export const quoteQuestions: QuoteQuestion[] = [
     type: "single",
     category: "features",
     question: {
-      en: "Will you need to change content frequently after launch?",
-      ar: "هل ستحتاج لتغيير المحتوى بشكل متكرر بعد الإطلاق؟",
+      en: "How often will you need to change content once your website is live?",
+      ar: "هل ستحتاج لتغيير المحتوى بشكل متكرر بعد استلام الموقع؟",
     },
     helper: {
-      en: "Determines whether you need an easy Content Management System (CMS) like Sanity or Strapi.",
-      ar: "يحدد ما إذا كنت بحاجة لنظام لوحة تحكم وإدارة محتوى (CMS) سهل الاستخدام.",
+      en: "Determines whether you need an admin dashboard (CMS) to modify your content.",
+      ar: "يحدد إذا كنت بحاجة لنظام لوحة تحكم وإدارة محتوى.",
     },
+    showIf: (a) => !(a.goal === "custom" || a.goal === "store"),
     options: [
-      { value: "often", label: { en: "Yes, often", ar: "نعم، بشكل متكرر" } },
-      { value: "occasionally", label: { en: "Occasionally", ar: "أحياناً" } },
-      { value: "rarely", label: { en: "Rarely", ar: "نادراً" } },
+      {
+        value: "often",
+        label: { en: "Yes, a few times a week.", ar: "نعم، بشكل متكرر" },
+      },
+      {
+        value: "occasionally",
+        label: { en: "Occasionally, a couple times a month.", ar: "أحياناً" },
+      },
+      { value: "rarely", label: { en: "Rarely.", ar: "نادراً" } },
     ],
   },
   {
@@ -356,20 +361,35 @@ export const quoteQuestions: QuoteQuestion[] = [
     type: "single",
     category: "timeline",
     question: {
-      en: "When would you like the site live?",
+      en: "How soon do you need the website live?",
       ar: "متى تريد إطلاق الموقع؟",
     },
     helper: {
-      en: "Helps us plan sprint milestones and schedule production resources effectively.",
-      ar: "يساعدنا في جدولة مراحل العمل وتخصيص فريق التطوير للالتزام بجدولك.",
+      en: "Helps us allocate time and resources effectively.",
+      ar: "يساعدنا في تخصيص الموارد والوقت بشكل فعال.",
     },
     options: [
       {
         value: "asap",
-        label: { en: "As soon as possible", ar: "في أقرب وقت" },
+        label: {
+          en: "As soon as possible",
+          ar: "في أقرب وقت ممكن",
+        },
       },
-      { value: "month", label: { en: "Within a month", ar: "خلال شهر" } },
-      { value: "flexible", label: { en: "Flexible", ar: "مرن" } },
+      {
+        value: "month",
+        label: {
+          en: "Within a month",
+          ar: "خلال شهر",
+        },
+      },
+      {
+        value: "flexible",
+        label: {
+          en: "Flexible",
+          ar: "موعد مرن",
+        },
+      },
     ],
   },
   {
@@ -377,17 +397,16 @@ export const quoteQuestions: QuoteQuestion[] = [
     type: "single",
     category: "timeline",
     question: {
-      en: "Interested in an ongoing maintenance plan after launch?",
-      ar: "هل تهتم بخطة صيانة مستمرة بعد الإطلاق؟",
+      en: "Do you need ongoing maintenance after launch?",
+      ar: "هل تحتاج إلى صيانة مستمرة بعد الإطلاق؟",
     },
     helper: {
-      en: "Up to 3 free content changes, security audits, and updates.",
-      ar: "حتى 3 تعديلات محتوى مجانية، فحوصات أمان، وتحديثات.",
+      en: "Includes 5 monthly content updates, weekly security audits, updates, and ongoing SEO.",
+      ar: "تتضمن 5 تعديلات محتوى شهرياً، فحوصات أمان أسبوعية، تحديثات، وتحسينات SEO مستمرة.",
     },
     options: [
       { value: "yes", label: { en: "Yes", ar: "نعم" } },
       { value: "no", label: { en: "No", ar: "لا" } },
-      { value: "tellMeMore", label: { en: "Tell me more", ar: "أخبرني أكثر" } },
     ],
   },
   {
@@ -400,12 +419,12 @@ export const quoteQuestions: QuoteQuestion[] = [
       ar: "هل توجد مواقع مرجعية يعجبك تصميمها؟",
     },
     helper: {
-      en: "Share one or two links — it helps us understand the look and feel you're going for.",
-      ar: "شارِك رابطاً أو رابطين — يساعدنا ذلك على فهم الطابع والمظهر الذي تريده.",
+      en: "Share a few links, it helps us understand the look and feel you're going for.",
+      ar: "شارِك بعض الروابط، يساعدنا ذلك على فهم الطابع والمظهر الذي تريده.",
     },
     placeholder: {
-      en: "https://stripe.com",
-      ar: "https://stripe.com",
+      en: "referencesite.com",
+      ar: "referencesite.com",
     },
   },
   {
@@ -414,7 +433,7 @@ export const quoteQuestions: QuoteQuestion[] = [
     category: "timeline",
     optional: true,
     question: {
-      en: "Anything else?",
+      en: "Anything else we should know?",
       ar: "أي شيء آخر تريد إخبارنا به؟",
     },
     helper: {
@@ -443,8 +462,8 @@ export const quoteFormStrings = {
   submit: { en: "Submit", ar: "إرسال الاستبيان" },
   submitting: { en: "Submitting...", ar: "جاري الإرسال..." },
   success: {
-    en: "Thanks — we'll review your answers and get back to you within 24 hours.",
-    ar: "شكراً — سنراجع إجاباتك ونتواصل معك خلال 24 ساعة.",
+    en: "Thank you, we'll review your details and get back to you as soon as possible.",
+    ar: "شكراً، سنراجع بياناتك ونتواصل معك في أقرب وقت ممكن.",
   },
   error: {
     en: "Something went wrong. Please try again.",
@@ -455,8 +474,8 @@ export const quoteFormStrings = {
     ar: "يرجى الانتظار بضع دقائق قبل الإرسال مرة أخرى.",
   },
   contactHeading: {
-    en: "Almost done — how should we reach you?",
-    ar: "على وشك الانتهاء — كيف نتواصل معك؟",
+    en: "how should we reach you?",
+    ar: "كيف يمكننا التواصل معك؟",
   },
   name: { en: "Name", ar: "الاسم" },
   namePlaceholder: { en: "Your Name", ar: "الاسم" },
@@ -467,4 +486,12 @@ export const quoteFormStrings = {
   phone: { en: "Mobile Number", ar: "رقم الموبايل" },
   phonePlaceholder: { en: "01XXXXXXXXX", ar: "01XXXXXXXXX" },
   emailPlaceholder: { en: "example@gmail.com", ar: "example@gmail.com" },
+  phoneInvalid: {
+    en: "Please enter a valid phone number.",
+    ar: "يرجى إدخال رقم موبايل صحيح.",
+  },
+  emailInvalid: {
+    en: "Please enter a valid email address.",
+    ar: "يرجى إدخال بريد إلكتروني صحيح.",
+  },
 } satisfies Record<string, Localized>;

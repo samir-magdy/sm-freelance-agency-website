@@ -51,7 +51,7 @@ export const servicesSectionTranslations: ServicesSectionTranslations = {
   },
   contactCta: {
     en: "Request Quote",
-    ar: "طلب استشارة",
+    ar: "عرض سعر",
   },
   customPriceLabel: {
     en: "Custom Pricing",

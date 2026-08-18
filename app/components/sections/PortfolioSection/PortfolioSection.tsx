@@ -25,7 +25,7 @@ function NavArrow({ direction, disabled, onClick }: NavArrowProps) {
       onClick={onClick}
       disabled={disabled}
       aria-label={direction === "prev" ? "Previous project" : "Next project"}
-      className={`hidden group sm:flex items-center justify-center w-12 h-12 rounded-full shrink-0 p-0 transition-all duration-300 ease-out border ${
+      className={`hidden group lg:flex items-center justify-center w-12 h-12 rounded-full shrink-0 p-0 transition-all duration-300 ease-out border ${
         disabled
           ? "bg-white/3 border-white/6 text-content-heading/30 cursor-not-allowed"
           : "bg-white/10 border-white/12 text-content-heading cursor-pointer hover:border-white/20"
@@ -300,7 +300,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
 
             <div
               id="mobile-mockup"
-              className="aspect-11/19.5 w-60 sm:w-80 md:w-90 lg:w-68 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="aspect-11/19.5 w-60 sm:w-92 lg:w-60 xl:w-68 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               <div className="absolute left-[-2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
               <div className="absolute left-[-2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -351,7 +351,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
 
           <div
             dir="ltr"
-            className="flex items-center gap-1.5 mt-0.5 mb-0.5"
+            className="flex items-center gap-1.5 my-0.5 sm:my-2"
             role="group"
             aria-label="Project slides"
           >
@@ -364,19 +364,19 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
                 onClick={() => scrollToProject(i)}
                 className={`rounded-full transition-all duration-300 ${
                   i === active
-                    ? "w-5 h-2 bg-gold/85"
-                    : "w-2 h-2 bg-white/30 hover:bg-white/60"
+                    ? "w-5 h-2 sm:w-5.5 sm:h-2.5 bg-gold/85"
+                    : "w-2 h-2 sm:w-2.5 sm:h-2.5 bg-white/30 hover:bg-white/60"
                 }`}
               />
             ))}
           </div>
 
-          <div className="flex items-center gap-3 lg:hidden text-[clamp(0.6rem,4vw,1.4rem)] tracking-wide whitespace-nowrap">
+          <div className="flex items-center gap-3 lg:hidden text-[clamp(0.6rem,2.5vw,2.5rem)] tracking-wide whitespace-nowrap">
             <a
               href={ctaHref}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${styles.mobileButtons} w-full justify-center inline-flex items-center gap-2 py-2.5 px-5 ps-7.5 rounded-xl border border-border-strong text-content-body`}
+              className={`cta-primary w-full justify-center inline-flex items-center gap-2 py-2.5 px-5 ps-7.5 rounded-xl text-background`}
               aria-label={`${ctaLabel} – ${pd.title[lang]}`}
             >
               {ctaLabel}

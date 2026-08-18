@@ -11,6 +11,7 @@ import {
 } from "@/app/data/translations/quoteForm";
 import { CHAT_CLOSE_EVENT } from "@/app/components/chat/ChatWidget";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { isValidEmail, isValidPhone } from "@/lib/contactValidation";
 
 export const QUOTE_OPEN_EVENT = "quote:open";
 
@@ -39,7 +40,7 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
   const [stepIndex, setStepIndex] = useState(0);
   const [contact, setContact] = useState(EMPTY_CONTACT);
   const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
+    "idle" | "loading" | "success" | "error" | "rateLimit"
   >("idle");
 
   const searchParams = useSearchParams();
@@ -153,6 +154,11 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
     setStepIndex((i) => Math.max(i - 1, 0));
   }
 
+  const phoneInvalid =
+    contact.phone.trim().length > 0 && !isValidPhone(contact.phone.trim());
+  const emailInvalid =
+    contact.email.trim().length > 0 && !isValidEmail(contact.email.trim());
+
   async function handleSubmit() {
     setStatus("loading");
     try {
@@ -161,15 +167,13 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ answers, contact, lang }),
       });
-      if (!res.ok)
-        throw new Error(res.status === 429 ? "rate_limit" : "server_error");
+      if (!res.ok) {
+        setStatus(res.status === 429 ? "rateLimit" : "error");
+        return;
+      }
       setStatus("success");
-    } catch (err) {
-      setStatus(
-        err instanceof Error && err.message === "rate_limit"
-          ? "error"
-          : "error",
-      );
+    } catch {
+      setStatus("error");
     }
   }
 
@@ -197,18 +201,18 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
 
       {/* Panel — full-screen sheet on mobile, centered card from sm: up */}
       <div
-        className="relative z-10 flex h-[82dvh] md:h-[85dvh] w-full sm:w-4/5 md:w-1/2
+        className="relative z-10 flex h-[82dvh] w-full sm:w-[80%]
           flex-col overflow-hidden rounded-2xl border-2 border-border-subtle
           bg-surface-card shadow-2xl shadow-black/50"
       >
-        <div className="flex justify-end px-3 pt-3 shrink-0">
+        <div className="flex justify-end px-3 pt-3 shrink-0 mb-1 xl:mb-14">
           <button
             type="button"
             onClick={close}
             aria-label={t.close[lang]}
             className="cursor-pointer rounded-lg p-1.5 text-content-muted hover:text-content-heading transition-colors"
           >
-            <X className="size-5" aria-hidden />
+            <X className="size-5 xl:size-10" aria-hidden />
           </button>
         </div>
 
@@ -230,11 +234,11 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
           ) : (
             <>
               <div className="mb-4">
-                <div className="flex items-center justify-between gap-3 mb-2">
-                  <p className="text-[clamp(0.8rem,0.72rem+0.35vw,0.9375rem)] font-semibold text-gold uppercase tracking-wide">
+                <div className="flex items-center justify-between gap-3 mb-2 sm:mb-3">
+                  <p className="text-[clamp(1.1rem,1vw,2rem)] xl:text-subheading font-bold text-gold uppercase tracking-wide">
                     {activeCategory.name[lang]}
                   </p>
-                  <p className="text-[clamp(0.75rem,0.7rem+0.2vw,0.8125rem)] text-content-muted shrink-0">
+                  <p className="text-[clamp(1.25rem,1vw,2rem)] text-content-muted shrink-0">
                     {t.stepLabel[lang]} {macroIndex} {t.ofLabel[lang]}{" "}
                     {macroTotal}
                   </p>
@@ -265,11 +269,11 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
 
               {!isContactStep && current && (
                 <div>
-                  <p className="text-heading font-bold safari:my-6 text-content-heading mb-2 leading-snug">
+                  <p className="text-heading font-bold my-1 sm:my-2 text-content-heading leading-snug">
                     {current.question[lang]}
                   </p>
                   {current.helper && (
-                    <p className="text-content-muted text-[clamp(0.875rem,0.8rem+0.3vw,1rem)] mb-4">
+                    <p className="text-content-muted text-[clamp(1rem,1.5vw,2rem)] mb-4">
                       {current.helper[lang]}
                     </p>
                   )}
@@ -403,30 +407,55 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
                     </div>
                     {(contact.method === "whatsapp" ||
                       contact.method === "phone-call") && (
-                      <input
-                        dir="ltr"
-                        placeholder={t.phonePlaceholder[lang]}
-                        value={contact.phone}
-                        onChange={(e) =>
-                          setContact((p) => ({ ...p, phone: e.target.value }))
-                        }
-                        className="h-13 px-4 rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted outline-none border-2 border-transparent focus:border-border-strong"
-                      />
+                      <div>
+                        <input
+                          dir="ltr"
+                          placeholder={t.phonePlaceholder[lang]}
+                          value={contact.phone}
+                          onChange={(e) =>
+                            setContact((p) => ({
+                              ...p,
+                              phone: e.target.value,
+                            }))
+                          }
+                          className="h-13 w-full px-4 rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted outline-none border-2 border-transparent focus:border-border-strong"
+                        />
+                        {phoneInvalid && (
+                          <p className="text-red-400 text-[clamp(0.875rem,0.8rem+0.3vw,1rem)] mt-1.5">
+                            {t.phoneInvalid[lang]}
+                          </p>
+                        )}
+                      </div>
                     )}
                     {contact.method === "email" && (
-                      <input
-                        placeholder={t.emailPlaceholder[lang]}
-                        value={contact.email}
-                        onChange={(e) =>
-                          setContact((p) => ({ ...p, email: e.target.value }))
-                        }
-                        className="h-13 px-4 rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted outline-none border-2 border-transparent focus:border-border-strong"
-                      />
+                      <div>
+                        <input
+                          placeholder={t.emailPlaceholder[lang]}
+                          value={contact.email}
+                          onChange={(e) =>
+                            setContact((p) => ({
+                              ...p,
+                              email: e.target.value,
+                            }))
+                          }
+                          className="h-13 w-full px-4 rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted outline-none border-2 border-transparent focus:border-border-strong"
+                        />
+                        {emailInvalid && (
+                          <p className="text-red-400 text-[clamp(0.875rem,0.8rem+0.3vw,1rem)] mt-1.5">
+                            {t.emailInvalid[lang]}
+                          </p>
+                        )}
+                      </div>
                     )}
                   </div>
                   {status === "error" && (
                     <p className="text-red-400 text-[clamp(0.875rem,0.8rem+0.3vw,1rem)] mt-3">
                       {t.error[lang]}
+                    </p>
+                  )}
+                  {status === "rateLimit" && (
+                    <p className="text-red-400 text-[clamp(0.875rem,0.8rem+0.3vw,1rem)] mt-3">
+                      {t.errorRateLimit[lang]}
                     </p>
                   )}
                 </div>
@@ -485,7 +514,14 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
                   type="button"
                   onClick={handleSubmit}
                   disabled={
-                    status === "loading" || !contact.name || !contact.method
+                    status === "loading" ||
+                    !contact.name.trim() ||
+                    !contact.method ||
+                    ((contact.method === "whatsapp" ||
+                      contact.method === "phone-call") &&
+                      (!contact.phone.trim() || phoneInvalid)) ||
+                    (contact.method === "email" &&
+                      (!contact.email.trim() || emailInvalid))
                   }
                   className="cta-primary px-6 py-2.5 rounded-lg text-background font-semibold text-base disabled:opacity-40 cursor-pointer"
                 >

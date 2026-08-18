@@ -13,43 +13,46 @@ import { isLang } from "@/app/types";
 const LightRays = dynamic(() => import("./LightRays"), { ssr: false });
 
 const READY_FALLBACK_MS = 1200;
-const DESKTOP_MEDIA_QUERY = "(min-width: 1024px)";
+// Gate on actual pointer capability, not viewport width — a touch device
+// should never get this regardless of screen size, and anything with a real
+// mouse should, regardless of how narrow the window is.
+const FINE_POINTER_MEDIA_QUERY = "(hover: hover) and (pointer: fine)";
 
-function subscribeDesktop(callback: () => void) {
-  const mql = window.matchMedia(DESKTOP_MEDIA_QUERY);
+function subscribeFinePointer(callback: () => void) {
+  const mql = window.matchMedia(FINE_POINTER_MEDIA_QUERY);
   mql.addEventListener("change", callback);
   return () => mql.removeEventListener("change", callback);
 }
-function getDesktopSnapshot() {
-  return window.matchMedia(DESKTOP_MEDIA_QUERY).matches;
+function getFinePointerSnapshot() {
+  return window.matchMedia(FINE_POINTER_MEDIA_QUERY).matches;
 }
-// SSR has no viewport; assume mobile so the WebGL canvas doesn't render
-// server-side and cause a hydration flash on small screens.
-function getDesktopServerSnapshot() {
+// SSR has no pointer info; assume touch so the WebGL canvas doesn't render
+// server-side and cause a hydration flash on devices that will be gated out.
+function getFinePointerServerSnapshot() {
   return false;
 }
 
 export default function LightRaysBackground() {
   const pathname = usePathname();
-  const isDesktop = useSyncExternalStore(
-    subscribeDesktop,
-    getDesktopSnapshot,
-    getDesktopServerSnapshot,
+  const hasFinePointer = useSyncExternalStore(
+    subscribeFinePointer,
+    getFinePointerSnapshot,
+    getFinePointerServerSnapshot,
   );
   const [ready, setReady] = useState(false);
   const [fallbackFired, setFallbackFired] = useState(false);
   const enabled = useLightRaysEnabled();
 
   useEffect(() => {
-    if (!isDesktop) return;
+    if (!hasFinePointer) return;
     const readyFallbackTimer = setTimeout(
       () => setFallbackFired(true),
       READY_FALLBACK_MS,
     );
     return () => clearTimeout(readyFallbackTimer);
-  }, [isDesktop]);
+  }, [hasFinePointer]);
 
-  if (!isDesktop) return null;
+  if (!hasFinePointer) return null;
 
   // Toggle visibility via CSS instead of unmounting on /guides. Unmounting
   // tears down the WebGL context; remounting on the next nav re-inits it,
