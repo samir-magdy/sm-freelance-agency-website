@@ -49,8 +49,8 @@ const faqSection: FAQSection = {
         ar: "ما الذي يشمله السعر الأساسي؟",
       },
       answer: {
-        en: "Every project includes a custom-built, responsive site with baseline SEO, an admin panel to edit your own content, a design mockup to review before build, two rounds of design revisions, first-year hosting, domain setup, and a 90-day post-launch guarantee.",
-        ar: "يشمل كل مشروع بناء موقع مخصص ومتجاوب مع جميع الأجهزة، مع تهيئة أساسية لمحركات البحث، ولوحة تحكم لتعديل المحتوى بنفسك. كما يتضمن عرضاً للتصميم لمراجعته قبل التنفيذ، وجولتين من التعديلات على التصميم، بالإضافة إلى استضافة للسنة الأولى، وإعداد النطاق (الدومين)، وضمان لمدة 90 يوماً بعد الإطلاق.",
+        en: "Every project includes a custom-built, responsive site with baseline SEO, two rounds of design revisions, first-year hosting, domain setup, and a 90-day post-launch guarantee.",
+        ar: "يشمل كل مشروع بناء موقع مخصص ومتجاوب مع جميع الأجهزة، مع تهيئة أساسية لمحركات البحث. كما يتضمن جولتين من التعديلات على التصميم، بالإضافة إلى استضافة للسنة الأولى، وإعداد النطاق (الدومين)، وضمان لمدة 90 يوماً بعد الإطلاق.",
       },
     },
 
@@ -100,8 +100,8 @@ const faqSection: FAQSection = {
         ar: "هل سيمكنني تعديل محتوى الموقع بنفسي؟",
       },
       answer: {
-        en: "Yes. Every site ships with a built-in admin panel so you can edit your own content. We'll walk you through it before handover; it's user-friendly and requires zero technical knowledge.",
-        ar: "نعم بالتأكيد. يُسلم كل موقع مزوداً بلوحة تحكم مدمجة لتتمكن من تعديل محتواك بنفسك. وقبل تسليمك الموقع، سنشرح لك كيفية استخدامها بكل بساطة؛ فهي سهلة الاستخدام ولن تحتاج إلى أي خبرة تقنية سابقة لإدارتها.",
+        en: "An admin dashboard isn't included by default, but can be added to your project on request so you can edit content yourself.",
+        ar: "لوحة التحكم غير مشمولة بشكل افتراضي، ولكن يمكن إضافتها لمشروعك عند الطلب لتتمكن من تعديل المحتوى بنفسك.",
       },
     },
     {

@@ -205,7 +205,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
       className="flex flex-col items-center justify-center relative z-20 select-none px-5"
       aria-labelledby="portfolio-heading"
     >
-      <div className="text-center relative z-2 px-5 md:mb-4 lg:mb-8">
+      <div className="text-center relative z-2 px-5 md:mb-2 lg:mb-8">
         <h2
           id="portfolio-heading"
           className="reveal-element font-bold text-heading sm:rtl:mb-3"
@@ -288,7 +288,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
             key={`genre-${project.id}`}
             className={`${styles.genre} lg:hidden inline-flex items-center px-4 py-1.5 rounded-xl text-[clamp(0.7rem,3vw,1rem)] font-semibold uppercase tracking-widest border border-border-subtle text-content-heading bg-surface-card`}
           >
-            {isRtl ? project.genreAr : project.genre}
+            {pd.title[lang]}
           </h3>
 
           <div dir="ltr" className="flex items-center justify-center gap-8">
@@ -300,7 +300,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
 
             <div
               id="mobile-mockup"
-              className="aspect-11/19.5 w-60 sm:w-92 lg:w-60 xl:w-68 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="aspect-11/19.5 w-60 safari:w-70 safari:sm:w-100 sm:w-92 safari:lg:w-72 lg:w-72 xl:w-68 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               <div className="absolute left-[-2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
               <div className="absolute left-[-2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -371,7 +371,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
             ))}
           </div>
 
-          <div className="flex items-center gap-3 lg:hidden text-[clamp(0.6rem,2.5vw,2.5rem)] tracking-wide whitespace-nowrap">
+          <div className="flex items-center gap-3 lg:hidden text-[clamp(0.8rem,4vw,1.5rem)] font-semibold tracking-wide whitespace-nowrap">
             <a
               href={ctaHref}
               target="_blank"

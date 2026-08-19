@@ -112,6 +112,14 @@ const resource: Guide = {
 <p>الشركة المناسبة هي التي تمتلك سابقة أعمال معروضة يمكنك تجربتها، وتهتم بمعرفة تفاصيل عملك وأهدافك، وتتميز بالشفافية في أسعارها والوضوح في تواصلها. ليس بالضرورة أن يكونوا الأرخص أو الأكبر، بل يجب أن يكونوا الأنسب لعملك.</p>`,
   },
   readingMinutes: { en: 3, ar: 4 },
+  chatTrigger: {
+    topic: "How to choose, evaluate, or vet a web design company or agency.",
+    arabicExamples: [
+      "كيف أختار شركة تصميم مواقع",
+      "إزاي أعرف شركة كويسة",
+      "شركات تصميم مواقع في مصر",
+    ],
+  },
 };
 
 export default resource;

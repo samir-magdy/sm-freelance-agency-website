@@ -105,6 +105,16 @@ const resource: Guide = {
 <p>إذا كنت تريد أن يعمل موقعك كمندوب مبيعات متواجد على مدار الساعة لجذب عملاء جدد، فلا بديل عن الاستراتيجية الاحترافية، وكتابة المحتوى المقنع، والتصميم المدروس. الذكاء الاصطناعي يمكنه بناء صفحة ويب، لكنه لا يستطيع بناء عمل تجاري ناجح.</p>`,
   },
   readingMinutes: { en: 3, ar: 4 },
+  chatTrigger: {
+    topic:
+      'AI website builders and AI-generated sites (Wix ADI, ChatGPT-built sites, "just use AI to make my website") and why they fall short for real businesses.',
+    arabicExamples: [
+      "الذكاء الاصطناعي يعمل موقع",
+      "موقع بالذكاء الاصطناعي",
+      "ChatGPT يعمل موقع",
+      "أدوات AI للمواقع",
+    ],
+  },
 };
 
 export default resource;

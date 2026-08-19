@@ -97,6 +97,11 @@ const resource: Guide = {
 <p>هذا لا يعني أن تتوقف عن إطلاق الإعلانات، بل على العكس؛ فالموقع الإلكتروني يزيد من نجاح إعلاناتك، لأن العميل عندما يزوره يثق بك ويتخذ قرار الشراء بشكل أسرع، وبذلك لا تضيع ميزانيتك الإعلانية سدىً. إذا كنت ترغب في معرفة التكلفة الفعلية، ننصحك بقراءة <a href='/ar/guides/website-cost-in-egypt'>دليل تكلفة المواقع الإلكترونية في مصر (${CURRENT_YEAR})</a>.</p>`,
   },
   readingMinutes: { en: 4, ar: 3 },
+  chatTrigger: {
+    topic:
+      "Whether a business actually needs a website; whether social media (Instagram, Facebook) is enough on its own.",
+    arabicExamples: ["هل شركتي محتاجة موقع", "هل السوشيال ميديا تكفي", "ليه محتاج موقع"],
+  },
 };
 
 export default resource;  

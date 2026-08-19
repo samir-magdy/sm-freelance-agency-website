@@ -133,6 +133,11 @@ const resource: Guide = {
 <p>إذا كنت تمتلك عملاً حقيقياً وتطمح للنمو والمنافسة بقوة في عام ${CURRENT_YEAR}، فإن الموقع الإلكتروني الاحترافي هو حجر الأساس الذي ستبني عليه نجاحك. القاعدة الثابتة هنا هي أن الشركات التي تستثمر في التصميم الاحترافي منذ البداية، تتجنب الوقوع في فخ إعادة بناء الموقع لاحقاً وتوفر على نفسها الكثير من الجهد والمال.</p>`,
   },
   readingMinutes: { en: 2, ar: 2 },
+  chatTrigger: {
+    topic:
+      "DIY website builders (Wix, Squarespace, doing it yourself) versus hiring a professional studio.",
+    arabicExamples: ["أعمل الموقع بنفسي", "ويكس ولا شركة", "أدوات عمل المواقع"],
+  },
 };
 
 export default resource;

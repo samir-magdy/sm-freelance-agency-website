@@ -153,6 +153,11 @@ ar: `<!-- REGION_NOTICE_SLOT -->
 <p>في النهاية، السؤال الصحيح ليس «ما هو أرخص موقع يمكنني إنشاؤه؟» بل «ما هو أقل استثمار سيحقق عائداً إيجابياً لعملي؟»</p>`,
 },
   readingMinutes: { en: 3, ar: 5 },
+  chatTrigger: {
+    topic:
+      "How pricing works — what factors determine the cost of a website. Distinct from a visitor asking for their own price or quote, which goes to the project questionnaire instead (condition_1_cost).",
+    arabicExamples: ["ازاي بتحددوا السعر", "ايه اللي بيأثر على السعر", "كيف يتم حساب السعر"],
+  },
 };
 
 export default resource;

@@ -47,8 +47,8 @@ export const quoteQuestions: QuoteQuestion[] = [
     category: "scope",
     question: { en: "What's your main goal?", ar: "ما هدفك الأساسي؟" },
     helper: {
-      en: "Helps us suggest the best type of project for you",
-      ar: "يساعدنا في اقتراح نوع المشروع الأنسب لك",
+      en: "Helps us suggest the best type of project for you.",
+      ar: "يساعدنا في اقتراح نوع المشروع الأنسب لك.",
     },
     options: [
       {
@@ -84,7 +84,7 @@ export const quoteQuestions: QuoteQuestion[] = [
       ar: "ما الذي يتضمنه تطبيقك المخصص؟",
     },
     helper: {
-      en: "Select everything that applies",
+      en: "Select everything that applies.",
       ar: "اختر كل ما ينطبق.",
     },
     showIf: (a) => a.goal === "custom",
@@ -136,8 +136,8 @@ export const quoteQuestions: QuoteQuestion[] = [
       ar: "ما الحجم المتوقع لصفحتك؟",
     },
     helper: {
-      en: "A section is each distinct content block a visitor would scroll through — e.g. About, Services, Contact.",
-      ar: "القسم هو كل جزء محتوى مستقل يمر به الزائر أثناء التمرير — مثل: من نحن، الخدمات، آراء العملاء، اتصل بنا.",
+      en: "A section is each content block a visitor would scroll through — e.g. About, Services, Contact.",
+      ar: "القسم هو كل جزء محتوى يمر به الزائر، مثل: الخدمات، آراء العملاء، اتصل بنا.",
     },
     showIf: (a) => a.goal === "landing",
     options: [
@@ -189,13 +189,13 @@ export const quoteQuestions: QuoteQuestion[] = [
       },
       {
         value: "large",
-        label: { en: "'More than 30 pages", ar: "أكثر من 30 صفحة" },
+        label: { en: "More than 30 pages", ar: "أكثر من 30 صفحة" },
       },
       {
         value: "notSure",
         label: {
-          en: "Not sure — I'd like help estimating",
-          ar: "لست متأكداً — أرغب بالمساعدة في التقدير",
+          en: "Not sure, I'd like help estimating",
+          ar: "لست متأكد، أرغب بالمساعدة في التقدير",
         },
       },
     ],
@@ -213,7 +213,7 @@ export const quoteQuestions: QuoteQuestion[] = [
       ar: "الحركات والتفاعلات المخصصة تمنح تجربة فريدة، وتتطلب وقتاً إضافياً في التطوير.",
     },
     options: [
-      { value: "simple", label: { en: "Simple and clean", ar: "بسيط وأنيق" } },
+      { value: "simple", label: { en: "Modern and sleek", ar: "بسيط وأنيق" } },
       {
         value: "animated",
         label: {
@@ -232,8 +232,8 @@ export const quoteQuestions: QuoteQuestion[] = [
       ar: "هل ستوفر الملفات الخاصة بهويتك التجارية؟",
     },
     helper: {
-      en: "Includes logo, color palette, and typography.",
-      ar: "يشمل ذلك الشعا ، ألوان الهوية، والخطوط.",
+      en: "These include logo, color palette, and typography.",
+      ar: "يشمل ذلك الشعار، ألوان الهوية، والخطوط.",
     },
     options: [
       {
@@ -284,7 +284,7 @@ export const quoteQuestions: QuoteQuestion[] = [
       ar: "هل تحتاج الموقع بلغتين؟",
     },
     options: [
-      { value: "yes", label: { en: "Yes, bilingual", ar: "نعم، ثنائي اللغة" } },
+      { value: "yes", label: { en: "Yes", ar: "نعم" } },
       {
         value: "no",
         label: { en: "No, one language is fine", ar: "لا، لغة واحدة تكفي" },
@@ -347,13 +347,13 @@ export const quoteQuestions: QuoteQuestion[] = [
     options: [
       {
         value: "often",
-        label: { en: "Yes, a few times a week.", ar: "نعم، بشكل متكرر" },
+        label: { en: "A few times a week", ar: "نعم، بشكل متكرر" },
       },
       {
         value: "occasionally",
-        label: { en: "Occasionally, a couple times a month.", ar: "أحياناً" },
+        label: { en: "Occasionally, a couple times a month", ar: "أحياناً" },
       },
-      { value: "rarely", label: { en: "Rarely.", ar: "نادراً" } },
+      { value: "rarely", label: { en: "Rarely", ar: "نادراً" } },
     ],
   },
   {
@@ -441,7 +441,7 @@ export const quoteQuestions: QuoteQuestion[] = [
       ar: "أي ميزات خاصة ترغب بها أو متطلبات فنية تريد إخبارنا بها.",
     },
     placeholder: {
-      en: "I also want a reservation system integrated into the website",
+      en: "I also want a reservation system integrated into the website...",
       ar: "أرغب أيضًا في دمج نظام للحجوزات في الموقع الإلكتروني",
     },
   },
@@ -474,7 +474,7 @@ export const quoteFormStrings = {
     ar: "يرجى الانتظار بضع دقائق قبل الإرسال مرة أخرى.",
   },
   contactHeading: {
-    en: "how should we reach you?",
+    en: "How should we reach you?",
     ar: "كيف يمكننا التواصل معك؟",
   },
   name: { en: "Name", ar: "الاسم" },

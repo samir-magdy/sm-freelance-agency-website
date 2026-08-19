@@ -125,6 +125,11 @@ const resource: Guide = {
 <p>السيو في ${CURRENT_YEAR} لم يعد يقتصر على جلب أعداد ضخمة من الزيارات العشوائية؛ بل أصبح يتعلق ببناء سلطة علامتك التجارية لتكون "الإجابة القاطعة" التي يثق بها الذكاء الاصطناعي. إذا قمت بتكييف استراتيجية المحتوى الخاصة بك لتزويد هذه المحركات بمعلومات واضحة، ومهيكلة، واحترافية، فستتمكن من جذب العملاء الجادين الذين يخسرهم منافسوك.</p>`,
   },
   readingMinutes: { en: 4, ar: 5 },
+  chatTrigger: {
+    topic:
+      "Whether SEO still matters in the age of AI search, ChatGPT, Perplexity, Google AI Overviews, and zero-click results.",
+    arabicExamples: ["هل السيو مات", "هل السيو مهم", "ChatGPT بدل جوجل", "السيو في 2026"],
+  },
 };
 
 export default resource;

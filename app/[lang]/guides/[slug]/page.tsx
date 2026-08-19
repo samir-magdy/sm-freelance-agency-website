@@ -209,12 +209,12 @@ export default async function GuidePage({
                 role="note"
                 className="relative overflow-hidden rounded-2xl border border-white/8 bg-surface-low"
               >
-                <div className="relative text-center sm:text-start flex flex-col sm:flex-row sm:items-center gap-7 sm:gap-12 px-7 py-9 sm:px-11 sm:py-11">
-                  <p className="flex-1 text-[clamp(1.05rem,3.5vw,1.8rem)] font-semibold text-content-heading leading-tight rtl:leading-loose">
+                <div className="relative text-center sm:text-start flex flex-col sm:flex-row sm:items-center gap-7 sm:gap-10 px-7 py-9 sm:px-10 sm:py-8">
+                  <p className="flex-1 text-[clamp(0.9rem,5vw,1.5rem)] text-content-heading leading-tight rtl:leading-loose text-pretty whitespace-pre-line">
                     {translations.egyptPricingNotice[lang]}
                   </p>
                   <HeroPrimaryCta
-                    label={translations.egyptPricingNoticeCta[lang]}
+                    label={translations.articleCtaButton[lang]}
                     className="cta-primary justify-center shrink-0 py-3 px-8 rounded-lg text-background text-base sm:text-xl font-medium tracking-wide whitespace-nowrap cursor-pointer"
                   />
                 </div>
@@ -248,7 +248,7 @@ export default async function GuidePage({
             >
               {translations.relatedHeading[lang]}
             </h2>
-            <ul className="grid grid-cols-1 md:grid-cols-3 gap-5 list-none p-0">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 list-none p-0">
               {relatedGuides.map((g) => (
                 <li key={g.slug}>
                   <Link

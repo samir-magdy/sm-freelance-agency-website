@@ -11,8 +11,7 @@ const guidesTranslations: Record<
   | "articleCta"
   | "articleCtaButton"
   | "relatedHeading"
-  | "egyptPricingNotice"
-  | "egyptPricingNoticeCta",
+  | "egyptPricingNotice",
   Localized
 > = {
   pageTitle: {
@@ -41,12 +40,8 @@ const guidesTranslations: Record<
   },
   relatedHeading: { en: "Related guides:", ar: "أدلة ذات صلة:" },
   egyptPricingNotice: {
-    en: "Based outside Egypt? Get a quote in your local currency.",
-    ar: "خارج مصر؟ احصل على عرض سعر بعملتك المحلية.",
-  },
-  egyptPricingNoticeCta: {
-    en: "Request a Consultation",
-    ar: "اطلب استشارة",
+    en: "Based outside Egypt?\nGet a quote in your local currency.",
+    ar: "خارج مصر؟\nاحصل على عرض سعر بعملتك المحلية.",
   },
 };
 

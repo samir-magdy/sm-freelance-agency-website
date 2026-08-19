@@ -146,6 +146,11 @@ const resource: Guide = {
 <p>أنت لست مضطراً لاختيار واحد فقط؛ بل في الواقع، يعتمد كل منها على الآخر. فالموقع الذي يعاني من ضعف في السيو التقني لن يزحف إليه جوجل، مما يعني أنه لن يتم اختياره أبداً كمقتطف مميز (AEO)، ولن تكتشفه روبوتات الذكاء الاصطناعي للاستشهاد به (GEO). للسيطرة على سوقك في ${CURRENT_YEAR}، تحتاج إلى استراتيجية موحدة: موقع سريع وسليم تقنياً (SEO)، وبيانات مهيكلة وإجابات واضحة للأسئلة (AEO)، ومحتوى أصلي وموثوق (GEO).</p>`,
   },
   readingMinutes: { en: 4, ar: 4 },
+  chatTrigger: {
+    topic:
+      "What SEO, GEO, and AEO mean, the differences between traditional search optimization and generative/answer-engine optimization.",
+    arabicExamples: ["ايه هو GEO", "ايه الفرق بين SEO وGEO", "ما هو AEO", "تعريف السيو"],
+  },
 };
 
 export default resource;

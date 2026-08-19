@@ -85,6 +85,15 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
     };
   }, [open]);
 
+  // Auto-close the success screen after a few seconds so users aren't left
+  // staring at it once the quote has gone through.
+  useEffect(() => {
+    if (status !== "success") return;
+    const timer = setTimeout(close, 3000);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status]);
+
   function reset() {
     setStarted(false);
     setAnswers({});
