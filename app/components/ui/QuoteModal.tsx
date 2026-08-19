@@ -69,7 +69,6 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
   // reopen it and the URL doesn't linger looking like a permanent page.
   useEffect(() => {
     if (searchParams.get("quote") === "open") {
-      window.dispatchEvent(new Event(CHAT_CLOSE_EVENT));
       setOpen(true);
       router.replace(pathname, { scroll: false });
     }

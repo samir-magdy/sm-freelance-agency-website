@@ -7,6 +7,14 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: [process.env.DEV_LOCAL!],
   async redirects() {
     return [
+      // Lang-aware root: bare shareable links (e.g. /?lang=ar&quote=open)
+      // land on the right locale instead of always falling through to /en.
+      {
+        source: "/",
+        has: [{ type: "query", key: "lang", value: "ar" }],
+        destination: "/ar",
+        permanent: true,
+      },
       { source: "/", destination: "/en", permanent: true },
       { source: "/portfolio", destination: "/en#portfolio", permanent: true },
       // Redirects for updated slugs, remove when new pages have been fully indexed and old ones removed.
