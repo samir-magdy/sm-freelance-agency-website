@@ -2,7 +2,7 @@ import { Resend } from "resend";
 import { ipAddress } from "@vercel/functions";
 import { NextResponse, type NextRequest } from "next/server";
 import { redis } from "@/lib/redis";
-import { isValidEmail, isValidPhone } from "@/lib/contactValidation";
+import { isValidEmail, isValidName, isValidPhone } from "@/lib/contactValidation";
 import { SITE_NAME } from "@/app/constants";
 import { isLang } from "@/app/types";
 import { formatAnswers, isValidAnswers } from "./formatAnswers";
@@ -46,20 +46,21 @@ export async function POST(request: NextRequest) {
     const phone = typeof rawContact.phone === "string" ? rawContact.phone.trim() : "";
     const email = typeof rawContact.email === "string" ? rawContact.email.trim() : "";
 
-    if (!name || !method) {
+    if (!method) {
       return NextResponse.json(
-        { error: "Name and contact method are required" },
+        { error: "Contact method is required" },
         { status: 400 },
       );
     }
 
-    const MAX_LENGTHS = { name: 50, phone: 20, email: 100 } as const;
-    if (name.length > MAX_LENGTHS.name) {
+    if (!isValidName(name)) {
       return NextResponse.json(
-        { error: "One or more fields exceed the maximum allowed length." },
+        { error: "A valid name is required." },
         { status: 400 },
       );
     }
+
+    const MAX_LENGTHS = { phone: 20, email: 50 } as const;
 
     if (method === "whatsapp" || method === "phone-call") {
       if (!phone || phone.length > MAX_LENGTHS.phone || !isValidPhone(phone)) {

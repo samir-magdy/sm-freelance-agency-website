@@ -11,7 +11,9 @@ import {
 } from "@/app/data/translations/quoteForm";
 import { CHAT_CLOSE_EVENT } from "@/app/components/chat/ChatWidget";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { isValidEmail, isValidPhone } from "@/lib/contactValidation";
+import { isValidEmail, isValidName, isValidPhone } from "@/lib/contactValidation";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 
 export const QUOTE_OPEN_EVENT = "quote:open";
 
@@ -88,7 +90,7 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
   // staring at it once the quote has gone through.
   useEffect(() => {
     if (status !== "success") return;
-    const timer = setTimeout(close, 3000);
+    const timer = setTimeout(close, 3500);
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status]);
@@ -162,8 +164,9 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
     setStepIndex((i) => Math.max(i - 1, 0));
   }
 
-  const phoneInvalid =
-    contact.phone.trim().length > 0 && !isValidPhone(contact.phone.trim());
+  const nameValid = isValidName(contact.name.trim());
+  const nameInvalid = contact.name.trim().length > 0 && !nameValid;
+  const phoneValid = isValidPhone(contact.phone.trim());
   const emailInvalid =
     contact.email.trim().length > 0 && !isValidEmail(contact.email.trim());
 
@@ -209,11 +212,11 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
 
       {/* Panel — full-screen sheet on mobile, centered card from sm: up */}
       <div
-        className="relative z-10 flex h-[82dvh] w-full sm:w-[80%]
+        className="relative z-10 flex h-[80dvh] h-[80svh] w-full sm:w-[80%]
           flex-col overflow-hidden rounded-2xl border-2 border-border-subtle
           bg-surface-card shadow-2xl shadow-black/50"
       >
-        <div className="flex justify-end px-3 pt-3 shrink-0 mb-1 xl:mb-4">
+        <div className="flex justify-end px-3 pt-3 shrink-0">
           <button
             type="button"
             onClick={close}
@@ -243,10 +246,10 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
             <>
               <div className="mb-4">
                 <div className="flex items-center justify-between gap-3 mb-2 sm:mb-3">
-                  <p className="text-[clamp(1.1rem,1vw,2rem)] xl:text-subheading font-bold text-gold uppercase tracking-wide">
+                  <p className="text-[clamp(1rem,1vw,2rem)] xl:text-subheading font-bold text-gold uppercase tracking-wide">
                     {activeCategory.name[lang]}
                   </p>
-                  <p className="text-[clamp(1.25rem,1vw,2rem)] text-content-muted shrink-0">
+                  <p className="text-[clamp(1rem,1vw,2rem)] text-content-muted shrink-0">
                     {t.stepLabel[lang]} {macroIndex} {t.ofLabel[lang]}{" "}
                     {macroTotal}
                   </p>
@@ -384,14 +387,22 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
                     {t.contactHeading[lang]}
                   </h2>
                   <div className="flex flex-col gap-3.5">
-                    <input
-                      placeholder={t.namePlaceholder[lang]}
-                      value={contact.name}
-                      onChange={(e) =>
-                        setContact((p) => ({ ...p, name: e.target.value }))
-                      }
-                      className="h-13 px-4 rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted outline-none border-2 border-transparent focus:border-border-strong"
-                    />
+                    <div>
+                      <input
+                        placeholder={t.namePlaceholder[lang]}
+                        value={contact.name}
+                        maxLength={30}
+                        onChange={(e) =>
+                          setContact((p) => ({ ...p, name: e.target.value }))
+                        }
+                        className="h-13 w-full px-4 rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted outline-none border-2 border-transparent focus:border-border-strong"
+                      />
+                      {nameInvalid && (
+                        <p className="text-red-400 text-[clamp(0.875rem,0.8rem+0.3vw,1rem)] mt-1.5">
+                          {t.nameInvalid[lang]}
+                        </p>
+                      )}
+                    </div>
                     <div className="relative">
                       <select
                         value={contact.method}
@@ -403,10 +414,18 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
                         }
                         className="h-13 w-full ps-4 pe-10 rounded-lg bg-surface-low text-base text-content-heading outline-none border-2 border-transparent focus:border-border-strong appearance-none"
                       >
-                        <option value="">{t.contactMethod[lang]}</option>
-                        <option value="whatsapp">{t.whatsapp[lang]}</option>
-                        <option value="phone-call">{t.phoneCall[lang]}</option>
-                        <option value="email">{t.email[lang]}</option>
+                        <option value="" className="bg-surface-low text-content-heading">
+                          {t.contactMethod[lang]}
+                        </option>
+                        <option value="whatsapp" className="bg-surface-low text-content-heading">
+                          {t.whatsapp[lang]}
+                        </option>
+                        <option value="phone-call" className="bg-surface-low text-content-heading">
+                          {t.phoneCall[lang]}
+                        </option>
+                        <option value="email" className="bg-surface-low text-content-heading">
+                          {t.email[lang]}
+                        </option>
                       </select>
                       <ChevronDown
                         className="pointer-events-none absolute inset-e-4 top-1/2 size-4 -translate-y-1/2 text-content-muted"
@@ -415,31 +434,30 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
                     </div>
                     {(contact.method === "whatsapp" ||
                       contact.method === "phone-call") && (
-                      <div>
-                        <input
-                          dir="ltr"
-                          placeholder={t.phonePlaceholder[lang]}
+                      <div
+                        dir="ltr"
+                        className="ps-1 phone-input h-13 w-full flex items-center rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted border-2 border-transparent focus-within:border-border-strong"
+                      >
+                        <PhoneInput
+                          defaultCountry="eg"
                           value={contact.phone}
-                          onChange={(e) =>
+                          onChange={(phone) =>
                             setContact((p) => ({
                               ...p,
-                              phone: e.target.value,
+                              phone,
                             }))
                           }
-                          className="h-13 w-full px-4 rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted outline-none border-2 border-transparent focus:border-border-strong"
+                          className="w-full"
                         />
-                        {phoneInvalid && (
-                          <p className="text-red-400 text-[clamp(0.875rem,0.8rem+0.3vw,1rem)] mt-1.5">
-                            {t.phoneInvalid[lang]}
-                          </p>
-                        )}
                       </div>
                     )}
                     {contact.method === "email" && (
                       <div>
                         <input
+                          type="email"
                           placeholder={t.emailPlaceholder[lang]}
                           value={contact.email}
+                          maxLength={50}
                           onChange={(e) =>
                             setContact((p) => ({
                               ...p,
@@ -472,71 +490,83 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
           )}
         </div>
 
-        {status !== "success" && !started && (
-          <div className="border-t border-border-subtle px-5 py-6 sm:py-4 shrink-0">
-            <button
-              type="button"
-              onClick={() => setStarted(true)}
-              className="cta-primary w-full px-6 py-2.5 rounded-lg text-background font-semibold text-base cursor-pointer"
-            >
-              {t.start[lang]}
-            </button>
-          </div>
-        )}
-
-        {status !== "success" && started && (
-          <div className="flex items-center justify-between gap-3 border-t border-border-subtle px-5 py-6 sm:py-4 shrink-0">
-            <button
-              type="button"
-              onClick={goBack}
-              disabled={stepIndex === 0}
-              className="text-content-muted hover:text-content-heading disabled:opacity-0 transition-colors text-base cursor-pointer"
-            >
-              {t.back[lang]}
-            </button>
-
-            <div className="flex items-center gap-3">
-              {!isContactStep &&
-                (current?.type === "multi" ||
-                  current?.type === "text" ||
-                  current?.type === "list") && (
-                  <button
-                    type="button"
-                    onClick={goNext}
-                    disabled={
-                      !current.optional &&
-                      (current.type === "multi" || current.type === "list"
-                        ? !(answers[current.id] as string[])?.some(
-                            (v) => v.trim().length > 0,
-                          )
-                        : !answers[current.id])
-                    }
-                    className="cta-primary px-6 py-2.5 rounded-lg text-background font-semibold text-base disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
-                  >
-                    {t.next[lang]}
-                  </button>
-                )}
-
-              {isContactStep && (
+        {status !== "success" && (
+          <div
+            className={`border-t border-border-subtle bg-surface-low px-5 shrink-0 shadow-[0_-8px_24px_-12px_rgba(0,0,0,0.35)] transition-[padding] duration-300 flex items-center justify-between gap-3 py-3`}
+          >
+            {!started ? (
+              <button
+                type="button"
+                onClick={() => setStarted(true)}
+                className="cta-primary w-full px-7 py-3.5 rounded-lg text-background font-semibold text-lg cursor-pointer"
+              >
+                {t.start[lang]}
+              </button>
+            ) : (
+              <>
                 <button
                   type="button"
-                  onClick={handleSubmit}
-                  disabled={
-                    status === "loading" ||
-                    !contact.name.trim() ||
-                    !contact.method ||
-                    ((contact.method === "whatsapp" ||
-                      contact.method === "phone-call") &&
-                      (!contact.phone.trim() || phoneInvalid)) ||
-                    (contact.method === "email" &&
-                      (!contact.email.trim() || emailInvalid))
-                  }
-                  className="cta-primary px-6 py-2.5 rounded-lg text-background font-semibold text-base disabled:opacity-40 cursor-pointer"
+                  onClick={goBack}
+                  disabled={stepIndex === 0}
+                  className="rounded-lg border border-border-strong px-6 py-2 text-[clamp(1rem,1.4vw,2rem)] text-content-body hover:border-white/35 hover:text-content-heading disabled:opacity-0 transition-colors cursor-pointer"
                 >
-                  {status === "loading" ? t.submitting[lang] : t.submit[lang]}
+                  {t.back[lang]}
                 </button>
-              )}
-            </div>
+
+                <div className="flex items-center gap-3">
+                  {!isContactStep &&
+                    (current?.type === "multi" ||
+                      current?.type === "text" ||
+                      current?.type === "list") && (
+                      <>
+                        {current.optional && (
+                          <button
+                            type="button"
+                            onClick={goNext}
+                            className="rounded-lg px-2 text-[clamp(1rem,1.25vw,2rem)] text-content-body hover:border-border-strong hover:text-content-heading transition-colors cursor-pointer"
+                          >
+                            {t.skip[lang]}
+                          </button>
+                        )}
+                        <button
+                          type="button"
+                          onClick={goNext}
+                          disabled={
+                            current.type === "multi" || current.type === "list"
+                              ? !(answers[current.id] as string[])?.some(
+                                  (v) => v.trim().length > 0,
+                                )
+                              : !answers[current.id]
+                          }
+                          className="cta-primary px-6 py-2 text-[clamp(1rem,1.4vw,2rem)] rounded-lg text-background font-semibold disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+                        >
+                          {t.next[lang]}
+                        </button>
+                      </>
+                    )}
+
+                  {isContactStep && (
+                    <button
+                      type="button"
+                      onClick={handleSubmit}
+                      disabled={
+                        status === "loading" ||
+                        !nameValid ||
+                        !contact.method ||
+                        ((contact.method === "whatsapp" ||
+                          contact.method === "phone-call") &&
+                          !phoneValid) ||
+                        (contact.method === "email" &&
+                          (!contact.email.trim() || emailInvalid))
+                      }
+                      className="cta-primary px-6 py-2 text-[clamp(1rem,1.4vw,2rem)] rounded-lg text-background font-semibold disabled:opacity-40 cursor-pointer"
+                    >
+                      {status === "loading" ? t.submitting[lang] : t.submit[lang]}
+                    </button>
+                  )}
+                </div>
+              </>
+            )}
           </div>
         )}
       </div>

@@ -2,19 +2,19 @@
 // validation can't drift between the two.
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-// Allows digits plus common formatting characters (spaces, dashes, parens,
-// leading +), but the character class alone can't require an actual digit —
-// e.g. "------" would match. isValidPhone below also checks digit count.
-const PHONE_CHARS_RE = /^[+]?[\d\s()-]{6,20}$/;
-const MIN_PHONE_DIGITS = 8;
-const MAX_PHONE_DIGITS = 15; // E.164 max
+const MIN_PHONE_DIGITS = 11;
+// Letters (any script, e.g. Latin or Arabic) and spaces only — no digits or symbols.
+const NAME_RE = /^[\p{L}\s]+$/u;
+const MAX_NAME_LENGTH = 30;
 
 export function isValidEmail(value: string): boolean {
   return EMAIL_RE.test(value);
 }
 
 export function isValidPhone(value: string): boolean {
-  if (!PHONE_CHARS_RE.test(value)) return false;
-  const digitCount = value.replace(/\D/g, "").length;
-  return digitCount >= MIN_PHONE_DIGITS && digitCount <= MAX_PHONE_DIGITS;
+  return value.replace(/\D/g, "").length >= MIN_PHONE_DIGITS;
+}
+
+export function isValidName(value: string): boolean {
+  return value.length > 0 && value.length < MAX_NAME_LENGTH && NAME_RE.test(value);
 }

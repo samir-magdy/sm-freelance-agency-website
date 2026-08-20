@@ -46,10 +46,6 @@ export const quoteQuestions: QuoteQuestion[] = [
     type: "single",
     category: "scope",
     question: { en: "What's your main goal?", ar: "ما هدفك الأساسي؟" },
-    helper: {
-      en: "Helps us suggest the best type of project for you.",
-      ar: "يساعدنا في اقتراح نوع المشروع الأنسب لك.",
-    },
     options: [
       {
         value: "landing",
@@ -154,7 +150,7 @@ export const quoteQuestions: QuoteQuestion[] = [
       },
       {
         value: "large",
-        label: { en: "11–15 sections", ar: "11–15 قسمًا" },
+        label: { en: "More than 10 sections", ar: "أكثر من 10 أقسام" },
       },
       {
         value: "notSure",
@@ -458,6 +454,7 @@ export const quoteFormStrings = {
   ofLabel: { en: "of", ar: "من" },
   back: { en: "Back", ar: "السابق" },
   next: { en: "Next", ar: "التالي" },
+  skip: { en: "Skip", ar: "تخطي" },
   addAnother: { en: "Add another", ar: "إضافة رابط آخر" },
   submit: { en: "Submit", ar: "إرسال الاستبيان" },
   submitting: { en: "Submitting...", ar: "جاري الإرسال..." },
@@ -484,8 +481,11 @@ export const quoteFormStrings = {
   phoneCall: { en: "Phone Call", ar: "موبايل" },
   email: { en: "Email", ar: "الإيميل" },
   phone: { en: "Mobile Number", ar: "رقم الموبايل" },
-  phonePlaceholder: { en: "01XXXXXXXXX", ar: "01XXXXXXXXX" },
   emailPlaceholder: { en: "example@gmail.com", ar: "example@gmail.com" },
+  nameInvalid: {
+    en: "Please enter a valid name.",
+    ar: "يرجى إدخال اسم صحيح.",
+  },
   phoneInvalid: {
     en: "Please enter a valid phone number.",
     ar: "يرجى إدخال رقم موبايل صحيح.",
