@@ -4,7 +4,7 @@ import type { Guide } from "./types";
 const resource: Guide = {
   slug: "is-seo-still-important-in-2026",
   datePublished: "2026-08-08",
-  dateModified: new Date(),
+  dateModified: "2026-08-20",
   title: {
     en: `Is SEO Still Important in ${CURRENT_YEAR}?`,
     ar: `هل السيو (SEO) لا يزال مهماً في ${CURRENT_YEAR}؟`,
@@ -15,10 +15,10 @@ const resource: Guide = {
   },
   content: {
     en: `
-<p>The rise of AI search engines like ChatGPT, Perplexity, and Google's AI Overviews has transformed how people find information online. Today, a large portion of searches end without a user ever clicking on a website—a phenomenon known as "zero-click searches." The AI simply reads multiple sources and generates a summarized answer right at the top of the page. This shift has led many business owners to ask: Is Search Engine Optimization (SEO) still worth the investment in ${CURRENT_YEAR}?</p>
+<p>The rise of AI search engines like ChatGPT, Perplexity, and Google's AI Overviews has transformed how people find information online. Today, roughly two-thirds of Google searches end without a single click to the open web, according to a <a href="https://sparktoro.com/blog/in-2026-less-than-one-third-of-google-searches-still-send-a-click/" target="_blank" rel="noopener">2026 SparkToro/Datos study</a> — a phenomenon known as "zero-click searches." The AI simply reads multiple sources and generates a summarized answer right at the top of the page. This shift has led many business owners to ask: Is Search Engine Optimization (SEO) still worth the investment in ${CURRENT_YEAR}?</p>
 
 <h2>The short answer: SEO is not dead, it has evolved</h2>
-<p>Traditional SEO was about getting your website to rank as one of the ten blue links on Google's first page. Today, ranking on page one is no longer enough if an AI summary answers the user's question without ever mentioning your brand. The new standard is called <strong>Generative Engine Optimization (GEO)</strong>. The goal of GEO is to ensure that AI language models select, summarize, and cite your content in their generated answers.</p>
+<p>Traditional SEO was about getting your website to rank as one of the ten blue links on Google's first page. Today, ranking on page one is no longer enough if an AI summary answers the user's question without ever mentioning your brand. The new standard is called <strong>Generative Engine Optimization (GEO)</strong>. The goal of GEO is to ensure that AI language models select, summarize, and cite your content in their generated answers. If the three terms are new to you, start with our plain-language guide to <a href='/en/guides/what-is-seo-geo-and-aeo'>what SEO, GEO, and AEO mean</a>.</p>
 
 <h2>Traditional SEO vs. GEO</h2>
 <p>Here is how priorities are shifting in ${CURRENT_YEAR}:</p>
@@ -66,14 +66,19 @@ const resource: Guide = {
   <li><strong>Keep content updated:</strong> Stale content loses to updated content. Regularly refresh your pages to ensure they reflect the latest facts and trends.</li>
 </ul>
 
+<p>This is not theoretical for us: one of our clients' websites already appears as a cited source in Google's AI Overviews — exactly the kind of visibility these tactics are designed to earn.</p>
+
+<h2>The opportunity for Egyptian businesses</h2>
+<p>Here is the part most local businesses miss: only about 0.6% of websites publish their content in Arabic, while English is used by roughly half the web, according to <a href="https://w3techs.com/technologies/overview/content_language" target="_blank" rel="noopener">W3Techs</a>. AI engines answering Arabic queries have far fewer trustworthy sources to draw from — so an Egyptian business that publishes clear, structured Arabic content today competes for citations in a much thinner field than its English-language equivalent.</p>
+
 <h2>The bottom line</h2>
 <p>SEO in ${CURRENT_YEAR} is no longer just about driving massive amounts of traffic; it is about brand authority and being the definitive answer that AI trusts. If you adapt your content strategy to feed these AI engines with clear, structured, and expert information, you will capture the high-intent customers that your competitors are losing.</p>`,
 
     ar: `
-<p>أحدثت محركات البحث المدعومة بالذكاء الاصطناعي، مثل ChatGPT وPerplexity وملخصات جوجل (AI Overviews)، ثورة في طريقة بحثنا عن المعلومات على الإنترنت. اليوم، تنتهي نسبة كبيرة من عمليات البحث دون أن ينقر المستخدم على أي موقع، وهو ما يُعرف بـ "عمليات البحث الصفرية" (Zero-click searches). يقوم الذكاء الاصطناعي ببساطة بقراءة مصادر متعددة وتوليد إجابة ملخصة تظهر في أعلى صفحة النتائج. هذا التحول دفع العديد من أصحاب الأعمال للتساؤل: هل لا يزال الاستثمار في تحسين محركات البحث (SEO) مجدياً في عام ${CURRENT_YEAR}؟</p>
+<p>أحدثت محركات البحث المدعومة بالذكاء الاصطناعي، مثل ChatGPT وPerplexity وملخصات جوجل (AI Overviews)، ثورة في طريقة بحثنا عن المعلومات على الإنترنت. اليوم، ينتهي نحو ثلثي عمليات البحث على جوجل دون نقرة واحدة نحو المواقع، وفقاً لدراسة <a href="https://sparktoro.com/blog/in-2026-less-than-one-third-of-google-searches-still-send-a-click/" target="_blank" rel="noopener">SparkToro/Datos لعام 2026</a>، وهو ما يُعرف بـ "عمليات البحث الصفرية" (Zero-click searches). يقوم الذكاء الاصطناعي ببساطة بقراءة مصادر متعددة وتوليد إجابة ملخصة تظهر في أعلى صفحة النتائج. هذا التحول دفع العديد من أصحاب الأعمال للتساؤل: هل لا يزال الاستثمار في تحسين محركات البحث (SEO) مجدياً في عام ${CURRENT_YEAR}؟</p>
 
 <h2>الخلاصة: السيو لم يمت، بل تطور</h2>
-<p>في الماضي، كان الهدف الرئيسي للسيو هو تصدر الروابط الزرقاء العشرة الأولى في جوجل. أما اليوم، فلم يعد الظهور في الصفحة الأولى كافياً إذا كان ملخص الذكاء الاصطناعي يجيب على سؤال المستخدم دون الإشارة إلى علامتك التجارية. المعيار الجديد في السوق يُعرف باسم <strong>تحسين محركات التوليد (GEO - Generative Engine Optimization)</strong>. الهدف من الـ GEO هو التأكد من أن نماذج الذكاء الاصطناعي تختار محتواك، وتلخصه، وتشير إليه كمصدر موثوق داخل إجاباتها.</p>
+<p>في الماضي، كان الهدف الرئيسي للسيو هو تصدر الروابط الزرقاء العشرة الأولى في جوجل. أما اليوم، فلم يعد الظهور في الصفحة الأولى كافياً إذا كان ملخص الذكاء الاصطناعي يجيب على سؤال المستخدم دون الإشارة إلى علامتك التجارية. المعيار الجديد في السوق يُعرف باسم <strong>تحسين محركات التوليد (GEO - Generative Engine Optimization)</strong>. الهدف من الـ GEO هو التأكد من أن نماذج الذكاء الاصطناعي تختار محتواك، وتلخصه، وتشير إليه كمصدر موثوق داخل إجاباتها. وإذا كانت هذه المصطلحات جديدة عليك، ابدأ بدليلنا المبسط: <a href='/ar/guides/what-is-seo-geo-and-aeo'>ما هو الـ SEO والـ GEO والـ AEO؟</a></p>
 
 <h2>مقارنة بين السيو التقليدي (SEO) و الـ GEO</h2>
 <p>إليك كيف تغيرت الأولويات في ${CURRENT_YEAR}:</p>
@@ -121,10 +126,47 @@ const resource: Guide = {
   <li><strong>تحديث المحتوى باستمرار:</strong> المحتوى القديم يخسر دائماً أمام المحتوى المُحدث. راجع صفحاتك بشكل دوري لتتأكد من أنها تعكس أحدث الحقائق والاتجاهات.</li>
 </ul>
 
+<p>وهذا ليس كلاماً نظرياً بالنسبة لنا: فموقع أحد عملائنا يظهر بالفعل كمصدر مُستشهد به داخل ملخصات الذكاء الاصطناعي في جوجل (AI Overviews) — وهذا تحديداً نوع الظهور الذي صُممت هذه الأساليب لتحقيقه.</p>
+
+<h2>الفرصة الحقيقية أمام الشركات المصرية</h2>
+<p>إليك ما يغفل عنه أغلب أصحاب الأعمال في السوق المحلي: نحو 0.6% فقط من مواقع الإنترنت تنشر محتواها بالعربية، بينما تُستخدم الإنجليزية في حوالي نصف مواقع الويب، وفقاً لإحصائيات <a href="https://w3techs.com/technologies/overview/content_language" target="_blank" rel="noopener">W3Techs</a>. وهذا يعني أن محركات الذكاء الاصطناعي التي تجيب عن الأسئلة بالعربية تملك مصادر موثوقة أقل بكثير لتستشهد بها؛ فالشركة المصرية التي تنشر اليوم محتوى عربياً واضحاً ومنظماً تنافس على الظهور في مجال أقل ازدحاماً بكثير من نظيره الإنجليزي.</p>
+
 <h2>الخاتمة</h2>
 <p>السيو في ${CURRENT_YEAR} لم يعد يقتصر على جلب أعداد ضخمة من الزيارات العشوائية؛ بل أصبح يتعلق ببناء سلطة علامتك التجارية لتكون "الإجابة القاطعة" التي يثق بها الذكاء الاصطناعي. إذا قمت بتكييف استراتيجية المحتوى الخاصة بك لتزويد هذه المحركات بمعلومات واضحة، ومهيكلة، واحترافية، فستتمكن من جذب العملاء الجادين الذين يخسرهم منافسوك.</p>`,
   },
   readingMinutes: { en: 4, ar: 5 },
+  faq: [
+    {
+      question: {
+        en: "How long does SEO take to show results?",
+        ar: "كم يستغرق السيو حتى تظهر نتائجه؟",
+      },
+      answer: {
+        en: "Months, not weeks — typically three to six months for competitive queries, and faster in low-competition niches. Arabic-language content in Egypt often falls in the faster category precisely because the field is still thin.",
+        ar: "شهوراً لا أسابيع؛ عادةً من ثلاثة إلى ستة أشهر في الاستعلامات التنافسية، وأسرع من ذلك في المجالات قليلة المنافسة. والمحتوى العربي في مصر يقع غالباً في الفئة الأسرع تحديداً لأن المنافسة فيه ما زالت محدودة.",
+      },
+    },
+    {
+      question: {
+        en: "Is paid advertising a replacement for SEO?",
+        ar: "هل الإعلانات المدفوعة بديل عن السيو؟",
+      },
+      answer: {
+        en: "No — they solve different problems. Ads buy immediate visibility and stop the moment the budget stops; SEO compounds slowly and keeps working after the investment. The strongest strategies run both: ads for now, SEO for the long term.",
+        ar: "لا، فكل منهما يحل مشكلة مختلفة. الإعلانات تشتري ظهوراً فورياً يتوقف بتوقف الميزانية، بينما يتراكم أثر السيو ببطء ويستمر في العمل بعد الاستثمار. وأقوى الاستراتيجيات تجمع بينهما: الإعلانات للحاضر، والسيو للمدى البعيد.",
+      },
+    },
+    {
+      question: {
+        en: "How do I know if AI engines are citing my website?",
+        ar: "كيف أعرف أن محركات الذكاء الاصطناعي تستشهد بموقعي؟",
+      },
+      answer: {
+        en: "Watch your analytics for referral visits from tools like ChatGPT and Perplexity, and ask those tools the questions your customers ask, then check whether your site appears among the cited sources. Google's AI Overview traffic shows up inside your normal Search Console data.",
+        ar: "راقب في تحليلات موقعك الزيارات القادمة من أدوات مثل ChatGPT وPerplexity، واسأل هذه الأدوات نفس الأسئلة التي يطرحها عملاؤك ثم تحقق مما إذا كان موقعك يظهر ضمن المصادر المُستشهد بها. كما تظهر زيارات ملخصات جوجل (AI Overviews) ضمن بيانات Search Console العادية.",
+      },
+    },
+  ],
   chatTrigger: {
     topic:
       "Whether SEO still matters in the age of AI search, ChatGPT, Perplexity, Google AI Overviews, and zero-click results.",

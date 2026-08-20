@@ -4,7 +4,7 @@ import type { Guide } from "./types";
 const resource: Guide = {
   slug: "what-is-seo-geo-and-aeo",
   datePublished: "2026-08-08",
-  dateModified: new Date(),
+  dateModified: "2026-08-20",
   title: {
     en: "What is SEO, GEO, and AEO?",
     ar: "ما هو الـ SEO، والـ GEO، والـ AEO؟",
@@ -32,7 +32,7 @@ const resource: Guide = {
 </ul>
 
 <h2>3. GEO (Generative Engine Optimization)</h2>
-<p>GEO is the newest frontier. It is the process of optimizing your brand and content to be cited by AI language models, such as ChatGPT, Perplexity, and Google's AI Overviews.</p>
+<p>GEO is the newest frontier. It is the process of optimizing your brand and content to be cited by AI language models, such as ChatGPT, Perplexity, and Google's AI Overviews. The term was coined in a <a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener">2024 research paper (Aggarwal et al., KDD)</a>, which found that adding statistics, quotations, and cited sources lifted a page's visibility in AI answers by 30–40%.</p>
 <ul>
   <li><strong>How it works:</strong> Instead of retrieving a single link or a pre-written snippet, generative AI reads multiple sources in real-time, synthesizes the information, and writes a custom response, adding citations to where it got the data.</li>
   <li><strong>Your goal:</strong> To establish high authority and provide unique data, expert opinions, and structured content so the AI trusts your site enough to include it in its generated summary.</li>
@@ -78,7 +78,9 @@ const resource: Guide = {
 </table>
 
 <h2>The bottom line</h2>
-<p>You do not have to choose just one. In fact, they build upon each other. A website with poor technical SEO will not be crawled by Google, meaning it will never be chosen for a Featured Snippet (AEO), and AI bots will never discover its content to cite it (GEO). To dominate your market in ${CURRENT_YEAR}, you need a unified strategy: a fast, technically sound website (SEO), structured data and clear Q&A formats (AEO), and highly original, authoritative content (GEO).</p>`,
+<p>You do not have to choose just one. In fact, they build upon each other. A website with poor technical SEO will not be crawled by Google, meaning it will never be chosen for a Featured Snippet (AEO), and AI bots will never discover its content to cite it (GEO). To dominate your market in ${CURRENT_YEAR}, you need a unified strategy: a fast, technically sound website (SEO), structured data and clear Q&A formats (AEO), and highly original, authoritative content (GEO).</p>
+<p>This page practices what it preaches — direct answers under each heading, an FAQ with structured data, and cited sources — the same playbook we apply to the websites we build at the studio.</p>
+<p>For the practical question — whether this changes where you should invest — read <a href='/en/guides/is-seo-still-important-in-2026'>is SEO still important in ${CURRENT_YEAR}?</a>, including the first-mover opportunity it creates for Arabic-language content in Egypt.</p>`,
 
     ar: `<p>لعقود طويلة، كان الظهور على الإنترنت يعني شيئاً واحداً: تصدر نتائج بحث جوجل من خلال السيو (SEO). لكن اليوم، لم يعد الناس يبحثون باستخدام الكلمات المفتاحية فقط؛ بل أصبحوا يطرحون أسئلة مباشرة على المساعدات الصوتية، ويتحدثون مع روبوتات الذكاء الاصطناعي مثل ChatGPT للحصول على إجابات ملخصة. لكي تنجح في هذه البيئة الجديدة، يجب أن تتوسع استراتيجيتك الرقمية لتشمل ثلاثة مفاهيم أساسية: السيو (SEO)، وتحسين محركات الإجابة (AEO)، وتحسين محركات التوليد (GEO). إليك ما تعنيه هذه المصطلحات والفرق بينها.</p>
 
@@ -97,7 +99,7 @@ const resource: Guide = {
 </ul>
 
 <h2>3. الـ GEO - تحسين محركات التوليد</h2>
-<p>الـ GEO هو العصر الجديد للبحث. وهو عملية تهيئة علامتك التجارية ومحتواك ليتم الاستشهاد بها من قبل نماذج الذكاء الاصطناعي، مثل ChatGPT و Perplexity وملخصات الذكاء الاصطناعي في جوجل (AI Overviews).</p>
+<p>الـ GEO هو العصر الجديد للبحث. وهو عملية تهيئة علامتك التجارية ومحتواك ليتم الاستشهاد بها من قبل نماذج الذكاء الاصطناعي، مثل ChatGPT و Perplexity وملخصات الذكاء الاصطناعي في جوجل (AI Overviews). وقد ظهر المصطلح في <a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener">ورقة بحثية عام 2024 (Aggarwal وآخرون، مؤتمر KDD)</a> وجدت أن إضافة الإحصائيات والاقتباسات والمصادر الموثقة ترفع ظهور الصفحة في إجابات الذكاء الاصطناعي بنسبة 30–40%.</p>
 <ul>
   <li><strong>كيف يعمل:</strong> بدلاً من جلب رابط واحد أو مقتطف جاهز، يقوم الذكاء الاصطناعي التوليدي بقراءة مصادر متعددة في الوقت الفعلي، وتلخيص المعلومات، وكتابة إجابة مخصصة، مع إضافة روابط للمصادر التي استقى منها معلوماته.</li>
   <li><strong>هدفك:</strong> بناء سلطة قوية وتقديم بيانات أصلية وآراء خبراء ومحتوى مهيكل بدقة، حتى يثق الذكاء الاصطناعي بموقعك بما يكفي لإدراجه كمصدر في ملخصاته.</li>
@@ -143,9 +145,43 @@ const resource: Guide = {
 </table>
 
 <h2>الخاتمة</h2>
-<p>أنت لست مضطراً لاختيار واحد فقط؛ بل في الواقع، يعتمد كل منها على الآخر. فالموقع الذي يعاني من ضعف في السيو التقني لن يزحف إليه جوجل، مما يعني أنه لن يتم اختياره أبداً كمقتطف مميز (AEO)، ولن تكتشفه روبوتات الذكاء الاصطناعي للاستشهاد به (GEO). للسيطرة على سوقك في ${CURRENT_YEAR}، تحتاج إلى استراتيجية موحدة: موقع سريع وسليم تقنياً (SEO)، وبيانات مهيكلة وإجابات واضحة للأسئلة (AEO)، ومحتوى أصلي وموثوق (GEO).</p>`,
+<p>أنت لست مضطراً لاختيار واحد فقط؛ بل في الواقع، يعتمد كل منها على الآخر. فالموقع الذي يعاني من ضعف في السيو التقني لن يزحف إليه جوجل، مما يعني أنه لن يتم اختياره أبداً كمقتطف مميز (AEO)، ولن تكتشفه روبوتات الذكاء الاصطناعي للاستشهاد به (GEO). للسيطرة على سوقك في ${CURRENT_YEAR}، تحتاج إلى استراتيجية موحدة: موقع سريع وسليم تقنياً (SEO)، وبيانات مهيكلة وإجابات واضحة للأسئلة (AEO)، ومحتوى أصلي وموثوق (GEO).</p>
+<p>وهذه الصفحة تطبق ما تنصح به: إجابات مباشرة تحت كل عنوان، وأسئلة شائعة ببيانات مهيكلة، ومصادر موثقة — وهو نفس الأسلوب الذي نطبقه على المواقع التي نبنيها في الاستوديو.</p>
+<p>وللإجابة العملية عن سؤال الاستثمار، اقرأ: <a href='/ar/guides/is-seo-still-important-in-2026'>هل لا يزال السيو مهماً في ${CURRENT_YEAR}؟</a> — بما في ذلك فرصة السبق المتاحة للمحتوى العربي في مصر.</p>`,
   },
   readingMinutes: { en: 4, ar: 4 },
+  faq: [
+    {
+      question: {
+        en: "Is GEO replacing SEO?",
+        ar: "هل يحل الـ GEO محل الـ SEO؟",
+      },
+      answer: {
+        en: "No. GEO builds on SEO rather than replacing it. AI engines discover and trust content through the same crawling, structure, and authority signals that SEO establishes — a site with weak SEO rarely gets cited in AI answers at all.",
+        ar: "لا. الـ GEO يبني على الـ SEO ولا يستبدله؛ فمحركات الذكاء الاصطناعي تكتشف المحتوى وتثق به من خلال نفس إشارات الزحف والهيكلة والموثوقية التي يؤسسها السيو، والموقع الضعيف في السيو نادراً ما يُستشهد به في إجابات الذكاء الاصطناعي أصلاً.",
+      },
+    },
+    {
+      question: {
+        en: "Do I need separate strategies for SEO, AEO, and GEO?",
+        ar: "هل أحتاج استراتيجية منفصلة لكل من الـ SEO والـ AEO والـ GEO؟",
+      },
+      answer: {
+        en: "They overlap heavily, so one well-built site serves all three: technical health and keyword relevance for SEO, clear question-and-answer formatting for AEO, and original, citable information for GEO.",
+        ar: "تتداخل الثلاثة بشكل كبير، لذا فإن موقعاً واحداً مبنياً جيداً يخدمها جميعاً: صحة تقنية وكلمات مفتاحية ملائمة للـ SEO، وتنسيق واضح للأسئلة والإجابات للـ AEO، ومعلومات أصلية قابلة للاستشهاد للـ GEO.",
+      },
+    },
+    {
+      question: {
+        en: "Which one should a small business start with?",
+        ar: "بأيها تبدأ الشركات الصغيرة؟",
+      },
+      answer: {
+        en: "Start with SEO fundamentals — a fast, crawlable, mobile-friendly website — because answer engines and AI engines both depend on them. Then add direct answers to real customer questions, and original data as your content grows.",
+        ar: "ابدأ بأساسيات السيو: موقع سريع وسهل الزحف ومتوافق مع الهاتف، لأن محركات الإجابة ومحركات الذكاء الاصطناعي تعتمد عليها جميعاً. ثم أضف إجابات مباشرة عن أسئلة عملائك الحقيقية، وبيانات أصلية كلما نما محتواك.",
+      },
+    },
+  ],
   chatTrigger: {
     topic:
       "What SEO, GEO, and AEO mean, the differences between traditional search optimization and generative/answer-engine optimization.",

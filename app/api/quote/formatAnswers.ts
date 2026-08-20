@@ -1,5 +1,6 @@
 import { quoteQuestions } from "@/app/data/translations/quoteForm";
 import type { Lang } from "@/app/types";
+import { isValidUrl, normalizeUrl } from "@/lib/contactValidation";
 
 // Rejects anything that doesn't match a real question's expected shape
 // (multi/list -> string[], single/text -> string) before it ever reaches
@@ -25,6 +26,28 @@ export function isValidAnswers(
   }
 
   return true;
+}
+
+// Mirrors the client's normalization (adds https:// to bare domains) and
+// rejects a submission if any list-type (link) answer still isn't a valid
+// URL — the client disables Next in that case, but the API can't trust it.
+export function normalizeAnswers(
+  answers: Record<string, string | string[]>,
+): Record<string, string | string[]> | null {
+  const normalized: Record<string, string | string[]> = { ...answers };
+
+  for (const q of quoteQuestions) {
+    if (q.type !== "list") continue;
+    const value = normalized[q.id];
+    if (!Array.isArray(value)) continue;
+
+    const items = value.map((v) => v.trim()).filter((v) => v.length > 0);
+    if (items.some((v) => !isValidUrl(v))) return null;
+
+    normalized[q.id] = items.map(normalizeUrl);
+  }
+
+  return normalized;
 }
 
 export interface AnsweredEntry {

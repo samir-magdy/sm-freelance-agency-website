@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { use } from "react";
-import { SCHEMA_IDS } from "@/app/constants";
+import { SITE_NAME, SITE_URL, SCHEMA_IDS } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guidesShared";
 import pageMeta from "@/app/data/translations/pageMeta";
@@ -44,8 +44,21 @@ export default function GuidesPage({
       description: pageMeta.guides.description[lang],
       url: canonical,
       inLanguage: lang,
-      isPartOf: { "@id": SCHEMA_IDS.website },
-      publisher: { "@id": SCHEMA_IDS.business },
+      // Embedded (not bare @id refs): these nodes are only fully defined on
+      // the homepage, and crawlers don't reliably merge @ids across pages.
+      isPartOf: {
+        "@type": "WebSite",
+        "@id": SCHEMA_IDS.website,
+        name: SITE_NAME,
+        url: SITE_URL,
+      },
+      publisher: {
+        "@type": "ProfessionalService",
+        "@id": SCHEMA_IDS.business,
+        name: SITE_NAME,
+        url: SITE_URL,
+        logo: `${SITE_URL}/business-logo.png`,
+      },
     },
     {
       "@context": "https://schema.org",

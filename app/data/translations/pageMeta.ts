@@ -35,18 +35,18 @@ const pageMeta: {
       ar: `تصميم وتطوير مواقع إلكترونية | ${SITE_NAME}`,
     },
     description: {
-      en: "Professional, affordable websites that help you attract more customers and strengthen your online presence. Get your quote today.",
-      ar: "تصميم مواقع إلكترونية احترافية واقتصادية تساعدك على جذب المزيد من العملاء وتعزيز حضورك الرقمي. احصل على عرض سعر اليوم.",
+      en: "Turn visitors into paying clients with high-converting, custom web design built to grow your business. Request your free quote today.",
+      ar: "تصميم مواقع إلكترونية مخصصة تساعدك على جذب المزيد من العملاء وتعزيز حضورك الرقمي. احصل على عرض سعر اليوم.",
     },
   },
   // SPECIALIZED SERVICES -> /services
   services: {
     title: {
-      en: "Specialized Services — Branding, Copywriting, SEO, Bilingual",
-      ar: "خدمات متخصصة — هوية بصرية، محتوى، SEO، ثنائي اللغة",
+      en: "Services - Branding, SEO, AI Integration",
+      ar: "الخدمات - هوية بصرية، SEO",
     },
     description: {
-      en: `Branding, copywriting, SEO setup, and full bilingual support from ${SITE_NAME}. Layer onto a website build, or hire on its own.`,
+      en: `Branding, copywriting, SEO setup, AI integraion and more from ${SITE_NAME}. Layer onto a website build, or hire on its own.`,
       ar: `هوية بصرية، كتابة محتوى، إعداد SEO، ودعم كامل ثنائي اللغة من ${SITE_NAME}. أضفها لمشروع موقع، أو استفد منها كمشروع مستقل.`,
     },
   },
@@ -80,28 +80,28 @@ const pageMeta: {
         ar: `كم تكلفة تصميم موقع إلكتروني احترافي في مصر؟ (${CURRENT_YEAR})`,
       },
       description: {
-        en: `Find out how much a professional website costs in Egypt in ${CURRENT_YEAR}. An honest EGP breakdown of what drives the price for landing pages, business sites, and online stores.`,
-        ar: "هل تريد معرفة كم سيكلفك موقعك الإلكتروني؟ احسب تكلفة موقعك فوراً باستخدام حاسبة الأسعار الذكية، واكتشف العوامل التي تحدد الأسعار في مصر.",
+        en: `How much does a website cost in Egypt in ${CURRENT_YEAR}? An honest EGP price breakdown by website type, plus the ten factors that move the price up or down.`,
+        ar: "كم تكلفة تصميم موقع إلكتروني في مصر؟ تعرّف على متوسط الأسعار بالجنيه حسب نوع الموقع، والعوامل العشرة التي تحدد التكلفة النهائية لتستثمر بذكاء.",
       },
     },
     "diy-vs-professional-web-design": {
       title: {
         en: `DIY Website Builders vs Hiring a Developer (${CURRENT_YEAR})`,
-        ar: ` استخدام منصات إنشاء المواقع الجاهزة أم الاستعانة بمصمم محترف؟ (${CURRENT_YEAR})`,
+        ar: `منصات إنشاء المواقع الجاهزة أم مصمم محترف؟ (${CURRENT_YEAR})`,
       },
       description: {
-        en: "Should you build your own website on Wix or Squarespace, or hire a professional? Compare real costs (including hidden USD subscriptions), risks, and long-term tradeoffs.",
-        ar: "هل تصمم موقعك بنفسك على Wix أو Squarespace، أم تستعين بمحترف؟ قارن التكاليف الحقيقية (بما فيها الاشتراكات الخفية بالدولار)، والمخاطر، والفروق على المدى البعيد.",
+        en: "Should you build your own website on Wix or Squarespace, or hire a professional? Compare the real costs, hidden USD subscriptions, and long-term tradeoffs.",
+        ar: "هل تصمم موقعك بنفسك على Wix أو Squarespace أم تستعين بمحترف؟ قارن التكاليف الحقيقية والاشتراكات الخفية بالدولار والفروق على المدى البعيد.",
       },
     },
     "choose-web-design-company-egypt": {
       title: {
-        en: `Choosing the Best Web Design Company (${CURRENT_YEAR})`,
+        en: `Choosing the Best Web Design Company in Egypt (${CURRENT_YEAR})`,
         ar: `كيف تختار أفضل شركة تصميم مواقع إلكترونية في مصر؟ (${CURRENT_YEAR})`,
       },
       description: {
         en: `Choosing the wrong web design company in Egypt costs more than money. Learn the key questions to ask, red flags to spot, and how to choose right in ${CURRENT_YEAR}.`,
-        ar: `اختيار شركة تصميم مواقع غير مناسبة في مصر مكلف: تأخير، ورسوم خفية بالدولار، ومواقع لا تعمل. تعرف على الأسئلة التي يجب أن تطرحها، والعلامات التحذيرية، ومعايير اختيار فريلانسر أو استوديو أو شركة في ${CURRENT_YEAR}.`,
+        ar: `اختيار شركة تصميم مواقع غير مناسبة في مصر مكلف. تعرف على الأسئلة التي يجب طرحها، والعلامات التحذيرية، وكيف تختار بين مستقل أو استوديو أو شركة في ${CURRENT_YEAR}.`,
       },
     },
     "why-your-business-needs-a-website": {
@@ -111,13 +111,13 @@ const pageMeta: {
       },
       description: {
         en: `Discover why your business in Egypt needs a website in ${CURRENT_YEAR}: real credibility, Google visibility, and ROI that Instagram and Facebook simply cannot match.`,
-        ar: `هل تحتاج فعلاً إلى موقع إلكتروني في مصر في ${CURRENT_YEAR}؟ اكتشف الفوائد الحقيقية: المصداقية، والتحكم، والظهور في جوجل، والعائد بالجنيه. ولماذا لا يكفي وجودك على إنستجرام وفيسبوك.`,
+        ar: `هل تحتاج فعلاً إلى موقع إلكتروني في مصر في ${CURRENT_YEAR}؟ اكتشف الفوائد الحقيقية: المصداقية، والظهور في جوجل، والعائد الذي لا توفره صفحات السوشيال ميديا.`,
       },
     },
     "is-seo-still-important-in-2026": {
       title: {
         en: `Is SEO Still Important in ${CURRENT_YEAR}? (AI & GEO Guide)`,
-        ar: `هل السيو (SEO) لا يزال مهماً في ${CURRENT_YEAR}؟ (تأثير الذكاء الاصطناعي)`,
+        ar: `هل لا يزال السيو (SEO) مهماً في ${CURRENT_YEAR}؟`,
       },
       description: {
         en: `Discover why SEO is still crucial in ${CURRENT_YEAR} and how Generative Engine Optimization (GEO) and AI Overviews are changing the way businesses rank on Google.`,
@@ -130,7 +130,7 @@ const pageMeta: {
         ar: `ما هو السيو (SEO)، والـ GEO، والـ AEO؟ (${CURRENT_YEAR})`,
       },
       description: {
-        en: "Confused by the new search landscape? Learn the differences between SEO (Search), AEO (Answer), and GEO (Generative) optimization, and how to master all three.",
+        en: "Confused by the new search landscape? Learn the differences between SEO, AEO, and GEO — and how one well-built strategy can master all three at once.",
         ar: "عالم البحث تغير! تعرف على الفروق الأساسية بين السيو التقليدي (SEO)، وتحسين الإجابات (AEO)، وتحسين محركات الذكاء الاصطناعي (GEO) وكيفية تطبيقها في موقعك.",
       },
     },
@@ -140,7 +140,7 @@ const pageMeta: {
         ar: "لماذا تفشل مواقع الذكاء الاصطناعي في جذب العملاء؟",
       },
       description: {
-        en: "AI website builders promise speed, but they often fail to generate leads. Discover why generic AI sites lack the SEO, UX, and conversion optimization your business needs.",
+        en: "AI website builders promise speed but often fail to generate leads. See why generic AI sites lack the SEO, UX, and conversion strategy a business needs.",
         ar: "تعدك أدوات الذكاء الاصطناعي بالسرعة، لكنها تفشل في جذب العملاء. اكتشف لماذا تفتقر هذه المواقع إلى التهيئة لمحركات البحث وتجربة المستخدم التي يحتاجها عملك.",
       },
     },

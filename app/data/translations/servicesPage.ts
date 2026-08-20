@@ -153,7 +153,7 @@ const servicesPage: ServicesPageTranslations = {
   },
   articleCtaButton: {
     en: "Request a Quote",
-    ar: "تواصل معنا",
+    ar: "اطلب عرض سعر",
   },
   backLinkLabel: {
     en: "Back to services",

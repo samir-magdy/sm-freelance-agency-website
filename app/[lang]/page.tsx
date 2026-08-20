@@ -7,6 +7,7 @@ import ContactSection from "@/app/components/sections/ContactSection/ContactSect
 import { notFound } from "next/navigation";
 import { projectsStructuredData } from "@/app/data/portfolio";
 import { servicesSectionTranslations } from "@/app/data/translations/servicesSection";
+import faqSection from "@/app/data/translations/faqSection";
 import pageMeta from "@/app/data/translations/pageMeta";
 import {
   SITE_URL,
@@ -134,6 +135,23 @@ function buildStructuredData(lang: Lang, region: Region) {
     isPartOf: { "@id": SCHEMA_IDS.website },
   };
 
+  // Mirrors the visible FAQ section in the page's language. Answers are
+  // stripped to plain text — the schema must match the on-page content, and
+  // one answer carries inline links the schema text shouldn't.
+  const faqSchema = {
+    "@type": "FAQPage",
+    "@id": `${pageUrl}#faq`,
+    inLanguage: lang,
+    mainEntity: faqSection.items.map((item) => ({
+      "@type": "Question",
+      name: item.question[lang],
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer[lang].replace(/<[^>]+>/g, ""),
+      },
+    })),
+  };
+
   const founderSchema = {
     "@type": "Person",
     "@id": SCHEMA_IDS.founder,
@@ -159,6 +177,7 @@ function buildStructuredData(lang: Lang, region: Region) {
       ...services,
       websiteSchema,
       webPageSchema,
+      faqSchema,
       founderSchema,
     ],
   };
@@ -187,7 +206,7 @@ export default async function Page({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(projectsStructuredData),
+          __html: JSON.stringify(projectsStructuredData).replace(/</g, "\\u003c"),
         }}
       />
 

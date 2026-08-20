@@ -18,7 +18,7 @@ export const quoteCategories: { id: CategoryId; name: Localized }[] = [
   { id: "features", name: { en: "Features", ar: "الميزات" } },
   {
     id: "timeline",
-    name: { en: "Timeline & Extras", ar: "الجدول الزمني والتفاصيل الإضافية" },
+    name: { en: "Timeline & Extras", ar: "التفاصيل الإضافية" },
   },
   { id: "contact", name: { en: "Contact Info", ar: "بيانات التواصل" } },
 ];
@@ -419,8 +419,8 @@ export const quoteQuestions: QuoteQuestion[] = [
       ar: "شارِك بعض الروابط، يساعدنا ذلك على فهم الطابع والمظهر الذي تريده.",
     },
     placeholder: {
-      en: "referencesite.com",
-      ar: "referencesite.com",
+      en: "example.com",
+      ar: "example.com",
     },
   },
   {
@@ -446,9 +446,8 @@ export const quoteQuestions: QuoteQuestion[] = [
 export const quoteFormStrings = {
   close: { en: "Close", ar: "إغلاق" },
   introBody: {
-    en: "Answer a few questions so we can provide you with an accurate quote.",
-    ar: "أجب عن بعض الأسئلة السريعة لنجهز لك عرض سعر دقيق.",
-  },
+    en: "Please answer a few questions so we can provide you with an accurate quote.",
+ar: "يرجى الإجابة عن بعض الأسئلة لنتمكن من توفير عرض سعر دقيق.",  },
   start: { en: "Get Started", ar: "ابدأ الاستبيان" },
   stepLabel: { en: "Step", ar: "خطوة" },
   ofLabel: { en: "of", ar: "من" },
@@ -493,5 +492,9 @@ export const quoteFormStrings = {
   emailInvalid: {
     en: "Please enter a valid email address.",
     ar: "يرجى إدخال بريد إلكتروني صحيح.",
+  },
+  urlInvalid: {
+    en: "Please enter a valid website link.",
+    ar: "يرجى إدخال رابط موقع صحيح.",
   },
 } satisfies Record<string, Localized>;

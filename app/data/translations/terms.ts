@@ -7,8 +7,8 @@ const termsOfService: LegalDocument = {
     ar: "شروط الخدمة",
   },
   subheading: {
-    en: "Last Updated: June 4, 2026. Please read these terms and conditions carefully before using Our Service.",
-    ar: "آخر تحديث: 4 يونيو 2026. يرجى قراءة هذه الشروط والأحكام بعناية قبل استخدام خدمتنا.",
+    en: "Last Updated: August 20, 2026. Please read these terms and conditions carefully before using Our Service.",
+    ar: "آخر تحديث: 20 أغسطس 2026. يرجى قراءة هذه الشروط والأحكام بعناية قبل استخدام خدمتنا.",
   },
   sections: [
     {
@@ -53,8 +53,18 @@ const termsOfService: LegalDocument = {
     },
     {
       title: {
-        en: "5. Refund and Cancellation Policy",
-        ar: "5. سياسة الاسترداد والإلغاء",
+        en: "5. Included Deliverables, Revisions, and Post-Launch Support",
+        ar: "5. المخرجات المشمولة والتعديلات والدعم بعد الإطلاق",
+      },
+      content: {
+        en: "Unless otherwise stated in your project proposal, every project includes: a custom-built, responsive website; a baseline SEO setup; two rounds of design revisions; the first year of hosting; domain setup; and a 90-day post-launch guarantee, as described below.\n\nRevisions: Two rounds of revisions are included during the design phase, covering changes to layout, visual style, and page structure. Once development has begun, further changes are treated as new revision rounds rather than part of the original design phase. Any revisions beyond the two included, or any revisions requested after the design has been approved, will be quoted separately and added to the project cost.\n\n90-Day Post-Launch Guarantee: For 90 days after your site goes live, we will fix, at no additional cost, any bug or defect where a feature we built does not work as agreed in your project proposal. This guarantee does not cover new features, content changes, changes of scope, issues caused by third-party plugins, apps, or services not provided by us, or issues caused by changes made to the site after launch by you or a third party.\n\nHosting Renewal: The first year of hosting is included in the base package. After that, hosting is billed annually at the rate stated in your project proposal or renewal notice. If the renewal fee is not paid, we will provide reasonable advance notice before suspending or taking the site offline.",
+        ar: "ما لم يُنص على خلاف ذلك في عرض مشروعك، يشمل كل مشروع: موقعًا إلكترونيًا مخصصًا ومتجاوبًا، وتهيئة أساسية لمحركات البحث (SEO)، وجولتين من تعديلات التصميم، واستضافة للسنة الأولى، وإعداد النطاق (الدومين)، وضمانًا لمدة 90 يومًا بعد الإطلاق، وفق التفاصيل الموضحة أدناه.\n\nالتعديلات: تشمل الخدمة جولتين من التعديلات خلال مرحلة التصميم، تغطيان التغييرات في التخطيط والطابع البصري وبنية الصفحات. بمجرد بدء مرحلة التطوير، تُعامل أي تغييرات إضافية كجولات تعديل جديدة وليست جزءًا من مرحلة التصميم الأصلية. أي تعديلات تتجاوز الجولتين المشمولتين، أو أي تعديلات تُطلب بعد اعتماد التصميم، سيتم تسعيرها بشكل منفصل وإضافتها إلى تكلفة المشروع.\n\nضمان الـ 90 يومًا بعد الإطلاق: لمدة 90 يومًا بعد إطلاق موقعك، سنقوم بإصلاح أي خلل أو عطل في وظيفة قمنا ببنائها ولا تعمل كما هو متفق عليه في عرض مشروعك، دون أي تكلفة إضافية. لا يشمل هذا الضمان الميزات الجديدة، أو تعديلات المحتوى، أو تغييرات نطاق العمل، أو المشكلات الناتجة عن إضافات أو تطبيقات أو خدمات من أطراف ثالثة لم نقم بتوفيرها، أو المشكلات الناتجة عن تعديلات تُجرى على الموقع بعد الإطلاق من قِبلك أو من طرف ثالث.\n\nتجديد الاستضافة: تشمل الباقة الأساسية استضافة السنة الأولى. بعد ذلك، تُفوتَر الاستضافة سنويًا بالسعر المحدد في عرض مشروعك أو في إشعار التجديد. في حال عدم سداد رسوم التجديد، سنقدم إشعارًا مسبقًا معقولًا قبل تعليق الموقع أو إيقافه.",
+      },
+    },
+    {
+      title: {
+        en: "6. Refund and Cancellation Policy",
+        ar: "6. سياسة الاسترداد والإلغاء",
       },
       content: {
         en: "The 25% deposit is non-refundable under all circumstances, as it compensates for time and resources allocated to your project.\n\nOnce a design has been presented and approved by the client, no refund will be issued for any reason. Approval may be given explicitly (written or verbal confirmation) or implicitly (proceeding to the development phase without objection).\n\nIf you choose to cancel a project after approval of the design, the deposit is forfeited and no further charges will apply, provided development has not yet begun. If development has already commenced, the remaining balance or a pro-rated portion may be owed depending on the work completed, as outlined in the project proposal.",
@@ -63,8 +73,8 @@ const termsOfService: LegalDocument = {
     },
     {
       title: {
-        en: "6. Intellectual Property and Portfolio Rights",
-        ar: "6. الملكية الفكرية وحقوق معرض الأعمال",
+        en: "7. Intellectual Property and Portfolio Rights",
+        ar: "7. الملكية الفكرية وحقوق معرض الأعمال",
       },
       content: {
         en: `Upon receipt of full payment, you will own the final digital products and deliverables as outlined in your project contract. Ownership does not transfer until the final balance is paid in full.\n\nUnless a Non-Disclosure Agreement (NDA) is explicitly signed before the commencement of a project, ${SITE_NAME} reserves the right to feature completed projects, screenshots, and case studies in our portfolio and marketing materials.`,
@@ -73,8 +83,8 @@ const termsOfService: LegalDocument = {
     },
     {
       title: {
-        en: "7. User Representations",
-        ar: "7. إقرارات المستخدم",
+        en: "8. User Representations",
+        ar: "8. إقرارات المستخدم",
       },
       content: {
         en: "By using the Site, you represent and warrant that all registration or inquiry information you submit will be true, accurate, current, and complete. You agree that you will not use the Site for any illegal or unauthorized purpose, and you will not access the Site through automated or non-human means, whether through a bot, script, or otherwise.",
@@ -83,8 +93,8 @@ const termsOfService: LegalDocument = {
     },
     {
       title: {
-        en: "8. Limitation of Liability",
-        ar: "8. حدود المسؤولية",
+        en: "9. Limitation of Liability",
+        ar: "9. حدود المسؤولية",
       },
       content: {
         en: `In no event will ${SITE_NAME}, or our directors, employees, or agents, be liable to you or any third party for any direct, indirect, consequential, exemplary, incidental, special, or punitive damages arising from your use of the site or our services, even if we have been advised of the possibility of such damages.`,
@@ -93,8 +103,8 @@ const termsOfService: LegalDocument = {
     },
     {
       title: {
-        en: "9. Governing Law and Jurisdiction",
-        ar: "9. القانون الحاكم والاختصاص القضائي",
+        en: "10. Governing Law and Jurisdiction",
+        ar: "10. القانون الحاكم والاختصاص القضائي",
       },
       content: {
         en: "These Terms are governed by the laws of the Arab Republic of Egypt. Any disputes arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the competent courts of Cairo, Egypt.",

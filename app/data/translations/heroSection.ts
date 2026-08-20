@@ -22,7 +22,7 @@ const hero: {
     ar: 'علامتك التجارية.<br />في <span class="text-gold">الأضواء</span>.',
   },
   primaryCta: {
-    en: "Start a Project",
+    en: "Request a Quote",
     ar: "اطلب عرض سعر",
   },
   secondaryCta: {

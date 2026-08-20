@@ -28,7 +28,7 @@ const contactSection: ContactSection = {
   ar: "تواصل معنا عبر واتساب للأسئلة العامة، أو أكمل الاستبيان للحصول على عرض سعر.",
 },
   whatsappCta: { en: "WhatsApp", ar: "تواصل عبر الواتساب" },
-  questionnaireCta: { en: "Get a Custom Quote", ar: "اطلب عرض سعر" },
+  questionnaireCta: { en: "Request a Quote", ar: "اطلب عرض سعر" },
   formHeading: { en: "Or send us a message", ar: "أو أرسل لنا رسالة" },
   namePlaceholder: { en: "Your name", ar: "اسمك" },
   emailPlaceholder: { en: "Your email", ar: "بريدك الإلكتروني" },

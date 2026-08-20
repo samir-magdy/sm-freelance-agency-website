@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Calendar, Clock } from "lucide-react";
-import { SITE_NAME, SCHEMA_IDS } from "@/app/constants";
+import { ArrowLeft, ArrowRight, Calendar, Clock, History, UserRound } from "lucide-react";
+import { SITE_NAME, SITE_URL, SCHEMA_IDS, FOUNDER_LINKS } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guidesShared";
 import pageMeta from "@/app/data/translations/pageMeta";
@@ -106,10 +106,33 @@ export default async function GuidePage({
       url: canonical,
       datePublished: guide.datePublished,
       dateModified: guide.dateModified,
-      author: { "@id": SCHEMA_IDS.founder, name: "Samir Magdy" },
-      publisher: { "@id": SCHEMA_IDS.business },
-      isPartOf: { "@id": SCHEMA_IDS.website },
-      mainEntityOfPage: { "@id": `${canonical}#webpage` },
+      // Full Person node embedded per-article: crawlers don't reliably merge
+      // @id references across pages, so the author must be self-contained here.
+      author: {
+        "@type": "Person",
+        "@id": SCHEMA_IDS.founder,
+        name: "Samir Magdy",
+        alternateName: "سمير مجدي",
+        jobTitle: "Founder, Web Designer & Developer",
+        url: pageUrl(lang, "/about"),
+        sameAs: [FOUNDER_LINKS.linkedin, FOUNDER_LINKS.github],
+      },
+      // Like the author node above: publisher/isPartOf must be resolvable on
+      // this page, so embed minimal nodes instead of bare @id references.
+      publisher: {
+        "@type": "ProfessionalService",
+        "@id": SCHEMA_IDS.business,
+        name: SITE_NAME,
+        url: SITE_URL,
+        logo: `${SITE_URL}/business-logo.png`,
+      },
+      isPartOf: {
+        "@type": "WebSite",
+        "@id": SCHEMA_IDS.website,
+        name: SITE_NAME,
+        url: SITE_URL,
+      },
+      mainEntityOfPage: canonical,
     },
     {
       "@context": "https://schema.org",
@@ -136,6 +159,20 @@ export default async function GuidePage({
         },
       ],
     },
+    ...(guide.faq?.length
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "@id": `${canonical}#faq`,
+            mainEntity: guide.faq.map((f) => ({
+              "@type": "Question",
+              name: f.question[lang],
+              acceptedAnswer: { "@type": "Answer", text: f.answer[lang] },
+            })),
+          },
+        ]
+      : []),
   ];
 
   const SLOT = "<!-- REGION_NOTICE_SLOT -->";
@@ -189,6 +226,25 @@ export default async function GuidePage({
               <Clock size={13} aria-hidden />
               {guide.readingMinutes[lang]} {translations.minRead[lang]}
             </span>
+            {guide.dateModified !== guide.datePublished && (
+              <time
+                dateTime={guide.dateModified}
+                className="inline-flex items-center gap-1.5 text-sm sm:text-base text-content-muted border border-border-subtle rounded-lg px-3 py-1"
+              >
+                <History size={13} aria-hidden />
+                {translations.updatedOn[lang]}{" "}
+                {new Intl.DateTimeFormat(lang === "ar" ? "ar-EG" : "en-US", {
+                  dateStyle: "long",
+                }).format(new Date(guide.dateModified))}
+              </time>
+            )}
+            <Link
+              href={`/${lang}/about`}
+              className="inline-flex items-center gap-1.5 text-sm sm:text-base text-content-muted border border-border-subtle rounded-lg px-3 py-1 hover:text-white/80 hover:border-white/30 transition-colors duration-300"
+            >
+              <UserRound size={13} aria-hidden />
+              {translations.writtenBy[lang]} {translations.authorName[lang]}
+            </Link>
           </div>
         </header>
         {parts.length === 1 ? (
@@ -226,6 +282,55 @@ export default async function GuidePage({
             />
           </>
         )}
+        {guide.faq && guide.faq.length > 0 && (
+          <section aria-labelledby="faq-heading">
+            <h2
+              id="faq-heading"
+              className="text-[clamp(1.25rem,5vw,2.5rem)] font-bold text-content-heading/95 leading-snug rtl:leading-loose mb-6"
+            >
+              {translations.faqHeading[lang]}
+            </h2>
+            <ul className="flex flex-col gap-4 list-none p-0">
+              {guide.faq.map((f) => (
+                <li
+                  key={f.question.en}
+                  className="rounded-2xl border border-border-strong bg-surface-card/50 px-6 py-5 sm:px-8 sm:py-6"
+                >
+                  <h3 className="text-content-heading font-semibold text-subheading leading-snug rtl:leading-loose mb-2">
+                    {f.question[lang]}
+                  </h3>
+                  <p className="text-content-body text-base sm:text-subheading leading-relaxed rtl:leading-loose">
+                    {f.answer[lang]}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+        <aside
+          aria-label={`${translations.writtenBy[lang]} ${translations.authorName[lang]}`}
+          className="rounded-2xl border border-white/8 bg-surface-low px-7 py-6 sm:px-10 sm:py-7"
+        >
+          <p className="text-xs sm:text-sm uppercase tracking-wider text-content-muted mb-2">
+            {translations.writtenBy[lang]}
+          </p>
+          <p className="text-content-heading font-semibold text-subheading">
+            {translations.authorName[lang]}
+          </p>
+          <p className="text-content-body text-base leading-relaxed rtl:leading-loose mt-1.5 mb-3 max-w-3xl">
+            {translations.authorBio[lang]}
+          </p>
+          <Link
+            href={`/${lang}/about`}
+            className="group inline-flex items-center gap-1.5 text-sm font-semibold text-content-body hover:text-white/80 transition-colors duration-200"
+          >
+            {translations.aboutAuthorLink[lang]}
+            <ArrowRight
+              className="size-4 rtl:rotate-180 transition-transform duration-200 group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5"
+              aria-hidden
+            />
+          </Link>
+        </aside>
         <div className="relative overflow-hidden rounded-2xl border border-white/8 bg-surface-low mb-6">
           <div className="relative text-center sm:text-start flex flex-col sm:flex-row sm:items-center gap-7 sm:gap-12 px-7 py-9 sm:px-11 sm:py-11">
             <p className="flex-1 text-[clamp(1.2rem,4vw,2.2rem)] font-semibold text-content-heading leading-tight rtl:leading-loose">

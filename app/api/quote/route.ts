@@ -5,7 +5,7 @@ import { redis } from "@/lib/redis";
 import { isValidEmail, isValidName, isValidPhone } from "@/lib/contactValidation";
 import { SITE_NAME } from "@/app/constants";
 import { isLang } from "@/app/types";
-import { formatAnswers, isValidAnswers } from "./formatAnswers";
+import { formatAnswers, isValidAnswers, normalizeAnswers } from "./formatAnswers";
 import { buildQuoteEmailHtml } from "./emailTemplate";
 
 export const runtime = "edge";
@@ -28,7 +28,13 @@ export async function POST(request: NextRequest) {
         { status: 400 },
       );
     }
-    const answers = rawAnswers;
+    const answers = normalizeAnswers(rawAnswers);
+    if (!answers) {
+      return NextResponse.json(
+        { error: "Please enter valid website links." },
+        { status: 400 },
+      );
+    }
     const rawContact: {
       name?: unknown;
       method?: unknown;

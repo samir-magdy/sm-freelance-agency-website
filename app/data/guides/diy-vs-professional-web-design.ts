@@ -4,7 +4,7 @@ import type { Guide } from "./types";
 const resource: Guide = {
   slug: "diy-vs-professional-web-design",
   datePublished: "2026-03-25",
-  dateModified: new Date(),
+  dateModified: "2026-08-20",
   title: {
     en: "DIY Website Builders vs Hiring a Professional",
     ar: "تصمم موقعك بنفسك أم تستعين بمصمم محترف؟",
@@ -68,15 +68,20 @@ const resource: Guide = {
 
 <h2>The DIY cost trap</h2>
 
-<p>The DIY cost trap is that the low monthly subscription hides two much larger costs, the value of your time and years of compounding fees. The main appeal of DIY platforms is the low starting price, but neither of these costs is visible up front. The hours you spend wrestling with layouts and fixing technical issues are hours away from running your business, and most platforms cost $20-$50/month. By the first year, you have usually surpassed the cost of hiring a professional for a one-time fee. For a full breakdown of what professional builds can cost, read our <a href='/en/guides/website-cost-in-egypt'>guide on website pricing</a>.</p>
+<p>The DIY cost trap is that the low monthly subscription hides two much larger costs: the value of your time, and years of compounding fees. Neither is visible up front. The hours you spend wrestling with layouts and fixing technical issues are hours taken away from actually running your business.</p>
+
+<p>The subscriptions themselves are billed in dollars. Business-tier plans currently run about $23–46 per month on <a href="https://www.squarespace.com/pricing" target="_blank" rel="noopener">Squarespace</a> and <a href="https://www.wix.com/plans" target="_blank" rel="noopener">Wix</a>. At current exchange rates (around EGP 50 to the dollar in ${CURRENT_YEAR}), two years of a $20–50 monthly plan adds up to roughly EGP 24,000–60,000 — compared to <a href='/en/guides/website-cost-in-egypt'>how much a website costs in Egypt</a> when built professionally — often under EGP 30,000, paid once. Over the long run, the "cheap" option usually costs multiples of the professional one.</p>
+
+<p>We know this pattern from the rebuild side: part of our work at the studio comes from owners who outgrew a builder subscription and discovered the site could not move with them. These platforms do not export working code you can host elsewhere, so when the limits hit, the rebuild starts from scratch — with the subscription money already spent.</p>
 
 <h2>The bottom line</h2>
-<p>Building your own site is a reasonable choice if you have free time and your budget is tight. But if you have a real business and want to grow and compete in ${CURRENT_YEAR}, professional web design is the foundation you need. Businesses that invest in professional design from the start avoid the DIY cost trap entirely.</p>`,
+<p>Building your own site is a reasonable choice if you have free time and your budget is tight. But if you have a real business and want to grow and compete in ${CURRENT_YEAR}, professional web design is the foundation you need. Businesses that invest in professional design from the start avoid the DIY cost trap entirely.</p>
+<p>Tempted by the newer shortcut instead? Read <a href='/en/guides/why-ai-website-builders-fail-businesses'>why AI website builders fail businesses</a> before you decide.</p>`,
 
     ar: `
-<p>في الحقيقة، تمتلك المنصات الجاهزة العديد من العيوب التي سنوضحها قريباً. هذه العيوب لا تظهر في البداية، لكنها تبدأ بالظهور بوضوح مع مرور الوقت، أو عندما تحتاج إلى إجراء تعديلات مخصصة تخرج عن إطار القيود التي تفرضها عليك هذه المنصات. دعنا نبدأ بمقارنة واضحة بين الخيارين.</p>
+<p>قد تفي منصات إنشاء المواقع الجاهزة مثل Wix أو Squarespace بالغرض إذا كنت تحتاج موقعاً بسيطاً. لكنها تمتلك عيوباً جوهرية لا تظهر في البداية، بل تتضح مع مرور الوقت، أو عندما تحتاج إلى تعديلات مخصصة تتجاوز حدود هذه المنصات. دعنا نبدأ بمقارنة واضحة بين الخيارين.</p>
 
-<h2>مقارنة بين المنصات الجاهزة والتصميم الاحترافي:</h2>
+<h2>مقارنة بين المنصات الجاهزة والتصميم الاحترافي</h2>
 <p>إليك مقارنة تفصيلية بين بناء الموقع بنفسك والاستعانة بمصمم محترف:</p>
 <table>
   <thead>
@@ -94,7 +99,7 @@ const resource: Guide = {
     </tr>
     <tr>
       <td>التكلفة على المدى الطويل</td>
-      <td>تتراكم بالدولار (30-80 ألف جنيه خلال عامين)</td>
+      <td>تتراكم بالدولار (24–60 ألف جنيه خلال عامين)</td>
       <td>تُدفع لمرة واحدة ويصبح الموقع ملكاً لك</td>
     </tr>
     <tr>
@@ -127,12 +132,49 @@ const resource: Guide = {
 
 <h2>فخ تكلفة المنصات الجاهزة</h2>
 
-<p>يكمن فخ المنصات الجاهزة في أن الاشتراك الشهري المنخفض بالدولار يخفي وراءه تكلفتين أكبر بكثير: قيمة وقتك، وتراكم الاشتراكات الدولارية لسنوات. الميزة الأساسية لهذه المنصات هي سعرها المنخفض في البداية، ولكن هاتين التكلفتين لا تكونان واضحتين على الفور. التكلفة الأولى هي قيمة وقتك؛ أي الساعات التي تهدرها في ضبط تصميم الصفحة أو حل مشكلة تقنية. أما التكلفة الثانية فهي تراكم الاشتراك بالدولار. تكلف أغلب المنصات الجاهزة ما بين 20 إلى 50 دولاراً شهرياً، وعلى مدار عامين، يعادل ذلك تقريباً من 30,000 إلى 80,000 جنيه بأسعار الصرف الحالية، وذلك مقارنةً بـ <a href='/ar/guides/website-cost-in-egypt'>تكلفة الموقع الاحترافي في مصر</a> والتي تدفعها لمرة واحدة بالجنيه، وغالباً ما تكون أقل من 30,000 جنيه. في المحصلة، ستكلفك المنصات الجاهزة أضعاف تكلفة التصميم الاحترافي على المدى الطويل.</p>
+<p>يكمن فخ المنصات الجاهزة في أن الاشتراك الشهري المنخفض بالدولار يخفي وراءه تكلفتين أكبر بكثير: قيمة وقتك، وتراكم الاشتراكات الدولارية لسنوات. التكلفة الأولى هي قيمة وقتك؛ أي الساعات التي تهدرها في ضبط تصميم الصفحة أو حل مشكلة تقنية بدلاً من إدارة عملك.</p>
+
+<p>أما التكلفة الثانية فهي تراكم الاشتراك بالدولار. تكلف خطط الأعمال حالياً حوالي 23–46 دولاراً شهرياً على <a href="https://www.squarespace.com/pricing" target="_blank" rel="noopener">Squarespace</a> و<a href="https://www.wix.com/plans" target="_blank" rel="noopener">Wix</a>، وبأسعار الصرف الحالية (نحو 50 جنيهاً للدولار في ${CURRENT_YEAR})، يعادل اشتراك 20–50 دولاراً شهرياً على مدار عامين ما يقارب 24,000 إلى 60,000 جنيه، وذلك مقارنةً بـ <a href='/ar/guides/website-cost-in-egypt'>تكلفة الموقع الاحترافي في مصر</a> والتي تدفعها لمرة واحدة بالجنيه، وغالباً ما تكون أقل من 30,000 جنيه. في المحصلة، ستكلفك المنصات الجاهزة أضعاف تكلفة التصميم الاحترافي على المدى الطويل.</p>
+
+<p>ونحن نعرف هذا النمط من جهة إعادة البناء: فجزء من عملنا في الاستوديو يأتي من أصحاب مشاريع تجاوزوا حدود منصات البناء واكتشفوا أن الموقع لا يمكنه الانتقال معهم. هذه المنصات لا تصدّر كوداً برمجياً يمكن استضافته في مكان آخر، لذا عندما تصطدم بحدودها، تبدأ إعادة البناء من الصفر — بعد أن تكون أموال الاشتراكات قد أُنفقت بالفعل.</p>
 
 <h2>الخاتمة</h2>
-<p>إذا كنت تمتلك عملاً حقيقياً وتطمح للنمو والمنافسة بقوة في عام ${CURRENT_YEAR}، فإن الموقع الإلكتروني الاحترافي هو حجر الأساس الذي ستبني عليه نجاحك. القاعدة الثابتة هنا هي أن الشركات التي تستثمر في التصميم الاحترافي منذ البداية، تتجنب الوقوع في فخ إعادة بناء الموقع لاحقاً وتوفر على نفسها الكثير من الجهد والمال.</p>`,
+<p>بناء موقعك بنفسك خيار منطقي إذا كان لديك وقت فراغ كافٍ وميزانية محدودة للغاية. أما إذا كنت تمتلك عملاً حقيقياً وتطمح للنمو والمنافسة بقوة في عام ${CURRENT_YEAR}، فإن الموقع الإلكتروني الاحترافي هو حجر الأساس الذي ستبني عليه نجاحك. القاعدة الثابتة هنا هي أن الشركات التي تستثمر في التصميم الاحترافي منذ البداية، تتجنب الوقوع في فخ إعادة بناء الموقع لاحقاً وتوفر على نفسها الكثير من الجهد والمال.</p>
+<p>هل تفكر في الاختصار الأحدث بدلاً من ذلك؟ اقرأ <a href='/ar/guides/why-ai-website-builders-fail-businesses'>لماذا تفشل مواقع الذكاء الاصطناعي في جذب العملاء</a> قبل أن تقرر.</p>`,
   },
   readingMinutes: { en: 2, ar: 2 },
+  faq: [
+    {
+      question: {
+        en: "Can I move my Wix or Squarespace site to a custom website later?",
+        ar: "هل يمكنني نقل موقعي من Wix أو Squarespace إلى موقع مخصص لاحقاً؟",
+      },
+      answer: {
+        en: "Your content can move — text, images, and your domain if you own it. The site itself cannot: builders do not export working code, so the design and functionality get rebuilt from scratch. That is why starting professional often costs less than starting over.",
+        ar: "المحتوى يمكن نقله: النصوص والصور والدومين إذا كان مسجلاً باسمك. أما الموقع نفسه فلا؛ فهذه المنصات لا تصدّر كوداً برمجياً قابلاً للاستخدام، لذا يُعاد بناء التصميم والوظائف من الصفر. ولهذا فإن البدء باحترافية غالباً أوفر من البدء من جديد لاحقاً.",
+      },
+    },
+    {
+      question: {
+        en: "Do DIY website builders hurt SEO?",
+        ar: "هل تضر منصات إنشاء المواقع الجاهزة بالسيو؟",
+      },
+      answer: {
+        en: "They cover the basics — titles, sitemaps, mobile layouts — which is enough for low-competition searches. Where they limit you is speed optimization, control over structured data, and the template code bloat that slows pages down; those are what competitive rankings are won with.",
+        ar: "هي تغطي الأساسيات مثل العناوين وخرائط الموقع والتوافق مع الهاتف، وهذا يكفي في المجالات قليلة المنافسة. لكنها تُقيّدك في تحسين السرعة والتحكم في البيانات المهيكلة، إضافة إلى الكود الزائد في القوالب الذي يبطئ الصفحات، وهذه تحديداً أدوات الفوز في المنافسة القوية.",
+      },
+    },
+    {
+      question: {
+        en: "Is WordPress the same as Wix or Squarespace?",
+        ar: "هل ووردبريس مثل Wix وSquarespace؟",
+      },
+      answer: {
+        en: "No. Wix and Squarespace are closed subscription platforms — you effectively rent the site. WordPress is open-source software you own and can host anywhere, which makes it more portable, but it carries its own maintenance, plugin, and security workload.",
+        ar: "لا. Wix وSquarespace منصتان مغلقتان بنظام الاشتراك، أي أنك تستأجر الموقع عملياً. أما ووردبريس فهو برنامج مفتوح المصدر تملكه ويمكن استضافته في أي مكان، مما يجعله أكثر قابلية للنقل، لكنه يحمل في المقابل أعباء الصيانة والإضافات والأمان الخاصة به.",
+      },
+    },
+  ],
   chatTrigger: {
     topic:
       "DIY website builders (Wix, Squarespace, doing it yourself) versus hiring a professional studio.",
