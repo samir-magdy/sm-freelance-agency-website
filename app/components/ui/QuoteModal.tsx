@@ -262,7 +262,7 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
           ) : !started ? (
             <div className="flex h-full flex-col items-center justify-center gap-4 sm:gap-8 text-center">
               <ClipboardCheck className="size-20 sm:size-22 text-gold" aria-hidden />
-              <p className="text-content-body mx-10 text-pretty text-[clamp(1rem,0.7rem+2vw,1.875rem)] leading-relaxed px-4">
+              <p className="text-content-body sm:mx-10 text-pretty text-[clamp(1rem,0.7rem+2vw,1.875rem)] leading-relaxed px-4">
                 {t.introBody[lang]}
               </p>
             </div>
