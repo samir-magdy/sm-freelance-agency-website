@@ -16,7 +16,6 @@ import {
   isValidName,
   isValidPhone,
   isValidUrl,
-  normalizeUrl,
 } from "@/lib/contactValidation";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
@@ -182,6 +181,7 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
     current?.type === "list" ? listValue(current.id).map((v) => v.trim()) : [];
   // Every visible slot must hold a valid link — a blank one (e.g. left over
   // after "Add another") blocks Next rather than being silently dropped.
+  // Same live check Add Another already uses, just applied to every slot.
   const currentListValid =
     current?.type !== "list" ||
     currentListItems.every((v) => v.length > 0 && isValidUrl(v));
@@ -255,7 +255,7 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
           {status === "success" ? (
             <div className="flex h-full flex-col items-center justify-center gap-4 sm:gap-8 text-center">
               <CircleCheckBig className="size-20 sm:size-22 text-gold" aria-hidden />
-              <p className="text-content-body text-balance text-[clamp(1rem,0.7rem+2vw,1.875rem)] leading-relaxed sm:max-w-80 md:max-w-120 safari:px-6 px-2 sm:px-0">
+              <p className="text-content-body text-pretty sm:mx-10 text-[clamp(1rem,0.7rem+2vw,1.875rem)] leading-relaxed px-4">
                 {t.success[lang]}
               </p>
             </div>
@@ -370,51 +370,32 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
 
                   {current.type === "list" && (
                     <div className="mt-4 flex flex-col gap-2.5">
-                      {listValue(current.id).map((val, i) => {
-                        const trimmed = val.trim();
-                        // The first slot can stay blank quietly (that's what
-                        // Skip is for); a slot added via "Add another" was
-                        // asked for explicitly, so leaving it blank is flagged.
-                        const invalid =
-                          trimmed.length > 0 ? !isValidUrl(trimmed) : i > 0;
-                        return (
-                          <div key={i} className="flex flex-col gap-1">
-                            <div className="flex items-center gap-2">
-                              <input
-                                dir="ltr"
-                                value={val}
-                                placeholder={current.placeholder?.[lang]}
-                                onChange={(e) =>
-                                  setListItem(current.id, i, e.target.value)
-                                }
-                                onBlur={() => {
-                                  if (trimmed) {
-                                    setListItem(current.id, i, normalizeUrl(trimmed));
-                                  }
-                                }}
-                                className={`h-13 flex-1 px-4 rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted outline-none border-2 focus:border-border-strong ${
-                                  invalid ? "border-red-400/60" : "border-transparent"
-                                }`}
-                              />
-                              {listValue(current.id).length > 1 && (
-                                <button
-                                  type="button"
-                                  onClick={() => removeListItem(current.id, i)}
-                                  aria-label={t.close[lang]}
-                                  className="shrink-0 cursor-pointer rounded-lg p-2.5 text-content-muted hover:text-content-heading transition-colors"
-                                >
-                                  <X className="size-4" aria-hidden />
-                                </button>
-                              )}
-                            </div>
-                            {invalid && (
-                              <p className="text-red-400 text-[clamp(0.875rem,0.8rem+0.3vw,1rem)]">
-                                {t.urlInvalid[lang]}
-                              </p>
-                            )}
-                          </div>
-                        );
-                      })}
+                      {/* No visual invalid state here — validity still
+                          gates Next/Add another (currentListValid,
+                          canAddListItem), it's just not surfaced per-input. */}
+                      {listValue(current.id).map((val, i) => (
+                        <div key={i} className="flex items-center gap-2">
+                          <input
+                            dir="ltr"
+                            value={val}
+                            placeholder={current.placeholder?.[lang]}
+                            onChange={(e) =>
+                              setListItem(current.id, i, e.target.value)
+                            }
+                            className="h-13 flex-1 px-4 rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted outline-none border-2 border-transparent focus:border-border-strong"
+                          />
+                          {listValue(current.id).length > 1 && (
+                            <button
+                              type="button"
+                              onClick={() => removeListItem(current.id, i)}
+                              aria-label={t.close[lang]}
+                              className="shrink-0 cursor-pointer rounded-lg p-2.5 text-content-muted hover:text-content-heading transition-colors"
+                            >
+                              <X className="size-4" aria-hidden />
+                            </button>
+                          )}
+                        </div>
+                      ))}
                       <button
                         type="button"
                         onClick={() => addListItem(current.id)}
@@ -509,11 +490,6 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
                           }
                           className="h-13 w-full px-4 rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted outline-none border-2 border-transparent focus:border-border-strong"
                         />
-                        {emailInvalid && (
-                          <p className="text-red-400 text-[clamp(0.875rem,0.8rem+0.3vw,1rem)] mt-1.5">
-                            {t.emailInvalid[lang]}
-                          </p>
-                        )}
                       </div>
                     )}
                   </div>

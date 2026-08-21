@@ -33,9 +33,11 @@ export function isValidAnswers(
   return true;
 }
 
-// Mirrors the client's normalization (adds https:// to bare domains) and
-// rejects a submission if any list-type (link) answer still isn't a valid
-// URL — the client disables Next in that case, but the API can't trust it.
+// Trims/drops blanks and rejects a submission if any list-type (link)
+// answer still isn't a valid URL — the client disables Next in that case,
+// but the API can't trust it. Doesn't prefix https:// onto the stored
+// value — that's only added when the value is displayed in the email
+// (see getAnsweredEntries below), so raw answers stay exactly as typed.
 export function normalizeAnswers(
   answers: Record<string, string | string[]>,
 ): Record<string, string | string[]> | null {
@@ -49,7 +51,7 @@ export function normalizeAnswers(
     const items = value.map((v) => v.trim()).filter((v) => v.length > 0);
     if (items.some((v) => !isValidUrl(v))) return null;
 
-    normalized[q.id] = items.map(normalizeUrl);
+    normalized[q.id] = items;
   }
 
   return normalized;
@@ -90,7 +92,9 @@ function getAnsweredEntries(
         .map((v) => v.trim())
         .filter((v) => v.length > 0);
       if (items.length === 0) continue;
-      answerText = items.join(", ");
+      // The stored answer keeps whatever the user typed (e.g. "example.com"
+      // with no scheme) — prefix https:// only here, for the email display.
+      answerText = items.map(normalizeUrl).join(", ");
     } else {
       answerText = q.options?.find((o) => o.value === value)?.label[lang] ?? String(value);
     }

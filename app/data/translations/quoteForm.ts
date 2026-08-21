@@ -485,8 +485,4 @@ ar: "يرجى الإجابة عن بعض الأسئلة لنتمكن من توف
     en: "Please enter a valid email address.",
     ar: "يرجى إدخال بريد إلكتروني صحيح.",
   },
-  urlInvalid: {
-    en: "Please enter a valid website link.",
-    ar: "يرجى إدخال رابط موقع صحيح.",
-  },
 } satisfies Record<string, Localized>;

@@ -276,7 +276,7 @@ export default async function GuidePage({
           </>
         )}
         {guide.faq && guide.faq.length > 0 && (
-          <section aria-labelledby="faq-heading" className="mb-4 xl:mb-12">
+          <section aria-labelledby="faq-heading" className="mb-8 xl:mb-12">
             <h2
               id="faq-heading"
               className="text-[clamp(1.25rem,5vw,2.5rem)] font-bold text-content-heading/95 leading-snug rtl:leading-loose mb-6"
