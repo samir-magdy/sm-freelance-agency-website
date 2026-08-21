@@ -30,6 +30,9 @@ export interface QuoteOpenDetail {
 type Answers = Record<string, string | string[]>;
 type ContactMethod = "whatsapp" | "phone-call" | "email";
 
+// Mirrored server-side in formatAnswers.ts's isValidAnswers.
+const MAX_TEXT_ANSWER_LENGTH = 500;
+
 interface QuoteModalProps {
   lang: Lang;
 }
@@ -171,7 +174,6 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
   }
 
   const nameValid = isValidName(contact.name.trim());
-  const nameInvalid = contact.name.trim().length > 0 && !nameValid;
   const phoneValid = isValidPhone(contact.phone.trim());
   const emailInvalid =
     contact.email.trim().length > 0 && !isValidEmail(contact.email.trim());
@@ -228,11 +230,15 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
         className="absolute inset-0 bg-black/20 backdrop-blur-sm"
       />
 
-      {/* Panel — full-screen sheet on mobile, centered card from sm: up */}
+      {/* Panel — full-screen sheet on mobile, centered card from sm: up.
+          Before the quiz starts, the panel hugs the intro content's width
+          instead of stretching to the same 80% used once questions show. */}
       <div
-        className="relative z-10 flex h-[80dvh] h-[80svh] w-full sm:w-[80%]
-          flex-col overflow-hidden rounded-2xl border-2 border-border-subtle
-          bg-surface-card shadow-2xl shadow-black/50"
+        className={`relative z-10 flex h-[80dvh] h-[80svh] w-full flex-col
+          overflow-hidden rounded-2xl border-2 border-border-subtle
+          bg-surface-card shadow-2xl shadow-black/50 ${
+            started ? "sm:w-[80%]" : "sm:w-fit"
+          }`}
       >
         <div className="flex justify-end px-3 pt-3 shrink-0">
           <button
@@ -256,7 +262,7 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
           ) : !started ? (
             <div className="flex h-full flex-col items-center justify-center gap-4 sm:gap-8 text-center">
               <ClipboardCheck className="size-20 sm:size-22 text-gold" aria-hidden />
-              <p className="text-content-body text-balance text-[clamp(1rem,0.7rem+2vw,1.875rem)] leading-relaxed sm:max-w-80 md:max-w-120 safari:px-6 px-2 sm:px-0">
+              <p className="text-content-body mx-10 text-pretty text-[clamp(1rem,0.7rem+2vw,1.875rem)] leading-relaxed px-4">
                 {t.introBody[lang]}
               </p>
             </div>
@@ -302,7 +308,7 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
                     {current.question[lang]}
                   </p>
                   {current.helper && (
-                    <p className="text-content-muted text-[clamp(1rem,1.5vw,2rem)] mb-4">
+                    <p className="text-content-muted text-[clamp(1rem,1.25vw,2rem)] mb-4">
                       {current.helper[lang]}
                     </p>
                   )}
@@ -354,6 +360,7 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
                   {current.type === "text" && (
                     <textarea
                       rows={3}
+                      maxLength={MAX_TEXT_ANSWER_LENGTH}
                       placeholder={current.placeholder?.[lang]}
                       value={(answers[current.id] as string) ?? ""}
                       onChange={(e) => setAnswer(current.id, e.target.value)}
@@ -438,11 +445,6 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
                         }
                         className="h-13 w-full px-4 rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted outline-none border-2 border-transparent focus:border-border-strong"
                       />
-                      {nameInvalid && (
-                        <p className="text-red-400 text-[clamp(0.875rem,0.8rem+0.3vw,1rem)] mt-1.5">
-                          {t.nameInvalid[lang]}
-                        </p>
-                      )}
                     </div>
                     <div className="relative">
                       <select

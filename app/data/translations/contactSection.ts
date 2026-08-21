@@ -16,6 +16,8 @@ interface ContactSection {
   sendingCta: Localized;
   successBody: Localized;
   successWhatsapp: Localized;
+  error: Localized;
+  errorRateLimit: Localized;
 }
 
 const contactSection: ContactSection = {
@@ -27,12 +29,12 @@ const contactSection: ContactSection = {
   en: "Chat on WhatsApp for general inquiries or take our survey for a custom quote.",
   ar: "تواصل معنا عبر واتساب للأسئلة العامة، أو أكمل الاستبيان للحصول على عرض سعر.",
 },
-  whatsappCta: { en: "WhatsApp", ar: "تواصل عبر الواتساب" },
+  whatsappCta: { en: "Chat on WhatsApp", ar: "تواصل عبر الواتساب" },
   questionnaireCta: { en: "Request a Quote", ar: "اطلب عرض سعر" },
-  formHeading: { en: "Or send us a message", ar: "أو أرسل لنا رسالة" },
+  formHeading: { en: "Or send a message", ar: "أو أرسل رسالة" },
   namePlaceholder: { en: "Your name", ar: "اسمك" },
   emailPlaceholder: { en: "Your email", ar: "بريدك الإلكتروني" },
-  messagePlaceholder: { en: "How can we help?", ar: "كيف يمكننا مساعدتك؟" },
+  messagePlaceholder: { en: "Your message", ar: "رسالتك" },
   nameRequired: { en: "Please enter your name", ar: "من فضلك أدخل اسمك" },
   emailInvalid: {
     en: "Please enter a valid email",
@@ -51,6 +53,14 @@ const contactSection: ContactSection = {
   successWhatsapp: {
     en: "Need a faster response?",
     ar: "بحاجة لرد أسرع؟",
+  },
+  error: {
+    en: "Something went wrong. Please try again.",
+    ar: "حدث خطأ ما. حاول مرة أخرى.",
+  },
+  errorRateLimit: {
+    en: "Please wait a few minutes before submitting again.",
+    ar: "يرجى الانتظار بضع دقائق قبل الإرسال مرة أخرى.",
   },
 };
 

@@ -146,7 +146,7 @@ export default function ServicesSection({
             </span>
             <span aria-hidden className="h-px flex-1 bg-border-subtle" />
           </div>
-          <ul className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 gap-y-10 sm:gap-y-8 gap-x-2 w-full sm:w-3/4">
+          <ul className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 xl:w-full gap-y-10 sm:gap-y-8 gap-x-2 w-full sm:w-3/4">
             {translations.specializedServices.map((svc) => (
               <li key={svc.id} className="flex justify-center">
                 <Link

@@ -1,34 +1,16 @@
 import type { Localized } from "@/app/types";
 
 const footer = {
-  sitemapLabel: { en: "Sitemap", ar: "خريطة الموقع" },
   legalLabel: { en: "Legal", ar: "روابط قانونية" },
   location: { en: "Cairo, Egypt", ar: "القاهرة، مصر" },
-  columns: {
-    studio: { en: "Studio", ar: "الاستوديو" },
-    work: { en: "Work", ar: "أعمالنا" },
-    resources: { en: "Resources", ar: "الأدلة" },
-  },
   legal: {
     privacy: { en: "Privacy Policy", ar: "سياسة الخصوصية" },
     terms: { en: "Terms of Service", ar: "شروط الخدمة" },
   },
-  allGuides: { en: "All Guides", ar: "كل الأدلة" },
-  pages: {
-    services: { en: "Services", ar: "خدماتنا" },
-    specializedServices: { en: "Extra Services", ar: "خدمات إضافية" },
-    faq: { en: "FAQs", ar: "الأسئلة الشائعة" },
-    about: { en: `About`, ar: "عن الاستوديو" },
-    contact: { en: "Contact Us", ar: "تواصل معنا" },
-  },
 } satisfies {
-  sitemapLabel: Localized;
   legalLabel: Localized;
   location: Localized;
-  columns: Record<"studio" | "work" | "resources", Localized>;
   legal: Record<"privacy" | "terms", Localized>;
-  allGuides: Localized;
-  pages: Record<"services" | "specializedServices" | "faq" | "about" | "contact", Localized>;
 };
 
 export default footer;

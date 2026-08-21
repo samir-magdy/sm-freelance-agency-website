@@ -68,9 +68,6 @@ const resource: Guide = {
 
 <p>This is not theoretical for us: one of our clients' websites already appears as a cited source in Google's AI Overviews — exactly the kind of visibility these tactics are designed to earn.</p>
 
-<h2>The opportunity for Egyptian businesses</h2>
-<p>Here is the part most local businesses miss: only about 0.6% of websites publish their content in Arabic, while English is used by roughly half the web, according to <a href="https://w3techs.com/technologies/overview/content_language" target="_blank" rel="noopener">W3Techs</a>. AI engines answering Arabic queries have far fewer trustworthy sources to draw from — so an Egyptian business that publishes clear, structured Arabic content today competes for citations in a much thinner field than its English-language equivalent.</p>
-
 <h2>The bottom line</h2>
 <p>SEO in ${CURRENT_YEAR} is no longer just about driving massive amounts of traffic; it is about brand authority and being the definitive answer that AI trusts. If you adapt your content strategy to feed these AI engines with clear, structured, and expert information, you will capture the high-intent customers that your competitors are losing.</p>`,
 
@@ -127,9 +124,6 @@ const resource: Guide = {
 </ul>
 
 <p>وهذا ليس كلاماً نظرياً بالنسبة لنا: فموقع أحد عملائنا يظهر بالفعل كمصدر مُستشهد به داخل ملخصات الذكاء الاصطناعي في جوجل (AI Overviews) — وهذا تحديداً نوع الظهور الذي صُممت هذه الأساليب لتحقيقه.</p>
-
-<h2>الفرصة الحقيقية أمام الشركات المصرية</h2>
-<p>إليك ما يغفل عنه أغلب أصحاب الأعمال في السوق المحلي: نحو 0.6% فقط من مواقع الإنترنت تنشر محتواها بالعربية، بينما تُستخدم الإنجليزية في حوالي نصف مواقع الويب، وفقاً لإحصائيات <a href="https://w3techs.com/technologies/overview/content_language" target="_blank" rel="noopener">W3Techs</a>. وهذا يعني أن محركات الذكاء الاصطناعي التي تجيب عن الأسئلة بالعربية تملك مصادر موثوقة أقل بكثير لتستشهد بها؛ فالشركة المصرية التي تنشر اليوم محتوى عربياً واضحاً ومنظماً تنافس على الظهور في مجال أقل ازدحاماً بكثير من نظيره الإنجليزي.</p>
 
 <h2>الخاتمة</h2>
 <p>السيو في ${CURRENT_YEAR} لم يعد يقتصر على جلب أعداد ضخمة من الزيارات العشوائية؛ بل أصبح يتعلق ببناء سلطة علامتك التجارية لتكون "الإجابة القاطعة" التي يثق بها الذكاء الاصطناعي. إذا قمت بتكييف استراتيجية المحتوى الخاصة بك لتزويد هذه المحركات بمعلومات واضحة، ومهيكلة، واحترافية، فستتمكن من جذب العملاء الجادين الذين يخسرهم منافسوك.</p>`,

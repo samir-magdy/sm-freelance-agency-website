@@ -1,7 +1,7 @@
 import Link from "next/link";
 import faqSection from "@/app/data/translations/faqSection";
 import type { Lang } from "@/app/types";
-import styles from "./FAQSection.module.css";
+import FAQAccordion from "./FAQAccordion";
 
 interface FAQSectionProps {
   lang: Lang;
@@ -14,7 +14,7 @@ export default function FAQSection({ lang }: FAQSectionProps) {
     <section
       id="FAQs"
       aria-labelledby="FAQs-heading"
-      className={`${styles.accordion} py-4 px-4 sm:px-8`}
+      className="py-4 px-4 sm:px-8"
     >
       <div className="max-w-5xl mx-auto flex flex-col items-center">
         <div className="reveal-element mb-6 md:mb-12 text-center">
@@ -28,43 +28,7 @@ export default function FAQSection({ lang }: FAQSectionProps) {
             {translations.subheading[lang]}
           </p>
         </div>
-        <div className="w-full">
-          {translations.items.map((item, i) => (
-            <details
-              key={i}
-              name="faq"
-              className="reveal-element border-b border-border-subtle px-2"
-            >
-              <summary
-                className={`
-                  flex items-center w-full py-6 md:py-7 cursor-pointer
-                  list-none [&::-webkit-details-marker]:hidden
-                  focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-border-strong focus-visible:ring-offset-4 focus-visible:ring-offset-background rounded-sm
-                `}
-              >
-                <span className="relative inline-block shrink-0 w-5 h-5 me-5" aria-hidden="true">
-                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-0.5 rounded-full bg-icon" />
-                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-3 rounded-full bg-icon transition-transform duration-[700ms] sm:duration-[420ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] [details[open]_&]:rotate-90" />
-                </span>
-
-                <h3 className="text-content-heading font-normal tracking-wide text-base sm:text-subheading">
-                  {item.question[lang]}
-                </h3>
-              </summary>
-
-              <div className={styles.collapsible}>
-                <div className={styles.collapsibleInner}>
-                  <div className="pb-6 md:pb-7 ps-10">
-                    <p
-                      className="html-content text-base sm:text-xl text-content-muted/95 leading-relaxed"
-                      dangerouslySetInnerHTML={{ __html: item.answer[lang] }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </details>
-          ))}
-        </div>
+        <FAQAccordion items={translations.items} lang={lang} />
         <div className="reveal-element mt-2 sm:mt-8 w-full flex flex-col items-center gap-5 py-8">
           <p className="text-[clamp(1.4rem,2vw,1.6rem)] font-medium text-content-heading tracking-wide">
             {translations.ctaLabel[lang]}

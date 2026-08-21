@@ -22,43 +22,31 @@ interface GuideArticleMeta {
 const pageMeta: {
   home: PageMeta;
   services: PageMeta;
-  about: PageMeta;
   guides: PageMeta;
   privacy: PageMeta;
   terms: PageMeta;
   guideArticles: Record<string, GuideArticleMeta>;
 } = {
-  // MAIN LANDING PAGE -> /en and /ar 
+  // MAIN LANDING PAGE -> /en and /ar
   home: {
     title: {
       en: `Web Design & Development | ${SITE_NAME}`,
       ar: `تصميم وتطوير مواقع إلكترونية | ${SITE_NAME}`,
     },
     description: {
-      en: "Turn visitors into paying clients with high-converting, custom web design built to grow your business. Request your free quote today.",
-      ar: "تصميم مواقع إلكترونية مخصصة تساعدك على جذب المزيد من العملاء وتعزيز حضورك الرقمي. احصل على عرض سعر اليوم.",
+      en: "Stand out from competitors with modern, custom web development that builds instant trust with your clients. Request a free quote today.",
+      ar: "تميز عن منافسيك بموقع إلكتروني مخصص وعالي الجودة يبني الثقة الفورية مع عملائك. احصل على عرض سعر مجاني اليوم.",
     },
   },
   // SPECIALIZED SERVICES -> /services
   services: {
     title: {
-      en: "Services - Branding, SEO, AI Integration",
-      ar: "الخدمات - هوية بصرية، SEO",
+      en: "Services - Branding, SEO, Copywriting & AI",
+      ar: "الخدمات - هوية بصرية، سيو، كتابة محتوى، وذكاء اصطناعي",
     },
     description: {
-      en: `Branding, copywriting, SEO setup, AI integraion and more from ${SITE_NAME}. Layer onto a website build, or hire on its own.`,
-      ar: `هوية بصرية، كتابة محتوى، إعداد SEO، ودعم كامل ثنائي اللغة من ${SITE_NAME}. أضفها لمشروع موقع، أو استفد منها كمشروع مستقل.`,
-    },
-  },
-  // ABOUT PAGE -> /about
-  about: {
-    title: {
-      en: "Website Designer & Developer in Egypt",
-      ar: "مصمم ومطور مواقع إلكترونية في مصر",
-    },
-    description: {
-      en: `Samir Magdy is a web designer, developer & the founder of ${SITE_NAME}, specializing in high-performance, custom web development.`,
-      ar: "سمير مجدي هو مصمم ومطور مواقع في مصر ومؤسس شركة إس إم ويب ستوديو. متخصص في خدمات تصميم المواقع المخصصة للشركات والأفراد.",
+      en: `Logo design & branding, SEO setup, website copywriting, AI chatbots, professional business email, and website maintenance from ${SITE_NAME}.`,
+      ar: `تصميم لوجو وهوية تجارية، سيو (SEO)، كتابة محتوى، ذكاء اصطناعي، إيميل رسمي باسم شركتك، وصيانة مواقع من ${SITE_NAME}.`,
     },
   },
   // ALL GUIDES PAGE /guides

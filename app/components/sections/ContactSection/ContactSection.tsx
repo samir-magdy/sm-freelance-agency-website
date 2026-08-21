@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { CircleCheckBig } from "lucide-react";
 import WhatsAppIcon from "@/app/components/utils/WhatsAppIcon";
 import contactSection from "@/app/data/translations/contactSection";
 import { SOCIAL_LINKS } from "@/app/constants";
 import { QUOTE_OPEN_EVENT } from "@/app/components/ui/QuoteModal";
-import { isValidEmail } from "@/lib/contactValidation";
+import { isValidEmail, isValidName } from "@/lib/contactValidation";
 import type { Lang } from "@/app/types";
 
 interface ContactSectionProps {
@@ -15,6 +15,7 @@ interface ContactSectionProps {
 
 const EMPTY_FORM = { name: "", email: "", message: "" };
 type FormErrors = Partial<Record<keyof typeof EMPTY_FORM, boolean>>;
+type SubmitStatus = "idle" | "loading" | "success" | "error" | "rateLimit";
 
 export default function ContactSection({ lang }: ContactSectionProps) {
   const isRtl = lang === "ar";
@@ -22,48 +23,54 @@ export default function ContactSection({ lang }: ContactSectionProps) {
 
   const [form, setForm] = useState(EMPTY_FORM);
   const [errors, setErrors] = useState<FormErrors>({});
-  const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const submitTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+  const loading = status === "loading";
+  const submitted = status === "success";
 
-  // Client-only: this mini form isn't wired to a backend. It exists so the
-  // section doesn't read as two lonely buttons; real inquiries are meant to
-  // go through WhatsApp or the quote flow above, which is why the success
-  // state nudges toward WhatsApp for anyone who actually needs a reply.
-  const handleSubmit = (e: React.FormEvent) => {
+  // ── Submission — wired the same way as QuoteModal: validate client-side,
+  // POST to an API route that sends the message via Resend, and drive the
+  // same idle/loading/success/error/rateLimit status states. ──
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const nextErrors: FormErrors = {
-      name: form.name.trim() === "",
+      name: !isValidName(form.name.trim()),
       email: !isValidEmail(form.email.trim()),
       message: form.message.trim() === "",
     };
     setErrors(nextErrors);
     if (Object.values(nextErrors).some(Boolean)) return;
 
-    setLoading(true);
-    submitTimeoutRef.current = setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 2000);
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name.trim(),
+          email: form.email.trim(),
+          message: form.message.trim(),
+        }),
+      });
+      if (!res.ok) {
+        setStatus(res.status === 429 ? "rateLimit" : "error");
+        return;
+      }
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   };
-
-  // Clear the fake "sending" timer if the component unmounts mid-flight.
-  useEffect(() => {
-    return () => {
-      if (submitTimeoutRef.current) clearTimeout(submitTimeoutRef.current);
-    };
-  }, []);
 
   // Auto-dismiss the success message back to a blank form after a few seconds.
   useEffect(() => {
-    if (!submitted) return;
+    if (status !== "success") return;
     const id = setTimeout(() => {
       setForm(EMPTY_FORM);
       setErrors({});
-      setSubmitted(false);
+      setStatus("idle");
     }, 4000);
     return () => clearTimeout(id);
-  }, [submitted]);
+  }, [status]);
 
   return (
     <section
@@ -85,12 +92,12 @@ export default function ContactSection({ lang }: ContactSectionProps) {
           </p>
         </div>
 
-        <div className="reveal-element max-w-xl mx-auto flex flex-col gap-3.5 justify-center">
+        <div className="reveal-element max-w-xl mx-auto flex flex-col xl:flex-row gap-3.5 justify-center">
           <a
             href={SOCIAL_LINKS.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 border border-border-subtle bg-surface-card/60 hover:bg-green-600/60 hover:border-transparent transition-colors duration-300 py-4 px-8 text-content-body hover:text-content-heading flex items-center justify-center gap-2 rounded-lg font-bold text-base"
+            className="flex-1 bg-green-600/85 hover:bg-green-600/95 transition-colors duration-300 py-4 px-8 text-content-white/85 hover:text-content-heading flex items-center justify-center gap-2 rounded-xl font-bold text-base"
           >
             <WhatsAppIcon className="size-5" fill="currentColor" />
             {contactSection.whatsappCta[lang]}
@@ -99,7 +106,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
           <button
             type="button"
             onClick={() => window.dispatchEvent(new Event(QUOTE_OPEN_EVENT))}
-            className="cta-primary flex-1 cursor-pointer py-4 px-8 rounded-lg text-background font-bold text-base"
+            className="cta-primary flex-1 cursor-pointer py-4 px-8 rounded-xl text-background font-bold text-base"
           >
             {contactSection.questionnaireCta[lang]}
           </button>
@@ -142,6 +149,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
                   placeholder={t.namePlaceholder[lang]}
                   value={form.name}
                   disabled={loading}
+                  maxLength={30}
                   onChange={(e) =>
                     setForm((p) => ({ ...p, name: e.target.value }))
                   }
@@ -166,6 +174,7 @@ export default function ContactSection({ lang }: ContactSectionProps) {
                   placeholder={t.emailPlaceholder[lang]}
                   value={form.email}
                   disabled={loading}
+                  maxLength={50}
                   onChange={(e) =>
                     setForm((p) => ({ ...p, email: e.target.value }))
                   }
@@ -188,11 +197,11 @@ export default function ContactSection({ lang }: ContactSectionProps) {
                   placeholder={t.messagePlaceholder[lang]}
                   value={form.message}
                   disabled={loading}
+                  maxLength={500}
                   onChange={(e) =>
                     setForm((p) => ({ ...p, message: e.target.value }))
                   }
-                  rows={3}
-                  className={`w-full p-4 rounded-lg bg-surface-low/20 text-base text-content-heading placeholder:text-content-muted outline-none border transition-colors duration-200 resize-none disabled:opacity-60 ${
+                  className={`w-full field-sizing-content min-h-30 p-4 rounded-lg bg-surface-low/20 text-base text-content-heading placeholder:text-content-muted outline-none border transition-colors duration-200 resize-none disabled:opacity-60 ${
                     errors.message
                       ? "border-red-400/60"
                       : "border-border-subtle focus:border-border-strong"
@@ -205,10 +214,21 @@ export default function ContactSection({ lang }: ContactSectionProps) {
                 )}
               </div>
 
+              {status === "error" && (
+                <p className="text-red-400 text-sm text-center">
+                  {t.error[lang]}
+                </p>
+              )}
+              {status === "rateLimit" && (
+                <p className="text-red-400 text-sm text-center">
+                  {t.errorRateLimit[lang]}
+                </p>
+              )}
+
               <button
                 type="submit"
                 disabled={loading}
-                className="self-center w-full cursor-pointer px-8 py-2.5 rounded-full text-[clamp(1rem,2.5vw,1.5rem)] font-semibold border border-border-subtle text-content-body transition-colors duration-200 hover:border-border-strong hover:text-content-heading disabled:cursor-not-allowed disabled:opacity-60 mt-1"
+                className="self-center w-full cursor-pointer px-8 py-2.5 rounded-xl text-[clamp(1rem,2.5vw,1.5rem)] font-semibold border border-border-subtle text-content-body transition-colors duration-200 hover:border-border-strong hover:text-content-heading disabled:cursor-not-allowed disabled:opacity-60 mt-1"
               >
                 {loading ? t.sendingCta[lang] : t.submitCta[lang]}
               </button>

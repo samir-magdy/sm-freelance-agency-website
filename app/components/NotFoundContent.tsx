@@ -15,7 +15,6 @@ const linkGroups: NotFoundGroup[] = [
     title: "Explore",
     links: [
       { href: "/", label: "Homepage" },
-      { href: "/en/about", label: `About ${SITE_NAME}` },
       { href: "/en/guides", label: "All guides on web design in Egypt" },
     ],
   },

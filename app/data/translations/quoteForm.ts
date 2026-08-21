@@ -149,13 +149,9 @@ export const quoteQuestions: QuoteQuestion[] = [
         },
       },
       {
-        value: "large",
-        label: { en: "More than 10 sections", ar: "أكثر من 10 أقسام" },
-      },
-      {
         value: "notSure",
         label: {
-          en: "Not sure — I'd like help estimating",
+          en: "Not sure yet",
           ar: "لست متأكد",
         },
       },
@@ -177,20 +173,20 @@ export const quoteQuestions: QuoteQuestion[] = [
     options: [
       {
         value: "small",
-        label: { en: "Up to 10 pages", ar: "حتى 10 صفحات" },
+        label: { en: "Up to 7 pages", ar: "حتى 10 صفحات" },
       },
       {
         value: "medium",
-        label: { en: "11 to 30 pages", ar: "من 11 إلى 30 صفحة" },
+        label: { en: "Up to 20 pages", ar: "من 11 إلى 30 صفحة" },
       },
       {
-        value: "large",
-        label: { en: "More than 30 pages", ar: "أكثر من 30 صفحة" },
+        value: "large", 
+        label: { en: "More than 20 pages", ar: "أكثر من 30 صفحة" },
       },
       {
         value: "notSure",
         label: {
-          en: "Not sure, I'd like help estimating",
+          en: "Not sure yet",
           ar: "لست متأكد، أرغب بالمساعدة في التقدير",
         },
       },
@@ -481,10 +477,6 @@ ar: "يرجى الإجابة عن بعض الأسئلة لنتمكن من توف
   email: { en: "Email", ar: "الإيميل" },
   phone: { en: "Mobile Number", ar: "رقم الموبايل" },
   emailPlaceholder: { en: "example@gmail.com", ar: "example@gmail.com" },
-  nameInvalid: {
-    en: "Please enter a valid name.",
-    ar: "يرجى إدخال اسم صحيح.",
-  },
   phoneInvalid: {
     en: "Please enter a valid phone number.",
     ar: "يرجى إدخال رقم موبايل صحيح.",

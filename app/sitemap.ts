@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: homeAlternates(lang).languages },
   }));
 
-  const staticPathEntries = ["/about", "/services", "/guides", "/privacy", "/terms"].flatMap((path) =>
+  const staticPathEntries = ["/services", "/guides", "/privacy", "/terms"].flatMap((path) =>
     LANGS.map((lang) => ({
       url: pageUrl(lang, path),
       lastModified: now,

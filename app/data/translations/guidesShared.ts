@@ -14,10 +14,6 @@ const guidesTranslations: Record<
   | "relatedHeading"
   | "egyptPricingNotice"
   | "updatedOn"
-  | "writtenBy"
-  | "authorName"
-  | "authorBio"
-  | "aboutAuthorLink"
   | "faqHeading",
   Localized
 > = {
@@ -51,13 +47,6 @@ const guidesTranslations: Record<
     ar: "خارج مصر؟\nاحصل على عرض سعر بعملتك المحلية.",
   },
   updatedOn: { en: "Updated", ar: "آخر تحديث" },
-  writtenBy: { en: "Written by", ar: "بقلم" },
-  authorName: { en: "Samir Magdy", ar: "سمير مجدي" },
-  authorBio: {
-    en: `Founder of ${SITE_NAME}, a web design studio in Cairo, Egypt. Samir designs and builds custom, high-performance websites with Next.js and TypeScript, and writes these guides to help business owners invest in the web wisely.`,
-    ar: `مؤسس ${SITE_NAME}، استوديو تصميم مواقع في القاهرة. يصمم سمير ويطوّر مواقع مخصصة عالية الأداء باستخدام Next.js وTypeScript، ويكتب هذه الأدلة لمساعدة أصحاب المشاريع على الاستثمار في الويب بذكاء.`,
-  },
-  aboutAuthorLink: { en: "More about the studio", ar: "المزيد عن الاستوديو" },
   faqHeading: { en: "Frequently asked questions", ar: "أسئلة شائعة" },
 };
 

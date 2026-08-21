@@ -1,7 +1,6 @@
-import { Resend } from "resend";
-import { ipAddress } from "@vercel/functions";
 import { NextResponse, type NextRequest } from "next/server";
-import { redis } from "@/lib/redis";
+import { resend } from "@/lib/resend";
+import { isRateLimited } from "@/lib/rateLimit";
 import { isValidEmail, isValidName, isValidPhone } from "@/lib/contactValidation";
 import { SITE_NAME } from "@/app/constants";
 import { isLang } from "@/app/types";
@@ -9,8 +8,6 @@ import { formatAnswers, isValidAnswers, normalizeAnswers } from "./formatAnswers
 import { buildQuoteEmailHtml } from "./emailTemplate";
 
 export const runtime = "edge";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 const MAX_SUBMISSIONS = 1;
 const WINDOW_SECONDS = 180;
@@ -88,23 +85,11 @@ export async function POST(request: NextRequest) {
 
     const contact = { name, method, phone, email };
 
-    try {
-      if (redis) {
-        const userIdentifier = ipAddress(request);
-        if (userIdentifier) {
-          const key = `rate-limit:quote-form:${userIdentifier}`;
-          const count = await redis.incr(key);
-          if (count === 1) await redis.expire(key, WINDOW_SECONDS);
-          if (count > MAX_SUBMISSIONS) {
-            return NextResponse.json(
-              { error: "Please wait a few minutes before submitting again." },
-              { status: 429 },
-            );
-          }
-        }
-      }
-    } catch {
-      // Redis unavailable — skip rate limiting so the form still works
+    if (await isRateLimited(request, "quote-form", { max: MAX_SUBMISSIONS, windowSeconds: WINDOW_SECONDS })) {
+      return NextResponse.json(
+        { error: "Please wait a few minutes before submitting again." },
+        { status: 429 },
+      );
     }
 
     const answersText = formatAnswers(answers, lang);

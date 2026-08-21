@@ -2,6 +2,9 @@ import { quoteQuestions } from "@/app/data/translations/quoteForm";
 import type { Lang } from "@/app/types";
 import { isValidUrl, normalizeUrl } from "@/lib/contactValidation";
 
+// Mirrors the client's maxLength on the "text" question type (QuoteModal.tsx).
+const MAX_TEXT_ANSWER_LENGTH = 500;
+
 // Rejects anything that doesn't match a real question's expected shape
 // (multi/list -> string[], single/text -> string) before it ever reaches
 // formatAnswers, whose per-type formatting assumes the shape is already right.
@@ -21,6 +24,8 @@ export function isValidAnswers(
         return false;
       }
     } else if (typeof value !== "string") {
+      return false;
+    } else if (question.type === "text" && value.length > MAX_TEXT_ANSWER_LENGTH) {
       return false;
     }
   }

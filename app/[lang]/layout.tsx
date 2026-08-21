@@ -95,7 +95,6 @@ export default async function LangLayout({
       faq: navTranslations.faq[lang],
       guides: navTranslations.guides[lang],
       contact: navTranslations.contact[lang],
-      about: navTranslations.about[lang],
     },
     a11y: {
       desktopNav: a11y.desktopNav[lang],

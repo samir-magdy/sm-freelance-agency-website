@@ -80,8 +80,8 @@ const faqSection: FAQSection = {
         ar: "كيف تتم عملية الدفع؟",
       },
       answer: {
-        en: "Payment is split into three stages: 25% upfront to start the design, 50% when we begin development, and the remaining 25% upon final delivery.",
-        ar: "تُقسم عملية الدفع على 3 مراحل: 25% كمقدم للبدء في التصميم، و50% عند بدء مرحلة التطوير (البرمجة)، والـ 25% المتبقية تُدفع عند التسليم النهائي للمشروع.",
+        en: "Payment is split into two stages: 50% upfront to begin the project, and the remaining 50% upon final delivery.",
+        ar: "تُقسم عملية الدفع على دفعتين: 50% كمقدم لبدء المشروع، والـ 50% المتبقية تُدفع عند التسليم النهائي للمشروع.",
       },
     },
     {

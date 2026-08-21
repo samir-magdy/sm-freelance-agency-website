@@ -48,7 +48,7 @@ export default function HeroNav({ lang, strings }: HeroNavProps) {
               priority
             />
           </a>
-          <ul className="flex w-full justify-around xl:px-20 lg:px-16 text-subheading font-medium tracking-wider text-content-body">
+          <ul className="flex w-full justify-around xl:px-32 text-subheading font-medium tracking-wider text-content-body">
             {navItems.map((item) =>
               item.kind === "hash" ? (
                 <li key={item.key}>

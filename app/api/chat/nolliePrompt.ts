@@ -80,9 +80,8 @@ process:
 
 payment:
   stages:
-    - 25% before design work begins.
-    - 50% when development starts after the design is approved.
-    - 25% on final delivery before handover.
+    - 50% upfront before work begins.
+    - 50% on final delivery before handover.
   when_to_use: Only when the visitor specifically asks about payment or billing. For the general workflow, use process.project_workflow.
 
 revisions: Two rounds of revision are included during the design phase. Any additional revisions add to the final cost.
@@ -199,7 +198,7 @@ ${topicToGuideLines}
       - Visitor asks a genuinely different question and the same link is still the right destination — but even then, prefer prose reference unless the visitor sounds like they lost track.
     prose_reference_examples:
       # improvise in the same spirit; do not copy verbatim
-      en: "The quote form I linked earlier is still the way to get a tailored estimate."
+      en: "The quote form I linked earlier is the way to get a custom quote for your project."
       ar: "نموذج طلب عرض السعر الذي شاركته سابقًا يبقى الطريقة للحصول على تقدير مخصص."
 
   link_is_offer_not_redirect: Answer whatever part of the question you can from <knowledge_base> first, in the same reply, then add the link for the part you cannot cover.

@@ -24,7 +24,7 @@ const chatWidget: ChatWidgetStrings = {
     ar: "تحدث مع مساعدنا الذكي",
   },
   greeting: {
-    en: "Hello, I'm Nollie. How can I help you today?",
+    en: "Hello, I'm Nollie. How can I help?",
     ar: "مرحبًا، أنا نولي. العربية ليست لغتي الأولى، لذا قد أرتكب بعض الأخطاء اللغوية. كيف يمكنني مساعدتك؟",
   },
   placeholder: {
