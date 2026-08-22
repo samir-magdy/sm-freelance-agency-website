@@ -205,7 +205,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
       className="flex flex-col items-center justify-center relative z-20 select-none px-5"
       aria-labelledby="portfolio-heading"
     >
-      <div className="text-center relative z-2 px-5 md:mb-2 lg:mb-8 2xl:mb-12">
+      <div className="text-center relative z-2 px-5 md:mb-2 lg:mb-6 2xl:mb-[4vh]">
         <h2
           id="portfolio-heading"
           className="reveal-element font-bold text-heading sm:rtl:mb-3"
@@ -300,7 +300,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
 
             <div
               id="mobile-mockup"
-              className="aspect-11/19.5 w-60 safari:w-70 safari:sm:w-90 sm:w-88 safari:lg:w-72 lg:w-72 xl:w-68 2xl:w-90 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="aspect-11/19.5 w-60 safari:w-70 safari:sm:w-90 sm:w-88 safari:lg:w-68 2xl:w-[17.5vw] rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               <div className="absolute left-[-2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
               <div className="absolute left-[-2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
@@ -351,7 +351,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
 
           <div
             dir="ltr"
-            className="flex items-center gap-1.5 my-0.5 sm:my-2"
+            className="flex items-center gap-1.5 my-0.5 sm:my-2 lg:my-0"
             role="group"
             aria-label="Project slides"
           >

@@ -69,8 +69,8 @@ export default function MobileMenu({
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const clipPath = `circle(${isMenuOpen ? 150 : 0}% at ${origin.x} ${origin.y})`;
-  const clipDelay = isMenuOpen ? 0 : 150;
+  const revealScale = isMenuOpen ? 1 : 0;
+  const revealDelay = isMenuOpen ? 0 : 150;
 
   const itemStyle = (index: number) => ({
     animation: isMenuOpen
@@ -123,17 +123,21 @@ export default function MobileMenu({
         </div>
       </div>
 
-      {/* Decorative reveal — clip-path lives here, never a click target.
-          Chrome Android's hit-testing on a clip-path element mid-transition
-          drops the first tap, so we split visual from interactive.. */}
+      {/* Decorative reveal — a circle scaled via transform, never a click
+          target. transform is compositor-only (unlike clip-path, which
+          forces a full-viewport mask repaint every frame), so this is cheap
+          to animate at full-screen size. */}
       <div
         aria-hidden
-        className="lg:hidden fixed inset-0 z-40 bg-background pointer-events-none"
+        className="lg:hidden fixed z-40 rounded-full bg-background pointer-events-none"
         style={{
-          clipPath,
-          WebkitClipPath: clipPath,
-          willChange: "clip-path",
-          transition: `clip-path 2000ms ${EASE_OUT_EXPO} ${clipDelay}ms, -webkit-clip-path 2000ms ${EASE_OUT_EXPO} ${clipDelay}ms`,
+          left: origin.x,
+          top: origin.y,
+          width: "300vmax",
+          height: "300vmax",
+          transform: `translate(-50%, -50%) scale(${revealScale})`,
+          willChange: "transform",
+          transition: `transform 2000ms ${EASE_OUT_EXPO} ${revealDelay}ms`,
         }}
       />
 
@@ -146,15 +150,14 @@ export default function MobileMenu({
           isMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
         style={{
-          clipPath,
-          WebkitClipPath: clipPath,
-          // On open: no clip-path transition (snaps to full) so Chrome Android
-          // hit-testing stays reliable while the menu is interactive.
-          // On close: mirror the bg's clip-path animation so items sweep away
-          // with the reveal — safe because the nav is pointer-events-none.
+          // On open: no transition (snaps visible) — items handle their own
+          // staggered entrance via the menu-item-in keyframe.
+          // On close: fade out quickly, well within the reveal circle's
+          // shrink (which front-loads its motion via ease-out-expo), so
+          // text is gone before the backdrop finishes collapsing.
           transition: isMenuOpen
             ? "opacity 0s"
-            : `clip-path 2000ms ${EASE_OUT_EXPO} ${clipDelay}ms, -webkit-clip-path 2000ms ${EASE_OUT_EXPO} ${clipDelay}ms, opacity 0s 2000ms`,
+            : `opacity 250ms ${EASE_OUT_EXPO} ${revealDelay}ms`,
         }}
       >
         <ul

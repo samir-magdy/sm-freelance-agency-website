@@ -45,7 +45,18 @@ section {
 }
 @media (min-width: 758px) {
   section {
+    scroll-margin-top: 4rem;
+  }
+  section#portfolio {
     scroll-margin-top: 5.5rem;
+  }
+}
+@media (min-width: 1000px) {
+  section {
+    scroll-margin-top: 4rem;
+  }
+  section#portfolio {
+    scroll-margin-top: 4rem;
   }
 }
 @media (min-width: 1280px) {
