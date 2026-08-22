@@ -205,7 +205,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
       className="flex flex-col items-center justify-center relative z-20 select-none px-5"
       aria-labelledby="portfolio-heading"
     >
-      <div className="text-center relative z-2 px-5 md:mb-2 lg:mb-8">
+      <div className="text-center relative z-2 px-5 md:mb-2 lg:mb-8 2xl:mb-12">
         <h2
           id="portfolio-heading"
           className="reveal-element font-bold text-heading sm:rtl:mb-3"
@@ -241,7 +241,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
       </ul>
 
       <div
-        className="flex flex-col lg:flex-row items-center lg:gap-16 xl:gap-20 relative z-2"
+        className="flex flex-col lg:flex-row items-center lg:gap-16 xl:gap-20 2xl:gap-32 relative z-2"
         dir={isRtl ? "rtl" : "ltr"}
       >
         <div
@@ -259,7 +259,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
               {pd.title[lang]}
             </h3>
 
-            <p className={`${styles.fadeIn} text-content-body text-[clamp(1.2rem,2.5vw,1.25rem)] rtl:text-[clamp(1.5rem,2.5vw,1.3rem)] leading-relaxed rtl:leading-loose hidden lg:block mb-4`}>
+            <p className={`${styles.fadeIn} text-content-body text-[clamp(1.2rem,2.5vw,1.6rem)] rtl:text-[clamp(1.5rem,2.5vw,1.3rem)] leading-relaxed rtl:leading-loose hidden lg:block mb-4`}>
               {pd.description[lang]}
             </p>
 
@@ -300,7 +300,7 @@ export default function PortfolioShowcase({ lang }: PortfolioSectionProps) {
 
             <div
               id="mobile-mockup"
-              className="aspect-11/19.5 w-60 safari:w-70 safari:sm:w-90 sm:w-88 safari:lg:w-72 lg:w-72 xl:w-68 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
+              className="aspect-11/19.5 w-60 safari:w-70 safari:sm:w-90 sm:w-88 safari:lg:w-72 lg:w-72 xl:w-68 2xl:w-90 rounded-[46px] bg-[linear-gradient(145deg,#2a2a2e_0%,#1c1c1e_50%,#161618_100%)] p-1 relative shrink-0"
             >
               <div className="absolute left-[-2.5px] top-31.5 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />
               <div className="absolute left-[-2.5px] top-45 w-[2.5px] h-11 bg-[linear-gradient(180deg,#3a3a3e,#2a2a2e)] rounded-l-xs" />

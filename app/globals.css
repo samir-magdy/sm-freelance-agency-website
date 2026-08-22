@@ -57,6 +57,15 @@ section {
   }
 }
 
+@media (min-width: 1800px) {
+  section {
+    scroll-margin-top: 5rem;
+  }
+  section#portfolio {
+    scroll-margin-top: 5.5rem;
+  }
+}
+
 @layer base {
   * {
     margin: 0;
