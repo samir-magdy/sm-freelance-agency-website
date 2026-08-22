@@ -89,7 +89,6 @@ function buildStructuredData(lang: Lang, region: Region) {
     ],
     sameAs: [
       SOCIAL_LINKS.instagram,
-      SOCIAL_LINKS.facebook,
       SOCIAL_LINKS.gbp,
       SOCIAL_LINKS.linkedin,
     ],

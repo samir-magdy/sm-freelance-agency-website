@@ -6,7 +6,6 @@ export const CONTACT_EMAIL = "info@smweb.studio";
 
 export const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/smweb.studio",
-  facebook: "https://www.facebook.com/SMWebStudioEgypt",
   whatsapp: "https://wa.me/+201233386157",
   gbp: "https://www.google.com/maps/place/?q=place_id:ChIJvcMWKdK8MGERZCgcuuWWS1c",
   linkedin: "https://www.linkedin.com/company/sm-web-studio-egypt/",
