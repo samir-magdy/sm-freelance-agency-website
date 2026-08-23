@@ -44,11 +44,11 @@ export default function HeroSection({ lang }: HeroSectionProps) {
         />
 
         <p
-          className="mt-5 mb-3 text-content-muted font-normal text-balance text-[clamp(1.1rem,5vw,1.6rem)] leading-[1.55] max-w-[34rem] 2xl:max-w-[35rem] rtl:mt-2.5 rtl:text-[clamp(0.9rem,4vw,1.5rem)] rtl:leading-[2.15] sm:mt-6 sm:text-center sm:leading-[1.6] sm:rtl:mt-4 sm:rtl:leading-loose lg:text-[clamp(1.1rem,5vw,1.6rem)] lg:mb-1 lg:max-w-[30rem] lg:rtl:text-[clamp(0.9rem,4vw,1.35rem)] 2xl:text-[clamp(1.1rem,5vw,1.79rem)] 2xl:rtl:text-[clamp(0.9rem,4vw,1.51rem)]"
+          className="mt-5 mb-3 text-content-muted font-normal text-balance text-[clamp(1.1rem,6vw,1.8rem)] leading-[1.55] max-w-[34rem] 2xl:max-w-[35rem] rtl:mt-2.5 rtl:text-[clamp(0.9rem,4vw,1.5rem)] rtl:leading-[2.15] sm:mt-6 sm:text-center sm:leading-[1.6] sm:rtl:mt-4 sm:rtl:leading-loose lg:text-[clamp(1.1rem,5vw,1.6rem)] lg:mb-1 lg:max-w-[30rem] lg:rtl:text-[clamp(0.9rem,4vw,1.35rem)] 2xl:text-[clamp(1.1rem,5vw,1.79rem)] 2xl:rtl:text-[clamp(0.9rem,4vw,1.51rem)]"
           dangerouslySetInnerHTML={{ __html: hero.valueProp[lang] }}
         />
 
-        <div className="flex flex-col sm:flex-row rtl:sm:flex-row-reverse w-full gap-3 justify-center mt-6 sm:mt-8 max-w-[26rem] sm:max-w-[28rem] 2xl:max-w-[30rem]">
+        <div className="flex flex-col sm:flex-row rtl:sm:flex-row-reverse w-full gap-3 justify-center mt-6 sm:mt-8 max-w-[26rem] sm:max-w-[30rem]">
           <HeroPrimaryCta
             label={hero.primaryCta[lang]}
             className={`cta-primary ${ctaBase} text-background cursor-pointer`}

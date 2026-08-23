@@ -312,7 +312,7 @@ export const quoteQuestions: QuoteQuestion[] = [
     category: "features",
     question: {
       en: "Would you like an AI chatbot on your site?",
-      ar: "هل ترغب بإضافة تشات بوت ذكي لموقعك؟",
+      ar: "هل ترغب بإضافة ذكاء اصطناعي لموقعك؟",
     },
     helper: {
       en: "An AI chatbot that provides 24/7 customer support.",

@@ -32,6 +32,7 @@ const LINK_TARGETS = new Set<string>([
   "#portfolio",
   QUOTE_SURVEY_TARGET,
   SOCIAL_LINKS.whatsapp,
+  "/services",
   ...guides.map((g) => `/guides/${g.slug}`),
 ]);
 

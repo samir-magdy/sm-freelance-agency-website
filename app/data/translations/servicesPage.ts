@@ -112,13 +112,13 @@ const servicesPage: ServicesPageTranslations = {
     },
     {
       id: "aiChatbot",
-      name: { en: "AI Chatbot", ar: "روبوت محادثة ذكي" },
+      name: { en: "AI Chatbot", ar: "الذكاء الاصطناعي" },
       tagline: {
         en: "We add a smart assistant to your website that talks to visitors, answers their questions, and captures leads for you — day and night.",
         ar: "نضيف مساعداً ذكياً لموقعك يتحدث مع الزوار، يجيب على أسئلتهم، ويجمع بيانات العملاء المحتملين لك — ليلاً ونهاراً.",
       },
       included: [
-        { en: "A chat widget trained on your business content and FAQs", ar: "روبوت محادثة مدرَّب على محتوى موقعك والأسئلة الشائعة الخاصة بشركتك" },
+        { en: "A chat widget trained on your business content and FAQs", ar: "ذكاء اصطناعي مدرَّب على محتوى موقعك والأسئلة الشائعة الخاصة بشركتك" },
         { en: "Instant answers to common visitor questions, any time of day", ar: "إجابات فورية على استفسارات الزوار الشائعة في أي وقت" },
         { en: "Automatic lead capture so no potential customer slips away", ar: "جمع تلقائي لبيانات العملاء المحتملين حتى لا تفوتك أي فرصة" },
         { en: "Seamless design that matches your site's look and feel", ar: "تصميم متناسق يتماشى مع هوية موقعك ومظهره" },
