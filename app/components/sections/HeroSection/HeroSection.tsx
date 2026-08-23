@@ -34,17 +34,17 @@ export default function HeroSection({ lang }: HeroSectionProps) {
         </h1>
 
         <p
-          className="rtl:hidden sm:hidden mt-5 text-content-heading font-medium tracking-[-2px] leading-[1.4] text-[clamp(2rem,13vw,5rem)] [&_.text-gold]:font-[650] [&_.text-gold]:tracking-[-0.03em] [&_.text-gold]:bg-[linear-gradient(180deg,var(--color-gold-light)_0%,var(--color-gold)_55%,var(--color-gold-dark)_100%)] [&_.text-gold]:bg-clip-text [&_.text-gold]:text-transparent rtl:[&_.text-gold]:leading-[1.6] 2xl"
+          className="rtl:hidden sm:hidden mt-5 text-content-heading font-medium tracking-[-2px] leading-[1.4] text-[clamp(2rem,12.75vw,5rem)] [&_.text-gold]:font-[650] [&_.text-gold]:tracking-[-0.03em] [&_.text-gold]:bg-[linear-gradient(180deg,var(--color-gold-light)_0%,var(--color-gold)_55%,var(--color-gold-dark)_100%)] [&_.text-gold]:bg-clip-text [&_.text-gold]:text-transparent rtl:[&_.text-gold]:leading-[1.6] 2xl"
           dangerouslySetInnerHTML={{ __html: hero.mobileHook[lang] }}
         />
 
         <p
-          className="hidden sm:block rtl:block text-content-heading font-medium leading-tight text-[clamp(2rem,10vw,4.5rem)] max-w-[16ch] tracking-[-4px] rtl:mt-2.5 rtl:text-[clamp(2rem,10vw,4rem)] rtl:leading-loose sm:mt-6 sm:text-center sm:rtl:leading-relaxed lg:text-[clamp(2rem,11vw,3.8rem)] 2xl:text-[clamp(2rem,11vw,4.26rem)] 2xl:rtl:text-[clamp(2rem,10vw,4.48rem)] [&_.text-gold]:font-[650] [&_.text-gold]:tracking-[-0.03em] [&_.text-gold]:bg-[linear-gradient(180deg,var(--color-gold-light)_0%,var(--color-gold)_55%,var(--color-gold-dark)_100%)] [&_.text-gold]:bg-clip-text [&_.text-gold]:text-transparent rtl:[&_.text-gold]:leading-[1.6]"
+          className="hidden sm:block rtl:block text-content-heading font-medium leading-tight text-[clamp(2rem,9.75vw,4.5rem)] max-w-[16ch] tracking-[-4px] rtl:mt-2.5 rtl:text-[clamp(2rem,9.75vw,4rem)] rtl:leading-loose sm:mt-6 sm:text-center sm:rtl:leading-relaxed lg:text-[clamp(2rem,11vw,3.8rem)] 2xl:text-[clamp(2rem,11vw,4.26rem)] 2xl:rtl:text-[clamp(2rem,10vw,4.48rem)] [&_.text-gold]:font-[650] [&_.text-gold]:tracking-[-0.03em] [&_.text-gold]:bg-[linear-gradient(180deg,var(--color-gold-light)_0%,var(--color-gold)_55%,var(--color-gold-dark)_100%)] [&_.text-gold]:bg-clip-text [&_.text-gold]:text-transparent rtl:[&_.text-gold]:leading-[1.6]"
           dangerouslySetInnerHTML={{ __html: hero.hook[lang] }}
         />
 
         <p
-          className="mt-5 mb-3 text-content-muted font-normal text-balance text-[clamp(1.1rem,5.5vw,1.8rem)] leading-[1.55] max-w-[34rem] 2xl:max-w-[35rem] rtl:mt-2.5 rtl:text-[clamp(0.9rem,4vw,1.5rem)] rtl:leading-[2.15] sm:mt-6 sm:text-center sm:leading-[1.6] sm:rtl:mt-4 sm:rtl:leading-loose lg:text-[clamp(1.1rem,5vw,1.6rem)] lg:mb-1 lg:max-w-[30rem] lg:rtl:text-[clamp(0.9rem,4vw,1.35rem)] 2xl:text-[clamp(1.1rem,5vw,1.79rem)] 2xl:rtl:text-[clamp(0.9rem,4vw,1.51rem)]"
+          className="mt-5 mb-3 text-content-muted font-normal text-pretty text-[clamp(1.1rem,5vw,1.8rem)] leading-[1.55] max-w-[34rem] 2xl:max-w-[35rem] rtl:mt-2.5 rtl:text-[clamp(0.9rem,4vw,1.5rem)] rtl:leading-[2.15] sm:mt-6 sm:text-center sm:leading-[1.6] sm:rtl:mt-4 sm:rtl:leading-loose lg:text-[clamp(1.1rem,5vw,1.6rem)] lg:mb-1 lg:max-w-[30rem] lg:rtl:text-[clamp(0.9rem,4vw,1.35rem)] 2xl:text-[clamp(1.1rem,5vw,1.79rem)] 2xl:rtl:text-[clamp(0.9rem,4vw,1.51rem)]"
           dangerouslySetInnerHTML={{ __html: hero.valueProp[lang] }}
         />
 
