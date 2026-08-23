@@ -460,7 +460,7 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
                       contact.method === "phone-call") && (
                       <div
                         dir="ltr"
-                        className="ps-1 phone-input h-13 w-full flex items-center rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted border-2 border-transparent focus-within:border-border-strong"
+                        className="phone-input h-13 w-full flex items-center rounded-lg bg-surface-low text-base text-content-heading placeholder:text-content-muted border-2 border-transparent focus-within:border-border-strong"
                       >
                         <PhoneInput
                           defaultCountry="eg"

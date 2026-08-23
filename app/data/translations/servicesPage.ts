@@ -148,16 +148,16 @@ const servicesPage: ServicesPageTranslations = {
     },
 ],
   articleCta: {
-    en: "Ready to build your website?",
-    ar: "جاهز تبني موقعك؟",
+    en: "Need to know more?",
+    ar: "عايز تعرف أكتر؟",
   },
   articleCtaButton: {
-    en: "Request a Quote",
-    ar: "اطلب عرض سعر",
+    en: "Get In Touch",
+    ar: "تواصل معنا",
   },
   backLinkLabel: {
-    en: "Back to services",
-    ar: "العودة إلى الخدمات",
+    en: "Back to homepage",
+    ar: "العودة إلى الرئيسية",
   },
 };
 

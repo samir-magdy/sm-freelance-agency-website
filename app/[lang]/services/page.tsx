@@ -5,7 +5,6 @@ import { ArrowLeft } from "lucide-react";
 import servicesPage from "@/app/data/translations/servicesPage";
 import pageMeta from "@/app/data/translations/pageMeta";
 import SpecializedServiceIcon from "@/app/components/utils/SpecializedServiceIcon";
-import HeroPrimaryCta from "@/app/components/utils/HeroPrimaryCta";
 import { pageAlternates } from "@/lib/urls";
 import { isLang, type Lang, type LangParams } from "@/app/types";
 
@@ -108,10 +107,12 @@ export default async function ServicesDetailPage({
             <p className="flex-1 text-[clamp(1.2rem,4vw,2.2rem)] font-semibold text-content-heading leading-tight rtl:leading-loose">
               {t.articleCta[lang]}
             </p>
-            <HeroPrimaryCta
-              label={t.articleCtaButton[lang]}
+            <Link
+              href={`/${lang}#contact`}
               className="cta-primary justify-center shrink-0 py-3 px-8 rounded-lg text-background text-base sm:text-xl font-medium tracking-wide whitespace-nowrap cursor-pointer"
-            />
+            >
+              {t.articleCtaButton[lang]}
+            </Link>
           </div>
         </div>
 

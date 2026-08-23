@@ -46,6 +46,10 @@ export const quoteQuestions: QuoteQuestion[] = [
     type: "single",
     category: "scope",
     question: { en: "What's your main goal?", ar: "ما هدفك الأساسي؟" },
+    helper: {
+      en: "Pick the closest match.",
+      ar: "اختر الأقرب لهدفك.",
+    },
     options: [
       {
         value: "landing",
@@ -114,6 +118,10 @@ export const quoteQuestions: QuoteQuestion[] = [
       en: "Roughly how many products?",
       ar: "كم عدد المنتجات تقريباً؟",
     },
+    helper: {
+      en: "A rough estimate is fine.",
+      ar: "تقدير تقريبي يكفي.",
+    },
     showIf: (a) =>
       a.goal === "store" ||
       (Array.isArray(a.customScope) && a.customScope.includes("onlineStore")),
@@ -166,7 +174,7 @@ export const quoteQuestions: QuoteQuestion[] = [
       ar: "ما الحجم المتوقع لموقعك؟",
     },
     helper: {
-      en: "A page is each distinct piece of content a visitor would navigate to — e.g. About, Services, Portfolio, Contact.",
+      en: "A page is each piece of content a visitor would navigate to — e.g. Services, Portfolio, Contact.",
       ar: "الصفحة هي كل جزء محتوى مستقل يتنقل إليه الزائر — مثل: من نحن، الخدمات، اتصل بنا.",
     },
     showIf: (a) => a.goal === "business",
@@ -275,6 +283,10 @@ export const quoteQuestions: QuoteQuestion[] = [
       en: "Do you need bilingual functionality?",
       ar: "هل تحتاج الموقع بلغتين؟",
     },
+    helper: {
+      en: "Your site fully in 2 languages.",
+      ar: "موقعك بالكامل بلغتين.",
+    },
     options: [
       { value: "yes", label: { en: "Yes", ar: "نعم" } },
       {
@@ -339,7 +351,7 @@ export const quoteQuestions: QuoteQuestion[] = [
     options: [
       {
         value: "often",
-        label: { en: "A few times a week", ar: "نعم، بشكل متكرر" },
+        label: { en: "Often, a few times a week", ar: "نعم، بشكل متكرر" },
       },
       {
         value: "occasionally",
