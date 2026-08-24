@@ -34,38 +34,38 @@ const pageMeta: {
       ar: `تصميم وتطوير مواقع إلكترونية | ${SITE_NAME}`,
     },
     description: {
-      en: "Stand out from competitors with modern, custom web development that builds instant trust with your clients. Request a free quote today.",
+      en: "Build instant trust & outshine your competitors with custom web design & development. Request a free quote today.",
       ar: "تميز عن منافسيك بموقع إلكتروني مخصص وعالي الجودة يبني الثقة الفورية مع عملائك. احصل على عرض سعر مجاني اليوم.",
     },
   },
   // SPECIALIZED SERVICES -> /services
   services: {
     title: {
-      en: "Services - Branding, SEO, Copywriting & AI",
-      ar: "الخدمات - هوية بصرية، سيو، كتابة محتوى، وذكاء اصطناعي",
+      en: "Services - Branding, AI, SEO, Copywriting",
+      ar: "الخدمات - هوية بصرية، ذكاء اصطناعي، كتابة محتوى، SEO",
     },
     description: {
-      en: `Logo design & branding, SEO setup, website copywriting, AI chatbots, professional business email, and website maintenance from ${SITE_NAME}.`,
-      ar: `تصميم لوجو وهوية تجارية، سيو (SEO)، كتابة محتوى، ذكاء اصطناعي، إيميل رسمي باسم شركتك، وصيانة مواقع من ${SITE_NAME}.`,
+      en: `Branding, SEO, website copywriting, AI chatbot automation, professional business emails, and website maintenance, and more from ${SITE_NAME}.`,
+      ar: `خدمات تصميم الهوية التجارية، تحسين محركات البحث (SEO)، كتابة المحتوى، خدمة العملاء بالذكاء الاصطناعي، البريد الإلكتروني الرسمي، وصيانة المواقع.`,
     },
   },
   // ALL GUIDES PAGE /guides
   guides: {
     title: {
-      en: `Web Design Guides for Egyptian Businesses (${CURRENT_YEAR})`,
-      ar: `أدلة تصميم المواقع للسوق المصري (${CURRENT_YEAR})`,
+      en: `Web Design Guides for Startups (${CURRENT_YEAR})`,
+      ar: `أدلة تصميم الويب لأصحاب الأعمال (${CURRENT_YEAR})`,
     },
     description: {
-      en: "Useful guides for Egyptian business owners and freelancers. Covering topics like 'how websites are priced' and 'website builders vs hiring a professional developer'.",
-      ar: "أدلة عملية لأصحاب الأعمال والمستقلين في مصر. اكتشف تكلفة المواقع، مقارنة بين إنشاء موقعك بنفسك أو توظيف محترف، وكيفية اختيار شريكك الرقمي المناسب.",
+      en: "Essential guides for business owners and freelancers: how websites are priced, why AI website builders fail businesses, how to pick the best provider, and more.",
+      ar: "دليلك الشامل لتصميم المواقع: معرفة التكاليف الفعلية، حقيقة منصات الذكاء الاصطناعي، ومعايير اختيار الشريك الرقمي الأنسب لنشاطك.",
     },
   },
   // INDIVIDUAL GUIDES -> /guides/foo
   guideArticles: {
     "website-cost-in-egypt": {
       title: {
-        en: `How Much Does a Website Cost in Egypt (${CURRENT_YEAR})`,
-        ar: `كم تكلفة تصميم موقع إلكتروني احترافي في مصر؟ (${CURRENT_YEAR})`,
+        en: `How Much Does a Website Cost? (${CURRENT_YEAR})`,
+        ar: `كم تكلفة تصميم موقع إلكتروني في مصر؟ (${CURRENT_YEAR})`,
       },
       description: {
         en: `How much does a website cost in Egypt in ${CURRENT_YEAR}? An honest EGP price breakdown by website type, plus the ten factors that move the price up or down.`,
@@ -78,18 +78,18 @@ const pageMeta: {
         ar: `منصات إنشاء المواقع الجاهزة أم مصمم محترف؟ (${CURRENT_YEAR})`,
       },
       description: {
-        en: "Should you build your own website on Wix or Squarespace, or hire a professional? Compare the real costs, hidden USD subscriptions, and long-term tradeoffs.",
-        ar: "هل تصمم موقعك بنفسك على Wix أو Squarespace أم تستعين بمحترف؟ قارن التكاليف الحقيقية والاشتراكات الخفية بالدولار والفروق على المدى البعيد.",
+        en: "Should you build your own website on Wix or Squarespace, or hire a professional? Compare the real costs and long-term tradeoffs.",
+        ar: "هل تصمم موقعك بنفسك عبر منصات إنشاء المواقع أم تستعين بمحترف؟ قارن التكاليف الحقيقية والتأثيرات على المدى الطويل.",
       },
     },
     "choose-web-design-company-egypt": {
       title: {
-        en: `Choosing the Best Web Design Company in Egypt (${CURRENT_YEAR})`,
-        ar: `كيف تختار أفضل شركة تصميم مواقع إلكترونية في مصر؟ (${CURRENT_YEAR})`,
+        en: `How to Choose the Best Web Design Partner (${CURRENT_YEAR})`,
+        ar: `كيف تختار أفضل شريك تصميم وتطوير مواقع إلكترونية؟ (${CURRENT_YEAR})`,
       },
       description: {
-        en: `Choosing the wrong web design company in Egypt costs more than money. Learn the key questions to ask, red flags to spot, and how to choose right in ${CURRENT_YEAR}.`,
-        ar: `اختيار شركة تصميم مواقع غير مناسبة في مصر مكلف. تعرف على الأسئلة التي يجب طرحها، والعلامات التحذيرية، وكيف تختار بين مستقل أو استوديو أو شركة في ${CURRENT_YEAR}.`,
+        en: `Choosing the wrong web design company costs you money and time. Learn the key questions to ask, red flags to spot, and how to choose right in ${CURRENT_YEAR}.`,
+        ar: `اختيار شركة تصميم مواقع غير مناسبة خطأ مكلف. تعرف على الأسئلة التي يجب طرحها، والعلامات التحذيرية، وكيف تختار بين مستقل أو استوديو أو شركة في ${CURRENT_YEAR}.`,
       },
     },
     "why-your-business-needs-a-website": {
@@ -104,7 +104,7 @@ const pageMeta: {
     },
     "is-seo-still-important-in-2026": {
       title: {
-        en: `Is SEO Still Important in ${CURRENT_YEAR}? (AI & GEO Guide)`,
+        en: `Is SEO Still Important in ${CURRENT_YEAR}?`,
         ar: `هل لا يزال السيو (SEO) مهماً في ${CURRENT_YEAR}؟`,
       },
       description: {

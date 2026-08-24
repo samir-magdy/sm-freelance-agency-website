@@ -63,23 +63,8 @@ export default function MobileMenu({
   }, [pathname]);
 
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-      return;
-    }
-
-    // iOS Safari can flash whatever is behind fixed elements for a frame
-    // when body `overflow` changes while they're still on screen — most
-    // visible when a route change is mounting new content underneath at
-    // the same time (Android/Chrome doesn't have this bug). Keep scroll
-    // locked until the reveal circle has fully collapsed so nothing is
-    // left to flash by the time it lifts.
-    const timeout = setTimeout(() => {
-      document.body.style.overflow = "";
-    }, REVEAL_DELAY_MS + REVEAL_DURATION_MS);
-
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
     return () => {
-      clearTimeout(timeout);
       document.body.style.overflow = "";
     };
   }, [isMenuOpen]);
