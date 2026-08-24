@@ -185,17 +185,17 @@ export const quoteQuestions: QuoteQuestion[] = [
     },
     showIf: (a) => a.goal === "business",
     options: [
-      {
+    {
         value: "small",
-        label: { en: "Up to 7 pages", ar: "حتى 10 صفحات" },
+        label: { en: "Up to 7 pages", ar: "حتى 7 صفحات" },
       },
       {
         value: "medium",
-        label: { en: "Up to 20 pages", ar: "من 11 إلى 30 صفحة" },
+        label: { en: "Up to 20 pages", ar: "حتى 20 صفحة" }, 
       },
       {
         value: "large",
-        label: { en: "More than 20 pages", ar: "أكثر من 30 صفحة" },
+        label: { en: "More than 20 pages", ar: "أكثر من 20 صفحة" },
       },
       {
         value: "notSure",
