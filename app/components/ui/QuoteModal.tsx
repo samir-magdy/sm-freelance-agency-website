@@ -304,7 +304,7 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
 
               {!isContactStep && current && (
                 <div>
-                  <p className="text-heading font-bold my-1 sm:my-2 text-content-heading leading-snug">
+                  <p className="text-heading font-bold my-1 rtl:my-2 sm:my-2 sm:rtl:my-4 text-content-heading leading-snug">
                     {current.question[lang]}
                   </p>
                   {current.helper && (

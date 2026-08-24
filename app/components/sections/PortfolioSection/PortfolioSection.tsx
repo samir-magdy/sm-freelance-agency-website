@@ -2,7 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { projects } from "@/app/data/portfolio";
 import {
   portfolioSectionTranslations,
@@ -19,29 +19,36 @@ interface NavArrowProps {
 }
 
 function NavArrow({ direction, disabled, onClick }: NavArrowProps) {
-  const Icon = direction === "prev" ? ArrowLeft : ArrowRight;
   return (
     <button
+      type="button"
       onClick={onClick}
       disabled={disabled}
       aria-label={direction === "prev" ? "Previous project" : "Next project"}
-      className={`hidden group lg:flex items-center justify-center w-12 h-12 rounded-full shrink-0 p-0 transition-all duration-300 ease-out border ${
+      className={`hidden lg:flex items-center justify-center w-11 h-11 rounded-full shrink-0 p-0 transition-all duration-200 ease-out border ${
         disabled
-          ? "bg-white/3 border-white/6 text-content-heading/30 cursor-not-allowed"
-          : "bg-white/10 border-white/12 text-content-heading cursor-pointer hover:border-white/20"
+          ? "border-white/20 bg-white/[0.03] text-content-heading/30 cursor-not-allowed"
+          : "border-white/20 bg-white/[0.03] text-content-heading cursor-pointer hover:bg-white/[0.09] hover:border-white/50 hover:scale-[1.07] hover:shadow-[0_0_22px_rgba(255,255,255,0.13)]"
       }`}
+      style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.08)" }}
     >
-      <Icon
-        size={18}
-        strokeWidth={2.5}
-        className={`transition-transform duration-500 ease-out ${
-          disabled
-            ? ""
-            : direction === "prev"
-              ? "group-hover:-translate-x-px"
-              : "group-hover:translate-x-px"
-        }`}
-      />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        {direction === "prev" ? (
+          <path d="m15 18-6-6 6-6" />
+        ) : (
+          <path d="m9 18 6-6-6-6" />
+        )}
+      </svg>
     </button>
   );
 }

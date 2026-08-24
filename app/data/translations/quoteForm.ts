@@ -47,30 +47,36 @@ export const quoteQuestions: QuoteQuestion[] = [
     category: "scope",
     question: { en: "What's your main goal?", ar: "ما هدفك الأساسي؟" },
     helper: {
-      en: "Pick the closest match.",
-      ar: "اختر الأقرب لهدفك.",
+      en: "Helps us determine the type of project",
+      ar: "يساعدنا في تحديد نوع المشروع",
     },
     options: [
       {
         value: "landing",
         label: {
-          en: "Capture direct leads",
-          ar: "دفع الزائر لإجراء محدد (واتساب، تعبئة نموذج)",
+          en: "Capture direct leads (Landing page)",
+          ar: "جمع بيانات العملاء مباشرة (صفحة هبوط)",
         },
       },
       {
         value: "business",
-        label: { en: "Build brand trust", ar: "عرض الشركة وخدماتها بشكل كامل" },
+        label: {
+          en: "Build brand trust (Business website)",
+          ar: "عرض الشركة وخدماتها بشكل كامل (موقع تعريفي)"
+        },
       },
       {
         value: "store",
-        label: { en: "Sell products online", ar: "بيع منتجات عبر الإنترنت" },
+        label: {
+          en: "Sell products online (E-commerce store)",
+          ar: "بيع منتجات عبر الإنترنت (متجر إلكتروني)"
+        },
       },
       {
         value: "custom",
         label: {
-          en: "Build a custom web app",
-          ar: "بناء تطبيق ويب مخصص",
+          en: "Build a custom web app (SaaS / Web portal)",
+          ar: "بناء تطبيق ويب مخصص (منصة أو نظام خاص)",
         },
       },
     ],
@@ -135,12 +141,12 @@ export const quoteQuestions: QuoteQuestion[] = [
     id: "sectionCount",
     type: "single",
     category: "scope",
-    question: {
+  question: {
       en: "How many sections will you need on your page?",
-      ar: "ما الحجم المتوقع لصفحتك؟",
+      ar: "كم عدد الأقسام التي ستحتاجها في صفحتك؟",
     },
     helper: {
-      en: "A section is each content block a visitor would scroll through — e.g. About, Services, Contact.",
+      en: "A section is each content block a visitor would scroll through (e.g. About, Services, Contact)",
       ar: "القسم هو كل جزء محتوى يمر به الزائر، مثل: الخدمات، آراء العملاء، اتصل بنا.",
     },
     showIf: (a) => a.goal === "landing",
@@ -169,9 +175,9 @@ export const quoteQuestions: QuoteQuestion[] = [
     id: "pageCount",
     type: "single",
     category: "scope",
-    question: {
-      en: "How large is your website likely to be?",
-      ar: "ما الحجم المتوقع لموقعك؟",
+  question: {
+      en: "How many pages is your website likely to have?",
+      ar: "كم عدد الصفحات المتوقعة لموقعك؟",
     },
     helper: {
       en: "A page is each piece of content a visitor would navigate to — e.g. Services, Portfolio, Contact.",
@@ -188,7 +194,7 @@ export const quoteQuestions: QuoteQuestion[] = [
         label: { en: "Up to 20 pages", ar: "من 11 إلى 30 صفحة" },
       },
       {
-        value: "large", 
+        value: "large",
         label: { en: "More than 20 pages", ar: "أكثر من 30 صفحة" },
       },
       {
@@ -210,7 +216,7 @@ export const quoteQuestions: QuoteQuestion[] = [
     },
     helper: {
       en: "Custom animations enhance engagement and branding, but require extra development time.",
-      ar: "الحركات والتفاعلات المخصصة تمنح تجربة فريدة، وتتطلب وقتاً إضافياً في التطوير.",
+      ar: "الأنيميشن والتفاعلات المخصصة تمنح تجربة فريدة، وتتطلب وقتاً إضافياً في التطوير.",
     },
     options: [
       { value: "simple", label: { en: "Modern and sleek", ar: "بسيط وأنيق" } },
@@ -218,7 +224,7 @@ export const quoteQuestions: QuoteQuestion[] = [
         value: "animated",
         label: {
           en: "Custom animations & interactions",
-          ar: "حركات وتفاعلات مخصصة",
+          ar: "أنيميشن وتفاعلات مخصصة",
         },
       },
     ],
@@ -420,7 +426,7 @@ export const quoteQuestions: QuoteQuestion[] = [
     optional: true,
     question: {
       en: "Any reference websites whose style you like?",
-      ar: "هل توجد مواقع مرجعية يعجبك تصميمها؟",
+      ar: "هل لديك مواقع مرجعية للتصميم؟",
     },
     helper: {
       en: "Share a few links, it helps us understand the look and feel you're going for.",
@@ -446,7 +452,7 @@ export const quoteQuestions: QuoteQuestion[] = [
     },
     placeholder: {
       en: "I also want a reservation system integrated into the website...",
-      ar: "أرغب أيضًا في دمج نظام للحجوزات في الموقع الإلكتروني",
+      ar: "أرغب أيضًا في دمج نظام للحجوزات في الموقع...",
     },
   },
 ];
@@ -455,7 +461,8 @@ export const quoteFormStrings = {
   close: { en: "Close", ar: "إغلاق" },
   introBody: {
     en: "Please answer a few questions so we can provide you with an accurate quote.",
-ar: "يرجى الإجابة عن بعض الأسئلة لنتمكن من توفير عرض سعر دقيق.",  },
+    ar: "يرجى الإجابة عن بعض الأسئلة لنتمكن من توفير عرض سعر دقيق.",
+  },
   start: { en: "Get Started", ar: "ابدأ الاستبيان" },
   stepLabel: { en: "Step", ar: "خطوة" },
   ofLabel: { en: "of", ar: "من" },
