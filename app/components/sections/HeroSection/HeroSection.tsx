@@ -48,7 +48,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
           dangerouslySetInnerHTML={{ __html: hero.valueProp[lang] }}
         />
 
-        <div className="flex flex-col sm:flex-row rtl:sm:flex-row-reverse w-full gap-3 justify-center mt-6 sm:mt-8 max-w-[26rem] sm:max-w-[30rem]">
+        <div className="flex flex-col sm:flex-row sm:flex-row-reverse w-full gap-3 justify-center mt-6 sm:mt-8 max-w-[26rem] sm:max-w-[30rem]">
           <HeroPrimaryCta
             label={hero.primaryCta[lang]}
             className={`cta-primary ${ctaBase} text-background cursor-pointer`}
