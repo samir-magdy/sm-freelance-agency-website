@@ -1,37 +1,22 @@
 import { headers } from "next/headers";
 
-export const REGIONS = ["EG", "SA", "AE", "GB", "EU", "US"] as const;
-
-export type Region = (typeof REGIONS)[number];
-
-export const DEFAULT_REGION: Region = "US";
-
-const EUROZONE_COUNTRIES = [
-  "AT", "BE", "CY", "DE", "EE", "ES", "FI", "FR", "GR", "HR",
-  "IE", "IT", "LT", "LU", "LV", "MT", "NL", "PT", "SI", "SK",
-] as const;
-
-const COUNTRY_TO_REGION: Readonly<Record<string, Region>> = {
-  EG: "EG",
-  SA: "SA",
-  AE: "AE",
-  GB: "GB",
-  US: "US",
-  ...Object.fromEntries(EUROZONE_COUNTRIES.map((code) => [code, "EU" as Region])),
-};
-
-export function regionForCountry(countryCode: string | null | undefined): Region {
-  if (!countryCode) return DEFAULT_REGION;
-  return COUNTRY_TO_REGION[countryCode.toUpperCase()] ?? DEFAULT_REGION;
-}
-
+// Geo detection is intentionally binary: the studio is Egypt-anchored, so the
+// only thing we need to know is whether a visitor is inside Egypt (show EGP
+// pricing) or outside it (point them to a quote in their local currency).
+// Vercel and Cloudflare both stamp the visitor's country on the request.
 const COUNTRY_HEADERS = ["x-vercel-ip-country", "cf-ipcountry"] as const;
 
-export async function getRegion(): Promise<Region> {
+/**
+ * True only when the request is positively identified as coming from Egypt.
+ * Anything else — a different country, or no country header at all (local dev,
+ * un-geo'd requests, most crawlers) — is treated as outside Egypt, so pricing
+ * is shown exclusively to Egyptian visitors.
+ */
+export async function isEgypt(): Promise<boolean> {
   const requestHeaders = await headers();
   for (const headerName of COUNTRY_HEADERS) {
     const value = requestHeaders.get(headerName);
-    if (value) return regionForCountry(value);
+    if (value) return value.toUpperCase() === "EG";
   }
-  return DEFAULT_REGION;
+  return false;
 }

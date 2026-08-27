@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Calendar, Clock, History, UserRound } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar, Clock, History } from "lucide-react";
 import { SITE_NAME, SITE_URL, SCHEMA_IDS, FOUNDER_LINKS } from "@/app/constants";
 import guides from "@/app/data/guides";
 import guidesTranslations from "@/app/data/translations/guidesShared";
@@ -15,7 +15,7 @@ import {
   pageAlternates,
   ogImage,
 } from "@/lib/urls";
-import { getRegion } from "@/lib/region";
+import { isEgypt } from "@/lib/region";
 import HeroPrimaryCta from "@/app/components/utils/HeroPrimaryCta";
 
 function BackToGuidesLink({ lang, label }: { lang: Lang; label: string }) {
@@ -86,7 +86,7 @@ export default async function GuidePage({
   const guide = guides.find((r) => r.slug === slug);
   if (!guide) notFound();
 
-  const region = await getRegion();
+  const egypt = await isEgypt();
 
   const meta = pageMeta.guideArticles[slug];
   const translations = guidesTranslations;
@@ -253,7 +253,7 @@ export default async function GuidePage({
                 dangerouslySetInnerHTML={{ __html: wrapTables(parts[0]) }}
               />
             )}
-            {region !== "EG" && (
+            {!egypt && (
               <aside
                 role="note"
                 className="relative overflow-hidden rounded-2xl border border-white/8 bg-surface-low"

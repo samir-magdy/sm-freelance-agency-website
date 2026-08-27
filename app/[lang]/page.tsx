@@ -19,8 +19,7 @@ import {
 } from "@/app/constants";
 import { isLang, type Lang, type LangParams } from "@/app/types";
 import { homeUrl, homeAlternates } from "@/lib/urls";
-import { getRegion, type Region } from "@/lib/region";
-import { BASE_PRICES, CURRENCIES } from "@/app/data/translations/regionPricing";
+import { isEgypt } from "@/lib/region";
 
 export async function generateMetadata({
   params,
@@ -35,9 +34,8 @@ export async function generateMetadata({
   };
 }
 
-function buildStructuredData(lang: Lang, region: Region) {
+function buildStructuredData(lang: Lang) {
   const pageUrl = homeUrl(lang);
-  const currencyCode = CURRENCIES[region].code;
 
   const businessSchema = {
     "@type": "ProfessionalService",
@@ -104,15 +102,6 @@ function buildStructuredData(lang: Lang, region: Region) {
     description: card.tagline.en.replace(/<\/?em>/g, ""),
     provider: { "@id": SCHEMA_IDS.business },
     inLanguage: ["en", "ar"],
-    ...(card.priceBaseId
-      ? {
-          offers: {
-            "@type": "Offer",
-            price: String(BASE_PRICES[card.priceBaseId][region]),
-            priceCurrency: currencyCode,
-          },
-        }
-      : {}),
   }));
 
   const websiteSchema = {
@@ -191,14 +180,14 @@ export default async function Page({
   if (!isLang(rawLang)) notFound();
   const lang: Lang = rawLang;
 
-  const region = await getRegion();
-  const mainStructuredData = buildStructuredData(lang, region);
+  const egypt = await isEgypt();
+  const mainStructuredData = buildStructuredData(lang);
 
   return (
     <div className="relative bg-background text-content-heading flex flex-col gap-40 md:gap-72">
       <HeroSection lang={lang} />
       <PortfolioSection key={lang} lang={lang} />
-      <ServicesSection lang={lang} region={region} />
+      <ServicesSection lang={lang} isEgypt={egypt} />
       <FAQSection lang={lang} />
       <ContactSection lang={lang} />
 

@@ -1,5 +1,16 @@
 import type { Localized } from "@/app/types";
-import type { BaseId } from "./regionPricing";
+
+export type BaseId = "landing" | "business";
+
+// EGP-only pricing. The studio is Egypt-anchored and prices are shown solely to
+// visitors detected as being in Egypt; everyone else is routed to a quote.
+// Maintained manually.
+export const BASE_PRICES: Record<BaseId, number> = {
+  landing: 6999,
+  business: 9999,
+};
+
+export const EGP_SYMBOL: Localized = { en: "EGP", ar: "ج.م" };
 
 interface ServiceCard {
   id: "landing" | "business" | "customApp";

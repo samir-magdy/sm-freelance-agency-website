@@ -1,5 +1,4 @@
 import type { Localized } from "@/app/types";
-import { SITE_NAME } from "@/app/constants";
 
 const hero: {
   h1Eyebrow: Localized;

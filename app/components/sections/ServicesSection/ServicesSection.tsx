@@ -1,20 +1,20 @@
 import Link from "next/link";
 import { Calculator } from "lucide-react";
-import { servicesSectionTranslations } from "@/app/data/translations/servicesSection";
 import {
+  servicesSectionTranslations,
   BASE_PRICES,
-  formatPrice,
-  type FormattedPrice,
-} from "@/app/data/translations/regionPricing";
+  EGP_SYMBOL,
+} from "@/app/data/translations/servicesSection";
 import SpecializedServiceIcon from "@/app/components/utils/SpecializedServiceIcon";
 import type { Lang } from "@/app/types";
-import type { Region } from "@/lib/region";
 import HeroPrimaryCta from "../../utils/HeroPrimaryCta";
 
 interface ServicesSectionProps {
   lang: Lang;
-  region: Region;
+  isEgypt: boolean;
 }
+
+const PRICE_FORMATTER = new Intl.NumberFormat("en-US");
 
 // Maps a service card to the matching `goal` answer in the quote form, so
 // clicking a card's CTA can pre-answer that question instead of asking again.
@@ -25,40 +25,26 @@ const CARD_GOAL: Record<string, string> = {
 };
 
 function StartingPrice({
-  price,
+  amount,
+  symbol,
   startsAtLabel,
 }: {
-  price: FormattedPrice;
+  amount: string;
+  symbol: string;
   startsAtLabel: string;
 }) {
-  const amountNode = (
-    <span className="text-[clamp(1.6rem,2vw,2rem)] font-bold text-gold tracking-tighter leading-none">
-      {price.amount}
-    </span>
-  );
-  const symbolNode = (
-    <span className="text-base sm:text-[clamp(1rem,1.25vw,1.4rem)] font-medium text-content-muted leading-none -translate-y-0.5">
-      {price.symbol}
-    </span>
-  );
-
   return (
     <div className="flex flex-col gap-1">
       <span className="text-xs font-bold uppercase tracking-[0.2em] text-content-muted/70 leading-none">
         {startsAtLabel}
       </span>
       <div className="flex items-end gap-1.5">
-        {price.position === "before" ? (
-          <>
-            {symbolNode}
-            {amountNode}
-          </>
-        ) : (
-          <>
-            {amountNode}
-            {symbolNode}
-          </>
-        )}
+        <span className="text-[clamp(1.6rem,2vw,2rem)] font-bold text-gold tracking-tighter leading-none">
+          {amount}
+        </span>
+        <span className="text-base sm:text-[clamp(1rem,1.25vw,1.4rem)] font-medium text-content-muted leading-none -translate-y-0.5">
+          {symbol}
+        </span>
       </div>
     </div>
   );
@@ -66,7 +52,7 @@ function StartingPrice({
 
 export default function ServicesSection({
   lang,
-  region,
+  isEgypt,
 }: ServicesSectionProps) {
   const translations = servicesSectionTranslations;
   const isRtl = lang === "ar";
@@ -90,9 +76,12 @@ export default function ServicesSection({
 
         <div className="grid grid-cols-1 gap-6 lg:gap-8">
           {translations.cards.map((card) => {
-            const price = card.priceBaseId
-              ? formatPrice(BASE_PRICES[card.priceBaseId][region], region, lang)
-              : null;
+            // Pricing is shown only to visitors detected as being in Egypt.
+            const priceAmount =
+              isEgypt && card.priceBaseId
+                ? PRICE_FORMATTER.format(BASE_PRICES[card.priceBaseId])
+                : null;
+            const showCustomLabel = isEgypt && !card.priceBaseId;
             return (
               <div
                 key={card.id}
@@ -109,21 +98,28 @@ export default function ServicesSection({
                 </div>
 
                 <div className="mt-auto pt-4 border-t border-border-subtle/50">
-                  <div className="flex items-center justify-between gap-4">
-                    {price ? (
+                  <div
+                    className={`flex items-center gap-4 ${
+                      priceAmount || showCustomLabel
+                        ? "justify-between"
+                        : "justify-end"
+                    }`}
+                  >
+                    {priceAmount ? (
                       <StartingPrice
-                        price={price}
+                        amount={priceAmount}
+                        symbol={EGP_SYMBOL[lang]}
                         startsAtLabel={translations.startsAt[lang]}
                       />
-                    ) : (
+                    ) : showCustomLabel ? (
                       <span className="text-xl rtl:text-lg sm:text-3xl rtl:sm:text-2xl font-bold text-gold tracking-tight leading-none">
                         {translations.customPriceLabel[lang]}
                       </span>
-                    )}
+                    ) : null}
                     <HeroPrimaryCta
                       label={translations.contactCta[lang]}
                       goal={CARD_GOAL[card.id]}
-                      className="inline-flex items-center gap-1.5 sm:gap-3 px-4 sm:px-6 py-3 rounded-2xl border border-border-subtle bg-surface-low hover:border-border-strong text-content-heading font-semibold text-base sm:text-lg transition-all duration-300 cursor-pointer shrink-0"
+                      className={`inline-flex items-center gap-1.5 sm:gap-3 px-4 sm:px-6 py-3 rounded-2xl border border-border-subtle bg-surface-low hover:border-border-strong text-content-heading font-semibold text-base sm:text-lg transition-all duration-300 cursor-pointer shrink-0 ${!isEgypt ? "w-full justify-center" : ""}`}
                     >
                       <Calculator
                         size={20}
