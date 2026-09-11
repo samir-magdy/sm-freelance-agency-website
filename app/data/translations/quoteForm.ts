@@ -460,7 +460,7 @@ export const quoteQuestions: QuoteQuestion[] = [
 export const quoteFormStrings = {
   close: { en: "Close", ar: "إغلاق" },
   introBody: {
-    en: "Please answer a few questions so we can provide you with an accurate quote.",
+    en: "Answer a few questions so we can match your vision.",
     ar: "يرجى الإجابة عن بعض الأسئلة لنتمكن من توفير عرض سعر دقيق.",
   },
   start: { en: "Get Started", ar: "ابدأ الاستبيان" },

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Calculator } from "lucide-react";
 import {
   servicesSectionTranslations,
   BASE_PRICES,
@@ -119,13 +118,8 @@ export default function ServicesSection({
                     <HeroPrimaryCta
                       label={translations.contactCta[lang]}
                       goal={CARD_GOAL[card.id]}
-                      className={`inline-flex items-center gap-1.5 sm:gap-3 px-4 sm:px-6 py-3 rounded-2xl border border-border-subtle bg-surface-low hover:border-border-strong text-content-heading font-semibold text-base sm:text-lg transition-all duration-300 cursor-pointer shrink-0 ${!isEgypt ? "w-full justify-center" : ""}`}
+                      className={`cta-primary text-background items-center gap-1.5 sm:gap-3 px-4 sm:px-6 py-3 rounded-2xl border font-semibold text-base sm:text-lg transition-all duration-300 cursor-pointer shrink-0 ${!isEgypt ? "w-full justify-center" : ""}`}
                     >
-                      <Calculator
-                        size={20}
-                        aria-hidden="true"
-                        className="text-gold shrink-0"
-                      />
                       {translations.contactCta[lang]}
                     </HeroPrimaryCta>
                   </div>

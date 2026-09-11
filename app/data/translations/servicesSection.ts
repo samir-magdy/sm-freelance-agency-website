@@ -44,14 +44,15 @@ interface ServicesSectionTranslations {
 }
 
 export const servicesSectionTranslations: ServicesSectionTranslations = {
-  heading: {
-    en: "Our Services",
-    ar: "الخدمات",
-  },
-  subheading: {
-    en: "Pick what best suits your needs",
-    ar: "اختر الموقع الذي يناسب احتياجاتك",
-  },
+ heading: {
+  en: "What We Offer",
+  ar: "ماذا نقدّم لك",
+},
+subheading: {
+  en: "Explore our services",
+  ar: "حلول وخدمات مصمّمة لك",
+},
+
   specializedServicesLabel: {
     en: "Specialized services",
     ar: "خدمات متخصصة",
@@ -61,7 +62,7 @@ export const servicesSectionTranslations: ServicesSectionTranslations = {
     ar: "يبدأ من",
   },
   contactCta: {
-    en: "Request a Quote",
+    en: "Get Started",
     ar: "اطلب عرض سعر",
   },
   customPriceLabel: {

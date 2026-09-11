@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { CircleCheckBig } from "lucide-react";
-import WhatsAppIcon from "@/app/components/utils/WhatsAppIcon";
 import contactSection from "@/app/data/translations/contactSection";
 import { SOCIAL_LINKS } from "@/app/constants";
 import { QUOTE_OPEN_EVENT } from "@/app/components/ui/QuoteModal";
@@ -93,16 +92,6 @@ export default function ContactSection({ lang }: ContactSectionProps) {
         </div>
 
         <div className="reveal-element max-w-xl mx-auto flex flex-col xl:flex-row gap-3.5 justify-center">
-          <a
-            href={SOCIAL_LINKS.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 bg-green-600/85 hover:bg-green-600/95 transition-colors duration-300 py-4 px-8 text-content-white/85 hover:text-content-heading flex items-center justify-center gap-2 rounded-xl font-bold text-base"
-          >
-            <WhatsAppIcon className="size-5" fill="currentColor" />
-            {contactSection.whatsappCta[lang]}
-          </a>
-
           <button
             type="button"
             onClick={() => window.dispatchEvent(new Event(QUOTE_OPEN_EVENT))}

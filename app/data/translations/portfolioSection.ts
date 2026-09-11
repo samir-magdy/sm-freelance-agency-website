@@ -5,11 +5,11 @@ export const portfolioSectionTranslations: Record<
   Localized
 > = {
   heading: {
-    en: "Our Work",
+    en: "Portfolio",
     ar: "معرض الأعمال",
   },
   subheading: {
-    en: "Explore our featured projects",
+    en: "Explore our projects",
     ar: "استعرض أحدث مشاريعنا",
   },
   viewLiveSite: {

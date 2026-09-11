@@ -25,10 +25,11 @@ const contactSection: ContactSection = {
     en: "Get In Touch",
     ar: "تواصل معنا",
   },
- subheading: {
-  en: "Chat on WhatsApp for general inquiries or take our survey for a custom quote.",
-  ar: "تواصل معنا عبر واتساب للأسئلة العامة، أو أكمل الاستبيان للحصول على عرض سعر.",
+subheading: {
+  en: "Take the next step",
+  ar: "ابدأ خطوتك التالية",
 },
+
   whatsappCta: { en: "Chat on WhatsApp", ar: "تواصل عبر الواتساب" },
   questionnaireCta: { en: "Request a Quote", ar: "اطلب عرض سعر" },
   formHeading: { en: "Or send a message", ar: "أو أرسل رسالة" },
@@ -44,11 +45,11 @@ const contactSection: ContactSection = {
     en: "Please enter a message",
     ar: "من فضلك اكتب رسالتك",
   },
-  submitCta: { en: "Send Message", ar: "إرسال الرسالة" },
+  submitCta: { en: "Send Message", ar: "إرسال" },
   sendingCta: { en: "Sending…", ar: "جارٍ الإرسال…" },
   successBody: {
-    en: "Thanks for reaching out — we'll get back to you soon.",
-    ar: "شكراً لتواصلك معنا، سنرد عليك قريباً.",
+    en: "We'll get back to you soon.",
+    ar: "شكراً، سنرد عليك قريباً.",
   },
   successWhatsapp: {
     en: "Need a faster response?",

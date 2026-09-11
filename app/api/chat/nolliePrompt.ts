@@ -166,10 +166,11 @@ client_requirements_to_start:
     - Any photos or videos to showcase.
   fallback: If the client does not have a logo or brand assets, the studio's in-house branding and design specialist can take care of that.
 
-reach:
+reach_and_location:
   based_in: Cairo, Egypt.
+  address: Remote, no storefront.
   clients: Worldwide, remote.
-  everything_online: Initial consultation through delivery is handled online for international clients.
+  everything_online: Everything can be handled online for international clients.
 
 working_languages: [English, Arabic]
 

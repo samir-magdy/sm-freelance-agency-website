@@ -261,8 +261,8 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
             </div>
           ) : !started ? (
             <div className="flex h-full flex-col items-center justify-center gap-4 sm:gap-8 text-center">
-              <ClipboardCheck className="size-20 sm:size-22 text-gold" aria-hidden />
-              <p className="text-content-body sm:mx-10 text-pretty text-[clamp(1rem,0.7rem+2vw,1.875rem)] leading-relaxed px-4">
+              <ClipboardCheck className="size-18 text-gold" aria-hidden />
+              <p className="text-content-body sm:mx-10 text-pretty text-[clamp(1rem,1.5vw,1.875rem)] leading-relaxed px-4">
                 {t.introBody[lang]}
               </p>
             </div>
@@ -270,7 +270,7 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
             <>
               <div className="mb-4">
                 <div className="flex items-center justify-between gap-3 mb-2 sm:mb-3">
-                  <p className="text-[clamp(1rem,1vw,2rem)] xl:text-subheading font-bold text-gold uppercase tracking-wide">
+                  <p className="text-[clamp(1rem,1vw,2rem)] font-bold text-gold uppercase tracking-wide">
                     {activeCategory.name[lang]}
                   </p>
                   <p className="text-[clamp(1rem,1vw,2rem)] text-content-muted shrink-0">
@@ -304,7 +304,7 @@ export default function QuoteModal({ lang }: QuoteModalProps) {
 
               {!isContactStep && current && (
                 <div>
-                  <p className="text-heading font-bold my-1 rtl:my-2 sm:my-2 sm:rtl:my-4 text-content-heading leading-snug">
+                  <p className="text-[clamp(1rem,2vw,3rem)] font-bold my-1 rtl:my-2 sm:my-2 sm:rtl:my-4 text-content-heading leading-snug">
                     {current.question[lang]}
                   </p>
                   {current.helper && (
