@@ -33,11 +33,11 @@ const guidesTranslations: Record<
   },
   backToGuides: { en: "All Guides", ar: "جميع الأدلة" },
   articleCta: {
-    en: "Ready to build your website?",
+    en: "Ready for your website?",
     ar: "جاهز تبني موقعك؟",
   },
   articleCtaButton: {
-    en: "Request a Quote",
+    en: "Get Started",
     ar: "اطلب عرض سعر",
   },
   relatedHeading: { en: "Related guides:", ar: "أدلة ذات صلة:" },
